@@ -1,0 +1,81 @@
+//
+//  OnboardingViewController.swift
+//  BloodBank
+//
+//  Created by KhaleD HuSsien on 15/12/2021.
+//
+
+import UIKit
+
+class OnboardingViewController: UIViewController {
+    
+    //MARK: - outlets
+    @IBOutlet weak var PageController: UIPageControl!
+    @IBOutlet weak var NextBtn: UIButton!
+    @IBOutlet weak var CollectionView: UICollectionView!
+    //MARK: - variables
+    var SlideArray: [OnboardingSlide] = []
+    var currentPage = 0 {
+        didSet{
+            PageController.currentPage = currentPage
+            if currentPage == SlideArray.count - 1{
+                self.NextBtn.setTitle("Get Started", for: .normal)
+            }else{
+                self.NextBtn.setTitle("Next", for: .normal)
+            }
+        }
+    }
+    
+    
+    //MARK: - func lifeCycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        CollectionView.delegate = self
+        CollectionView.dataSource = self
+        
+        SlideArray = [OnboardingSlide(title: "khaled", description: "If the accessibility of blood transfusions decreases, the voluntary blood donor might turn away, endangering blood safety much more.", Image: UIImage(named: "1")!),OnboardingSlide(title: "hussien", description: "The most serious effect could be an undermining of the voluntary blood donor system in this country.", Image: UIImage(named: "2")!),OnboardingSlide(title: "khalifa", description: "The voluntary and altruistic basis of blood donation is both precious and essential to our system of collection.", Image: UIImage(named: "3")!)]
+    }
+    
+    //MARK: - private functions
+    
+    
+    //MARK: - Actions
+    
+    @IBAction func NextBtnTapped(_ sender: UIButton) {
+        if currentPage == SlideArray.count - 1 {
+            let controller = storyboard?.instantiateViewController(withIdentifier: "HomeNC") as! UINavigationController
+            controller.modalPresentationStyle = .fullScreen
+            controller.modalTransitionStyle = .flipHorizontal
+            self.present(controller, animated: true, completion: nil)
+        }else{
+            currentPage += 1
+            let indexPath = IndexPath(item: currentPage, section: 0)
+            CollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        }
+    }
+}
+
+//MARK: - Extensions UiCollectionView
+extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return SlideArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cells.IdentfierCollectionCell, for: indexPath) as! OnboardingCollectionViewCell
+        cell.setUp(slide: SlideArray[indexPath.row])
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height )
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let width = scrollView.frame.width
+        print(width)
+        currentPage = Int(scrollView.contentOffset.x / width)
+        print(scrollView.contentOffset.x)
+    }
+    
+}

@@ -9,15 +9,10 @@ import UIKit
 
 class OnboardingCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var slideImageView: UIImageView!
-    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
-    
-    
     //MARK: - Functions
-
-    
     func setUp(slide: OnboardingSlide){
         self.slideImageView.image = slide.Image
         self.titleLabel.text = slide.title

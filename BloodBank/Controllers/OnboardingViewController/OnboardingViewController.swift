@@ -25,17 +25,16 @@ class OnboardingViewController: UIViewController {
             }
         }
     }
-    
-    
     //MARK: - func lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         CollectionView.delegate = self
         CollectionView.dataSource = self
-        
-        SlideArray = [OnboardingSlide(title: "khaled", description: "If the accessibility of blood transfusions decreases, the voluntary blood donor might turn away, endangering blood safety much more.", Image: UIImage(named: "1")!),OnboardingSlide(title: "hussien", description: "The most serious effect could be an undermining of the voluntary blood donor system in this country.", Image: UIImage(named: "2")!),OnboardingSlide(title: "khalifa", description: "The voluntary and altruistic basis of blood donation is both precious and essential to our system of collection.", Image: UIImage(named: "3")!)]
+        SlideArray = [
+            OnboardingSlide(title: SlidesArray.title1, description:          SlidesArray.description1, Image: UIImage(named: "1")!),
+            OnboardingSlide(title: SlidesArray.title2, description: SlidesArray.description2, Image: UIImage(named: "2")!),
+            OnboardingSlide(title: SlidesArray.title3, description: SlidesArray.description3, Image: UIImage(named: "3")!)]
     }
-    
     //MARK: - private functions
     
     
@@ -77,5 +76,4 @@ extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDa
         currentPage = Int(scrollView.contentOffset.x / width)
         print(scrollView.contentOffset.x)
     }
-    
 }

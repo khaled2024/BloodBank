@@ -7,8 +7,9 @@
 
 import Foundation
  
-struct Cells{
-    static let IdentfierCollectionCell = "OnboardingCollectionViewCell"
+struct Identifier{
+    static let CollectionCell = "OnboardingCollectionViewCell"
+    static let HomeNC = "HomeNC"
 }
 
 struct SlidesArray{

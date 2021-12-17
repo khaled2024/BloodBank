@@ -34,15 +34,15 @@ class OnboardingViewController: UIViewController {
             OnboardingSlide(title: SlidesArray.title1, description:          SlidesArray.description1, Image: UIImage(named: "1")!),
             OnboardingSlide(title: SlidesArray.title2, description: SlidesArray.description2, Image: UIImage(named: "2")!),
             OnboardingSlide(title: SlidesArray.title3, description: SlidesArray.description3, Image: UIImage(named: "3")!)]
+        PageController.numberOfPages = SlideArray.count
     }
     //MARK: - private functions
     
     
     //MARK: - Actions
-    
     @IBAction func NextBtnTapped(_ sender: UIButton) {
         if currentPage == SlideArray.count - 1 {
-            let controller = storyboard?.instantiateViewController(withIdentifier: "HomeNC") as! UINavigationController
+            let controller = storyboard?.instantiateViewController(withIdentifier: Identifier.HomeNC) as! UINavigationController
             controller.modalPresentationStyle = .fullScreen
             controller.modalTransitionStyle = .flipHorizontal
             self.present(controller, animated: true, completion: nil)
@@ -61,8 +61,9 @@ extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cells.IdentfierCollectionCell, for: indexPath) as! OnboardingCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifier.CollectionCell, for: indexPath) as! OnboardingCollectionViewCell
         cell.setUp(slide: SlideArray[indexPath.row])
+        print(indexPath.row)
         return cell
     }
     

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E1C66EBD77E52FD724CAF41 /* Pods_BloodBank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB8F4C3B3A310575AD50AC30 /* Pods_BloodBank.framework */; };
+		EA99AAFD276CCF540083F0D1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA99AAFC276CCF540083F0D1 /* HomeViewController.swift */; };
+		EAAD8337276D12C800381854 /* DataPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAD8336276D12C700381854 /* DataPicker.swift */; };
+		EABDBFCA276CE69F00738EA3 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABDBFC9276CE69F00738EA3 /* RegisterViewController.swift */; };
+		EABDBFCC276CE6A900738EA3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABDBFCB276CE6A900738EA3 /* LoginViewController.swift */; };
+		EABDBFCE276CE6B500738EA3 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABDBFCD276CE6B500738EA3 /* HelpViewController.swift */; };
 		EAC252C7276A26F00033F96F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC252C6276A26F00033F96F /* AppDelegate.swift */; };
 		EAC252C9276A26F00033F96F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC252C8276A26F00033F96F /* SceneDelegate.swift */; };
 		EAC252CE276A26F00033F96F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAC252CC276A26F00033F96F /* Main.storyboard */; };
@@ -20,6 +26,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		36C4F17C7D79E124463C5D81 /* Pods-BloodBank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BloodBank.debug.xcconfig"; path = "Target Support Files/Pods-BloodBank/Pods-BloodBank.debug.xcconfig"; sourceTree = "<group>"; };
+		D4BCE38A5AD392A36F890799 /* Pods-BloodBank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BloodBank.release.xcconfig"; path = "Target Support Files/Pods-BloodBank/Pods-BloodBank.release.xcconfig"; sourceTree = "<group>"; };
+		DB8F4C3B3A310575AD50AC30 /* Pods_BloodBank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BloodBank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA99AAFC276CCF540083F0D1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		EAAD8336276D12C700381854 /* DataPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPicker.swift; sourceTree = "<group>"; };
+		EABDBFC9276CE69F00738EA3 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		EABDBFCB276CE6A900738EA3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		EABDBFCD276CE6B500738EA3 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		EAC252C3276A26F00033F96F /* BloodBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BloodBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAC252C6276A26F00033F96F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAC252C8276A26F00033F96F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,17 +53,48 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E1C66EBD77E52FD724CAF41 /* Pods_BloodBank.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		48B799AE9B68FBEEB82BC727 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DB8F4C3B3A310575AD50AC30 /* Pods_BloodBank.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7CD4487022B47A0CDEE98D37 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				36C4F17C7D79E124463C5D81 /* Pods-BloodBank.debug.xcconfig */,
+				D4BCE38A5AD392A36F890799 /* Pods-BloodBank.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		EABDBFCF276CE98900738EA3 /* InterfaceViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				EA99AAFC276CCF540083F0D1 /* HomeViewController.swift */,
+				EABDBFC9276CE69F00738EA3 /* RegisterViewController.swift */,
+				EABDBFCB276CE6A900738EA3 /* LoginViewController.swift */,
+				EABDBFCD276CE6B500738EA3 /* HelpViewController.swift */,
+			);
+			path = InterfaceViewControllers;
+			sourceTree = "<group>";
+		};
 		EAC252BA276A26F00033F96F = {
 			isa = PBXGroup;
 			children = (
 				EAC252C5276A26F00033F96F /* BloodBank */,
 				EAC252C4276A26F00033F96F /* Products */,
+				7CD4487022B47A0CDEE98D37 /* Pods */,
+				48B799AE9B68FBEEB82BC727 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				EAC252E6276A34BF0033F96F /* OnboardingSlide.swift */,
+				EAAD8336276D12C700381854 /* DataPicker.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -98,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				EAC252DD276A2EE80033F96F /* OnboardingViewController */,
+				EABDBFCF276CE98900738EA3 /* InterfaceViewControllers */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -158,9 +205,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EAC252D7276A26F10033F96F /* Build configuration list for PBXNativeTarget "BloodBank" */;
 			buildPhases = (
+				D58E08998672266A6630D8BB /* [CP] Check Pods Manifest.lock */,
 				EAC252BF276A26F00033F96F /* Sources */,
 				EAC252C0276A26F00033F96F /* Frameworks */,
 				EAC252C1276A26F00033F96F /* Resources */,
+				BD471E5C489D825332439703 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -217,17 +266,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		BD471E5C489D825332439703 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BloodBank/Pods-BloodBank-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BloodBank/Pods-BloodBank-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BloodBank/Pods-BloodBank-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D58E08998672266A6630D8BB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BloodBank-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EAC252BF276A26F00033F96F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EABDBFCE276CE6B500738EA3 /* HelpViewController.swift in Sources */,
+				EABDBFCA276CE69F00738EA3 /* RegisterViewController.swift in Sources */,
 				EAC252E7276A34BF0033F96F /* OnboardingSlide.swift in Sources */,
 				EAC252C7276A26F00033F96F /* AppDelegate.swift in Sources */,
 				EAC252DF276A2F250033F96F /* OnboardingViewController.swift in Sources */,
+				EA99AAFD276CCF540083F0D1 /* HomeViewController.swift in Sources */,
 				EAC252E5276A335B0033F96F /* UiView+Extension.swift in Sources */,
+				EAAD8337276D12C800381854 /* DataPicker.swift in Sources */,
 				EAC252EC276A3A4C0033F96F /* Constants.swift in Sources */,
 				EAC252C9276A26F00033F96F /* SceneDelegate.swift in Sources */,
+				EABDBFCC276CE6A900738EA3 /* LoginViewController.swift in Sources */,
 				EAC252E9276A37BC0033F96F /* OnboardingCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -372,11 +468,13 @@
 		};
 		EAC252D8276A26F10033F96F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36C4F17C7D79E124463C5D81 /* Pods-BloodBank.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3TWF5CMBRA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BloodBank/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -399,11 +497,13 @@
 		};
 		EAC252D9276A26F10033F96F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4BCE38A5AD392A36F890799 /* Pods-BloodBank.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3TWF5CMBRA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BloodBank/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

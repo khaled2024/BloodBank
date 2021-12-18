@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="voR-i3-UgG">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
@@ -134,7 +134,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lkv-MM-JDZ">
                                 <rect key="frame" x="10" y="511" width="394" height="50"/>
-                                <color key="backgroundColor" red="0.8392156959" green="0.33725491169999999" blue="0.2235293984" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.87450981139999995" green="0.40000003579999999" blue="0.40000003579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="vkl-Iu-Wsk"/>
                                 </constraints>
@@ -147,7 +147,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="CreateBtnTapped:" destination="tiN-oy-XPs" eventType="touchUpInside" id="3ql-Ej-AGI"/>
+                                    <action selector="CreateBtnTapped:" destination="tiN-oy-XPs" eventType="touchUpInside" id="S3d-lO-oFT"/>
                                     <segue destination="FRR-mG-eiX" kind="show" identifier="HomeToRegister" id="Av0-hW-xe0"/>
                                 </connections>
                             </button>
@@ -175,7 +175,7 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hRG-x2-aX0">
                                 <rect key="frame" x="10" y="586" width="394" height="50"/>
-                                <color key="backgroundColor" red="0.8392156959" green="0.33725491169999999" blue="0.2235293984" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.87450981139999995" green="0.40000003579999999" blue="0.40000003579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="LOG IN"/>
@@ -185,7 +185,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="LoginBtnTapped:" destination="tiN-oy-XPs" eventType="touchUpInside" id="DdI-Nb-AqC"/>
+                                    <action selector="LoginBtnTapped:" destination="tiN-oy-XPs" eventType="touchUpInside" id="Mzp-is-Iib"/>
                                     <segue destination="70v-Y2-388" kind="show" identifier="HomeToLogin" id="CHv-fA-vkM"/>
                                 </connections>
                             </button>
@@ -208,7 +208,7 @@
                                     <fontDescription key="titleFontDescription" name="Kefa-Regular" family="Kefa" pointSize="16"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="HelpBtnTapped:" destination="tiN-oy-XPs" eventType="touchUpInside" id="VDe-BZ-UAl"/>
+                                    <action selector="HelpBtnTapped:" destination="tiN-oy-XPs" eventType="touchUpInside" id="alB-Ck-dvN"/>
                                     <segue destination="CLc-5f-G1a" kind="show" identifier="HomeToHelp" id="ciD-t9-iq8"/>
                                 </connections>
                             </button>
@@ -320,7 +320,7 @@
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BXe-iC-had">
                                                 <rect key="frame" x="104" y="793" width="206" height="40"/>
-                                                <color key="backgroundColor" red="0.8392156959" green="0.33725491169999999" blue="0.2235293984" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" red="0.87450981139999995" green="0.40000003579999999" blue="0.40000003579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Confirm">
@@ -336,7 +336,6 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="fB7-KN-jBr" firstAttribute="top" secondItem="61y-zw-Qui" secondAttribute="bottom" constant="25" id="21j-12-a4t"/>
                                             <constraint firstItem="5mV-6B-dbF" firstAttribute="height" secondItem="I0V-Rs-w9u" secondAttribute="height" id="2QW-fw-7Tr"/>
@@ -425,7 +424,7 @@
                         <outlet property="nameTextField" destination="I0V-Rs-w9u" id="GFF-Vu-QeJ"/>
                         <outlet property="passwordTextField" destination="stb-kq-F77" id="0r8-wb-f3n"/>
                         <outlet property="phoneTextField" destination="BPA-le-CfN" id="uHe-XH-p9y"/>
-                        <outlet property="view2" destination="Ukk-qN-Ybn" id="k6z-jx-Pda"/>
+                        <outlet property="viewOfContents" destination="Ukk-qN-Ybn" id="k6z-jx-Pda"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oQY-ra-t23" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -472,10 +471,14 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="YuP-4w-S4z">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="0.8392156959" green="0.33725491169999999" blue="0.2235293984" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.87450981139999995" green="0.40000003579999999" blue="0.40000003579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
                             <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="30"/>
-                            <color key="textColor" red="0.8392156959" green="0.33725491169999999" blue="0.2235293984" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>

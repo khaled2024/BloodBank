@@ -13,16 +13,21 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var createBtn: UIButton!
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var helpBtn: UIButton!
+    //MARK: - lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+       
     }
+    override func viewWillAppear(_ animated: Bool) {
+    }
+    
     
 //MARK: - Actions
     @IBAction func CreateBtnTapped(_ sender: UIButton) {
         
     }
     @IBAction func LoginBtnTapped(_ sender: UIButton) {
-       
+        
     }
     @IBAction func HelpBtnTapped(_ sender: UIButton) {
         

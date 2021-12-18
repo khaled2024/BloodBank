@@ -23,6 +23,7 @@
 		EAC252E7276A34BF0033F96F /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC252E6276A34BF0033F96F /* OnboardingSlide.swift */; };
 		EAC252E9276A37BC0033F96F /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC252E8276A37BC0033F96F /* OnboardingCollectionViewCell.swift */; };
 		EAC252EC276A3A4C0033F96F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC252EB276A3A4C0033F96F /* Constants.swift */; };
+		EAEFA13D276D48BE00263BC7 /* UserCustomBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEFA13C276D48BE00263BC7 /* UserCustomBtn.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		EAC252E6276A34BF0033F96F /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		EAC252E8276A37BC0033F96F /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		EAC252EB276A3A4C0033F96F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EAEFA13C276D48BE00263BC7 /* UserCustomBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCustomBtn.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				EAC252E4276A335B0033F96F /* UiView+Extension.swift */,
+				EAEFA13C276D48BE00263BC7 /* UserCustomBtn.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				EAC252C7276A26F00033F96F /* AppDelegate.swift in Sources */,
 				EAC252DF276A2F250033F96F /* OnboardingViewController.swift in Sources */,
 				EA99AAFD276CCF540083F0D1 /* HomeViewController.swift in Sources */,
+				EAEFA13D276D48BE00263BC7 /* UserCustomBtn.swift in Sources */,
 				EAC252E5276A335B0033F96F /* UiView+Extension.swift in Sources */,
 				EAAD8337276D12C800381854 /* DataPicker.swift in Sources */,
 				EAC252EC276A3A4C0033F96F /* Constants.swift in Sources */,
@@ -474,7 +478,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3TWF5CMBRA;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BloodBank/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -503,7 +507,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3TWF5CMBRA;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BloodBank/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

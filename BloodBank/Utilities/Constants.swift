@@ -22,3 +22,8 @@ struct SlidesArray{
     static let description3 = "The voluntary and altruistic basis of blood donation is both precious and essential to our system of collection."
     
 }
+struct Arrays{
+    static let arrayOfBloodType = ["","A+","A-","B+","B-","AB+","AB-","O+","O-","OH+","Dont-Know"]
+    static let arrayOfGender = ["","Male","Female"]
+}
+

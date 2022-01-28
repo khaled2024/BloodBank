@@ -14,6 +14,7 @@ class OnboardingViewController: UIViewController {
     @IBOutlet weak var NextBtn: UIButton!
     @IBOutlet weak var CollectionView: UICollectionView!
     //MARK: - variables
+    private let storageManager = StorageManager()
     var SlideArray: [OnboardingSlide] = []
     var currentPage = 0 {
         didSet{
@@ -28,17 +29,22 @@ class OnboardingViewController: UIViewController {
     //MARK: - func lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateFlag()
+        setUp()
+        PageController.numberOfPages = SlideArray.count
+    }
+    //MARK: - private functions
+    private func setUp(){
         CollectionView.delegate = self
         CollectionView.dataSource = self
         SlideArray = [
             OnboardingSlide(title: SlidesArray.title1, description:          SlidesArray.description1, Image: UIImage(named: "1")!),
             OnboardingSlide(title: SlidesArray.title2, description: SlidesArray.description2, Image: UIImage(named: "2")!),
             OnboardingSlide(title: SlidesArray.title3, description: SlidesArray.description3, Image: UIImage(named: "3")!)]
-        PageController.numberOfPages = SlideArray.count
     }
-    //MARK: - private functions
-    
-    
+    private func updateFlag(){
+        storageManager.setOnboardingSeen()
+    }
     //MARK: - Actions
     @IBAction func NextBtnTapped(_ sender: UIButton) {
         if currentPage == SlideArray.count - 1 {

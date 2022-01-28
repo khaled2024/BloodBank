@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2E1C66EBD77E52FD724CAF41 /* Pods_BloodBank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB8F4C3B3A310575AD50AC30 /* Pods_BloodBank.framework */; };
+		EA7856E6276E15AC0069B3E4 /* UserCustomTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7856E5276E15AC0069B3E4 /* UserCustomTF.swift */; };
+		EA7856E9276E182E0069B3E4 /* UserGradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7856E8276E182E0069B3E4 /* UserGradientBackground.swift */; };
 		EA99AAFD276CCF540083F0D1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA99AAFC276CCF540083F0D1 /* HomeViewController.swift */; };
 		EAAD8337276D12C800381854 /* DataPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAD8336276D12C700381854 /* DataPicker.swift */; };
 		EABDBFCA276CE69F00738EA3 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABDBFC9276CE69F00738EA3 /* RegisterViewController.swift */; };
@@ -23,6 +25,9 @@
 		EAC252E7276A34BF0033F96F /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC252E6276A34BF0033F96F /* OnboardingSlide.swift */; };
 		EAC252E9276A37BC0033F96F /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC252E8276A37BC0033F96F /* OnboardingCollectionViewCell.swift */; };
 		EAC252EC276A3A4C0033F96F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC252EB276A3A4C0033F96F /* Constants.swift */; };
+		EACC012C27A41E4F00FFB92B /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC012B27A41E4F00FFB92B /* LoadingViewController.swift */; };
+		EACC012F27A4275700FFB92B /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC012E27A4275700FFB92B /* NavigationManager.swift */; };
+		EACC013127A42C4D00FFB92B /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC013027A42C4D00FFB92B /* StorageManager.swift */; };
 		EAEFA13D276D48BE00263BC7 /* UserCustomBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEFA13C276D48BE00263BC7 /* UserCustomBtn.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +35,8 @@
 		36C4F17C7D79E124463C5D81 /* Pods-BloodBank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BloodBank.debug.xcconfig"; path = "Target Support Files/Pods-BloodBank/Pods-BloodBank.debug.xcconfig"; sourceTree = "<group>"; };
 		D4BCE38A5AD392A36F890799 /* Pods-BloodBank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BloodBank.release.xcconfig"; path = "Target Support Files/Pods-BloodBank/Pods-BloodBank.release.xcconfig"; sourceTree = "<group>"; };
 		DB8F4C3B3A310575AD50AC30 /* Pods_BloodBank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BloodBank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA7856E5276E15AC0069B3E4 /* UserCustomTF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCustomTF.swift; sourceTree = "<group>"; };
+		EA7856E8276E182E0069B3E4 /* UserGradientBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGradientBackground.swift; sourceTree = "<group>"; };
 		EA99AAFC276CCF540083F0D1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EAAD8336276D12C700381854 /* DataPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPicker.swift; sourceTree = "<group>"; };
 		EABDBFC9276CE69F00738EA3 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +54,9 @@
 		EAC252E6276A34BF0033F96F /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		EAC252E8276A37BC0033F96F /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		EAC252EB276A3A4C0033F96F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EACC012B27A41E4F00FFB92B /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		EACC012E27A4275700FFB92B /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
+		EACC013027A42C4D00FFB92B /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		EAEFA13C276D48BE00263BC7 /* UserCustomBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCustomBtn.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,6 +87,16 @@
 				D4BCE38A5AD392A36F890799 /* Pods-BloodBank.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		EA7856E7276E16D30069B3E4 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				EAEFA13C276D48BE00263BC7 /* UserCustomBtn.swift */,
+				EA7856E5276E15AC0069B3E4 /* UserCustomTF.swift */,
+				EA7856E8276E182E0069B3E4 /* UserGradientBackground.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		EABDBFCF276CE98900738EA3 /* InterfaceViewControllers */ = {
@@ -113,8 +133,10 @@
 			children = (
 				EAC252C6276A26F00033F96F /* AppDelegate.swift */,
 				EAC252C8276A26F00033F96F /* SceneDelegate.swift */,
+				EACC012D27A4272D00FFB92B /* Service */,
 				EAC252EA276A3A2B0033F96F /* Utilities */,
 				EAC252E3276A33320033F96F /* Extensions */,
+				EA7856E7276E16D30069B3E4 /* Helper */,
 				EAC252DA276A2E9F0033F96F /* Model */,
 				EAC252DB276A2EAA0033F96F /* View */,
 				EAC252DC276A2EB40033F96F /* Controllers */,
@@ -145,6 +167,7 @@
 		EAC252DC276A2EB40033F96F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				EACC012B27A41E4F00FFB92B /* LoadingViewController.swift */,
 				EAC252DD276A2EE80033F96F /* OnboardingViewController */,
 				EABDBFCF276CE98900738EA3 /* InterfaceViewControllers */,
 			);
@@ -188,7 +211,6 @@
 			isa = PBXGroup;
 			children = (
 				EAC252E4276A335B0033F96F /* UiView+Extension.swift */,
-				EAEFA13C276D48BE00263BC7 /* UserCustomBtn.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -199,6 +221,15 @@
 				EAC252EB276A3A4C0033F96F /* Constants.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		EACC012D27A4272D00FFB92B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				EACC012E27A4275700FFB92B /* NavigationManager.swift */,
+				EACC013027A42C4D00FFB92B /* StorageManager.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,7 +348,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EABDBFCE276CE6B500738EA3 /* HelpViewController.swift in Sources */,
+				EA7856E6276E15AC0069B3E4 /* UserCustomTF.swift in Sources */,
 				EABDBFCA276CE69F00738EA3 /* RegisterViewController.swift in Sources */,
+				EACC013127A42C4D00FFB92B /* StorageManager.swift in Sources */,
+				EACC012C27A41E4F00FFB92B /* LoadingViewController.swift in Sources */,
 				EAC252E7276A34BF0033F96F /* OnboardingSlide.swift in Sources */,
 				EAC252C7276A26F00033F96F /* AppDelegate.swift in Sources */,
 				EAC252DF276A2F250033F96F /* OnboardingViewController.swift in Sources */,
@@ -325,6 +359,8 @@
 				EAEFA13D276D48BE00263BC7 /* UserCustomBtn.swift in Sources */,
 				EAC252E5276A335B0033F96F /* UiView+Extension.swift in Sources */,
 				EAAD8337276D12C800381854 /* DataPicker.swift in Sources */,
+				EACC012F27A4275700FFB92B /* NavigationManager.swift in Sources */,
+				EA7856E9276E182E0069B3E4 /* UserGradientBackground.swift in Sources */,
 				EAC252EC276A3A4C0033F96F /* Constants.swift in Sources */,
 				EAC252C9276A26F00033F96F /* SceneDelegate.swift in Sources */,
 				EABDBFCC276CE6A900738EA3 /* LoginViewController.swift in Sources */,

@@ -8,7 +8,7 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    
     //MARK: - outlets
     @IBOutlet weak var createBtn: UIButton!
     @IBOutlet weak var loginBtn: UIButton!
@@ -16,13 +16,11 @@ class HomeViewController: UIViewController {
     //MARK: - lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-       
     }
     override func viewWillAppear(_ animated: Bool) {
     }
     
-    
-//MARK: - Actions
+    //MARK: - Actions
     @IBAction func CreateBtnTapped(_ sender: UIButton) {
         
     }

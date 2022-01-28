@@ -8,22 +8,36 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
+    //MARK: - outlets
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var loginBtn: UIButton!
+    
+    //MARK: - Variables
+    var gradientBackground = UserGradientBackground()
+    var customTF = UserCustomTF()
+    var customBtn = UserCustomBtn()
+    //MARK: - lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        customBtn.confirmBtnNotSelected(Btn: loginBtn)
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+       setUpDesign()
+    }
+    //MARK: -  functions
+   
+    private func setUpDesign(){
+        customTF.setUpTextField(textField: emailTextField, nameTextField: "Enter Your Email")
+        customTF.setUpTextField(textField: passwordTextField, nameTextField: "Enter Your Password")
+        gradientBackground.setGradientBackground(colorTop: #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1), colorBottom: #colorLiteral(red: 1, green: 0.5385724902, blue: 0.5328875184, alpha: 1), view: view)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    //MARK: - Actions
+    @IBAction func loginBtnTapped(_ sender: UIButton) {
+        print("Login succesully")
+        customBtn.toggleForBtn(Btn: loginBtn)
     }
-    */
-
+    
 }

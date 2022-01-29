@@ -18,6 +18,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var bloodTypeTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
+    @IBOutlet weak var diseaseTextField: UITextField!
     @IBOutlet weak var genderTextField: UITextField!
     @IBOutlet weak var ageTextField: UITextField!
     @IBOutlet weak var governmentTextField: UITextField!
@@ -37,28 +38,19 @@ class RegisterViewController: UIViewController {
     private var arrayOfcity: [City] = []
     private var GovernmentIndex = 0
     
+    var customBtn = UserCustomBtn()
+    var customTF = UserCustomTF()
+    var gradientBackground = UserGradientBackground()
+
+    
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpData()
         setUpPicker()
     }
-    
     override func viewWillAppear(_ animated: Bool) {
-        setGradientBackground()
-        setGradientBackground2()
-        UserCustomBtn.shared().confirmBtnNotSelected(Btn: ConfirmBtn)
-        setUpTextField(textField: emailTextField, nameTextField: "Enter Your Email")
-        setUpTextField(textField: nameTextField, nameTextField: "Enter Your Name")
-        setUpTextField(textField: IDTextField, nameTextField: "Enter Your National ID")
-        setUpTextField(textField: phoneTextField, nameTextField: "Enter Your Phone")
-        setUpTextField(textField: bloodTypeTextField, nameTextField: "Enter Your Blood Type")
-        setUpTextField(textField: passwordTextField, nameTextField: "Enter Your Password")
-        setUpTextField(textField: confirmPasswordTextField, nameTextField: "Confirm Your Password")
-        setUpTextField(textField: genderTextField, nameTextField: "Enter Your Gender")
-        setUpTextField(textField: ageTextField, nameTextField: "Enter Your Age")
-        setUpTextField(textField: governmentTextField, nameTextField: "Enter Your Government")
-        setUpTextField(textField: cityTextField, nameTextField: "Enter Your City")
+        setUpDesign()
     }
     
     //MARK: - Private functions
@@ -96,50 +88,31 @@ class RegisterViewController: UIViewController {
         
         self.arrayOfgover = [garpia,cairo]
     }
-    
-    private func setGradientBackground() {
-        let colorTop =  #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1).cgColor
-        let colorBottom = #colorLiteral(red: 1, green: 0.5385724902, blue: 0.5328875184, alpha: 1).cgColor
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [colorTop, colorBottom]
-        gradientLayer.locations = [0.0, 1.0]
-        gradientLayer.frame = self.view.bounds
-        self.view.layer.insertSublayer(gradientLayer, at:0)
-    }
-    private func setGradientBackground2() {
-        let colorTop = #colorLiteral(red: 0.9669746757, green: 0.3849074841, blue: 0.4152426124, alpha: 1).cgColor
-        let colorBottom = #colorLiteral(red: 1, green: 0.5385724902, blue: 0.5328875184, alpha: 1).cgColor
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [colorTop, colorBottom]
-        gradientLayer.locations = [0.0, 1.0]
-        gradientLayer.frame = self.viewOfContents.bounds
-        self.viewOfContents.layer.insertSublayer(gradientLayer, at:0)
-    }
-    private func setUpTextField(textField: UITextField , nameTextField: String){
-        self.textFieldBorder(textField: textField, nameeditText: nameTextField)
-        self.setupPadding(for: textField)
-    }
-    private func textFieldBorder(textField: UITextField , nameeditText: String){
-        textField.layer.borderColor = #colorLiteral(red: 0.8716132045, green: 0.8825858235, blue: 0.8823928237, alpha: 1)
-        textField.layer.cornerRadius = textField.frame.height / 2
-        textField.layer.borderWidth = 1
-        textField.attributedPlaceholder = NSAttributedString(
-            string: nameeditText,
-            attributes: [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)]
-        )
-    }
-    private func setupPadding(for textField: UITextField){
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: 0))
-        textField.leftView = paddingView
-        textField.leftViewMode = .always
-        textField.rightView = paddingView
-        textField.rightViewMode = .always
+    private func setUpDesign(){
+        gradientBackground.setGradientBackground(colorTop: #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1), colorBottom: #colorLiteral(red: 1, green: 0.5385724902, blue: 0.5328875184, alpha: 1), view: view)
+        
+        gradientBackground.setGradientBackground(colorTop: #colorLiteral(red: 0.9669746757, green: 0.3849074841, blue: 0.4152426124, alpha: 1), colorBottom: #colorLiteral(red: 1, green: 0.5385724902, blue: 0.5328875184, alpha: 1), view: viewOfContents)
+        
+        customBtn.confirmBtnNotSelected(Btn: ConfirmBtn)
+        customTF.setUpTextField(textField: emailTextField, nameTextField: "Enter Your Email")
+        customTF.setUpTextField(textField: nameTextField, nameTextField: "Enter Your Name")
+        customTF.setUpTextField(textField: IDTextField, nameTextField: "Enter Your National ID")
+        customTF.setUpTextField(textField: phoneTextField, nameTextField: "Enter Your Phone")
+        customTF.setUpTextField(textField: bloodTypeTextField, nameTextField: "Enter Your Blood Type")
+        customTF.setUpTextField(textField: passwordTextField, nameTextField: "Enter Your Password")
+        customTF.setUpTextField(textField: confirmPasswordTextField, nameTextField: "Confirm Your Password")
+        customTF.setUpTextField(textField: diseaseTextField, nameTextField: "Enter Your disease")
+        customTF.setUpTextField(textField: genderTextField, nameTextField: "Enter Your Gender")
+        customTF.setUpTextField(textField: ageTextField, nameTextField: "Enter Your Age")
+        customTF.setUpTextField(textField: governmentTextField, nameTextField: "Enter Your Government")
+        customTF.setUpTextField(textField: cityTextField, nameTextField: "Enter Your City")
     }
     //MARK: - Actions
     @IBAction func confirmBtnTapped(_ sender: UIButton) {
         UserCustomBtn.shared().toggleForBtn(Btn: ConfirmBtn)
     }
 }
+
 //MARK: - UIPickerViewDelegate,UIPickerViewDataSource
 extension RegisterViewController: UIPickerViewDelegate,UIPickerViewDataSource{
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

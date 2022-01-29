@@ -41,7 +41,7 @@ class RegisterViewController: UIViewController {
     var customBtn = UserCustomBtn()
     var customTF = UserCustomTF()
     var gradientBackground = UserGradientBackground()
-
+    
     
     //MARK: - LifeCycle
     override func viewDidLoad() {
@@ -107,11 +107,43 @@ class RegisterViewController: UIViewController {
         customTF.setUpTextField(textField: governmentTextField, nameTextField: "Enter Your Government")
         customTF.setUpTextField(textField: cityTextField, nameTextField: "Enter Your City")
     }
+    private func checkPassword()->Bool{
+        if let password = passwordTextField.text , !password.isEmpty , let confirmPassword = confirmPasswordTextField.text , !confirmPassword.isEmpty , password == confirmPassword{
+            return true
+        }else{
+            return false
+        }
+    }
+    private func checkTextFields()-> Bool{
+        if let email = emailTextField.text , !email.isEmpty , let name = nameTextField.text , !name.isEmpty , let ID = IDTextField.text , !ID.isEmpty , let phone = phoneTextField.text , !phone.isEmpty , let bloodType = bloodTypeTextField.text , !bloodType.isEmpty, let password = passwordTextField.text , !password.isEmpty , let confirmPassword = confirmPasswordTextField.text , !confirmPassword.isEmpty , let disease = diseaseTextField.text , !disease.isEmpty , let gender = genderTextField.text , !gender.isEmpty , let age = ageTextField.text , !age.isEmpty , let gov = governmentTextField.text , !gov.isEmpty , let city = cityTextField.text , !city.isEmpty  {
+            
+            return true
+        }else{
+            return false
+        }
+    }
+    private func goToLoginScreen(){
+        let loginScreen = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")as! LoginViewController
+        navigationController?.pushViewController(loginScreen, animated: true)
+    }
     //MARK: - Actions
     @IBAction func confirmBtnTapped(_ sender: UIButton) {
-        UserCustomBtn.shared().toggleForBtn(Btn: ConfirmBtn)
+        if checkTextFields() {
+        }else{
+            self.showAlert(title: "Sorry", message: "Please fill the all fields")
+        }
+        if checkPassword(){
+            customBtn.toggleForBtn(Btn: self.ConfirmBtn)
+            DispatchQueue.main.asyncAfter(deadline: .now()+2) {
+                self.goToLoginScreen()
+                self.showAlert(title: "congratulations", message: "Your Account Created Succesfully")
+            }
+        }else{
+            self.showAlert(title: "Sorry", message: "Please Check your password")
+        }
     }
 }
+
 
 //MARK: - UIPickerViewDelegate,UIPickerViewDataSource
 extension RegisterViewController: UIPickerViewDelegate,UIPickerViewDataSource{

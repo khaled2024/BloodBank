@@ -23,9 +23,9 @@ class LoginViewController: UIViewController {
         customBtn.confirmBtnNotSelected(Btn: loginBtn)
     }
     override func viewWillAppear(_ animated: Bool) {
-       setUpDesign()
+        setUpDesign()
     }
-    //MARK: -  functions
+    //MARK: -  private functions
     private func setUpDesign(){
         customTF.setUpTextField(textField: emailTextField, nameTextField: "Enter Your Email")
         customTF.setUpTextField(textField: passwordTextField, nameTextField: "Enter Your Password")
@@ -37,15 +37,36 @@ class LoginViewController: UIViewController {
             window.rootViewController = tabBarController
             UIView.transition(with: window, duration: 0.7, options: .transitionFlipFromRight, animations: nil, completion: nil)
         }
-        
     }
     
+    private func checkTextFields()-> Bool{
+        if let email = emailTextField.text , !email.isEmpty , let password = passwordTextField.text , !password.isEmpty{
+            return true
+        }else{
+            return false
+        }
+    }
+    private func goToRegisterScreen(){
+        let registerScreen = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RegisterViewController")as! RegisterViewController
+        navigationController?.pushViewController(registerScreen, animated: true)
+        
+    }
     //MARK: - Actions
     @IBAction func loginBtnTapped(_ sender: UIButton) {
         print("Login succesully")
-        customBtn.toggleForBtn(Btn: loginBtn)
-        
-//        goToMainScreen()
+        if checkTextFields(){
+            customBtn.toggleForBtn(Btn: self.loginBtn)
+            DispatchQueue.main.asyncAfter(deadline: .now()+2) {
+                self.goToMainScreen()
+            }
+        }else{
+            self.showAlert(title: "Sorry", message: "Please fill the all fields")
+        }
     }
     
+    @IBAction func newAccountBtnTapped(_ sender: UIButton) {
+        self.goToRegisterScreen()
+    }
 }
+
+

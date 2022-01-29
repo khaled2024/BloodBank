@@ -605,7 +605,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Your Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AWn-Rq-gka">
-                                <rect key="frame" x="19" y="210" width="376" height="43"/>
+                                <rect key="frame" x="19" y="158" width="376" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="376" id="CcS-4v-VS4"/>
                                     <constraint firstAttribute="height" constant="43" id="ljf-Cq-tAB"/>
@@ -615,13 +615,13 @@
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Your Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ENV-V2-991">
-                                <rect key="frame" x="19" y="292" width="376" height="43"/>
+                                <rect key="frame" x="19" y="240" width="376" height="43"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yRy-v8-nBy">
-                                <rect key="frame" x="104" y="424" width="206" height="43"/>
+                                <rect key="frame" x="104" y="372" width="206" height="43"/>
                                 <color key="backgroundColor" red="0.87450981139999995" green="0.40000003579999999" blue="0.40000003579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="206" id="bBz-h9-vFo"/>
@@ -642,6 +642,17 @@
                                     <action selector="loginBtnTapped:" destination="70v-Y2-388" eventType="touchUpInside" id="DbQ-6d-dmv"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogZ-la-Pml">
+                                <rect key="frame" x="130.5" y="435" width="153" height="34"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="New Here..! SignUp">
+                                    <fontDescription key="titleFontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="newAccountBtnTapped:" destination="70v-Y2-388" eventType="touchUpInside" id="WCW-9b-kRm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="u4D-ba-aUD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -651,13 +662,15 @@
                             <constraint firstItem="ENV-V2-991" firstAttribute="top" secondItem="AWn-Rq-gka" secondAttribute="bottom" constant="39" id="4pz-RU-I8N"/>
                             <constraint firstItem="yRy-v8-nBy" firstAttribute="centerX" secondItem="ENV-V2-991" secondAttribute="centerX" id="564-Bu-eIn"/>
                             <constraint firstItem="AWn-Rq-gka" firstAttribute="centerX" secondItem="u4D-ba-aUD" secondAttribute="centerX" id="7HE-5P-5ni"/>
+                            <constraint firstItem="ogZ-la-Pml" firstAttribute="centerX" secondItem="yRy-v8-nBy" secondAttribute="centerX" id="Ea1-mJ-kta"/>
                             <constraint firstItem="ENV-V2-991" firstAttribute="height" secondItem="AWn-Rq-gka" secondAttribute="height" id="JoJ-Dr-RN6"/>
                             <constraint firstItem="yRy-v8-nBy" firstAttribute="top" secondItem="ENV-V2-991" secondAttribute="bottom" constant="89" id="WcV-LH-nTW"/>
                             <constraint firstItem="ENV-V2-991" firstAttribute="centerX" secondItem="AWn-Rq-gka" secondAttribute="centerX" id="ZCf-mA-h9C"/>
+                            <constraint firstItem="ogZ-la-Pml" firstAttribute="top" secondItem="yRy-v8-nBy" secondAttribute="bottom" constant="20" id="d8b-HJ-Vn7"/>
                             <constraint firstItem="ENV-V2-991" firstAttribute="width" secondItem="AWn-Rq-gka" secondAttribute="width" id="wy9-tL-zWj"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Login" largeTitleDisplayMode="always" id="HCl-Jn-fnK"/>
+                    <navigationItem key="navigationItem" title="Login" id="HCl-Jn-fnK"/>
                     <connections>
                         <outlet property="emailTextField" destination="AWn-Rq-gka" id="rwX-RI-IuB"/>
                         <outlet property="loginBtn" destination="yRy-v8-nBy" id="HDk-oV-pOF"/>

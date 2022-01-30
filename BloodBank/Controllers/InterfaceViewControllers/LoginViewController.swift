@@ -56,7 +56,7 @@ class LoginViewController: UIViewController {
         print("Login succesully")
         if checkTextFields(){
             customBtn.toggleForBtn(Btn: self.loginBtn)
-            DispatchQueue.main.asyncAfter(deadline: .now()+2) {
+            DispatchQueue.main.asyncAfter(deadline: .now()+1.5) {
                 self.goToMainScreen()
             }
         }else{

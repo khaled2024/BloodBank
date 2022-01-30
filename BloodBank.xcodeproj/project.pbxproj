@@ -28,6 +28,7 @@
 		EA09E73727A4C935009A0ED0 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA09E72427A4C935009A0ED0 /* Poppins-SemiBold.ttf */; };
 		EA09E73827A4C935009A0ED0 /* Poppins-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA09E72527A4C935009A0ED0 /* Poppins-Italic.ttf */; };
 		EA09E73927A4C935009A0ED0 /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA09E72627A4C935009A0ED0 /* Poppins-MediumItalic.ttf */; };
+		EA8676D027A6C70A00E95283 /* HamburgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8676CF27A6C70A00E95283 /* HamburgerViewController.swift */; };
 		EA99AAFD276CCF540083F0D1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA99AAFC276CCF540083F0D1 /* HomeViewController.swift */; };
 		EAAD8337276D12C800381854 /* DataPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAD8336276D12C700381854 /* DataPicker.swift */; };
 		EAB1C98F27A54DEE006BB209 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB1C98E27A54DEE006BB209 /* TabBarController.swift */; };
@@ -51,7 +52,7 @@
 		EACC013C27A43A5A00FFB92B /* UserGradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC013927A43A5A00FFB92B /* UserGradientBackground.swift */; };
 		EACC013D27A43A5A00FFB92B /* UserCustomBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC013A27A43A5A00FFB92B /* UserCustomBtn.swift */; };
 		EACC013E27A43A5A00FFB92B /* UserCustomTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC013B27A43A5A00FFB92B /* UserCustomTF.swift */; };
-		EAEF17AA27A48BF80002FFA5 /* hello1.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEF17A927A48BF80002FFA5 /* hello1.swift */; };
+		EAEF17AA27A48BF80002FFA5 /* LogOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEF17A927A48BF80002FFA5 /* LogOutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		EA09E72427A4C935009A0ED0 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		EA09E72527A4C935009A0ED0 /* Poppins-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Italic.ttf"; sourceTree = "<group>"; };
 		EA09E72627A4C935009A0ED0 /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-MediumItalic.ttf"; sourceTree = "<group>"; };
+		EA8676CF27A6C70A00E95283 /* HamburgerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerViewController.swift; sourceTree = "<group>"; };
 		EA99AAFC276CCF540083F0D1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EAAD8336276D12C700381854 /* DataPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPicker.swift; sourceTree = "<group>"; };
 		EAB1C98E27A54DEE006BB209 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -103,7 +105,7 @@
 		EACC013927A43A5A00FFB92B /* UserGradientBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserGradientBackground.swift; sourceTree = "<group>"; };
 		EACC013A27A43A5A00FFB92B /* UserCustomBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCustomBtn.swift; sourceTree = "<group>"; };
 		EACC013B27A43A5A00FFB92B /* UserCustomTF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCustomTF.swift; sourceTree = "<group>"; };
-		EAEF17A927A48BF80002FFA5 /* hello1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hello1.swift; sourceTree = "<group>"; };
+		EAEF17A927A48BF80002FFA5 /* LogOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -331,7 +333,8 @@
 			isa = PBXGroup;
 			children = (
 				EA064CAD27A4750600A06257 /* MainViewController.swift */,
-				EAEF17A927A48BF80002FFA5 /* hello1.swift */,
+				EA8676CF27A6C70A00E95283 /* HamburgerViewController.swift */,
+				EAEF17A927A48BF80002FFA5 /* LogOutViewController.swift */,
 			);
 			path = FirstScreens;
 			sourceTree = "<group>";
@@ -491,7 +494,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAEF17AA27A48BF80002FFA5 /* hello1.swift in Sources */,
+				EAEF17AA27A48BF80002FFA5 /* LogOutViewController.swift in Sources */,
 				EABDBFCE276CE6B500738EA3 /* HelpViewController.swift in Sources */,
 				EABDBFCA276CE69F00738EA3 /* RegisterViewController.swift in Sources */,
 				EACC013127A42C4D00FFB92B /* StorageManager.swift in Sources */,
@@ -501,6 +504,7 @@
 				EAC252E7276A34BF0033F96F /* OnboardingSlide.swift in Sources */,
 				EACC013D27A43A5A00FFB92B /* UserCustomBtn.swift in Sources */,
 				EAC252C7276A26F00033F96F /* AppDelegate.swift in Sources */,
+				EA8676D027A6C70A00E95283 /* HamburgerViewController.swift in Sources */,
 				EAC252DF276A2F250033F96F /* OnboardingViewController.swift in Sources */,
 				EA99AAFD276CCF540083F0D1 /* HomeViewController.swift in Sources */,
 				EAC252E5276A335B0033F96F /* UiView+Extension.swift in Sources */,
@@ -662,7 +666,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3TWF5CMBRA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BloodBank/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -691,7 +695,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3TWF5CMBRA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BloodBank/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

@@ -134,7 +134,7 @@ class RegisterViewController: UIViewController {
         }
         if checkPassword(){
             customBtn.toggleForBtn(Btn: self.ConfirmBtn)
-            DispatchQueue.main.asyncAfter(deadline: .now()+2) {
+            DispatchQueue.main.asyncAfter(deadline: .now()+1.5) {
                 self.goToLoginScreen()
                 self.showAlert(title: "congratulations", message: "Your Account Created Succesfully")
             }

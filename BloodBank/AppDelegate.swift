@@ -17,8 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // keyboard touch out side
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
+        
         // here when we wanna to reset the onboarding screen again
-//        storageManager.resetOnboardingSeen()
+        storageManager.resetOnboardingSeen()
         return true
     }
 
@@ -31,5 +32,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
         
     }
+//    func goTOHomeScreen(){
+//        let sb = UIStoryboard(name: "Main", bundle: nil)
+//        let homeNC = sb.instantiateViewController(withIdentifier: "HomeNC")
+//        let navController = UINavigationController(rootViewController: moviesVC)
+//        self.window?.rootViewController = navController
+//        
+//    }
+  
 
 }

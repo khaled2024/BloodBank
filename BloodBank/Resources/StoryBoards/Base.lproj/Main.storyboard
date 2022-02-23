@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bXm-B1-nm2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Nnq-2O-JZF">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
@@ -10,6 +10,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Almarai-Bold.ttf">
+            <string>Almarai-Bold</string>
+        </array>
+        <array key="Almarai-Regular.ttf">
+            <string>Almarai-Regular</string>
+        </array>
         <array key="Poppins-Regular.ttf">
             <string>Poppins-Regular</string>
         </array>
@@ -28,7 +34,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7NC-H4-XYl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1814" y="23"/>
+            <point key="canvasLocation" x="-2293" y="27"/>
         </scene>
         <!--Onboarding View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -143,7 +149,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1097" y="27"/>
+            <point key="canvasLocation" x="-1643" y="31"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="ulh-gb-IKo">
@@ -154,15 +160,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lkv-MM-JDZ">
-                                <rect key="frame" x="10" y="569.5" width="394" height="50"/>
+                                <rect key="frame" x="10" y="495.5" width="394" height="50"/>
                                 <color key="backgroundColor" red="0.87450981139999995" green="0.40000003579999999" blue="0.40000003579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="vkl-Iu-Wsk"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="CREATE ACCOUNT">
-                                    <fontDescription key="titleFontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="16"/>
+                                <buttonConfiguration key="configuration" style="plain" title="انشاء حساب جديد">
+                                    <fontDescription key="titleFontDescription" name="Almarai-Regular" family="Almarai" pointSize="19"/>
                                 </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -198,12 +204,12 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hRG-x2-aX0">
-                                <rect key="frame" x="10" y="644.5" width="394" height="50"/>
+                                <rect key="frame" x="10" y="555.5" width="394" height="50"/>
                                 <color key="backgroundColor" red="0.87450981139999995" green="0.40000003579999999" blue="0.40000003579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="LOG IN">
-                                    <fontDescription key="titleFontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="16"/>
+                                <buttonConfiguration key="configuration" style="plain" title="تسجيل الدخول">
+                                    <fontDescription key="titleFontDescription" name="Almarai-Regular" family="Almarai" pointSize="19"/>
                                 </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -227,11 +233,11 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oyr-ph-Mz3">
-                                <rect key="frame" x="96" y="714.5" width="222" height="32.5"/>
+                                <rect key="frame" x="29.5" y="625.5" width="355.5" height="31"/>
                                 <color key="tintColor" name="labelColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Help with Sign Up or Log In">
-                                    <fontDescription key="titleFontDescription" name="Kefa-Regular" family="Kefa" pointSize="16"/>
+                                <buttonConfiguration key="configuration" style="plain" title="المساعده ف كيفيه تسجيل الدخول وانشاء حساب جديد!">
+                                    <fontDescription key="titleFontDescription" name="Almarai-Regular" family="Almarai" pointSize="15"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="HelpBtnTapped:" destination="tiN-oy-XPs" eventType="touchUpInside" id="alB-Ck-dvN"/>
@@ -243,7 +249,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="hRG-x2-aX0" firstAttribute="width" secondItem="lkv-MM-JDZ" secondAttribute="width" id="2ad-Rf-tUi"/>
-                            <constraint firstItem="hRG-x2-aX0" firstAttribute="top" secondItem="lkv-MM-JDZ" secondAttribute="bottom" constant="25" id="6Mw-Mq-Ddx"/>
+                            <constraint firstItem="hRG-x2-aX0" firstAttribute="top" secondItem="lkv-MM-JDZ" secondAttribute="bottom" constant="10" id="6Mw-Mq-Ddx"/>
                             <constraint firstItem="lkv-MM-JDZ" firstAttribute="leading" secondItem="P4J-dz-993" secondAttribute="leading" id="CCU-5y-lgY"/>
                             <constraint firstItem="hRG-x2-aX0" firstAttribute="centerX" secondItem="lkv-MM-JDZ" secondAttribute="centerX" id="D2C-FC-oPy"/>
                             <constraint firstItem="9Fs-wr-l5B" firstAttribute="top" secondItem="sVg-1J-lwv" secondAttribute="top" id="H6K-CU-ZHB"/>
@@ -254,12 +260,12 @@
                             <constraint firstItem="P4J-dz-993" firstAttribute="leading" secondItem="sVg-1J-lwv" secondAttribute="leading" constant="10" id="XSe-Of-pHR"/>
                             <constraint firstItem="Oyr-ph-Mz3" firstAttribute="centerX" secondItem="hRG-x2-aX0" secondAttribute="centerX" id="a5K-YL-tVB"/>
                             <constraint firstItem="P4J-dz-993" firstAttribute="top" secondItem="9Fs-wr-l5B" secondAttribute="bottom" multiplier="1.2" id="bk1-uB-A4g"/>
-                            <constraint firstItem="lkv-MM-JDZ" firstAttribute="top" secondItem="P4J-dz-993" secondAttribute="bottom" multiplier="1.25" id="eMu-o6-qYf"/>
+                            <constraint firstItem="lkv-MM-JDZ" firstAttribute="top" secondItem="P4J-dz-993" secondAttribute="bottom" constant="40" id="eMu-o6-qYf"/>
                             <constraint firstItem="P4J-dz-993" firstAttribute="centerX" secondItem="9Fs-wr-l5B" secondAttribute="centerX" id="xpe-Z7-CEx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="6O0-AR-6Pw">
-                        <barButtonItem key="backBarButtonItem" title="Home" id="72M-Tb-Z5o"/>
+                        <barButtonItem key="backBarButtonItem" title=" " id="GIA-eY-7wB"/>
                     </navigationItem>
                     <connections>
                         <outlet property="createBtn" destination="lkv-MM-JDZ" id="Ghn-84-YXq"/>
@@ -269,9 +275,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DQk-Wd-0DM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="374" y="27"/>
+            <point key="canvasLocation" x="296" y="31"/>
         </scene>
-        <!--Register-->
+        <!--حساب جديد-->
         <scene sceneID="2GS-oI-maO">
             <objects>
                 <viewController storyboardIdentifier="RegisterViewController" id="FRR-mG-eiX" customClass="RegisterViewController" customModule="BloodBank" customModuleProvider="target" sceneMemberID="viewController">
@@ -280,7 +286,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cGy-cl-WPC">
-                                <rect key="frame" x="0.0" y="140" width="414" height="960"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="1012"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ukk-qN-Ybn">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1021"/>
@@ -365,8 +371,8 @@
                                                 <color key="backgroundColor" red="0.87450981139999995" green="0.40000003579999999" blue="0.40000003579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Confirm">
-                                                    <fontDescription key="titleFontDescription" name="Poppins-Medium" family="Poppins" pointSize="23"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="تسجيل">
+                                                    <fontDescription key="titleFontDescription" name="Almarai-Regular" family="Almarai" pointSize="23"/>
                                                 </buttonConfiguration>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -455,7 +461,9 @@
                             <constraint firstItem="cGy-cl-WPC" firstAttribute="leading" secondItem="CE2-hS-aCQ" secondAttribute="leading" id="syp-Dc-kpI"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Register" largeTitleDisplayMode="always" id="kRv-jQ-dP1"/>
+                    <navigationItem key="navigationItem" title="حساب جديد" largeTitleDisplayMode="always" id="kRv-jQ-dP1">
+                        <barButtonItem key="backBarButtonItem" title=" " id="tID-nB-WPY"/>
+                    </navigationItem>
                     <size key="freeformSize" width="414" height="1100"/>
                     <connections>
                         <outlet property="ConfirmBtn" destination="BXe-iC-had" id="vtS-XH-kLf"/>
@@ -476,7 +484,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oQY-ra-t23" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="446" y="944"/>
+            <point key="canvasLocation" x="-396" y="942"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Imu-jA-g6b">
@@ -487,26 +495,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blood-donation" translatesAutoresizingMaskIntoConstraints="NO" id="phF-ev-Jyl">
-                                <rect key="frame" x="3146.5" y="84" width="130" height="130"/>
+                                <rect key="frame" x="142" y="84" width="130" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="LLw-qL-3nF"/>
                                     <constraint firstAttribute="width" constant="130" id="z9h-2j-cah"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zGw-he-y2H" userLabel="UserNameView">
-                                <rect key="frame" x="20" y="257" width="6383" height="50"/>
+                                <rect key="frame" x="20" y="257" width="374" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q10-I6-ep4">
-                                        <rect key="frame" x="1360.5" y="11" width="5017.5" height="28"/>
+                                        <rect key="frame" x="75" y="11" width="294" height="28"/>
                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                     </textField>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="SRb-2x-K0Y">
-                                        <rect key="frame" x="824.5" y="14" width="512" height="22.5"/>
+                                        <rect key="frame" x="21" y="14" width="30" height="22.5"/>
                                         <color key="tintColor" red="0.91764705882352937" green="0.42352941176470588" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bqU-pO-rno">
-                                        <rect key="frame" x="1351.5" y="5" width="1" height="40"/>
+                                        <rect key="frame" x="66" y="5" width="1" height="40"/>
                                         <color key="backgroundColor" systemColor="systemGray2Color"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="1" id="GQH-GQ-e70"/>
@@ -535,22 +543,22 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eX9-Ef-nu4" userLabel="EmailView">
-                                <rect key="frame" x="20" y="337" width="6383" height="50"/>
+                                <rect key="frame" x="20" y="337" width="374" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e9H-Zv-gix">
-                                        <rect key="frame" x="557" y="11" width="5017.5" height="28"/>
+                                        <rect key="frame" x="75" y="11" width="294" height="28"/>
                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ma-VM-2i3">
-                                        <rect key="frame" x="548" y="5" width="1" height="40"/>
+                                        <rect key="frame" x="66" y="5" width="1" height="40"/>
                                         <color key="backgroundColor" systemColor="systemGray2Color"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="1" id="xYf-pi-pMr"/>
                                         </constraints>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email" translatesAutoresizingMaskIntoConstraints="NO" id="xF9-Vk-AYN">
-                                        <rect key="frame" x="21" y="12.5" width="512" height="25"/>
+                                        <rect key="frame" x="21" y="12.5" width="30" height="25"/>
                                         <color key="tintColor" red="0.91625539219999996" green="0.42211445619999999" blue="0.4306929625" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </imageView>
                                 </subviews>
@@ -628,7 +636,7 @@
             </objects>
             <point key="canvasLocation" x="446" y="1748"/>
         </scene>
-        <!--Login-->
+        <!--تسجيل الدخول-->
         <scene sceneID="AsN-eH-An6">
             <objects>
                 <viewController storyboardIdentifier="LoginViewController" id="70v-Y2-388" customClass="LoginViewController" customModule="BloodBank" customModuleProvider="target" sceneMemberID="viewController">
@@ -644,7 +652,7 @@
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" smartDashesType="no"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Your Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ENV-V2-991">
                                 <rect key="frame" x="19" y="240" width="376" height="43"/>
@@ -661,8 +669,8 @@
                                 </constraints>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Login">
-                                    <fontDescription key="titleFontDescription" name="Poppins-Medium" family="Poppins" pointSize="23"/>
+                                <buttonConfiguration key="configuration" style="plain" title="تسجيل">
+                                    <fontDescription key="titleFontDescription" name="Almarai-Regular" family="Almarai" pointSize="23"/>
                                 </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -675,10 +683,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogZ-la-Pml">
-                                <rect key="frame" x="130.5" y="435" width="153" height="34"/>
+                                <rect key="frame" x="141.5" y="435" width="131.5" height="30"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="New Here..! SignUp">
-                                    <fontDescription key="titleFontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
+                                <buttonConfiguration key="configuration" style="plain" title="انشاء حساب جديد.!">
+                                    <fontDescription key="titleFontDescription" name="Almarai-Regular" family="Almarai" pointSize="14"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -702,7 +710,9 @@
                             <constraint firstItem="ENV-V2-991" firstAttribute="width" secondItem="AWn-Rq-gka" secondAttribute="width" id="wy9-tL-zWj"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Login" id="HCl-Jn-fnK"/>
+                    <navigationItem key="navigationItem" title="تسجيل الدخول" id="HCl-Jn-fnK">
+                        <barButtonItem key="backBarButtonItem" title=" " id="x1C-QM-gcW"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="emailTextField" destination="AWn-Rq-gka" id="rwX-RI-IuB"/>
                         <outlet property="loginBtn" destination="yRy-v8-nBy" id="HDk-oV-pOF"/>
@@ -713,6 +723,32 @@
             </objects>
             <point key="canvasLocation" x="1117" y="875"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qEL-w3-XXj">
+            <objects>
+                <navigationController storyboardIdentifier="HomeNC" modalTransitionStyle="flipHorizontal" modalPresentationStyle="fullScreen" id="Nnq-2O-JZF" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" restorationIdentifier="HomeNC" id="B4A-fo-M6b">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.87450981139999995" green="0.40000003579999999" blue="0.40000003579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="18"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="18"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="tiN-oy-XPs" kind="relationship" relationship="rootViewController" id="a5e-AE-AEi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mW7-YZ-Qb6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-636" y="23"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="oau-ax-Dyn">
             <objects>
@@ -720,22 +756,21 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ctD-MV-jYL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.87450981139999995" green="0.40000003579999999" blue="0.40000003579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <color key="barTintColor" red="0.87450981139999995" green="0.40000003579999999" blue="0.40000003579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.98039215690000003" green="0.97647058819999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="0.87450981139999995" green="0.40000003579999999" blue="0.40000003579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
                         <segue destination="C86-M6-gFR" kind="relationship" relationship="viewControllers" id="IDW-Tl-Jfb"/>
                         <segue destination="HCR-lt-2VA" kind="relationship" relationship="viewControllers" id="edN-hw-fZR"/>
-                        <segue destination="Qap-6k-moC" kind="relationship" relationship="viewControllers" id="uZB-wq-9bt"/>
                         <segue destination="MYC-Cx-pLG" kind="relationship" relationship="viewControllers" id="XQA-dy-MjD"/>
+                        <segue destination="Qap-6k-moC" kind="relationship" relationship="viewControllers" id="uZB-wq-9bt"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KiW-3G-mEb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1861" y="23"/>
         </scene>
-        <!--Help Me-->
+        <!--المساعده-->
         <scene sceneID="CZq-bi-7q3">
             <objects>
                 <viewController storyboardIdentifier="HelpViewController" id="CLc-5f-G1a" customClass="HelpViewController" customModule="BloodBank" customModuleProvider="target" sceneMemberID="viewController">
@@ -745,57 +780,34 @@
                         <viewLayoutGuide key="safeArea" id="zHd-RY-sNI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Help Me" largeTitleDisplayMode="always" id="UXA-bJ-3E5"/>
+                    <navigationItem key="navigationItem" title="المساعده" largeTitleDisplayMode="always" id="UXA-bJ-3E5">
+                        <barButtonItem key="backBarButtonItem" title=" " id="rqO-zJ-dTs"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="du2-LU-fXt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-264" y="875"/>
+            <point key="canvasLocation" x="296" y="875"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="3Jr-hy-SN3">
-            <objects>
-                <navigationController storyboardIdentifier="HomeNC" automaticallyAdjustsScrollViewInsets="NO" id="voR-i3-UgG" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="YuP-4w-S4z">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" red="0.87450981139999995" green="0.40000003579999999" blue="0.40000003579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
-                        <textAttributes key="largeTitleTextAttributes">
-                            <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="30"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="tiN-oy-XPs" kind="relationship" relationship="rootViewController" id="CeU-gw-Pw9"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qor-s2-uC0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-394" y="27"/>
-        </scene>
-        <!--Item-->
+        <!--المواعيد-->
         <scene sceneID="bzv-Qw-VPY">
             <objects>
-                <viewController id="vrJ-gj-VYR" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AppointmentMainViewController" id="vrJ-gj-VYR" customClass="AppointmentMainViewController" customModule="BloodBank" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XKF-Iv-iZf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Cvv-PY-EW5"/>
-                        <color key="backgroundColor" red="0.097592521249999994" green="0.27895297990000001" blue="0.43615845959999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.98039215690000003" green="0.97647058819999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="BZ9-8g-XHv"/>
-                    <navigationItem key="navigationItem" id="uaE-Qi-4YT"/>
+                    <tabBarItem key="tabBarItem" title="" id="BZ9-8g-XHv"/>
+                    <navigationItem key="navigationItem" title="المواعيد" id="uaE-Qi-4YT">
+                        <barButtonItem key="backBarButtonItem" title=" " id="RYP-RQ-bfQ"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Tm-XF-Zrm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3958" y="-179"/>
         </scene>
-        <!--Item-->
+        <!--المتبرع-->
         <scene sceneID="rN0-U4-fyg">
             <objects>
                 <viewController id="lUV-Vd-bAi" sceneMemberID="viewController">
@@ -803,33 +815,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="OCB-1k-Jzx"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <color key="backgroundColor" red="0.98039215690000003" green="0.97647058819999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="gDW-2n-rWl"/>
-                    <navigationItem key="navigationItem" id="7m6-oH-YGP"/>
+                    <navigationItem key="navigationItem" title="المتبرع" id="7m6-oH-YGP">
+                        <barButtonItem key="backBarButtonItem" title=" " id="uVf-op-X9R"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E7P-Yi-i97" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3958" y="1189"/>
+            <point key="canvasLocation" x="4064" y="1408"/>
         </scene>
-        <!--Item-->
+        <!--الموقع-->
         <scene sceneID="YDV-QR-1KA">
             <objects>
-                <viewController id="eVD-jg-f89" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" id="eVD-jg-f89" customClass="MapViewController" customModule="BloodBank" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ChP-xo-XrA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rGa-ai-YlB">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                            </mapView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6eE-iQ-EQr"/>
-                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                        <color key="backgroundColor" red="0.98039215690000003" green="0.97647058819999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="rGa-ai-YlB" firstAttribute="leading" secondItem="6eE-iQ-EQr" secondAttribute="leading" id="9nk-kZ-iwS"/>
+                            <constraint firstItem="6eE-iQ-EQr" firstAttribute="trailing" secondItem="rGa-ai-YlB" secondAttribute="trailing" id="Feg-OL-Ngt"/>
+                            <constraint firstItem="rGa-ai-YlB" firstAttribute="top" secondItem="6eE-iQ-EQr" secondAttribute="top" id="W01-mX-2HW"/>
+                            <constraint firstItem="rGa-ai-YlB" firstAttribute="bottom" secondItem="6eE-iQ-EQr" secondAttribute="bottom" id="fMk-y9-33S"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="1C2-kH-73B"/>
-                    <navigationItem key="navigationItem" id="yrL-FL-wup"/>
+                    <navigationItem key="navigationItem" title="الموقع" id="yrL-FL-wup">
+                        <barButtonItem key="backBarButtonItem" title=" " id="dPG-Zk-9N6"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="rGa-ai-YlB" id="3d6-eA-02y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sa2-O5-3Uv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3958" y="500"/>
+            <point key="canvasLocation" x="3957.971014492754" y="499.55357142857139"/>
         </scene>
-        <!--Home-->
+        <!--Main View Controller-->
         <scene sceneID="6Yx-52-9rE">
             <objects>
                 <viewController storyboardIdentifier="MainViewController" id="Ntc-Sy-jwF" customClass="MainViewController" customModule="BloodBank" customModuleProvider="target" sceneMemberID="viewController">
@@ -837,12 +867,309 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZSM-ar-e3q">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IeF-2E-BOq">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZSM-ar-e3q">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pE7-ei-AfT">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اهلا وسهلا" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KNj-Fc-L3O">
+                                                        <rect key="frame" x="168.5" y="10" width="77" height="18"/>
+                                                        <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="16"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="هنا اسم المتبرع بالدم" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23i-ZE-gfx">
+                                                        <rect key="frame" x="107" y="38" width="200" height="22.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="200" id="sw0-zs-eZZ"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="20"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ماذا تريد ان تفعل؟" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6x-Cn-Vfq">
+                                                        <rect key="frame" x="147.5" y="132" width="119" height="18"/>
+                                                        <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="16"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.87450981139999995" green="0.40000003579999999" blue="0.40000003579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstItem="KNj-Fc-L3O" firstAttribute="centerX" secondItem="pE7-ei-AfT" secondAttribute="centerX" id="0Ow-5V-IRD"/>
+                                                    <constraint firstItem="23i-ZE-gfx" firstAttribute="centerX" secondItem="KNj-Fc-L3O" secondAttribute="centerX" id="8NI-XM-wSX"/>
+                                                    <constraint firstItem="23i-ZE-gfx" firstAttribute="top" secondItem="KNj-Fc-L3O" secondAttribute="bottom" constant="10" id="Eje-jX-Bbs"/>
+                                                    <constraint firstItem="KNj-Fc-L3O" firstAttribute="top" secondItem="pE7-ei-AfT" secondAttribute="top" constant="10" id="Vtl-VW-mKJ"/>
+                                                    <constraint firstItem="S6x-Cn-Vfq" firstAttribute="centerX" secondItem="23i-ZE-gfx" secondAttribute="centerX" id="qmS-vJ-wQP"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SYW-Rr-wIt">
+                                                <rect key="frame" x="30" y="167" width="354" height="121"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FkS-bf-nTA">
+                                                        <rect key="frame" x="0.0" y="0.0" width="354" height="121"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
+                                                        <connections>
+                                                            <action selector="bookingAppintment:" destination="Ntc-Sy-jwF" eventType="touchUpInside" id="hvR-I1-3i4"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appointment" translatesAutoresizingMaskIntoConstraints="NO" id="gpP-I6-cBm">
+                                                        <rect key="frame" x="274" y="30.5" width="70" height="60"/>
+                                                        <color key="tintColor" red="0.8392156959" green="0.33725491169999999" blue="0.2235293984" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="60" id="oJj-op-Elg"/>
+                                                            <constraint firstAttribute="width" constant="70" id="sNo-57-mmz"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="احجز موعد للتبرع بالدم" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZJc-ub-jBW">
+                                                        <rect key="frame" x="20" y="30.5" width="137.5" height="17"/>
+                                                        <fontDescription key="fontDescription" name="Almarai-Bold" family="Almarai" pointSize="15"/>
+                                                        <color key="textColor" red="0.8392156959" green="0.33725491169999999" blue="0.2235293984" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="احجز موعد للتبرع بالدم لمساعده شخص ما ان احتاج" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGl-61-2ml">
+                                                        <rect key="frame" x="20" y="57.5" width="200" height="31.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="200" id="Lok-NU-MfX"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="14"/>
+                                                        <color key="textColor" red="0.87450981139999995" green="0.40000003579999999" blue="0.40000003579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.94901961089999998" green="0.74901962280000001" blue="0.74901962280000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstItem="FkS-bf-nTA" firstAttribute="leading" secondItem="SYW-Rr-wIt" secondAttribute="leading" id="Dzp-Li-qE6"/>
+                                                    <constraint firstItem="gpP-I6-cBm" firstAttribute="trailing" secondItem="FkS-bf-nTA" secondAttribute="trailing" constant="-10" id="EYV-x2-RvE"/>
+                                                    <constraint firstItem="bGl-61-2ml" firstAttribute="leading" secondItem="ZJc-ub-jBW" secondAttribute="leading" id="MjZ-OC-1Hr"/>
+                                                    <constraint firstItem="ZJc-ub-jBW" firstAttribute="top" secondItem="gpP-I6-cBm" secondAttribute="top" id="OIy-cK-B0F"/>
+                                                    <constraint firstItem="gpP-I6-cBm" firstAttribute="centerY" secondItem="FkS-bf-nTA" secondAttribute="centerY" id="SYR-hn-ip8"/>
+                                                    <constraint firstItem="FkS-bf-nTA" firstAttribute="top" secondItem="SYW-Rr-wIt" secondAttribute="top" id="bsN-om-COz"/>
+                                                    <constraint firstItem="ZJc-ub-jBW" firstAttribute="leading" secondItem="FkS-bf-nTA" secondAttribute="leading" constant="20" id="hAr-sT-Oxu"/>
+                                                    <constraint firstAttribute="trailing" secondItem="FkS-bf-nTA" secondAttribute="trailing" id="n7Q-xI-Fwz"/>
+                                                    <constraint firstItem="bGl-61-2ml" firstAttribute="top" secondItem="ZJc-ub-jBW" secondAttribute="bottom" constant="10" id="vJx-1E-Yuy"/>
+                                                    <constraint firstAttribute="bottom" secondItem="FkS-bf-nTA" secondAttribute="bottom" id="zke-53-UAi"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jBf-8b-Ktg">
+                                                <rect key="frame" x="30" y="308" width="354" height="120.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qCc-v9-rna">
+                                                        <rect key="frame" x="0.0" y="0.0" width="354" height="121"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
+                                                        <connections>
+                                                            <action selector="donateBloodBtnTapped:" destination="Ntc-Sy-jwF" eventType="touchUpInside" id="qTp-Yu-xT8"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="donateBlood" translatesAutoresizingMaskIntoConstraints="NO" id="eRA-NJ-vFI">
+                                                        <rect key="frame" x="274" y="30.5" width="70" height="60"/>
+                                                        <color key="tintColor" red="0.8392156959" green="0.33725491169999999" blue="0.2235293984" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="70" id="EJp-xN-eHe"/>
+                                                            <constraint firstAttribute="height" constant="60" id="MRk-FM-Qzt"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="احجز موعد للتبرع بالدم لمساعده شخص ما ان احتاج" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uom-1s-qRe">
+                                                        <rect key="frame" x="20" y="57.5" width="200" height="31.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="200" id="Cl5-b0-nOO"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="14"/>
+                                                        <color key="textColor" red="0.87450981139999995" green="0.40000003579999999" blue="0.40000003579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="احجز موعد للتبرع بالدم" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YM7-9H-bHg">
+                                                        <rect key="frame" x="20" y="30.5" width="137.5" height="17"/>
+                                                        <fontDescription key="fontDescription" name="Almarai-Bold" family="Almarai" pointSize="15"/>
+                                                        <color key="textColor" red="0.8392156959" green="0.33725491169999999" blue="0.2235293984" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.98039215800000001" green="0.94117647410000005" blue="0.80000001190000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstItem="YM7-9H-bHg" firstAttribute="leading" secondItem="qCc-v9-rna" secondAttribute="leading" constant="20" id="1wM-gn-NRs"/>
+                                                    <constraint firstItem="qCc-v9-rna" firstAttribute="leading" secondItem="jBf-8b-Ktg" secondAttribute="leading" id="2F2-kU-FcQ"/>
+                                                    <constraint firstItem="Uom-1s-qRe" firstAttribute="leading" secondItem="YM7-9H-bHg" secondAttribute="leading" id="4vi-J8-5kh"/>
+                                                    <constraint firstItem="eRA-NJ-vFI" firstAttribute="trailing" secondItem="qCc-v9-rna" secondAttribute="trailing" constant="-10" id="T0S-BB-O9I"/>
+                                                    <constraint firstItem="qCc-v9-rna" firstAttribute="top" secondItem="jBf-8b-Ktg" secondAttribute="top" id="ZZp-Z2-beM"/>
+                                                    <constraint firstItem="Uom-1s-qRe" firstAttribute="top" secondItem="YM7-9H-bHg" secondAttribute="bottom" constant="10" id="a1N-Wh-4UW"/>
+                                                    <constraint firstAttribute="bottom" secondItem="qCc-v9-rna" secondAttribute="bottom" constant="-0.5" id="aqW-qs-GDv"/>
+                                                    <constraint firstAttribute="trailing" secondItem="qCc-v9-rna" secondAttribute="trailing" id="biw-Us-IPI"/>
+                                                    <constraint firstItem="YM7-9H-bHg" firstAttribute="top" secondItem="eRA-NJ-vFI" secondAttribute="top" id="oEQ-P4-SCD"/>
+                                                    <constraint firstItem="eRA-NJ-vFI" firstAttribute="centerY" secondItem="qCc-v9-rna" secondAttribute="centerY" id="rpm-zJ-V1m"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8SM-m7-W5j">
+                                                <rect key="frame" x="30" y="448.5" width="354" height="121"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TlN-vI-nj3">
+                                                        <rect key="frame" x="0.0" y="0.0" width="354" height="121"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
+                                                        <connections>
+                                                            <action selector="requestBloodBtnTapped:" destination="Ntc-Sy-jwF" eventType="touchUpInside" id="ddl-oO-IDl"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="requestBlood" translatesAutoresizingMaskIntoConstraints="NO" id="EuY-kd-TV6">
+                                                        <rect key="frame" x="274" y="30.5" width="70" height="60"/>
+                                                        <color key="tintColor" red="0.8392156959" green="0.33725491169999999" blue="0.2235293984" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="70" id="G65-1K-dxV"/>
+                                                            <constraint firstAttribute="height" constant="60" id="Wkd-d4-mIl"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="احجز موعد للتبرع بالدم لمساعده شخص ما ان احتاج" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kYu-FF-h2s">
+                                                        <rect key="frame" x="20" y="57.5" width="200" height="31.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="200" id="izB-e4-kcg"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="14"/>
+                                                        <color key="textColor" red="0.87450981139999995" green="0.40000003579999999" blue="0.40000003579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="احجز موعد للتبرع بالدم" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fMM-Dg-g3g">
+                                                        <rect key="frame" x="20" y="30.5" width="137.5" height="17"/>
+                                                        <fontDescription key="fontDescription" name="Almarai-Bold" family="Almarai" pointSize="15"/>
+                                                        <color key="textColor" red="0.8392156959" green="0.33725491169999999" blue="0.2235293984" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.82745099070000006" green="0.98039215800000001" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstItem="fMM-Dg-g3g" firstAttribute="leading" secondItem="TlN-vI-nj3" secondAttribute="leading" constant="20" id="8Qh-cx-QPL"/>
+                                                    <constraint firstItem="TlN-vI-nj3" firstAttribute="leading" secondItem="8SM-m7-W5j" secondAttribute="leading" id="RfE-hk-FX7"/>
+                                                    <constraint firstItem="EuY-kd-TV6" firstAttribute="centerY" secondItem="TlN-vI-nj3" secondAttribute="centerY" id="Xvi-WA-912"/>
+                                                    <constraint firstItem="EuY-kd-TV6" firstAttribute="trailing" secondItem="TlN-vI-nj3" secondAttribute="trailing" constant="-10" id="bHX-Nb-hgw"/>
+                                                    <constraint firstItem="fMM-Dg-g3g" firstAttribute="top" secondItem="EuY-kd-TV6" secondAttribute="top" id="io9-vD-HFL"/>
+                                                    <constraint firstAttribute="trailing" secondItem="TlN-vI-nj3" secondAttribute="trailing" id="m54-yN-wes"/>
+                                                    <constraint firstItem="kYu-FF-h2s" firstAttribute="leading" secondItem="fMM-Dg-g3g" secondAttribute="leading" id="qeu-Sg-OVh"/>
+                                                    <constraint firstItem="TlN-vI-nj3" firstAttribute="top" secondItem="8SM-m7-W5j" secondAttribute="top" id="sCe-sh-M1w"/>
+                                                    <constraint firstAttribute="bottom" secondItem="TlN-vI-nj3" secondAttribute="bottom" id="xUt-zh-JMB"/>
+                                                    <constraint firstItem="kYu-FF-h2s" firstAttribute="top" secondItem="fMM-Dg-g3g" secondAttribute="bottom" constant="10" id="y1u-qL-joW"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4KL-uR-GDJ">
+                                                <rect key="frame" x="30" y="589.5" width="354" height="120.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p8u-BT-q6C">
+                                                        <rect key="frame" x="0.0" y="0.0" width="354" height="121"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
+                                                        <connections>
+                                                            <action selector="educateYourselfBtnTapped:" destination="Ntc-Sy-jwF" eventType="touchUpInside" id="iIo-up-4Fc"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="educateYourself" translatesAutoresizingMaskIntoConstraints="NO" id="bju-Xa-38N">
+                                                        <rect key="frame" x="274" y="30.5" width="70" height="60"/>
+                                                        <color key="tintColor" red="0.8392156959" green="0.33725491169999999" blue="0.2235293984" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="60" id="r5Y-a6-MVB"/>
+                                                            <constraint firstAttribute="width" constant="70" id="yVx-G0-maZ"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تعلم المزيد عن الدم وانواعه وكيفيه  التبرع بالدم" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wQb-yN-FTf">
+                                                        <rect key="frame" x="20" y="57.5" width="200" height="31.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="200" id="J4C-LM-XcE"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="14"/>
+                                                        <color key="textColor" red="0.87450981139999995" green="0.40000003579999999" blue="0.40000003579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تعلم بنفسك" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cb9-tD-c4b">
+                                                        <rect key="frame" x="20" y="30.5" width="83.5" height="17"/>
+                                                        <fontDescription key="fontDescription" name="Almarai-Bold" family="Almarai" pointSize="15"/>
+                                                        <color key="textColor" red="0.8392156959" green="0.33725491169999999" blue="0.2235293984" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.73333334920000004" green="0.91372549530000002" blue="0.76862752440000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="p8u-BT-q6C" secondAttribute="bottom" constant="-0.5" id="0L7-GT-kLY"/>
+                                                    <constraint firstItem="p8u-BT-q6C" firstAttribute="top" secondItem="4KL-uR-GDJ" secondAttribute="top" id="A03-og-w2s"/>
+                                                    <constraint firstItem="p8u-BT-q6C" firstAttribute="leading" secondItem="4KL-uR-GDJ" secondAttribute="leading" id="J63-py-xZh"/>
+                                                    <constraint firstItem="cb9-tD-c4b" firstAttribute="top" secondItem="bju-Xa-38N" secondAttribute="top" id="KlR-Yk-QAA"/>
+                                                    <constraint firstItem="bju-Xa-38N" firstAttribute="trailing" secondItem="p8u-BT-q6C" secondAttribute="trailing" constant="-10" id="NBq-Ni-g1s"/>
+                                                    <constraint firstItem="wQb-yN-FTf" firstAttribute="top" secondItem="cb9-tD-c4b" secondAttribute="bottom" constant="10" id="c10-b4-gT1"/>
+                                                    <constraint firstItem="cb9-tD-c4b" firstAttribute="leading" secondItem="p8u-BT-q6C" secondAttribute="leading" constant="20" id="eLZ-Sz-m5s"/>
+                                                    <constraint firstAttribute="trailing" secondItem="p8u-BT-q6C" secondAttribute="trailing" id="n0i-Sh-CoO"/>
+                                                    <constraint firstItem="wQb-yN-FTf" firstAttribute="leading" secondItem="cb9-tD-c4b" secondAttribute="leading" id="nsi-6a-VpZ"/>
+                                                    <constraint firstItem="bju-Xa-38N" firstAttribute="centerY" secondItem="p8u-BT-q6C" secondAttribute="centerY" id="xUy-0f-2uF"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.98431372640000003" green="0.98039215800000001" blue="0.97254908080000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstItem="8SM-m7-W5j" firstAttribute="width" secondItem="jBf-8b-Ktg" secondAttribute="width" id="42d-lm-aLW"/>
+                                            <constraint firstItem="pE7-ei-AfT" firstAttribute="height" secondItem="ZSM-ar-e3q" secondAttribute="height" multiplier="0.275862" id="5xl-Kd-mzn"/>
+                                            <constraint firstItem="pE7-ei-AfT" firstAttribute="leading" secondItem="ZSM-ar-e3q" secondAttribute="leading" id="6UN-VX-Zfl"/>
+                                            <constraint firstItem="pE7-ei-AfT" firstAttribute="top" secondItem="ZSM-ar-e3q" secondAttribute="top" id="813-01-r35"/>
+                                            <constraint firstItem="SYW-Rr-wIt" firstAttribute="height" secondItem="ZSM-ar-e3q" secondAttribute="height" multiplier="0.166552" id="GWw-As-kEj"/>
+                                            <constraint firstItem="SYW-Rr-wIt" firstAttribute="width" secondItem="ZSM-ar-e3q" secondAttribute="width" multiplier="0.855" id="LU3-KK-RVO"/>
+                                            <constraint firstItem="jBf-8b-Ktg" firstAttribute="top" secondItem="SYW-Rr-wIt" secondAttribute="bottom" constant="20" id="LY7-KD-quq"/>
+                                            <constraint firstItem="SYW-Rr-wIt" firstAttribute="centerX" secondItem="pE7-ei-AfT" secondAttribute="centerX" id="McG-fg-rZa"/>
+                                            <constraint firstItem="jBf-8b-Ktg" firstAttribute="centerX" secondItem="SYW-Rr-wIt" secondAttribute="centerX" id="OLa-D9-xfr"/>
+                                            <constraint firstItem="jBf-8b-Ktg" firstAttribute="height" secondItem="SYW-Rr-wIt" secondAttribute="height" id="Xuh-bY-2XN"/>
+                                            <constraint firstItem="4KL-uR-GDJ" firstAttribute="width" secondItem="8SM-m7-W5j" secondAttribute="width" id="b2J-0m-dwU"/>
+                                            <constraint firstAttribute="bottom" secondItem="4KL-uR-GDJ" secondAttribute="bottom" constant="15" id="ejO-0V-9QM"/>
+                                            <constraint firstItem="8SM-m7-W5j" firstAttribute="centerX" secondItem="jBf-8b-Ktg" secondAttribute="centerX" id="gGN-dI-gdm"/>
+                                            <constraint firstItem="8SM-m7-W5j" firstAttribute="height" secondItem="jBf-8b-Ktg" secondAttribute="height" id="gVD-n2-kiq"/>
+                                            <constraint firstItem="4KL-uR-GDJ" firstAttribute="centerX" secondItem="8SM-m7-W5j" secondAttribute="centerX" id="gdZ-fD-9xU"/>
+                                            <constraint firstItem="jBf-8b-Ktg" firstAttribute="width" secondItem="SYW-Rr-wIt" secondAttribute="width" id="hMi-tJ-Wqv"/>
+                                            <constraint firstAttribute="trailing" secondItem="pE7-ei-AfT" secondAttribute="trailing" id="iYv-SZ-H9W"/>
+                                            <constraint firstItem="4KL-uR-GDJ" firstAttribute="top" secondItem="8SM-m7-W5j" secondAttribute="bottom" constant="20" id="jig-Ld-ZZe"/>
+                                            <constraint firstItem="4KL-uR-GDJ" firstAttribute="height" secondItem="8SM-m7-W5j" secondAttribute="height" id="jzq-9n-KEL"/>
+                                            <constraint firstItem="SYW-Rr-wIt" firstAttribute="top" secondItem="S6x-Cn-Vfq" secondAttribute="top" constant="35" id="lob-Sv-Tya"/>
+                                            <constraint firstItem="8SM-m7-W5j" firstAttribute="top" secondItem="jBf-8b-Ktg" secondAttribute="bottom" constant="20" id="w2e-fb-1h9"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="ZSM-ar-e3q" firstAttribute="width" secondItem="IeF-2E-BOq" secondAttribute="width" id="0l8-j6-Gqt"/>
+                                    <constraint firstItem="ZSM-ar-e3q" firstAttribute="height" secondItem="IeF-2E-BOq" secondAttribute="height" id="BQb-wf-JIq"/>
+                                    <constraint firstItem="ZSM-ar-e3q" firstAttribute="top" secondItem="IeF-2E-BOq" secondAttribute="top" id="H9W-Up-Dxg"/>
+                                    <constraint firstItem="ZSM-ar-e3q" firstAttribute="leading" secondItem="IeF-2E-BOq" secondAttribute="leading" id="J5m-6H-HNc"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZSM-ar-e3q" secondAttribute="bottom" id="S69-KX-bnt"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZSM-ar-e3q" secondAttribute="trailing" id="ldn-KE-4gZ"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="qU7-bZ-xhB"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="vTZ-CQ-Vhe"/>
+                            </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lah-At-anW" userLabel="testView">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="RYa-qZ-bdV" appends="YES" id="dHa-GL-dcT"/>
+                                    <outletCollection property="gestureRecognizers" destination="Qep-Ys-gIU" appends="YES" id="ksm-c0-RxL"/>
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Adw-d3-w71">
@@ -865,21 +1192,31 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3Fx-jI-ReR"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.87450981139999995" green="0.40000003579999999" blue="0.40000003579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="Adw-d3-w71" firstAttribute="leading" secondItem="3Fx-jI-ReR" secondAttribute="leading" id="9Cv-M8-2gl"/>
+                            <constraint firstItem="IeF-2E-BOq" firstAttribute="top" secondItem="3Fx-jI-ReR" secondAttribute="top" id="E62-vQ-l4B"/>
+                            <constraint firstItem="3Fx-jI-ReR" firstAttribute="top" secondItem="Lah-At-anW" secondAttribute="top" id="Eoc-aG-NBU"/>
+                            <constraint firstItem="IeF-2E-BOq" firstAttribute="leading" secondItem="3Fx-jI-ReR" secondAttribute="leading" id="ISs-zB-Cwc"/>
+                            <constraint firstItem="3Fx-jI-ReR" firstAttribute="trailing" secondItem="IeF-2E-BOq" secondAttribute="trailing" id="Ok6-Mk-1VJ"/>
                             <constraint firstItem="Adw-d3-w71" firstAttribute="bottom" secondItem="3Fx-jI-ReR" secondAttribute="bottom" id="Pkg-a3-df6"/>
-                            <constraint firstItem="ZSM-ar-e3q" firstAttribute="leading" secondItem="3Fx-jI-ReR" secondAttribute="leading" id="eg5-U8-O71"/>
+                            <constraint firstItem="3Fx-jI-ReR" firstAttribute="bottom" secondItem="Lah-At-anW" secondAttribute="bottom" id="Z1i-AD-vXb"/>
+                            <constraint firstItem="3Fx-jI-ReR" firstAttribute="trailing" secondItem="Lah-At-anW" secondAttribute="trailing" id="dUI-c6-3Ha"/>
                             <constraint firstItem="Adw-d3-w71" firstAttribute="top" secondItem="3Fx-jI-ReR" secondAttribute="top" id="f1Q-zg-Mo6"/>
-                            <constraint firstItem="ZSM-ar-e3q" firstAttribute="top" secondItem="3Fx-jI-ReR" secondAttribute="top" id="s10-Dz-bqA"/>
-                            <constraint firstItem="ZSM-ar-e3q" firstAttribute="trailing" secondItem="3Fx-jI-ReR" secondAttribute="trailing" id="ufv-hq-4iv"/>
-                            <constraint firstItem="3Fx-jI-ReR" firstAttribute="bottom" secondItem="ZSM-ar-e3q" secondAttribute="bottom" id="y9a-Wr-fPH"/>
+                            <constraint firstItem="Lah-At-anW" firstAttribute="leading" secondItem="3Fx-jI-ReR" secondAttribute="leading" id="jyU-3P-wRs"/>
+                            <constraint firstItem="3Fx-jI-ReR" firstAttribute="bottom" secondItem="IeF-2E-BOq" secondAttribute="bottom" id="mZa-cq-YKq"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="1qD-BK-TmQ">
+                    <navigationItem key="navigationItem" id="1qD-BK-TmQ">
+                        <barButtonItem key="backBarButtonItem" title=" " id="cPv-uD-mo7"/>
                         <barButtonItem key="leftBarButtonItem" title="Item" image="menu" id="8de-L7-irr">
                             <connections>
                                 <action selector="barBtnTapped:" destination="Ntc-Sy-jwF" id="v5v-fK-Z1e"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="notification-bell" id="z9t-oX-ghW">
+                            <connections>
+                                <action selector="notificationBtnTapped:" destination="Ntc-Sy-jwF" id="qSl-I2-vjp"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -887,53 +1224,130 @@
                         <outlet property="backViewForHumburger" destination="ZSM-ar-e3q" id="kzN-cC-qMc"/>
                         <outlet property="humbergerView" destination="Adw-d3-w71" id="fg7-o7-UbT"/>
                         <outlet property="leading" destination="9Cv-M8-2gl" id="Ohg-FP-KSf"/>
+                        <outlet property="mainView" destination="D8k-Y9-sEe" id="V6X-Te-w5K"/>
+                        <outlet property="scrollView" destination="IeF-2E-BOq" id="O3r-Ue-1wy"/>
+                        <outlet property="testView" destination="Lah-At-anW" id="Etj-Q1-THY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GQ7-tV-WCQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="RYa-qZ-bdV">
+                <tapGestureRecognizer id="Qep-Ys-gIU">
                     <connections>
-                        <action selector="touchOnScreen:" destination="Ntc-Sy-jwF" id="e5d-q6-Qh9"/>
+                        <action selector="touchOnScreen:" destination="Ntc-Sy-jwF" id="dF8-oP-DMl"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3937.68115942029" y="-964.28571428571422"/>
+            <point key="canvasLocation" x="3772" y="-865"/>
         </scene>
-        <!--Log Out View Controller-->
-        <scene sceneID="mWa-vc-eWW">
+        <!--Appointment-->
+        <scene sceneID="ZuD-SB-dEY">
             <objects>
-                <viewController storyboardIdentifier="LogOutViewController" id="Cjz-Zb-yIS" customClass="LogOutViewController" customModule="BloodBank" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="FSU-VH-FSy">
+                <viewController storyboardIdentifier="AppointmentViewController" id="PeX-ov-e30" customClass="AppointmentViewController" customModule="BloodBank" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MX0-Nj-Uvh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LogOut" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZV-sd-L38">
-                                <rect key="frame" x="160" y="430.5" width="94" height="35"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="TFZ-9h-Mqo"/>
-                        <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="0.85045012419999999" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="EZV-sd-L38" firstAttribute="centerY" secondItem="FSU-VH-FSy" secondAttribute="centerY" id="qKJ-Kh-nU3"/>
-                            <constraint firstItem="EZV-sd-L38" firstAttribute="centerX" secondItem="FSU-VH-FSy" secondAttribute="centerX" id="tSQ-LC-Hjs"/>
-                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="IR7-6j-zLO"/>
+                        <color key="backgroundColor" red="0.98039215690000003" green="0.97647058819999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ZeB-xS-aHO"/>
+                    <navigationItem key="navigationItem" title="Appointment" id="xVT-jj-7ft"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xUq-ny-yKW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OFy-ds-RSW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5504" y="-964"/>
+            <point key="canvasLocation" x="3471" y="-1625"/>
+        </scene>
+        <!--Request View Controller-->
+        <scene sceneID="eMg-No-vgI">
+            <objects>
+                <viewController storyboardIdentifier="RequestViewController" id="BHC-t3-gzR" customClass="RequestViewController" customModule="BloodBank" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cJR-D7-PT1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="SJu-d9-iyx"/>
+                        <color key="backgroundColor" red="0.98039215690000003" green="0.97647058819999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZG0-Uw-MQM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5587" y="-773"/>
+        </scene>
+        <!--Donation History View Controller-->
+        <scene sceneID="GKQ-iS-2Ph">
+            <objects>
+                <viewController storyboardIdentifier="DonationHistoryViewController" id="ZEN-7L-ao8" customClass="DonationHistoryViewController" customModule="BloodBank" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XZj-V6-Js7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="TAv-Bu-74u"/>
+                        <color key="backgroundColor" red="0.98039215690000003" green="0.97647058819999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VRe-da-phq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6290" y="-775"/>
+        </scene>
+        <!--Help And Support View Controller-->
+        <scene sceneID="BQ0-OF-dRC">
+            <objects>
+                <viewController storyboardIdentifier="HelpAndSupportViewController" id="aDi-TG-PrP" customClass="HelpAndSupportViewController" customModule="BloodBank" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ODk-bI-8Jl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="lDM-uP-BWk"/>
+                        <color key="backgroundColor" red="0.98039215690000003" green="0.97647058819999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dc5-J6-Cl2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6987" y="-775"/>
+        </scene>
+        <!--Privacy View Controller-->
+        <scene sceneID="xgs-bC-7Ur">
+            <objects>
+                <viewController storyboardIdentifier="PrivacyViewController" id="77q-Ks-xfq" customClass="PrivacyViewController" customModule="BloodBank" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="18r-xJ-FYo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="cIE-Hu-y7C"/>
+                        <color key="backgroundColor" red="0.98039215690000003" green="0.97647058819999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QX0-bL-UeH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7677" y="-775"/>
+        </scene>
+        <!--Setting View Controller-->
+        <scene sceneID="srG-pq-e8s">
+            <objects>
+                <viewController storyboardIdentifier="SettingViewController" id="qSO-BX-big" customClass="SettingViewController" customModule="BloodBank" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZkZ-Y3-1WO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="fg3-Rw-X8G"/>
+                        <color key="backgroundColor" red="0.98039215690000003" green="0.97647058819999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mxv-Jv-4vQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8403" y="-775"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="V5P-Cw-BLt">
             <objects>
                 <navigationController id="HCR-lt-2VA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="magnifyingglass" catalog="system" id="2ok-xM-Cjc"/>
+                    <tabBarItem key="tabBarItem" title="" image="blood date" id="2ok-xM-Cjc"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="P5v-on-u6t">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <navigationBarAppearance key="scrollEdgeAppearance">
+                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <textAttributes key="titleTextAttributes">
+                                <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </textAttributes>
+                        </navigationBarAppearance>
                     </navigationBar>
                     <connections>
                         <segue destination="vrJ-gj-VYR" kind="relationship" relationship="rootViewController" id="pek-Bd-quC"/>
@@ -947,10 +1361,22 @@
         <scene sceneID="TAB-AQ-HD8">
             <objects>
                 <navigationController id="MYC-Cx-pLG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="bolt.fill" catalog="system" id="Xsb-NB-sxR"/>
+                    <tabBarItem key="tabBarItem" title="" image="map-location" id="Xsb-NB-sxR"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VxU-t6-XWd">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <navigationBarAppearance key="scrollEdgeAppearance">
+                            <color key="backgroundColor" red="0.87450981139999995" green="0.40000003579999999" blue="0.40000003579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <textAttributes key="titleTextAttributes">
+                                <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </textAttributes>
+                        </navigationBarAppearance>
                     </navigationBar>
                     <connections>
                         <segue destination="eVD-jg-f89" kind="relationship" relationship="rootViewController" id="jd2-d7-UgP"/>
@@ -964,10 +1390,21 @@
         <scene sceneID="xmS-2T-N6j">
             <objects>
                 <navigationController id="Qap-6k-moC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="trash" catalog="system" id="3OY-BN-td6"/>
+                    <tabBarItem key="tabBarItem" title="" image="donor" id="3OY-BN-td6"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="riW-J6-l0B">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <navigationBarAppearance key="scrollEdgeAppearance">
+                            <color key="backgroundColor" red="0.87450981139999995" green="0.40000003579999999" blue="0.40000003579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <textAttributes key="titleTextAttributes">
+                                <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </textAttributes>
+                        </navigationBarAppearance>
                     </navigationBar>
                     <connections>
                         <segue destination="lUV-Vd-bAi" kind="relationship" relationship="rootViewController" id="stf-49-XWU"/>
@@ -975,25 +1412,18 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tSn-Jn-xaA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3016" y="1189"/>
+            <point key="canvasLocation" x="3016" y="1408"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jBV-q0-vgr">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="C86-M6-gFR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="house" catalog="system" id="SEI-Q9-6Ey"/>
+                    <tabBarItem key="tabBarItem" title="" image="house" id="SEI-Q9-6Ey"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iNX-LC-kL7">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <navigationBarAppearance key="scrollEdgeAppearance">
-                            <color key="backgroundColor" red="0.87450981139999995" green="0.40000003579999999" blue="0.40000003579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            <textAttributes key="titleTextAttributes">
-                                <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </textAttributes>
-                        </navigationBarAppearance>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1002,7 +1432,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gxP-5G-BrE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2768" y="-965"/>
+            <point key="canvasLocation" x="3016" y="-891"/>
         </scene>
         <!--Hamburger View Controller-->
         <scene sceneID="gKC-LL-cve">
@@ -1022,33 +1452,33 @@
                                                 <rect key="frame" x="-20" y="-20" width="300" height="200"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoImage" translatesAutoresizingMaskIntoConstraints="NO" id="eHR-p7-PRE">
-                                                        <rect key="frame" x="110" y="30" width="100" height="100"/>
+                                                        <rect key="frame" x="110" y="20" width="100" height="100"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="100" id="Zth-HI-9Yp"/>
                                                             <constraint firstAttribute="width" constant="100" id="w9C-gq-o0N"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Khaled Hussien khalifa" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6U5-e1-zW1">
-                                                        <rect key="frame" x="69.5" y="140" width="181" height="22"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="خالد حسين احمد خليفه" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6U5-e1-zW1">
+                                                        <rect key="frame" x="78.5" y="130" width="163.5" height="21"/>
+                                                        <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="18"/>
                                                         <color key="textColor" red="0.95162123440000002" green="0.96649295089999998" blue="0.98209780449999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ios Develeper" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SyA-cA-8lB">
-                                                        <rect key="frame" x="87.5" y="170" width="145" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مبرمح تطبيقات" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SyA-cA-8lB">
+                                                        <rect key="frame" x="94.5" y="159" width="131" height="18"/>
+                                                        <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="16"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" red="0.81857274339999997" green="0.48908210089999998" blue="0.4814178536" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" red="0.87450981139999995" green="0.40000003579999999" blue="0.40000003579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstItem="6U5-e1-zW1" firstAttribute="centerX" secondItem="eHR-p7-PRE" secondAttribute="centerX" id="1Lg-a5-9C1"/>
                                                     <constraint firstItem="SyA-cA-8lB" firstAttribute="centerX" secondItem="6U5-e1-zW1" secondAttribute="centerX" id="1hA-0y-evc"/>
                                                     <constraint firstAttribute="height" constant="200" id="82p-S9-YC7"/>
                                                     <constraint firstItem="SyA-cA-8lB" firstAttribute="width" secondItem="6U5-e1-zW1" secondAttribute="width" multiplier="0.8" id="EDD-Tl-Ero"/>
                                                     <constraint firstItem="eHR-p7-PRE" firstAttribute="centerX" secondItem="Rxk-zf-85S" secondAttribute="centerX" constant="10" id="PJX-9G-paN"/>
-                                                    <constraint firstItem="eHR-p7-PRE" firstAttribute="top" secondItem="Rxk-zf-85S" secondAttribute="top" constant="30" id="QC1-Yo-e7N"/>
+                                                    <constraint firstItem="eHR-p7-PRE" firstAttribute="top" secondItem="Rxk-zf-85S" secondAttribute="top" constant="20" id="QC1-Yo-e7N"/>
                                                     <constraint firstItem="SyA-cA-8lB" firstAttribute="top" secondItem="6U5-e1-zW1" secondAttribute="bottom" constant="8" symbolic="YES" id="S2A-el-46j"/>
                                                     <constraint firstItem="6U5-e1-zW1" firstAttribute="top" secondItem="eHR-p7-PRE" secondAttribute="bottom" constant="10" id="ruk-Ay-ILi"/>
                                                 </constraints>
@@ -1069,9 +1499,9 @@
                                                         <color key="onTintColor" red="0.91764705879999997" green="0.42352941179999998" blue="0.43137254899999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <color key="thumbTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </switch>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Active Donor " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7lL-Zw-CNq">
-                                                        <rect key="frame" x="41" y="19" width="100" height="21"/>
-                                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="متاح للتبرع" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7lL-Zw-CNq">
+                                                        <rect key="frame" x="41" y="20.5" width="66.5" height="18"/>
+                                                        <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="16"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -1092,82 +1522,82 @@
                                                     <constraint firstAttribute="height" constant="31" id="bkI-8r-IF1"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Hello World..!">
-                                                    <fontDescription key="titleFontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
-                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="المواعيد">
+                                                    <fontDescription key="titleFontDescription" name="Almarai-Regular" family="Almarai" pointSize="16"/>
+                                                    <color key="baseForegroundColor" systemColor="labelColor"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="helloworldBtnTapped:" destination="Zoq-uc-HH3" eventType="touchUpInside" id="rrz-Yr-1P6"/>
+                                                    <action selector="appointmentBtnTapped:" destination="Zoq-uc-HH3" eventType="touchUpInside" id="bif-20-Ma4"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8P-KR-Umn">
                                                 <rect key="frame" x="6.5" y="330" width="267" height="31"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Appointments">
-                                                    <fontDescription key="titleFontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
-                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="الطلبات">
+                                                    <fontDescription key="titleFontDescription" name="Almarai-Regular" family="Almarai" pointSize="16"/>
+                                                    <color key="baseForegroundColor" systemColor="labelColor"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="helloworldBtnTapped:" destination="Zoq-uc-HH3" eventType="touchUpInside" id="IdO-aN-co3"/>
+                                                    <action selector="requestBtnTapped:" destination="Zoq-uc-HH3" eventType="touchUpInside" id="jQm-Gy-rlv"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jgD-Xs-E4k">
                                                 <rect key="frame" x="6.5" y="381" width="267" height="31"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Requests">
-                                                    <fontDescription key="titleFontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
-                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="التبرعات السابقه">
+                                                    <fontDescription key="titleFontDescription" name="Almarai-Regular" family="Almarai" pointSize="16"/>
+                                                    <color key="baseForegroundColor" systemColor="labelColor"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="helloworldBtnTapped:" destination="Zoq-uc-HH3" eventType="touchUpInside" id="wKN-57-YqU"/>
+                                                    <action selector="donationHistory:" destination="Zoq-uc-HH3" eventType="touchUpInside" id="iOf-2R-Koh"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfU-96-ihi">
                                                 <rect key="frame" x="6.5" y="432" width="267" height="31"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Donation History">
-                                                    <fontDescription key="titleFontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
-                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="المساعده و الدعم">
+                                                    <fontDescription key="titleFontDescription" name="Almarai-Regular" family="Almarai" pointSize="16"/>
+                                                    <color key="baseForegroundColor" systemColor="labelColor"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="helloworldBtnTapped:" destination="Zoq-uc-HH3" eventType="touchUpInside" id="SUS-3b-Mqi"/>
+                                                    <action selector="helpAndSupportBtnTapped:" destination="Zoq-uc-HH3" eventType="touchUpInside" id="B3b-SG-0or"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z8z-GM-Dhr">
                                                 <rect key="frame" x="6.5" y="483" width="267" height="31"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Privacy Policy">
-                                                    <fontDescription key="titleFontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
-                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="سياسه الخصوصيه">
+                                                    <fontDescription key="titleFontDescription" name="Almarai-Regular" family="Almarai" pointSize="16"/>
+                                                    <color key="baseForegroundColor" systemColor="labelColor"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="helloworldBtnTapped:" destination="Zoq-uc-HH3" eventType="touchUpInside" id="OZm-DA-nJv"/>
+                                                    <action selector="privacyBtnTapped:" destination="Zoq-uc-HH3" eventType="touchUpInside" id="tfx-ug-EzB"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIt-xV-r5X">
                                                 <rect key="frame" x="6.5" y="534" width="267" height="31"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Setting">
-                                                    <fontDescription key="titleFontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
-                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="الاعدادات">
+                                                    <fontDescription key="titleFontDescription" name="Almarai-Regular" family="Almarai" pointSize="16"/>
+                                                    <color key="baseForegroundColor" systemColor="labelColor"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="helloworldBtnTapped:" destination="Zoq-uc-HH3" eventType="touchUpInside" id="sFG-JF-42D"/>
+                                                    <action selector="settingBtnTapped:" destination="Zoq-uc-HH3" eventType="touchUpInside" id="1AB-x5-Nss"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8hv-YM-UkI">
                                                 <rect key="frame" x="6.5" y="585" width="267" height="31"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Log Out">
-                                                    <fontDescription key="titleFontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
-                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="تسجيل الخروج">
+                                                    <fontDescription key="titleFontDescription" name="Almarai-Regular" family="Almarai" pointSize="16"/>
+                                                    <color key="baseForegroundColor" systemColor="labelColor"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="logOutBtnTapped:" destination="Zoq-uc-HH3" eventType="touchUpInside" id="1Zb-5j-0Vq"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.99607843137254903" green="0.92549019607843142" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.98039215690000003" green="0.97647058819999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="DrD-AH-4Vb" firstAttribute="width" secondItem="iAg-0t-fxO" secondAttribute="width" id="0YJ-nU-Ppm"/>
                                             <constraint firstItem="B8P-KR-Umn" firstAttribute="top" secondItem="DrD-AH-4Vb" secondAttribute="bottom" constant="20" id="1JB-rp-t6i"/>
@@ -1220,7 +1650,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="O9R-19-tfy"/>
-                        <color key="backgroundColor" red="0.99607843139999996" green="0.92549019610000005" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.98039215690000003" green="0.97647058819999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="LCv-he-Y6f" firstAttribute="leading" secondItem="5k7-Jd-27m" secondAttribute="leading" id="NUZ-Ju-p5e"/>
                             <constraint firstAttribute="trailing" secondItem="LCv-he-Y6f" secondAttribute="trailing" id="URV-JR-MKS"/>
@@ -1229,28 +1659,100 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="appointmentBtn" destination="DrD-AH-4Vb" id="IAm-d5-lIn"/>
                         <outlet property="humburgerView" destination="Rxk-zf-85S" id="ulv-hq-Id0"/>
                         <outlet property="imageView" destination="eHR-p7-PRE" id="Hw9-AK-jtY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y1b-9i-Uyq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4778" y="-964"/>
+            <point key="canvasLocation" x="4922" y="-833"/>
+        </scene>
+        <!--Notification View Controller-->
+        <scene sceneID="Ueo-GP-7y3">
+            <objects>
+                <viewController storyboardIdentifier="NotificationViewController" id="wrs-1t-0ON" customClass="NotificationViewController" customModule="BloodBank" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ujv-Iv-nA5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="9Fc-32-Dax"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="28o-z1-pgz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2620" y="-1625"/>
+        </scene>
+        <!--Donate Blood View Controller-->
+        <scene sceneID="gvx-DU-AcF">
+            <objects>
+                <viewController storyboardIdentifier="DonateBloodViewController" id="Nm4-mA-cst" customClass="DonateBloodViewController" customModule="BloodBank" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kEE-BW-8Vl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Bhf-r7-3YK"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="he0-V1-sby"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Xs-fE-KrE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4178" y="-1625"/>
+        </scene>
+        <!--Request Blood View Controller-->
+        <scene sceneID="SFj-Ga-OoC">
+            <objects>
+                <viewController storyboardIdentifier="RequestBloodViewController" id="mYO-Bz-5co" customClass="RequestBloodViewController" customModule="BloodBank" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dXb-tf-dbi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Fra-hE-xsX"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="5Mp-GA-1PM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ybi-EE-c8T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4823" y="-1625"/>
+        </scene>
+        <!--Educate Yourself View Controller-->
+        <scene sceneID="LnD-yU-hO1">
+            <objects>
+                <viewController storyboardIdentifier="EducateYourselfViewController" id="Wt8-mt-vCy" customClass="EducateYourselfViewController" customModule="BloodBank" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R9X-j3-FTG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="PaK-gY-jck"/>
+                        <color key="backgroundColor" red="0.68627452850000004" green="0.50588238240000005" blue="0.80392158030000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ytS-7C-Qyn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oTF-9C-mEi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5488" y="-1625"/>
         </scene>
     </scenes>
     <resources>
+        <image name="appointment" width="50" height="50"/>
+        <image name="blood date" width="25" height="25"/>
         <image name="blood-donation" width="170.5" height="170.5"/>
-        <image name="bolt.fill" catalog="system" width="101" height="128"/>
+        <image name="donateBlood" width="50" height="50"/>
+        <image name="donor" width="25" height="25"/>
+        <image name="educateYourself" width="50" height="50"/>
         <image name="email" width="512" height="512"/>
-        <image name="house" catalog="system" width="128" height="106"/>
+        <image name="house" width="25" height="25"/>
         <image name="logoImage" width="1999.5" height="1331"/>
-        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="map-location" width="25" height="25"/>
         <image name="menu" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="notification-bell" width="25" height="25"/>
         <image name="person" catalog="system" width="128" height="117"/>
-        <image name="trash" catalog="system" width="121" height="128"/>
+        <image name="requestBlood" width="50" height="50"/>
         <namedColor name="labelColor">
             <color red="0.56300002336502075" green="0.5690000057220459" blue="0.5690000057220459" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -1263,11 +1765,8 @@
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

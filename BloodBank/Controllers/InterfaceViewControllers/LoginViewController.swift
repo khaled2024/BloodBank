@@ -21,11 +21,15 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         customBtn.confirmBtnNotSelected(Btn: loginBtn)
+        setNavBar()
     }
     override func viewWillAppear(_ animated: Bool) {
         setUpDesign()
     }
     //MARK: -  private functions
+    func setNavBar(){
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white,.font: UIFont(name: "Almarai", size: 18)!]
+    }
     private func setUpDesign(){
         customTF.setUpTextField(textField: emailTextField, nameTextField: "Enter Your Email")
         customTF.setUpTextField(textField: passwordTextField, nameTextField: "Enter Your Password")

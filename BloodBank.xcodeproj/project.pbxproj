@@ -9,25 +9,18 @@
 /* Begin PBXBuildFile section */
 		2E1C66EBD77E52FD724CAF41 /* Pods_BloodBank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB8F4C3B3A310575AD50AC30 /* Pods_BloodBank.framework */; };
 		EA064CAE27A4750600A06257 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA064CAD27A4750600A06257 /* MainViewController.swift */; };
-		EA09E72727A4C935009A0ED0 /* Poppins-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA09E71427A4C935009A0ED0 /* Poppins-ExtraLight.ttf */; };
-		EA09E72827A4C935009A0ED0 /* Poppins-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA09E71527A4C935009A0ED0 /* Poppins-ThinItalic.ttf */; };
-		EA09E72927A4C935009A0ED0 /* Poppins-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA09E71627A4C935009A0ED0 /* Poppins-ExtraLightItalic.ttf */; };
-		EA09E72A27A4C935009A0ED0 /* Poppins-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA09E71727A4C935009A0ED0 /* Poppins-BoldItalic.ttf */; };
-		EA09E72B27A4C935009A0ED0 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA09E71827A4C935009A0ED0 /* Poppins-Light.ttf */; };
-		EA09E72C27A4C935009A0ED0 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA09E71927A4C935009A0ED0 /* Poppins-Medium.ttf */; };
-		EA09E72D27A4C935009A0ED0 /* Poppins-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA09E71A27A4C935009A0ED0 /* Poppins-SemiBoldItalic.ttf */; };
-		EA09E72E27A4C935009A0ED0 /* Poppins-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA09E71B27A4C935009A0ED0 /* Poppins-ExtraBoldItalic.ttf */; };
-		EA09E72F27A4C935009A0ED0 /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA09E71C27A4C935009A0ED0 /* Poppins-ExtraBold.ttf */; };
-		EA09E73027A4C935009A0ED0 /* Poppins-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA09E71D27A4C935009A0ED0 /* Poppins-BlackItalic.ttf */; };
-		EA09E73127A4C935009A0ED0 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = EA09E71E27A4C935009A0ED0 /* OFL.txt */; };
-		EA09E73227A4C935009A0ED0 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA09E71F27A4C935009A0ED0 /* Poppins-Regular.ttf */; };
-		EA09E73327A4C935009A0ED0 /* Poppins-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA09E72027A4C935009A0ED0 /* Poppins-LightItalic.ttf */; };
-		EA09E73427A4C935009A0ED0 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA09E72127A4C935009A0ED0 /* Poppins-Bold.ttf */; };
-		EA09E73527A4C935009A0ED0 /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA09E72227A4C935009A0ED0 /* Poppins-Black.ttf */; };
-		EA09E73627A4C935009A0ED0 /* Poppins-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA09E72327A4C935009A0ED0 /* Poppins-Thin.ttf */; };
-		EA09E73727A4C935009A0ED0 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA09E72427A4C935009A0ED0 /* Poppins-SemiBold.ttf */; };
-		EA09E73827A4C935009A0ED0 /* Poppins-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA09E72527A4C935009A0ED0 /* Poppins-Italic.ttf */; };
-		EA09E73927A4C935009A0ED0 /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA09E72627A4C935009A0ED0 /* Poppins-MediumItalic.ttf */; };
+		EA2484D027B6D52900103DE7 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2484CF27B6D52900103DE7 /* NotificationViewController.swift */; };
+		EA4278A227B01F9C002D444A /* AppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4278A127B01F9C002D444A /* AppointmentViewController.swift */; };
+		EA4278A427B025A7002D444A /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4278A327B025A7002D444A /* RequestViewController.swift */; };
+		EA4278A627B025BF002D444A /* DonationHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4278A527B025BF002D444A /* DonationHistoryViewController.swift */; };
+		EA4278A827B025D4002D444A /* HelpAndSupportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4278A727B025D4002D444A /* HelpAndSupportViewController.swift */; };
+		EA4278AA27B025E9002D444A /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4278A927B025E9002D444A /* PrivacyViewController.swift */; };
+		EA4278AC27B025FB002D444A /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4278AB27B025FB002D444A /* SettingViewController.swift */; };
+		EA45BFA627C5996B00D56AEC /* DonateBloodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA45BFA527C5996B00D56AEC /* DonateBloodViewController.swift */; };
+		EA45BFA827C5997E00D56AEC /* RequestBloodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA45BFA727C5997E00D56AEC /* RequestBloodViewController.swift */; };
+		EA45BFAA27C5999200D56AEC /* EducateYourselfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA45BFA927C5999200D56AEC /* EducateYourselfViewController.swift */; };
+		EA45BFAE27C5AC4800D56AEC /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA45BFAD27C5AC4800D56AEC /* NavigationBar.swift */; };
+		EA6E702127C5C3CE00F1E76C /* Almarai-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA6E702027C5C3CE00F1E76C /* Almarai-Regular.ttf */; };
 		EA8676D027A6C70A00E95283 /* HamburgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8676CF27A6C70A00E95283 /* HamburgerViewController.swift */; };
 		EA99AAFD276CCF540083F0D1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA99AAFC276CCF540083F0D1 /* HomeViewController.swift */; };
 		EAAD8337276D12C800381854 /* DataPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAD8336276D12C700381854 /* DataPicker.swift */; };
@@ -52,7 +45,11 @@
 		EACC013C27A43A5A00FFB92B /* UserGradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC013927A43A5A00FFB92B /* UserGradientBackground.swift */; };
 		EACC013D27A43A5A00FFB92B /* UserCustomBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC013A27A43A5A00FFB92B /* UserCustomBtn.swift */; };
 		EACC013E27A43A5A00FFB92B /* UserCustomTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC013B27A43A5A00FFB92B /* UserCustomTF.swift */; };
-		EAEF17AA27A48BF80002FFA5 /* LogOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEF17A927A48BF80002FFA5 /* LogOutViewController.swift */; };
+		EAD669ED27C62F6D006221A2 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAD669EC27C62F6D006221A2 /* Poppins-Regular.ttf */; };
+		EAD669EF27C6393C006221A2 /* Almarai-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAD669EE27C6393C006221A2 /* Almarai-Bold.ttf */; };
+		EAD669F127C63A72006221A2 /* AppointmentMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD669F027C63A72006221A2 /* AppointmentMainViewController.swift */; };
+		EAD669F327C63F50006221A2 /* DonorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD669F227C63F50006221A2 /* DonorViewController.swift */; };
+		EAE3C90B27B12C6300F42D16 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE3C90A27B12C6300F42D16 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,25 +57,18 @@
 		D4BCE38A5AD392A36F890799 /* Pods-BloodBank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BloodBank.release.xcconfig"; path = "Target Support Files/Pods-BloodBank/Pods-BloodBank.release.xcconfig"; sourceTree = "<group>"; };
 		DB8F4C3B3A310575AD50AC30 /* Pods_BloodBank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BloodBank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA064CAD27A4750600A06257 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		EA09E71427A4C935009A0ED0 /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
-		EA09E71527A4C935009A0ED0 /* Poppins-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ThinItalic.ttf"; sourceTree = "<group>"; };
-		EA09E71627A4C935009A0ED0 /* Poppins-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
-		EA09E71727A4C935009A0ED0 /* Poppins-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BoldItalic.ttf"; sourceTree = "<group>"; };
-		EA09E71827A4C935009A0ED0 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
-		EA09E71927A4C935009A0ED0 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
-		EA09E71A27A4C935009A0ED0 /* Poppins-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
-		EA09E71B27A4C935009A0ED0 /* Poppins-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
-		EA09E71C27A4C935009A0ED0 /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
-		EA09E71D27A4C935009A0ED0 /* Poppins-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BlackItalic.ttf"; sourceTree = "<group>"; };
-		EA09E71E27A4C935009A0ED0 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
-		EA09E71F27A4C935009A0ED0 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
-		EA09E72027A4C935009A0ED0 /* Poppins-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-LightItalic.ttf"; sourceTree = "<group>"; };
-		EA09E72127A4C935009A0ED0 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
-		EA09E72227A4C935009A0ED0 /* Poppins-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Black.ttf"; sourceTree = "<group>"; };
-		EA09E72327A4C935009A0ED0 /* Poppins-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Thin.ttf"; sourceTree = "<group>"; };
-		EA09E72427A4C935009A0ED0 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
-		EA09E72527A4C935009A0ED0 /* Poppins-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Italic.ttf"; sourceTree = "<group>"; };
-		EA09E72627A4C935009A0ED0 /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-MediumItalic.ttf"; sourceTree = "<group>"; };
+		EA2484CF27B6D52900103DE7 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		EA4278A127B01F9C002D444A /* AppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentViewController.swift; sourceTree = "<group>"; };
+		EA4278A327B025A7002D444A /* RequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
+		EA4278A527B025BF002D444A /* DonationHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationHistoryViewController.swift; sourceTree = "<group>"; };
+		EA4278A727B025D4002D444A /* HelpAndSupportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpAndSupportViewController.swift; sourceTree = "<group>"; };
+		EA4278A927B025E9002D444A /* PrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
+		EA4278AB27B025FB002D444A /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		EA45BFA527C5996B00D56AEC /* DonateBloodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonateBloodViewController.swift; sourceTree = "<group>"; };
+		EA45BFA727C5997E00D56AEC /* RequestBloodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBloodViewController.swift; sourceTree = "<group>"; };
+		EA45BFA927C5999200D56AEC /* EducateYourselfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducateYourselfViewController.swift; sourceTree = "<group>"; };
+		EA45BFAD27C5AC4800D56AEC /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
+		EA6E702027C5C3CE00F1E76C /* Almarai-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Almarai-Regular.ttf"; sourceTree = "<group>"; };
 		EA8676CF27A6C70A00E95283 /* HamburgerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerViewController.swift; sourceTree = "<group>"; };
 		EA99AAFC276CCF540083F0D1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EAAD8336276D12C700381854 /* DataPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPicker.swift; sourceTree = "<group>"; };
@@ -105,7 +95,11 @@
 		EACC013927A43A5A00FFB92B /* UserGradientBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserGradientBackground.swift; sourceTree = "<group>"; };
 		EACC013A27A43A5A00FFB92B /* UserCustomBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCustomBtn.swift; sourceTree = "<group>"; };
 		EACC013B27A43A5A00FFB92B /* UserCustomTF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCustomTF.swift; sourceTree = "<group>"; };
-		EAEF17A927A48BF80002FFA5 /* LogOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutViewController.swift; sourceTree = "<group>"; };
+		EAD669EC27C62F6D006221A2 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		EAD669EE27C6393C006221A2 /* Almarai-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Almarai-Bold.ttf"; sourceTree = "<group>"; };
+		EAD669F027C63A72006221A2 /* AppointmentMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentMainViewController.swift; sourceTree = "<group>"; };
+		EAD669F227C63F50006221A2 /* DonorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonorViewController.swift; sourceTree = "<group>"; };
+		EAE3C90A27B12C6300F42D16 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,35 +146,11 @@
 		EA09E71227A4C913009A0ED0 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				EA09E71327A4C935009A0ED0 /* Poppins */,
+				EA6E702027C5C3CE00F1E76C /* Almarai-Regular.ttf */,
+				EAD669EE27C6393C006221A2 /* Almarai-Bold.ttf */,
+				EAD669EC27C62F6D006221A2 /* Poppins-Regular.ttf */,
 			);
 			path = Fonts;
-			sourceTree = "<group>";
-		};
-		EA09E71327A4C935009A0ED0 /* Poppins */ = {
-			isa = PBXGroup;
-			children = (
-				EA09E71427A4C935009A0ED0 /* Poppins-ExtraLight.ttf */,
-				EA09E71527A4C935009A0ED0 /* Poppins-ThinItalic.ttf */,
-				EA09E71627A4C935009A0ED0 /* Poppins-ExtraLightItalic.ttf */,
-				EA09E71727A4C935009A0ED0 /* Poppins-BoldItalic.ttf */,
-				EA09E71827A4C935009A0ED0 /* Poppins-Light.ttf */,
-				EA09E71927A4C935009A0ED0 /* Poppins-Medium.ttf */,
-				EA09E71A27A4C935009A0ED0 /* Poppins-SemiBoldItalic.ttf */,
-				EA09E71B27A4C935009A0ED0 /* Poppins-ExtraBoldItalic.ttf */,
-				EA09E71C27A4C935009A0ED0 /* Poppins-ExtraBold.ttf */,
-				EA09E71D27A4C935009A0ED0 /* Poppins-BlackItalic.ttf */,
-				EA09E71E27A4C935009A0ED0 /* OFL.txt */,
-				EA09E71F27A4C935009A0ED0 /* Poppins-Regular.ttf */,
-				EA09E72027A4C935009A0ED0 /* Poppins-LightItalic.ttf */,
-				EA09E72127A4C935009A0ED0 /* Poppins-Bold.ttf */,
-				EA09E72227A4C935009A0ED0 /* Poppins-Black.ttf */,
-				EA09E72327A4C935009A0ED0 /* Poppins-Thin.ttf */,
-				EA09E72427A4C935009A0ED0 /* Poppins-SemiBold.ttf */,
-				EA09E72527A4C935009A0ED0 /* Poppins-Italic.ttf */,
-				EA09E72627A4C935009A0ED0 /* Poppins-MediumItalic.ttf */,
-			);
-			path = Poppins;
 			sourceTree = "<group>";
 		};
 		EABDBFCF276CE98900738EA3 /* InterfaceViewControllers */ = {
@@ -310,6 +280,19 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		EAC46E9C27C500FF00711C68 /* HamburgerMenu */ = {
+			isa = PBXGroup;
+			children = (
+				EA8676CF27A6C70A00E95283 /* HamburgerViewController.swift */,
+				EA4278A327B025A7002D444A /* RequestViewController.swift */,
+				EA4278A527B025BF002D444A /* DonationHistoryViewController.swift */,
+				EA4278A727B025D4002D444A /* HelpAndSupportViewController.swift */,
+				EA4278A927B025E9002D444A /* PrivacyViewController.swift */,
+				EA4278AB27B025FB002D444A /* SettingViewController.swift */,
+			);
+			path = HamburgerMenu;
+			sourceTree = "<group>";
+		};
 		EACC012D27A4272D00FFB92B /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -325,6 +308,7 @@
 				EACC013A27A43A5A00FFB92B /* UserCustomBtn.swift */,
 				EACC013B27A43A5A00FFB92B /* UserCustomTF.swift */,
 				EACC013927A43A5A00FFB92B /* UserGradientBackground.swift */,
+				EA45BFAD27C5AC4800D56AEC /* NavigationBar.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -333,8 +317,12 @@
 			isa = PBXGroup;
 			children = (
 				EA064CAD27A4750600A06257 /* MainViewController.swift */,
-				EA8676CF27A6C70A00E95283 /* HamburgerViewController.swift */,
-				EAEF17A927A48BF80002FFA5 /* LogOutViewController.swift */,
+				EA2484CF27B6D52900103DE7 /* NotificationViewController.swift */,
+				EA4278A127B01F9C002D444A /* AppointmentViewController.swift */,
+				EA45BFA527C5996B00D56AEC /* DonateBloodViewController.swift */,
+				EA45BFA727C5997E00D56AEC /* RequestBloodViewController.swift */,
+				EA45BFA927C5999200D56AEC /* EducateYourselfViewController.swift */,
+				EAC46E9C27C500FF00711C68 /* HamburgerMenu */,
 			);
 			path = FirstScreens;
 			sourceTree = "<group>";
@@ -342,6 +330,7 @@
 		EAEF17A627A48B9B0002FFA5 /* SecondScreens */ = {
 			isa = PBXGroup;
 			children = (
+				EAD669F027C63A72006221A2 /* AppointmentMainViewController.swift */,
 			);
 			path = SecondScreens;
 			sourceTree = "<group>";
@@ -349,6 +338,7 @@
 		EAEF17A727A48BA10002FFA5 /* ThirdScreens */ = {
 			isa = PBXGroup;
 			children = (
+				EAE3C90A27B12C6300F42D16 /* MapViewController.swift */,
 			);
 			path = ThirdScreens;
 			sourceTree = "<group>";
@@ -356,6 +346,7 @@
 		EAEF17A827A48BA30002FFA5 /* FourthScreens */ = {
 			isa = PBXGroup;
 			children = (
+				EAD669F227C63F50006221A2 /* DonorViewController.swift */,
 			);
 			path = FourthScreens;
 			sourceTree = "<group>";
@@ -371,7 +362,7 @@
 				EAC252BF276A26F00033F96F /* Sources */,
 				EAC252C0276A26F00033F96F /* Frameworks */,
 				EAC252C1276A26F00033F96F /* Resources */,
-				BD471E5C489D825332439703 /* [CP] Embed Pods Frameworks */,
+				EF9E91E03BF9CDDA89D768E2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -420,51 +411,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA09E73627A4C935009A0ED0 /* Poppins-Thin.ttf in Resources */,
-				EA09E73927A4C935009A0ED0 /* Poppins-MediumItalic.ttf in Resources */,
-				EA09E73127A4C935009A0ED0 /* OFL.txt in Resources */,
-				EA09E72927A4C935009A0ED0 /* Poppins-ExtraLightItalic.ttf in Resources */,
-				EA09E73027A4C935009A0ED0 /* Poppins-BlackItalic.ttf in Resources */,
-				EA09E72727A4C935009A0ED0 /* Poppins-ExtraLight.ttf in Resources */,
-				EA09E73727A4C935009A0ED0 /* Poppins-SemiBold.ttf in Resources */,
-				EA09E72A27A4C935009A0ED0 /* Poppins-BoldItalic.ttf in Resources */,
-				EA09E72B27A4C935009A0ED0 /* Poppins-Light.ttf in Resources */,
-				EA09E73527A4C935009A0ED0 /* Poppins-Black.ttf in Resources */,
-				EA09E73827A4C935009A0ED0 /* Poppins-Italic.ttf in Resources */,
-				EA09E72F27A4C935009A0ED0 /* Poppins-ExtraBold.ttf in Resources */,
-				EA09E73327A4C935009A0ED0 /* Poppins-LightItalic.ttf in Resources */,
 				EAC252D3276A26F10033F96F /* LaunchScreen.storyboard in Resources */,
-				EA09E72D27A4C935009A0ED0 /* Poppins-SemiBoldItalic.ttf in Resources */,
-				EA09E73227A4C935009A0ED0 /* Poppins-Regular.ttf in Resources */,
-				EA09E72E27A4C935009A0ED0 /* Poppins-ExtraBoldItalic.ttf in Resources */,
-				EA09E73427A4C935009A0ED0 /* Poppins-Bold.ttf in Resources */,
-				EA09E72827A4C935009A0ED0 /* Poppins-ThinItalic.ttf in Resources */,
-				EA09E72C27A4C935009A0ED0 /* Poppins-Medium.ttf in Resources */,
+				EAD669EF27C6393C006221A2 /* Almarai-Bold.ttf in Resources */,
+				EA6E702127C5C3CE00F1E76C /* Almarai-Regular.ttf in Resources */,
 				EAC252D0276A26F10033F96F /* Assets.xcassets in Resources */,
 				EAC252CE276A26F00033F96F /* Main.storyboard in Resources */,
+				EAD669ED27C62F6D006221A2 /* Poppins-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		BD471E5C489D825332439703 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BloodBank/Pods-BloodBank-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BloodBank/Pods-BloodBank-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BloodBank/Pods-BloodBank-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		D58E08998672266A6630D8BB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -487,6 +445,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EF9E91E03BF9CDDA89D768E2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BloodBank/Pods-BloodBank-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BloodBank/Pods-BloodBank-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BloodBank/Pods-BloodBank-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -494,25 +469,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAEF17AA27A48BF80002FFA5 /* LogOutViewController.swift in Sources */,
+				EA4278AC27B025FB002D444A /* SettingViewController.swift in Sources */,
+				EA4278A227B01F9C002D444A /* AppointmentViewController.swift in Sources */,
+				EA4278A827B025D4002D444A /* HelpAndSupportViewController.swift in Sources */,
+				EA4278AA27B025E9002D444A /* PrivacyViewController.swift in Sources */,
+				EA4278A427B025A7002D444A /* RequestViewController.swift in Sources */,
+				EAD669F327C63F50006221A2 /* DonorViewController.swift in Sources */,
 				EABDBFCE276CE6B500738EA3 /* HelpViewController.swift in Sources */,
+				EA45BFA827C5997E00D56AEC /* RequestBloodViewController.swift in Sources */,
 				EABDBFCA276CE69F00738EA3 /* RegisterViewController.swift in Sources */,
 				EACC013127A42C4D00FFB92B /* StorageManager.swift in Sources */,
 				EACC012C27A41E4F00FFB92B /* LoadingViewController.swift in Sources */,
 				EACC013C27A43A5A00FFB92B /* UserGradientBackground.swift in Sources */,
 				EA064CAE27A4750600A06257 /* MainViewController.swift in Sources */,
 				EAC252E7276A34BF0033F96F /* OnboardingSlide.swift in Sources */,
+				EAE3C90B27B12C6300F42D16 /* MapViewController.swift in Sources */,
 				EACC013D27A43A5A00FFB92B /* UserCustomBtn.swift in Sources */,
+				EA4278A627B025BF002D444A /* DonationHistoryViewController.swift in Sources */,
 				EAC252C7276A26F00033F96F /* AppDelegate.swift in Sources */,
+				EAD669F127C63A72006221A2 /* AppointmentMainViewController.swift in Sources */,
+				EA45BFAE27C5AC4800D56AEC /* NavigationBar.swift in Sources */,
 				EA8676D027A6C70A00E95283 /* HamburgerViewController.swift in Sources */,
 				EAC252DF276A2F250033F96F /* OnboardingViewController.swift in Sources */,
 				EA99AAFD276CCF540083F0D1 /* HomeViewController.swift in Sources */,
+				EA45BFA627C5996B00D56AEC /* DonateBloodViewController.swift in Sources */,
 				EAC252E5276A335B0033F96F /* UiView+Extension.swift in Sources */,
+				EA2484D027B6D52900103DE7 /* NotificationViewController.swift in Sources */,
 				EAAD8337276D12C800381854 /* DataPicker.swift in Sources */,
 				EACC012F27A4275700FFB92B /* NavigationManager.swift in Sources */,
 				EAB1C99127A554A2006BB209 /* UiView + alert.swift in Sources */,
 				EAC252EC276A3A4C0033F96F /* Constants.swift in Sources */,
 				EAC252C9276A26F00033F96F /* SceneDelegate.swift in Sources */,
+				EA45BFAA27C5999200D56AEC /* EducateYourselfViewController.swift in Sources */,
 				EABDBFCC276CE6A900738EA3 /* LoginViewController.swift in Sources */,
 				EAB1C98F27A54DEE006BB209 /* TabBarController.swift in Sources */,
 				EAC252E9276A37BC0033F96F /* OnboardingCollectionViewCell.swift in Sources */,

@@ -51,9 +51,17 @@ class RegisterViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         setUpDesign()
+        setNavBar()
+
     }
     
     //MARK: - Private functions
+    private func setNavBar(){
+        navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.white,.font: UIFont(name: "Almarai", size: 25)!]
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.scrollEdgeAppearance?.titleTextAttributes = [.foregroundColor: UIColor.white,.font: UIFont(name: "Almarai", size: 18)!]
+    }
     private func setUpPicker(){
         BloodTypePicker.tag = 1
         GenderPicker.tag = 2

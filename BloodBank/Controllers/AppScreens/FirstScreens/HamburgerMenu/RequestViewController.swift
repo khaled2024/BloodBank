@@ -12,8 +12,7 @@ class RequestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "Requests"
-        navBar.setNavBar(myView: self, title: "Requests", viewController: view)
+        navBar.setNavBar(myView: self, title: "طلبات التبرع", viewController: view)
     }
 
    

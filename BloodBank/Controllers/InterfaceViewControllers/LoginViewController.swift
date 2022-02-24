@@ -31,8 +31,8 @@ class LoginViewController: UIViewController {
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white,.font: UIFont(name: "Almarai", size: 18)!]
     }
     private func setUpDesign(){
-        customTF.setUpTextField(textField: emailTextField, nameTextField: "Enter Your Email")
-        customTF.setUpTextField(textField: passwordTextField, nameTextField: "Enter Your Password")
+        customTF.setUpTextField(textField: emailTextField, nameTextField: "ادخل البريد الاكتروني")
+        customTF.setUpTextField(textField: passwordTextField, nameTextField: "ادخل كلمه المرور")
         gradientBackground.setGradientBackground(colorTop: #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1), colorBottom: #colorLiteral(red: 1, green: 0.5385724902, blue: 0.5328875184, alpha: 1), view: view)
     }
     private func goToMainScreen(){

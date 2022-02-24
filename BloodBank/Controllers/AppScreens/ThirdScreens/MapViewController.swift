@@ -13,16 +13,16 @@ class MapViewController: UIViewController {
     //MARK: -  variables
     
     @IBOutlet weak var mapView: MKMapView!
-    let locations = [["title":"Tanta","latitude":30.4718,"longitude":31.0006,"description":"this is Mytown"],["title":"Cairo","latitude":30.033333,"longitude":31.233334,"description":"this is Cairo"],
-                     ["title":"Alexandria","latitude":31.205753,"longitude":29.924526,"description":"this is Alexandria"]]
+    let locations = [["title":"Tanta","latitude":30.4718,"longitude":31.0006,"description":"this is Mytown"],["title":"Cairo","latitude":30.033333,"longitude":31.233334,"description":"this is Cairo"],["title":"Alexandria","latitude":31.205753,"longitude":29.924526,"description":"this is Alexandria"]
+    ]
     let locationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // navigationController?.navigationBar.isHidden = true
         mapView.delegate = self
-        displayMaltipleLocations()
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
+        displayMaltipleLocations()
         locationManager.startUpdatingLocation()
     }
     //MARK: - private functions
@@ -34,8 +34,8 @@ class MapViewController: UIViewController {
             annotaion.subtitle = location["description"] as? String
             annotaion.coordinate = CLLocationCoordinate2D(latitude: location["latitude"] as! Double, longitude: location["longitude"] as! Double)
             mapView.addAnnotation(annotaion)
-                        let region = MKCoordinateRegion(center: annotaion.coordinate, latitudinalMeters: 80000, longitudinalMeters: 80000)
-                        mapView.setRegion(region, animated: true)
+//            let region = MKCoordinateRegion(center: annotaion.coordinate, latitudinalMeters: 80000, longitudinalMeters: 80000)
+//            mapView.setRegion(region, animated: true)
         }
     }
 }

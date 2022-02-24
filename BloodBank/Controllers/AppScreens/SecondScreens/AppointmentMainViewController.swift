@@ -11,8 +11,6 @@ class AppointmentMainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
       
-        
-        
 
     }
     

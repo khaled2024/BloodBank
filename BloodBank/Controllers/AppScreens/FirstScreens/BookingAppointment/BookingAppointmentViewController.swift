@@ -7,13 +7,16 @@
 
 import UIKit
 
+
 class BookingAppointmentViewController: UIViewController {
+    let navBar = NavigationBar()
     override func viewDidLoad() {
         super.viewDidLoad()
 
         
     }
     
+    // here we changes in secondMain Branch
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         title = "Booking"

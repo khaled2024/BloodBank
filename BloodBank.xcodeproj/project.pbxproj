@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		2E1C66EBD77E52FD724CAF41 /* Pods_BloodBank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB8F4C3B3A310575AD50AC30 /* Pods_BloodBank.framework */; };
+		EA01A0A727C96F4E00BDCC00 /* NotFitAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA01A0A627C96F4E00BDCC00 /* NotFitAppointmentViewController.swift */; };
+		EA01A0A927C96F6B00BDCC00 /* FitnessAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA01A0A827C96F6B00BDCC00 /* FitnessAppointmentViewController.swift */; };
+		EA01A0AB27C9774100BDCC00 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA01A0AA27C9774100BDCC00 /* Poppins-Regular.ttf */; };
+		EA01A0AF27C9777100BDCC00 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA01A0AE27C9777100BDCC00 /* Poppins-Bold.ttf */; };
+		EA01A0B127C9838700BDCC00 /* BookingAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA01A0B027C9838700BDCC00 /* BookingAppointmentViewController.swift */; };
+		EA01A0B327C984A600BDCC00 /* InformationCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA01A0B227C984A600BDCC00 /* InformationCenterViewController.swift */; };
 		EA064CAE27A4750600A06257 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA064CAD27A4750600A06257 /* MainViewController.swift */; };
 		EA2484D027B6D52900103DE7 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2484CF27B6D52900103DE7 /* NotificationViewController.swift */; };
 		EA4278A227B01F9C002D444A /* AppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4278A127B01F9C002D444A /* AppointmentViewController.swift */; };
@@ -45,7 +51,6 @@
 		EACC013C27A43A5A00FFB92B /* UserGradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC013927A43A5A00FFB92B /* UserGradientBackground.swift */; };
 		EACC013D27A43A5A00FFB92B /* UserCustomBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC013A27A43A5A00FFB92B /* UserCustomBtn.swift */; };
 		EACC013E27A43A5A00FFB92B /* UserCustomTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC013B27A43A5A00FFB92B /* UserCustomTF.swift */; };
-		EAD669ED27C62F6D006221A2 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAD669EC27C62F6D006221A2 /* Poppins-Regular.ttf */; };
 		EAD669EF27C6393C006221A2 /* Almarai-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAD669EE27C6393C006221A2 /* Almarai-Bold.ttf */; };
 		EAD669F127C63A72006221A2 /* AppointmentMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD669F027C63A72006221A2 /* AppointmentMainViewController.swift */; };
 		EAD669F327C63F50006221A2 /* DonorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD669F227C63F50006221A2 /* DonorViewController.swift */; };
@@ -56,6 +61,12 @@
 		36C4F17C7D79E124463C5D81 /* Pods-BloodBank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BloodBank.debug.xcconfig"; path = "Target Support Files/Pods-BloodBank/Pods-BloodBank.debug.xcconfig"; sourceTree = "<group>"; };
 		D4BCE38A5AD392A36F890799 /* Pods-BloodBank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BloodBank.release.xcconfig"; path = "Target Support Files/Pods-BloodBank/Pods-BloodBank.release.xcconfig"; sourceTree = "<group>"; };
 		DB8F4C3B3A310575AD50AC30 /* Pods_BloodBank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BloodBank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA01A0A627C96F4E00BDCC00 /* NotFitAppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotFitAppointmentViewController.swift; sourceTree = "<group>"; };
+		EA01A0A827C96F6B00BDCC00 /* FitnessAppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessAppointmentViewController.swift; sourceTree = "<group>"; };
+		EA01A0AA27C9774100BDCC00 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-Regular.ttf"; path = "../../../../../Downloads/Poppins/Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		EA01A0AE27C9777100BDCC00 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		EA01A0B027C9838700BDCC00 /* BookingAppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingAppointmentViewController.swift; sourceTree = "<group>"; };
+		EA01A0B227C984A600BDCC00 /* InformationCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationCenterViewController.swift; sourceTree = "<group>"; };
 		EA064CAD27A4750600A06257 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		EA2484CF27B6D52900103DE7 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		EA4278A127B01F9C002D444A /* AppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentViewController.swift; sourceTree = "<group>"; };
@@ -95,7 +106,6 @@
 		EACC013927A43A5A00FFB92B /* UserGradientBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserGradientBackground.swift; sourceTree = "<group>"; };
 		EACC013A27A43A5A00FFB92B /* UserCustomBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCustomBtn.swift; sourceTree = "<group>"; };
 		EACC013B27A43A5A00FFB92B /* UserCustomTF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCustomTF.swift; sourceTree = "<group>"; };
-		EAD669EC27C62F6D006221A2 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		EAD669EE27C6393C006221A2 /* Almarai-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Almarai-Bold.ttf"; sourceTree = "<group>"; };
 		EAD669F027C63A72006221A2 /* AppointmentMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentMainViewController.swift; sourceTree = "<group>"; };
 		EAD669F227C63F50006221A2 /* DonorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonorViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +141,18 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		EA01A0A527C96F1800BDCC00 /* BookingAppointment */ = {
+			isa = PBXGroup;
+			children = (
+				EA4278A127B01F9C002D444A /* AppointmentViewController.swift */,
+				EA01A0A827C96F6B00BDCC00 /* FitnessAppointmentViewController.swift */,
+				EA01A0B027C9838700BDCC00 /* BookingAppointmentViewController.swift */,
+				EA01A0A627C96F4E00BDCC00 /* NotFitAppointmentViewController.swift */,
+				EA01A0B227C984A600BDCC00 /* InformationCenterViewController.swift */,
+			);
+			path = BookingAppointment;
+			sourceTree = "<group>";
+		};
 		EA064CAC27A473C600A06257 /* AppScreens */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,7 +170,8 @@
 			children = (
 				EA6E702027C5C3CE00F1E76C /* Almarai-Regular.ttf */,
 				EAD669EE27C6393C006221A2 /* Almarai-Bold.ttf */,
-				EAD669EC27C62F6D006221A2 /* Poppins-Regular.ttf */,
+				EA01A0AA27C9774100BDCC00 /* Poppins-Regular.ttf */,
+				EA01A0AE27C9777100BDCC00 /* Poppins-Bold.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -238,19 +261,11 @@
 			path = OnboardingViewController;
 			sourceTree = "<group>";
 		};
-		EAC252E0276A2F590033F96F /* StoryBoards */ = {
+		EAC252E1276A2F780033F96F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				EAC252CC276A26F00033F96F /* Main.storyboard */,
 				EAC252D1276A26F10033F96F /* LaunchScreen.storyboard */,
-			);
-			path = StoryBoards;
-			sourceTree = "<group>";
-		};
-		EAC252E1276A2F780033F96F /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				EAC252E0276A2F590033F96F /* StoryBoards */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -318,7 +333,7 @@
 			children = (
 				EA064CAD27A4750600A06257 /* MainViewController.swift */,
 				EA2484CF27B6D52900103DE7 /* NotificationViewController.swift */,
-				EA4278A127B01F9C002D444A /* AppointmentViewController.swift */,
+				EA01A0A527C96F1800BDCC00 /* BookingAppointment */,
 				EA45BFA527C5996B00D56AEC /* DonateBloodViewController.swift */,
 				EA45BFA727C5997E00D56AEC /* RequestBloodViewController.swift */,
 				EA45BFA927C5999200D56AEC /* EducateYourselfViewController.swift */,
@@ -413,10 +428,11 @@
 			files = (
 				EAC252D3276A26F10033F96F /* LaunchScreen.storyboard in Resources */,
 				EAD669EF27C6393C006221A2 /* Almarai-Bold.ttf in Resources */,
+				EA01A0AF27C9777100BDCC00 /* Poppins-Bold.ttf in Resources */,
+				EA01A0AB27C9774100BDCC00 /* Poppins-Regular.ttf in Resources */,
 				EA6E702127C5C3CE00F1E76C /* Almarai-Regular.ttf in Resources */,
 				EAC252D0276A26F10033F96F /* Assets.xcassets in Resources */,
 				EAC252CE276A26F00033F96F /* Main.storyboard in Resources */,
-				EAD669ED27C62F6D006221A2 /* Poppins-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +486,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA4278AC27B025FB002D444A /* SettingViewController.swift in Sources */,
+				EA01A0A727C96F4E00BDCC00 /* NotFitAppointmentViewController.swift in Sources */,
 				EA4278A227B01F9C002D444A /* AppointmentViewController.swift in Sources */,
 				EA4278A827B025D4002D444A /* HelpAndSupportViewController.swift in Sources */,
 				EA4278AA27B025E9002D444A /* PrivacyViewController.swift in Sources */,
@@ -490,6 +507,7 @@
 				EAD669F127C63A72006221A2 /* AppointmentMainViewController.swift in Sources */,
 				EA45BFAE27C5AC4800D56AEC /* NavigationBar.swift in Sources */,
 				EA8676D027A6C70A00E95283 /* HamburgerViewController.swift in Sources */,
+				EA01A0B327C984A600BDCC00 /* InformationCenterViewController.swift in Sources */,
 				EAC252DF276A2F250033F96F /* OnboardingViewController.swift in Sources */,
 				EA99AAFD276CCF540083F0D1 /* HomeViewController.swift in Sources */,
 				EA45BFA627C5996B00D56AEC /* DonateBloodViewController.swift in Sources */,
@@ -497,8 +515,10 @@
 				EA2484D027B6D52900103DE7 /* NotificationViewController.swift in Sources */,
 				EAAD8337276D12C800381854 /* DataPicker.swift in Sources */,
 				EACC012F27A4275700FFB92B /* NavigationManager.swift in Sources */,
+				EA01A0B127C9838700BDCC00 /* BookingAppointmentViewController.swift in Sources */,
 				EAB1C99127A554A2006BB209 /* UiView + alert.swift in Sources */,
 				EAC252EC276A3A4C0033F96F /* Constants.swift in Sources */,
+				EA01A0A927C96F6B00BDCC00 /* FitnessAppointmentViewController.swift in Sources */,
 				EAC252C9276A26F00033F96F /* SceneDelegate.swift in Sources */,
 				EA45BFAA27C5999200D56AEC /* EducateYourselfViewController.swift in Sources */,
 				EABDBFCC276CE6A900738EA3 /* LoginViewController.swift in Sources */,
@@ -662,7 +682,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -692,7 +712,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

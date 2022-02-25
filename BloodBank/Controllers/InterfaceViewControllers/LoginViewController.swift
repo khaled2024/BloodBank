@@ -41,8 +41,12 @@ class LoginViewController: UIViewController {
             window.rootViewController = tabBarController
             UIView.transition(with: window, duration: 0.7, options: .transitionFlipFromRight, animations: nil, completion: nil)
         }
+//        let storyboard = UIStoryboard(name: "projectMainTabBar", bundle: nil)
+//        let vc = storyboard.instantiateViewController(withIdentifier: "TabBarController")as! TabBarController
+//        vc.modalPresentationStyle = .fullScreen
+//        vc.modalTransitionStyle = .flipHorizontal
+//        self.present(vc, animated: true, completion: nil)
     }
-    
     private func checkTextFields()-> Bool{
         if let email = emailTextField.text , !email.isEmpty , let password = passwordTextField.text , !password.isEmpty{
             return true
@@ -67,7 +71,6 @@ class LoginViewController: UIViewController {
             self.showAlert(title: "Sorry", message: "Please fill the all fields")
         }
     }
-    
     @IBAction func newAccountBtnTapped(_ sender: UIButton) {
         self.goToRegisterScreen()
     }

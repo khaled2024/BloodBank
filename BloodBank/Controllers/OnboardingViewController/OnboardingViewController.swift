@@ -52,6 +52,14 @@ class OnboardingViewController: UIViewController {
             controller.modalPresentationStyle = .fullScreen
             controller.modalTransitionStyle = .flipHorizontal
             self.present(controller, animated: true, completion: nil)
+            
+//            let storyboard = UIStoryboard(name: "StartingSB", bundle: nil)
+//            let vc = storyboard.instantiateViewController(withIdentifier: "HomeNC")as! UINavigationController
+//            vc.modalPresentationStyle = .fullScreen
+//            vc.modalTransitionStyle = .flipHorizontal
+//            self.present(vc, animated: true, completion: nil)
+            
+            
         }else{
             currentPage += 1
             let indexPath = IndexPath(item: currentPage, section: 0)

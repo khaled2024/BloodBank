@@ -17,3 +17,13 @@ extension UIView{
         }
     }
 }
+
+//rounded corner radius in spacifc corners
+extension UIView{
+    func roundedCornerView(corners: UIRectCorner , radius: CGFloat){
+        let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: .init(width: radius, height: radius))
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        self.layer.mask = mask
+    }
+}

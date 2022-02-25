@@ -19,25 +19,23 @@ class HamburgerViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var appointmentBtn: UIButton!
     
-    
-    
-    
-    
     var delegate: HambburgerViewControllerDelegate?
     var delegate2: opacityDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpHumburger()
-        appointmentBtn.titleLabel?.text = "المواعيد"
-        
     }
     //MARK: - private functions
     private func setUpHumburger(){
         self.humburgerView.layer.cornerRadius = 20
         self.humburgerView.clipsToBounds = true
 
-        self.imageView.layer.cornerRadius = 50
+        self.imageView.layer.borderWidth = 1.0
+        self.imageView.layer.masksToBounds = false
+        self.imageView.layer.borderColor = CGColor(red:100, green:100, blue: 100, alpha: 1)
+        self.imageView.layer.cornerRadius = imageView.frame.size.height/2
+        self.imageView.contentMode = .scaleToFill
         self.imageView.clipsToBounds = true
 
     }
@@ -85,14 +83,14 @@ class HamburgerViewController: UIViewController {
         self.dismissHamburgerMenu()
     }
     @IBAction func logOutBtnTapped(_ sender: UIButton) {
-//        let homeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController")as! HomeViewController
-//        self.present(homeVC, animated: true, completion: nil)
-//        self.modalPresentationStyle = .overFullScreen
-//        self.dismissHamburgerMenu()
-        
         let homeNC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeNC")
         self.present(homeNC, animated: true, completion: nil)
         self.modalPresentationStyle = .fullScreen
-       
+        
+//        let storyboard = UIStoryboard(name: "StartingSB", bundle: nil)
+//        let vc = storyboard.instantiateViewController(withIdentifier: "HomeNC")as! UINavigationController
+//        vc.modalPresentationStyle = .fullScreen
+//        vc.modalTransitionStyle = .flipHorizontal
+//        self.present(vc, animated: true, completion: nil)
     }
 }

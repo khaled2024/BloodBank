@@ -53,11 +53,11 @@ class OnboardingViewController: UIViewController {
             controller.modalTransitionStyle = .flipHorizontal
             self.present(controller, animated: true, completion: nil)
             
-//            let storyboard = UIStoryboard(name: "StartingSB", bundle: nil)
-//            let vc = storyboard.instantiateViewController(withIdentifier: "HomeNC")as! UINavigationController
-//            vc.modalPresentationStyle = .fullScreen
-//            vc.modalTransitionStyle = .flipHorizontal
-//            self.present(vc, animated: true, completion: nil)
+            //            let storyboard = UIStoryboard(name: "StartingSB", bundle: nil)
+            //            let vc = storyboard.instantiateViewController(withIdentifier: "HomeNC")as! UINavigationController
+            //            vc.modalPresentationStyle = .fullScreen
+            //            vc.modalTransitionStyle = .flipHorizontal
+            //            self.present(vc, animated: true, completion: nil)
             
             
         }else{
@@ -73,18 +73,15 @@ extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return SlideArray.count
     }
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifier.CollectionCell, for: indexPath) as! OnboardingCollectionViewCell
         cell.setUp(slide: SlideArray[indexPath.row])
         print(indexPath.row)
         return cell
     }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: collectionView.frame.height )
     }
-    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let width = scrollView.frame.width
         print(width)

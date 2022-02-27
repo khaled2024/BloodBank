@@ -20,6 +20,11 @@ class TabBarController: UITabBarController {
         super.viewDidLayoutSubviews()
 //        self.ChangeHeightOfTabbar()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        UserDefaults.standard.set(true, forKey: "isLoggedIn")
+
+    }
     
     
     //MARK: - private functions

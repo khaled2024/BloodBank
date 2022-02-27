@@ -16,6 +16,7 @@ class HomeViewController: UIViewController {
     //MARK: - lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+
     }
     override func viewWillAppear(_ animated: Bool) {
     }

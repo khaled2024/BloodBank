@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3xz-3A-PfG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="epm-Ov-Buz">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -163,26 +163,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blood-donation" translatesAutoresizingMaskIntoConstraints="NO" id="phF-ev-Jyl">
-                                <rect key="frame" x="3146.5" y="84" width="130" height="130"/>
+                                <rect key="frame" x="142" y="84" width="130" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="LLw-qL-3nF"/>
                                     <constraint firstAttribute="width" constant="130" id="z9h-2j-cah"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zGw-he-y2H" userLabel="UserNameView">
-                                <rect key="frame" x="20" y="257" width="6383" height="50"/>
+                                <rect key="frame" x="20" y="257" width="374" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q10-I6-ep4">
-                                        <rect key="frame" x="1360.5" y="11" width="5017.5" height="28"/>
+                                        <rect key="frame" x="75" y="11" width="294" height="28"/>
                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                     </textField>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="SRb-2x-K0Y">
-                                        <rect key="frame" x="824.5" y="14" width="512" height="22.5"/>
+                                        <rect key="frame" x="21" y="14" width="30" height="22.5"/>
                                         <color key="tintColor" red="0.91764705882352937" green="0.42352941176470588" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bqU-pO-rno">
-                                        <rect key="frame" x="1351.5" y="5" width="1" height="40"/>
+                                        <rect key="frame" x="66" y="5" width="1" height="40"/>
                                         <color key="backgroundColor" systemColor="systemGray2Color"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="1" id="GQH-GQ-e70"/>
@@ -211,22 +211,22 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eX9-Ef-nu4" userLabel="EmailView">
-                                <rect key="frame" x="20" y="337" width="6383" height="50"/>
+                                <rect key="frame" x="20" y="337" width="374" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e9H-Zv-gix">
-                                        <rect key="frame" x="557" y="11" width="5017.5" height="28"/>
+                                        <rect key="frame" x="75" y="11" width="294" height="28"/>
                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ma-VM-2i3">
-                                        <rect key="frame" x="548" y="5" width="1" height="40"/>
+                                        <rect key="frame" x="66" y="5" width="1" height="40"/>
                                         <color key="backgroundColor" systemColor="systemGray2Color"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="1" id="xYf-pi-pMr"/>
                                         </constraints>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email" translatesAutoresizingMaskIntoConstraints="NO" id="xF9-Vk-AYN">
-                                        <rect key="frame" x="21" y="12.5" width="512" height="25"/>
+                                        <rect key="frame" x="21" y="12.5" width="30" height="25"/>
                                         <color key="tintColor" red="0.91625539219999996" green="0.42211445619999999" blue="0.4306929625" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </imageView>
                                 </subviews>
@@ -2103,7 +2103,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ادخل البريد الاكتروني" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f8E-Kx-lJ4">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ffff" placeholder="ادخل البريد الاكتروني" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f8E-Kx-lJ4">
                                 <rect key="frame" x="19" y="158" width="376" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="04L-Oh-HD6"/>
@@ -2113,7 +2113,7 @@
                                 <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" smartDashesType="no"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ادخل كلمه المرور" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P4o-Cc-dUb">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ffff" placeholder="ادخل كلمه المرور" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P4o-Cc-dUb">
                                 <rect key="frame" x="19" y="240" width="376" height="43"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="15"/>
@@ -2182,10 +2182,10 @@
             </objects>
             <point key="canvasLocation" x="1117" y="875"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--HomeNC View Controller-->
         <scene sceneID="j7e-eZ-RJ5">
             <objects>
-                <navigationController storyboardIdentifier="HomeNC" modalTransitionStyle="flipHorizontal" modalPresentationStyle="fullScreen" id="Hqm-cE-S0j" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="HomeNC" modalTransitionStyle="flipHorizontal" modalPresentationStyle="fullScreen" id="Hqm-cE-S0j" customClass="HomeNCViewController" customModule="BloodBank" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" restorationIdentifier="HomeNC" id="ZsN-bE-KKm">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

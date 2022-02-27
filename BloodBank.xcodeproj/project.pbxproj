@@ -28,6 +28,8 @@
 		EA45BFAE27C5AC4800D56AEC /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA45BFAD27C5AC4800D56AEC /* NavigationBar.swift */; };
 		EA6E702127C5C3CE00F1E76C /* Almarai-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA6E702027C5C3CE00F1E76C /* Almarai-Regular.ttf */; };
 		EA8676D027A6C70A00E95283 /* HamburgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8676CF27A6C70A00E95283 /* HamburgerViewController.swift */; };
+		EA86A9FB27CA31FB006EA939 /* UserDefultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA86A9FA27CA31FB006EA939 /* UserDefultsManager.swift */; };
+		EA86A9FD27CAD4F4006EA939 /* HomeNCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA86A9FC27CAD4F4006EA939 /* HomeNCViewController.swift */; };
 		EA99AAFD276CCF540083F0D1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA99AAFC276CCF540083F0D1 /* HomeViewController.swift */; };
 		EAAD8337276D12C800381854 /* DataPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAD8336276D12C700381854 /* DataPicker.swift */; };
 		EAB1C98F27A54DEE006BB209 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB1C98E27A54DEE006BB209 /* TabBarController.swift */; };
@@ -81,6 +83,8 @@
 		EA45BFAD27C5AC4800D56AEC /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		EA6E702027C5C3CE00F1E76C /* Almarai-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Almarai-Regular.ttf"; sourceTree = "<group>"; };
 		EA8676CF27A6C70A00E95283 /* HamburgerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerViewController.swift; sourceTree = "<group>"; };
+		EA86A9FA27CA31FB006EA939 /* UserDefultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefultsManager.swift; sourceTree = "<group>"; };
+		EA86A9FC27CAD4F4006EA939 /* HomeNCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNCViewController.swift; sourceTree = "<group>"; };
 		EA99AAFC276CCF540083F0D1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EAAD8336276D12C700381854 /* DataPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPicker.swift; sourceTree = "<group>"; };
 		EAB1C98E27A54DEE006BB209 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -179,6 +183,7 @@
 		EABDBFCF276CE98900738EA3 /* InterfaceViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				EA86A9FC27CAD4F4006EA939 /* HomeNCViewController.swift */,
 				EA99AAFC276CCF540083F0D1 /* HomeViewController.swift */,
 				EABDBFC9276CE69F00738EA3 /* RegisterViewController.swift */,
 				EABDBFCB276CE6A900738EA3 /* LoginViewController.swift */,
@@ -313,6 +318,7 @@
 			children = (
 				EACC012E27A4275700FFB92B /* NavigationManager.swift */,
 				EACC013027A42C4D00FFB92B /* StorageManager.swift */,
+				EA86A9FA27CA31FB006EA939 /* UserDefultsManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -491,6 +497,7 @@
 				EA4278A827B025D4002D444A /* HelpAndSupportViewController.swift in Sources */,
 				EA4278AA27B025E9002D444A /* PrivacyViewController.swift in Sources */,
 				EA4278A427B025A7002D444A /* RequestViewController.swift in Sources */,
+				EA86A9FD27CAD4F4006EA939 /* HomeNCViewController.swift in Sources */,
 				EAD669F327C63F50006221A2 /* DonorViewController.swift in Sources */,
 				EABDBFCE276CE6B500738EA3 /* HelpViewController.swift in Sources */,
 				EA45BFA827C5997E00D56AEC /* RequestBloodViewController.swift in Sources */,
@@ -501,6 +508,7 @@
 				EA064CAE27A4750600A06257 /* MainViewController.swift in Sources */,
 				EAC252E7276A34BF0033F96F /* OnboardingSlide.swift in Sources */,
 				EAE3C90B27B12C6300F42D16 /* MapViewController.swift in Sources */,
+				EA86A9FB27CA31FB006EA939 /* UserDefultsManager.swift in Sources */,
 				EACC013D27A43A5A00FFB92B /* UserCustomBtn.swift in Sources */,
 				EA4278A627B025BF002D444A /* DonationHistoryViewController.swift in Sources */,
 				EAC252C7276A26F00033F96F /* AppDelegate.swift in Sources */,

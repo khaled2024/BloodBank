@@ -24,6 +24,12 @@ class UserCustomBtn{
         Btn.tintColor = .white
         Btn.backgroundColor = #colorLiteral(red: 0.7650180459, green: 0.2443652749, blue: 0.2988551259, alpha: 1)
     }
+    func customBtn(Btn: UIButton , tintColor: UIColor , borderColor: CGColor , bgColor: UIColor){
+        Btn.tintColor = tintColor
+        Btn.layer.borderColor = borderColor
+        Btn.backgroundColor = bgColor
+        Btn.layer.borderWidth = 1.5
+    }
     func toggleForBtn(Btn: UIButton){
         if checkBtn == false{
             checkBtn = true

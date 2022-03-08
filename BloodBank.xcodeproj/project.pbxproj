@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E1C66EBD77E52FD724CAF41 /* Pods_BloodBank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB8F4C3B3A310575AD50AC30 /* Pods_BloodBank.framework */; };
+		0BF285CA90D39C621537FA03 /* Pods_BloodBank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB8F4C3B3A310575AD50AC30 /* Pods_BloodBank.framework */; };
 		EA01A0A727C96F4E00BDCC00 /* NotFitAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA01A0A627C96F4E00BDCC00 /* NotFitAppointmentViewController.swift */; };
 		EA01A0A927C96F6B00BDCC00 /* FitnessAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA01A0A827C96F6B00BDCC00 /* FitnessAppointmentViewController.swift */; };
 		EA01A0AB27C9774100BDCC00 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA01A0AA27C9774100BDCC00 /* Poppins-Regular.ttf */; };
@@ -53,6 +53,8 @@
 		EACC013C27A43A5A00FFB92B /* UserGradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC013927A43A5A00FFB92B /* UserGradientBackground.swift */; };
 		EACC013D27A43A5A00FFB92B /* UserCustomBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC013A27A43A5A00FFB92B /* UserCustomBtn.swift */; };
 		EACC013E27A43A5A00FFB92B /* UserCustomTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC013B27A43A5A00FFB92B /* UserCustomTF.swift */; };
+		EAD3834C27D7BF3B00E87893 /* PickDateTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD3834B27D7BF3B00E87893 /* PickDateTimeViewController.swift */; };
+		EAD3835027D806C300E87893 /* SheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD3834F27D806C300E87893 /* SheetViewController.swift */; };
 		EAD669EF27C6393C006221A2 /* Almarai-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAD669EE27C6393C006221A2 /* Almarai-Bold.ttf */; };
 		EAD669F127C63A72006221A2 /* AppointmentMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD669F027C63A72006221A2 /* AppointmentMainViewController.swift */; };
 		EAD669F327C63F50006221A2 /* DonorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD669F227C63F50006221A2 /* DonorViewController.swift */; };
@@ -110,6 +112,8 @@
 		EACC013927A43A5A00FFB92B /* UserGradientBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserGradientBackground.swift; sourceTree = "<group>"; };
 		EACC013A27A43A5A00FFB92B /* UserCustomBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCustomBtn.swift; sourceTree = "<group>"; };
 		EACC013B27A43A5A00FFB92B /* UserCustomTF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCustomTF.swift; sourceTree = "<group>"; };
+		EAD3834B27D7BF3B00E87893 /* PickDateTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickDateTimeViewController.swift; sourceTree = "<group>"; };
+		EAD3834F27D806C300E87893 /* SheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetViewController.swift; sourceTree = "<group>"; };
 		EAD669EE27C6393C006221A2 /* Almarai-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Almarai-Bold.ttf"; sourceTree = "<group>"; };
 		EAD669F027C63A72006221A2 /* AppointmentMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentMainViewController.swift; sourceTree = "<group>"; };
 		EAD669F227C63F50006221A2 /* DonorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonorViewController.swift; sourceTree = "<group>"; };
@@ -121,7 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E1C66EBD77E52FD724CAF41 /* Pods_BloodBank.framework in Frameworks */,
+				0BF285CA90D39C621537FA03 /* Pods_BloodBank.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,10 +153,12 @@
 			isa = PBXGroup;
 			children = (
 				EA4278A127B01F9C002D444A /* AppointmentViewController.swift */,
-				EA01A0A827C96F6B00BDCC00 /* FitnessAppointmentViewController.swift */,
-				EA01A0B027C9838700BDCC00 /* BookingAppointmentViewController.swift */,
 				EA01A0A627C96F4E00BDCC00 /* NotFitAppointmentViewController.swift */,
 				EA01A0B227C984A600BDCC00 /* InformationCenterViewController.swift */,
+				EA01A0A827C96F6B00BDCC00 /* FitnessAppointmentViewController.swift */,
+				EA01A0B027C9838700BDCC00 /* BookingAppointmentViewController.swift */,
+				EAD3834B27D7BF3B00E87893 /* PickDateTimeViewController.swift */,
+				EAD3834F27D806C300E87893 /* SheetViewController.swift */,
 			);
 			path = BookingAppointment;
 			sourceTree = "<group>";
@@ -178,6 +184,22 @@
 				EA01A0AE27C9777100BDCC00 /* Poppins-Bold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		EA91102127CD5E5300FA75E5 /* LottieAnimation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LottieAnimation;
+			sourceTree = "<group>";
+		};
+		EA91ED4A27CD0DD000F8D02A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EAC252C6276A26F00033F96F /* AppDelegate.swift */,
+				EAC252C8276A26F00033F96F /* SceneDelegate.swift */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		EABDBFCF276CE98900738EA3 /* InterfaceViewControllers */ = {
@@ -213,8 +235,7 @@
 		EAC252C5276A26F00033F96F /* BloodBank */ = {
 			isa = PBXGroup;
 			children = (
-				EAC252C6276A26F00033F96F /* AppDelegate.swift */,
-				EAC252C8276A26F00033F96F /* SceneDelegate.swift */,
+				EA91ED4A27CD0DD000F8D02A /* Supporting Files */,
 				EA09E71227A4C913009A0ED0 /* Fonts */,
 				EACC012D27A4272D00FFB92B /* Service */,
 				EAC252EA276A3A2B0033F96F /* Utilities */,
@@ -279,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				EAC252CF276A26F10033F96F /* Assets.xcassets */,
+				EA91102127CD5E5300FA75E5 /* LottieAnimation */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -383,7 +405,7 @@
 				EAC252BF276A26F00033F96F /* Sources */,
 				EAC252C0276A26F00033F96F /* Frameworks */,
 				EAC252C1276A26F00033F96F /* Resources */,
-				EF9E91E03BF9CDDA89D768E2 /* [CP] Embed Pods Frameworks */,
+				CD802A4492543F41287CCB90 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -445,6 +467,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		CD802A4492543F41287CCB90 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BloodBank/Pods-BloodBank-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BloodBank/Pods-BloodBank-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BloodBank/Pods-BloodBank-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D58E08998672266A6630D8BB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -467,23 +506,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EF9E91E03BF9CDDA89D768E2 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BloodBank/Pods-BloodBank-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BloodBank/Pods-BloodBank-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BloodBank/Pods-BloodBank-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -500,6 +522,7 @@
 				EA86A9FD27CAD4F4006EA939 /* HomeNCViewController.swift in Sources */,
 				EAD669F327C63F50006221A2 /* DonorViewController.swift in Sources */,
 				EABDBFCE276CE6B500738EA3 /* HelpViewController.swift in Sources */,
+				EAD3834C27D7BF3B00E87893 /* PickDateTimeViewController.swift in Sources */,
 				EA45BFA827C5997E00D56AEC /* RequestBloodViewController.swift in Sources */,
 				EABDBFCA276CE69F00738EA3 /* RegisterViewController.swift in Sources */,
 				EACC013127A42C4D00FFB92B /* StorageManager.swift in Sources */,
@@ -514,6 +537,7 @@
 				EAC252C7276A26F00033F96F /* AppDelegate.swift in Sources */,
 				EAD669F127C63A72006221A2 /* AppointmentMainViewController.swift in Sources */,
 				EA45BFAE27C5AC4800D56AEC /* NavigationBar.swift in Sources */,
+				EAD3835027D806C300E87893 /* SheetViewController.swift in Sources */,
 				EA8676D027A6C70A00E95283 /* HamburgerViewController.swift in Sources */,
 				EA01A0B327C984A600BDCC00 /* InformationCenterViewController.swift in Sources */,
 				EAC252DF276A2F250033F96F /* OnboardingViewController.swift in Sources */,
@@ -690,7 +714,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -720,7 +744,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

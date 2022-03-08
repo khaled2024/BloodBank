@@ -26,6 +26,8 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
         self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         self.navigationController!.navigationBar.titleTextAttributes = [.foregroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1) ]
         self.view.backgroundColor =  #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1)
+        self.tabBarController?.tabBar.isHidden = false
+
     }
     
     
@@ -131,6 +133,32 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
             }
         }
     }
+    private func BookingApp(){
+        let appointmentVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AppointmentViewController")as? AppointmentViewController
+        navigationController?.pushViewController(appointmentVC!, animated: true)
+        self.modalTransitionStyle = .partialCurl
+    }
+    private func DonateBlood(){
+        
+        let donateBloodVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DonateBloodViewController")as? DonateBloodViewController
+        navigationController?.pushViewController(donateBloodVC!, animated: true)
+        self.modalTransitionStyle = .partialCurl
+    }
+    private func RequestBlood(){
+        let requestBloodVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RequestBloodViewController")as? RequestBloodViewController
+        navigationController?.pushViewController(requestBloodVC!, animated: true)
+        self.modalTransitionStyle = .partialCurl
+    }
+    private func EducateYourself(){
+        let educateYourselfVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EducateYourselfViewController")as? EducateYourselfViewController
+        navigationController?.pushViewController(educateYourselfVC!, animated: true)
+        self.modalTransitionStyle = .partialCurl
+    }
+    private func NotificationScreen(){
+        let notificationVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NotificationViewController")as! NotificationViewController
+        navigationController?.pushViewController(notificationVC, animated: true)
+        self.modalTransitionStyle = .partialCurl
+    }
     //MARK: - Actions
     @IBAction func touchOnScreen(_ sender: UITapGestureRecognizer) {
         hideHamburgerMenu()
@@ -142,29 +170,19 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
         showSlideMenu()
     }
     @IBAction func notificationBtnTapped(_ sender: UIBarButtonItem) {
-        let notificationVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NotificationViewController")as! NotificationViewController
-        //        self.present(notificationVC, animated: true, completion: nil)
-        navigationController?.pushViewController(notificationVC, animated: true)
-        self.modalTransitionStyle = .partialCurl
+        self.NotificationScreen()
     }
     @IBAction func bookingAppintment(_ sender: UIButton) {
-        let appointmentVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AppointmentViewController")as? AppointmentViewController
-        navigationController?.pushViewController(appointmentVC!, animated: true)
-        self.modalTransitionStyle = .partialCurl
+        self.BookingApp()
     }
     @IBAction func donateBloodBtnTapped(_ sender: UIButton) {
-        let donateBloodVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DonateBloodViewController")as? DonateBloodViewController
-        navigationController?.pushViewController(donateBloodVC!, animated: true)
-        self.modalTransitionStyle = .partialCurl
+        self.DonateBlood()
+        
     }
     @IBAction func requestBloodBtnTapped(_ sender: UIButton) {
-        let requestBloodVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RequestBloodViewController")as? RequestBloodViewController
-        navigationController?.pushViewController(requestBloodVC!, animated: true)
-        self.modalTransitionStyle = .partialCurl
+        self.RequestBlood()
     }
     @IBAction func educateYourselfBtnTapped(_ sender: UIButton) {
-        let educateYourselfVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EducateYourselfViewController")as? EducateYourselfViewController
-        navigationController?.pushViewController(educateYourselfVC!, animated: true)
-        self.modalTransitionStyle = .partialCurl
+        self.EducateYourself()
     }
 }

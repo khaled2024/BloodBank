@@ -13,6 +13,10 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //        ChangeRadiusOfTabbar()
+        UserDefaults.standard.set(true, forKey: "isLoggedIn")
+        self.tabBarController?.tabBar.isHidden = false
+
+
         self.tabBar.unselectedItemTintColor = #colorLiteral(red: 0.4037812054, green: 0.4088639319, blue: 0.4087744653, alpha: 1)
         
     }
@@ -22,7 +26,7 @@ class TabBarController: UITabBarController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        UserDefaults.standard.set(true, forKey: "isLoggedIn")
+
 
     }
     

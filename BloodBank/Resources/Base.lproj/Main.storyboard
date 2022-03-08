@@ -37,7 +37,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7NC-H4-XYl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2214" y="30"/>
+            <point key="canvasLocation" x="-2104" y="19"/>
         </scene>
         <!--Onboarding View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -152,7 +152,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1565" y="34"/>
+            <point key="canvasLocation" x="-1455" y="23"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Imu-jA-g6b">
@@ -307,7 +307,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="DpF-7p-3Bk">
             <objects>
-                <tabBarController storyboardIdentifier="TabBarController" id="3xz-3A-PfG" customClass="TabBarController" customModule="BloodBank" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" modalTransitionStyle="partialCurl" modalPresentationStyle="fullScreen" id="3xz-3A-PfG" customClass="TabBarController" customModule="BloodBank" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="z5M-tX-Ptb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -709,8 +709,8 @@
                                     <outletCollection property="gestureRecognizers" destination="CJh-gm-0zE" appends="YES" id="8kT-yT-z2S"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n7y-xb-nxY">
-                                <rect key="frame" x="-280" y="88" width="280" height="725"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n7y-xb-nxY">
+                                <rect key="frame" x="0.0" y="88" width="280" height="725"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6D5-zQ-NMc">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="725"/>
@@ -775,6 +775,75 @@
             </objects>
             <point key="canvasLocation" x="3772" y="-865"/>
         </scene>
+        <!--Pick Date Time View Controller-->
+        <scene sceneID="Cef-7g-yO1">
+            <objects>
+                <viewController storyboardIdentifier="PickDateTimeViewController" id="qeR-oz-H4A" customClass="PickDateTimeViewController" customModule="BloodBank" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="k9l-UZ-CeR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="azV-eE-1Mu">
+                                <rect key="frame" x="39.5" y="767" width="335" height="55"/>
+                                <color key="backgroundColor" red="0.87450981139999995" green="0.40000003579999999" blue="0.40000003579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="jOx-9b-lJo"/>
+                                </constraints>
+                                <color key="tintColor" red="0.98823523520000001" green="0.98823523520000001" blue="0.98823523520000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="تسجيل">
+                                    <fontDescription key="titleFontDescription" name="Almarai-Bold" family="Almarai" pointSize="22"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="confirmDateBtnTapped:" destination="qeR-oz-H4A" eventType="touchUpInside" id="I9g-ro-5CY"/>
+                                </connections>
+                            </button>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="eLt-oD-NPD">
+                                <rect key="frame" x="0.0" y="214" width="414" height="358"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.87450981139999995" green="0.40000003579999999" blue="0.40000003579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="599569200">
+                                    <!--2020-01-01 11:00:00 +0000-->
+                                </date>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bp-1g-1sY">
+                                <rect key="frame" x="20.5" y="647" width="373" height="0.0"/>
+                                <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mzQ-rk-QiM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3bp-1g-1sY" firstAttribute="top" secondItem="eLt-oD-NPD" secondAttribute="bottom" constant="75" id="3WL-tE-d0j"/>
+                            <constraint firstItem="eLt-oD-NPD" firstAttribute="width" secondItem="k9l-UZ-CeR" secondAttribute="width" id="AOa-sB-rm0"/>
+                            <constraint firstItem="3bp-1g-1sY" firstAttribute="centerX" secondItem="eLt-oD-NPD" secondAttribute="centerX" id="Ito-o5-Hfg"/>
+                            <constraint firstItem="eLt-oD-NPD" firstAttribute="height" secondItem="k9l-UZ-CeR" secondAttribute="height" multiplier="0.4" id="Uhc-P9-SzF"/>
+                            <constraint firstItem="eLt-oD-NPD" firstAttribute="leading" secondItem="mzQ-rk-QiM" secondAttribute="leading" id="Y2B-cz-XJS"/>
+                            <constraint firstItem="3bp-1g-1sY" firstAttribute="width" secondItem="eLt-oD-NPD" secondAttribute="width" multiplier="0.9" id="ZPr-0U-q3I"/>
+                            <constraint firstItem="azV-eE-1Mu" firstAttribute="centerX" secondItem="3bp-1g-1sY" secondAttribute="centerX" id="dj9-uv-NVj"/>
+                            <constraint firstItem="eLt-oD-NPD" firstAttribute="centerY" secondItem="mzQ-rk-QiM" secondAttribute="centerY" constant="-60" id="ePw-N5-GFr"/>
+                            <constraint firstItem="eLt-oD-NPD" firstAttribute="centerX" secondItem="mzQ-rk-QiM" secondAttribute="centerX" id="gnP-eC-K1U"/>
+                            <constraint firstItem="azV-eE-1Mu" firstAttribute="width" secondItem="3bp-1g-1sY" secondAttribute="width" multiplier="0.9" id="oLm-rY-FRG"/>
+                            <constraint firstItem="mzQ-rk-QiM" firstAttribute="bottom" secondItem="azV-eE-1Mu" secondAttribute="bottom" constant="40" id="sjH-ZD-rYw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="confirmDateBtn" destination="azV-eE-1Mu" id="NQO-lt-lG6"/>
+                        <outlet property="datePicker" destination="eLt-oD-NPD" id="R4J-i7-yiW"/>
+                        <outlet property="dateTimeLabel" destination="3bp-1g-1sY" id="9Q5-C8-xyR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="veA-zf-vdp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3737.68115942029" y="-3640.1785714285711"/>
+        </scene>
         <!--Booking Appointment View Controller-->
         <scene sceneID="xBE-34-D2x">
             <objects>
@@ -782,14 +851,103 @@
                     <view key="view" contentMode="scaleToFill" id="1aN-Lm-F4X">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="uia-Pm-6JX">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BX6-Ww-TNi" id="u9c-uW-QZP"/>
+                                </connections>
+                            </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="28P-ek-0jg">
+                                <rect key="frame" x="20" y="612.5" width="374" height="93.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ben elsarayat Hospital" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UwS-9e-7qZ">
+                                        <rect key="frame" x="10" y="15" width="354" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <color key="textColor" red="0.13333332540000001" green="0.13333332540000001" blue="0.13725490870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bwn alaresh str, cairo " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BnF-lv-0m2">
+                                        <rect key="frame" x="10" y="39.5" width="354" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="first available date at 12 Feb" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gig-L6-2lh">
+                                        <rect key="frame" x="10" y="64" width="354" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.96862745289999996" green="0.96862745289999996" blue="0.96862745289999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="UwS-9e-7qZ" firstAttribute="leading" secondItem="28P-ek-0jg" secondAttribute="leading" constant="10" id="0Dw-6p-1RZ"/>
+                                    <constraint firstItem="gig-L6-2lh" firstAttribute="centerX" secondItem="BnF-lv-0m2" secondAttribute="centerX" id="8hX-N5-4oW"/>
+                                    <constraint firstItem="BnF-lv-0m2" firstAttribute="top" secondItem="UwS-9e-7qZ" secondAttribute="bottom" constant="5" id="8yE-9n-gvd"/>
+                                    <constraint firstItem="gig-L6-2lh" firstAttribute="top" secondItem="BnF-lv-0m2" secondAttribute="bottom" constant="5" id="C2q-kw-H27"/>
+                                    <constraint firstItem="BnF-lv-0m2" firstAttribute="centerX" secondItem="UwS-9e-7qZ" secondAttribute="centerX" id="UWW-4N-NO7"/>
+                                    <constraint firstItem="UwS-9e-7qZ" firstAttribute="top" secondItem="28P-ek-0jg" secondAttribute="top" constant="15" id="ZMT-Fo-ph3"/>
+                                    <constraint firstAttribute="trailing" secondItem="UwS-9e-7qZ" secondAttribute="trailing" constant="10" id="bWD-vP-23i"/>
+                                    <constraint firstItem="BnF-lv-0m2" firstAttribute="width" secondItem="UwS-9e-7qZ" secondAttribute="width" id="iRb-6u-3kH"/>
+                                    <constraint firstItem="gig-L6-2lh" firstAttribute="width" secondItem="BnF-lv-0m2" secondAttribute="width" id="jKW-Tf-q2Z"/>
+                                    <constraint firstItem="gig-L6-2lh" firstAttribute="height" secondItem="BnF-lv-0m2" secondAttribute="height" id="jnz-74-NTU"/>
+                                    <constraint firstAttribute="bottom" secondItem="gig-L6-2lh" secondAttribute="bottom" constant="10" id="q6i-Ua-0ye"/>
+                                    <constraint firstItem="BnF-lv-0m2" firstAttribute="height" secondItem="UwS-9e-7qZ" secondAttribute="height" id="zxJ-Ig-IBe"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F7X-7j-bNi">
+                                <rect key="frame" x="20" y="726" width="374" height="52"/>
+                                <color key="backgroundColor" red="0.73333334920000004" green="0.32941177490000001" blue="0.33725491169999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" red="0.98039215690000003" green="0.97647058819999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="اختيار الوقت والتاريخ">
+                                    <fontDescription key="titleFontDescription" name="Almarai-Bold" family="Almarai" pointSize="18"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="pickDateTimeBtnTapped:" destination="BX6-Ww-TNi" eventType="touchUpInside" id="FaO-E3-iDC"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="xTM-7x-nO2"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uia-Pm-6JX" firstAttribute="top" secondItem="1aN-Lm-F4X" secondAttribute="top" id="3fy-A3-hkH"/>
+                            <constraint firstItem="xTM-7x-nO2" firstAttribute="trailing" secondItem="uia-Pm-6JX" secondAttribute="trailing" id="5bf-cC-iIr"/>
+                            <constraint firstItem="F7X-7j-bNi" firstAttribute="height" secondItem="1aN-Lm-F4X" secondAttribute="height" multiplier="0.0617577" id="9zK-OI-Mep"/>
+                            <constraint firstItem="F7X-7j-bNi" firstAttribute="bottom" secondItem="xTM-7x-nO2" secondAttribute="bottom" constant="-30" id="Baz-C9-xvq"/>
+                            <constraint firstItem="uia-Pm-6JX" firstAttribute="leading" secondItem="xTM-7x-nO2" secondAttribute="leading" id="IFQ-jk-NYG"/>
+                            <constraint firstItem="F7X-7j-bNi" firstAttribute="leading" secondItem="xTM-7x-nO2" secondAttribute="leading" constant="20" id="fdW-NE-PHV"/>
+                            <constraint firstItem="uia-Pm-6JX" firstAttribute="bottom" secondItem="1aN-Lm-F4X" secondAttribute="bottom" id="hH0-9h-X7W"/>
+                            <constraint firstItem="28P-ek-0jg" firstAttribute="height" secondItem="F7X-7j-bNi" secondAttribute="height" multiplier="1.8" id="pFR-Hx-DN9"/>
+                            <constraint firstItem="xTM-7x-nO2" firstAttribute="trailing" secondItem="F7X-7j-bNi" secondAttribute="trailing" constant="20" id="pUF-T1-7Fv"/>
+                            <constraint firstItem="F7X-7j-bNi" firstAttribute="top" secondItem="28P-ek-0jg" secondAttribute="bottom" constant="20" id="sMo-UO-C3u"/>
+                            <constraint firstItem="28P-ek-0jg" firstAttribute="centerX" secondItem="F7X-7j-bNi" secondAttribute="centerX" id="xlP-6m-HMX"/>
+                            <constraint firstItem="28P-ek-0jg" firstAttribute="width" secondItem="F7X-7j-bNi" secondAttribute="width" id="xzE-fV-g6V"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bgr-Ir-UWL"/>
+                    <connections>
+                        <outlet property="bankAddressLabel" destination="BnF-lv-0m2" id="RPm-oz-5FQ"/>
+                        <outlet property="bankAvalabiltyLabel" destination="gig-L6-2lh" id="fDX-T4-dPP"/>
+                        <outlet property="bankNameLabel" destination="UwS-9e-7qZ" id="BWn-km-Uku"/>
+                        <outlet property="bookingMapView" destination="uia-Pm-6JX" id="9D6-AX-JiW"/>
+                        <outlet property="detailsView" destination="28P-ek-0jg" id="J6M-YF-TYh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZhB-ls-doE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4170" y="-3018"/>
+            <point key="canvasLocation" x="3737.68115942029" y="-2982.5892857142858"/>
         </scene>
         <!--Information Center View Controller-->
         <scene sceneID="WR4-Ie-ZYv">
@@ -805,7 +963,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zlv-RZ-18i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5035" y="-3018"/>
+            <point key="canvasLocation" x="4603" y="-2982"/>
         </scene>
         <!--Fitness Appointment View Controller-->
         <scene sceneID="dQC-5O-Zky">
@@ -831,15 +989,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BiG-Gw-jia">
-                                <rect key="frame" x="83" y="643.5" width="248" height="55"/>
+                                <rect key="frame" x="83" y="643.5" width="248" height="50"/>
                                 <color key="backgroundColor" red="0.75686275960000005" green="0.30980393290000002" blue="0.3058823645" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="QQE-ib-GMB"/>
+                                    <constraint firstAttribute="height" constant="50" id="QQE-ib-GMB"/>
                                 </constraints>
                                 <color key="tintColor" red="0.94901961089999998" green="0.94901961089999998" blue="0.94901961089999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Continue">
-                                    <fontDescription key="titleFontDescription" name="Poppins-Regular" family="Poppins" pointSize="25"/>
+                                <buttonConfiguration key="configuration" style="plain" title="استمرار">
+                                    <fontDescription key="titleFontDescription" name="Almarai-Regular" family="Almarai" pointSize="25"/>
                                 </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -872,7 +1030,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BMF-5I-Acx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4169.5652173913049" y="-2361.1607142857142"/>
+            <point key="canvasLocation" x="3738" y="-2325"/>
         </scene>
         <!--Not Fit Appointment View Controller-->
         <scene sceneID="Frn-sK-gbI">
@@ -898,15 +1056,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="soO-iE-SnD">
-                                <rect key="frame" x="89" y="771" width="236" height="51"/>
+                                <rect key="frame" x="98.5" y="771" width="217.5" height="51"/>
                                 <color key="backgroundColor" red="0.94901961089999998" green="0.94901961089999998" blue="0.94901961089999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="zjc-Tu-OIi"/>
                                 </constraints>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Back to Home screen">
-                                    <fontDescription key="titleFontDescription" name="Poppins-Regular" family="Poppins" pointSize="20"/>
+                                <buttonConfiguration key="configuration" style="plain" title="الرجوع للشاشه الرئيسيه">
+                                    <fontDescription key="titleFontDescription" name="Almarai-Regular" family="Almarai" pointSize="20"/>
                                 </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -918,12 +1076,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GiQ-yO-k6L">
-                                <rect key="frame" x="89" y="696" width="236" height="51"/>
+                                <rect key="frame" x="98.5" y="696" width="217.5" height="51"/>
                                 <color key="backgroundColor" red="0.75686275960000005" green="0.30980393290000002" blue="0.3058823645" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" red="0.94901961089999998" green="0.94901961089999998" blue="0.94901961089999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Information Center">
-                                    <fontDescription key="titleFontDescription" name="Poppins-Regular" family="Poppins" pointSize="20"/>
+                                <buttonConfiguration key="configuration" style="plain" title="مركز المعلومات">
+                                    <fontDescription key="titleFontDescription" name="Almarai-Regular" family="Almarai" pointSize="20"/>
                                 </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -962,7 +1120,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K8i-FM-WyT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5036" y="-2361"/>
+            <point key="canvasLocation" x="4603" y="-2325"/>
         </scene>
         <!--Appointment View Controller-->
         <scene sceneID="VSb-bT-H8v">
@@ -979,7 +1137,7 @@
                                         <rect key="frame" x="10" y="0.0" width="1990" height="448"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RZE-Ye-1bC">
-                                                <rect key="frame" x="0.0" y="0.0" width="1990" height="448"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="1920" height="448"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="list" translatesAutoresizingMaskIntoConstraints="NO" id="6kM-Zg-0Gc">
                                                         <rect key="frame" x="90" y="50" width="150" height="134.5"/>
@@ -1192,7 +1350,7 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="QoI-w5-Hj1" secondAttribute="trailing" constant="120" id="0CD-YV-5S5"/>
+                                                    <constraint firstAttribute="trailing" secondItem="QoI-w5-Hj1" secondAttribute="trailing" constant="50" id="0CD-YV-5S5"/>
                                                     <constraint firstItem="aRO-bo-r7s" firstAttribute="leading" secondItem="Nnp-Cv-k8h" secondAttribute="trailing" constant="250" id="1kZ-Me-bKa"/>
                                                     <constraint firstItem="vyt-mN-q6d" firstAttribute="trailing" secondItem="6kM-Zg-0Gc" secondAttribute="trailing" constant="40" id="3Te-Em-yRE"/>
                                                     <constraint firstItem="1OM-98-vmy" firstAttribute="width" secondItem="VYg-1d-reY" secondAttribute="width" id="46J-2u-gYC"/>
@@ -1494,7 +1652,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="25F-ZI-iuq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3016" y="-891"/>
+            <point key="canvasLocation" x="2983" y="-865"/>
         </scene>
         <!--Hamburger View Controller-->
         <scene sceneID="HJt-AI-t9b">
@@ -1728,7 +1886,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Evr-62-Z9r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4564" y="-865"/>
+            <point key="canvasLocation" x="4486" y="-865"/>
         </scene>
         <!--Notification View Controller-->
         <scene sceneID="God-pW-top">
@@ -1752,10 +1910,41 @@
                     <view key="view" contentMode="scaleToFill" id="frZ-G8-bFT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ed-7F-fVX">
+                                <rect key="frame" x="83" y="358.5" width="248" height="179"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SNq-k4-sn4">
+                                <rect key="frame" x="62" y="126.5" width="290" height="179.5"/>
+                                <string key="text">هنا هنعمل نفس الفيو الي بيتحرك بس لما يضغط علي يس مثلا يطلعلوا بوب اب اليرت فيها انيمشن من لوليت ولما الاليرت يتقفل هيتنشط الزرارين بتوع الريكوست دونيشن وال حجز ميعاد </string>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="9"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="iwv-T4-7tP"/>
                         <color key="backgroundColor" red="0.98431372640000003" green="0.98039215800000001" blue="0.97254908080000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="9ed-7F-fVX" firstAttribute="height" secondItem="frZ-G8-bFT" secondAttribute="height" multiplier="0.2" id="2PU-x0-Swx"/>
+                            <constraint firstItem="SNq-k4-sn4" firstAttribute="leading" secondItem="iwv-T4-7tP" secondAttribute="leading" constant="62" id="5fW-wq-Cc0"/>
+                            <constraint firstItem="9ed-7F-fVX" firstAttribute="width" secondItem="frZ-G8-bFT" secondAttribute="width" multiplier="0.6" id="7cm-QZ-fMd"/>
+                            <constraint firstItem="9ed-7F-fVX" firstAttribute="centerY" secondItem="frZ-G8-bFT" secondAttribute="centerY" id="WWs-pO-eEu"/>
+                            <constraint firstItem="9ed-7F-fVX" firstAttribute="top" secondItem="SNq-k4-sn4" secondAttribute="bottom" constant="52.5" id="lfN-73-Wuv"/>
+                            <constraint firstItem="9ed-7F-fVX" firstAttribute="centerX" secondItem="frZ-G8-bFT" secondAttribute="centerX" id="q83-C6-3xA"/>
+                            <constraint firstItem="SNq-k4-sn4" firstAttribute="width" secondItem="frZ-G8-bFT" secondAttribute="width" multiplier="0.700483" id="t0r-yR-OV0"/>
+                            <constraint firstItem="SNq-k4-sn4" firstAttribute="height" secondItem="frZ-G8-bFT" secondAttribute="height" multiplier="0.2" id="wgQ-MO-LIS"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7pZ-bR-B0L"/>
+                    <connections>
+                        <outlet property="animationView" destination="9ed-7F-fVX" id="dFG-1h-Xb6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HyV-Ec-0N3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1769,7 +1958,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="jqt-1M-W8u"/>
-                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <color key="backgroundColor" red="0.98039215690000003" green="0.97647058819999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="BZA-Wn-4vA"/>
                 </viewController>
@@ -1785,7 +1974,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="N71-cp-wsx"/>
-                        <color key="backgroundColor" red="0.68627452850000004" green="0.50588238240000005" blue="0.80392158030000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.98039215690000003" green="0.97647058819999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ntv-F2-Jio"/>
                 </viewController>
@@ -2259,6 +2448,73 @@
             </objects>
             <point key="canvasLocation" x="296" y="875"/>
         </scene>
+        <!--Sheet View Controller-->
+        <scene sceneID="AEr-zf-vwu">
+            <objects>
+                <viewController storyboardIdentifier="SheetViewController" id="dUN-HP-4ds" customClass="SheetViewController" customModule="BloodBank" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bQI-Od-JWB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thankYou" translatesAutoresizingMaskIntoConstraints="NO" id="xyk-VF-ag3">
+                                <rect key="frame" x="83" y="248.5" width="248" height="269"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="شكرا لك" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="klm-Wh-DQG">
+                                <rect key="frame" x="153.5" y="557.5" width="107" height="32"/>
+                                <fontDescription key="fontDescription" name="Almarai-Bold" family="Almarai" pointSize="28"/>
+                                <color key="textColor" red="0.87450981139999995" green="0.40000003579999999" blue="0.40000003579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تم حجز ميعاد التبرع بالدم بنجاح" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4pd-ku-Ohe">
+                                <rect key="frame" x="107" y="604.5" width="200" height="51.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="bUb-Da-CtI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Almarai-Bold" family="Almarai" pointSize="23"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9hp-89-df5">
+                                <rect key="frame" x="132" y="676" width="150" height="37"/>
+                                <color key="backgroundColor" red="0.87450981139999995" green="0.40000003579999999" blue="0.40000003579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="vW5-pP-o0c"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="انهاء">
+                                    <fontDescription key="titleFontDescription" name="Almarai-Bold" family="Almarai" pointSize="20"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="closeBtnTapped:" destination="dUN-HP-4ds" eventType="touchUpInside" id="sn8-dX-pu9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kO9-oQ-KiG"/>
+                        <color key="backgroundColor" red="0.96862745289999996" green="0.96862745289999996" blue="0.96862745289999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="xyk-VF-ag3" firstAttribute="centerX" secondItem="bQI-Od-JWB" secondAttribute="centerX" id="9I4-nE-tD9"/>
+                            <constraint firstItem="4pd-ku-Ohe" firstAttribute="top" secondItem="klm-Wh-DQG" secondAttribute="bottom" constant="15" id="H08-yQ-t3P"/>
+                            <constraint firstItem="klm-Wh-DQG" firstAttribute="centerX" secondItem="xyk-VF-ag3" secondAttribute="centerX" id="JmR-gy-Wke"/>
+                            <constraint firstItem="4pd-ku-Ohe" firstAttribute="centerX" secondItem="klm-Wh-DQG" secondAttribute="centerX" id="OCz-TS-REl"/>
+                            <constraint firstItem="9hp-89-df5" firstAttribute="top" secondItem="4pd-ku-Ohe" secondAttribute="bottom" constant="20" id="OEd-3B-Xjx"/>
+                            <constraint firstItem="xyk-VF-ag3" firstAttribute="width" secondItem="bQI-Od-JWB" secondAttribute="width" multiplier="0.6" id="PSF-Yh-xMM"/>
+                            <constraint firstItem="klm-Wh-DQG" firstAttribute="top" secondItem="xyk-VF-ag3" secondAttribute="bottom" constant="40" id="TJq-nT-VtL"/>
+                            <constraint firstItem="xyk-VF-ag3" firstAttribute="height" secondItem="bQI-Od-JWB" secondAttribute="height" multiplier="0.3" id="Xp5-6y-Nck"/>
+                            <constraint firstItem="xyk-VF-ag3" firstAttribute="centerY" secondItem="bQI-Od-JWB" secondAttribute="centerY" constant="-65" id="bA3-fp-AsW"/>
+                            <constraint firstItem="9hp-89-df5" firstAttribute="centerX" secondItem="4pd-ku-Ohe" secondAttribute="centerX" id="z5c-Ac-7BL"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kno-x0-b5E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3771" y="-4306"/>
+        </scene>
     </scenes>
     <resources>
         <image name="FitMan" width="300" height="300"/>
@@ -2281,6 +2537,7 @@
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="requestBlood" width="50" height="50"/>
         <image name="tattoo" width="100" height="100"/>
+        <image name="thankYou" width="984" height="984"/>
         <image name="weight" width="50" height="50"/>
         <namedColor name="labelColor">
             <color red="0.56300002336502075" green="0.5690000057220459" blue="0.5690000057220459" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -2299,9 +2556,6 @@
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiarySystemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

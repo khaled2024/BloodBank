@@ -13,14 +13,12 @@ class MapViewController: UIViewController {
     //MARK: -  variables
     
     @IBOutlet weak var mapView: MKMapView!
-    let locations = [["title":"Tanta","latitude":30.4718,"longitude":31.0006,"description":"this is Mytown"],["title":"Cairo","latitude":30.033333,"longitude":31.233334,"description":"this is Cairo"],["title":"Alexandria","latitude":31.205753,"longitude":29.924526,"description":"this is Alexandria"]
-    ]
+     
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
-        locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         displayMaltipleLocations()
         locationManager.startUpdatingLocation()
@@ -28,26 +26,13 @@ class MapViewController: UIViewController {
     //MARK: - private functions
         // for pins
     func displayMaltipleLocations(){
-        for location in locations{
+        for location in LocationCoordinate.locations{
             let annotaion = MKPointAnnotation()
             annotaion.title = location["title"] as? String
             annotaion.subtitle = location["description"] as? String
             annotaion.coordinate = CLLocationCoordinate2D(latitude: location["latitude"] as! Double, longitude: location["longitude"] as! Double)
             mapView.addAnnotation(annotaion)
-//            let region = MKCoordinateRegion(center: annotaion.coordinate, latitudinalMeters: 80000, longitudinalMeters: 80000)
-//            mapView.setRegion(region, animated: true)
         }
-    }
-}
-
-// for my location
-extension MapViewController: CLLocationManagerDelegate{
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let span = MKCoordinateSpan(latitudeDelta: 30.4718, longitudeDelta: 31.0006)
-        let region = MKCoordinateRegion(center: locations[0].coordinate, span: span)
-        mapView.setRegion(region, animated: true)
-        mapView.showsUserLocation = true
     }
 }
 // for custom pin

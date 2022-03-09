@@ -12,8 +12,6 @@
 		<string>Poppins-Regular.ttf</string>
 		<string>Almarai-Regular.ttf</string>
 	</array>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>let app use location for better user expeirence</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -33,5 +31,9 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+	</array>
 </dict>
 </plist>

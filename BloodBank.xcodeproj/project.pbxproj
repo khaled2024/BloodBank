@@ -709,6 +709,8 @@
 				DEVELOPMENT_TEAM = 3TWF5CMBRA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BloodBank/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Let app use location for better user expeirence";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Let app use location for better user expeirence";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -739,6 +741,8 @@
 				DEVELOPMENT_TEAM = 3TWF5CMBRA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BloodBank/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Let app use location for better user expeirence";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Let app use location for better user expeirence";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

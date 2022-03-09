@@ -103,7 +103,7 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
                     diffrence = diffFromBeginPoint
                     self.testView.layer.opacity = Float(0.60+(0.60*diffFromBeginPoint/280))
                     self.backViewForHumburger.layer.opacity = Float(0.60+(0.60*diffFromBeginPoint/280))
-                    print("diff is - \(diffFromBeginPoint)")
+                    //print("diff is - \(diffFromBeginPoint)")
                     self.testView.isUserInteractionEnabled = false
                 }
             }

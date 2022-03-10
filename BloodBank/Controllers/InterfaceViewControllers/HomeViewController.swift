@@ -16,6 +16,7 @@ class HomeViewController: UIViewController {
     //MARK: - lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        UserDefaults.standard.set(false, forKey: "isLoggedIn")
 
     }
     override func viewWillAppear(_ animated: Bool) {

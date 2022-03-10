@@ -17,6 +17,7 @@ class LoginViewController: UIViewController {
     var gradientBackground = UserGradientBackground()
     var customTF = UserCustomTF()
     var customBtn = UserCustomBtn()
+    let navigationManager = NavigationManager()
     //MARK: - lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,16 +37,7 @@ class LoginViewController: UIViewController {
         gradientBackground.setGradientBackground(colorTop: #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1), colorBottom: #colorLiteral(red: 1, green: 0.5385724902, blue: 0.5328875184, alpha: 1), view: view)
     }
     private func goToMainScreen(){
-        let tabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController")as! TabBarController
-        if let sceneDelegate = self.view.window?.windowScene?.delegate as? SceneDelegate, let window = sceneDelegate.window{
-            window.rootViewController = tabBarController
-            UIView.transition(with: window, duration: 0.7, options: .transitionFlipFromRight, animations: nil, completion: nil)
-        }
-//        let storyboard = UIStoryboard(name: "projectMainTabBar", bundle: nil)
-//        let vc = storyboard.instantiateViewController(withIdentifier: "TabBarController")as! TabBarController
-//        vc.modalPresentationStyle = .fullScreen
-//        vc.modalTransitionStyle = .flipHorizontal
-//        self.present(vc, animated: true, completion: nil)
+        navigationManager.show(screen: .tapBarController, inController: self)
     }
     private func checkTextFields()-> Bool{
         if let email = emailTextField.text , !email.isEmpty , let password = passwordTextField.text , !password.isEmpty{
@@ -65,6 +57,7 @@ class LoginViewController: UIViewController {
         if checkTextFields(){
             customBtn.toggleForBtn(Btn: self.loginBtn)
             DispatchQueue.main.asyncAfter(deadline: .now()+1.5) {
+                UserDefaults.standard.set(true, forKey: "isLoggedIn")
                 self.goToMainScreen()
             }
         }else{

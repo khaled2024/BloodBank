@@ -34,6 +34,7 @@ class LoadingViewController: UIViewController {
     }
     private func showInitialScreen(){
         if isOnBoardingSeen {
+            
             if let isLoggedIn = def.object(forKey: "isLoggedIn")as? Bool{
                 if isLoggedIn == true{
                     print("tapBar")
@@ -46,6 +47,7 @@ class LoadingViewController: UIViewController {
         }else{
             navigationManager.show(screen: .onboarding, inController: self)
         }
+        navigationManager.show(screen: .onboarding, inController: self)
     }
 }
 //MARK: - Comments

@@ -35,7 +35,6 @@ class TabBarController: UITabBarController {
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         self.SimpleAnnimationWhenSelectItem(item)
     }
-    
     // the height of the tapBar
     
     private func ChangeHeightOfTabbar(){
@@ -53,7 +52,6 @@ class TabBarController: UITabBarController {
         self.tabBar.layer.cornerRadius = 30
         self.tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
-    
     // animation of tabBar Item
     private func SimpleAnnimationWhenSelectItem(_ item: UITabBarItem){
         guard let barItemView = item.value(forKey: "view") as? UIView else { return }
@@ -64,5 +62,4 @@ class TabBarController: UITabBarController {
         propertyAnimator.addAnimations({ barItemView.transform = .identity }, delayFactor: CGFloat(timeInterval))
         propertyAnimator.startAnimation()
     }
-    
 }

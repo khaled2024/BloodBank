@@ -20,7 +20,7 @@ class NavigationBar: UINavigationController{
         myView.title = title
         myView.navigationController?.navigationBar.backgroundColor = navBarColor
         myView.navigationController?.navigationBar.tintColor = navBarTintColor
-        myView.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: forgroundTitle , .font: UIFont(name: "Almarai", size: 20)!]
+        myView.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: forgroundTitle , .font: UIFont(name: "Almarai-Bold", size: 20)!]
         viewController.backgroundColor = bacgroundView
     }
 }

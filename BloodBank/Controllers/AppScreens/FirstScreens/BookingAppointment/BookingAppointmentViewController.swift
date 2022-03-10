@@ -60,8 +60,8 @@ class BookingAppointmentViewController: UIViewController {
         return nil
     }
     private func setUpDesign(){
-        title = "حجز موعد للتبرع"
-        self.getDirectionBtn.titleLabel?.font = UIFont(name: "Almarai", size: 17)
+//        title = "حجز موعد للتبرع"
+        self.getDirectionBtn.titleLabel?.font = UIFont(name: "Almarai", size: 18)
         self.navigationController?.navigationBar.backgroundColor = .clear
         self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1)
         self.navigationController!.navigationBar.titleTextAttributes = [.foregroundColor: #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1) , .font: UIFont(name: "Almarai-Bold", size: 20)!]
@@ -71,6 +71,8 @@ class BookingAppointmentViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = true
         self.detailsView.isHidden = true
         self.getDirectionBtn.isHidden = true
+//        self.navigationController?.navigationBar.isHidden = true
+        
     }
     // Draw directions
     private func drawDirections(startingLoc: CLLocationCoordinate2D , destinationLoc: CLLocationCoordinate2D){
@@ -114,7 +116,6 @@ class BookingAppointmentViewController: UIViewController {
     //MARK: - Actions
     @IBAction func pickDateTimeBtnTapped(_ sender: UIButton) {
         navigationController?.pushViewController(UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PickDateTimeViewController")as! PickDateTimeViewController, animated: true)
-        self.modalPresentationStyle = .fullScreen
     }
     @IBAction func getDirectionsBtnTapped(_ sender: UIButton) {
         if let userLoc = locationManager.location{

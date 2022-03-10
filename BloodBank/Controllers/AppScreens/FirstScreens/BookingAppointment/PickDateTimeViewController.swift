@@ -36,7 +36,9 @@ class PickDateTimeViewController: UIViewController {
         self.view.backgroundColor =  #colorLiteral(red: 0.9845134616, green: 0.9810839295, blue: 0.9719126821, alpha: 1)
         navigationItem.backButtonTitle = ""
         navigationItem.backBarButtonItem?.isEnabled = false
-        self.tabBarController?.tabBar.isHidden = true
+//        self.tabBarController?.tabBar.isHidden = true
+        self.navigationController?.navigationBar.isHidden = false
+
     }
     //MARK: - Actions
     private func openSheet(){

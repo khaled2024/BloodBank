@@ -17,6 +17,8 @@
 		EA064CAE27A4750600A06257 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA064CAD27A4750600A06257 /* MainViewController.swift */; };
 		EA1831C727DA6C1000D9BA90 /* RequestsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1831C527DA6C1000D9BA90 /* RequestsTableViewCell.swift */; };
 		EA1831C827DA6C1000D9BA90 /* RequestsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA1831C627DA6C1000D9BA90 /* RequestsTableViewCell.xib */; };
+		EA1915F727DBFA3100554FF9 /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1915F627DBFA3100554FF9 /* Patient.swift */; };
+		EA1915F927DC27B100554FF9 /* DetailsCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1915F827DC27B100554FF9 /* DetailsCellViewController.swift */; };
 		EA2484D027B6D52900103DE7 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2484CF27B6D52900103DE7 /* NotificationViewController.swift */; };
 		EA4278A227B01F9C002D444A /* AppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4278A127B01F9C002D444A /* AppointmentViewController.swift */; };
 		EA4278A427B025A7002D444A /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4278A327B025A7002D444A /* RequestViewController.swift */; };
@@ -76,6 +78,8 @@
 		EA064CAD27A4750600A06257 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		EA1831C527DA6C1000D9BA90 /* RequestsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsTableViewCell.swift; sourceTree = "<group>"; };
 		EA1831C627DA6C1000D9BA90 /* RequestsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestsTableViewCell.xib; sourceTree = "<group>"; };
+		EA1915F627DBFA3100554FF9 /* Patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
+		EA1915F827DC27B100554FF9 /* DetailsCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCellViewController.swift; sourceTree = "<group>"; };
 		EA2484CF27B6D52900103DE7 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		EA4278A127B01F9C002D444A /* AppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentViewController.swift; sourceTree = "<group>"; };
 		EA4278A327B025A7002D444A /* RequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
@@ -260,6 +264,7 @@
 			children = (
 				EAC252E6276A34BF0033F96F /* OnboardingSlide.swift */,
 				EAAD8336276D12C700381854 /* DataPicker.swift */,
+				EA1915F627DBFA3100554FF9 /* Patient.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -366,6 +371,7 @@
 				EA4278A327B025A7002D444A /* RequestViewController.swift */,
 				EA1831C527DA6C1000D9BA90 /* RequestsTableViewCell.swift */,
 				EA1831C627DA6C1000D9BA90 /* RequestsTableViewCell.xib */,
+				EA1915F827DC27B100554FF9 /* DetailsCellViewController.swift */,
 			);
 			path = DonateBlood;
 			sourceTree = "<group>";
@@ -560,6 +566,7 @@
 				EACC013127A42C4D00FFB92B /* StorageManager.swift in Sources */,
 				EACC012C27A41E4F00FFB92B /* LoadingViewController.swift in Sources */,
 				EACC013C27A43A5A00FFB92B /* UserGradientBackground.swift in Sources */,
+				EA1915F927DC27B100554FF9 /* DetailsCellViewController.swift in Sources */,
 				EA064CAE27A4750600A06257 /* MainViewController.swift in Sources */,
 				EAC252E7276A34BF0033F96F /* OnboardingSlide.swift in Sources */,
 				EAE3C90B27B12C6300F42D16 /* MapViewController.swift in Sources */,
@@ -589,6 +596,7 @@
 				EAB1C98F27A54DEE006BB209 /* TabBarController.swift in Sources */,
 				EAC252E9276A37BC0033F96F /* OnboardingCollectionViewCell.swift in Sources */,
 				EACC013E27A43A5A00FFB92B /* UserCustomTF.swift in Sources */,
+				EA1915F727DBFA3100554FF9 /* Patient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

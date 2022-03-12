@@ -120,7 +120,8 @@ class BookingAppointmentViewController: UIViewController {
     @IBAction func getDirectionsBtnTapped(_ sender: UIButton) {
         if let userLoc = locationManager.location{
             self.drawDirections(startingLoc: userLoc.coordinate, destinationLoc: coordinatePin!)
-            // or if i wanna select direction with the pin(i will hide this pin now)
+            // or
+            //if i wanna select direction with the pin(i will hide this pin now)
 //            self.drawDirections(startingLoc: userLoc.coordinate, destinationLoc: bookingMapView.centerCoordinate)
         }
     }
@@ -132,6 +133,14 @@ extension BookingAppointmentViewController: MKMapViewDelegate{
         guard !(annotation is MKUserLocation) else{
             return nil
         }
+//        or
+//        let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "custom")
+//        annotationView.canShowCallout = true
+//        annotationView.glyphImage = UIImage(named: "bloodPin2")
+//        annotationView.markerTintColor = #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1)
+//        annotationView.selectedGlyphImage = UIImage(named: "bloodPin")
+//
+//        return annotationView
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "custom")
         if annotationView == nil{
             annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "custom")
@@ -198,7 +207,7 @@ extension BookingAppointmentViewController: CLLocationManagerDelegate{
         }
     }
     private func zoomUserLocation(location: CLLocation){
-        let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 80000, longitudinalMeters: 80000)
+        let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 100000, longitudinalMeters: 100000)
         bookingMapView.setRegion(region, animated: true)
     }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

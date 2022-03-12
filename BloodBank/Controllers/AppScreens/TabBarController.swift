@@ -12,26 +12,20 @@ class TabBarController: UITabBarController {
     //MARK: - lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        ChangeRadiusOfTabbar()
-        UserDefaults.standard.set(true, forKey: "isLoggedIn")
-        self.tabBarController?.tabBar.isHidden = false
-
-
-        self.tabBar.unselectedItemTintColor = #colorLiteral(red: 0.4037812054, green: 0.4088639319, blue: 0.4087744653, alpha: 1)
-        
+       setUp()
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-//        self.ChangeHeightOfTabbar()
+        //        self.ChangeHeightOfTabbar()
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-
-    }
-    
-    
     //MARK: - private functions
+    private func setUp(){
+        //        ChangeRadiusOfTabbar()
+        UserDefaults.standard.set(true, forKey: "isLoggedIn")
+        self.tabBarController?.tabBar.isHidden = false
+        self.navigationController?.navigationBar.isHidden = false
+        self.tabBar.unselectedItemTintColor = #colorLiteral(red: 0.4037812054, green: 0.4088639319, blue: 0.4087744653, alpha: 1)
+    }
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         self.SimpleAnnimationWhenSelectItem(item)
     }

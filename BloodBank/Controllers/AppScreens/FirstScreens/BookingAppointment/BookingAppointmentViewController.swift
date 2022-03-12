@@ -133,23 +133,24 @@ extension BookingAppointmentViewController: MKMapViewDelegate{
         guard !(annotation is MKUserLocation) else{
             return nil
         }
-//        or
-//        let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "custom")
-//        annotationView.canShowCallout = true
-//        annotationView.glyphImage = UIImage(named: "bloodPin2")
-//        annotationView.markerTintColor = #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1)
-//        annotationView.selectedGlyphImage = UIImage(named: "bloodPin")
-//
+//        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "custom")
+//        if annotationView == nil{
+//            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "custom")
+//            annotationView?.canShowCallout = true
+//        }else{
+//            annotationView?.annotation = annotation
+//        }
+//        annotationView?.image = UIImage(named: "bloodPin")
 //        return annotationView
-        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "custom")
-        if annotationView == nil{
-            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "custom")
-            annotationView?.canShowCallout = true
-        }else{
-            annotationView?.annotation = annotation
-        }
-        annotationView?.image = UIImage(named: "bloodPin")
+//        or
+        let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "custom")
+        annotationView.canShowCallout = true
+        annotationView.glyphImage = UIImage(named: "bloodPin2")
+        annotationView.markerTintColor = #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1)
+        annotationView.selectedGlyphImage = UIImage(named: "bloodPin")
+
         return annotationView
+       
     }
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         detailsView.isHidden = false

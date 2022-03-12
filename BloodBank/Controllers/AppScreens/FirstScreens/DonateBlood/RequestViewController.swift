@@ -12,10 +12,11 @@ class RequestViewController: UIViewController{
     @IBOutlet weak var tableView: UITableView!
     let navBar = NavigationBar()
     var segmentSender = 0
-    let patient = [Patient(name: "خالد", bloodType: "A-", address: "معمل النور / المنشاه الكبري / السنطه/ الغربيه", time: "خالد", description: "اخي بحاجه الي خمسه اكياس دم ف حادثه سياره وحالته خطيره جدا ارجو المساعده ف اسرع وقت ف معمل النور / المنشاه الكبري / السنطه / الغربيه "),Patient(name: "خالد حسين احمد خليفه", bloodType: "B-", address:"معمل النور / المنشاه الكبري / السنطه/ الغربيه", time: "الخامس من يناير عام ٢٠٢٢", description: "اخي بحاجه الي خمسه اكياس دم ف حادثه سياره وحالته خطيره جدا ارجو المساعده ف اسرع وقت ف معمل النور / المنشاه الكبري / السنطه / الغربيه خالد"),Patient(name: "خالد", bloodType: "AB-", address: "خالد", time: "خالد", description: "خالد"),Patient(name: "عمرو", bloodType: "OH-", address: "معمل النور / المنشاه الكبري / السنطه/ الغربيه خالد", time: "خالد", description: "خالد"),Patient(name: "خالد اخي بحاجه الي خمسه اكياس دم ف حادثه سياره وحالته خطيره جدا ارجو المساعده ف اسرع وقت ف معمل النور / المنشاه الكبري / السنطه / الغربيه ", bloodType: "B-", address: "خالد معمل النور / المنشاه الكبري / السنطه/ الغربيه ", time: "خالد", description: "خالد"),Patient(name: "خالد", bloodType: "AB-", address: "خالد", time: "خالد", description: " اخي بحاجه الي خمسه اكياس دم ف حادثه سياره وحالته خطيره جدا ارجو المساعده ف اسرع وقت ف معمل النور / المنشاه الكبري / السنطه / الغربيه خالد"),Patient(name: "خالد", bloodType: "OH-", address: "خالد معمل النور / المنشاه الكبري / السنطه/ الغربيه", time: "خالد", description: "خالد")]
-    let arrayPatient = ["khaled","hussien","khalifa","khaled","hussien","khalifa","khaled"]
-    let arrayBloodType = ["A-","A+","B-","B+","O+","O-","OH"]
-    let privateDic = ["name":"خالد حسين خليفه","bloodType":"A+","address":"معمل النور / المنشاه الكبري / السنطه/ الغربيه","time":"الخامس من يناير عام ٢٠٢٢","discreption":"اخي بحاجه الي خمسه اكياس دم ف حادثه سياره وحالته خطيره جدا ارجو المساعده ف اسرع وقت ف معمل النور / المنشاه الكبري / السنطه / الغربيه "]
+    let patient = [Patient(name: "خالد", bloodType: "AB", address: "معمل النور / المنشاه الكبري / السنطه/ الغربيه", time: "خالد", description: "اخي بحاجه الي خمسه اكياس دم ف حادثه سياره وحالته خطيره جدا ارجو المساعده ف اسرع وقت ف معمل النور / المنشاه الكبري / السنطه / الغربيه "),Patient(name: "خالد حسين احمد خليفه", bloodType: "B-", address:"معمل النور / المنشاه الكبري / السنطه/ الغربيه", time: "الخامس من يناير عام ٢٠٢٢", description: "اخي بحاجه الي خمسه اكياس دم ف حادثه سياره وحالته خطيره جدا ارجو المساعده ف اسرع وقت ف معمل النور / المنشاه الكبري / السنطه / الغربيه خالد"),Patient(name: "خالد", bloodType: "AB-", address: "خالد", time: "خالد", description: "خالد"),Patient(name: "عمرو", bloodType: "OH-", address: "معمل النور / المنشاه الكبري / السنطه/ الغربيه خالد", time: "خالد", description: "خالد"),Patient(name: "خالد حسين احمد حسين خليفه", bloodType: "B-", address: "خالد معمل النور / المنشاه الكبري / السنطه/ الغربيه ", time: "خالد", description: "خالد"),Patient(name: "خالد", bloodType: "AB-", address: "خالد", time: "خالد", description: " اخي بحاجه الي خمسه اكياس دم ف حادثه سياره وحالته خطيره جدا ارجو المساعده ف اسرع وقت ف معمل النور / المنشاه الكبري / السنطه / الغربيه خالد"),Patient(name: "خالد", bloodType: "OH-", address: "خالد معمل النور / المنشاه الكبري / السنطه/ الغربيه", time: "خالد", description: "خالد")]
+    
+    let privateArr = [Patient(name: "خالد", bloodType: "ABBA", address: "معمل النور / المنشاه الكبري / السنطه/ الغربيه", time: "خالد", description: "اخي بحاجه الي خمسه اكياس دم ف حادثه سياره وحالته خطيره جدا ارجو المساعده ف اسرع وقت ف معمل النور / المنشاه الكبري / السنطه / الغربيه ")]
+  //MARK: - --------------------------------------------------------
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpDesign()
@@ -30,9 +31,17 @@ class RequestViewController: UIViewController{
         tableView.dataSource = self
         tableView.register(UINib(nibName: "RequestsTableViewCell", bundle: nil), forCellReuseIdentifier: "Requestscell")
     }
-    private func goTODetailsCellVC(){
-        self.present(UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailsCellViewController")as! DetailsCellViewController, animated: true, completion: nil)
-        self.modalPresentationStyle = .formSheet
+    private func goTODiffDetailsCell(indexPath: IndexPath){
+        if segmentSender == 0{
+            let controller = DetailsCellViewController.instantiate()
+            controller.myPatient = patient[indexPath.row]
+            self.present(controller, animated: true, completion: nil)
+        }else{
+            let controller = DetailsCellViewController.instantiate()
+            controller.myPatient = privateArr[indexPath.row]
+            self.present(controller, animated: true, completion: nil)
+
+        }
     }
     //MARK: - Action
     @IBAction func segmentedControlTapped(_ sender: UISegmentedControl) {
@@ -68,7 +77,7 @@ extension RequestViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "Requestscell")as! RequestsTableViewCell
-            cell.configure(name: privateDic["name"]!, bloodType: privateDic["bloodType"]!, address: privateDic["address"]!, time: privateDic["time"]!, description: privateDic["discreption"]!)
+            cell.configure(name: privateArr[indexPath.row].name!, bloodType: privateArr[indexPath.row].bloodType!, address: privateArr[indexPath.row].address!, time: privateArr[indexPath.row].time!, description: privateArr[indexPath.row].description!)
             return cell
         default:
             break
@@ -81,8 +90,8 @@ extension RequestViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        self.goTODetailsCellVC()
-        
+        self.goTODiffDetailsCell(indexPath: indexPath)
+
     }
     
 }

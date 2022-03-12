@@ -35,6 +35,7 @@
 		EA86A9FB27CA31FB006EA939 /* UserDefultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA86A9FA27CA31FB006EA939 /* UserDefultsManager.swift */; };
 		EA86A9FD27CAD4F4006EA939 /* HomeNCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA86A9FC27CAD4F4006EA939 /* HomeNCViewController.swift */; };
 		EA99AAFD276CCF540083F0D1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA99AAFC276CCF540083F0D1 /* HomeViewController.swift */; };
+		EA9D400127DCF3D300776F14 /* UiView+Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9D400027DCF3D300776F14 /* UiView+Controller.swift */; };
 		EAAD8337276D12C800381854 /* DataPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAD8336276D12C700381854 /* DataPicker.swift */; };
 		EAB1C98F27A54DEE006BB209 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB1C98E27A54DEE006BB209 /* TabBarController.swift */; };
 		EAB1C99127A554A2006BB209 /* UiView + alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB1C99027A554A2006BB209 /* UiView + alert.swift */; };
@@ -96,6 +97,7 @@
 		EA86A9FA27CA31FB006EA939 /* UserDefultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefultsManager.swift; sourceTree = "<group>"; };
 		EA86A9FC27CAD4F4006EA939 /* HomeNCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNCViewController.swift; sourceTree = "<group>"; };
 		EA99AAFC276CCF540083F0D1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		EA9D400027DCF3D300776F14 /* UiView+Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiView+Controller.swift"; sourceTree = "<group>"; };
 		EAAD8336276D12C700381854 /* DataPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPicker.swift; sourceTree = "<group>"; };
 		EAB1C98E27A54DEE006BB209 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		EAB1C99027A554A2006BB209 /* UiView + alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiView + alert.swift"; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 			children = (
 				EAC252E4276A335B0033F96F /* UiView+Extension.swift */,
 				EAB1C99027A554A2006BB209 /* UiView + alert.swift */,
+				EA9D400027DCF3D300776F14 /* UiView+Controller.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -592,6 +595,7 @@
 				EA01A0A927C96F6B00BDCC00 /* FitnessAppointmentViewController.swift in Sources */,
 				EAC252C9276A26F00033F96F /* SceneDelegate.swift in Sources */,
 				EA45BFAA27C5999200D56AEC /* EducateYourselfViewController.swift in Sources */,
+				EA9D400127DCF3D300776F14 /* UiView+Controller.swift in Sources */,
 				EABDBFCC276CE6A900738EA3 /* LoginViewController.swift in Sources */,
 				EAB1C98F27A54DEE006BB209 /* TabBarController.swift in Sources */,
 				EAC252E9276A37BC0033F96F /* OnboardingCollectionViewCell.swift in Sources */,

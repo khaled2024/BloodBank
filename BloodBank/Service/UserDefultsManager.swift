@@ -25,4 +25,15 @@ class UserDefultsManager{
             return def.bool(forKey: "isLoggedIn")
         }
     }
+    var isNotificationOn: Bool{
+        set{
+            def.set(newValue, forKey: "isNotificationOn")
+        }
+        get{
+            guard def.object(forKey: "isNotificationOn") != nil else  {
+                return false
+            }
+            return def.bool(forKey: "isNotificationOn")
+        }
+    }
 }

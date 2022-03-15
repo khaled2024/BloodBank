@@ -36,6 +36,7 @@
 		EA86A9FD27CAD4F4006EA939 /* HomeNCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA86A9FC27CAD4F4006EA939 /* HomeNCViewController.swift */; };
 		EA99AAFD276CCF540083F0D1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA99AAFC276CCF540083F0D1 /* HomeViewController.swift */; };
 		EA9D400127DCF3D300776F14 /* UiView+Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9D400027DCF3D300776F14 /* UiView+Controller.swift */; };
+		EAA3C9D427DFB546007C5B47 /* SecondRequestBloodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA3C9D327DFB546007C5B47 /* SecondRequestBloodViewController.swift */; };
 		EAAD8337276D12C800381854 /* DataPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAD8336276D12C700381854 /* DataPicker.swift */; };
 		EAB1C98F27A54DEE006BB209 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB1C98E27A54DEE006BB209 /* TabBarController.swift */; };
 		EAB1C99127A554A2006BB209 /* UiView + alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB1C99027A554A2006BB209 /* UiView + alert.swift */; };
@@ -98,6 +99,7 @@
 		EA86A9FC27CAD4F4006EA939 /* HomeNCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNCViewController.swift; sourceTree = "<group>"; };
 		EA99AAFC276CCF540083F0D1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EA9D400027DCF3D300776F14 /* UiView+Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiView+Controller.swift"; sourceTree = "<group>"; };
+		EAA3C9D327DFB546007C5B47 /* SecondRequestBloodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondRequestBloodViewController.swift; sourceTree = "<group>"; };
 		EAAD8336276D12C700381854 /* DataPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPicker.swift; sourceTree = "<group>"; };
 		EAB1C98E27A54DEE006BB209 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		EAB1C99027A554A2006BB209 /* UiView + alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiView + alert.swift"; sourceTree = "<group>"; };
@@ -383,6 +385,7 @@
 			isa = PBXGroup;
 			children = (
 				EA45BFA727C5997E00D56AEC /* RequestBloodViewController.swift */,
+				EAA3C9D327DFB546007C5B47 /* SecondRequestBloodViewController.swift */,
 			);
 			path = RequestBlood;
 			sourceTree = "<group>";
@@ -581,6 +584,7 @@
 				EA45BFAE27C5AC4800D56AEC /* NavigationBar.swift in Sources */,
 				EAD3835027D806C300E87893 /* SheetViewController.swift in Sources */,
 				EA8676D027A6C70A00E95283 /* HamburgerViewController.swift in Sources */,
+				EAA3C9D427DFB546007C5B47 /* SecondRequestBloodViewController.swift in Sources */,
 				EA01A0B327C984A600BDCC00 /* InformationCenterViewController.swift in Sources */,
 				EAC252DF276A2F250033F96F /* OnboardingViewController.swift in Sources */,
 				EA99AAFD276CCF540083F0D1 /* HomeViewController.swift in Sources */,

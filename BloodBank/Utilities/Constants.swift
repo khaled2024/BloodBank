@@ -24,7 +24,7 @@ struct SlidesArray{
     
 }
 struct Arrays{
-    static let arrayOfBloodType = ["","A+","A-","B+","B-","AB+","AB-","O+","O-","OH+","Dont-Know"]
+    static let arrayOfBloodType = ["A+","A-","B+","B-","AB+","AB-","O+","O-","OH+","Dont-Know"]
     static let arrayOfGender = ["","Male","Female"]
 }
 struct LocationCoordinate {

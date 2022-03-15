@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        storageManager.resetOnboardingSeen()
         setRoot()
 
+        UNUserNotificationCenter.current().delegate = self
         return true
     }
     // MARK: UISceneSession Lifecycle
@@ -59,6 +60,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let HomeNC = sb.instantiateViewController(withIdentifier: "HomeNC") as! HomeNCViewController
 //        let navController = UINavigationController(rootViewController: HomeNC)
         self.window?.rootViewController = HomeNC
+    }
+   
+    
+}
+//MARK: - Extension {UNUserNotificationCenterDelegate}
+extension AppDelegate: UNUserNotificationCenterDelegate{
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.banner])
     }
     
     

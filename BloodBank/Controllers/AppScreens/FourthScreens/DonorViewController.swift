@@ -9,13 +9,18 @@ import UIKit
 
 class DonorViewController: UIViewController {
 
+    @IBOutlet var lbl: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        NotificationCenter.default.addObserver(self, selector: #selector(didGetNotification), name: Notification.Name (Notifications.detailNot), object: nil)
+       
     }
     
-
+    @objc func didGetNotification(_ notification: Notification){
+        let patient = notification.object as! Patient
+        self.lbl.text = patient.name
+        view.backgroundColor = .darkGray
+    }
   
 
 }

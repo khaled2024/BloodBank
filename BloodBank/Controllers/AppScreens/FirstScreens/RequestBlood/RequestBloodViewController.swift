@@ -19,19 +19,19 @@ class RequestBloodViewController: UIViewController{
     
     let navBar = NavigationBar()
     let customBtn = UserCustomBtn()
-    var date: String = "تاريخ اليوم"
-   
+    var date: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
-        NotificationCenter.default.post(name: Notification.Name("test"), object: "khaled")
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setUpDesign()
         setUpDesign()
         
-       
+        
     }
     //MARK: - private func
     private func setUpDesign(){
@@ -41,14 +41,12 @@ class RequestBloodViewController: UIViewController{
     private func setUp(){
         bloodTypePicker.delegate = self
         bloodTypePicker.dataSource = self
-        datePicker.preferredDatePickerStyle = .compact
+        datePicker.preferredDatePickerStyle = .automatic
         datePicker.date = Date()
         datePicker.locale = .current
         datePicker.addTarget(self, action: #selector(dateSelected), for: .valueChanged)
         nextBtn.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-        
-        
-        
+        datePicker.date = .now
     }
     
     @objc func dateSelected(){
@@ -56,23 +54,28 @@ class RequestBloodViewController: UIViewController{
         dateFormatter.dateStyle = .full
         dateFormatter.timeStyle = .short
         self.date = dateFormatter.string(from: datePicker.date)
-        print(date)
+        print((date ?? "") )
+    }
+    private func checkDate()-> Bool{
+        if let time = self.date , !time.isEmpty {
+            print("the time is \(time)")
+            return true
+        }
+        showAlert(title: "Sorry", message: "Please Choose the date.")
+        return false
     }
     private func checkGoingNextRequest(){
-        if let bloodBankName = bloodBankNameTF.text , !bloodBankName.isEmpty , let unit = numOfUnitsLbl.text , !unit.isEmpty   {
+        if let bloodBankName = bloodBankNameTF.text , !bloodBankName.isEmpty , let unit = numOfUnitsLbl.text , !unit.isEmpty, checkDate(){
             nextBtn.backgroundColor = #colorLiteral(red: 1, green: 0.2901960784, blue: 0.3843137255, alpha: 1)
             let selectedValue = Arrays.arrayOfBloodType[bloodTypePicker.selectedRow(inComponent: 0)]
             let controller = SecondRequestBloodViewController.instantiate()
             self.navigationController?.pushViewController(controller, animated: true)
-            controller.bloodBankName = self.bloodBankNameTF.text!
-            controller.time = self.date
-            controller.bloodType = selectedValue
+            controller.sick = Sick(bloodType: selectedValue, address: self.bloodBankNameTF.text, time: self.date, quantity: self.numOfUnitsLbl.text)
             print("blood type is \(Arrays.arrayOfBloodType[bloodTypePicker.selectedRow(inComponent: 0)])")
             print("name of hospital is \(bloodBankNameTF.text!)")
-            print("the time is \(self.date)")
             print("the quantity is \(numOfUnitsLbl.text!)")
-            
         }else{
+            self.showAlert(title: "Sorry", message: "Please fill Fields.")
             customBtn.confirmBtnNotSelected(Btn: nextBtn)
         }
     }

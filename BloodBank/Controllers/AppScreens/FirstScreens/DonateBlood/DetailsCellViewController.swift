@@ -25,9 +25,11 @@ class DetailsCellViewController: UIViewController, UISheetPresentationController
         super.viewDidLoad()
       setUpSheetPresentation()
         setUpData()
+        
     }
     
     //MARK: - Private func
+  
     private func setUpSheetPresentation(){
         sheetPresentationController.delegate = self
         sheetPresentationController.selectedDetentIdentifier = .medium

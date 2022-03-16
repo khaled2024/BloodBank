@@ -20,4 +20,5 @@ struct Patient{
         self.time = time
         self.description = description
     }
+    
 }

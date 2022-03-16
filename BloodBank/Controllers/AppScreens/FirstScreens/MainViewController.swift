@@ -15,6 +15,7 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
     @IBOutlet weak var backViewForHumburger: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     var hamburgerViewController: HamburgerViewController?
+    var slideIsClicked: Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
         humbergerView.isHidden = true
@@ -54,6 +55,7 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
                 self.humbergerView.isHidden = true
                 self.isHamburgerMenuShown = false
                 self.testView.isUserInteractionEnabled = false
+                self.slideIsClicked = false
             }
         }
     }
@@ -76,6 +78,7 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
                 self.testView.isUserInteractionEnabled = true
                 self.testView.layer.opacity = 0.60
                 self.isHamburgerMenuShown = true
+                self.slideIsClicked = true
             }
         }
     }
@@ -122,6 +125,7 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
                     self.testView.layer.opacity = 1
                     self.scrollView.layer.opacity = 1
                     self.backViewForHumburger.layer.opacity = 1
+                    self.slideIsClicked = false
                     
                 }
             }else{
@@ -130,6 +134,7 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
                 } completion: { status in
                     self.humbergerView.isHidden = true
                     self.testView.isHidden = false
+                    self.slideIsClicked = false
                 }
             }
         }
@@ -168,7 +173,15 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
         self.backViewForHumburger.layer.opacity = 1
     }
     @IBAction func barBtnTapped(_ sender: UIBarButtonItem) {
-        showSlideMenu()
+        if self.slideIsClicked == false{
+            showSlideMenu()
+        }else{
+            hideHamburgerMenu()
+            self.testView.layer.opacity = 1
+            self.scrollView.layer.opacity = 1
+            self.backViewForHumburger.layer.opacity = 1
+        }
+        
     }
     @IBAction func notificationBtnTapped(_ sender: UIBarButtonItem) {
         self.NotificationScreen()

@@ -11,45 +11,57 @@ class SecondRequestBloodViewController: UIViewController {
     //MARK: - Outlets
     let navBar = NavigationBar()
     let gradient = UserGradientBackground()
+    var sick: Sick?
+    var patient: Patient? = nil
+    
     @IBOutlet weak var gradientView: UIView!
     @IBOutlet weak var bloodTypeLbl: UILabel!
     @IBOutlet weak var bloodBankNameLbl: UILabel!
     @IBOutlet weak var timeLbl: UILabel!
-    
     @IBOutlet weak var noteForHelpTF: UITextField!
     @IBOutlet weak var patientNameTF: UITextField!
     @IBOutlet weak var patientAgeTF: UITextField!
     @IBOutlet weak var createRequestBtn: UIButton!
     
-    var bloodType: String = ""
-    var bloodBankName: String = ""
-    var time: String = ""
- 
+    var customBtn = UserCustomBtn()
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        setUp()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
         setUpDesign()
-        setUp()
     }
+   
     //MARK: - Private functions
     private func setUp(){
-        self.bloodTypeLbl.text = "فصيله \(bloodType)"
-        self.bloodBankNameLbl.text = bloodBankName
-        self.timeLbl.text = time
-      
-        print(bloodBankNameLbl.text!)
-
+        self.bloodTypeLbl.text = "فصيله \(sick?.bloodType ?? "")"
+        self.bloodBankNameLbl.text = sick?.address
+        self.timeLbl.text = sick?.time
     }
-    
     private func setUpDesign(){
         navBar.setNavBar(myView: self, title: "", viewController: view, navBarColor: #colorLiteral(red: 0.9738656878, green: 0.4654597044, blue: 0.4720987082, alpha: 1), navBarTintColor: #colorLiteral(red: 0.9845134616, green: 0.9810839295, blue: 0.9719126821, alpha: 1), forgroundTitle: #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1), bacgroundView: #colorLiteral(red: 0.9845134616, green: 0.9810839295, blue: 0.9719126821, alpha: 1))
         gradient.setGradientBackground(colorTop: #colorLiteral(red: 0.9738656878, green: 0.4654597044, blue: 0.4720987082, alpha: 1), colorBottom: #colorLiteral(red: 0.895557344, green: 0.1643874943, blue: 0.328651458, alpha: 1), view: gradientView)
+        self.customBtn.confirmBtnNotSelected(Btn: createRequestBtn)
         
+    }
+    private func checkDataRequest()-> Bool{
+        if let patientName = patientNameTF.text , !patientName.isEmpty , let age = patientAgeTF.text , !age.isEmpty , let note = noteForHelpTF.text , !note.isEmpty {
+            return true
+        }
+        return false
+    }
+    private func createBloodRquest(){
+        patient = Patient(name: patientNameTF.text!, bloodType: self.bloodTypeLbl.text!, address: self.bloodBankNameLbl.text!, time: self.timeLbl.text!, description: noteForHelpTF.text!)
+        NotificationCenter.default.post(name: Notification.Name(Notifications.detailNot), object: patient)
+        print("GetPosted")
+        
+        print("bloodType is \(bloodTypeLbl.text!) ,bloodBankName is \(bloodBankNameLbl!) , time is \(timeLbl.text!) , paitent name is \(patientNameTF.text!) , patient age is \(patientAgeTF.text!), note is \(noteForHelpTF.text!)")
+        self.SuccessAlert(title: "Congratulation", message: "The BloodRequest has been Created Successfuly", style: .default) { _ in
+            self.navigationController?.popToRootViewController(animated: true)
+        }
     }
     //MARK: - Actions
     @IBAction func backBtnTapped(_ sender: UIButton) {
@@ -57,9 +69,14 @@ class SecondRequestBloodViewController: UIViewController {
         self.modalTransitionStyle = .partialCurl
     }
     @IBAction func createRequestBtnTapped(_ sender: UIButton) {
-        print("bloodType is \(bloodTypeLbl.text!) ,bloodBankName is \(bloodBankNameLbl!) , time is \(timeLbl.text!) , paitent name is \(patientNameTF.text!) , patient age is \(patientAgeTF.text!), note is \(noteForHelpTF.text!)")
+        if self.checkDataRequest(){
+            self.createBloodRquest()
+//            self.customBtn.toggleForBtn(Btn: createRequestBtn)
+            createRequestBtn.backgroundColor = #colorLiteral(red: 1, green: 0.2901960784, blue: 0.3843137255, alpha: 1)
+        }else{
+            self.showAlert(title: "Sorry", message: "Please fill the Fields.")
+        }
+        
     }
 }
 //MARK: - Exteision
-
-

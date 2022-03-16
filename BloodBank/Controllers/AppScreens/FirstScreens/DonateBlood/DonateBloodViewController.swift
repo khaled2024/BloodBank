@@ -25,6 +25,7 @@ class DonateBloodViewController: UIViewController {
     @IBOutlet weak var yesTattoo: UIButton!
     @IBOutlet weak var noTattoo: UIButton!
     
+    
     //MARK: - Variables
     let customBtn = UserCustomBtn()
     let navBar = NavigationBar()
@@ -72,6 +73,7 @@ class DonateBloodViewController: UIViewController {
         myView.roundedCornerView(corners: [.bottomLeft , .topLeft], radius: myView.frame.size.width/0.2)
     }
     //MARK: - Private Functions
+   
     private func setUpDesign(){
         navBar.setNavBar(myView: self, title: "التبرع بالدم", viewController: view, navBarColor: #colorLiteral(red: 0.9845134616, green: 0.9810839295, blue: 0.9719126821, alpha: 1), navBarTintColor: #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1), forgroundTitle: #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1), bacgroundView: #colorLiteral(red: 0.9845134616, green: 0.9810839295, blue: 0.9719126821, alpha: 1))
         

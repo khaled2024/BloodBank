@@ -44,6 +44,12 @@ struct LocationCoordinate {
     ]
     
 }
+
+struct Notifications {
+    static let detailNot = "detailNotification"
+}
+
+
 //cairo
 //30.06812038116435, 31.275307443619365
 //30.06568172977871, 31.28479430395555

@@ -14,13 +14,33 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
     @IBOutlet weak var humbergerView: UIView!
     @IBOutlet weak var backViewForHumburger: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
+    
+    @IBOutlet weak var slideMenuBtn: UIBarButtonItem!
+    
+    //for animations
+    @IBOutlet weak var scaduleAppointmentView: UIView!
+    @IBOutlet weak var donateBloodView: UIView!
+    @IBOutlet weak var requestBloodView: UIView!
+    @IBOutlet weak var educateYourselfView: UIView!
+    
+    
+    @IBOutlet weak var appointmentImage: UIImageView!
+    @IBOutlet weak var donationImage: UIImageView!
+    
+    @IBOutlet weak var requestImage: UIImageView!
+    @IBOutlet weak var educateImage: UIImageView!
+    //MARK: - Variables
     var hamburgerViewController: HamburgerViewController?
     var slideIsClicked: Bool = false
+    
+    //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         humbergerView.isHidden = true
         testView.isUserInteractionEnabled = false
         self.testView.layer.opacity = 1
+        self.animateScalling()
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1)
@@ -29,11 +49,51 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
         self.view.backgroundColor =  #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1)
         self.tabBarController?.tabBar.isHidden = false
         self.navigationController?.navigationBar.isHidden = false
-
+        animateViews()
+        animateImages()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
-    
     //MARK: -  private functions
+    private func animateScalling(){
+        UIView.animate(withDuration: 1) {
+            self.scaduleAppointmentView.center.x += 13
+            self.donateBloodView.center.x += 13
+            self.requestBloodView.center.x += 13
+            self.educateYourselfView.center.x += 13
+        }
+    }
+    private func animateViews(){
+        self.scaduleAppointmentView.alpha = 0
+        self.donateBloodView.alpha = 0
+        self.requestBloodView.alpha = 0
+        self.educateYourselfView.alpha = 0
+        self.appointmentImage.alpha = 1
+        self.donationImage.alpha = 1
+        self.requestImage.alpha = 1
+        self.educateImage.alpha = 1
+        UIView.animate(withDuration: 1) {
+            self.scaduleAppointmentView.alpha = 1
+            self.donateBloodView.alpha = 1
+            self.requestBloodView.alpha = 1
+            self.educateYourselfView.alpha = 1
+        }
+    }
+    private func animateImages(){
+        //        let x = appointmentImage.frame.minX - 25
+        //        let y = appointmentImage.frame.minY - 25
+        //        let width = appointmentImage.frame.width + 50
+        //        let height = appointmentImage.frame.height + 50
+        UIView.animate(withDuration: 1, delay: 1, options: [.repeat , .autoreverse], animations: {
+            //            self.appointmentImage.frame = CGRect(x: x, y: y, width: width, height: height)
+            self.appointmentImage.alpha = 0
+            self.donationImage.alpha = 0
+            self.requestImage.alpha = 0
+            self.educateImage.alpha = 0
+        }, completion: nil)
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "hamburgerSegue"){
             if let controller = segue.destination as? HamburgerViewController{
@@ -64,7 +124,7 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
         self.scrollView.layer.opacity = 1
         self.testView.layer.opacity = 1
     }
-    func showSlideMenu(){
+    private func showSlideMenu(){
         UIView.animate(withDuration: 0.1) {
             self.leading.constant = 10
             self.view.layoutIfNeeded()
@@ -188,6 +248,7 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
     }
     @IBAction func bookingAppintment(_ sender: UIButton) {
         self.BookingApp()
+        
     }
     @IBAction func donateBloodBtnTapped(_ sender: UIButton) {
         self.DonateBlood()

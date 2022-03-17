@@ -24,8 +24,6 @@ class DonateBloodViewController: UIViewController {
     @IBOutlet weak var yesDays: UIButton!
     @IBOutlet weak var yesTattoo: UIButton!
     @IBOutlet weak var noTattoo: UIButton!
-    
-    
     //MARK: - Variables
     let customBtn = UserCustomBtn()
     let navBar = NavigationBar()
@@ -54,8 +52,8 @@ class DonateBloodViewController: UIViewController {
             string: "احسنت لقد نجحت في الاختبار،كن بطلاً في حياه شخص ما.", attributes: [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.8185071945, green: 0.2694924176, blue: 0.2871941328, alpha: 1) , .font: UIFont(name: "Almarai-Bold", size: 20)!])
         item.actionHandler = {_ in
             self.dismiss(animated: true) {
-                    self.scaduleBtn.backgroundColor = #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1)
-                    self.requestBloodDonationBtn.backgroundColor = #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1)
+                self.scaduleBtn.backgroundColor = #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1)
+                self.requestBloodDonationBtn.backgroundColor = #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1)
             }
         }
         item.appearance.actionButtonColor = #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1)
@@ -73,7 +71,6 @@ class DonateBloodViewController: UIViewController {
         myView.roundedCornerView(corners: [.bottomLeft , .topLeft], radius: myView.frame.size.width/0.2)
     }
     //MARK: - Private Functions
-   
     private func setUpDesign(){
         navBar.setNavBar(myView: self, title: "التبرع بالدم", viewController: view, navBarColor: #colorLiteral(red: 0.9845134616, green: 0.9810839295, blue: 0.9719126821, alpha: 1), navBarTintColor: #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1), forgroundTitle: #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1), bacgroundView: #colorLiteral(red: 0.9845134616, green: 0.9810839295, blue: 0.9719126821, alpha: 1))
         
@@ -117,9 +114,7 @@ class DonateBloodViewController: UIViewController {
             scaduleBtn.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
             requestBloodDonationBtn.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         }
-       
     }
-    
     @IBAction func nextViewBtnTapped(_ sender: UIButton) {
         let buttonSender = sender.tag
         if sender == nextViewAppointment{
@@ -131,11 +126,12 @@ class DonateBloodViewController: UIViewController {
         }else if buttonSender == 6{
             self.insideView.transform = CGAffineTransform(translationX: -1550, y: 0)
         }else if buttonSender == 8{
-//            self.SuccessAlert(title:"Congratulation",message: "You are Fit to donate blood", style: .default) { _ in
-                DispatchQueue.main.asyncAfter(deadline: .now()+1) {
-                    self.scaduleBtn.backgroundColor = #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1)
-                    self.requestBloodDonationBtn.backgroundColor = #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1)}
-//            }
+            //            self.SuccessAlert(title:"Congratulation",message: "You are Fit to donate blood", style: .default) { _ in
+            DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                self.scaduleBtn.backgroundColor = #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1)
+                self.requestBloodDonationBtn.backgroundColor = #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1)
+                }
+            //            }
             self.fitBoardManager.showBulletin(above: self)
         }
     }
@@ -145,18 +141,12 @@ class DonateBloodViewController: UIViewController {
             scaduleBtn.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
             requestBloodDonationBtn.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
             self.notFitBoardManager.showBulletin(above: self)
-//            SuccessAlert(title:"Sorry",message: "You are not Fit to donate blood", style: .destructive) { _ in
-//                self.navigationManager.show(screen: .tapBarController, inController: self)
-//            }
+            //            SuccessAlert(title:"Sorry",message: "You are not Fit to donate blood", style: .destructive) { _ in
+            //                self.navigationManager.show(screen: .tapBarController, inController: self)
+            //            }
         }
     }
 }
-
-
-
-
-
-
 //MARK: - Comments
 //import Lottie
 

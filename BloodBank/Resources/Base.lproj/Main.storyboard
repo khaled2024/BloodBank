@@ -419,13 +419,13 @@
                                                             <constraint firstAttribute="height" constant="60" id="ose-Oj-k5S"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="احجز موعد للتبرع بالدم" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yh9-GW-lOb">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="احجز موعد للتبرع بالدم" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yh9-GW-lOb">
                                                         <rect key="frame" x="20" y="30.5" width="174" height="21.5"/>
                                                         <fontDescription key="fontDescription" name="Almarai-Bold" family="Almarai" pointSize="19"/>
                                                         <color key="textColor" red="0.8392156959" green="0.33725491169999999" blue="0.2235293984" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="احجز موعد للتبرع بالدم لمساعده شخص ما ان احتاج" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="04X-nb-gLU">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="احجز موعد للتبرع بالدم لمساعده شخص ما ان احتاج" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="04X-nb-gLU">
                                                         <rect key="frame" x="20" y="62" width="200" height="31.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="200" id="heI-xK-aAb"/>
@@ -473,7 +473,7 @@
                                                             <constraint firstAttribute="width" constant="70" id="d0m-Gr-5d9"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="التبرع بالدم ممكن ان يجعلك بطل لشخص بحاجه للمساعده" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iuQ-1F-7jd">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="التبرع بالدم ممكن ان يجعلك بطل لشخص بحاجه للمساعده" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iuQ-1F-7jd">
                                                         <rect key="frame" x="20" y="62" width="200" height="31.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="200" id="JoM-Qk-iBH"/>
@@ -527,8 +527,8 @@
                                                             <constraint firstAttribute="width" constant="70" id="QpD-ql-zof"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اضغط هنا لتتمكن من ارسال طلب تبرع للدم للشخاص المتاحين للتبرع" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdo-KH-9BI">
-                                                        <rect key="frame" x="20" y="62" width="200" height="47"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="نحن هنا لمساعدتك في ارسال طلب للحصول علي الدم" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdo-KH-9BI">
+                                                        <rect key="frame" x="20" y="57" width="200" height="31.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="200" id="MYy-21-air"/>
                                                         </constraints>
@@ -547,7 +547,7 @@
                                                 <constraints>
                                                     <constraint firstItem="JoT-zV-erU" firstAttribute="leading" secondItem="4Rn-Xw-Pln" secondAttribute="leading" id="25D-In-mZO"/>
                                                     <constraint firstItem="fY3-Io-kF4" firstAttribute="top" secondItem="KGe-Cg-OT2" secondAttribute="top" id="8HT-pc-MGC"/>
-                                                    <constraint firstItem="cdo-KH-9BI" firstAttribute="top" secondItem="fY3-Io-kF4" secondAttribute="bottom" constant="10" id="IOd-Tg-tFu"/>
+                                                    <constraint firstItem="cdo-KH-9BI" firstAttribute="top" secondItem="fY3-Io-kF4" secondAttribute="bottom" constant="5" id="IOd-Tg-tFu"/>
                                                     <constraint firstItem="cdo-KH-9BI" firstAttribute="leading" secondItem="fY3-Io-kF4" secondAttribute="leading" id="LhE-Sd-6LJ"/>
                                                     <constraint firstItem="fY3-Io-kF4" firstAttribute="leading" secondItem="JoT-zV-erU" secondAttribute="leading" constant="20" id="Mtr-bw-XuO"/>
                                                     <constraint firstAttribute="trailing" secondItem="JoT-zV-erU" secondAttribute="trailing" id="QRq-DJ-9hP"/>
@@ -581,7 +581,7 @@
                                                             <constraint firstAttribute="width" constant="70" id="mYB-4N-aGP"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تعلم المزيد عن الدم وانواعه وكيفيه  التبرع بالدم" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5b-wQ-QyI">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تعلم المزيد عن الدم وانواعه وكيفيه  التبرع بالدم" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5b-wQ-QyI">
                                                         <rect key="frame" x="20" y="62" width="200" height="31.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="200" id="wpT-hv-2G8"/>
@@ -590,7 +590,7 @@
                                                         <color key="textColor" red="0.87450981139999995" green="0.40000003579999999" blue="0.40000003579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تعلم بنفسك" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xWL-tw-j4t">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تعلم بنفسك" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xWL-tw-j4t">
                                                         <rect key="frame" x="20" y="30.5" width="106" height="21.5"/>
                                                         <fontDescription key="fontDescription" name="Almarai-Bold" family="Almarai" pointSize="19"/>
                                                         <color key="textColor" red="0.8392156959" green="0.33725491169999999" blue="0.2235293984" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -714,11 +714,20 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="appointmentImage" destination="P37-zs-Kn6" id="QTC-hq-z1r"/>
                         <outlet property="backViewForHumburger" destination="5Z7-O4-HO9" id="BUl-Jk-cSn"/>
+                        <outlet property="donateBloodView" destination="7Qd-fw-4vv" id="jeN-5v-QlX"/>
+                        <outlet property="donationImage" destination="noL-gM-0PE" id="2Bi-Wd-P0D"/>
+                        <outlet property="educateImage" destination="tso-hJ-Dnd" id="GaG-yM-Cx9"/>
+                        <outlet property="educateYourselfView" destination="tFN-ct-7E3" id="VH1-49-f6Y"/>
                         <outlet property="humbergerView" destination="n7y-xb-nxY" id="0mV-vj-k4Z"/>
                         <outlet property="leading" destination="n5a-wk-fgD" id="wij-U3-bAv"/>
                         <outlet property="mainView" destination="pE5-lL-Jez" id="3Bn-jX-pRf"/>
+                        <outlet property="requestBloodView" destination="4Rn-Xw-Pln" id="qaI-Ym-sph"/>
+                        <outlet property="requestImage" destination="KGe-Cg-OT2" id="wQn-F6-kQe"/>
+                        <outlet property="scaduleAppointmentView" destination="Zeo-kx-p4f" id="bv3-NW-AKp"/>
                         <outlet property="scrollView" destination="HQC-QO-oPY" id="AbQ-vJ-vO8"/>
+                        <outlet property="slideMenuBtn" destination="2CA-Is-1FJ" id="4uK-7f-hJ5"/>
                         <outlet property="testView" destination="AlH-eb-QDs" id="qsK-mk-aqP"/>
                     </connections>
                 </viewController>
@@ -2216,7 +2225,7 @@
                                         <color key="textColor" red="0.98039215690000003" green="0.97647058819999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bloodbank " translatesAutoresizingMaskIntoConstraints="NO" id="p8l-9B-1rG">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bloodbank" translatesAutoresizingMaskIntoConstraints="NO" id="p8l-9B-1rG">
                                         <rect key="frame" x="369" y="144" width="25" height="25"/>
                                         <color key="tintColor" red="0.98039215690000003" green="0.97647058819999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                     </imageView>
@@ -2278,7 +2287,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="LTn-aX-m7C"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" smartDashesType="no" smartInsertDeleteType="no"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -2288,7 +2297,7 @@
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="العمر" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S8E-IV-QK1">
                                 <rect key="frame" x="41.5" y="372.5" width="331" height="40"/>
-                                <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" smartDashesType="no" smartInsertDeleteType="no"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -2319,7 +2328,7 @@
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ملحوظه صغيره :)" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hqS-Jo-tqB">
                                 <rect key="frame" x="41.5" y="427.5" width="331" height="124"/>
-                                <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" smartDashesType="no" smartInsertDeleteType="no"/>
                             </textField>
                         </subviews>
@@ -2739,7 +2748,7 @@
                                                         <rect key="frame" x="10" y="15.5" width="287" height="24"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="20"/>
-                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" smartDashesType="no" smartInsertDeleteType="no"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" smartDashesType="no" smartInsertDeleteType="no"/>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -2782,7 +2791,7 @@
                                                         <rect key="frame" x="10" y="15.5" width="287" height="24"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="20"/>
-                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" smartDashesType="no" smartInsertDeleteType="no"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" smartDashesType="no" smartInsertDeleteType="no"/>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -2822,10 +2831,10 @@
                                                         </constraints>
                                                     </view>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ادخل كلمه المرور" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wg3-Hb-aQA" customClass="CustomPlaceHolder" customModule="BloodBank" customModuleProvider="target">
-                                                        <rect key="frame" x="10" y="15.5" width="287" height="24"/>
+                                                        <rect key="frame" x="10" y="16" width="287" height="23"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="20"/>
-                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" smartDashesType="no" smartInsertDeleteType="no"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no"/>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -2865,10 +2874,10 @@
                                                         </constraints>
                                                     </view>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="تاكيد كلمه المرور" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="83Y-jX-F6k" customClass="CustomPlaceHolder" customModule="BloodBank" customModuleProvider="target">
-                                                        <rect key="frame" x="10" y="15.5" width="287" height="24"/>
+                                                        <rect key="frame" x="10" y="16" width="287" height="23"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="20"/>
-                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" smartDashesType="no" smartInsertDeleteType="no"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no"/>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -2911,7 +2920,7 @@
                                                         <rect key="frame" x="10" y="15.5" width="287" height="24"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="20"/>
-                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" smartDashesType="no" smartInsertDeleteType="no"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="phonePad" smartDashesType="no" smartInsertDeleteType="no"/>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -2954,7 +2963,7 @@
                                                         <rect key="frame" x="10" y="15.5" width="287" height="24"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="20"/>
-                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" smartDashesType="no" smartInsertDeleteType="no"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" smartDashesType="no" smartInsertDeleteType="no"/>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -2997,7 +3006,7 @@
                                                         <rect key="frame" x="10" y="15.5" width="287" height="24"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="20"/>
-                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" smartDashesType="no" smartInsertDeleteType="no"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" smartDashesType="no" smartInsertDeleteType="no"/>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -3247,8 +3256,8 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blood Bank" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gm6-nR-zBE">
-                                <rect key="frame" x="142" y="248" width="130" height="28"/>
-                                <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="20"/>
+                                <rect key="frame" x="142" y="248" width="130" height="23.5"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
                                 <color key="textColor" red="0.87450981139999995" green="0.40000003579999999" blue="0.40000003579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -3356,13 +3365,13 @@
                                 <rect key="frame" x="83" y="238.5" width="248" height="269"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="شكرا لك" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="klm-Wh-DQG">
-                                <rect key="frame" x="154" y="547.5" width="106" height="31.5"/>
+                                <rect key="frame" x="83" y="537.5" width="248" height="31.5"/>
                                 <fontDescription key="fontDescription" name="Almarai-Bold" family="Almarai" pointSize="28"/>
                                 <color key="textColor" red="0.87450981139999995" green="0.40000003579999999" blue="0.40000003579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تم حجز ميعاد التبرع بالدم بنجاح" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4pd-ku-Ohe">
-                                <rect key="frame" x="107" y="594" width="200" height="51.5"/>
+                                <rect key="frame" x="107" y="584" width="200" height="51.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="bUb-Da-CtI"/>
                                 </constraints>
@@ -3371,9 +3380,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9hp-89-df5">
-                                <rect key="frame" x="132" y="665.5" width="150" height="37"/>
+                                <rect key="frame" x="132" y="655.5" width="150" height="40"/>
                                 <color key="backgroundColor" red="0.87450981139999995" green="0.40000003579999999" blue="0.40000003579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="2yd-XQ-zaA"/>
                                     <constraint firstAttribute="width" constant="150" id="vW5-pP-o0c"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3397,12 +3407,14 @@
                             <constraint firstItem="xyk-VF-ag3" firstAttribute="centerX" secondItem="bQI-Od-JWB" secondAttribute="centerX" id="9I4-nE-tD9"/>
                             <constraint firstItem="4pd-ku-Ohe" firstAttribute="top" secondItem="klm-Wh-DQG" secondAttribute="bottom" constant="15" id="H08-yQ-t3P"/>
                             <constraint firstItem="klm-Wh-DQG" firstAttribute="centerX" secondItem="xyk-VF-ag3" secondAttribute="centerX" id="JmR-gy-Wke"/>
+                            <constraint firstItem="klm-Wh-DQG" firstAttribute="leading" secondItem="xyk-VF-ag3" secondAttribute="leading" id="N3Z-Rh-u0J"/>
                             <constraint firstItem="4pd-ku-Ohe" firstAttribute="centerX" secondItem="klm-Wh-DQG" secondAttribute="centerX" id="OCz-TS-REl"/>
                             <constraint firstItem="9hp-89-df5" firstAttribute="top" secondItem="4pd-ku-Ohe" secondAttribute="bottom" constant="20" id="OEd-3B-Xjx"/>
                             <constraint firstItem="xyk-VF-ag3" firstAttribute="width" secondItem="bQI-Od-JWB" secondAttribute="width" multiplier="0.6" id="PSF-Yh-xMM"/>
-                            <constraint firstItem="klm-Wh-DQG" firstAttribute="top" secondItem="xyk-VF-ag3" secondAttribute="bottom" constant="40" id="TJq-nT-VtL"/>
+                            <constraint firstItem="klm-Wh-DQG" firstAttribute="top" secondItem="xyk-VF-ag3" secondAttribute="bottom" constant="30" id="TJq-nT-VtL"/>
                             <constraint firstItem="xyk-VF-ag3" firstAttribute="height" secondItem="bQI-Od-JWB" secondAttribute="height" multiplier="0.3" id="Xp5-6y-Nck"/>
                             <constraint firstItem="xyk-VF-ag3" firstAttribute="centerY" secondItem="bQI-Od-JWB" secondAttribute="centerY" constant="-75" id="bA3-fp-AsW"/>
+                            <constraint firstItem="klm-Wh-DQG" firstAttribute="trailing" secondItem="xyk-VF-ag3" secondAttribute="trailing" id="wyH-Md-dAQ"/>
                             <constraint firstItem="9hp-89-df5" firstAttribute="centerX" secondItem="4pd-ku-Ohe" secondAttribute="centerX" id="z5c-Ac-7BL"/>
                         </constraints>
                     </view>
@@ -3863,7 +3875,7 @@
         <image name="blood date" width="25" height="25"/>
         <image name="blood-donation" width="170.5" height="170.5"/>
         <image name="bloodPin" width="37.5" height="37.5"/>
-        <image name="bloodbank " width="25" height="25"/>
+        <image name="bloodbank" width="25" height="25"/>
         <image name="bloodtype" width="25" height="25"/>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="clock" width="37.5" height="37.5"/>

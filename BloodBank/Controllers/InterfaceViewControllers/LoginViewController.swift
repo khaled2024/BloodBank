@@ -22,7 +22,7 @@ class LoginViewController: UIViewController {
     //MARK: - lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-//        customBtn.confirmBtnNotSelected(Btn: loginBtn)
+        //        customBtn.confirmBtnNotSelected(Btn: loginBtn)
         customBtn.confirmBtnSelected(Btn: loginBtn)
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -49,9 +49,21 @@ class LoginViewController: UIViewController {
         navigationController?.pushViewController(registerScreen, animated: true)
         
     }
+    private func animateButtons(){
+        UIView.animate(withDuration: 0.5) {
+            self.loginBtn.layer.transform = CATransform3DMakeScale(1.1, 1.1, 1)
+        } completion: { completed in
+            if completed{
+                UIView.animate(withDuration: 0.5) {
+                    self.loginBtn.layer.transform = CATransform3DMakeScale(1, 1, 1)
+                }
+            }
+        }
+    }
     //MARK: - Actions
     @IBAction func loginBtnTapped(_ sender: UIButton) {
         if checkTextFields(){
+            self.animateButtons()
             customBtn.toggleForBtn(Btn: self.loginBtn)
             DispatchQueue.main.asyncAfter(deadline: .now()+1.5) {
                 UserDefaults.standard.set(true, forKey: "isLoggedIn")

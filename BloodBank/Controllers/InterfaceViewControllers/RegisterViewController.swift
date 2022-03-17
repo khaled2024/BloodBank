@@ -38,6 +38,19 @@ class RegisterViewController: UIViewController {
     }
     
     //MARK: - Private functions
+    
+    private func animateButtons(){
+        UIView.animate(withDuration: 0.5) {
+            self.ConfirmBtn.layer.transform = CATransform3DMakeScale(1.1, 1.1, 1)
+        } completion: { completed in
+            if completed{
+                UIView.animate(withDuration: 0.5) {
+                    self.ConfirmBtn.layer.transform = CATransform3DMakeScale(1, 1, 1)
+                }
+            }
+        }
+    }
+    
     private func setNavBar(){
         navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1),.font: UIFont(name: "Almarai-Bold", size: 25)!]
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -49,12 +62,12 @@ class RegisterViewController: UIViewController {
         BloodTypePicker.delegate = self
         BloodTypePicker.dataSource = self
         bloodTypeTextField.inputView = BloodTypePicker
-
+        
     }
     
     private func setUpDesign(){
-
-//        customBtn.confirmBtnNotSelected(Btn: ConfirmBtn)
+        
+        //        customBtn.confirmBtnNotSelected(Btn: ConfirmBtn)
         customBtn.confirmBtnSelected(Btn: ConfirmBtn)
     }
     private func checkPassword()->Bool{
@@ -84,15 +97,16 @@ class RegisterViewController: UIViewController {
         if checkPassword(){
             customBtn.toggleForBtn(Btn: self.ConfirmBtn)
             DispatchQueue.main.asyncAfter(deadline: .now()+1.5) {
-                self.goToLoginScreen()
-                self.showAlert(title: "congratulations", message: "Your Account Created Succesfully")
+                self.SuccessAlert(title: "Congratulation", message: "Your Account Created Succesfully", style: .default) { _ in
+                    self.animateButtons()
+                    self.goToLoginScreen()
+                }
             }
         }else{
             self.showAlert(title: "Sorry", message: "Please Check your password")
         }
     }
 }
-
 //MARK: - UIPickerViewDelegate,UIPickerViewDataSource
 extension RegisterViewController: UIPickerViewDelegate,UIPickerViewDataSource{
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -102,10 +116,10 @@ extension RegisterViewController: UIPickerViewDelegate,UIPickerViewDataSource{
         return arrayOfBloodType.count
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-            bloodTypeTextField.text = arrayOfBloodType[row]
+        bloodTypeTextField.text = arrayOfBloodType[row]
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-            return arrayOfBloodType[row]
+        return arrayOfBloodType[row]
     }
     
 }

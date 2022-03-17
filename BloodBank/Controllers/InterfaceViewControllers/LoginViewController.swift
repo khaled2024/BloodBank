@@ -18,23 +18,21 @@ class LoginViewController: UIViewController {
     var customTF = UserCustomTF()
     var customBtn = UserCustomBtn()
     let navigationManager = NavigationManager()
+    let navBar = NavigationBar()
     //MARK: - lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        customBtn.confirmBtnNotSelected(Btn: loginBtn)
-        setNavBar()
+//        customBtn.confirmBtnNotSelected(Btn: loginBtn)
+        customBtn.confirmBtnSelected(Btn: loginBtn)
     }
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         setUpDesign()
     }
     //MARK: -  private functions
-    func setNavBar(){
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white,.font: UIFont(name: "Almarai", size: 18)!]
-    }
     private func setUpDesign(){
-        customTF.setUpTextField(textField: emailTextField, nameTextField: "ادخل البريد الاكتروني")
-        customTF.setUpTextField(textField: passwordTextField, nameTextField: "ادخل كلمه المرور")
-        gradientBackground.setGradientBackground(colorTop: #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1), colorBottom: #colorLiteral(red: 1, green: 0.5385724902, blue: 0.5328875184, alpha: 1), view: view)
+        self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1)
+        
     }
     private func goToMainScreen(){
         navigationManager.show(screen: .tapBarController, inController: self)
@@ -53,12 +51,12 @@ class LoginViewController: UIViewController {
     }
     //MARK: - Actions
     @IBAction func loginBtnTapped(_ sender: UIButton) {
-        print("Login succesully")
         if checkTextFields(){
             customBtn.toggleForBtn(Btn: self.loginBtn)
             DispatchQueue.main.asyncAfter(deadline: .now()+1.5) {
                 UserDefaults.standard.set(true, forKey: "isLoggedIn")
                 self.goToMainScreen()
+                print("Login succesully")
             }
         }else{
             self.showAlert(title: "Sorry", message: "Please fill the all fields")

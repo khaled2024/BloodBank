@@ -22,7 +22,7 @@ class UserCustomBtn{
     }
     func confirmBtnSelected(Btn: UIButton){
         Btn.tintColor = .white
-        Btn.backgroundColor = #colorLiteral(red: 0.7650180459, green: 0.2443652749, blue: 0.2988551259, alpha: 1)
+        Btn.backgroundColor = #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1)
     }
     func customBtn(Btn: UIButton , tintColor: UIColor , borderColor: CGColor , bgColor: UIColor){
         Btn.tintColor = tintColor

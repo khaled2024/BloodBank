@@ -39,4 +39,16 @@ class UserCustomBtn{
             self.confirmBtnNotSelected(Btn: Btn)
         }
     }
+    
+    func TintColorForBtn(Btn: UIButton){
+        if checkBtn == false{
+            checkBtn = true
+            Btn.tintColor = #colorLiteral(red: 0.6743947268, green: 0, blue: 0.1404457688, alpha: 1)
+        }else{
+            checkBtn = false
+            Btn.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        }
+    }
+    
+    
 }

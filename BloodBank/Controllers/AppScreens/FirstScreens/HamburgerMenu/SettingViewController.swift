@@ -18,7 +18,6 @@ class SettingViewController: UIViewController {
         self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1)
         self.navigationController!.navigationBar.titleTextAttributes = [.foregroundColor: #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1) , .font: UIFont(name: "Almarai", size: 20)!]
         self.view.backgroundColor =  #colorLiteral(red: 0.9845134616, green: 0.9810839295, blue: 0.9719126821, alpha: 1)
-        
         isNotificationOn()
     }
     //MARK: - Private func
@@ -53,7 +52,7 @@ class SettingViewController: UIViewController {
         content.badge = 1
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(5), repeats: false)
-        let request = UNNotificationRequest(identifier: "id notification", content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: "idNotification", content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request)
     }
     //MARK: - Actions

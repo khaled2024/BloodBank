@@ -13,11 +13,14 @@ class DonorViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var heartBtn: UIButton!
     
-    @IBOutlet weak var messageBtn: UIButton!
+    @IBOutlet weak var shareBtn: UIButton!
     @IBOutlet weak var phoneBtn: UIButton!
     let navBar = NavigationBar()
     let gradient = UserGradientBackground()
     let customBtn = UserCustomBtn()
+    @IBOutlet weak var phoneNumLbl: UILabel!
+    @IBOutlet weak var theNameLbl: UILabel!
+    @IBOutlet weak var bloodTypeLbl: UILabel!
     //MARK: - lifeCycles
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +42,13 @@ class DonorViewController: UIViewController {
 //        self.navigationController?.navigationBar.backgroundColor = .clear
         gradient.setGradientBackground(colorTop: #colorLiteral(red: 0.9738656878, green: 0.4654597044, blue: 0.4720987082, alpha: 1), colorBottom: #colorLiteral(red: 0.895557344, green: 0.1643874943, blue: 0.328651458, alpha: 1), view: gradientView)
     }
+    private func shareContent(){
+        let activityController: UIActivityViewController
+        let defaultText = "Hello \(theNameLbl.text!),I see you have a \(bloodTypeLbl.text!) group and i need you to help me for saving a person Can you..?"
+        let image = UIImage(named: "blood-donation")
+        activityController = UIActivityViewController(activityItems: [defaultText , image!], applicationActivities: nil)
+        self.present(activityController, animated: true, completion: nil)
+    }
 
     //MARK: - Actions
     
@@ -47,9 +57,13 @@ class DonorViewController: UIViewController {
     }
     @IBAction func phoneBtnTapped(_ sender: UIButton) {
         print("phone tapped")
+        let url: NSURL = URL(string: "tel://\(phoneNumLbl.text!)")! as NSURL
+        UIApplication.shared.open(url as URL)
     }
-    @IBAction func messageBtnTapped(_ sender: UIButton) {
-        print("message tapped")
+    @IBAction func shareBtnTapped(_ sender: UIButton) {
+        print("share tapped")
+        self.shareContent()
+        
     }
 }
 //MARK: - comments

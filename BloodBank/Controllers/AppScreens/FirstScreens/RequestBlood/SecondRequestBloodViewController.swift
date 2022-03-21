@@ -14,6 +14,7 @@ class SecondRequestBloodViewController: UIViewController {
     var sick: Sick?
     var patient: Patient? = nil
     
+    @IBOutlet weak var bloodQuantityLbl: UILabel!
     @IBOutlet weak var gradientView: UIView!
     @IBOutlet weak var bloodTypeLbl: UILabel!
     @IBOutlet weak var bloodBankNameLbl: UILabel!
@@ -40,6 +41,7 @@ class SecondRequestBloodViewController: UIViewController {
         self.bloodTypeLbl.text = "فصيله \(sick?.bloodType ?? "")"
         self.bloodBankNameLbl.text = sick?.address
         self.timeLbl.text = sick?.time
+        self.bloodQuantityLbl.text = sick?.quantity
     }
     private func setUpDesign(){
         navBar.setNavBar(myView: self, title: "", viewController: view, navBarColor: #colorLiteral(red: 0.9738656878, green: 0.4654597044, blue: 0.4720987082, alpha: 1), navBarTintColor: #colorLiteral(red: 0.9845134616, green: 0.9810839295, blue: 0.9719126821, alpha: 1), forgroundTitle: #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1), bacgroundView: #colorLiteral(red: 0.9845134616, green: 0.9810839295, blue: 0.9719126821, alpha: 1))
@@ -58,7 +60,7 @@ class SecondRequestBloodViewController: UIViewController {
         NotificationCenter.default.post(name: Notification.Name(Notifications.detailNot), object: patient)
         print("GetPosted")
         
-        print("bloodType is \(bloodTypeLbl.text!) ,bloodBankName is \(bloodBankNameLbl!) , time is \(timeLbl.text!) , paitent name is \(patientNameTF.text!) , patient age is \(patientAgeTF.text!), note is \(noteForHelpTF.text!)")
+        print("bloodType is \(bloodTypeLbl.text!),blood quantity is equal \(bloodQuantityLbl.text!) ,bloodBankName is \(bloodBankNameLbl!) , time is \(timeLbl.text!) , paitent name is \(patientNameTF.text!) , patient age is \(patientAgeTF.text!), note is \(noteForHelpTF.text!)")
         self.SuccessAlert(title: "Congratulation", message: "The BloodRequest has been Created Successfuly", style: .default) { _ in
             self.navigationController?.popToRootViewController(animated: true)
         }

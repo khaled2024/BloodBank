@@ -179,7 +179,7 @@ extension BookingAppointmentViewController: CLLocationManagerDelegate{
             bookingMapView.showsUserLocation = true
             break
         case .denied:
-            showAlert(title: "", message: "please authorize access to location")
+            self.showAlertWithAction(title: "Sorry", message: "Please Authorize Access to Location")
             break
         case .restricted:
             showAlert(title: "", message: "authorization restricted")
@@ -200,7 +200,7 @@ extension BookingAppointmentViewController: CLLocationManagerDelegate{
             bookingMapView.showsUserLocation = true
             break
         case .denied:
-            showAlert(title: "", message: "please authorize access to location")
+            self.showAlertWithAction(title: "Sorry", message:"Please Authorize Access to Location")
             break
         default:
             print("default..!")

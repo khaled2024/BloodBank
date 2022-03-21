@@ -25,6 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setRoot()
 
         UNUserNotificationCenter.current().delegate = self
+        
+      
+        
         return true
     }
     // MARK: UISceneSession Lifecycle

@@ -38,19 +38,6 @@ class RegisterViewController: UIViewController {
     }
     
     //MARK: - Private functions
-    
-    private func animateButtons(){
-        UIView.animate(withDuration: 0.5) {
-            self.ConfirmBtn.layer.transform = CATransform3DMakeScale(1.1, 1.1, 1)
-        } completion: { completed in
-            if completed{
-                UIView.animate(withDuration: 0.5) {
-                    self.ConfirmBtn.layer.transform = CATransform3DMakeScale(1, 1, 1)
-                }
-            }
-        }
-    }
-    
     private func setNavBar(){
         navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1),.font: UIFont(name: "Almarai-Bold", size: 25)!]
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -88,6 +75,17 @@ class RegisterViewController: UIViewController {
         let loginScreen = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")as! LoginViewController
         navigationController?.pushViewController(loginScreen, animated: true)
     }
+    private func animateButtons(){
+        UIView.animate(withDuration: 0.5) {
+            self.ConfirmBtn.layer.transform = CATransform3DMakeScale(1.1, 1.1, 1)
+        } completion: { completed in
+            if completed{
+                UIView.animate(withDuration: 0.5) {
+                    self.ConfirmBtn.layer.transform = CATransform3DMakeScale(1, 1, 1)
+                }
+            }
+        }
+    }
     //MARK: - Actions
     @IBAction func confirmBtnTapped(_ sender: UIButton) {
         if checkTextFields() {
@@ -95,6 +93,7 @@ class RegisterViewController: UIViewController {
             self.showAlert(title: "Sorry", message: "Please fill the all fields")
         }
         if checkPassword(){
+            self.animateButtons()
             customBtn.toggleForBtn(Btn: self.ConfirmBtn)
             DispatchQueue.main.asyncAfter(deadline: .now()+1.5) {
                 self.SuccessAlert(title: "Congratulation", message: "Your Account Created Succesfully", style: .default) { _ in

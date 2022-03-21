@@ -21,13 +21,9 @@ class RequestViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpDesign()
-        
-        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-       
-       
     }
     //MARK: - Private functions
     
@@ -80,7 +76,6 @@ extension RequestViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch segmentSender {
         case 0:
-            
             let cell = tableView.dequeueReusableCell(withIdentifier: "Requestscell")as! RequestsTableViewCell
             cell.configure(name: patient[indexPath.row].name!, bloodType: patient[indexPath.row].bloodType!, address: patient[indexPath.row].address!, time: patient[indexPath.row].time!, description: patient[indexPath.row].description!)
             return cell

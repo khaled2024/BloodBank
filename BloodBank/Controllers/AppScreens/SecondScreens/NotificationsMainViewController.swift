@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AppointmentMainViewController: UIViewController {
+class NotificationsMainViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()

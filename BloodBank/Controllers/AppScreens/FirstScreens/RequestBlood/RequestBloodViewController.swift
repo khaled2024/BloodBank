@@ -29,9 +29,6 @@ class RequestBloodViewController: UIViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setUpDesign()
-        setUpDesign()
-        
-        
     }
     //MARK: - private func
     private func setUpDesign(){

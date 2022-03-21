@@ -23,6 +23,7 @@ class AppointmentViewController: UIViewController {
     @IBOutlet weak var yesDays: UIButton!
     @IBOutlet weak var yesTattoo: UIButton!
     @IBOutlet weak var noTattoo: UIButton!
+    
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()

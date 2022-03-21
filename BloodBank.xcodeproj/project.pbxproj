@@ -19,7 +19,9 @@
 		EA1831C827DA6C1000D9BA90 /* RequestsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA1831C627DA6C1000D9BA90 /* RequestsTableViewCell.xib */; };
 		EA1915F727DBFA3100554FF9 /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1915F627DBFA3100554FF9 /* Patient.swift */; };
 		EA1915F927DC27B100554FF9 /* DetailsCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1915F827DC27B100554FF9 /* DetailsCellViewController.swift */; };
-		EA2484D027B6D52900103DE7 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2484CF27B6D52900103DE7 /* NotificationViewController.swift */; };
+		EA215BFC27E7EB98005A9843 /* EducateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA215BFB27E7EB98005A9843 /* EducateCollectionViewCell.swift */; };
+		EA215BFE27E7FA36005A9843 /* String+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA215BFD27E7FA36005A9843 /* String+URL.swift */; };
+		EA215C0027E80057005A9843 /* EducateDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA215BFF27E80057005A9843 /* EducateDetailsViewController.swift */; };
 		EA4278A227B01F9C002D444A /* AppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4278A127B01F9C002D444A /* AppointmentViewController.swift */; };
 		EA4278A427B025A7002D444A /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4278A327B025A7002D444A /* RequestViewController.swift */; };
 		EA4278A627B025BF002D444A /* DonationHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4278A527B025BF002D444A /* DonationHistoryViewController.swift */; };
@@ -68,7 +70,7 @@
 		EAD3834C27D7BF3B00E87893 /* PickDateTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD3834B27D7BF3B00E87893 /* PickDateTimeViewController.swift */; };
 		EAD3835027D806C300E87893 /* SheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD3834F27D806C300E87893 /* SheetViewController.swift */; };
 		EAD669EF27C6393C006221A2 /* Almarai-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAD669EE27C6393C006221A2 /* Almarai-Bold.ttf */; };
-		EAD669F127C63A72006221A2 /* AppointmentMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD669F027C63A72006221A2 /* AppointmentMainViewController.swift */; };
+		EAD669F127C63A72006221A2 /* NotificationsMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD669F027C63A72006221A2 /* NotificationsMainViewController.swift */; };
 		EAD669F327C63F50006221A2 /* DonorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD669F227C63F50006221A2 /* DonorViewController.swift */; };
 		EAE3C90B27B12C6300F42D16 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE3C90A27B12C6300F42D16 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
@@ -88,7 +90,9 @@
 		EA1831C627DA6C1000D9BA90 /* RequestsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestsTableViewCell.xib; sourceTree = "<group>"; };
 		EA1915F627DBFA3100554FF9 /* Patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
 		EA1915F827DC27B100554FF9 /* DetailsCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCellViewController.swift; sourceTree = "<group>"; };
-		EA2484CF27B6D52900103DE7 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		EA215BFB27E7EB98005A9843 /* EducateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducateCollectionViewCell.swift; sourceTree = "<group>"; };
+		EA215BFD27E7FA36005A9843 /* String+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+URL.swift"; sourceTree = "<group>"; };
+		EA215BFF27E80057005A9843 /* EducateDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducateDetailsViewController.swift; sourceTree = "<group>"; };
 		EA4278A127B01F9C002D444A /* AppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentViewController.swift; sourceTree = "<group>"; };
 		EA4278A327B025A7002D444A /* RequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
 		EA4278A527B025BF002D444A /* DonationHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationHistoryViewController.swift; sourceTree = "<group>"; };
@@ -139,7 +143,7 @@
 		EAD3834B27D7BF3B00E87893 /* PickDateTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickDateTimeViewController.swift; sourceTree = "<group>"; };
 		EAD3834F27D806C300E87893 /* SheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetViewController.swift; sourceTree = "<group>"; };
 		EAD669EE27C6393C006221A2 /* Almarai-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Almarai-Bold.ttf"; sourceTree = "<group>"; };
-		EAD669F027C63A72006221A2 /* AppointmentMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentMainViewController.swift; sourceTree = "<group>"; };
+		EAD669F027C63A72006221A2 /* NotificationsMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsMainViewController.swift; sourceTree = "<group>"; };
 		EAD669F227C63F50006221A2 /* DonorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonorViewController.swift; sourceTree = "<group>"; };
 		EAE3C90A27B12C6300F42D16 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -220,6 +224,13 @@
 			path = ApiService;
 			sourceTree = "<group>";
 		};
+		EA7F5F6C27E7503900128793 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 		EA91102127CD5E5300FA75E5 /* LottieAnimation */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,6 +282,7 @@
 			children = (
 				EA91ED4A27CD0DD000F8D02A /* Supporting Files */,
 				EA09E71227A4C913009A0ED0 /* Fonts */,
+				EA7F5F6C27E7503900128793 /* Localization */,
 				EACC012D27A4272D00FFB92B /* Service */,
 				EAC252EA276A3A2B0033F96F /* Utilities */,
 				EAC252E3276A33320033F96F /* Extensions */,
@@ -349,6 +361,7 @@
 				EAC252E4276A335B0033F96F /* UiView+Extension.swift */,
 				EAB1C99027A554A2006BB209 /* UiView + alert.swift */,
 				EA9D400027DCF3D300776F14 /* UiView+Controller.swift */,
+				EA215BFD27E7FA36005A9843 /* String+URL.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -419,6 +432,8 @@
 			isa = PBXGroup;
 			children = (
 				EA45BFA927C5999200D56AEC /* EducateYourselfViewController.swift */,
+				EA215BFB27E7EB98005A9843 /* EducateCollectionViewCell.swift */,
+				EA215BFF27E80057005A9843 /* EducateDetailsViewController.swift */,
 			);
 			path = EducateYourself;
 			sourceTree = "<group>";
@@ -427,7 +442,6 @@
 			isa = PBXGroup;
 			children = (
 				EA064CAD27A4750600A06257 /* MainViewController.swift */,
-				EA2484CF27B6D52900103DE7 /* NotificationViewController.swift */,
 				EA01A0A527C96F1800BDCC00 /* BookingAppointment */,
 				EAE615D927D962DB00A56C5A /* DonateBlood */,
 				EAE615DA27D962EC00A56C5A /* RequestBlood */,
@@ -440,7 +454,7 @@
 		EAEF17A627A48B9B0002FFA5 /* SecondScreens */ = {
 			isa = PBXGroup;
 			children = (
-				EAD669F027C63A72006221A2 /* AppointmentMainViewController.swift */,
+				EAD669F027C63A72006221A2 /* NotificationsMainViewController.swift */,
 			);
 			path = SecondScreens;
 			sourceTree = "<group>";
@@ -611,13 +625,14 @@
 				EA1915F927DC27B100554FF9 /* DetailsCellViewController.swift in Sources */,
 				EA064CAE27A4750600A06257 /* MainViewController.swift in Sources */,
 				EAC252E7276A34BF0033F96F /* OnboardingSlide.swift in Sources */,
+				EA215C0027E80057005A9843 /* EducateDetailsViewController.swift in Sources */,
 				EAE3C90B27B12C6300F42D16 /* MapViewController.swift in Sources */,
 				EA45D3B327E4E0DA0072E19C /* RequestProtocol.swift in Sources */,
 				EA86A9FB27CA31FB006EA939 /* UserDefultsManager.swift in Sources */,
 				EACC013D27A43A5A00FFB92B /* UserCustomBtn.swift in Sources */,
 				EA4278A627B025BF002D444A /* DonationHistoryViewController.swift in Sources */,
 				EAC252C7276A26F00033F96F /* AppDelegate.swift in Sources */,
-				EAD669F127C63A72006221A2 /* AppointmentMainViewController.swift in Sources */,
+				EAD669F127C63A72006221A2 /* NotificationsMainViewController.swift in Sources */,
 				EA66461A27E2BAB1001A9E12 /* CustomTF.swift in Sources */,
 				EA45BFAE27C5AC4800D56AEC /* NavigationBar.swift in Sources */,
 				EAD3835027D806C300E87893 /* SheetViewController.swift in Sources */,
@@ -630,7 +645,8 @@
 				EAC252E5276A335B0033F96F /* UiView+Extension.swift in Sources */,
 				EA45D3B527E4E0DA0072E19C /* DataProviderProtocol.swift in Sources */,
 				EA45D3B427E4E0DA0072E19C /* SessionManager.swift in Sources */,
-				EA2484D027B6D52900103DE7 /* NotificationViewController.swift in Sources */,
+				EA215BFE27E7FA36005A9843 /* String+URL.swift in Sources */,
+				EA215BFC27E7EB98005A9843 /* EducateCollectionViewCell.swift in Sources */,
 				EAAD8337276D12C800381854 /* DataPicker.swift in Sources */,
 				EACC012F27A4275700FFB92B /* NavigationManager.swift in Sources */,
 				EA01A0B127C9838700BDCC00 /* BookingAppointmentViewController.swift in Sources */,
@@ -674,6 +690,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -735,6 +752,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

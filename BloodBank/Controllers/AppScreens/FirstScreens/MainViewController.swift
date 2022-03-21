@@ -52,17 +52,14 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
         animateViews()
         animateImages()
     }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
     
     //MARK: -  private functions
     private func animateScalling(){
         UIView.animate(withDuration: 1) {
-            self.scaduleAppointmentView.center.x += 13
-            self.donateBloodView.center.x += 13
-            self.requestBloodView.center.x += 13
-            self.educateYourselfView.center.x += 13
+            self.scaduleAppointmentView.center.y += 13
+            self.donateBloodView.center.y += 13
+            self.requestBloodView.center.y += 13
+            self.educateYourselfView.center.y += 13
         }
     }
     private func animateViews(){
@@ -220,11 +217,6 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
         navigationController?.pushViewController(educateYourselfVC!, animated: true)
         self.modalTransitionStyle = .partialCurl
     }
-    private func NotificationScreen(){
-        let notificationVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NotificationViewController")as! NotificationViewController
-        navigationController?.pushViewController(notificationVC, animated: true)
-        self.modalTransitionStyle = .partialCurl
-    }
     //MARK: - Actions
     @IBAction func touchOnScreen(_ sender: UITapGestureRecognizer) {
         hideHamburgerMenu()
@@ -243,9 +235,7 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
         }
         
     }
-    @IBAction func notificationBtnTapped(_ sender: UIBarButtonItem) {
-        self.NotificationScreen()
-    }
+
     @IBAction func bookingAppintment(_ sender: UIButton) {
         self.BookingApp()
         

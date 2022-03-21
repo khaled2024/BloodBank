@@ -51,15 +51,16 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
         self.navigationController?.navigationBar.isHidden = false
         animateViews()
         animateImages()
+
     }
     
     //MARK: -  private functions
     private func animateScalling(){
-        UIView.animate(withDuration: 1) {
-            self.scaduleAppointmentView.center.y += 13
-            self.donateBloodView.center.y += 13
-            self.requestBloodView.center.y += 13
-            self.educateYourselfView.center.y += 13
+        UIView.animate(withDuration: 1.5) {
+            self.scaduleAppointmentView.center.x += 60
+            self.donateBloodView.center.x += 50
+            self.requestBloodView.center.x += 40
+            self.educateYourselfView.center.x += 30
         }
     }
     private func animateViews(){

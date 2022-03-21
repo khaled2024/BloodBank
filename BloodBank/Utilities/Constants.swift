@@ -46,13 +46,17 @@ struct LocationCoordinate {
     
 }
 struct EducateTabelArray {
-    static let educateArray = ["Blood Needs","Blood Supply","Blood Donation", "Blood & Its","About Donors","FAQs"]
+    static let educateArray = ["Blood Needs".Localized(),
+    "Blood Type".Localized(),"Blood Donation".Localized(), "Health Assessment".Localized(),"Eligibility Requirements".Localized(),"FAQs".Localized()]
 }
 struct EducateCollectionArray {
-    static let educateArrayImage = [UIImage(named: "logoImage"),UIImage(named: "unsplash1"),UIImage(named: "unsplash2"),UIImage(named: "unsplash3"),UIImage(named: "unsplash4")]
+    static let educateArrayImage = [UIImage(named: "unsplash1"),UIImage(named: "unsplash2"),UIImage(named: "unsplash3"),UIImage(named: "unsplash4"),UIImage(named: "logoImage")]
 }
 struct Notifications {
     static let detailNot = "detailNotification"
+}
+struct BloodArticels {
+    static let bloodArray = ["firstCell".Localized(), "secondCell".Localized() ,"thirdCell".Localized(),"forthCell".Localized(),"fifthCell".Localized(),"sixCell".Localized()]
 }
 
 

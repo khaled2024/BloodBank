@@ -41,6 +41,7 @@ class DonorViewController: UIViewController {
     private func setUpDesign(){
 //        self.navigationController?.navigationBar.backgroundColor = .clear
         gradient.setGradientBackground(colorTop: #colorLiteral(red: 0.9738656878, green: 0.4654597044, blue: 0.4720987082, alpha: 1), colorBottom: #colorLiteral(red: 0.895557344, green: 0.1643874943, blue: 0.328651458, alpha: 1), view: gradientView)
+        view.semanticContentAttribute = .forceLeftToRight
     }
     private func shareContent(){
         let activityController: UIActivityViewController

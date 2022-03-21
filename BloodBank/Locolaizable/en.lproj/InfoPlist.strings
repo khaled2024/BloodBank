@@ -1,0 +1,5 @@
+"CFBundleName" = "Blood Bank";
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "Let app use location services for Accessing your Location";
+"NSLocationWhenInUseUsageDescription" = "Let app use location services for Accessing your Location";
+
+

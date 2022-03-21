@@ -28,6 +28,7 @@ class AppointmentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         buttonTags()
+        insideView.semanticContentAttribute = .forceLeftToRight
         
         navBar.setNavBar(myView: self, title: "حجز موعد للتبرع بالدم", viewController: view, navBarColor: #colorLiteral(red: 0.9851935506, green: 0.9802264571, blue: 0.9716960788, alpha: 1), navBarTintColor: #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1) , forgroundTitle: #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1) , bacgroundView: #colorLiteral(red: 0.9851935506, green: 0.9802264571, blue: 0.9716960788, alpha: 1))
     }

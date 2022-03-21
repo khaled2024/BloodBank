@@ -1,0 +1,59 @@
+"changeLanguage" = "Change Language";
+// array of educate yourself
+"Blood Needs" = "Blood Needs";
+"Blood Type" = "Blood Type";
+"Blood Donation" = "Blood Donation";
+"Health Assessment" = "Health Assessment";
+"Eligibility Requirements" = "Eligibility Requirements";
+"FAQs" = "FAQs";
+
+// details educate yourself
+
+"firstCell" = "When you donate blood, organizations such as the Red Cross will usually separate whole blood into red blood cells, plasma and platelets in a lab. Plasma can treat all kinds of things like cancer, blood diseases, haemophilia, anaemia, heart disease, stomach disease, kidney disease, childbirth, operations, blood loss, trauma and burns.
+Every 2 seconds someone in the U.S.needs blood and or platelets. Approximately 29,000 units of red blood cells are needed every day in the U. S. Nearly 5,000 units of platelets and 6.500 units of plasma are needed daily in the U.S. Nearly 16 million blood components are transfused each year in the U.S.Sickle cell disease affects 90,000 to 100,000 people in the U.S. About 1,000 babies are born with the disease each year. Sickle cell patients can require blood transfusions throughout their lives.The average red blood cell transfusion is approximately 3 units.A single car accident victim can require as many as 100 units of blood. Blood and platelets cannot be manufactured; they can only come from volunteer donors.The blood type most often requested by hospitals is type O.One donation can help save more than one life.According to the American Cancer Society, more than 1.8 million people are expected to be diagnosed with cancer in 2020. Many of them will need blood, sometimes daily, during their chemotherapy treatment.";
+
+"secondCell" = "Group A : has only the A antigen on red cells (and B antibody in the plasma) Group B : has only the B antigen on red cells (and A antibody in the plasma) Group AB : has both A and B antigens on red cells (but neither A nor B antibody in the plasma) Group O : has neither A nor B antigens on red cells (but both A and B antibody are in the plasma) There are very specific ways in which blood types must be matched for a safe transfusion. The right blood transfusion can mean the difference between life and death. Use the interactive graphic below to learn more about matching blood types for transfusions.Also, Rh-negative blood is given to Rh-negative patients, and Rh-positive or Rh-negative blood may be given to Rh-positive patients. The rules for plasma are the reverse. There are more than 600 other known antigens, the presence or absence of which creates rare blood types. Certain blood types are unique to specific ethnic or racial groups. That’s why an African-American blood donation may be the best hope for the needs of patients with sickle cell disease, many of whom are of African descent   Universal donors are those with an O negative blood type.  Why?  O negative blood can be used in transfusions for any blood type. Type O is routinely in short supply and in high demand by hospitals – both because it is the most common blood type and because type O negative blood is the universal blood type needed for emergency transfusions and for immune deficient infants.Approximately 45 percent of Caucasians are type O (positive or negative), but 51 percent of African-Americans and 57 percent of Hispanics are type O. Minority and diverse populations, therefore, play a critical role in meeting the constant need for blood.Types O negative and O positive are in high demand.  Only 7% of the population are O negative. However, the need for O negative blood is the highest because it is used most often during emergencies. The need for O+ is high because it is the most frequently occurring blood type (37% of the population).The universal red cell donor has Type O negative blood. The universal plasma donor has Type AB blood. For more about plasma donation, visit the plasma donation facts.";
+
+"thirdCell" = "(Registration) : We’ll sign you in and go over basic eligibility. You’ll be asked to show ID, such as your driver’s license.You’ll read some information about donating blood.We’ll ask you for your complete address.  Your address needs to be complete (including PO Box, street/apartment number) and the place where you will receive your mail 8 weeks from donation. (Health History) : You’ll answer a few questions about your health history and places you’ve traveled, during a private and confidential interview.You’ll tell us about any prescription and/or over the counter medications that may be in your system.We’ll check your temperature, pulse, blood pressure and hemoglobin level.  (Your Donation) : If you’re donating whole blood, we’ll cleanse an area on your arm and insert a brand new sterile needle for the blood draw. (This feels like a quick pinch and is over in seconds.)Other types of donations, such as platelets, are made using an apheresis machine which will be connected to both arms. A whole blood donation takes about 8-10 minutes, during which you’ll be seated comfortably or lying down.When approximately a pint of whole blood has been collected, the donation is complete and a staff person will place a bandage on your arm.For platelets, the apheresis machine will collect a small amount of blood, remove the platelets, and return the rest of the blood through your other arm; this cycle will be repeated several times over about 2 hours. (Refreshment and Recovery) :  After donating blood, you’ll have a snack and something to drink in the refreshment area.  You’ll leave after 10-15 minutes and continue your normal routine.   Enjoy the feeling of accomplishment knowing you are helping to save lives. Take a selfie, or simply share your good deed with friends. It may inspire them to become blood donors.";
+
+"forthCell" = "Your Health Screening
+When you come in to donate, you help provide lifesaving care to patients in need. But you also receive the added benefit of a free mini-health assessment, provided by a trained Red Cross staff member.
+Prior to donating blood, all donors will receive a free health screening. At the time of your donation, your blood pressure, hemoglobin, and pulse will be checked. We record these vitals in your online donor profile where you can track and monitor your results. You can access this information as well as past health information obtained during prior donations, at any time. Your online profile is a great resource to track your health goals and share with your care providers. Your health is an important part of your donor journey and key to continuing to help others in need.
+What is done during the test and what is measured
+Prior to donating blood, all donors will receive a free health screening. At the time of your donation, your blood pressure, hemoglobin, and pulse will be checked. We record these vitals in your online donor profile. You can access this information as well as past health information obtained during prior donations, at any time. We encourage you to share your results with your healthcare provider at your next visit.
+(Blood Pressure)
+The Application checks your blood pressure before every donation. When untreated, high blood pressure can increase the risk of heart attack, stroke and other health complications. Also known as hypertension, the condition usually has no symptoms, and is often called the (silent killer)
+(Pulse)
+Your pulse will be checked before every Red Cross blood donation. Staff will measure the number of times your heart beats per minute and count any irregular heartbeats. Your pulse rate gives insights into your heart rhythm and how well your heart may be working. A heart rate that is too fast, too slow, or irregular can indicate an underlying condition.
+(Hemoglobin)
+The Red Cross checks your hemoglobin before every donation to ensure that you are healthy enough to donate. Hemoglobin is a protein that contains iron and carries oxygen to the tissues in your body. Iron is essential to help your body to replace new red blood cells lost through blood donations.
+";
+"fifthCell" = "Requirements by Donation Type
+To ensure the safety of both patients and donors, these are some of the requirements donors must meet to be eligible to donate blood based on their donation type.
+Whole Blood Donation
+Donation frequency: Every 56 days, up to 6 times a year
+You must be in good health and feeling well
+You must be at least 16 years old in most states
+You must weigh at least 110 lbs
+
+Platelet Donation
+Donation frequency: Every 7 days, up to 24 times/year
+You must be in good health and feeling well
+You must be at least 17 years old in most states
+You must weigh at least 110 lbs
+
+AB Elite Plasma Donation
+Donation frequency: Every 28 days, up to 13 times/year
+You must have type AB blood
+You must be in good health and feeling well
+You must be at least 17 years old
+You must weigh at least 110 lbs";
+
+"sixCell" = "How many people donate blood each year?
+108 million donations are collected each year from unpaid voluntary donors, paid donors or family members. In 62 countries, 100 percent of donations are collected from unpaid volunteers. According to the World Health Organization (WHO) the world should aim to reach 100 percent unpaid voluntary donations by 2020. 72 countries already are close, getting 93 percent of blood from unpaid voluntary donors.
+In low income countries, youth (18-24) donate more blood than any other age, meanwhile in high income countries the most common age bracket is slightly older (25-44).
+What are the policies around donating blood around the world?
+Over 168 countries have a system in place to collect blood donations. 81 percent of blood donations from high-income countries have a national policy (this is where more than 50 percent of donations come from), while 44 percent of low-income countries have a set policy.
+WHO recommends implementing a testing and screening system for all blood donations, a policy that many high-income countries strictly adhere to. With HIV testing this can be complicated, however, because the virus can remain undetected for an average of 22 days.
+Where can you get paid for donating blood?
+You can get paid for donating blood in 25 countries around the world. Some countries will give you paid time off work to go donate blood, while others like Germany, China, US, and Russia pay for plasma donations.";

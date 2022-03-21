@@ -12,6 +12,7 @@ class DonateBloodViewController: UIViewController {
     @IBOutlet weak var scaduleBtn: UIButton!
     @IBOutlet weak var requestBloodDonationBtn: UIButton!
     
+    
     @IBOutlet weak var myView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var insideView: UIView!
@@ -24,6 +25,11 @@ class DonateBloodViewController: UIViewController {
     @IBOutlet weak var yesDays: UIButton!
     @IBOutlet weak var yesTattoo: UIButton!
     @IBOutlet weak var noTattoo: UIButton!
+    
+    @IBOutlet weak var btnNextForSchedlling: UIButton!
+    @IBOutlet weak var btnNextForRequserBlood: UIButton!
+    @IBOutlet weak var btnBackForSchedulling: UIButton!
+    @IBOutlet weak var btnBackForRequestBlood: UIButton!
     //MARK: - Variables
     let customBtn = UserCustomBtn()
     let navBar = NavigationBar()
@@ -72,11 +78,27 @@ class DonateBloodViewController: UIViewController {
     }
     //MARK: - Private Functions
     private func setUpDesign(){
-        navBar.setNavBar(myView: self, title: "التبرع بالدم", viewController: view, navBarColor: #colorLiteral(red: 0.9845134616, green: 0.9810839295, blue: 0.9719126821, alpha: 1), navBarTintColor: #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1), forgroundTitle: #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1), bacgroundView: #colorLiteral(red: 0.9845134616, green: 0.9810839295, blue: 0.9719126821, alpha: 1))
+        navBar.setNavBar(myView: self, title: "التبرع بالدم", viewController: view, navBarColor: UIColor.navBarColor, navBarTintColor: UIColor.navBarTintColor, forgroundTitle: UIColor.forgroundTitle, bacgroundView: UIColor.backgroundView)
         
         customBtn.customBtn(Btn: scaduleBtn, tintColor: .white, borderColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1) , bgColor: #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1))
         
         customBtn.customBtn(Btn: requestBloodDonationBtn, tintColor: .white, borderColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), bgColor: #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1))
+        
+        insideView.semanticContentAttribute = .forceLeftToRight
+        self.btnChangesInViewWithLang()
+    }
+    private func btnChangesInViewWithLang(){
+        let currentLang = Locale.current.languageCode
+        if currentLang == "en"{
+            self.btnBackForSchedulling.isHidden = true
+            self.btnBackForRequestBlood.isHidden = true
+            print("current language:\(currentLang!)")
+        }else{
+            self.btnNextForSchedlling.isHidden = true
+            self.btnNextForRequserBlood.isHidden = true
+            self.btnBackForSchedulling.isHidden = false
+            self.btnBackForRequestBlood.isHidden = false
+        }
     }
     private func buttonTags(){
         self.yesGoodHealth.tag = 1

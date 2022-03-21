@@ -42,6 +42,10 @@
 		EA8676D027A6C70A00E95283 /* HamburgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8676CF27A6C70A00E95283 /* HamburgerViewController.swift */; };
 		EA86A9FB27CA31FB006EA939 /* UserDefultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA86A9FA27CA31FB006EA939 /* UserDefultsManager.swift */; };
 		EA86A9FD27CAD4F4006EA939 /* HomeNCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA86A9FC27CAD4F4006EA939 /* HomeNCViewController.swift */; };
+		EA92A0A527E89D930060C5C8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA92A0A727E89D930060C5C8 /* Localizable.strings */; };
+		EA92A0AA27E89FFF0060C5C8 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA92A0A927E89FFF0060C5C8 /* String+Localized.swift */; };
+		EA92A0AD27E8A92E0060C5C8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA92A0AF27E8A92E0060C5C8 /* InfoPlist.strings */; };
+		EA92A0B227E917F30060C5C8 /* Color+UIcolor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA92A0B127E917F30060C5C8 /* Color+UIcolor.swift */; };
 		EA99AAFD276CCF540083F0D1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA99AAFC276CCF540083F0D1 /* HomeViewController.swift */; };
 		EA9D400127DCF3D300776F14 /* UiView+Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9D400027DCF3D300776F14 /* UiView+Controller.swift */; };
 		EAA3C9D427DFB546007C5B47 /* SecondRequestBloodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA3C9D327DFB546007C5B47 /* SecondRequestBloodViewController.swift */; };
@@ -113,6 +117,13 @@
 		EA8676CF27A6C70A00E95283 /* HamburgerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerViewController.swift; sourceTree = "<group>"; };
 		EA86A9FA27CA31FB006EA939 /* UserDefultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefultsManager.swift; sourceTree = "<group>"; };
 		EA86A9FC27CAD4F4006EA939 /* HomeNCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNCViewController.swift; sourceTree = "<group>"; };
+		EA92A0A427E89D860060C5C8 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		EA92A0A627E89D930060C5C8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EA92A0A827E89D980060C5C8 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EA92A0A927E89FFF0060C5C8 /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
+		EA92A0AE27E8A92E0060C5C8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EA92A0B027E8A9310060C5C8 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EA92A0B127E917F30060C5C8 /* Color+UIcolor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+UIcolor.swift"; sourceTree = "<group>"; };
 		EA99AAFC276CCF540083F0D1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EA9D400027DCF3D300776F14 /* UiView+Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiView+Controller.swift"; sourceTree = "<group>"; };
 		EAA3C9D327DFB546007C5B47 /* SecondRequestBloodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondRequestBloodViewController.swift; sourceTree = "<group>"; };
@@ -224,13 +235,6 @@
 			path = ApiService;
 			sourceTree = "<group>";
 		};
-		EA7F5F6C27E7503900128793 /* Localization */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Localization;
-			sourceTree = "<group>";
-		};
 		EA91102127CD5E5300FA75E5 /* LottieAnimation */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +249,15 @@
 				EAC252C8276A26F00033F96F /* SceneDelegate.swift */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EA92A0A127E89D5A0060C5C8 /* Locolaizable */ = {
+			isa = PBXGroup;
+			children = (
+				EA92A0A727E89D930060C5C8 /* Localizable.strings */,
+				EA92A0AF27E8A92E0060C5C8 /* InfoPlist.strings */,
+			);
+			path = Locolaizable;
 			sourceTree = "<group>";
 		};
 		EABDBFCF276CE98900738EA3 /* InterfaceViewControllers */ = {
@@ -280,9 +293,9 @@
 		EAC252C5276A26F00033F96F /* BloodBank */ = {
 			isa = PBXGroup;
 			children = (
+				EA92A0A127E89D5A0060C5C8 /* Locolaizable */,
 				EA91ED4A27CD0DD000F8D02A /* Supporting Files */,
 				EA09E71227A4C913009A0ED0 /* Fonts */,
-				EA7F5F6C27E7503900128793 /* Localization */,
 				EACC012D27A4272D00FFB92B /* Service */,
 				EAC252EA276A3A2B0033F96F /* Utilities */,
 				EAC252E3276A33320033F96F /* Extensions */,
@@ -362,6 +375,8 @@
 				EAB1C99027A554A2006BB209 /* UiView + alert.swift */,
 				EA9D400027DCF3D300776F14 /* UiView+Controller.swift */,
 				EA215BFD27E7FA36005A9843 /* String+URL.swift */,
+				EA92A0A927E89FFF0060C5C8 /* String+Localized.swift */,
+				EA92A0B127E917F30060C5C8 /* Color+UIcolor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -528,6 +543,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = EAC252BA276A26F00033F96F;
 			productRefGroup = EAC252C4276A26F00033F96F /* Products */;
@@ -548,10 +564,12 @@
 				EA1831C827DA6C1000D9BA90 /* RequestsTableViewCell.xib in Resources */,
 				EAD669EF27C6393C006221A2 /* Almarai-Bold.ttf in Resources */,
 				EA01A0AF27C9777100BDCC00 /* Poppins-Bold.ttf in Resources */,
+				EA92A0A527E89D930060C5C8 /* Localizable.strings in Resources */,
 				EA01A0AB27C9774100BDCC00 /* Poppins-Regular.ttf in Resources */,
 				EA6E702127C5C3CE00F1E76C /* Almarai-Regular.ttf in Resources */,
 				EAC252D0276A26F10033F96F /* Assets.xcassets in Resources */,
 				EAC252CE276A26F00033F96F /* Main.storyboard in Resources */,
+				EA92A0AD27E8A92E0060C5C8 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -604,6 +622,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA92A0B227E917F30060C5C8 /* Color+UIcolor.swift in Sources */,
 				EA4C711F27E3D626000C8B02 /* CustomPlaceHolder.swift in Sources */,
 				EA4278AC27B025FB002D444A /* SettingViewController.swift in Sources */,
 				EA01A0A727C96F4E00BDCC00 /* NotFitAppointmentViewController.swift in Sources */,
@@ -628,6 +647,7 @@
 				EA215C0027E80057005A9843 /* EducateDetailsViewController.swift in Sources */,
 				EAE3C90B27B12C6300F42D16 /* MapViewController.swift in Sources */,
 				EA45D3B327E4E0DA0072E19C /* RequestProtocol.swift in Sources */,
+				EA92A0AA27E89FFF0060C5C8 /* String+Localized.swift in Sources */,
 				EA86A9FB27CA31FB006EA939 /* UserDefultsManager.swift in Sources */,
 				EACC013D27A43A5A00FFB92B /* UserCustomBtn.swift in Sources */,
 				EA4278A627B025BF002D444A /* DonationHistoryViewController.swift in Sources */,
@@ -667,10 +687,29 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		EA92A0A727E89D930060C5C8 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA92A0A627E89D930060C5C8 /* en */,
+				EA92A0A827E89D980060C5C8 /* ar */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		EA92A0AF27E8A92E0060C5C8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA92A0AE27E8A92E0060C5C8 /* en */,
+				EA92A0B027E8A9310060C5C8 /* ar */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		EAC252CC276A26F00033F96F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				EAC252CD276A26F00033F96F /* Base */,
+				EA92A0A427E89D860060C5C8 /* ar */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -815,8 +854,8 @@
 				DEVELOPMENT_TEAM = 3TWF5CMBRA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BloodBank/Info.plist;
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Let app use location for better user expeirence";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Let app use location for better user expeirence";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -847,8 +886,8 @@
 				DEVELOPMENT_TEAM = 3TWF5CMBRA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BloodBank/Info.plist;
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Let app use location for better user expeirence";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Let app use location for better user expeirence";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

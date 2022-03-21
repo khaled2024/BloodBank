@@ -212,9 +212,6 @@
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "JoT-zV-erU"; */
 "JoT-zV-erU.normalTitle" = "Button";
 
-/* Class = "UIButton"; normalTitle = "تغيير اللغه"; ObjectID = "KQX-Cp-XU0"; */
-"KQX-Cp-XU0.normalTitle" = "تغيير اللغه";
-
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "LGX-bD-0rW"; */
 "LGX-bD-0rW.normalTitle" = "Button";
 
@@ -248,6 +245,9 @@
 /* Class = "UILabel"; text = "في اي وقت بحاجه للدم؟"; ObjectID = "N8L-P9-3TA"; */
 "N8L-P9-3TA.text" = "في اي وقت بحاجه للدم؟";
 
+/* Class = "UILabel"; text = "Title"; ObjectID = "NIc-h9-LBW"; */
+"NIc-h9-LBW.text" = "Title";
+
 /* Class = "UINavigationItem"; title = " انشاء حساب جديد"; ObjectID = "NbT-PL-XW4"; */
 "NbT-PL-XW4.title" = " انشاء حساب جديد";
 
@@ -259,9 +259,6 @@
 
 /* Class = "UITextField"; text = "راضي"; ObjectID = "OE7-Cr-dPK"; */
 "OE7-Cr-dPK.text" = "راضي";
-
-/* Class = "UICommand"; title = "Item 1"; ObjectID = "ObE-Xt-OlT"; */
-"ObE-Xt-OlT.title" = "Item 1";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "OdY-v7-LK4"; */
 "OdY-v7-LK4.normalTitle" = "Button";
@@ -503,14 +500,17 @@
 /* Class = "UILabel"; text = "Label"; ObjectID = "k1s-eg-HCi"; */
 "k1s-eg-HCi.text" = "Label";
 
-/* Class = "UINavigationItem"; title = "المواعيد"; ObjectID = "k87-Wd-p8D"; */
-"k87-Wd-p8D.title" = "المواعيد";
+/* Class = "UINavigationItem"; title = "الاشعارات"; ObjectID = "k87-Wd-p8D"; */
+"k87-Wd-p8D.title" = "الاشعارات";
 
 /* Class = "UILabel"; text = "شكرا لك"; ObjectID = "klm-Wh-DQG"; */
 "klm-Wh-DQG.text" = "شكرا لك";
 
 /* Class = "UILabel"; text = "اخي بحاجه الي خمسه اكياس دم ف حادثه سياره وحالته خطيره جدا ارجو المساعده ف اسرع وقت ف معمل النور / المنشاه الكبري / السنطه / الغربيه "; ObjectID = "kqe-4u-wih"; */
 "kqe-4u-wih.text" = "اخي بحاجه الي خمسه اكياس دم ف حادثه سياره وحالته خطيره جدا ارجو المساعده ف اسرع وقت ف معمل النور / المنشاه الكبري / السنطه / الغربيه ";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "lAq-Lq-bXu"; */
+"lAq-Lq-bXu.title" = " ";
 
 /* Class = "UILabel"; text = "هل تبرعت بالدم في آخر 56 يومًا؟"; ObjectID = "lFP-8e-y7u"; */
 "lFP-8e-y7u.text" = "هل تبرعت بالدم في آخر 56 يومًا؟";
@@ -523,6 +523,12 @@
 
 /* Class = "UIBarButtonItem"; title = " "; ObjectID = "mCf-Z8-k57"; */
 "mCf-Z8-k57.title" = " ";
+
+/* Class = "UIButton"; configuration.title = "تغيير اللغه"; ObjectID = "mHB-Cs-g8l"; */
+"mHB-Cs-g8l.configuration.title" = "تغيير اللغه";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "mHB-Cs-g8l"; */
+"mHB-Cs-g8l.normalTitle" = "Button";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "nCH-gJ-1LQ"; */
 "nCH-gJ-1LQ.normalTitle" = "Button";
@@ -538,6 +544,9 @@
 
 /* Class = "UITextField"; placeholder = "ادخل  اسم المستخدم"; ObjectID = "q8J-tL-eFn"; */
 "q8J-tL-eFn.placeholder" = "ادخل  اسم المستخدم";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "qbr-JW-cqS"; */
+"qbr-JW-cqS.text" = "Label";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "r0h-LG-7vj"; */
 "r0h-LG-7vj.normalTitle" = "Button";
@@ -598,9 +607,6 @@
 
 /* Class = "UITabBarItem"; title = "Item"; ObjectID = "wzW-9I-DrI"; */
 "wzW-9I-DrI.title" = "Item";
-
-/* Class = "UICommand"; title = "Item 2"; ObjectID = "x1y-1v-HMR"; */
-"x1y-1v-HMR.title" = "Item 2";
 
 /* Class = "UILabel"; text = "تعلم بنفسك"; ObjectID = "xWL-tw-j4t"; */
 "xWL-tw-j4t.text" = "تعلم بنفسك";

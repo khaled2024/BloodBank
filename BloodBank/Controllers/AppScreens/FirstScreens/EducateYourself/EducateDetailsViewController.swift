@@ -7,18 +7,35 @@
 
 import UIKit
 
-class EducateDetailsViewController: UIViewController {
+class EducateDetailsViewController: UIViewController{
+    
+    @IBOutlet weak var label: UILabel!
     let navBar = NavigationBar()
     var titleNavBar = ""
+    var bloodArticels = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpDesign()
+        setUpData()
+        
     }
-    
+    //MARK: - Private func
     private func setUpDesign(){
-        navBar.setNavBar(myView: self, title: titleNavBar, viewController: view, navBarColor: #colorLiteral(red: 0.9845134616, green: 0.9810839295, blue: 0.9719126821, alpha: 1), navBarTintColor: #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1), forgroundTitle: #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1), bacgroundView: #colorLiteral(red: 0.9845134616, green: 0.9810839295, blue: 0.9719126821, alpha: 1))
+        navBar.setNavBar(myView: self, title: titleNavBar, viewController: view, navBarColor: UIColor.navBarColor, navBarTintColor: UIColor.navBarTintColor, forgroundTitle:UIColor.forgroundTitle, bacgroundView: UIColor.backgroundView)
+ 
+        
     }
     private func setUpData(){
-        //
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.lineSpacing = 30.0
+        let attributedString = NSMutableAttributedString(string: bloodArticels)
+        attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraph, range: NSMakeRange(0, attributedString.length))
+     
+        attributedString.addAttribute(NSAttributedString.Key.font, value: UIFont(name: "Almarai-Bold", size: 23)!, range: NSMakeRange(0, attributedString.length))
+        attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1) , range: NSMakeRange(0, attributedString.length))
+        label.attributedText = attributedString
+        label.textAlignment = .center
+        label.textColor = #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1)
     }
 }
+//MARK: - Comments

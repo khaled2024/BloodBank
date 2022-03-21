@@ -11,6 +11,7 @@ class EducateYourselfViewController: UIViewController {
     
     let navBar = NavigationBar()
     let educateArray = EducateTabelArray.educateArray
+    let bloodArticel = BloodArticels.bloodArray
     let educateImagesArray = EducateCollectionArray.educateArrayImage
     var timer: Timer?
     var currentCellIndex = 0
@@ -33,13 +34,12 @@ class EducateYourselfViewController: UIViewController {
         pageControll.numberOfPages = educateImagesArray.count
     }
     private func setUpDesign(){
-        navBar.setNavBar(myView: self, title: "تعلم بنفسك", viewController: view, navBarColor: #colorLiteral(red: 0.9845134616, green: 0.9810839295, blue: 0.9719126821, alpha: 1), navBarTintColor: #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1), forgroundTitle: #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1), bacgroundView: #colorLiteral(red: 0.9845134616, green: 0.9810839295, blue: 0.9719126821, alpha: 1))
-        //        self.collectionView.cornerRadius  = 25
+        navBar.setNavBar(myView: self, title: "تعلم بنفسك", viewController: view, navBarColor: UIColor.navBarColor, navBarTintColor: UIColor.navBarTintColor, forgroundTitle: UIColor.forgroundTitle, bacgroundView: UIColor.backgroundView)
         
     }
     
     private func startTimer(){
-        timer = Timer.scheduledTimer(timeInterval: 2.5, target: self, selector: #selector(moveToNext), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(moveToNext), userInfo: nil, repeats: true)
     }
     @objc func moveToNext(){
         if currentCellIndex < educateImagesArray.count - 1{
@@ -54,6 +54,7 @@ class EducateYourselfViewController: UIViewController {
         let controller = EducateDetailsViewController.instantiate()
         self.navigationController?.pushViewController(controller, animated: true)
         controller.titleNavBar = educateArray[indexPath.row]
+        controller.bloodArticels = bloodArticel[indexPath.row]
     }
 }
 //MARK: - extension

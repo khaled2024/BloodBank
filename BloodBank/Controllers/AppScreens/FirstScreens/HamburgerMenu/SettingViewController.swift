@@ -17,7 +17,6 @@ class SettingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         isNotificationOn()
-        setLanguages()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -25,15 +24,15 @@ class SettingViewController: UIViewController {
     }
     
     //MARK: - Private func
-    private func setLanguages(){
-//        changeLangBtn.setTitle(NSLocalizedString("changeLangBtn", comment: "changeLanguage"), for: .normal)
-    }
+    
     private func setUpDesign(){
         title = "الاعدادات"
         self.navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.9845134616, green: 0.9810839295, blue: 0.9719126821, alpha: 1)
         self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1)
         self.navigationController!.navigationBar.titleTextAttributes = [.foregroundColor: #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1) , .font: UIFont(name: "Almarai", size: 20)!]
         self.view.backgroundColor =  #colorLiteral(red: 0.9845134616, green: 0.9810839295, blue: 0.9719126821, alpha: 1)
+        changeLangBtn.titleLabel?.text = "changeLanguage".Localized()
+        changeLangBtn.titleLabel?.font = UIFont(name: "Almarai-Bold", size: 20)
     }
     func isNotificationOn(){
         if let isNotificationOn = def.object(forKey: "isNotificationOn")as? Bool{
@@ -85,13 +84,13 @@ class SettingViewController: UIViewController {
    
     @IBAction func changeLangBtnTapped(_ sender: UIButton) {
         // فيه مشكله هنا عشان في اسكرينات او فيووز هتبقي فيها ايرور ف اللغه العربي ف سرش عليها (ازاي اعمل لوكاليزيشن بس فيه استثنائات ف التطبيق اسكرينات كده)
-// let currentLang = Locale.current.languageCode
-//        print(currentLang!)
-//        let newLang = currentLang == "en" ? "ar" : "en"
-//        UserDefaults.standard.setValue([newLang], forKey: "AppleLanguages")
-//        print(newLang)
-//        self.SuccessAlert(title: "the Language is changed ", message: "Please ReEnter the App", style: .default) { _ in
-//            exit(0)
-//        }
+        let currentLang = Locale.current.languageCode
+        print(currentLang!)
+        let newLang = currentLang == "en" ? "ar" : "en"
+        UserDefaults.standard.setValue([newLang], forKey: "AppleLanguages")
+        print(newLang)
+        self.SuccessAlert(title: "the Language is changed ", message: "Please ReEnter the App", style: .default) { _ in
+            exit(0)
+        }
     }
 }

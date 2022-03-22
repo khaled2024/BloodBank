@@ -21,6 +21,7 @@ class HelpViewController: UIViewController {
         setUpDesign()
     }
     func setNavBar(){
+        
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.white,.font: UIFont(name: "Almarai", size: 25)!]
         navigationController?.navigationBar.tintColor = .white

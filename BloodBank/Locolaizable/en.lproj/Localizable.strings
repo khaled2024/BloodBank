@@ -57,3 +57,13 @@ Over 168 countries have a system in place to collect blood donations. 81 percent
 WHO recommends implementing a testing and screening system for all blood donations, a policy that many high-income countries strictly adhere to. With HIV testing this can be complicated, however, because the virus can remain undetected for an average of 22 days.
 Where can you get paid for donating blood?
 You can get paid for donating blood in 25 countries around the world. Some countries will give you paid time off work to go donate blood, while others like Germany, China, US, and Russia pay for plasma donations.";
+// humberger menu
+"Available to donate" = "Available to donate";
+"appointment" = "Appointments";
+"Donation Requests" = "Donation Requests";
+"Donation History" = "Donation History";
+"Corona Stats" = "Corona stats";
+"Help & Support" = "Help & Support";
+"Privacy policy" = "Privacy policy";
+"Setting" = "Setting";
+"Log out" = "Log out";

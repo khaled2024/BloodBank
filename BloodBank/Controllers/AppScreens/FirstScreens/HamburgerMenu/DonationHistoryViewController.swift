@@ -11,7 +11,7 @@ class DonationHistoryViewController: UIViewController {
     let navBar = NavigationBar()
     override func viewDidLoad() {
         super.viewDidLoad()
-        navBar.setNavBar(myView: self, title: "التبرعات السابقه", viewController: view)
+        navBar.setNavBar(myView: self, title: "Donation History".Localized(), viewController: view)
  }
     
 

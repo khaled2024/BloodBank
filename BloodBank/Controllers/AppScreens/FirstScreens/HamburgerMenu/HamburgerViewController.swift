@@ -19,14 +19,43 @@ class HamburgerViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var appointmentBtn: UIButton!
     
+    @IBOutlet weak var availableToDonate: UILabel!
+    
+    @IBOutlet weak var coronaBtn: UIButton!
+    @IBOutlet weak var donationRequestsBtn: UIButton!
+    @IBOutlet weak var previousDonationsBtn: UIButton!
+    @IBOutlet weak var helpBtn: UIButton!
+    @IBOutlet weak var privcyBtn: UIButton!
+    @IBOutlet weak var settingBtn: UIButton!
+    @IBOutlet weak var logoutBtn: UIButton!
+    
     var delegate: HambburgerViewControllerDelegate?
     var delegate2: opacityDelegate?
-    
+    let btnCustom = UserCustomBtn()
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpHumburger()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        setUpLocalizationLabel()
+    }
     //MARK: - private functions
+    private func setUpLocalizationLabel(){
+        let currentLang = Locale.current.languageCode
+        if currentLang == "en"{
+            availableToDonate.text = "Available to donate".Localized()
+            self.btnCustom.setUpBtnFont(btn: appointmentBtn, text: "appointment".Localized())
+            self.btnCustom.setUpBtnFont(btn: previousDonationsBtn, text: "Donation History".Localized())
+            self.btnCustom.setUpBtnFont(btn: coronaBtn, text: "Corona stats".Localized())
+            self.btnCustom.setUpBtnFont(btn: settingBtn, text: "Setting".Localized())
+            self.btnCustom.setUpBtnFont(btn: donationRequestsBtn, text: "Donation Requests".Localized())
+            self.btnCustom.setUpBtnFont(btn: privcyBtn, text: "Privacy policy".Localized())
+            self.btnCustom.setUpBtnFont(btn: logoutBtn, text: "Log out".Localized())
+            self.btnCustom.setUpBtnFont(btn: helpBtn, text: "Help & Support".Localized())
+        }else{
+            // set the default of Btn Font (Almarai)
+        }
+    }
     private func setUpHumburger(){
         self.humburgerView.layer.cornerRadius = 20
         self.humburgerView.clipsToBounds = true
@@ -61,6 +90,12 @@ class HamburgerViewController: UIViewController {
     @IBAction func donationHistory(_ sender: UIButton) {
         let donationVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DonationHistoryViewController")as? DonationHistoryViewController
         navigationController?.pushViewController(donationVC!, animated: true)
+        self.modalTransitionStyle = .partialCurl
+        self.dismissHamburgerMenu()
+    }
+    @IBAction func coronaStatsBtnTapped(_ sender: UIButton) {
+        let coronaStatsVC = CoronaStatsViewController.instantiate()
+        self.navigationController?.pushViewController(coronaStatsVC, animated: true)
         self.modalTransitionStyle = .partialCurl
         self.dismissHamburgerMenu()
     }

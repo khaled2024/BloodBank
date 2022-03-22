@@ -13,7 +13,7 @@ class SettingViewController: UIViewController {
     
     @IBOutlet weak var settingSwitch: UISwitch!
     let def = UserDefaults.standard
-    
+    let navBar = NavigationBar()
     override func viewDidLoad() {
         super.viewDidLoad()
         isNotificationOn()
@@ -26,13 +26,7 @@ class SettingViewController: UIViewController {
     //MARK: - Private func
     
     private func setUpDesign(){
-        title = "الاعدادات"
-        self.navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.9845134616, green: 0.9810839295, blue: 0.9719126821, alpha: 1)
-        self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1)
-        self.navigationController!.navigationBar.titleTextAttributes = [.foregroundColor: #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1) , .font: UIFont(name: "Almarai", size: 20)!]
-        self.view.backgroundColor =  #colorLiteral(red: 0.9845134616, green: 0.9810839295, blue: 0.9719126821, alpha: 1)
-        changeLangBtn.titleLabel?.text = "changeLanguage".Localized()
-        changeLangBtn.titleLabel?.font = UIFont(name: "Almarai-Bold", size: 20)
+        navBar.setNavBar(myView: self, title: "Setting".Localized(), viewController: view, navBarColor: UIColor.navBarColor, navBarTintColor: UIColor.navBarTintColor, forgroundTitle: UIColor.forgroundTitle, bacgroundView: UIColor.backgroundView)
     }
     func isNotificationOn(){
         if let isNotificationOn = def.object(forKey: "isNotificationOn")as? Bool{

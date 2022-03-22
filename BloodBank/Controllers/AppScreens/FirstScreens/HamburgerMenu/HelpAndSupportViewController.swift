@@ -12,8 +12,11 @@ class HelpAndSupportViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navBar.setNavBar(myView: self, title: "المساعده والدعم", viewController: view)
+       
         
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        navBar.setNavBar(myView: self, title: "Help & Support".Localized(), viewController: view)
     }
     
 

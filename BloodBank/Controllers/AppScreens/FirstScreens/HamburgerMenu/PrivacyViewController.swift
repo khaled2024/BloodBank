@@ -14,10 +14,13 @@ class PrivacyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navBar.setNavBar(myView: self, title: "سياسه الخصوصيه", viewController: view)
+       
         
         NotificationCenter.default.addObserver(self, selector: #selector(didGetNotification), name: Notification.Name (Notifications.detailNot), object: nil)
         
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        navBar.setNavBar(myView: self, title: "Privacy policy".Localized(), viewController: view)
     }
     
     @objc func didGetNotification(_ notification: Notification){

@@ -51,7 +51,6 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
         self.navigationController?.navigationBar.isHidden = false
         animateViews()
         animateImages()
-
     }
     
     //MARK: -  private functions
@@ -84,13 +83,17 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
         //        let y = appointmentImage.frame.minY - 25
         //        let width = appointmentImage.frame.width + 50
         //        let height = appointmentImage.frame.height + 50
-        UIView.animate(withDuration: 1, delay: 1, options: [.repeat , .autoreverse], animations: {
-            //            self.appointmentImage.frame = CGRect(x: x, y: y, width: width, height: height)
+        UIView.animate(withDuration: 2, delay: 1, options: [.repeat , .autoreverse], animations: {
             self.appointmentImage.alpha = 0
             self.donationImage.alpha = 0
             self.requestImage.alpha = 0
             self.educateImage.alpha = 0
-        }, completion: nil)
+        }, completion: {_ in
+            self.appointmentImage.alpha = 1
+            self.donationImage.alpha = 1
+            self.requestImage.alpha = 1
+            self.educateImage.alpha = 1
+        })
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "hamburgerSegue"){

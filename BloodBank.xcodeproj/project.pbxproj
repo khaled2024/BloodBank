@@ -22,12 +22,14 @@
 		EA215BFC27E7EB98005A9843 /* EducateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA215BFB27E7EB98005A9843 /* EducateCollectionViewCell.swift */; };
 		EA215BFE27E7FA36005A9843 /* String+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA215BFD27E7FA36005A9843 /* String+URL.swift */; };
 		EA215C0027E80057005A9843 /* EducateDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA215BFF27E80057005A9843 /* EducateDetailsViewController.swift */; };
+		EA2A523827EA429300D92ED3 /* CoronaStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2A523727EA429300D92ED3 /* CoronaStatsViewController.swift */; };
 		EA4278A227B01F9C002D444A /* AppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4278A127B01F9C002D444A /* AppointmentViewController.swift */; };
 		EA4278A427B025A7002D444A /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4278A327B025A7002D444A /* RequestViewController.swift */; };
 		EA4278A627B025BF002D444A /* DonationHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4278A527B025BF002D444A /* DonationHistoryViewController.swift */; };
 		EA4278A827B025D4002D444A /* HelpAndSupportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4278A727B025D4002D444A /* HelpAndSupportViewController.swift */; };
 		EA4278AA27B025E9002D444A /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4278A927B025E9002D444A /* PrivacyViewController.swift */; };
 		EA4278AC27B025FB002D444A /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4278AB27B025FB002D444A /* SettingViewController.swift */; };
+		EA4402F127EA80200034C6AF /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4402F027EA80200034C6AF /* CustomView.swift */; };
 		EA45BFA627C5996B00D56AEC /* DonateBloodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA45BFA527C5996B00D56AEC /* DonateBloodViewController.swift */; };
 		EA45BFA827C5997E00D56AEC /* RequestBloodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA45BFA727C5997E00D56AEC /* RequestBloodViewController.swift */; };
 		EA45BFAA27C5999200D56AEC /* EducateYourselfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA45BFA927C5999200D56AEC /* EducateYourselfViewController.swift */; };
@@ -97,12 +99,14 @@
 		EA215BFB27E7EB98005A9843 /* EducateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducateCollectionViewCell.swift; sourceTree = "<group>"; };
 		EA215BFD27E7FA36005A9843 /* String+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+URL.swift"; sourceTree = "<group>"; };
 		EA215BFF27E80057005A9843 /* EducateDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducateDetailsViewController.swift; sourceTree = "<group>"; };
+		EA2A523727EA429300D92ED3 /* CoronaStatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronaStatsViewController.swift; sourceTree = "<group>"; };
 		EA4278A127B01F9C002D444A /* AppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentViewController.swift; sourceTree = "<group>"; };
 		EA4278A327B025A7002D444A /* RequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
 		EA4278A527B025BF002D444A /* DonationHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationHistoryViewController.swift; sourceTree = "<group>"; };
 		EA4278A727B025D4002D444A /* HelpAndSupportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpAndSupportViewController.swift; sourceTree = "<group>"; };
 		EA4278A927B025E9002D444A /* PrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
 		EA4278AB27B025FB002D444A /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		EA4402F027EA80200034C6AF /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		EA45BFA527C5996B00D56AEC /* DonateBloodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonateBloodViewController.swift; sourceTree = "<group>"; };
 		EA45BFA727C5997E00D56AEC /* RequestBloodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBloodViewController.swift; sourceTree = "<group>"; };
 		EA45BFA927C5999200D56AEC /* EducateYourselfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducateYourselfViewController.swift; sourceTree = "<group>"; };
@@ -394,6 +398,7 @@
 			children = (
 				EA8676CF27A6C70A00E95283 /* HamburgerViewController.swift */,
 				EA4278A527B025BF002D444A /* DonationHistoryViewController.swift */,
+				EA2A523727EA429300D92ED3 /* CoronaStatsViewController.swift */,
 				EA4278A727B025D4002D444A /* HelpAndSupportViewController.swift */,
 				EA4278A927B025E9002D444A /* PrivacyViewController.swift */,
 				EA4278AB27B025FB002D444A /* SettingViewController.swift */,
@@ -420,6 +425,7 @@
 				EACC013927A43A5A00FFB92B /* UserGradientBackground.swift */,
 				EA45BFAD27C5AC4800D56AEC /* NavigationBar.swift */,
 				EA4C711E27E3D626000C8B02 /* CustomPlaceHolder.swift */,
+				EA4402F027EA80200034C6AF /* CustomView.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -660,6 +666,7 @@
 				EAA3C9D427DFB546007C5B47 /* SecondRequestBloodViewController.swift in Sources */,
 				EA01A0B327C984A600BDCC00 /* InformationCenterViewController.swift in Sources */,
 				EAC252DF276A2F250033F96F /* OnboardingViewController.swift in Sources */,
+				EA2A523827EA429300D92ED3 /* CoronaStatsViewController.swift in Sources */,
 				EA99AAFD276CCF540083F0D1 /* HomeViewController.swift in Sources */,
 				EA45BFA627C5996B00D56AEC /* DonateBloodViewController.swift in Sources */,
 				EAC252E5276A335B0033F96F /* UiView+Extension.swift in Sources */,
@@ -679,6 +686,7 @@
 				EABDBFCC276CE6A900738EA3 /* LoginViewController.swift in Sources */,
 				EAB1C98F27A54DEE006BB209 /* TabBarController.swift in Sources */,
 				EAC252E9276A37BC0033F96F /* OnboardingCollectionViewCell.swift in Sources */,
+				EA4402F127EA80200034C6AF /* CustomView.swift in Sources */,
 				EACC013E27A43A5A00FFB92B /* UserCustomTF.swift in Sources */,
 				EA1915F727DBFA3100554FF9 /* Patient.swift in Sources */,
 			);

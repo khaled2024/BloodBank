@@ -50,5 +50,8 @@ class UserCustomBtn{
         }
     }
     
-    
+     func setUpBtnFont(btn: UIButton , text: String){
+         btn.setTitle(text, for: .normal)
+         btn.titleLabel?.font = UIFont(name: "Almarai", size: 20)
+    }
 }

@@ -38,6 +38,9 @@
 		EA45D3B427E4E0DA0072E19C /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA45D3B127E4E0DA0072E19C /* SessionManager.swift */; };
 		EA45D3B527E4E0DA0072E19C /* DataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA45D3B227E4E0DA0072E19C /* DataProviderProtocol.swift */; };
 		EA4C711F27E3D626000C8B02 /* CustomPlaceHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4C711E27E3D626000C8B02 /* CustomPlaceHolder.swift */; };
+		EA6211E227EF6DC000301635 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6211E127EF6DC000301635 /* ApiService.swift */; };
+		EA6211E427EF6FC300301635 /* CoronaAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6211E327EF6FC200301635 /* CoronaAnalysis.swift */; };
+		EA6211E627EF829600301635 /* ConfirtInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6211E527EF829600301635 /* ConfirtInteger.swift */; };
 		EA66461A27E2BAB1001A9E12 /* CustomTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA66461927E2BAB1001A9E12 /* CustomTF.swift */; };
 		EA6E702127C5C3CE00F1E76C /* Almarai-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA6E702027C5C3CE00F1E76C /* Almarai-Regular.ttf */; };
 		EA818B0827E1140C00D36808 /* Sick.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA818B0727E1140C00D36808 /* Sick.swift */; };
@@ -51,6 +54,7 @@
 		EA99AAFD276CCF540083F0D1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA99AAFC276CCF540083F0D1 /* HomeViewController.swift */; };
 		EA9D400127DCF3D300776F14 /* UiView+Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9D400027DCF3D300776F14 /* UiView+Controller.swift */; };
 		EAA3C9D427DFB546007C5B47 /* SecondRequestBloodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA3C9D327DFB546007C5B47 /* SecondRequestBloodViewController.swift */; };
+		EAA6BDDE27EBBD2E00FE1BCA /* CoronaStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA6BDDD27EBBD2E00FE1BCA /* CoronaStats.swift */; };
 		EAAD8337276D12C800381854 /* DataPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAD8336276D12C700381854 /* DataPicker.swift */; };
 		EAB1C98F27A54DEE006BB209 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB1C98E27A54DEE006BB209 /* TabBarController.swift */; };
 		EAB1C99127A554A2006BB209 /* UiView + alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB1C99027A554A2006BB209 /* UiView + alert.swift */; };
@@ -115,6 +119,9 @@
 		EA45D3B127E4E0DA0072E19C /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		EA45D3B227E4E0DA0072E19C /* DataProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProviderProtocol.swift; sourceTree = "<group>"; };
 		EA4C711E27E3D626000C8B02 /* CustomPlaceHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPlaceHolder.swift; sourceTree = "<group>"; };
+		EA6211E127EF6DC000301635 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		EA6211E327EF6FC200301635 /* CoronaAnalysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronaAnalysis.swift; sourceTree = "<group>"; };
+		EA6211E527EF829600301635 /* ConfirtInteger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirtInteger.swift; sourceTree = "<group>"; };
 		EA66461927E2BAB1001A9E12 /* CustomTF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTF.swift; sourceTree = "<group>"; };
 		EA6E702027C5C3CE00F1E76C /* Almarai-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Almarai-Regular.ttf"; sourceTree = "<group>"; };
 		EA818B0727E1140C00D36808 /* Sick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sick.swift; sourceTree = "<group>"; };
@@ -131,6 +138,7 @@
 		EA99AAFC276CCF540083F0D1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EA9D400027DCF3D300776F14 /* UiView+Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiView+Controller.swift"; sourceTree = "<group>"; };
 		EAA3C9D327DFB546007C5B47 /* SecondRequestBloodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondRequestBloodViewController.swift; sourceTree = "<group>"; };
+		EAA6BDDD27EBBD2E00FE1BCA /* CoronaStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronaStats.swift; sourceTree = "<group>"; };
 		EAAD8336276D12C700381854 /* DataPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPicker.swift; sourceTree = "<group>"; };
 		EAB1C98E27A54DEE006BB209 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		EAB1C99027A554A2006BB209 /* UiView + alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiView + alert.swift"; sourceTree = "<group>"; };
@@ -232,6 +240,7 @@
 		EA45D3AF27E4E0DA0072E19C /* ApiService */ = {
 			isa = PBXGroup;
 			children = (
+				EA6211E127EF6DC000301635 /* ApiService.swift */,
 				EA45D3B227E4E0DA0072E19C /* DataProviderProtocol.swift */,
 				EA45D3B027E4E0DA0072E19C /* RequestProtocol.swift */,
 				EA45D3B127E4E0DA0072E19C /* SessionManager.swift */,
@@ -297,6 +306,7 @@
 		EAC252C5276A26F00033F96F /* BloodBank */ = {
 			isa = PBXGroup;
 			children = (
+				EA45D3AF27E4E0DA0072E19C /* ApiService */,
 				EA92A0A127E89D5A0060C5C8 /* Locolaizable */,
 				EA91ED4A27CD0DD000F8D02A /* Supporting Files */,
 				EA09E71227A4C913009A0ED0 /* Fonts */,
@@ -308,7 +318,6 @@
 				EACC013F27A43A6600FFB92B /* Helper */,
 				EAC252DC276A2EB40033F96F /* Controllers */,
 				EAC252E1276A2F780033F96F /* Resources */,
-				EA45D3AF27E4E0DA0072E19C /* ApiService */,
 				EAC252E2276A2F820033F96F /* Assets */,
 				EAC252D4276A26F10033F96F /* Info.plist */,
 			);
@@ -322,6 +331,8 @@
 				EAAD8336276D12C700381854 /* DataPicker.swift */,
 				EA1915F627DBFA3100554FF9 /* Patient.swift */,
 				EA818B0727E1140C00D36808 /* Sick.swift */,
+				EAA6BDDD27EBBD2E00FE1BCA /* CoronaStats.swift */,
+				EA6211E327EF6FC200301635 /* CoronaAnalysis.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -381,6 +392,7 @@
 				EA215BFD27E7FA36005A9843 /* String+URL.swift */,
 				EA92A0A927E89FFF0060C5C8 /* String+Localized.swift */,
 				EA92A0B127E917F30060C5C8 /* Color+UIcolor.swift */,
+				EA6211E527EF829600301635 /* ConfirtInteger.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -633,6 +645,7 @@
 				EA4278AC27B025FB002D444A /* SettingViewController.swift in Sources */,
 				EA01A0A727C96F4E00BDCC00 /* NotFitAppointmentViewController.swift in Sources */,
 				EA4278A227B01F9C002D444A /* AppointmentViewController.swift in Sources */,
+				EA6211E227EF6DC000301635 /* ApiService.swift in Sources */,
 				EA818B0827E1140C00D36808 /* Sick.swift in Sources */,
 				EA4278A827B025D4002D444A /* HelpAndSupportViewController.swift in Sources */,
 				EA1831C727DA6C1000D9BA90 /* RequestsTableViewCell.swift in Sources */,
@@ -648,6 +661,7 @@
 				EACC012C27A41E4F00FFB92B /* LoadingViewController.swift in Sources */,
 				EACC013C27A43A5A00FFB92B /* UserGradientBackground.swift in Sources */,
 				EA1915F927DC27B100554FF9 /* DetailsCellViewController.swift in Sources */,
+				EA6211E427EF6FC300301635 /* CoronaAnalysis.swift in Sources */,
 				EA064CAE27A4750600A06257 /* MainViewController.swift in Sources */,
 				EAC252E7276A34BF0033F96F /* OnboardingSlide.swift in Sources */,
 				EA215C0027E80057005A9843 /* EducateDetailsViewController.swift in Sources */,
@@ -655,6 +669,7 @@
 				EA45D3B327E4E0DA0072E19C /* RequestProtocol.swift in Sources */,
 				EA92A0AA27E89FFF0060C5C8 /* String+Localized.swift in Sources */,
 				EA86A9FB27CA31FB006EA939 /* UserDefultsManager.swift in Sources */,
+				EAA6BDDE27EBBD2E00FE1BCA /* CoronaStats.swift in Sources */,
 				EACC013D27A43A5A00FFB92B /* UserCustomBtn.swift in Sources */,
 				EA4278A627B025BF002D444A /* DonationHistoryViewController.swift in Sources */,
 				EAC252C7276A26F00033F96F /* AppDelegate.swift in Sources */,
@@ -682,6 +697,7 @@
 				EA01A0A927C96F6B00BDCC00 /* FitnessAppointmentViewController.swift in Sources */,
 				EAC252C9276A26F00033F96F /* SceneDelegate.swift in Sources */,
 				EA45BFAA27C5999200D56AEC /* EducateYourselfViewController.swift in Sources */,
+				EA6211E627EF829600301635 /* ConfirtInteger.swift in Sources */,
 				EA9D400127DCF3D300776F14 /* UiView+Controller.swift in Sources */,
 				EABDBFCC276CE6A900738EA3 /* LoginViewController.swift in Sources */,
 				EAB1C98F27A54DEE006BB209 /* TabBarController.swift in Sources */,

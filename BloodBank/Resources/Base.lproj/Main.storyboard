@@ -2007,7 +2007,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZUN-JL-2bp">
                                 <rect key="frame" x="15" y="351.5" width="120" height="89.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirmed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mHP-OJ-QC3">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cases" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mHP-OJ-QC3">
                                         <rect key="frame" x="0.0" y="10" width="120" height="19.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
@@ -2125,10 +2125,10 @@
                                 </constraints>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Egypt" placeholder="Country" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t8x-PY-cuz">
-                                <rect key="frame" x="60" y="507.5" width="150" height="18.5"/>
+                                <rect key="frame" x="60" y="507.5" width="120" height="18.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="MNf-PE-QkF"/>
+                                    <constraint firstAttribute="width" constant="120" id="MNf-PE-QkF"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -2136,7 +2136,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K51-v5-3lb">
                                 <rect key="frame" x="15" y="562" width="120" height="89.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirmed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UIF-hc-KYd">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cases" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UIF-hc-KYd">
                                         <rect key="frame" x="0.0" y="10" width="120" height="19.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
@@ -2234,14 +2234,14 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visit our site and give your self better experiences of our site.❤️‍🩹" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xPX-NA-DnV">
-                                <rect key="frame" x="20" y="804" width="374" height="38"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visit our website for a better experience.❤️‍🩹" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xPX-NA-DnV">
+                                <rect key="frame" x="20" y="823" width="374" height="19"/>
                                 <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="17"/>
                                 <color key="textColor" red="0.87450981139999995" green="0.40000003579999999" blue="0.40000003579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8f-6h-nry">
-                                <rect key="frame" x="180" y="504.5" width="25" height="25"/>
+                                <rect key="frame" x="150" y="504.5" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="7eA-4w-LbI"/>
                                     <constraint firstAttribute="width" constant="25" id="mgl-7q-bHV"/>
@@ -2300,10 +2300,14 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="confirmedLbl" destination="Clq-QG-hXD" id="dcI-yu-4iv"/>
                         <outlet property="coronaview" destination="UGY-gO-60H" id="KxG-zJ-VR4"/>
                         <outlet property="countryConfirmedStats" destination="K51-v5-3lb" id="WJK-nu-Dru"/>
                         <outlet property="countryDeathsStats" destination="Qk4-iO-dSY" id="Gho-sW-TCR"/>
                         <outlet property="countryRecoveredStats" destination="u9J-SV-epp" id="Bhl-gK-4YN"/>
+                        <outlet property="countryTF" destination="t8x-PY-cuz" id="kgQ-69-j2w"/>
+                        <outlet property="deathsLbl" destination="lc1-vd-hNU" id="88f-dh-oWA"/>
+                        <outlet property="recoveredLbl" destination="FAI-B1-w5j" id="rGu-ru-mQf"/>
                         <outlet property="statsViewConfirmed" destination="ZUN-JL-2bp" id="Pe5-Dx-pPp"/>
                         <outlet property="statsViewDeath" destination="enJ-RQ-PI8" id="C0I-OR-LP2"/>
                         <outlet property="statsViewRecoverd" destination="dCb-3j-wlN" id="3Bg-1R-ACh"/>
@@ -4715,8 +4719,8 @@
         <image name="password" width="512" height="512"/>
         <image name="password (1)" width="512" height="512"/>
         <image name="person" catalog="system" width="128" height="117"/>
-        <image name="phone" width="75" height="75"/>
         <image name="phone" catalog="system" width="128" height="115"/>
+        <image name="phone" width="75" height="75"/>
         <image name="phone-call" width="512" height="512"/>
         <image name="pin" width="64" height="64"/>
         <image name="requestBlood" width="50" height="50"/>

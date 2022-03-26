@@ -1970,6 +1970,14 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="corona2" translatesAutoresizingMaskIntoConstraints="NO" id="UGY-gO-60H">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="269"/>
                                     </imageView>
+                                    <visualEffectView opaque="NO" alpha="0.45000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ZY-bj-Wrp">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="269"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6MT-EV-FEV">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="269"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </view>
+                                        <blurEffect style="regular"/>
+                                    </visualEffectView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COVID-19 Live Updates" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcv-yD-LdL">
                                         <rect key="frame" x="20" y="161.5" width="374" height="26"/>
                                         <fontDescription key="fontDescription" name="Almarai-Bold" family="Almarai" pointSize="23"/>
@@ -1987,8 +1995,11 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="dcv-yD-LdL" secondAttribute="trailing" constant="20" id="6Mh-rr-DHo"/>
                                     <constraint firstItem="UGY-gO-60H" firstAttribute="height" secondItem="wg0-pS-CCi" secondAttribute="height" id="9VE-27-s7o"/>
+                                    <constraint firstItem="9ZY-bj-Wrp" firstAttribute="top" secondItem="wg0-pS-CCi" secondAttribute="top" id="DFN-7y-42D"/>
                                     <constraint firstItem="UGY-gO-60H" firstAttribute="leading" secondItem="wg0-pS-CCi" secondAttribute="leading" id="DvW-QC-x19"/>
                                     <constraint firstAttribute="bottom" secondItem="UGY-gO-60H" secondAttribute="bottom" id="FN2-Cz-xVP"/>
+                                    <constraint firstAttribute="bottom" secondItem="9ZY-bj-Wrp" secondAttribute="bottom" id="NkR-tc-Zqz"/>
+                                    <constraint firstItem="9ZY-bj-Wrp" firstAttribute="leading" secondItem="wg0-pS-CCi" secondAttribute="leading" id="Oms-go-3VV"/>
                                     <constraint firstItem="UGY-gO-60H" firstAttribute="top" secondItem="wg0-pS-CCi" secondAttribute="top" id="VpH-ef-5ax"/>
                                     <constraint firstAttribute="trailing" secondItem="UGY-gO-60H" secondAttribute="trailing" id="i8U-O1-C9T"/>
                                     <constraint firstItem="dcv-yD-LdL" firstAttribute="leading" secondItem="wg0-pS-CCi" secondAttribute="leading" constant="20" id="iZI-Cc-Kke"/>
@@ -1996,6 +2007,7 @@
                                     <constraint firstItem="5cV-fF-1xx" firstAttribute="trailing" secondItem="dcv-yD-LdL" secondAttribute="trailing" id="o2C-K7-BDn"/>
                                     <constraint firstItem="dcv-yD-LdL" firstAttribute="centerY" secondItem="UGY-gO-60H" secondAttribute="centerY" constant="40" id="xUl-VM-Gth"/>
                                     <constraint firstItem="UGY-gO-60H" firstAttribute="width" secondItem="wg0-pS-CCi" secondAttribute="width" id="zCJ-ck-sCW"/>
+                                    <constraint firstAttribute="trailing" secondItem="9ZY-bj-Wrp" secondAttribute="trailing" id="zfS-yd-mqx"/>
                                     <constraint firstItem="5cV-fF-1xx" firstAttribute="top" secondItem="dcv-yD-LdL" secondAttribute="bottom" constant="10" id="znV-Gx-WX3"/>
                                 </constraints>
                             </view>
@@ -4719,8 +4731,8 @@
         <image name="password" width="512" height="512"/>
         <image name="password (1)" width="512" height="512"/>
         <image name="person" catalog="system" width="128" height="117"/>
-        <image name="phone" catalog="system" width="128" height="115"/>
         <image name="phone" width="75" height="75"/>
+        <image name="phone" catalog="system" width="128" height="115"/>
         <image name="phone-call" width="512" height="512"/>
         <image name="pin" width="64" height="64"/>
         <image name="requestBlood" width="50" height="50"/>

@@ -40,7 +40,6 @@ class CoronaStatsViewController: UIViewController{
         
     }
     //MARK: - private func
-    
     private func getCoronaAnalysis(){
         ApiService.sharedService.getCoronaAnalysis { (coronaAnalysis: CoronaAnalysis?, error )in
             guard let coronaAnalysis = coronaAnalysis else {return}

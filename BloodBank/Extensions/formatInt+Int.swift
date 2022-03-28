@@ -1,5 +1,5 @@
 //
-//  ConfirtInteger.swift
+//  formatInt+Int.swift
 //  BloodBank
 //
 //  Created by KhaleD HuSsien on 26/03/2022.

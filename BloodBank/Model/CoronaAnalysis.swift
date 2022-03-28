@@ -6,6 +6,7 @@
 //
 
 import Foundation
+// api for global analysis corona... :)
 
 struct CoronaAnalysis: Codable {
     let cases: Int?

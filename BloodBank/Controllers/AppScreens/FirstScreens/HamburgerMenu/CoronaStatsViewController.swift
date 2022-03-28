@@ -22,24 +22,41 @@ class CoronaStatsViewController: UIViewController{
     @IBOutlet weak var countryRecoveredStats: UIView!
     @IBOutlet weak var countryDeathsStats: UIView!
     @IBOutlet weak var countryTF: UITextField!
+    
+    @IBOutlet weak var countryImage: UIImageView!
+    @IBOutlet weak var contryCases: UILabel!
+    @IBOutlet weak var recoveredCountry: UILabel!
+    @IBOutlet weak var deathsCountry: UILabel!
     let navBar = NavigationBar()
     let customView = CustomView()
     private let CountryPicker = UIPickerView()
     
-    let corona = CoronaStats(CountryArr:  ["Egypt","Ghana","China"])
+    var countryArr = [""]
+    var countryStatsArr: [CountryStats] = []
     var coronaAnalysis = CoronaAnalysis(cases: 0, recovered: 0, deaths: 0)
     
     //MARK: - lifeCycles
     override  func viewDidLoad() {
         setUpPicker()
         self.getCoronaAnalysis()
-        
+        self.getCountryStats()
     }
     override func viewWillAppear(_ animated: Bool) {
         self.setUpDesign()
         
     }
     //MARK: - private func
+    private func getCountryStats(){
+        ApiService.sharedService.getCountryInfo { countryStats, error in
+            guard let countryStats = countryStats else{return}
+            self.countryStatsArr = countryStats
+            DispatchQueue.main.async {
+                for country in countryStats{
+                    self.countryArr.append(country.country!)
+                }
+            }
+        }
+    }
     private func getCoronaAnalysis(){
         ApiService.sharedService.getCoronaAnalysis { (coronaAnalysis: CoronaAnalysis?, error )in
             guard let coronaAnalysis = coronaAnalysis else {return}
@@ -67,6 +84,19 @@ class CoronaStatsViewController: UIViewController{
         customView.customView(theView: countryRecoveredStats)
         customView.customView(theView: countryDeathsStats)
     }
+    private func setCountryData(_ row: Int){
+        DispatchQueue.main.async {
+            self.countryTF.text = self.countryArr[row]
+            guard let myCountry = self.countryStatsArr[row-1].countryInfo  else{return}
+            guard let imageUrl = myCountry.flag else{return}
+            self.countryImage.load(urlString: imageUrl)
+            
+            self.contryCases.text = "\(self.countryStatsArr[row-1].cases?.formatUsingAbbrevation() ?? "")+"
+            self.recoveredCountry.text = "\(self.countryStatsArr[row-1].recovered?.formatUsingAbbrevation() ?? "")+"
+            self.deathsCountry.text = "\(self.countryStatsArr[row-1].deaths?.formatUsingAbbrevation() ?? "")+"
+        }
+        
+    }
 }
 //MARK: - Extension
 extension CoronaStatsViewController: UIPickerViewDelegate, UIPickerViewDataSource{
@@ -74,20 +104,16 @@ extension CoronaStatsViewController: UIPickerViewDelegate, UIPickerViewDataSourc
         return 1
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return corona.CountryArr.count
+        return countryArr.count
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        countryTF.text = corona.CountryArr[row]
+        self.setCountryData(row)
+       
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return corona.CountryArr[row]
+        return countryArr[row]
     }
 }
-
-
-
-
-
 
 //MARK: - comments
 

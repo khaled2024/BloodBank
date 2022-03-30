@@ -12,7 +12,6 @@ class DonorViewController: UIViewController {
     @IBOutlet var gradientView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var heartBtn: UIButton!
-    
     @IBOutlet weak var shareBtn: UIButton!
     @IBOutlet weak var phoneBtn: UIButton!
     let navBar = NavigationBar()

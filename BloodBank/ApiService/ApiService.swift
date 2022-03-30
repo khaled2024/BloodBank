@@ -26,7 +26,7 @@ class ApiService  {
                 debugPrint(response)
                 completion(response,nil)
             }catch{
-                debugPrint(error.localizedDescription)
+//                debugPrint(error.localizedDescription)
                 completion(nil,error)
             }
         }
@@ -44,7 +44,7 @@ class ApiService  {
             do{
                 let decoder = JSONDecoder()
                 let response = try decoder.decode([CountryStats].self, from: data)
-                debugPrint(response)
+//                debugPrint(response)
                 completion(response,nil)
             }catch{
                 debugPrint(error.localizedDescription)

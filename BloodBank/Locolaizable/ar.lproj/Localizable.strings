@@ -31,3 +31,12 @@
 "Privacy policy" = "سياسه الخصوصيه";
 "Setting" = "الاعدادات";
 "Log out" = "تسجيل الخروج";
+
+// corona stats vc
+"global Update" = "احصائيات كورونا علي مستوي العالم";
+"Cases" = "الحالات";
+"Recovered" = "المتعافين";
+"Deaths" = "الضحايا";
+"population" = "التعداد السكاني";
+"Critical" = "الحالات الحرجه";
+"Active" = "الحالات النشطه";

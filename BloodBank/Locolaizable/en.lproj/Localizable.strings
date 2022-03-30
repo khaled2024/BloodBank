@@ -67,3 +67,13 @@ You can get paid for donating blood in 25 countries around the world. Some count
 "Privacy policy" = "Privacy policy";
 "Setting" = "Setting";
 "Log out" = "Log out";
+
+// corona stats vc
+"global Update" = "global Update";
+"Cases" = "Cases";
+"Recovered" = "Recovered";
+"Deaths" = "Deaths";
+"population" = "population";
+"Critical" = "Critical";
+"Active" = "Active";
+

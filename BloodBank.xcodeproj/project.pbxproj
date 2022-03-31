@@ -83,6 +83,7 @@
 		EAD669EF27C6393C006221A2 /* Almarai-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAD669EE27C6393C006221A2 /* Almarai-Bold.ttf */; };
 		EAD669F127C63A72006221A2 /* NotificationsMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD669F027C63A72006221A2 /* NotificationsMainViewController.swift */; };
 		EAD669F327C63F50006221A2 /* DonorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD669F227C63F50006221A2 /* DonorViewController.swift */; };
+		EAD7D59227F5B62C003E81D3 /* UILable+Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD7D59127F5B62C003E81D3 /* UILable+Font.swift */; };
 		EAE3C90B27B12C6300F42D16 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE3C90A27B12C6300F42D16 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -170,6 +171,7 @@
 		EAD669EE27C6393C006221A2 /* Almarai-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Almarai-Bold.ttf"; sourceTree = "<group>"; };
 		EAD669F027C63A72006221A2 /* NotificationsMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsMainViewController.swift; sourceTree = "<group>"; };
 		EAD669F227C63F50006221A2 /* DonorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonorViewController.swift; sourceTree = "<group>"; };
+		EAD7D59127F5B62C003E81D3 /* UILable+Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILable+Font.swift"; sourceTree = "<group>"; };
 		EAE3C90A27B12C6300F42D16 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -396,6 +398,7 @@
 				EA92A0B127E917F30060C5C8 /* Color+UIcolor.swift */,
 				EA6211E527EF829600301635 /* formatInt+Int.swift */,
 				EA5A8C8127F269C500FCF61F /* UiimageView+UrlExtension.swift */,
+				EAD7D59127F5B62C003E81D3 /* UILable+Font.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -660,6 +663,7 @@
 				EAD3834C27D7BF3B00E87893 /* PickDateTimeViewController.swift in Sources */,
 				EA45BFA827C5997E00D56AEC /* RequestBloodViewController.swift in Sources */,
 				EABDBFCA276CE69F00738EA3 /* RegisterViewController.swift in Sources */,
+				EAD7D59227F5B62C003E81D3 /* UILable+Font.swift in Sources */,
 				EACC013127A42C4D00FFB92B /* StorageManager.swift in Sources */,
 				EACC012C27A41E4F00FFB92B /* LoadingViewController.swift in Sources */,
 				EACC013C27A43A5A00FFB92B /* UserGradientBackground.swift in Sources */,

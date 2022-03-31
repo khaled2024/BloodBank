@@ -15,21 +15,21 @@ class CoronaStatsViewController: UIViewController{
     @IBOutlet weak var staySafeLbl: UILabel!
     @IBOutlet weak var covid19Lbl: UILabel!
     @IBOutlet weak var globalUpdateLbl: UILabel!
-
+    
     
     @IBOutlet weak var worldDeathsLbl: UILabel!
     @IBOutlet weak var worldRecoveredLbl: UILabel!
     @IBOutlet weak var worldCasesLbl: UILabel!
-     @IBOutlet weak var confirmedLbl: UILabel!
-     @IBOutlet weak var recoveredLbl: UILabel!
-     @IBOutlet weak var deathsLbl: UILabel!
+    @IBOutlet weak var confirmedLbl: UILabel!
+    @IBOutlet weak var recoveredLbl: UILabel!
+    @IBOutlet weak var deathsLbl: UILabel!
     
     
     @IBOutlet weak var countryDeathsLbl: UILabel!
     @IBOutlet weak var countryRecoveredLbl: UILabel!
     @IBOutlet weak var countryCasesLbl: UILabel!
     
-   
+    
     @IBOutlet weak var contryCases: UILabel!
     @IBOutlet weak var recoveredCountry: UILabel!
     @IBOutlet weak var deathsCountry: UILabel!
@@ -69,6 +69,7 @@ class CoronaStatsViewController: UIViewController{
     var countryArr: [String] = []
     var countryStatsArr: [CountryStats] = []
     var coronaAnalysis = CoronaAnalysis(cases: 0, recovered: 0, deaths: 0)
+    
     
     //MARK: - lifeCycles
     override  func viewDidLoad() {
@@ -120,25 +121,27 @@ class CoronaStatsViewController: UIViewController{
         customView.customView(theView: countryPopulationView)
         customView.customView(theView: countrycriticalView)
         customView.customView(theView: countryActiveView)
-        globalUpdateLbl.text = "global Update".Localized()
-        worldCasesLbl.text = "Cases".Localized()
-        worldRecoveredLbl.text = "Recovered".Localized()
-        worldDeathsLbl.text = "Deaths".Localized()
         
         
         
-        countryCasesLbl.text = "Cases".Localized()
-        countryRecoveredLbl.text = "Recovered".Localized()
-        countryDeathsLbl.text = "Deaths".Localized()
-        populationLbl.text = "population".Localized()
-        criticalLbl.text = "Critical".Localized()
-        activeLbl.text = "Active".Localized()
+        staySafeLbl.customLblFont(lbl: staySafeLbl, fontSize: 20, text: "Stay Safe")
+        covid19Lbl.customLblFont(lbl: covid19Lbl, fontSize: 23, text: "COVID-19 Live Update")
+        globalUpdateLbl.customLblFont(lbl: globalUpdateLbl, fontSize: 20, text: "global Update")
+        worldCasesLbl.customLblFont(lbl: worldCasesLbl, fontSize: 16, text: "Cases")
+        worldRecoveredLbl.customLblFont(lbl: worldRecoveredLbl, fontSize: 16, text: "Recovered")
+        worldDeathsLbl.customLblFont(lbl: worldDeathsLbl, fontSize: 16, text: "Deaths")
+        
+        countryCasesLbl.customLblFont(lbl: countryCasesLbl, fontSize: 16, text: "Cases")
+        countryRecoveredLbl.customLblFont(lbl: countryRecoveredLbl, fontSize: 16, text: "Recovered")
+        countryDeathsLbl.customLblFont(lbl: countryDeathsLbl, fontSize: 16, text: "Deaths")
+        populationLbl.customLblFont(lbl: populationLbl, fontSize: 16, text: "population")
+        criticalLbl.customLblFont(lbl: criticalLbl, fontSize: 16, text: "Critical")
+        activeLbl.customLblFont(lbl: activeLbl, fontSize: 16, text: "Active")
         
         
     }
     private func setCountryData(_ row: Int){
         DispatchQueue.main.async {
-            
             self.countryTF.text = self.countryArr[row]
             guard let myCountry = self.countryStatsArr[row].countryInfo  else{return}
             guard let imageUrl = myCountry.flag else{return}
@@ -151,7 +154,6 @@ class CoronaStatsViewController: UIViewController{
             self.criticalNum.text = "\(self.countryStatsArr[row].critical?.formatUsingAbbrevation() ?? "")+"
             self.activeLblNum.text = "\(self.countryStatsArr[row].active?.formatUsingAbbrevation() ?? "")+"
         }
-        
     }
 }
 //MARK: - Extension

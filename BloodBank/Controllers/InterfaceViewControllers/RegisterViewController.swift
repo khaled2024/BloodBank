@@ -13,6 +13,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var viewOfContents: UIView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var familyNameTextField: UITextField!
     @IBOutlet weak var IDTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var bloodTypeTextField: UITextField!
@@ -39,7 +40,7 @@ class RegisterViewController: UIViewController {
     
     //MARK: - Private functions
     private func setNavBar(){
-        navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1),.font: UIFont(name: "Almarai-Bold", size: 25)!]
+        navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: #colorLiteral(red: 0.918268621, green: 0.2490310073, blue: 0.3684441447, alpha: 1),.font: UIFont(name: "Almarai-Bold", size: 25)!]
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.8666378856, green: 0.2537421584, blue: 0.3427102566, alpha: 1)
         navigationController?.navigationBar.scrollEdgeAppearance?.titleTextAttributes = [.foregroundColor: UIColor.white ,.font: UIFont(name: "Almarai-Bold", size: 18)!]
@@ -65,10 +66,24 @@ class RegisterViewController: UIViewController {
         }
     }
     private func checkTextFields()-> Bool{
-        if let email = emailTextField.text , !email.isEmpty , let name = nameTextField.text , !name.isEmpty , let ID = IDTextField.text , !ID.isEmpty , let phone = phoneTextField.text , !phone.isEmpty , let bloodType = bloodTypeTextField.text , !bloodType.isEmpty, let password = passwordTextField.text , !password.isEmpty , let confirmPassword = confirmPasswordTextField.text , !confirmPassword.isEmpty , let address = addressTextField.text , !address.isEmpty   {
+        if let email = emailTextField.text , !email.isEmpty , let name = nameTextField.text , !name.isEmpty,let familyName = familyNameTextField.text , !familyName.isEmpty , let ID = IDTextField.text , !ID.isEmpty , let phone = phoneTextField.text , !phone.isEmpty , let bloodType = bloodTypeTextField.text , !bloodType.isEmpty, let password = passwordTextField.text , !password.isEmpty , let confirmPassword = confirmPasswordTextField.text , !confirmPassword.isEmpty , let address = addressTextField.text , !address.isEmpty   {
             return true
         }else{
             return false
+        }
+    }
+    private func checkAllFields(){
+        if checkPassword() && checkPassword(){
+            self.animateButtons()
+            customBtn.toggleForBtn(Btn: self.ConfirmBtn)
+            DispatchQueue.main.asyncAfter(deadline: .now()+1.5) {
+                self.SuccessAlert(title: "Congratulation", message: "Your Account Created Succesfully", style: .default) { _ in
+                    self.animateButtons()
+                    self.goToLoginScreen()
+                }
+            }
+        }else{
+            self.showAlert(title: "Sorry", message: "Please Check your password")
         }
     }
     private func goToLoginScreen(){
@@ -88,22 +103,7 @@ class RegisterViewController: UIViewController {
     }
     //MARK: - Actions
     @IBAction func confirmBtnTapped(_ sender: UIButton) {
-        if checkTextFields() {
-        }else{
-            self.showAlert(title: "Sorry", message: "Please fill the all fields")
-        }
-        if checkPassword(){
-            self.animateButtons()
-            customBtn.toggleForBtn(Btn: self.ConfirmBtn)
-            DispatchQueue.main.asyncAfter(deadline: .now()+1.5) {
-                self.SuccessAlert(title: "Congratulation", message: "Your Account Created Succesfully", style: .default) { _ in
-                    self.animateButtons()
-                    self.goToLoginScreen()
-                }
-            }
-        }else{
-            self.showAlert(title: "Sorry", message: "Please Check your password")
-        }
+       checkAllFields()
     }
 }
 //MARK: - UIPickerViewDelegate,UIPickerViewDataSource

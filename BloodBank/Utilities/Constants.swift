@@ -57,12 +57,7 @@ struct Notifications {
 struct BloodArticels {
     static let bloodArray = ["firstCell".Localized(), "secondCell".Localized() ,"thirdCell".Localized(),"forthCell".Localized(),"fifthCell".Localized(),"sixCell".Localized()]
 }
-
-
-//cairo
-//30.06812038116435, 31.275307443619365
-//30.06568172977871, 31.28479430395555
-//30.08513944995048, 31.299469135449336
-//30.086319063538127, 31.299728084540426
-//tanta
-//30.783541872054585, 30.988608433925773
+struct URLS{
+    static let urlSite = "https://amr-mohamed1.github.io/blood_bank/index.html"
+    static let urlCoronaStats = "https://disease.sh/v3/covid-19/"
+}

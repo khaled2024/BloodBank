@@ -252,13 +252,6 @@
 			path = ApiService;
 			sourceTree = "<group>";
 		};
-		EA91102127CD5E5300FA75E5 /* LottieAnimation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = LottieAnimation;
-			sourceTree = "<group>";
-		};
 		EA91ED4A27CD0DD000F8D02A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,9 +303,9 @@
 		EAC252C5276A26F00033F96F /* BloodBank */ = {
 			isa = PBXGroup;
 			children = (
+				EA91ED4A27CD0DD000F8D02A /* Supporting Files */,
 				EA45D3AF27E4E0DA0072E19C /* ApiService */,
 				EA92A0A127E89D5A0060C5C8 /* Locolaizable */,
-				EA91ED4A27CD0DD000F8D02A /* Supporting Files */,
 				EA09E71227A4C913009A0ED0 /* Fonts */,
 				EACC012D27A4272D00FFB92B /* Service */,
 				EAC252EA276A3A2B0033F96F /* Utilities */,
@@ -382,7 +375,6 @@
 			isa = PBXGroup;
 			children = (
 				EAC252CF276A26F10033F96F /* Assets.xcassets */,
-				EA91102127CD5E5300FA75E5 /* LottieAnimation */,
 			);
 			path = Assets;
 			sourceTree = "<group>";

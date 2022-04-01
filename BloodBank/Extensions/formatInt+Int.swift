@@ -6,14 +6,18 @@
 //
 
 import Foundation
+var key1: String = ""
+var key2: String = ""
+var key3: String = ""
 extension Int {
     func formatUsingAbbrevation () -> String {
+       
         let numFormatter = NumberFormatter()
         typealias Abbrevation = (threshold:Double, divisor:Double, suffix:String)
         let abbreviations:[Abbrevation] = [(0, 1, ""),
-                                           (1000.0, 1000.0, "K"),
-                                           (100_000.0, 1_000_000.0, "M"),
-                                           (100_000_000.0, 1_000_000_000.0, "B")]
+                                           (1000.0, 1000.0, "K".Localized()),
+                                           (100_000.0, 1_000_000.0, "M".Localized()),
+                                           (100_000_000.0, 1_000_000_000.0, "B".Localized())]
                                            // you can add more !
 
         

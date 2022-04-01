@@ -83,7 +83,8 @@ class SettingViewController: UIViewController {
         let newLang = currentLang == "en" ? "ar" : "en"
         UserDefaults.standard.setValue([newLang], forKey: "AppleLanguages")
         print(newLang)
-        self.SuccessAlert(title: "the Language is changed ", message: "Please ReEnter the App", style: .default) { _ in
+        self.myAlert(title: "Are you sure you want to change the Language of the Application to (\(newLang))", message: "", style: .default) { _
+            in
             exit(0)
         }
     }

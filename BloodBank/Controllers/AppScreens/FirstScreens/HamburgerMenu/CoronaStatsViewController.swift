@@ -6,12 +6,12 @@
 //
 
 import UIKit
-
+import SafariServices
 class CoronaStatsViewController: UIViewController{
     
     
     //MARK: - Outlets
-    
+    @IBOutlet weak var bloodBankSiteBtn: UIButton!
     @IBOutlet weak var staySafeLbl: UILabel!
     @IBOutlet weak var covid19Lbl: UILabel!
     @IBOutlet weak var globalUpdateLbl: UILabel!
@@ -65,6 +65,7 @@ class CoronaStatsViewController: UIViewController{
     
     let navBar = NavigationBar()
     let customView = CustomView()
+    let customShadow = UserCustomBtn()
     private let CountryPicker = UIPickerView()
     var countryArr: [String] = []
     var countryStatsArr: [CountryStats] = []
@@ -98,9 +99,9 @@ class CoronaStatsViewController: UIViewController{
             guard let coronaAnalysis = coronaAnalysis else {return}
             self.coronaAnalysis = coronaAnalysis
             DispatchQueue.main.async {
-                self.confirmedLbl.text = "\(self.coronaAnalysis.cases?.formatUsingAbbrevation() ?? "")+"
-                self.recoveredLbl.text = "\(self.coronaAnalysis.recovered?.formatUsingAbbrevation() ?? "")+"
-                self.deathsLbl.text = "\(self.coronaAnalysis.deaths?.formatUsingAbbrevation() ?? "")+"
+                self.confirmedLbl.text = "\(self.coronaAnalysis.cases?.formatUsingAbbrevation() ?? "") +"
+                self.recoveredLbl.text = "\(self.coronaAnalysis.recovered?.formatUsingAbbrevation() ?? "") +"
+                self.deathsLbl.text = "\(self.coronaAnalysis.deaths?.formatUsingAbbrevation() ?? "") +"
             }
         }
     }
@@ -137,6 +138,7 @@ class CoronaStatsViewController: UIViewController{
         populationLbl.customLblFont(lbl: populationLbl, fontSize: 16, text: "population")
         criticalLbl.customLblFont(lbl: criticalLbl, fontSize: 16, text: "Critical")
         activeLbl.customLblFont(lbl: activeLbl, fontSize: 16, text: "Active")
+        customShadow.shadowBtn(btn: bloodBankSiteBtn)
         
         
     }
@@ -146,14 +148,23 @@ class CoronaStatsViewController: UIViewController{
             guard let myCountry = self.countryStatsArr[row].countryInfo  else{return}
             guard let imageUrl = myCountry.flag else{return}
             self.countryImage.load(urlString: imageUrl)
-            self.contryCases.text = "\(self.countryStatsArr[row].cases?.formatUsingAbbrevation() ?? "")+"
-            self.recoveredCountry.text = "\(self.countryStatsArr[row].recovered?.formatUsingAbbrevation() ?? "")+"
-            self.deathsCountry.text = "\(self.countryStatsArr[row].deaths?.formatUsingAbbrevation() ?? "")+"
+            self.contryCases.text = "\(self.countryStatsArr[row].cases?.formatUsingAbbrevation() ?? "") +"
+            self.recoveredCountry.text = "\(self.countryStatsArr[row].recovered?.formatUsingAbbrevation() ?? "") +"
+            self.deathsCountry.text = "\(self.countryStatsArr[row].deaths?.formatUsingAbbrevation() ?? "") +"
             
-            self.populationLblNum.text = "\(self.countryStatsArr[row].population?.formatUsingAbbrevation() ?? "")+"
-            self.criticalNum.text = "\(self.countryStatsArr[row].critical?.formatUsingAbbrevation() ?? "")+"
-            self.activeLblNum.text = "\(self.countryStatsArr[row].active?.formatUsingAbbrevation() ?? "")+"
+            self.populationLblNum.text = "\(self.countryStatsArr[row].population?.formatUsingAbbrevation() ?? "") +"
+            self.criticalNum.text = "\(self.countryStatsArr[row].critical?.formatUsingAbbrevation() ?? "") +"
+            self.activeLblNum.text = "\(self.countryStatsArr[row].active?.formatUsingAbbrevation() ?? "") +"
         }
+    }
+    private func loadSafariSite(){
+        
+        guard let url = URL(string: URLS.urlSite) else{return}
+        let safariVC = SFSafariViewController(url: url)
+        self.present(safariVC, animated: true)
+    }
+    @IBAction func bloodBankSiteBtnTapped(_ sender: UIButton) {
+        loadSafariSite()
     }
 }
 //MARK: - Extension

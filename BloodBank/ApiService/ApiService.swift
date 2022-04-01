@@ -8,7 +8,7 @@
 import Foundation
 class ApiService  {
     static let sharedService = ApiService()
-    let url = "https://disease.sh/v3/covid-19/"
+    let url = URLS.urlCoronaStats
     
     func getCoronaAnalysis(completion: @escaping(_ coronaAnalysis: CoronaAnalysis?,_ error: Error?)-> Void){
         guard let url = URL(string: "\(url)all" )else{return}
@@ -25,7 +25,7 @@ class ApiService  {
                 //                debugPrint(response)
                 completion(response,nil)
             }catch{
-                //                debugPrint(error.localizedDescription)
+                debugPrint(error.localizedDescription)
                 completion(nil,error)
             }
         }
@@ -43,7 +43,7 @@ class ApiService  {
             do{
                 let decoder = JSONDecoder()
                 let response = try decoder.decode([CountryStats].self, from: data)
-                //                debugPrint(response)
+                //         debugPrint(response)
                 completion(response,nil)
             }catch{
                 debugPrint(error.localizedDescription)

@@ -27,4 +27,12 @@ extension UIViewController {
         }))
         self.present(alert, animated: true, completion: nil)
     }
+    func myAlert(title: String,message: String , style: UIAlertAction.Style,completion: ((UIAlertAction)-> Void)?){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: style, handler: completion))
+        alert.addAction(UIAlertAction(title: "Cancle", style: style, handler: { _ in
+            self.dismiss(animated: true)
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
 }

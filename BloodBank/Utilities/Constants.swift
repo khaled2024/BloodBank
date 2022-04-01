@@ -26,6 +26,9 @@ struct SlidesArray{
 struct Arrays{
     static let arrayOfBloodType = ["A+","A-","B+","B-","AB+","AB-","O+","O-","OH+","Dont-Know"]
     static let arrayOfGender = ["","Male","Female"]
+    static let arrayOfTypesRequests = ["الصفائح","ABبلازما","Red Double cell","دم الحبل السري","لااعرف"]
+    static let arrayReasonRequest = ["accident","surgery","prejnent","canser","زرع اعضاء","الثلاسيميا","الهيم،جلوبين"]
+    static let arrayOfHospitals = ["khaled","hussien","ahmed","khalifa"]
 }
 struct LocationCoordinate {
     static let locations = [

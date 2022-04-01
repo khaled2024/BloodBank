@@ -212,8 +212,8 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
         self.modalTransitionStyle = .partialCurl
     }
     private func RequestBlood(){
-        let requestBloodVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RequestBloodViewController")as? RequestBloodViewController
-        navigationController?.pushViewController(requestBloodVC!, animated: true)
+        let requestBloodVC = AppBloodRequestViewController.instantiate()
+        navigationController?.pushViewController(requestBloodVC, animated: true)
         self.modalTransitionStyle = .partialCurl
     }
     private func EducateYourself(){

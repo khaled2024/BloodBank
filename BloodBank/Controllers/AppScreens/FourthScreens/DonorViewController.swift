@@ -26,7 +26,6 @@ class DonorViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        navigationController?.navigationBar.isHidden = true
         self.imageView.layer.cornerRadius = imageView.frame.size.height/2
         setUpDesign()
     }

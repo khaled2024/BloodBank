@@ -7,8 +7,10 @@
 
 import Foundation
 import UIKit
+
 extension UILabel{
     func customLblFont(lbl: UILabel, fontSize: CGFloat,text: String){
          lbl.attributedText = NSAttributedString(string: text.Localized(), attributes: [.font: UIFont(name: "Almarai-Bold", size: fontSize)!])
     }
 }
+

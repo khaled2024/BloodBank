@@ -81,3 +81,16 @@ You can get paid for donating blood in 25 countries around the world. Some count
 "K" = "K";
 "M" = "M";
 "B" = "B";
+
+// request blood vc
+"First Title" = "Blood Request";
+"Second Title" = "Create new blood orders matching your needs within seconds.";
+"Request Type" = "Request Type:";
+"Blood Type" = "Blood Type:";
+"Reason of the Request" = "Reason of the Request:";
+"Hospital Title" = "In which hospital do you need a blood donor?";
+"Notes Title" = "Write a message to the Donors.";
+"Next" = "Next";
+"Back" = "Back";
+"Finish" = "Finish";
+

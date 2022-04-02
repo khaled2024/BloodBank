@@ -15,26 +15,15 @@ class LoadingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         isOnBoardingSeen = storageManager.isOnboardingSeen()
+        print("OnBoarding seen \(isOnBoardingSeen!)")
     }
     override func viewDidAppear(_ animated: Bool) {
-        //        if let appDelegate = UIApplication.shared.delegate as? AppDelegate{
-        //            appDelegate.checkScreen()
-        //        }else{
         showInitialScreen()
-        //        }
-        //        if let isLoggedIn = def.object(forKey: "isLoggedIn")as? Bool{
-        //            if isLoggedIn == true{
-        //                if let appDelegate = UIApplication.shared.delegate as? AppDelegate{
-        //                    appDelegate.TabBarScreen()
-        //                }
-        //            }else{
-        //                showInitialScreen()
-        //            }
-        //        }
     }
+    //MARK: - functions
     private func showInitialScreen(){
         if isOnBoardingSeen {
-            
+            UserDefaults.standard.set(false, forKey: "isLoggedIn")
             if let isLoggedIn = def.object(forKey: "isLoggedIn")as? Bool{
                 if isLoggedIn == true{
                     print("tapBar")
@@ -47,12 +36,6 @@ class LoadingViewController: UIViewController {
         }else{
             navigationManager.show(screen: .onboarding, inController: self)
         }
-        navigationManager.show(screen: .onboarding, inController: self)
+        
     }
 }
-//MARK: - Comments
-
-//
-//else{
-//    navigationManager.show(screen: .mainApp, inController: self)
-//}

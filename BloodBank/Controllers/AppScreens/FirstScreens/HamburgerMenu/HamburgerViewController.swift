@@ -20,7 +20,6 @@ class HamburgerViewController: UIViewController {
     @IBOutlet weak var appointmentBtn: UIButton!
     
     @IBOutlet weak var availableToDonate: UILabel!
-    
     @IBOutlet weak var coronaBtn: UIButton!
     @IBOutlet weak var donationRequestsBtn: UIButton!
     @IBOutlet weak var previousDonationsBtn: UIButton!
@@ -29,17 +28,26 @@ class HamburgerViewController: UIViewController {
     @IBOutlet weak var settingBtn: UIButton!
     @IBOutlet weak var logoutBtn: UIButton!
     
+    @IBOutlet weak var donateSwitch: UISwitch!
     var delegate: HambburgerViewControllerDelegate?
     var delegate2: opacityDelegate?
     let btnCustom = UserCustomBtn()
+    let def = UserDefaults.standard
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpHumburger()
+        setUpSwitch()
     }
     override func viewWillAppear(_ animated: Bool) {
         setUpLocalizationLabel()
     }
     //MARK: - private functions
+    private func setUpSwitch(){
+        if let donateSwitch = def.value(forKey: "switch"){
+            self.donateSwitch.isOn = donateSwitch as! Bool
+        }
+    }
     private func setUpLocalizationLabel(){
         let currentLang = Locale.current.languageCode
         if currentLang == "en"{
@@ -127,5 +135,10 @@ class HamburgerViewController: UIViewController {
 //        vc.modalPresentationStyle = .fullScreen
 //        vc.modalTransitionStyle = .flipHorizontal
 //        self.present(vc, animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func donateSwichTapped(_ sender: UISwitch) {
+        def.set(sender.isOn, forKey: "switch")
     }
 }

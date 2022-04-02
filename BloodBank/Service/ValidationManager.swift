@@ -21,15 +21,13 @@ extension String{
         return predicate.evaluate(with: self)
     }
     var isValidID: Bool{
-        let format = "(2|3)[0-9][1-9][0-1][1-9][0-3][1-9]"
-//        "(2|3)[0-9][1-9][0-1][1-9][0-3][1-9][0-9][1-9][0-9][1-9][0-9][1-9](0-9)"
+        let format = "^([1-9]{1})([0-9]{2})([0-9]{2})([0-9]{2})([0-9]{2})[0-9]{3}([0-9]{1})[0-9]{1}$"
         let predicate = NSPredicate(format: "SELF MATCHES %@", format)
         return predicate.evaluate(with: self)
     }
     var isValidPassword: Bool{
         return self.count > 5
     }
-    
 }
 enum SignUpError: Error {
     case isValidEmail

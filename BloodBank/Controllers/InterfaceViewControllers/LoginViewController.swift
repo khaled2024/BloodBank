@@ -28,6 +28,7 @@ class LoginViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setUpDesign()
+        UserDefaults.standard.set(false, forKey: "isLoggedIn")
     }
     //MARK: -  private functions
     private func setUpDesign(){

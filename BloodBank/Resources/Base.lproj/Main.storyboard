@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="epm-Ov-Buz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MXS-tt-P3e">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -25,6 +25,21 @@
         </array>
     </customFonts>
     <scenes>
+        <!--Launch View Controller-->
+        <scene sceneID="rhr-tI-7a4">
+            <objects>
+                <viewController storyboardIdentifier="LaunchViewController" id="MXS-tt-P3e" customClass="LaunchViewController" customModule="BloodBank" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IYO-08-0Zx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="xWf-12-bs6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YxD-OA-47g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2803" y="19"/>
+        </scene>
         <!--Loading View Controller-->
         <scene sceneID="q0M-iR-Kcm">
             <objects>
@@ -2791,6 +2806,9 @@
                                                         <rect key="frame" x="208" y="14.5" width="51" height="31"/>
                                                         <color key="onTintColor" red="0.91764705879999997" green="0.42352941179999998" blue="0.43137254899999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <color key="thumbTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <connections>
+                                                            <action selector="donateSwichTapped:" destination="1aF-1P-rbD" eventType="valueChanged" id="5d5-yS-US7"/>
+                                                        </connections>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="متاح للتبرع" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVo-2O-qii">
                                                         <rect key="frame" x="41" y="20.5" width="71" height="19"/>
@@ -2970,6 +2988,7 @@
                         <outlet property="appointmentBtn" destination="aTm-NI-imP" id="uUV-T2-te7"/>
                         <outlet property="availableToDonate" destination="hVo-2O-qii" id="Q6H-0h-ROd"/>
                         <outlet property="coronaBtn" destination="1qC-rE-SED" id="vhI-jX-5oB"/>
+                        <outlet property="donateSwitch" destination="GLj-uR-1aj" id="USo-rx-Gox"/>
                         <outlet property="donationRequestsBtn" destination="FfB-Uq-KVo" id="5vW-e4-n1A"/>
                         <outlet property="helpBtn" destination="Dtw-gN-Z2U" id="Wo7-w2-lSF"/>
                         <outlet property="humburgerView" destination="0Vj-kW-uCj" id="78f-xi-ZAK"/>

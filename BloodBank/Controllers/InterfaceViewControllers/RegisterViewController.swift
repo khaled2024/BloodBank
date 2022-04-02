@@ -36,6 +36,7 @@ class RegisterViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         setUpDesign()
         setNavBar()
+        UserDefaults.standard.set(false, forKey: "isLoggedIn")
     }
     //MARK: - Private functions
     private func setNavBar(){

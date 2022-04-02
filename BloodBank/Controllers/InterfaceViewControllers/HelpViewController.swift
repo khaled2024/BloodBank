@@ -19,6 +19,7 @@ class HelpViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         setUpDesign()
+        UserDefaults.standard.set(false, forKey: "isLoggedIn")
     }
     func setNavBar(){
         

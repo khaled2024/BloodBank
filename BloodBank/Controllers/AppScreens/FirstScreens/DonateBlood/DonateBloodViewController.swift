@@ -78,7 +78,7 @@ class DonateBloodViewController: UIViewController {
     }
     //MARK: - Private Functions
     private func setUpDesign(){
-        navBar.setNavBar(myView: self, title: "التبرع بالدم", viewController: view, navBarColor: UIColor.navBarColor, navBarTintColor: UIColor.navBarTintColor, forgroundTitle: UIColor.forgroundTitle, bacgroundView: UIColor.backgroundView)
+        navBar.setNavBar(myView: self, title: "Donate Blood".Localized(), viewController: view, navBarColor: UIColor.navBarColor, navBarTintColor: UIColor.navBarTintColor, forgroundTitle: UIColor.forgroundTitle, bacgroundView: UIColor.backgroundView)
         
         customBtn.customBtn(Btn: scaduleBtn, tintColor: .white, borderColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1) , bgColor: #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1))
         

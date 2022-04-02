@@ -13,6 +13,9 @@ class UserDefultsManager{
         return UserDefultsManager.sharedInstance
     }
     //MARK: - variabels
+    enum key: String{
+        case isLoggedIn
+    }
     private let def = UserDefaults.standard
     var isLoggedIn: Bool{
         set{
@@ -36,4 +39,5 @@ class UserDefultsManager{
             return def.bool(forKey: "isNotificationOn")
         }
     }
+    
 }

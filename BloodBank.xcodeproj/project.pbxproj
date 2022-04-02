@@ -42,6 +42,7 @@
 		EA6211E227EF6DC000301635 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6211E127EF6DC000301635 /* ApiService.swift */; };
 		EA6211E427EF6FC300301635 /* CoronaAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6211E327EF6FC200301635 /* CoronaAnalysis.swift */; };
 		EA6211E627EF829600301635 /* formatInt+Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6211E527EF829600301635 /* formatInt+Int.swift */; };
+		EA64542C27F8991900376A8B /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA64542B27F8991900376A8B /* LaunchViewController.swift */; };
 		EA66461A27E2BAB1001A9E12 /* CustomTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA66461927E2BAB1001A9E12 /* CustomTF.swift */; };
 		EA6E702127C5C3CE00F1E76C /* Almarai-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA6E702027C5C3CE00F1E76C /* Almarai-Regular.ttf */; };
 		EA818B0827E1140C00D36808 /* Sick.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA818B0727E1140C00D36808 /* Sick.swift */; };
@@ -128,6 +129,7 @@
 		EA6211E127EF6DC000301635 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		EA6211E327EF6FC200301635 /* CoronaAnalysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronaAnalysis.swift; sourceTree = "<group>"; };
 		EA6211E527EF829600301635 /* formatInt+Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "formatInt+Int.swift"; sourceTree = "<group>"; };
+		EA64542B27F8991900376A8B /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		EA66461927E2BAB1001A9E12 /* CustomTF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTF.swift; sourceTree = "<group>"; };
 		EA6E702027C5C3CE00F1E76C /* Almarai-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Almarai-Regular.ttf"; sourceTree = "<group>"; };
 		EA818B0727E1140C00D36808 /* Sick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sick.swift; sourceTree = "<group>"; };
@@ -352,6 +354,7 @@
 		EAC252DC276A2EB40033F96F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				EA64542B27F8991900376A8B /* LaunchViewController.swift */,
 				EACC012B27A41E4F00FFB92B /* LoadingViewController.swift */,
 				EAC252DD276A2EE80033F96F /* OnboardingViewController */,
 				EABDBFCF276CE98900738EA3 /* InterfaceViewControllers */,
@@ -647,6 +650,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA64542C27F8991900376A8B /* LaunchViewController.swift in Sources */,
 				EA92A0B227E917F30060C5C8 /* Color+UIcolor.swift in Sources */,
 				EA4C711F27E3D626000C8B02 /* CustomPlaceHolder.swift in Sources */,
 				EA4278AC27B025FB002D444A /* SettingViewController.swift in Sources */,

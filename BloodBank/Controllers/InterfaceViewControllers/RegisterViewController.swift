@@ -37,7 +37,6 @@ class RegisterViewController: UIViewController {
         setUpDesign()
         setNavBar()
     }
-    
     //MARK: - Private functions
     private func setNavBar(){
         navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: #colorLiteral(red: 0.918268621, green: 0.2490310073, blue: 0.3684441447, alpha: 1),.font: UIFont(name: "Almarai-Bold", size: 25)!]
@@ -50,9 +49,7 @@ class RegisterViewController: UIViewController {
         BloodTypePicker.delegate = self
         BloodTypePicker.dataSource = self
         bloodTypeTextField.inputView = BloodTypePicker
-        
     }
-    
     private func setUpDesign(){
         
         //        customBtn.confirmBtnNotSelected(Btn: ConfirmBtn)
@@ -72,6 +69,50 @@ class RegisterViewController: UIViewController {
             return false
         }
     }
+    private func checkValidationTextField() throws {
+        if let firstName = nameTextField.text , let lastName = familyNameTextField.text,let email = emailTextField.text,let mobile = phoneTextField.text , let password = passwordTextField.text, let id = IDTextField.text , let confirmPassword = confirmPasswordTextField.text , let address = addressTextField.text, let bloodType = bloodTypeTextField.text{
+            if !email.isValidEmail{
+                throw SignUpError.isValidEmail
+            }
+            if !firstName.isValidName{
+                throw SignUpError.isValidName
+            }
+            if !lastName.isValidName{
+                throw SignUpError.isValidName
+            }
+            if !id.isValidID{
+                throw SignUpError.isValidID
+            }
+            if !password.isValidPassword{
+                throw SignUpError.isValidPassword
+            }
+            if !confirmPassword.isValidPassword{
+                throw SignUpError.isValidPassword
+            }
+            if password != confirmPassword {
+                showAlert(title: "Sorry", message: "please check the password")
+            }
+            if !mobile.isValidMobile{
+                throw SignUpError.isValidMobile
+            }
+            if bloodType.isEmpty{
+                showAlert(title: "Sorry", message: "please check the Blood type")
+            }
+            if address.isEmpty{
+                showAlert(title: "Sorry", message: "please check the Address")
+            }
+            if !checkTextFields(){
+                showAlert(title: "", message: "Please Fill All fields")
+            }
+            self.animateButtons()
+            DispatchQueue.main.asyncAfter(deadline: .now()+1.5) {
+                self.SuccessAlert(title: "Congratulation", message: "Your Account Created Succesfully", style: .default) { _ in
+                    self.animateButtons()
+                    self.goToLoginScreen()
+                }
+            }
+        }
+    }
     private func checkAllFields(){
         if checkPassword() && checkPassword(){
             self.animateButtons()
@@ -87,7 +128,7 @@ class RegisterViewController: UIViewController {
         }
     }
     private func goToLoginScreen(){
-        let loginScreen = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")as! LoginViewController
+        let loginScreen = LoginViewController.instantiate()
         navigationController?.pushViewController(loginScreen, animated: true)
     }
     private func animateButtons(){
@@ -103,7 +144,22 @@ class RegisterViewController: UIViewController {
     }
     //MARK: - Actions
     @IBAction func confirmBtnTapped(_ sender: UIButton) {
-       checkAllFields()
+//        checkAllFields()
+        do {
+            try checkValidationTextField()
+        }catch SignUpError.isValidEmail{
+            showAlert(title: "Sorry", message: "Please Enter Valid Email")
+        }catch SignUpError.isValidID{
+            showAlert(title: "Sorry", message: "Please Enter Valid ID")
+        } catch SignUpError.isValidName{
+            showAlert(title: "Sorry", message: "Please Enter Valid Name")
+        }catch SignUpError.isValidPassword{
+            showAlert(title: "Sorry", message: "Please Enter Valid Password")
+        }catch SignUpError.isValidMobile{
+            showAlert(title: "Sorry", message: "Please Enter Valid Mobile")
+        }catch {
+            showAlert(title: "Sorry", message: "Please Fill All fields")
+        }
     }
 }
 //MARK: - UIPickerViewDelegate,UIPickerViewDataSource

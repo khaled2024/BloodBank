@@ -60,9 +60,14 @@ class LoginViewController: UIViewController {
             }
         }
     }
-    //MARK: - Actions
-    @IBAction func loginBtnTapped(_ sender: UIButton) {
-        if checkTextFields(){
+    private func signIn() throws{
+        if let email = emailTextField.text , let password = passwordTextField.text{
+            if !email.isValidEmail {
+                throw SignUpError.isValidEmail
+            }
+            if !password.isValidPassword {
+                throw SignUpError.isValidPassword
+            }
             self.animateButtons()
             customBtn.toggleForBtn(Btn: self.loginBtn)
             DispatchQueue.main.asyncAfter(deadline: .now()+1.5) {
@@ -70,9 +75,31 @@ class LoginViewController: UIViewController {
                 self.goToMainScreen()
                 print("Login succesully")
             }
-        }else{
-            self.showAlert(title: "Sorry", message: "Please fill the all fields")
         }
+    }
+    //MARK: - Actions
+    @IBAction func loginBtnTapped(_ sender: UIButton) {
+//        if checkTextFields(){
+//            self.animateButtons()
+//            customBtn.toggleForBtn(Btn: self.loginBtn)
+//            DispatchQueue.main.asyncAfter(deadline: .now()+1.5) {
+//                UserDefaults.standard.set(true, forKey: "isLoggedIn")
+//                self.goToMainScreen()
+//                print("Login succesully")
+//            }
+//        }else{
+//            self.showAlert(title: "Sorry", message: "Please fill the all fields")
+//        }
+        do {
+            try signIn()
+        }catch SignUpError.isValidEmail{
+            showAlert(title: "Sorry", message: "Please Enter Valid Email")
+        }catch SignUpError.isValidPassword{
+            showAlert(title: "Sorry", message: "Please Enter Valid Password")
+        }catch{
+            showAlert(title: "Sorry", message: "Please Fill All fields")
+        }
+        
     }
     @IBAction func newAccountBtnTapped(_ sender: UIButton) {
         self.goToRegisterScreen()

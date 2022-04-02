@@ -82,6 +82,7 @@
 		EAD3835027D806C300E87893 /* SheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD3834F27D806C300E87893 /* SheetViewController.swift */; };
 		EAD4B43C27F75CBC00C6924C /* AppBloodRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B43B27F75CBC00C6924C /* AppBloodRequestViewController.swift */; };
 		EAD4B43E27F7B7C400C6924C /* UiButtonTitleLbl+Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B43D27F7B7C400C6924C /* UiButtonTitleLbl+Font.swift */; };
+		EAD4B44027F7CB7C00C6924C /* ValidationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B43F27F7CB7C00C6924C /* ValidationManager.swift */; };
 		EAD669EF27C6393C006221A2 /* Almarai-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAD669EE27C6393C006221A2 /* Almarai-Bold.ttf */; };
 		EAD669F127C63A72006221A2 /* NotificationsMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD669F027C63A72006221A2 /* NotificationsMainViewController.swift */; };
 		EAD669F327C63F50006221A2 /* DonorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD669F227C63F50006221A2 /* DonorViewController.swift */; };
@@ -172,6 +173,7 @@
 		EAD3834F27D806C300E87893 /* SheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetViewController.swift; sourceTree = "<group>"; };
 		EAD4B43B27F75CBC00C6924C /* AppBloodRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBloodRequestViewController.swift; sourceTree = "<group>"; };
 		EAD4B43D27F7B7C400C6924C /* UiButtonTitleLbl+Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiButtonTitleLbl+Font.swift"; sourceTree = "<group>"; };
+		EAD4B43F27F7CB7C00C6924C /* ValidationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationManager.swift; sourceTree = "<group>"; };
 		EAD669EE27C6393C006221A2 /* Almarai-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Almarai-Bold.ttf"; sourceTree = "<group>"; };
 		EAD669F027C63A72006221A2 /* NotificationsMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsMainViewController.swift; sourceTree = "<group>"; };
 		EAD669F227C63F50006221A2 /* DonorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonorViewController.swift; sourceTree = "<group>"; };
@@ -427,6 +429,7 @@
 				EACC012E27A4275700FFB92B /* NavigationManager.swift */,
 				EACC013027A42C4D00FFB92B /* StorageManager.swift */,
 				EA86A9FA27CA31FB006EA939 /* UserDefultsManager.swift */,
+				EAD4B43F27F7CB7C00C6924C /* ValidationManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -664,6 +667,7 @@
 				EABDBFCA276CE69F00738EA3 /* RegisterViewController.swift in Sources */,
 				EAD7D59227F5B62C003E81D3 /* UILable+Font.swift in Sources */,
 				EACC013127A42C4D00FFB92B /* StorageManager.swift in Sources */,
+				EAD4B44027F7CB7C00C6924C /* ValidationManager.swift in Sources */,
 				EACC012C27A41E4F00FFB92B /* LoadingViewController.swift in Sources */,
 				EACC013C27A43A5A00FFB92B /* UserGradientBackground.swift in Sources */,
 				EA1915F927DC27B100554FF9 /* DetailsCellViewController.swift in Sources */,

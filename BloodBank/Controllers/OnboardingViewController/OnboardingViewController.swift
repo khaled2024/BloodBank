@@ -44,6 +44,7 @@ class OnboardingViewController: UIViewController {
     }
     private func updateFlag(){
         storageManager.setOnboardingSeen()
+        UserDefaults.standard.set(false, forKey: "isLoggedIn")
     }
     //MARK: - Actions
     @IBAction func NextBtnTapped(_ sender: UIButton) {

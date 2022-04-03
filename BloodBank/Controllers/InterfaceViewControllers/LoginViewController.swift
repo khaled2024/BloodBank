@@ -6,7 +6,6 @@
 //
 
 import UIKit
-
 class LoginViewController: UIViewController {
     //MARK: - outlets
     @IBOutlet weak var emailTextField: UITextField!
@@ -80,17 +79,6 @@ class LoginViewController: UIViewController {
     }
     //MARK: - Actions
     @IBAction func loginBtnTapped(_ sender: UIButton) {
-//        if checkTextFields(){
-//            self.animateButtons()
-//            customBtn.toggleForBtn(Btn: self.loginBtn)
-//            DispatchQueue.main.asyncAfter(deadline: .now()+1.5) {
-//                UserDefaults.standard.set(true, forKey: "isLoggedIn")
-//                self.goToMainScreen()
-//                print("Login succesully")
-//            }
-//        }else{
-//            self.showAlert(title: "Sorry", message: "Please fill the all fields")
-//        }
         do {
             try signIn()
         }catch SignUpError.isValidEmail{
@@ -100,7 +88,6 @@ class LoginViewController: UIViewController {
         }catch{
             showAlert(title: "Sorry", message: "Please Fill All fields")
         }
-        
     }
     @IBAction func newAccountBtnTapped(_ sender: UIButton) {
         self.goToRegisterScreen()

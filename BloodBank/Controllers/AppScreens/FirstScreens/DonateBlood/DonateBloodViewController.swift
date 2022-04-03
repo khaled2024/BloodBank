@@ -111,7 +111,7 @@ class DonateBloodViewController: UIViewController {
         self.noTattoo.tag = 8
     }
     private func scaduleScreen(){
-        let scadulleScreen = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BookingAppointmentViewController")as! BookingAppointmentViewController
+        let scadulleScreen = BookingAppointmentViewController.instantiate()
         navigationController?.pushViewController(scadulleScreen, animated: true)
         self.modalTransitionStyle = .partialCurl
     }

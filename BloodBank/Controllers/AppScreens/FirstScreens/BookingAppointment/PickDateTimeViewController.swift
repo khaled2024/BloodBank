@@ -8,15 +8,21 @@
 import UIKit
 
 class PickDateTimeViewController: UIViewController {
-
+    
+    @IBOutlet weak var bloodTypeTextField: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var dateTimeLabel: UILabel!
     @IBOutlet weak var confirmDateBtn: UIButton!
     let navBar = NavigationBar()
+    let bloodTypePickerView = UIPickerView()
+    let arrOfBloodType = Arrays.arrayOfBloodType
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpDesign()
+        bloodTypeTextField.inputView = bloodTypePickerView
+        bloodTypePickerView.delegate = self
+        bloodTypePickerView.dataSource = self
         datePicker.preferredDatePickerStyle = .inline
         datePicker.date = Date()
         datePicker.locale = .current
@@ -64,6 +70,22 @@ class PickDateTimeViewController: UIViewController {
     }
 }
 
+
+extension PickDateTimeViewController: UIPickerViewDelegate, UIPickerViewDataSource{
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return arrOfBloodType.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return arrOfBloodType[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        bloodTypeTextField.text = arrOfBloodType[row]
+    }
+}
 //
 //DispatchQueue.main.asyncAfter(deadline: .now()+1) {
 //

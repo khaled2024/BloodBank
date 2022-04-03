@@ -24,6 +24,7 @@ class HamburgerViewController: UIViewController {
     @IBOutlet weak var donationRequestsBtn: UIButton!
     @IBOutlet weak var previousDonationsBtn: UIButton!
     @IBOutlet weak var helpBtn: UIButton!
+    @IBOutlet weak var yourStory: UIButton!
     @IBOutlet weak var privcyBtn: UIButton!
     @IBOutlet weak var settingBtn: UIButton!
     @IBOutlet weak var logoutBtn: UIButton!
@@ -60,6 +61,7 @@ class HamburgerViewController: UIViewController {
             self.btnCustom.setUpBtnFont(btn: privcyBtn, text: "Privacy policy".Localized())
             self.btnCustom.setUpBtnFont(btn: logoutBtn, text: "Log out".Localized())
             self.btnCustom.setUpBtnFont(btn: helpBtn, text: "Help & Support".Localized())
+            self.btnCustom.setUpBtnFont(btn: yourStory, text: "Your Story".Localized())
         }else{
             // set the default of Btn Font (Almarai)
         }
@@ -83,21 +85,21 @@ class HamburgerViewController: UIViewController {
 //    MARK: - Actions
 
     @IBAction func appointmentBtnTapped(_ sender: UIButton) {
-        let appointmentVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AppointmentViewController")as? AppointmentViewController
-        navigationController?.pushViewController(appointmentVC!, animated: true)
+        let appointmentVC = AppointmentViewController.instantiate()
+        navigationController?.pushViewController(appointmentVC, animated: true)
         self.modalTransitionStyle = .partialCurl
         self.dismissHamburgerMenu()
     }
     @IBAction func requestBtnTapped(_ sender: UIButton) {
-        let requestVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RequestViewController")as? RequestViewController
-        navigationController?.pushViewController(requestVC!, animated: true)
+        let requestVC = RequestViewController.instantiate()
+        navigationController?.pushViewController(requestVC, animated: true)
         self.modalTransitionStyle = .partialCurl
         self.dismissHamburgerMenu()
 
     }
     @IBAction func donationHistory(_ sender: UIButton) {
-        let donationVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DonationHistoryViewController")as? DonationHistoryViewController
-        navigationController?.pushViewController(donationVC!, animated: true)
+        let donationVC = DonationHistoryViewController.instantiate()
+        navigationController?.pushViewController(donationVC, animated: true)
         self.modalTransitionStyle = .partialCurl
         self.dismissHamburgerMenu()
     }
@@ -108,20 +110,20 @@ class HamburgerViewController: UIViewController {
         self.dismissHamburgerMenu()
     }
     @IBAction func helpAndSupportBtnTapped(_ sender: UIButton) {
-        let helpVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HelpAndSupportViewController")as? HelpAndSupportViewController
-        navigationController?.pushViewController(helpVC!, animated: true)
+        let helpVC = HelpAndSupportViewController.instantiate()
+        navigationController?.pushViewController(helpVC, animated: true)
         self.modalTransitionStyle = .partialCurl
         self.dismissHamburgerMenu()
     }
     @IBAction func privacyBtnTapped(_ sender: UIButton) {
-        let privacyVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PrivacyViewController")as? PrivacyViewController
-        navigationController?.pushViewController(privacyVC!, animated: true)
+        let privacyVC = PrivacyViewController.instantiate()
+        navigationController?.pushViewController(privacyVC, animated: true)
         self.modalTransitionStyle = .partialCurl
         self.dismissHamburgerMenu()
     }
     @IBAction func settingBtnTapped(_ sender: UIButton) {
-        let settingVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SettingViewController")as? SettingViewController
-        navigationController?.pushViewController(settingVC!, animated: true)
+        let settingVC = SettingViewController.instantiate()
+        navigationController?.pushViewController(settingVC, animated: true)
         self.modalTransitionStyle = .partialCurl
         self.dismissHamburgerMenu()
     }
@@ -136,6 +138,15 @@ class HamburgerViewController: UIViewController {
 //        vc.modalTransitionStyle = .flipHorizontal
 //        self.present(vc, animated: true, completion: nil)
     }
+    
+    @IBAction func yourStoryBtnTapped(_ sender: UIButton) {
+        let yourStoryVC = YourStoryViewController.instantiate()
+        navigationController?.pushViewController(yourStoryVC, animated: true)
+        self.modalTransitionStyle = .partialCurl
+        self.dismissHamburgerMenu()
+        
+    }
+    
     
     
     @IBAction func donateSwichTapped(_ sender: UISwitch) {

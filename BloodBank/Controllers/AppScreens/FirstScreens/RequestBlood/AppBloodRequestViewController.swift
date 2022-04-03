@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import BLTNBoard
 
 class AppBloodRequestViewController: UIViewController{
     
@@ -53,7 +54,23 @@ class AppBloodRequestViewController: UIViewController{
     let arrReason = Arrays.arrayReasonRequest
     let arrHospitals = Arrays.arrayOfHospitals
     let navBar = NavigationBar()
-    
+    let customView = CustomView()
+    private lazy var fitBoardManager: BLTNItemManager = {
+        let item = BLTNPageItem(title: "Congratulation")
+        item.image = UIImage(named: "launch")
+        item.actionButtonTitle = "OK"
+        item.actionButton?.titleLabel?.font = UIFont(name: "Almarai", size: 20)
+        item.attributedDescriptionText = NSAttributedString(
+            string:"Your Blood Request Created Successfully" , attributes: [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.8185071945, green: 0.2694924176, blue: 0.2871941328, alpha: 1) , .font: UIFont(name: "Almarai-Bold", size: 20)!])
+        item.actionHandler = {_ in
+            self.dismiss(animated: true) {
+                self.navigationController?.popToRootViewController(animated: true)
+            }
+        }
+        item.appearance.actionButtonColor = #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1)
+        item.appearance.actionButtonCornerRadius = 15
+        return BLTNItemManager(rootItem: item)
+    }()
     //MARK: - life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,19 +115,25 @@ class AppBloodRequestViewController: UIViewController{
         reasonTitleLbl.customLblFont(lbl: reasonTitleLbl, fontSize: 19, text: "Reason of the Request")
         hospitalTitleLbl.customLblFont(lbl: hospitalTitleLbl, fontSize: 19, text: "Hospital Title")
         notesTitleLbl.customLblFont(lbl: notesTitleLbl, fontSize: 19, text: "Notes Title")
-       
-            requestNext.customTitleLbl(btn: requestNext, text: "Next", fontSize: 18)
-            bloodNextBtn.customTitleLbl(btn: bloodNextBtn, text: "Next", fontSize: 18)
-            reasonNextBtn.customTitleLbl(btn: reasonNextBtn, text: "Next", fontSize: 18)
-            hospitalNextBtn.customTitleLbl(btn: hospitalNextBtn, text: "Next", fontSize: 18)
-            notesFinishBtn.customTitleLbl(btn: notesFinishBtn, text: "Finish", fontSize: 18)
-            bloodBackBtn.customTitleLbl(btn: bloodBackBtn, text: "Back", fontSize: 18)
-            reasonBackBtn.customTitleLbl(btn: reasonBackBtn, text: "Back", fontSize: 18)
-            hospitalBackBtn.customTitleLbl(btn: hospitalBackBtn, text: "Back", fontSize: 18)
-            notesBackBtn.customTitleLbl(btn: notesBackBtn, text: "Back", fontSize: 18)
-      
         
-
+        requestNext.customTitleLbl(btn: requestNext, text: "Next", fontSize: 18)
+        bloodNextBtn.customTitleLbl(btn: bloodNextBtn, text: "Next", fontSize: 18)
+        reasonNextBtn.customTitleLbl(btn: reasonNextBtn, text: "Next", fontSize: 18)
+        hospitalNextBtn.customTitleLbl(btn: hospitalNextBtn, text: "Next", fontSize: 18)
+        notesFinishBtn.customTitleLbl(btn: notesFinishBtn, text: "Finish", fontSize: 18)
+        bloodBackBtn.customTitleLbl(btn: bloodBackBtn, text: "Back", fontSize: 18)
+        reasonBackBtn.customTitleLbl(btn: reasonBackBtn, text: "Back", fontSize: 18)
+        hospitalBackBtn.customTitleLbl(btn: hospitalBackBtn, text: "Back", fontSize: 18)
+        notesBackBtn.customTitleLbl(btn: notesBackBtn, text: "Back", fontSize: 18)
+        customView.requestView(theView: requestTypeView)
+        customView.requestView(theView: bloodTypeView)
+        customView.requestView(theView: reasonRequestView)
+        customView.requestView(theView: hospitalRequestView)
+        customView.requestView(theView: notesView)
+        
+        //        requestTypePickerView. = .white
+        
+        
     }
     func animate(theview: UIView){
         //        UIView.animate(withDuration: 1.5, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseOut) {
@@ -124,64 +147,82 @@ class AppBloodRequestViewController: UIViewController{
         //            }
         //        }
         //
-        UIView.transition(with: self.view, duration: 0.25, options: [.transitionCrossDissolve], animations: {
+        UIView.transition(with: theview, duration: 1, options: [.transitionCurlUp], animations: {
+            theview.alpha = 0.0
+        }, completion: {_ in
             theview.isHidden = true
-        }, completion: nil)
+        })
+//                UIView.transition(from: theview, to: bloodTypeView, duration: 0.75, options: [.transitionCurlDown]) { _ in
+//                    theview.isHidden = true
+//                }
     }
     
     //MARK: - Actions
     @IBAction func requestTypenextBtn(_ sender: UIButton) {
-        self.bloodTypeView.isHidden = false
         animate(theview: requestTypeView)
-        
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.75) {
+            self.bloodTypeView.isHidden = false
+            self.bloodTypeView.alpha = 1
+        }
     }
     
     //blood type
     @IBAction func nextbloodTypeBtnTapped(_ sender: UIButton) {
         animate(theview: bloodTypeView)
-        reasonRequestView.isHidden = false
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.75) {
+            self.reasonRequestView.isHidden = false
+            self.reasonRequestView.alpha = 1
+        }
     }
     @IBAction func backBloodType(_ sender: UIButton) {
-        
-        animate(theview: bloodTypeView)
-        requestTypeView.isHidden = false
+        self.animate(theview: self.bloodTypeView)
+        self.requestTypeView.isHidden = false
+        requestTypeView.alpha = 1
     }
     
     //reason
     @IBAction func reasonNextTapped(_ sender: UIButton) {
         animate(theview: reasonRequestView)
-        hospitalRequestView.isHidden = false
-        
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.75) {
+            self.hospitalRequestView.isHidden = false
+            self.hospitalRequestView.alpha = 1
+        }
     }
     
     @IBAction func reasonBackTapped(_ sender: UIButton) {
         animate(theview: reasonRequestView)
         bloodTypeView.isHidden = false
         requestTypeView.isHidden = true
+        self.bloodTypeView.alpha = 1
     }
     
     // hospital
     
     @IBAction func hospitalNext(_ sender: UIButton) {
         animate(theview: hospitalRequestView)
-        notesView.isHidden = false
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.75) {
+            self.notesView.isHidden = false
+            self.notesView.alpha = 1
+            
+        }
     }
     @IBAction func hospitalBackTapped(_ sender: UIButton) {
         animate(theview: hospitalRequestView)
         reasonRequestView.isHidden = false
         bloodTypeView.isHidden = true
         requestTypeView.isHidden = true
+        self.reasonRequestView.alpha = 1
     }
     //notes
     
     @IBAction func finishNotesTapped(_ sender: UIButton) {
         if let noteResult = notesTextView.text{
-            self.SuccessAlert(title: "Congratulation", message: "The BloodRequest has been Created Successfuly", style: .default) { _ in
-                self.navigationController?.popToRootViewController(animated: true)
+            DispatchQueue.main.asyncAfter(deadline: .now()+1) {
                 print("\(self.requestTypeResult) - \(self.bloodTypeResult) - \(self.reasonRequestResult) - \(self.hospitalResult) - \(noteResult)")
+                self.notesTextView.text = ""
             }
+            self.fitBoardManager.showBulletin(above: self)
         }
-        notesTextView.text = ""
     }
     
     @IBAction func notesBackTapped(_ sender: UIButton) {
@@ -190,6 +231,7 @@ class AppBloodRequestViewController: UIViewController{
         bloodTypeView.isHidden = true
         requestTypeView.isHidden = true
         hospitalRequestView.isHidden = false
+        self.hospitalRequestView.alpha = 1
     }
 }
 //MARK: - UIPickerViewDelegate
@@ -232,7 +274,6 @@ extension AppBloodRequestViewController: UIPickerViewDelegate, UIPickerViewDataS
             return ""
         }
     }
-    
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
         return 40
     }

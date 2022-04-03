@@ -43,8 +43,8 @@
                                     <constraint firstItem="7X7-tH-I0p" firstAttribute="centerY" secondItem="HiN-nq-o5P" secondAttribute="centerY" id="XRr-4A-j6R"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="خالد حسين احمد خليفه" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="ae3-uB-rIx">
-                                <rect key="frame" x="70.5" y="13" width="231.5" height="22.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="خالد حسين احمد خليفه" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="ae3-uB-rIx">
+                                <rect key="frame" x="70.5" y="13.5" width="231.5" height="22"/>
                                 <fontDescription key="fontDescription" name="Almarai-Bold" family="Almarai" pointSize="20"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -79,19 +79,19 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="bzU-zN-swy">
                                 <rect key="frame" x="75.5" y="104" width="25" height="25"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="معمل النور / المنشاه الكبري / السنطه/ الغربيه" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7G-4P-8yE">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="معمل النور / المنشاه الكبري / السنطه/ الغربيه" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7G-4P-8yE">
                                 <rect key="frame" x="110.5" y="57.5" width="281.5" height="38"/>
                                 <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="17"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الخامس من يناير عام ٢٠٢٢" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPX-ZE-sbO">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الخامس من يناير عام ٢٠٢٢" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPX-ZE-sbO">
                                 <rect key="frame" x="110.5" y="107" width="281" height="19"/>
                                 <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="17"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="kw4-fo-VVx">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="kw4-fo-VVx">
                                 <rect key="frame" x="8" y="142" width="386" height="45"/>
                                 <string key="text">اخي بحاجه الي خمسه اكياس دم ف حادثه سياره وحالته خطيره جدا ارجو المساعده ف اسرع وقت ف معمل النور / المنشاه الكبري / السنطه / الغربيه </string>
                                 <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="16"/>
@@ -112,6 +112,7 @@
                             <constraint firstItem="TPX-ZE-sbO" firstAttribute="leading" secondItem="bzU-zN-swy" secondAttribute="trailing" constant="10" id="CqF-Op-xzi"/>
                             <constraint firstItem="ROe-DJ-Id5" firstAttribute="leading" secondItem="ae3-uB-rIx" secondAttribute="leading" constant="5" id="Dos-rN-9lM"/>
                             <constraint firstItem="bzU-zN-swy" firstAttribute="width" secondItem="ROe-DJ-Id5" secondAttribute="width" id="EqM-9Q-aNI"/>
+                            <constraint firstItem="ae3-uB-rIx" firstAttribute="top" secondItem="ob3-P3-5A6" secondAttribute="top" constant="13.5" id="L4J-NQ-iYo"/>
                             <constraint firstItem="y7G-4P-8yE" firstAttribute="centerY" secondItem="ROe-DJ-Id5" secondAttribute="centerY" id="NB9-qs-HUq"/>
                             <constraint firstItem="ae3-uB-rIx" firstAttribute="leading" secondItem="HiN-nq-o5P" secondAttribute="trailing" constant="10" id="TgA-8h-bdE"/>
                             <constraint firstItem="kw4-fo-VVx" firstAttribute="top" secondItem="bzU-zN-swy" secondAttribute="bottom" constant="13" id="UBX-sC-j0Q"/>
@@ -121,7 +122,10 @@
                             <constraint firstItem="bzU-zN-swy" firstAttribute="top" secondItem="ROe-DJ-Id5" secondAttribute="bottom" constant="15" id="abu-jy-jIs"/>
                             <constraint firstItem="kw4-fo-VVx" firstAttribute="leading" secondItem="ob3-P3-5A6" secondAttribute="leading" constant="8" id="cco-lE-aJ3"/>
                             <constraint firstItem="ROe-DJ-Id5" firstAttribute="top" secondItem="HiN-nq-o5P" secondAttribute="bottom" constant="15" id="cgG-Zn-2zH"/>
+                            <constraint firstItem="TPX-ZE-sbO" firstAttribute="top" secondItem="y7G-4P-8yE" secondAttribute="bottom" constant="11.5" id="fg0-qo-YwO"/>
                             <constraint firstAttribute="trailing" secondItem="NRd-1h-aKB" secondAttribute="trailing" constant="10" id="kcq-nh-tno"/>
+                            <constraint firstItem="kw4-fo-VVx" firstAttribute="top" secondItem="TPX-ZE-sbO" secondAttribute="bottom" constant="16" id="lZk-B6-BAg"/>
+                            <constraint firstItem="y7G-4P-8yE" firstAttribute="top" secondItem="ae3-uB-rIx" secondAttribute="bottom" constant="22" id="oSG-N8-TCI"/>
                             <constraint firstItem="y7G-4P-8yE" firstAttribute="leading" secondItem="ROe-DJ-Id5" secondAttribute="trailing" constant="10" id="xDZ-S4-9lu"/>
                             <constraint firstItem="HiN-nq-o5P" firstAttribute="width" secondItem="ob3-P3-5A6" secondAttribute="width" multiplier="0.15" id="xta-YR-4AY"/>
                             <constraint firstAttribute="trailing" secondItem="kw4-fo-VVx" secondAttribute="trailing" constant="8" id="yNE-eo-BA1"/>

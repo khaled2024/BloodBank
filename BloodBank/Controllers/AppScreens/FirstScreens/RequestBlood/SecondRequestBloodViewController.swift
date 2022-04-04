@@ -57,10 +57,10 @@ class SecondRequestBloodViewController: UIViewController {
         return false
     }
     private func createBloodRquest(){
-        patient = Patient(name: patientNameTF.text!, bloodType: self.bloodTypeLbl.text!, address: self.bloodBankNameLbl.text!, time: self.timeLbl.text!, description: noteForHelpTF.text!)
+        patient = Patient(name: patientNameTF.text!, bloodType: self.bloodTypeLbl.text!, address: self.bloodBankNameLbl.text!, time: self.timeLbl.text!, description: noteForHelpTF.text!, donorImage: "https://i.pinimg.com/originals/0c/5f/12/0c5f12f37fb6bc00f4d468b5d69e9932.jpg")
         NotificationCenter.default.post(name: Notification.Name(Notifications.detailNot), object: patient)
         print("GetPosted")
-        
+
         print("bloodType is \(bloodTypeLbl.text!),blood quantity is equal \(bloodQuantityLbl.text!) ,bloodBankName is \(bloodBankNameLbl!) , time is \(timeLbl.text!) , paitent name is \(patientNameTF.text!) , patient age is \(patientAgeTF.text!), note is \(noteForHelpTF.text!)")
         self.SuccessAlert(title: "Congratulation", message: "The BloodRequest has been Created Successfuly", style: .default) { _ in
             self.navigationController?.popToRootViewController(animated: true)
@@ -74,7 +74,7 @@ class SecondRequestBloodViewController: UIViewController {
     @IBAction func createRequestBtnTapped(_ sender: UIButton) {
         if self.checkDataRequest(){
             self.createBloodRquest()
-//            self.customBtn.toggleForBtn(Btn: createRequestBtn)
+            self.customBtn.toggleForBtn(Btn: createRequestBtn)
             createRequestBtn.backgroundColor = #colorLiteral(red: 1, green: 0.2901960784, blue: 0.3843137255, alpha: 1)
         }else{
             self.showAlert(title: "Sorry", message: "Please fill the Fields.")

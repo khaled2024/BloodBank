@@ -23,6 +23,7 @@
 		EA215BFE27E7FA36005A9843 /* String+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA215BFD27E7FA36005A9843 /* String+URL.swift */; };
 		EA215C0027E80057005A9843 /* EducateDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA215BFF27E80057005A9843 /* EducateDetailsViewController.swift */; };
 		EA2A523827EA429300D92ED3 /* CoronaStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2A523727EA429300D92ED3 /* CoronaStatsViewController.swift */; };
+		EA34861927FB4F72004A6667 /* VaccineRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA34861827FB4F71004A6667 /* VaccineRequestViewController.swift */; };
 		EA4278A227B01F9C002D444A /* AppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4278A127B01F9C002D444A /* AppointmentViewController.swift */; };
 		EA4278A427B025A7002D444A /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4278A327B025A7002D444A /* RequestViewController.swift */; };
 		EA4278A627B025BF002D444A /* DonationHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4278A527B025BF002D444A /* DonationHistoryViewController.swift */; };
@@ -115,6 +116,7 @@
 		EA215BFD27E7FA36005A9843 /* String+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+URL.swift"; sourceTree = "<group>"; };
 		EA215BFF27E80057005A9843 /* EducateDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducateDetailsViewController.swift; sourceTree = "<group>"; };
 		EA2A523727EA429300D92ED3 /* CoronaStatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronaStatsViewController.swift; sourceTree = "<group>"; };
+		EA34861827FB4F71004A6667 /* VaccineRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineRequestViewController.swift; sourceTree = "<group>"; };
 		EA4278A127B01F9C002D444A /* AppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentViewController.swift; sourceTree = "<group>"; };
 		EA4278A327B025A7002D444A /* RequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
 		EA4278A527B025BF002D444A /* DonationHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationHistoryViewController.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 		EA01A0A527C96F1800BDCC00 /* BookingAppointment */ = {
 			isa = PBXGroup;
 			children = (
+				EA34861827FB4F71004A6667 /* VaccineRequestViewController.swift */,
 				EA4278A127B01F9C002D444A /* AppointmentViewController.swift */,
 				EA01A0A627C96F4E00BDCC00 /* NotFitAppointmentViewController.swift */,
 				EA01A0B227C984A600BDCC00 /* InformationCenterViewController.swift */,
@@ -477,8 +480,8 @@
 		EAE615D927D962DB00A56C5A /* DonateBlood */ = {
 			isa = PBXGroup;
 			children = (
-				EA45BFA527C5996B00D56AEC /* DonateBloodViewController.swift */,
 				EA4278A327B025A7002D444A /* RequestViewController.swift */,
+				EA45BFA527C5996B00D56AEC /* DonateBloodViewController.swift */,
 				EA1915F827DC27B100554FF9 /* DetailsCellViewController.swift */,
 			);
 			path = DonateBlood;
@@ -708,6 +711,7 @@
 				EAE3C90B27B12C6300F42D16 /* MapViewController.swift in Sources */,
 				EA45D3B327E4E0DA0072E19C /* RequestProtocol.swift in Sources */,
 				EA92A0AA27E89FFF0060C5C8 /* String+Localized.swift in Sources */,
+				EA34861927FB4F72004A6667 /* VaccineRequestViewController.swift in Sources */,
 				EA86A9FB27CA31FB006EA939 /* UserDefultsManager.swift in Sources */,
 				EAA6BDDE27EBBD2E00FE1BCA /* CountryStats.swift in Sources */,
 				EACC013D27A43A5A00FFB92B /* UserCustomBtn.swift in Sources */,

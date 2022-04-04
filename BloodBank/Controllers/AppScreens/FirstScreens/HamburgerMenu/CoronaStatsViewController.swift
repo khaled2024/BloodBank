@@ -11,6 +11,8 @@ class CoronaStatsViewController: UIViewController{
     
     
     //MARK: - Outlets
+    @IBOutlet weak var leftArrowBtnSite: UIButton!
+    @IBOutlet weak var rightArrowBtnSite: UIButton!
     @IBOutlet weak var bloodBankSiteBtn: UIButton!
     @IBOutlet weak var staySafeLbl: UILabel!
     @IBOutlet weak var covid19Lbl: UILabel!
@@ -140,6 +142,14 @@ class CoronaStatsViewController: UIViewController{
         activeLbl.customLblFont(lbl: activeLbl, fontSize: 16, text: "Active")
         customShadow.shadowBtn(btn: bloodBankSiteBtn)
         
+        rightArrowBtnSite.isHidden = true
+        leftArrowBtnSite.isHidden = true
+        let currentLang = Locale.current.languageCode
+        if currentLang == "en"{
+            rightArrowBtnSite.isHidden = false
+        }else{
+            leftArrowBtnSite.isHidden = false
+        }
         
     }
     private func setCountryData(_ row: Int){

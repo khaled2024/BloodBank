@@ -8,6 +8,28 @@
 import UIKit
 class MainViewController: UIViewController , HambburgerViewControllerDelegate, opacityDelegate{
     //MARK: - Outlets
+    
+    //labels
+    
+    @IBOutlet weak var mainSubTitleLbl: UILabel!
+    @IBOutlet weak var nameOfDonorLbl: UILabel!
+    @IBOutlet weak var welcomeLbl: UILabel!
+    @IBOutlet weak var vaccineRequestLbl: UILabel!
+    
+    @IBOutlet weak var vaccineReuestSubTitle: UILabel!
+    
+    @IBOutlet weak var donateBloodLbl: UILabel!
+    @IBOutlet weak var donateBloodSubTitle: UILabel!
+    
+    
+    @IBOutlet weak var orderBloodLbl: UILabel!
+    @IBOutlet weak var orderBloodSubTitle: UILabel!
+    
+    @IBOutlet weak var educateLbl: UILabel!
+    @IBOutlet weak var educateSubTitle: UILabel!
+    
+    
+    //views
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var testView: UIView!
     @IBOutlet weak var leading: NSLayoutConstraint!
@@ -18,13 +40,13 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
     @IBOutlet weak var slideMenuBtn: UIBarButtonItem!
     
     //for animations
-    @IBOutlet weak var scaduleAppointmentView: UIView!
+    @IBOutlet weak var vaccineRequest: UIView!
     @IBOutlet weak var donateBloodView: UIView!
     @IBOutlet weak var requestBloodView: UIView!
     @IBOutlet weak var educateYourselfView: UIView!
     
     
-    @IBOutlet weak var appointmentImage: UIImageView!
+    @IBOutlet weak var vaccineRequestImage: UIImageView!
     @IBOutlet weak var donationImage: UIImageView!
     
     @IBOutlet weak var requestImage: UIImageView!
@@ -40,7 +62,6 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
         testView.isUserInteractionEnabled = false
         self.testView.layer.opacity = 1
         self.animateScalling()
-        
     }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1)
@@ -51,28 +72,42 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
         self.navigationController?.navigationBar.isHidden = false
         animateViews()
         animateImages()
+        setUpLocalized()
     }
     
     //MARK: -  private functions
+    private func setUpLocalized(){
+        welcomeLbl.text = "Welcome".Localized()
+        nameOfDonorLbl.text = "NameDonor".Localized()
+        mainSubTitleLbl.text = "MainSubTitle".Localized()
+        vaccineRequestLbl.text = "Vaccine request".Localized()
+        vaccineReuestSubTitle.text = "vaccineRequestSubTitle".Localized()
+        donateBloodLbl.text = "donate Blood".Localized()
+        donateBloodSubTitle.text = "donateBloodSubTitle".Localized()
+        orderBloodLbl.text = "order Blood".Localized()
+        orderBloodSubTitle.text = "orderBloodSubTitle".Localized()
+        educateLbl.text = "educate".Localized()
+        educateSubTitle.text = "educateSubTitle".Localized()
+    }
     private func animateScalling(){
         UIView.animate(withDuration: 1.5) {
-            self.scaduleAppointmentView.center.x += 60
+            self.vaccineRequest.center.x += 60
             self.donateBloodView.center.x += 50
             self.requestBloodView.center.x += 40
             self.educateYourselfView.center.x += 30
         }
     }
     private func animateViews(){
-        self.scaduleAppointmentView.alpha = 0
+        self.vaccineRequest.alpha = 0
         self.donateBloodView.alpha = 0
         self.requestBloodView.alpha = 0
         self.educateYourselfView.alpha = 0
-        self.appointmentImage.alpha = 1
+        self.vaccineRequestImage.alpha = 1
         self.donationImage.alpha = 1
         self.requestImage.alpha = 1
         self.educateImage.alpha = 1
         UIView.animate(withDuration: 1) {
-            self.scaduleAppointmentView.alpha = 1
+            self.vaccineRequest.alpha = 1
             self.donateBloodView.alpha = 1
             self.requestBloodView.alpha = 1
             self.educateYourselfView.alpha = 1
@@ -84,19 +119,19 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
         //        let width = appointmentImage.frame.width + 50
         //        let height = appointmentImage.frame.height + 50
         UIView.animate(withDuration: 2, delay: 1, options: [.repeat , .autoreverse], animations: {
-            self.appointmentImage.alpha = 0
+            self.vaccineRequestImage.alpha = 0
             self.donationImage.alpha = 0
             self.requestImage.alpha = 0
             self.educateImage.alpha = 0
         }, completion: {_ in
-            self.appointmentImage.alpha = 1
+            self.vaccineRequestImage.alpha = 1
             self.donationImage.alpha = 1
             self.requestImage.alpha = 1
             self.educateImage.alpha = 1
         })
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "hamburgerSegue"){
+        if(segue.identifier == Identifier.hamburgerSegue){
             if let controller = segue.destination as? HamburgerViewController{
                 self.hamburgerViewController = controller
                 self.hamburgerViewController?.delegate = self
@@ -200,6 +235,11 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
             }
         }
     }
+    private func requestVaccine(){
+        let requestVaccine = VaccineRequestViewController.instantiate()
+        navigationController?.pushViewController(requestVaccine, animated: true)
+        self.modalTransitionStyle = .partialCurl
+    }
     private func BookingApp(){
         let appointmentVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AppointmentViewController")as? AppointmentViewController
         navigationController?.pushViewController(appointmentVC!, animated: true)
@@ -241,7 +281,7 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
     }
 
     @IBAction func bookingAppintment(_ sender: UIButton) {
-        self.BookingApp()
+        self.requestVaccine()
         
     }
     @IBAction func donateBloodBtnTapped(_ sender: UIButton) {

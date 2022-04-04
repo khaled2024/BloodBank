@@ -6,7 +6,7 @@
 //
 
 import Foundation
-class ApiService  {
+class ApiService{
     static let sharedService = ApiService()
     let url = URLS.urlCoronaStats
     

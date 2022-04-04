@@ -21,8 +21,10 @@ class FitnessAppointmentViewController: UIViewController{
         title = " "
         self.tabBarController?.tabBar.isHidden = false
         self.navigationController?.navigationBar.isHidden = true
+        
 
     }
+    
     
     @IBAction func goToBookingVC(_ sender: UIButton) {
         

@@ -96,3 +96,20 @@ You can get paid for donating blood in 25 countries around the world. Some count
 "Finish" = "Finish";
 // donate blood
 "Donate Blood" = "Donate Blood";
+// "Vaccine request"
+"Vaccine request" = "Vaccine request";
+"vaccineRequestSubTitle" = "Buy vaccines that match your needs within minutes";
+
+"donate Blood" = "Donate Blood";
+"donateBloodSubTitle" = "Donating blood can make you a hero to someone in need";
+"order Blood" = "Order Blood";
+"orderBloodSubTitle" = "We are here to help you submit a request for blood";
+"educate" = "Educate yourSelf";
+"educateSubTitle" = "Learn more about blood, its types, and how to donate blood";
+"Welcome" = "Welcome";
+"NameDonor" = "Here,The Name of the Donor";
+"MainSubTitle" = "Be a hero in someone's life o_o ❤️‍🩹";
+// details cell for requestsBlood
+"Like" = "Like";
+"Comment" = "Comment";
+"Share" = "Share";

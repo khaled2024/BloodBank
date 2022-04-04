@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "decline.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "vaccine.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

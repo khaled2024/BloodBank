@@ -39,6 +39,15 @@ class UserCustomBtn{
             self.confirmBtnNotSelected(Btn: Btn)
         }
     }
+    func toggleBtnByForground(Btn: UIButton){
+        if checkBtn == false{
+            checkBtn = true
+            Btn.imageView?.tintColor = #colorLiteral(red: 0.918268621, green: 0.2490310073, blue: 0.3684441447, alpha: 1)
+        }else{
+            checkBtn = false
+            Btn.imageView?.tintColor = .darkGray
+        }
+    }
     
     func TintColorForBtn(Btn: UIButton){
         if checkBtn == false{
@@ -60,5 +69,6 @@ class UserCustomBtn{
         btn.layer.shadowOpacity = 3.0
         btn.layer.masksToBounds = false
         btn.layer.cornerRadius = 15.0
+        btn.layer.masksToBounds = false
     }
 }

@@ -15,6 +15,7 @@ struct Identifier{
     static let CollectionCell = "OnboardingCollectionViewCell"
     static let HomeNC = "HomeNC"
     static let OnBoardingVC = "OnboardingViewController"
+    static let hamburgerSegue = "hamburgerSegue"
 }
 
 struct SlidesArray{

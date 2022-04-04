@@ -64,7 +64,11 @@ class AppBloodRequestViewController: UIViewController{
             string:"Your Blood Request Created Successfully" , attributes: [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.8185071945, green: 0.2694924176, blue: 0.2871941328, alpha: 1) , .font: UIFont(name: "Almarai-Bold", size: 20)!])
         item.actionHandler = {_ in
             self.dismiss(animated: true) {
-                self.navigationController?.popToRootViewController(animated: true)
+//                self.navigationController?.popToRootViewController(animated: true)
+                let requestsVC = RequestViewController.instantiate()
+                self.navigationController?.pushViewController(requestsVC, animated: true)
+                self.modalTransitionStyle = .coverVertical
+                self.modalPresentationStyle = .fullScreen
             }
         }
         item.appearance.actionButtonColor = #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1)
@@ -106,7 +110,11 @@ class AppBloodRequestViewController: UIViewController{
     private func setUpDesign(){
         navBar.setNavBar(myView: self, title: "انشاء طلب دم", viewController: view, navBarColor: UIColor.navBarColor, navBarTintColor: UIColor.navBarTintColor ,forgroundTitle: UIColor.forgroundTitle, bacgroundView:UIColor.backgroundView)
         self.navigationController?.navigationBar.isHidden = false
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        navigationItem.backBarButtonItem = backItem// This will show in the next view controller being pushed
     }
+    
     private func localizedItems(){
         bloodRequestLbl.customLblFont(lbl: bloodRequestLbl, fontSize: 25, text: "First Title")
         secondTitleLbl.customLblFont(lbl: secondTitleLbl, fontSize: 19, text: "Second Title")
@@ -130,31 +138,13 @@ class AppBloodRequestViewController: UIViewController{
         customView.requestView(theView: reasonRequestView)
         customView.requestView(theView: hospitalRequestView)
         customView.requestView(theView: notesView)
-        
-        //        requestTypePickerView. = .white
-        
-        
     }
     func animate(theview: UIView){
-        //        UIView.animate(withDuration: 1.5, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseOut) {
-        //            theview.transform = CGAffineTransform(translationX: 0, y: 0)
-        //        } completion: { _ in
-        //            UIView.animate(withDuration: 1.5, delay: 0.0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut) {
-        //                theview.alpha = 0
-        //                theview.transform = theview.transform.translatedBy(x: -200, y: 0)
-        //            } completion: { _ in
-        //                print("end")
-        //            }
-        //        }
-        //
         UIView.transition(with: theview, duration: 1, options: [.transitionCurlUp], animations: {
             theview.alpha = 0.0
         }, completion: {_ in
             theview.isHidden = true
         })
-//                UIView.transition(from: theview, to: bloodTypeView, duration: 0.75, options: [.transitionCurlDown]) { _ in
-//                    theview.isHidden = true
-//                }
     }
     
     //MARK: - Actions
@@ -214,14 +204,14 @@ class AppBloodRequestViewController: UIViewController{
         self.reasonRequestView.alpha = 1
     }
     //notes
-    
     @IBAction func finishNotesTapped(_ sender: UIButton) {
-        if let noteResult = notesTextView.text{
+        if let noteResult = notesTextView.text , !noteResult.isEmpty{
             DispatchQueue.main.asyncAfter(deadline: .now()+1) {
                 print("\(self.requestTypeResult) - \(self.bloodTypeResult) - \(self.reasonRequestResult) - \(self.hospitalResult) - \(noteResult)")
-                self.notesTextView.text = ""
             }
             self.fitBoardManager.showBulletin(above: self)
+        }else{
+            showAlert(title: "Sorry", message: "Please Write A message For Donors.")
         }
     }
     

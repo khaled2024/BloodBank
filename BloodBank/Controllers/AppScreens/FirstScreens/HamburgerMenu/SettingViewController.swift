@@ -10,7 +10,6 @@ import UIKit
 class SettingViewController: UIViewController {
     
     @IBOutlet weak var changeLangBtn: UIButton!
-    
     @IBOutlet weak var settingSwitch: UISwitch!
     let def = UserDefaults.standard
     let navBar = NavigationBar()
@@ -27,6 +26,7 @@ class SettingViewController: UIViewController {
     
     private func setUpDesign(){
         navBar.setNavBar(myView: self, title: "Setting".Localized(), viewController: view, navBarColor: UIColor.navBarColor, navBarTintColor: UIColor.navBarTintColor, forgroundTitle: UIColor.forgroundTitle, bacgroundView: UIColor.backgroundView)
+        
     }
     func isNotificationOn(){
         if let isNotificationOn = def.object(forKey: "isNotificationOn")as? Bool{

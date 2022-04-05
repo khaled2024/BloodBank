@@ -23,6 +23,18 @@ class AppBloodRequestViewController: UIViewController{
     @IBOutlet weak var reasonTitleLbl: UILabel!
     @IBOutlet weak var reasonNextBtn: UIButton!
     @IBOutlet weak var reasonBackBtn: UIButton!
+    // city
+    @IBOutlet weak var cityTitleLbl: UILabel!
+    @IBOutlet weak var cityNextBtn: UIButton!
+    @IBOutlet weak var cityBackBtn: UIButton!
+    //town
+    @IBOutlet weak var townTitleLbl: UILabel!
+    
+    @IBOutlet weak var townNextBtn: UIButton!
+    
+    @IBOutlet weak var townBackBtn: UIButton!
+    
+    
     //hospital
     @IBOutlet weak var hospitalTitleLbl: UILabel!
     @IBOutlet weak var hospitalNextBtn: UIButton!
@@ -44,15 +56,26 @@ class AppBloodRequestViewController: UIViewController{
     @IBOutlet weak var hospitalPickerView: UIPickerView!
     @IBOutlet weak var notesView: UIView!
     @IBOutlet weak var notesTextView: UITextView!
+    
+    @IBOutlet weak var cityView: UIView!
+    @IBOutlet weak var cityPickerView: UIPickerView!
+    
+    @IBOutlet weak var townView: UIView!
+    @IBOutlet weak var townPickerView: UIPickerView!
     //MARK: - vars
     var requestTypeResult = ""
     var bloodTypeResult = ""
     var reasonRequestResult = ""
+    var cityResult = ""
+    var townResult = ""
     var hospitalResult = ""
+  
     let arrTypeRequest = Arrays.arrayOfTypesRequests
     let arrBloodType = Arrays.arrayOfBloodType
     let arrReason = Arrays.arrayReasonRequest
     let arrHospitals = Arrays.arrayOfHospitals
+    let arrCities = Arrays.arrayReasonRequest
+    let arrTowns = Arrays.arrayOfHospitals
     let navBar = NavigationBar()
     let customView = CustomView()
     private lazy var fitBoardManager: BLTNItemManager = {
@@ -87,16 +110,25 @@ class AppBloodRequestViewController: UIViewController{
         reasonPickerView.dataSource = self
         hospitalPickerView.delegate = self
         hospitalPickerView.dataSource = self
+        cityPickerView.dataSource = self
+        cityPickerView.delegate = self
+        townPickerView.dataSource = self
+        townPickerView.delegate = self
         
-        requestTypePickerView.selectRow(2, inComponent: 0, animated: true)
-        bloodTypePickerView.selectRow(2, inComponent: 0, animated: true)
-        reasonPickerView.selectRow(2, inComponent: 0, animated: true)
-        hospitalPickerView.selectRow(2, inComponent: 0, animated: true)
+        
+//        requestTypePickerView.selectRow(2, inComponent: 0, animated: true)
+//        bloodTypePickerView.selectRow(2, inComponent: 0, animated: true)
+//        reasonPickerView.selectRow(2, inComponent: 0, animated: true)
+//        hospitalPickerView.selectRow(2, inComponent: 0, animated: true)
+//        cityPickerView.selectRow(2, inComponent: 0, animated: true)
+//        townPickerView.selectRow(2, inComponent: 0, animated: true)
         
         
         requestTypeView.isHidden = false
         bloodTypeView.isHidden = true
         reasonRequestView.isHidden = true
+        cityView.isHidden = true
+        townView.isHidden = true
         hospitalRequestView.isHidden = true
         notesView.isHidden = true
         
@@ -121,6 +153,8 @@ class AppBloodRequestViewController: UIViewController{
         requestTypeLbl.customLblFont(lbl: requestTypeLbl, fontSize: 19, text: "Request Type")
         bloodTitleLbl.customLblFont(lbl: bloodTitleLbl, fontSize: 19, text: "Blood Type")
         reasonTitleLbl.customLblFont(lbl: reasonTitleLbl, fontSize: 19, text: "Reason of the Request")
+        cityTitleLbl.customLblFont(lbl: cityTitleLbl, fontSize: 19, text: "City Title")
+        townTitleLbl.customLblFont(lbl: townTitleLbl, fontSize: 19, text: "Town Title")
         hospitalTitleLbl.customLblFont(lbl: hospitalTitleLbl, fontSize: 19, text: "Hospital Title")
         notesTitleLbl.customLblFont(lbl: notesTitleLbl, fontSize: 19, text: "Notes Title")
         
@@ -128,14 +162,20 @@ class AppBloodRequestViewController: UIViewController{
         bloodNextBtn.customTitleLbl(btn: bloodNextBtn, text: "Next", fontSize: 18)
         reasonNextBtn.customTitleLbl(btn: reasonNextBtn, text: "Next", fontSize: 18)
         hospitalNextBtn.customTitleLbl(btn: hospitalNextBtn, text: "Next", fontSize: 18)
-        notesFinishBtn.customTitleLbl(btn: notesFinishBtn, text: "Finish", fontSize: 18)
         bloodBackBtn.customTitleLbl(btn: bloodBackBtn, text: "Back", fontSize: 18)
         reasonBackBtn.customTitleLbl(btn: reasonBackBtn, text: "Back", fontSize: 18)
         hospitalBackBtn.customTitleLbl(btn: hospitalBackBtn, text: "Back", fontSize: 18)
         notesBackBtn.customTitleLbl(btn: notesBackBtn, text: "Back", fontSize: 18)
+        cityNextBtn.customTitleLbl(btn: cityNextBtn, text: "Next", fontSize: 18)
+        cityBackBtn.customTitleLbl(btn: cityBackBtn, text: "Back", fontSize: 18)
+        townNextBtn.customTitleLbl(btn: townNextBtn, text: "Next", fontSize: 18)
+        townBackBtn.customTitleLbl(btn: townBackBtn, text: "Back", fontSize: 18)
+        notesFinishBtn.customTitleLbl(btn: notesFinishBtn, text: "Finish", fontSize: 18)
         customView.requestView(theView: requestTypeView)
         customView.requestView(theView: bloodTypeView)
         customView.requestView(theView: reasonRequestView)
+        customView.requestView(theView: cityView)
+        customView.requestView(theView: townView)
         customView.requestView(theView: hospitalRequestView)
         customView.requestView(theView: notesView)
     }
@@ -174,8 +214,8 @@ class AppBloodRequestViewController: UIViewController{
     @IBAction func reasonNextTapped(_ sender: UIButton) {
         animate(theview: reasonRequestView)
         DispatchQueue.main.asyncAfter(deadline: .now()+0.75) {
-            self.hospitalRequestView.isHidden = false
-            self.hospitalRequestView.alpha = 1
+            self.cityView.isHidden = false
+            self.cityView.alpha = 1
         }
     }
     
@@ -185,7 +225,40 @@ class AppBloodRequestViewController: UIViewController{
         requestTypeView.isHidden = true
         self.bloodTypeView.alpha = 1
     }
+    // city
     
+    @IBAction func cityNextBtnTapped(_ sender: UIButton) {
+        animate(theview: cityView)
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.75) {
+            self.townView.isHidden = false
+            self.townView.alpha = 1
+        }
+    }
+    @IBAction func cityBackBtnTapped(_ sender: UIButton) {
+        animate(theview: cityView)
+        reasonRequestView.isHidden = false
+        bloodTypeView.isHidden = true
+        requestTypeView.isHidden = true
+        self.reasonRequestView.alpha = 1
+    }
+    //town
+    
+    @IBAction func townNextBtnTapped(_ sender: UIButton) {
+        animate(theview: townView)
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.75) {
+            self.hospitalRequestView.isHidden = false
+            self.hospitalRequestView.alpha = 1
+        }
+    }
+    
+    @IBAction func townBackBtnTapped(_ sender: UIButton) {
+        animate(theview: townView)
+        cityView.isHidden = false
+        requestTypeView.isHidden = true
+        bloodTypeView.isHidden = true
+        requestTypeView.isHidden = true
+        self.cityView.alpha = 1
+    }
     // hospital
     
     @IBAction func hospitalNext(_ sender: UIButton) {
@@ -198,10 +271,12 @@ class AppBloodRequestViewController: UIViewController{
     }
     @IBAction func hospitalBackTapped(_ sender: UIButton) {
         animate(theview: hospitalRequestView)
-        reasonRequestView.isHidden = false
+        townView.isHidden = false
+        reasonRequestView.isHidden = true
+        cityView.isHidden = true
         bloodTypeView.isHidden = true
         requestTypeView.isHidden = true
-        self.reasonRequestView.alpha = 1
+        self.townView.alpha = 1
     }
     //notes
     @IBAction func finishNotesTapped(_ sender: UIButton) {
@@ -211,7 +286,7 @@ class AppBloodRequestViewController: UIViewController{
             }
             self.fitBoardManager.showBulletin(above: self)
         }else{
-            showAlert(title: "Sorry", message: "Please Write A message For Donors.")
+            showAlert(title: "Sorry", message: "Please write a message for Donors.")
         }
     }
     
@@ -220,6 +295,8 @@ class AppBloodRequestViewController: UIViewController{
         reasonRequestView.isHidden = true
         bloodTypeView.isHidden = true
         requestTypeView.isHidden = true
+        cityView.isHidden = true
+        townView.isHidden = true
         hospitalRequestView.isHidden = false
         self.hospitalRequestView.alpha = 1
     }
@@ -240,6 +317,10 @@ extension AppBloodRequestViewController: UIPickerViewDelegate, UIPickerViewDataS
         case 2:
             return arrReason.count
         case 3:
+            return arrCities.count
+        case 4:
+            return arrTowns.count
+        case 5:
             return arrHospitals.count
         default:
             return 1
@@ -258,6 +339,12 @@ extension AppBloodRequestViewController: UIPickerViewDelegate, UIPickerViewDataS
             self.reasonRequestResult = arrReason[row]
             return arrReason[row]
         case 3:
+            self.cityResult = arrCities[row]
+            return arrCities[row]
+        case 4:
+            self.townResult = arrTowns[row]
+            return arrTowns[row]
+        case 5:
             self.hospitalResult = arrHospitals[row]
             return arrHospitals[row]
         default:

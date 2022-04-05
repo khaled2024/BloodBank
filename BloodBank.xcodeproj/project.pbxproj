@@ -15,6 +15,7 @@
 		EA01A0B127C9838700BDCC00 /* BookingAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA01A0B027C9838700BDCC00 /* BookingAppointmentViewController.swift */; };
 		EA01A0B327C984A600BDCC00 /* InformationCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA01A0B227C984A600BDCC00 /* InformationCenterViewController.swift */; };
 		EA064CAE27A4750600A06257 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA064CAD27A4750600A06257 /* MainViewController.swift */; };
+		EA17CD7C27FCFE4F00F356EE /* Almarai-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA17CD7B27FCFE4F00F356EE /* Almarai-ExtraBold.ttf */; };
 		EA1831C727DA6C1000D9BA90 /* RequestsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1831C527DA6C1000D9BA90 /* RequestsTableViewCell.swift */; };
 		EA1831C827DA6C1000D9BA90 /* RequestsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA1831C627DA6C1000D9BA90 /* RequestsTableViewCell.xib */; };
 		EA1915F727DBFA3100554FF9 /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1915F627DBFA3100554FF9 /* Patient.swift */; };
@@ -61,6 +62,7 @@
 		EA92A0B227E917F30060C5C8 /* Color+UIcolor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA92A0B127E917F30060C5C8 /* Color+UIcolor.swift */; };
 		EA99AAFD276CCF540083F0D1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA99AAFC276CCF540083F0D1 /* HomeViewController.swift */; };
 		EA9D400127DCF3D300776F14 /* UiView+Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9D400027DCF3D300776F14 /* UiView+Controller.swift */; };
+		EA9F8B1927FBCA6800345E60 /* DonateMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9F8B1827FBCA6700345E60 /* DonateMoneyViewController.swift */; };
 		EAA3C9D427DFB546007C5B47 /* SecondRequestBloodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA3C9D327DFB546007C5B47 /* SecondRequestBloodViewController.swift */; };
 		EAA6BDDE27EBBD2E00FE1BCA /* CountryStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA6BDDD27EBBD2E00FE1BCA /* CountryStats.swift */; };
 		EAAD8337276D12C800381854 /* DataPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAD8336276D12C700381854 /* DataPicker.swift */; };
@@ -108,6 +110,7 @@
 		EA01A0B027C9838700BDCC00 /* BookingAppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingAppointmentViewController.swift; sourceTree = "<group>"; };
 		EA01A0B227C984A600BDCC00 /* InformationCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationCenterViewController.swift; sourceTree = "<group>"; };
 		EA064CAD27A4750600A06257 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		EA17CD7B27FCFE4F00F356EE /* Almarai-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Almarai-ExtraBold.ttf"; sourceTree = "<group>"; };
 		EA1831C527DA6C1000D9BA90 /* RequestsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsTableViewCell.swift; sourceTree = "<group>"; };
 		EA1831C627DA6C1000D9BA90 /* RequestsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestsTableViewCell.xib; sourceTree = "<group>"; };
 		EA1915F627DBFA3100554FF9 /* Patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
@@ -157,6 +160,7 @@
 		EA92A0B127E917F30060C5C8 /* Color+UIcolor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+UIcolor.swift"; sourceTree = "<group>"; };
 		EA99AAFC276CCF540083F0D1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EA9D400027DCF3D300776F14 /* UiView+Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiView+Controller.swift"; sourceTree = "<group>"; };
+		EA9F8B1827FBCA6700345E60 /* DonateMoneyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonateMoneyViewController.swift; sourceTree = "<group>"; };
 		EAA3C9D327DFB546007C5B47 /* SecondRequestBloodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondRequestBloodViewController.swift; sourceTree = "<group>"; };
 		EAA6BDDD27EBBD2E00FE1BCA /* CountryStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryStats.swift; sourceTree = "<group>"; };
 		EAAD8336276D12C700381854 /* DataPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPicker.swift; sourceTree = "<group>"; };
@@ -224,7 +228,7 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		EA01A0A527C96F1800BDCC00 /* BookingAppointment */ = {
+		EA01A0A527C96F1800BDCC00 /* Vaccine Requests */ = {
 			isa = PBXGroup;
 			children = (
 				EA34861827FB4F71004A6667 /* VaccineRequestViewController.swift */,
@@ -232,11 +236,8 @@
 				EA01A0A627C96F4E00BDCC00 /* NotFitAppointmentViewController.swift */,
 				EA01A0B227C984A600BDCC00 /* InformationCenterViewController.swift */,
 				EA01A0A827C96F6B00BDCC00 /* FitnessAppointmentViewController.swift */,
-				EA01A0B027C9838700BDCC00 /* BookingAppointmentViewController.swift */,
-				EAD3834B27D7BF3B00E87893 /* PickDateTimeViewController.swift */,
-				EAD3834F27D806C300E87893 /* SheetViewController.swift */,
 			);
-			path = BookingAppointment;
+			path = "Vaccine Requests";
 			sourceTree = "<group>";
 		};
 		EA064CAC27A473C600A06257 /* AppScreens */ = {
@@ -257,6 +258,7 @@
 				EA6E702027C5C3CE00F1E76C /* Almarai-Regular.ttf */,
 				EAD669EE27C6393C006221A2 /* Almarai-Bold.ttf */,
 				EA01A0AA27C9774100BDCC00 /* Poppins-Regular.ttf */,
+				EA17CD7B27FCFE4F00F356EE /* Almarai-ExtraBold.ttf */,
 				EA01A0AE27C9777100BDCC00 /* Poppins-Bold.ttf */,
 			);
 			path = Fonts;
@@ -298,6 +300,25 @@
 				EA92A0AF27E8A92E0060C5C8 /* InfoPlist.strings */,
 			);
 			path = Locolaizable;
+			sourceTree = "<group>";
+		};
+		EA9F8B1727FBC9A400345E60 /* Donation Requests */ = {
+			isa = PBXGroup;
+			children = (
+				EA4278A327B025A7002D444A /* RequestViewController.swift */,
+				EA1915F827DC27B100554FF9 /* DetailsCellViewController.swift */,
+			);
+			path = "Donation Requests";
+			sourceTree = "<group>";
+		};
+		EA9F8B1A27FBCB9200345E60 /* donate Blood */ = {
+			isa = PBXGroup;
+			children = (
+				EA01A0B027C9838700BDCC00 /* BookingAppointmentViewController.swift */,
+				EAD3834B27D7BF3B00E87893 /* PickDateTimeViewController.swift */,
+				EAD3834F27D806C300E87893 /* SheetViewController.swift */,
+			);
+			path = "donate Blood";
 			sourceTree = "<group>";
 		};
 		EABDBFCF276CE98900738EA3 /* InterfaceViewControllers */ = {
@@ -441,9 +462,10 @@
 			isa = PBXGroup;
 			children = (
 				EA8676CF27A6C70A00E95283 /* HamburgerViewController.swift */,
+				EA9F8B1727FBC9A400345E60 /* Donation Requests */,
 				EA4278A527B025BF002D444A /* DonationHistoryViewController.swift */,
-				EA4CA33627F9C782003873DC /* YourStoryViewController.swift */,
 				EA2A523727EA429300D92ED3 /* CoronaStatsViewController.swift */,
+				EA4CA33627F9C782003873DC /* YourStoryViewController.swift */,
 				EA4278A727B025D4002D444A /* HelpAndSupportViewController.swift */,
 				EA4278A927B025E9002D444A /* PrivacyViewController.swift */,
 				EA4278AB27B025FB002D444A /* SettingViewController.swift */,
@@ -477,24 +499,24 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
-		EAE615D927D962DB00A56C5A /* DonateBlood */ = {
+		EAE615D927D962DB00A56C5A /* Donate Blood&Money */ = {
 			isa = PBXGroup;
 			children = (
-				EA4278A327B025A7002D444A /* RequestViewController.swift */,
 				EA45BFA527C5996B00D56AEC /* DonateBloodViewController.swift */,
-				EA1915F827DC27B100554FF9 /* DetailsCellViewController.swift */,
+				EA9F8B1A27FBCB9200345E60 /* donate Blood */,
+				EA9F8B1827FBCA6700345E60 /* DonateMoneyViewController.swift */,
 			);
-			path = DonateBlood;
+			path = "Donate Blood&Money";
 			sourceTree = "<group>";
 		};
-		EAE615DA27D962EC00A56C5A /* RequestBlood */ = {
+		EAE615DA27D962EC00A56C5A /* OrderBlood */ = {
 			isa = PBXGroup;
 			children = (
 				EAD4B43B27F75CBC00C6924C /* AppBloodRequestViewController.swift */,
 				EA45BFA727C5997E00D56AEC /* RequestBloodViewController.swift */,
 				EAA3C9D327DFB546007C5B47 /* SecondRequestBloodViewController.swift */,
 			);
-			path = RequestBlood;
+			path = OrderBlood;
 			sourceTree = "<group>";
 		};
 		EAE615DB27D962F800A56C5A /* EducateYourself */ = {
@@ -512,9 +534,9 @@
 			children = (
 				EA064CAD27A4750600A06257 /* MainViewController.swift */,
 				EAC46E9C27C500FF00711C68 /* HamburgerMenu */,
-				EA01A0A527C96F1800BDCC00 /* BookingAppointment */,
-				EAE615D927D962DB00A56C5A /* DonateBlood */,
-				EAE615DA27D962EC00A56C5A /* RequestBlood */,
+				EA01A0A527C96F1800BDCC00 /* Vaccine Requests */,
+				EAE615D927D962DB00A56C5A /* Donate Blood&Money */,
+				EAE615DA27D962EC00A56C5A /* OrderBlood */,
 				EAE615DB27D962F800A56C5A /* EducateYourself */,
 			);
 			path = FirstScreens;
@@ -616,6 +638,7 @@
 			files = (
 				EAC252D3276A26F10033F96F /* LaunchScreen.storyboard in Resources */,
 				EA1831C827DA6C1000D9BA90 /* RequestsTableViewCell.xib in Resources */,
+				EA17CD7C27FCFE4F00F356EE /* Almarai-ExtraBold.ttf in Resources */,
 				EAD669EF27C6393C006221A2 /* Almarai-Bold.ttf in Resources */,
 				EA01A0AF27C9777100BDCC00 /* Poppins-Bold.ttf in Resources */,
 				EA4CA33B27F9D3F2003873DC /* YourStoryTableViewCell.xib in Resources */,
@@ -694,6 +717,7 @@
 				EABDBFCE276CE6B500738EA3 /* HelpViewController.swift in Sources */,
 				EA4CA33A27F9D3F2003873DC /* YourStoryTableViewCell.swift in Sources */,
 				EA4CA33727F9C782003873DC /* YourStoryViewController.swift in Sources */,
+				EA9F8B1927FBCA6800345E60 /* DonateMoneyViewController.swift in Sources */,
 				EAD3834C27D7BF3B00E87893 /* PickDateTimeViewController.swift in Sources */,
 				EA45BFA827C5997E00D56AEC /* RequestBloodViewController.swift in Sources */,
 				EAD4B43E27F7B7C400C6924C /* UiButtonTitleLbl+Font.swift in Sources */,

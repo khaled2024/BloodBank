@@ -7,8 +7,8 @@
 
 import UIKit
 import SafariServices
+
 class CoronaStatsViewController: UIViewController{
-    
     
     //MARK: - Outlets
     @IBOutlet weak var leftArrowBtnSite: UIButton!
@@ -73,16 +73,14 @@ class CoronaStatsViewController: UIViewController{
     var countryStatsArr: [CountryStats] = []
     var coronaAnalysis = CoronaAnalysis(cases: 0, recovered: 0, deaths: 0)
     
-    
     //MARK: - lifeCycles
     override  func viewDidLoad() {
-        setUpPicker()
-        self.getCoronaAnalysis()
-        self.getCountryStats()
+            setUpPicker()
+            self.getCoronaAnalysis()
+            self.getCountryStats()
     }
     override func viewWillAppear(_ animated: Bool) {
         self.setUpDesign()
-        
     }
     //MARK: - private func
     private func getCountryStats(){
@@ -193,7 +191,6 @@ extension CoronaStatsViewController: UIPickerViewDelegate, UIPickerViewDataSourc
         return countryArr[row]
     }
 }
-
 //MARK: - comments
 
 //        let currentLang = Locale.current.languageCode

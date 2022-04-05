@@ -25,6 +25,7 @@ class DetailsCellViewController: UIViewController, UISheetPresentationController
     @IBOutlet weak var timeDetailLbl: UILabel!
     @IBOutlet weak var addressDetailLbl: UILabel!
     @IBOutlet weak var bloodTypeDetailLbl: UILabel!
+    @IBOutlet weak var donorImageDetail: UIImageView!
     @IBOutlet weak var patientDetailLbl: UILabel!
     let customBtn = UserCustomBtn()
     @IBOutlet weak var sharingBtn: UIButton!
@@ -50,6 +51,7 @@ class DetailsCellViewController: UIViewController, UISheetPresentationController
         self.likeBtn.customTitleLbl(btn: likeBtn, text: "Like", fontSize: 20)
         self.commentBtn.customTitleLbl(btn: commentBtn, text: "Comment", fontSize: 20)
         self.shareBtn.customTitleLbl(btn: shareBtn, text: "Share", fontSize: 20)
+        self.donorImageDetail.layer.cornerRadius = self.donorImageDetail.frame.size.width / 2
     }
     private func setUpSheetPresentation(){
         sheetPresentationController.delegate = self
@@ -66,6 +68,7 @@ class DetailsCellViewController: UIViewController, UISheetPresentationController
         addressDetailLbl.text = myPatient.address
         timeDetailLbl.text = myPatient.time
         descriptionDetailLbl.text = myPatient.description
+        donorImageDetail.load(urlString: myPatient.donorImage!)
     }
     private func shareContent(){
         let activityController: UIActivityViewController

@@ -188,8 +188,8 @@
 /* Class = "UILabel"; text = "Blood Bank"; ObjectID = "Gm6-nR-zBE"; */
 "Gm6-nR-zBE.text" = "Blood Bank";
 
-/* Class = "UIButton"; configuration.title = "طلبات التبرع بالدم"; ObjectID = "HSg-ox-sYt"; */
-"HSg-ox-sYt.configuration.title" = "طلبات التبرع بالدم";
+///* Class = "UIButton"; configuration.title = "طلبات التبرع بالدم"; ObjectID = "HSg-ox-sYt"; */
+//"HSg-ox-sYt.configuration.title" = "طلبات التبرع بالدم";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "HSg-ox-sYt"; */
 "HSg-ox-sYt.normalTitle" = "Button";
@@ -419,8 +419,8 @@
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "c4R-ii-Hbt"; */
 "c4R-ii-Hbt.normalTitle" = "Button";
 
-/* Class = "UIButton"; configuration.title = "حجز موعد للتبرع"; ObjectID = "cEd-U1-UxZ"; */
-"cEd-U1-UxZ.configuration.title" = "حجز موعد للتبرع";
+///* Class = "UIButton"; configuration.title = "حجز موعد للتبرع"; ObjectID = "cEd-U1-UxZ"; */
+//"cEd-U1-UxZ.configuration.title" = "حجز موعد للتبرع";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "cEd-U1-UxZ"; */
 "cEd-U1-UxZ.normalTitle" = "Button";

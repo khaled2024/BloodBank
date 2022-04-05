@@ -9,6 +9,7 @@
 	</dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Almarai-ExtraBold</string>
 		<string>Poppins-Regular.ttf</string>
 		<string>Almarai-Regular.ttf</string>
 	</array>

@@ -89,6 +89,8 @@ You can get paid for donating blood in 25 countries around the world. Some count
 "Request Type" = "Request Type:";
 "Blood Type" = "Blood Type:";
 "Reason of the Request" = "Reason of the Request:";
+"City Title" = "What is Your Governorate?";
+"Town Title" = "What is Your City?";
 "Hospital Title" = "In which hospital do you need a blood donor?";
 "Notes Title" = "Write a message to the Donors.";
 "Next" = "Next";
@@ -113,3 +115,6 @@ You can get paid for donating blood in 25 countries around the world. Some count
 "Like" = "Like";
 "Comment" = "Comment";
 "Share" = "Share";
+
+// "Donate Money"
+"Donate Money" = "Donate Money";

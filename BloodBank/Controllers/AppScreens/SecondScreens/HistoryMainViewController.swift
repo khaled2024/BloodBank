@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NotificationsMainViewController: UIViewController {
+class HistoryMainViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()

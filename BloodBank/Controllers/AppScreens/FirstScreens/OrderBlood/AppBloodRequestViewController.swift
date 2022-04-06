@@ -42,7 +42,6 @@ class AppBloodRequestViewController: UIViewController{
     //notes
     @IBOutlet weak var notesTitleLbl: UILabel!
     @IBOutlet weak var notesFinishBtn: UIButton!
-    @IBOutlet weak var notesBackBtn: UIButton!
     
     // views& pickerViews
     @IBOutlet var mainView: UIView!
@@ -62,7 +61,9 @@ class AppBloodRequestViewController: UIViewController{
     
     @IBOutlet weak var townView: UIView!
     @IBOutlet weak var townPickerView: UIPickerView!
+    @IBOutlet weak var reguestPageControll: UIPageControl!
     //MARK: - vars
+    var myCurrentPage = 0
     var requestTypeResult = ""
     var bloodTypeResult = ""
     var reasonRequestResult = ""
@@ -137,6 +138,7 @@ class AppBloodRequestViewController: UIViewController{
         super.viewWillAppear(animated)
         self.setUpDesign()
         self.localizedItems()
+        self.reguestPageControll.numberOfPages = 7
     }
     //MARK: - private functions
     private func setUpDesign(){
@@ -165,7 +167,6 @@ class AppBloodRequestViewController: UIViewController{
         bloodBackBtn.customTitleLbl(btn: bloodBackBtn, text: "Back", fontSize: 18)
         reasonBackBtn.customTitleLbl(btn: reasonBackBtn, text: "Back", fontSize: 18)
         hospitalBackBtn.customTitleLbl(btn: hospitalBackBtn, text: "Back", fontSize: 18)
-        notesBackBtn.customTitleLbl(btn: notesBackBtn, text: "Back", fontSize: 18)
         cityNextBtn.customTitleLbl(btn: cityNextBtn, text: "Next", fontSize: 18)
         cityBackBtn.customTitleLbl(btn: cityBackBtn, text: "Back", fontSize: 18)
         townNextBtn.customTitleLbl(btn: townNextBtn, text: "Next", fontSize: 18)
@@ -193,6 +194,8 @@ class AppBloodRequestViewController: UIViewController{
         DispatchQueue.main.asyncAfter(deadline: .now()+0.75) {
             self.bloodTypeView.isHidden = false
             self.bloodTypeView.alpha = 1
+            self.myCurrentPage += 1
+            self.reguestPageControll.currentPage = self.myCurrentPage
         }
     }
     
@@ -202,12 +205,16 @@ class AppBloodRequestViewController: UIViewController{
         DispatchQueue.main.asyncAfter(deadline: .now()+0.75) {
             self.reasonRequestView.isHidden = false
             self.reasonRequestView.alpha = 1
+            self.myCurrentPage += 1
+            self.reguestPageControll.currentPage = self.myCurrentPage
         }
     }
     @IBAction func backBloodType(_ sender: UIButton) {
         self.animate(theview: self.bloodTypeView)
         self.requestTypeView.isHidden = false
         requestTypeView.alpha = 1
+        self.myCurrentPage -= 1
+        self.reguestPageControll.currentPage = self.myCurrentPage
     }
     
     //reason
@@ -216,6 +223,8 @@ class AppBloodRequestViewController: UIViewController{
         DispatchQueue.main.asyncAfter(deadline: .now()+0.75) {
             self.cityView.isHidden = false
             self.cityView.alpha = 1
+            self.myCurrentPage += 1
+            self.reguestPageControll.currentPage = self.myCurrentPage
         }
     }
     
@@ -224,6 +233,8 @@ class AppBloodRequestViewController: UIViewController{
         bloodTypeView.isHidden = false
         requestTypeView.isHidden = true
         self.bloodTypeView.alpha = 1
+        self.myCurrentPage -= 1
+        self.reguestPageControll.currentPage = self.myCurrentPage
     }
     // city
     
@@ -232,6 +243,8 @@ class AppBloodRequestViewController: UIViewController{
         DispatchQueue.main.asyncAfter(deadline: .now()+0.75) {
             self.townView.isHidden = false
             self.townView.alpha = 1
+            self.myCurrentPage += 1
+            self.reguestPageControll.currentPage = self.myCurrentPage
         }
     }
     @IBAction func cityBackBtnTapped(_ sender: UIButton) {
@@ -240,6 +253,8 @@ class AppBloodRequestViewController: UIViewController{
         bloodTypeView.isHidden = true
         requestTypeView.isHidden = true
         self.reasonRequestView.alpha = 1
+        self.myCurrentPage -= 1
+        self.reguestPageControll.currentPage = self.myCurrentPage
     }
     //town
     
@@ -248,6 +263,8 @@ class AppBloodRequestViewController: UIViewController{
         DispatchQueue.main.asyncAfter(deadline: .now()+0.75) {
             self.hospitalRequestView.isHidden = false
             self.hospitalRequestView.alpha = 1
+            self.myCurrentPage += 1
+            self.reguestPageControll.currentPage = self.myCurrentPage
         }
     }
     
@@ -258,6 +275,8 @@ class AppBloodRequestViewController: UIViewController{
         bloodTypeView.isHidden = true
         requestTypeView.isHidden = true
         self.cityView.alpha = 1
+        self.myCurrentPage -= 1
+        self.reguestPageControll.currentPage = self.myCurrentPage
     }
     // hospital
     
@@ -266,7 +285,8 @@ class AppBloodRequestViewController: UIViewController{
         DispatchQueue.main.asyncAfter(deadline: .now()+0.75) {
             self.notesView.isHidden = false
             self.notesView.alpha = 1
-            
+            self.myCurrentPage += 1
+            self.reguestPageControll.currentPage = self.myCurrentPage
         }
     }
     @IBAction func hospitalBackTapped(_ sender: UIButton) {
@@ -277,6 +297,8 @@ class AppBloodRequestViewController: UIViewController{
         bloodTypeView.isHidden = true
         requestTypeView.isHidden = true
         self.townView.alpha = 1
+        self.myCurrentPage -= 1
+        self.reguestPageControll.currentPage = self.myCurrentPage
     }
     //notes
     @IBAction func finishNotesTapped(_ sender: UIButton) {
@@ -290,16 +312,7 @@ class AppBloodRequestViewController: UIViewController{
         }
     }
     
-    @IBAction func notesBackTapped(_ sender: UIButton) {
-        animate(theview: notesView)
-        reasonRequestView.isHidden = true
-        bloodTypeView.isHidden = true
-        requestTypeView.isHidden = true
-        cityView.isHidden = true
-        townView.isHidden = true
-        hospitalRequestView.isHidden = false
-        self.hospitalRequestView.alpha = 1
-    }
+
 }
 //MARK: - UIPickerViewDelegate
 extension AppBloodRequestViewController: UIPickerViewDelegate, UIPickerViewDataSource {

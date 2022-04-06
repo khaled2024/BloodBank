@@ -15,6 +15,7 @@ protocol opacityDelegate {
 
 class HamburgerViewController: UIViewController {
     //MARK: - outlets
+    @IBOutlet var mainHumbergerView: UIView!
     @IBOutlet weak var humburgerView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var appointmentBtn: UIButton!
@@ -42,6 +43,7 @@ class HamburgerViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         setUpLocalizationLabel()
+        mainHumbergerView.semanticContentAttribute = .forceLeftToRight
     }
     //MARK: - private functions
     private func setUpSwitch(){

@@ -123,8 +123,6 @@ class CoronaStatsViewController: UIViewController{
         customView.customView(theView: countrycriticalView)
         customView.customView(theView: countryActiveView)
         
-        
-        
         staySafeLbl.customLblFont(lbl: staySafeLbl, fontSize: 20, text: "Stay Safe")
         covid19Lbl.customLblFont(lbl: covid19Lbl, fontSize: 23, text: "COVID-19 Live Update")
         globalUpdateLbl.customLblFont(lbl: globalUpdateLbl, fontSize: 20, text: "global Update")
@@ -165,6 +163,7 @@ class CoronaStatsViewController: UIViewController{
             self.activeLblNum.text = "\(self.countryStatsArr[row].active?.formatUsingAbbrevation() ?? "") +"
         }
     }
+    //MARK: - Actions
     private func loadSafariSite(){
         
         guard let url = URL(string: URLS.urlSite) else{return}

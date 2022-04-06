@@ -73,6 +73,12 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
         animateViews()
         animateImages()
         setUpLocalized()
+        mainView.semanticContentAttribute = .forceLeftToRight
+//        testView.semanticContentAttribute = .forceLeftToRight
+//        humbergerView.semanticContentAttribute = .forceLeftToRight
+//        backViewForHumburger.semanticContentAttribute = .forceLeftToRight
+//        scrollView.semanticContentAttribute = .forceLeftToRight
+        
     }
     
     //MARK: -  private functions

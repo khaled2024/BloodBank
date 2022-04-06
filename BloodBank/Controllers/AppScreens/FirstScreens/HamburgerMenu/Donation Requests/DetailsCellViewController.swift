@@ -48,9 +48,9 @@ class DetailsCellViewController: UIViewController, UISheetPresentationController
     
     //MARK: - Private func
     private func setUpDesign(){
-        self.likeBtn.customTitleLbl(btn: likeBtn, text: "Like", fontSize: 20)
-        self.commentBtn.customTitleLbl(btn: commentBtn, text: "Comment", fontSize: 20)
-        self.shareBtn.customTitleLbl(btn: shareBtn, text: "Share", fontSize: 20)
+        self.likeBtn.customTitleLbl(btn: likeBtn, text: "Like", fontSize: 18)
+        self.commentBtn.customTitleLbl(btn: commentBtn, text: "Comment", fontSize: 18)
+        self.shareBtn.customTitleLbl(btn: shareBtn, text: "Share", fontSize: 18)
         self.donorImageDetail.layer.cornerRadius = self.donorImageDetail.frame.size.width / 2
     }
     private func setUpSheetPresentation(){

@@ -36,9 +36,14 @@ class DonorViewController: UIViewController {
     @IBOutlet weak var birthdateTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
     var isEdited = false
+    let goverArr = Arrays.arrayOfGover
+    let citiesArr = Arrays.arrayOfCities
+    let arrBlood = Arrays.arrayOfBloodType
+    let arrGender = Arrays.arrayOfGender
     //MARK: - lifeCycles
     override func viewDidLoad() {
         super.viewDidLoad()
+        serUpPickerViews()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -47,11 +52,33 @@ class DonorViewController: UIViewController {
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-            super.viewDidLayoutSubviews()
-            gradientView.roundedCornerView(corners: [.bottomLeft , .bottomRight], radius: gradientView.frame.size.width/6)
+        super.viewDidLayoutSubviews()
+        gradientView.roundedCornerView(corners: [.bottomLeft , .bottomRight], radius: gradientView.frame.size.width/6)
     }
     
     //MARK: - private func
+    func serUpPickerViews(){
+        let goverPickerView = UIPickerView()
+        let citiesPickerView = UIPickerView()
+        let bloodPickerView = UIPickerView()
+        let genderPickerView = UIPickerView()
+        gavernrateTF.inputView = goverPickerView
+        cityTF.inputView = citiesPickerView
+        bloodTypeTF.inputView = bloodPickerView
+        genderTF.inputView = genderPickerView
+        goverPickerView.tag = 0
+        citiesPickerView.tag = 1
+        genderPickerView.tag = 2
+        bloodPickerView.tag = 3
+        goverPickerView.delegate = self
+        goverPickerView.dataSource = self
+        citiesPickerView.delegate = self
+        citiesPickerView.dataSource = self
+        genderPickerView.delegate = self
+        genderPickerView.dataSource = self
+        bloodPickerView.delegate = self
+        bloodPickerView.dataSource = self
+    }
     private func setUpDesign(){
         self.navigationController?.navigationBar.backgroundColor = .clear
         gradient.setGradientBackground(colorTop: #colorLiteral(red: 0.9738656878, green: 0.4654597044, blue: 0.4720987082, alpha: 1), colorBottom: #colorLiteral(red: 0.895557344, green: 0.1643874943, blue: 0.328651458, alpha: 1), view: gradientView)
@@ -83,10 +110,10 @@ class DonorViewController: UIViewController {
         let image = UIImage(named: "blood-donation")
         activityController = UIActivityViewController(activityItems: [defaultText , image!], applicationActivities: nil)
         self.present(activityController, animated: true, completion: nil)
-       
+        
         
     }
-
+    
     //MARK: - Actions
     
     @IBAction func heartBtnTapped(_ sender: UIButton) {
@@ -108,19 +135,66 @@ class DonorViewController: UIViewController {
             self.makeTFInteract(result: true)
             self.editBtn.image = UIImage(systemName: "checkmark")
             self.donorNameTF.becomeFirstResponder()
-           
+            self.passwordTF.isSecureTextEntry = false
+            
         }else{
             isEdited = false
             self.editBtn.image = UIImage(systemName: "square.and.pencil")
             self.makeTFInteract(result: false)
             self.theNameLbl.text = "\(self.donorNameTF.text!) \(self.familyNameTF.text!)"
             self.addressLbl.text = "\(self.gavernrateTF.text!)/\(self.cityTF.text!)"
-            
+            self.passwordTF.isSecureTextEntry = true
         }
-            
-        }
-        
+    }
+}
+//MARK: - Extension (UIPickerViewDelegate):-
+extension DonorViewController: UIPickerViewDelegate,UIPickerViewDataSource{
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
     
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        switch pickerView.tag {
+        case 0:
+            return goverArr.count
+        case 1:
+            return citiesArr.count
+        case 2:
+            return arrGender.count
+        case 3:
+            return arrBlood.count
+        default:
+            return 0
+        }
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        switch pickerView.tag {
+        case 0:
+            gavernrateTF.text = goverArr[row]
+        case 1:
+            cityTF.text = citiesArr[row]
+        case 2:
+            genderTF.text = arrGender[row]
+        case 3:
+            bloodTypeTF.text = arrBlood[row]
+        default:
+            return
+        }
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        switch pickerView.tag {
+        case 0:
+            return goverArr[row]
+        case 1:
+            return citiesArr[row]
+        case 2:
+            return arrGender[row]
+        case 3:
+            return arrBlood[row]
+        default:
+            return ""
+        }
+    }
 }
 //MARK: - comments
 

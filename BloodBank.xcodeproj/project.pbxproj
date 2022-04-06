@@ -93,7 +93,7 @@
 		EAD4B43E27F7B7C400C6924C /* UiButtonTitleLbl+Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B43D27F7B7C400C6924C /* UiButtonTitleLbl+Font.swift */; };
 		EAD4B44027F7CB7C00C6924C /* ValidationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B43F27F7CB7C00C6924C /* ValidationManager.swift */; };
 		EAD669EF27C6393C006221A2 /* Almarai-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAD669EE27C6393C006221A2 /* Almarai-Bold.ttf */; };
-		EAD669F127C63A72006221A2 /* NotificationsMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD669F027C63A72006221A2 /* NotificationsMainViewController.swift */; };
+		EAD669F127C63A72006221A2 /* HistoryMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD669F027C63A72006221A2 /* HistoryMainViewController.swift */; };
 		EAD669F327C63F50006221A2 /* DonorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD669F227C63F50006221A2 /* DonorViewController.swift */; };
 		EAD7D59227F5B62C003E81D3 /* UILable+Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD7D59127F5B62C003E81D3 /* UILable+Font.swift */; };
 		EAE3C90B27B12C6300F42D16 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE3C90A27B12C6300F42D16 /* MapViewController.swift */; };
@@ -193,7 +193,7 @@
 		EAD4B43D27F7B7C400C6924C /* UiButtonTitleLbl+Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiButtonTitleLbl+Font.swift"; sourceTree = "<group>"; };
 		EAD4B43F27F7CB7C00C6924C /* ValidationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationManager.swift; sourceTree = "<group>"; };
 		EAD669EE27C6393C006221A2 /* Almarai-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Almarai-Bold.ttf"; sourceTree = "<group>"; };
-		EAD669F027C63A72006221A2 /* NotificationsMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsMainViewController.swift; sourceTree = "<group>"; };
+		EAD669F027C63A72006221A2 /* HistoryMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryMainViewController.swift; sourceTree = "<group>"; };
 		EAD669F227C63F50006221A2 /* DonorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonorViewController.swift; sourceTree = "<group>"; };
 		EAD7D59127F5B62C003E81D3 /* UILable+Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILable+Font.swift"; sourceTree = "<group>"; };
 		EAE3C90A27B12C6300F42D16 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -545,7 +545,7 @@
 		EAEF17A627A48B9B0002FFA5 /* SecondScreens */ = {
 			isa = PBXGroup;
 			children = (
-				EAD669F027C63A72006221A2 /* NotificationsMainViewController.swift */,
+				EAD669F027C63A72006221A2 /* HistoryMainViewController.swift */,
 			);
 			path = SecondScreens;
 			sourceTree = "<group>";
@@ -741,7 +741,7 @@
 				EACC013D27A43A5A00FFB92B /* UserCustomBtn.swift in Sources */,
 				EA4278A627B025BF002D444A /* DonationHistoryViewController.swift in Sources */,
 				EAC252C7276A26F00033F96F /* AppDelegate.swift in Sources */,
-				EAD669F127C63A72006221A2 /* NotificationsMainViewController.swift in Sources */,
+				EAD669F127C63A72006221A2 /* HistoryMainViewController.swift in Sources */,
 				EA66461A27E2BAB1001A9E12 /* CustomTF.swift in Sources */,
 				EA45BFAE27C5AC4800D56AEC /* NavigationBar.swift in Sources */,
 				EAD3835027D806C300E87893 /* SheetViewController.swift in Sources */,

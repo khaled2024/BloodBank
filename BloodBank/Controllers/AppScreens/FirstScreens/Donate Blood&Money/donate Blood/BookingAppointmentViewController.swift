@@ -74,7 +74,7 @@ class BookingAppointmentViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = false
         
         self.navigationItem.hidesBackButton = true
-        let newBackBtnItem = UIBarButtonItem(image: UIImage(named: "exitMap3"), style: .plain, target: self, action: #selector(backBtn))
+        let newBackBtnItem = UIBarButtonItem(image: UIImage(named: "exitMap"), style: .plain, target: self, action: #selector(backBtn))
         self.navigationItem.rightBarButtonItem = newBackBtnItem
     }
     @objc func backBtn(sender: UIBarButtonItem){

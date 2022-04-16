@@ -1,0 +1,1014 @@
+
+/* Class = "UILabel"; text = "احجز موعد للتبرع بالدم لمساعده شخص ما ان احتاج"; ObjectID = "04X-nb-gLU"; */
+"04X-nb-gLU.text" = "احجز موعد للتبرع بالدم لمساعده شخص ما ان احتاج";
+
+/* Class = "UILabel"; text = "population"; ObjectID = "0i8-d5-Ji0"; */
+"0i8-d5-Ji0.text" = "population";
+
+/* Class = "UITextField"; placeholder = "البريد الاكتروني"; ObjectID = "0n8-0e-bnH"; */
+"0n8-0e-bnH.placeholder" = "البريد الاكتروني";
+
+/* Class = "UITextField"; text = "k@gmail.com"; ObjectID = "0n8-0e-bnH"; */
+"0n8-0e-bnH.text" = "k@gmail.com";
+
+/* Class = "UIButton"; configuration.title = "لا"; ObjectID = "1OM-98-vmy"; */
+"1OM-98-vmy.configuration.title" = "لا";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "1OM-98-vmy"; */
+"1OM-98-vmy.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "هل تبرعت بالدم في آخر 56 يومًا؟"; ObjectID = "1Q7-CC-hrp"; */
+"1Q7-CC-hrp.text" = "هل تبرعت بالدم في آخر 56 يومًا؟";
+
+/* Class = "UILabel"; text = "---"; ObjectID = "1bH-OE-FdK"; */
+"1bH-OE-FdK.text" = "---";
+
+/* Class = "UILabel"; text = "هنا اسم المتبرع بالدم"; ObjectID = "1m6-ym-YAF"; */
+"1m6-ym-YAF.text" = "هنا اسم المتبرع بالدم";
+
+/* Class = "UIButton"; configuration.title = "احصائيات كورونا"; ObjectID = "1qC-rE-SED"; */
+"1qC-rE-SED.configuration.title" = "احصائيات كورونا";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "1qC-rE-SED"; */
+"1qC-rE-SED.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "اتبرع الان"; ObjectID = "2Cb-AK-j7O"; */
+"2Cb-AK-j7O.text" = "اتبرع الان";
+
+/* Class = "UILabel"; text = "ادخل بيانات المريض"; ObjectID = "2ap-6A-CER"; */
+"2ap-6A-CER.text" = "ادخل بيانات المريض";
+
+/* Class = "UINavigationItem"; title = "المساعده"; ObjectID = "34N-aD-Fj5"; */
+"34N-aD-Fj5.title" = "المساعده";
+
+/* Class = "UILabel"; text = "خالد حسين احمد خليفه"; ObjectID = "3A5-05-8Ko"; */
+"3A5-05-8Ko.text" = "خالد حسين احمد خليفه";
+
+/* Class = "UILabel"; text = "رقم الموبايل الاول"; ObjectID = "3AX-Hq-AzR"; */
+"3AX-Hq-AzR.text" = "رقم الموبايل الاول";
+
+/* Class = "UIButton"; configuration.title = "تحديد الوجهه"; ObjectID = "3FD-UP-TdA"; */
+"3FD-UP-TdA.configuration.title" = "تحديد الوجهه";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "3FD-UP-TdA"; */
+"3FD-UP-TdA.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "٤ وحدات"; ObjectID = "3Ki-ac-J8n"; */
+"3Ki-ac-J8n.text" = "٤ وحدات";
+
+/* Class = "UILabel"; text = "Create new blood orders matching your needs within seconds."; ObjectID = "3Ws-yN-1Ka"; */
+"3Ws-yN-1Ka.text" = "Create new blood orders matching your needs within seconds.";
+
+/* Class = "UIButton"; configuration.title = "نعم"; ObjectID = "3n8-M5-tTZ"; */
+"3n8-M5-tTZ.configuration.title" = "نعم";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "3n8-M5-tTZ"; */
+"3n8-M5-tTZ.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "لا"; ObjectID = "40a-3i-ko0"; */
+"40a-3i-ko0.configuration.title" = "لا";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "40a-3i-ko0"; */
+"40a-3i-ko0.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "خالد حسين احمد خليفه"; ObjectID = "41c-1m-D7W"; */
+"41c-1m-D7W.text" = "خالد حسين احمد خليفه";
+
+/* Class = "UILabel"; text = "تم حجز ميعاد التبرع بالدم بنجاح"; ObjectID = "4pd-ku-Ohe"; */
+"4pd-ku-Ohe.text" = "تم حجز ميعاد التبرع بالدم بنجاح";
+
+/* Class = "UIButton"; configuration.title = "Back"; ObjectID = "54F-tC-qjp"; */
+"54F-tC-qjp.configuration.title" = "Back";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "54F-tC-qjp"; */
+"54F-tC-qjp.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "المساعده ف كيفيه تسجيل الدخول وانشاء حساب جديد!"; ObjectID = "57M-jx-wq5"; */
+"57M-jx-wq5.configuration.title" = "المساعده ف كيفيه تسجيل الدخول وانشاء حساب جديد!";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "57M-jx-wq5"; */
+"57M-jx-wq5.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "5Mg-dX-gTq"; */
+"5Mg-dX-gTq.text" = "Title";
+
+/* Class = "UILabel"; text = "Recovered"; ObjectID = "5Zd-kO-idx"; */
+"5Zd-kO-idx.text" = "Recovered";
+
+/* Class = "UILabel"; text = "B+"; ObjectID = "5aV-Bc-ryu"; */
+"5aV-Bc-ryu.text" = "B+";
+
+/* Class = "UILabel"; text = "Stay Safe."; ObjectID = "5cV-fF-1xx"; */
+"5cV-fF-1xx.text" = "Stay Safe.";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "5cz-PQ-8xi"; */
+"5cz-PQ-8xi.title" = " ";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "5lx-nt-Mmf"; */
+"5lx-nt-Mmf.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "هل حصلت على وشم أو ثقب في آخر 3 أشهر؟"; ObjectID = "5vR-jm-Afe"; */
+"5vR-jm-Afe.text" = "هل حصلت على وشم أو ثقب في آخر 3 أشهر؟";
+
+/* Class = "UILabel"; text = "فصيله A+"; ObjectID = "66Y-zf-Zmu"; */
+"66Y-zf-Zmu.text" = "فصيله A+";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "6FE-si-UQa"; */
+"6FE-si-UQa.title" = " ";
+
+/* Class = "UITextField"; placeholder = "اسم العائله"; ObjectID = "6JG-BV-5b9"; */
+"6JG-BV-5b9.placeholder" = "اسم العائله";
+
+/* Class = "UITextField"; text = "حسين"; ObjectID = "6JG-BV-5b9"; */
+"6JG-BV-5b9.text" = "حسين";
+
+/* Class = "UILabel"; text = "---"; ObjectID = "6Vv-j0-uO2"; */
+"6Vv-j0-uO2.text" = "---";
+
+/* Class = "UITextField"; placeholder = "اسم العائله"; ObjectID = "6mJ-8b-rvz"; */
+"6mJ-8b-rvz.placeholder" = "اسم العائله";
+
+/* Class = "UILabel"; text = "Reason of the Request:"; ObjectID = "6xk-Mz-rF0"; */
+"6xk-Mz-rF0.text" = "Reason of the Request:";
+
+/* Class = "UILabel"; text = "اسم العائله"; ObjectID = "72Q-AC-cIj"; */
+"72Q-AC-cIj.text" = "اسم العائله";
+
+/* Class = "UIButton"; configuration.title = "٢٠ جنيهاً مصريا"; ObjectID = "7Oj-Mu-WSL"; */
+"7Oj-Mu-WSL.configuration.title" = "٢٠ جنيهاً مصريا";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "7Oj-Mu-WSL"; */
+"7Oj-Mu-WSL.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "التبرعات السابقه"; ObjectID = "7Sp-B0-GzW"; */
+"7Sp-B0-GzW.configuration.title" = "التبرعات السابقه";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "7Sp-B0-GzW"; */
+"7Sp-B0-GzW.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = " الرقم القومي"; ObjectID = "7UN-cb-Yjx"; */
+"7UN-cb-Yjx.placeholder" = " الرقم القومي";
+
+/* Class = "UIButton"; configuration.title = "انشاء حساب جديد"; ObjectID = "7V0-km-H6i"; */
+"7V0-km-H6i.configuration.title" = "انشاء حساب جديد";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "7V0-km-H6i"; */
+"7V0-km-H6i.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "تاكيد كلمه المرور"; ObjectID = "83Y-jX-F6k"; */
+"83Y-jX-F6k.placeholder" = "تاكيد كلمه المرور";
+
+/* Class = "UILabel"; text = "We're Sorry"; ObjectID = "8Ys-8a-Gn5"; */
+"8Ys-8a-Gn5.text" = "We're Sorry";
+
+/* Class = "UITabBarItem"; title = "Home"; ObjectID = "8ha-7b-1hm"; */
+"8ha-7b-1hm.title" = "Home";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "92N-1b-TV6"; */
+"92N-1b-TV6.title" = " ";
+
+/* Class = "UILabel"; text = "معمل النور.السنطه.طنطا.الغربيه"; ObjectID = "950-eR-GZQ"; */
+"950-eR-GZQ.text" = "معمل النور.السنطه.طنطا.الغربيه";
+
+/* Class = "UILabel"; text = "Blood Request:"; ObjectID = "9Ew-GY-Jf7"; */
+"9Ew-GY-Jf7.text" = "Blood Request:";
+
+/* Class = "UILabel"; text = "البريد الاكتروني"; ObjectID = "9JB-C4-e2r"; */
+"9JB-C4-e2r.text" = "البريد الاكتروني";
+
+/* Class = "UIButton"; configuration.title = "انهاء"; ObjectID = "9hp-89-df5"; */
+"9hp-89-df5.configuration.title" = "انهاء";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "9hp-89-df5"; */
+"9hp-89-df5.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Cases"; ObjectID = "AH2-a5-lXd"; */
+"AH2-a5-lXd.text" = "Cases";
+
+/* Class = "UILabel"; text = "عيد الميلاد"; ObjectID = "Apf-Xr-cyR"; */
+"Apf-Xr-cyR.text" = "عيد الميلاد";
+
+/* Class = "UIButton"; configuration.title = "سياسه الخصوصيه"; ObjectID = "B7g-nW-3vk"; */
+"B7g-nW-3vk.configuration.title" = "سياسه الخصوصيه";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "B7g-nW-3vk"; */
+"B7g-nW-3vk.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "استمرار"; ObjectID = "B8S-Gw-x5E"; */
+"B8S-Gw-x5E.configuration.title" = "استمرار";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "B8S-Gw-x5E"; */
+"B8S-Gw-x5E.normalTitle" = "Button";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "BYS-Qk-8VX"; */
+"BYS-Qk-8VX.title" = " ";
+
+/* Class = "UIButton"; configuration.title = "استمرار"; ObjectID = "BiG-Gw-jia"; */
+"BiG-Gw-jia.configuration.title" = "استمرار";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "BiG-Gw-jia"; */
+"BiG-Gw-jia.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Bwn alaresh str, cairo "; ObjectID = "BnF-lv-0m2"; */
+"BnF-lv-0m2.text" = "Bwn alaresh str, cairo ";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Bxv-mB-Xol"; */
+"Bxv-mB-Xol.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "الرقم السري"; ObjectID = "CBZ-9u-wDF"; */
+"CBZ-9u-wDF.text" = "الرقم السري";
+
+/* Class = "UIButton"; configuration.title = "Back"; ObjectID = "CJe-Aa-Kj2"; */
+"CJe-Aa-Kj2.configuration.title" = "Back";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "CJe-Aa-Kj2"; */
+"CJe-Aa-Kj2.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "ادخل كلمه المرور"; ObjectID = "Ck2-Au-8U2"; */
+"Ck2-Au-8U2.placeholder" = "ادخل كلمه المرور";
+
+/* Class = "UITextField"; text = "111111111"; ObjectID = "Ck2-Au-8U2"; */
+"Ck2-Au-8U2.text" = "111111111";
+
+/* Class = "UILabel"; text = "Recovered"; ObjectID = "Cxm-Ay-5JF"; */
+"Cxm-Ay-5JF.text" = "Recovered";
+
+/* Class = "UIButton"; configuration.title = "المساعده و الدعم"; ObjectID = "Dtw-gN-Z2U"; */
+"Dtw-gN-Z2U.configuration.title" = "المساعده و الدعم";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Dtw-gN-Z2U"; */
+"Dtw-gN-Z2U.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "فصيله الدم"; ObjectID = "ELk-J8-fOM"; */
+"ELk-J8-fOM.placeholder" = "فصيله الدم";
+
+/* Class = "UITextField"; text = "A+"; ObjectID = "ELk-J8-fOM"; */
+"ELk-J8-fOM.text" = "A+";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "ERQ-yF-WHR"; */
+"ERQ-yF-WHR.title" = " ";
+
+/* Class = "UILabel"; text = "Deaths"; ObjectID = "EXH-EC-1M8"; */
+"EXH-EC-1M8.text" = "Deaths";
+
+/* Class = "UILabel"; text = "المحافظه"; ObjectID = "Edh-6H-4cT"; */
+"Edh-6H-4cT.text" = "المحافظه";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "EqP-Um-gGO"; */
+"EqP-Um-gGO.title" = " ";
+
+/* Class = "UIButton"; configuration.title = "اختيار الوقت والتاريخ"; ObjectID = "F7X-7j-bNi"; */
+"F7X-7j-bNi.configuration.title" = "اختيار الوقت والتاريخ";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "F7X-7j-bNi"; */
+"F7X-7j-bNi.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "هل تزن 45 كجم على الأقل؟"; ObjectID = "FWN-o8-eAT"; */
+"FWN-o8-eAT.text" = "هل تزن 45 كجم على الأقل؟";
+
+/* Class = "UIButton"; configuration.title = "طلبات التبرع"; ObjectID = "FfB-Uq-KVo"; */
+"FfB-Uq-KVo.configuration.title" = "طلبات التبرع";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "FfB-Uq-KVo"; */
+"FfB-Uq-KVo.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "مركز المعلومات"; ObjectID = "GiQ-yO-k6L"; */
+"GiQ-yO-k6L.configuration.title" = "مركز المعلومات";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "GiQ-yO-k6L"; */
+"GiQ-yO-k6L.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Blood Bank"; ObjectID = "Gm6-nR-zBE"; */
+"Gm6-nR-zBE.text" = "Blood Bank";
+
+/* Class = "UIButton"; configuration.title = "التبرع بالاموال"; ObjectID = "HSg-ox-sYt"; */
+"HSg-ox-sYt.configuration.title" = "التبرع بالاموال";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "HSg-ox-sYt"; */
+"HSg-ox-sYt.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Hpy-dG-9WB"; */
+"Hpy-dG-9WB.normalTitle" = "Button";
+
+/* Class = "UINavigationItem"; title = "الموقع"; ObjectID = "IIK-EB-CD2"; */
+"IIK-EB-CD2.title" = "الموقع";
+
+/* Class = "UITextField"; placeholder = "الرقم القومي"; ObjectID = "IOW-Jm-KVP"; */
+"IOW-Jm-KVP.placeholder" = "الرقم القومي";
+
+/* Class = "UITextField"; text = "30008081600452"; ObjectID = "IOW-Jm-KVP"; */
+"IOW-Jm-KVP.text" = "30008081600452";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Ik8-5A-nHe"; */
+"Ik8-5A-nHe.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "رقم الموبايل الاول"; ObjectID = "JAm-aY-FS0"; */
+"JAm-aY-FS0.placeholder" = "رقم الموبايل الاول";
+
+/* Class = "UITextField"; text = "01019762944"; ObjectID = "JAm-aY-FS0"; */
+"JAm-aY-FS0.text" = "01019762944";
+
+/* Class = "UILabel"; text = "Blood Bank"; ObjectID = "JEn-W3-Siy"; */
+"JEn-W3-Siy.text" = "Blood Bank";
+
+/* Class = "UILabel"; text = "دعنا نعرف معلومات قليله عن الشخص المحتاج للدم."; ObjectID = "JJL-Ay-MKA"; */
+"JJL-Ay-MKA.text" = "دعنا نعرف معلومات قليله عن الشخص المحتاج للدم.";
+
+/* Class = "UITextField"; placeholder = "الجنس"; ObjectID = "JTa-g3-ysB"; */
+"JTa-g3-ysB.placeholder" = "الجنس";
+
+/* Class = "UITextField"; text = "Male"; ObjectID = "JTa-g3-ysB"; */
+"JTa-g3-ysB.text" = "Male";
+
+/* Class = "UITextField"; placeholder = "ادخل البريد الاكتروني"; ObjectID = "Jg1-YX-JbZ"; */
+"Jg1-YX-JbZ.placeholder" = "ادخل البريد الاكتروني";
+
+/* Class = "UITextField"; text = "k@gmail.com"; ObjectID = "Jg1-YX-JbZ"; */
+"Jg1-YX-JbZ.text" = "k@gmail.com";
+
+/* Class = "UIButton"; configuration.title = "Next"; ObjectID = "Jiw-5b-sqK"; */
+"Jiw-5b-sqK.configuration.title" = "Next";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Jiw-5b-sqK"; */
+"Jiw-5b-sqK.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "JoT-zV-erU"; */
+"JoT-zV-erU.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Comment"; ObjectID = "KFI-ZF-WYP"; */
+"KFI-ZF-WYP.configuration.title" = "Comment";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "KFI-ZF-WYP"; */
+"KFI-ZF-WYP.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "الاسم الاول"; ObjectID = "LI5-cw-wF4"; */
+"LI5-cw-wF4.placeholder" = "الاسم الاول";
+
+/* Class = "UITextField"; text = "خالد "; ObjectID = "LI5-cw-wF4"; */
+"LI5-cw-wF4.text" = "خالد ";
+
+/* Class = "UILabel"; text = "هل أنت بصحة جيدة وتشعر بتحسن؟"; ObjectID = "LdU-IX-tVS"; */
+"LdU-IX-tVS.text" = "هل أنت بصحة جيدة وتشعر بتحسن؟";
+
+/* Class = "UIButton"; configuration.title = "لا"; ObjectID = "Lnj-mQ-dfU"; */
+"Lnj-mQ-dfU.configuration.title" = "لا";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Lnj-mQ-dfU"; */
+"Lnj-mQ-dfU.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "LoX-gd-QeX"; */
+"LoX-gd-QeX.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Request Type:"; ObjectID = "LtK-BY-rTv"; */
+"LtK-BY-rTv.text" = "Request Type:";
+
+/* Class = "UIButton"; configuration.title = "٤٠ جنيهاً مصريا"; ObjectID = "M4l-Bf-lQc"; */
+"M4l-Bf-lQc.configuration.title" = "٤٠ جنيهاً مصريا";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "M4l-Bf-lQc"; */
+"M4l-Bf-lQc.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Next"; ObjectID = "M8Q-7k-f5U"; */
+"M8Q-7k-f5U.configuration.title" = "Next";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "M8Q-7k-f5U"; */
+"M8Q-7k-f5U.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "MSa-DP-eSa"; */
+"MSa-DP-eSa.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "Country"; ObjectID = "MV4-1H-Uw6"; */
+"MV4-1H-Uw6.placeholder" = "Country";
+
+/* Class = "UILabel"; text = "Bwn alaresh str, cairo "; ObjectID = "MhK-gA-c4S"; */
+"MhK-gA-c4S.text" = "Bwn alaresh str, cairo ";
+
+/* Class = "UIButton"; configuration.title = "تحديد الوجهه"; ObjectID = "Mv0-pz-gz3"; */
+"Mv0-pz-gz3.configuration.title" = "تحديد الوجهه";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Mv0-pz-gz3"; */
+"Mv0-pz-gz3.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "لا"; ObjectID = "N1q-2E-cJ7"; */
+"N1q-2E-cJ7.configuration.title" = "لا";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "N1q-2E-cJ7"; */
+"N1q-2E-cJ7.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "في اي وقت بحاجه للدم؟"; ObjectID = "N8L-P9-3TA"; */
+"N8L-P9-3TA.text" = "في اي وقت بحاجه للدم؟";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "NIc-h9-LBW"; */
+"NIc-h9-LBW.text" = "Title";
+
+/* Class = "UINavigationItem"; title = " انشاء حساب جديد"; ObjectID = "NbT-PL-XW4"; */
+"NbT-PL-XW4.title" = " انشاء حساب جديد";
+
+/* Class = "UILabel"; text = "Deaths"; ObjectID = "NjQ-5e-9iu"; */
+"NjQ-5e-9iu.text" = "Deaths";
+
+/* Class = "UILabel"; text = "هل أنت بصحة جيدة وتشعر بتحسن؟"; ObjectID = "O6v-U9-ZxT"; */
+"O6v-U9-ZxT.text" = "هل أنت بصحة جيدة وتشعر بتحسن؟";
+
+/* Class = "UILabel"; text = "---"; ObjectID = "O8E-0k-o7o"; */
+"O8E-0k-o7o.text" = "---";
+
+/* Class = "UITextField"; placeholder = "اسم المستشفي المشار اليها؟"; ObjectID = "OE7-Cr-dPK"; */
+"OE7-Cr-dPK.placeholder" = "اسم المستشفي المشار اليها؟";
+
+/* Class = "UITextField"; text = "راضي"; ObjectID = "OE7-Cr-dPK"; */
+"OE7-Cr-dPK.text" = "راضي";
+
+/* Class = "UILabel"; text = "Cases"; ObjectID = "OVP-ns-Sy9"; */
+"OVP-ns-Sy9.text" = "Cases";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "OdY-v7-LK4"; */
+"OdY-v7-LK4.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "هل أنت غير متأكد من لياقتك البدنية الكافية للتبرع بالدم؟ خذ اختبار الأهلية السريع"; ObjectID = "P2q-MF-40s"; */
+"P2q-MF-40s.text" = "هل أنت غير متأكد من لياقتك البدنية الكافية للتبرع بالدم؟ خذ اختبار الأهلية السريع";
+
+/* Class = "UILabel"; text = "180K+"; ObjectID = "PMD-L8-pmf"; */
+"PMD-L8-pmf.text" = "180K+";
+
+/* Class = "UILabel"; text = "ما كميه الدم الذي تحتاج اليه؟"; ObjectID = "Psn-xd-mF6"; */
+"Psn-xd-mF6.text" = "ما كميه الدم الذي تحتاج اليه؟";
+
+/* Class = "UITextField"; placeholder = "البريد الاكتروني"; ObjectID = "QZw-zO-G3s"; */
+"QZw-zO-G3s.placeholder" = "البريد الاكتروني";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "Qci-1N-NG4"; */
+"Qci-1N-NG4.text" = "Title";
+
+/* Class = "UILabel"; text = "هل حصلت على وشم أو ثقب في آخر 3 أشهر؟"; ObjectID = "QoI-w5-Hj1"; */
+"QoI-w5-Hj1.text" = "هل حصلت على وشم أو ثقب في آخر 3 أشهر؟";
+
+/* Class = "UILabel"; text = "Active"; ObjectID = "QtG-rO-iSm"; */
+"QtG-rO-iSm.text" = "Active";
+
+/* Class = "UIButton"; configuration.title = "Next"; ObjectID = "RPP-gz-XbD"; */
+"RPP-gz-XbD.configuration.title" = "Next";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "RPP-gz-XbD"; */
+"RPP-gz-XbD.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Blood Type:"; ObjectID = "RXI-3x-Lfv"; */
+"RXI-3x-Lfv.text" = "Blood Type:";
+
+/* Class = "UILabel"; text = "8K+"; ObjectID = "RhU-ON-1lh"; */
+"RhU-ON-1lh.text" = "8K+";
+
+/* Class = "UILabel"; text = "Congratulation"; ObjectID = "RmF-Ah-gwN"; */
+"RmF-Ah-gwN.text" = "Congratulation";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "RtD-fF-Tam"; */
+"RtD-fF-Tam.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Back"; ObjectID = "S6H-bq-PPE"; */
+"S6H-bq-PPE.configuration.title" = "Back";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "S6H-bq-PPE"; */
+"S6H-bq-PPE.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "العمر"; ObjectID = "S8E-IV-QK1"; */
+"S8E-IV-QK1.placeholder" = "العمر";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Sap-tw-1ie"; */
+"Sap-tw-1ie.normalTitle" = "Button";
+
+/* Class = "UISegmentedControl"; Sle-fe-VFS.segmentTitles[0] = "عام"; ObjectID = "Sle-fe-VFS"; */
+"Sle-fe-VFS.segmentTitles[0]" = "عام";
+
+/* Class = "UISegmentedControl"; Sle-fe-VFS.segmentTitles[1] = "خاص"; ObjectID = "Sle-fe-VFS"; */
+"Sle-fe-VFS.segmentTitles[1]" = "خاص";
+
+/* Class = "UIButton"; configuration.title = "نعم"; ObjectID = "T61-i0-bq3"; */
+"T61-i0-bq3.configuration.title" = "نعم";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "T61-i0-bq3"; */
+"T61-i0-bq3.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Ben elsarayat Hospital"; ObjectID = "Tb6-Fs-gS6"; */
+"Tb6-Fs-gS6.text" = "Ben elsarayat Hospital";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "TcX-ze-suZ"; */
+"TcX-ze-suZ.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "الخامس من يناير عام ٢٠٢٢"; ObjectID = "Td1-yy-qc9"; */
+"Td1-yy-qc9.text" = "الخامس من يناير عام ٢٠٢٢";
+
+/* Class = "UILabel"; text = "طلب دم"; ObjectID = "Tew-gX-Y5D"; */
+"Tew-gX-Y5D.text" = "طلب دم";
+
+/* Class = "UIButton"; configuration.title = "Next"; ObjectID = "Tyb-OI-8Qk"; */
+"Tyb-OI-8Qk.configuration.title" = "Next";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Tyb-OI-8Qk"; */
+"Tyb-OI-8Qk.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "ما هي فصيله دم التي تحتاج اليها؟"; ObjectID = "UCF-FT-2s8"; */
+"UCF-FT-2s8.text" = "ما هي فصيله دم التي تحتاج اليها؟";
+
+/* Class = "UILabel"; text = "طلب دم"; ObjectID = "UEm-J0-mTG"; */
+"UEm-J0-mTG.text" = "طلب دم";
+
+/* Class = "UIButton"; configuration.title = "لا"; ObjectID = "UUd-4z-M0H"; */
+"UUd-4z-M0H.configuration.title" = "لا";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "UUd-4z-M0H"; */
+"UUd-4z-M0H.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Ben elsarayat Hospital"; ObjectID = "UwS-9e-7qZ"; */
+"UwS-9e-7qZ.text" = "Ben elsarayat Hospital";
+
+/* Class = "UILabel"; text = "تعلم المزيد عن الدم وانواعه وكيفيه  التبرع بالدم"; ObjectID = "V5b-wQ-QyI"; */
+"V5b-wQ-QyI.text" = "تعلم المزيد عن الدم وانواعه وكيفيه  التبرع بالدم";
+
+/* Class = "UIButton"; configuration.title = "نعم"; ObjectID = "VYg-1d-reY"; */
+"VYg-1d-reY.configuration.title" = "نعم";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "VYg-1d-reY"; */
+"VYg-1d-reY.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "فصيله الدم"; ObjectID = "VnS-gu-MOa"; */
+"VnS-gu-MOa.placeholder" = "فصيله الدم";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "W79-8K-7b1"; */
+"W79-8K-7b1.title" = " ";
+
+/* Class = "UILabel"; text = "كن بطلا في حياه شخص ما o_O ❤️‍🩹"; ObjectID = "W9w-Sm-EcO"; */
+"W9w-Sm-EcO.text" = "كن بطلا في حياه شخص ما o_O ❤️‍🩹";
+
+/* Class = "UIButton"; configuration.title = "لا"; ObjectID = "WCt-Ix-mF3"; */
+"WCt-Ix-mF3.configuration.title" = "لا";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "WCt-Ix-mF3"; */
+"WCt-Ix-mF3.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "نعم"; ObjectID = "WMW-td-LIS"; */
+"WMW-td-LIS.configuration.title" = "نعم";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "WMW-td-LIS"; */
+"WMW-td-LIS.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "انشاء"; ObjectID = "Waq-4E-hBl"; */
+"Waq-4E-hBl.configuration.title" = "انشاء";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Waq-4E-hBl"; */
+"Waq-4E-hBl.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "كلمه المرور"; ObjectID = "Wg3-Hb-aQA"; */
+"Wg3-Hb-aQA.placeholder" = "كلمه المرور";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "XiE-Aa-Lc4"; */
+"XiE-Aa-Lc4.normalTitle" = "Button";
+
+/* Class = "UITabBarItem"; title = "Location"; ObjectID = "YHU-be-Eeo"; */
+"YHU-be-Eeo.title" = "Location";
+
+/* Class = "UIButton"; configuration.title = "نعم"; ObjectID = "YQY-YU-Nzx"; */
+"YQY-YU-Nzx.configuration.title" = "نعم";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "YQY-YU-Nzx"; */
+"YQY-YU-Nzx.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Z8v-PC-Nsk"; */
+"Z8v-PC-Nsk.text" = "Label";
+
+/* Class = "UILabel"; text = "فصيله الدم"; ObjectID = "ZGo-jP-Zjp"; */
+"ZGo-jP-Zjp.text" = "فصيله الدم";
+
+/* Class = "UILabel"; text = "What is your City?"; ObjectID = "ZpW-y8-rGH"; */
+"ZpW-y8-rGH.text" = "What is your City?";
+
+/* Class = "UILabel"; text = "معمل النور / المنشاه الكبري / السنطه/ الغربيه"; ObjectID = "ZwJ-cj-a5E"; */
+"ZwJ-cj-a5E.text" = "معمل النور / المنشاه الكبري / السنطه/ الغربيه";
+
+/* Class = "UIButton"; configuration.title = "المواعيد"; ObjectID = "aTm-NI-imP"; */
+"aTm-NI-imP.configuration.title" = "المواعيد";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "aTm-NI-imP"; */
+"aTm-NI-imP.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "aUf-o1-7S3"; */
+"aUf-o1-7S3.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "تسجيل"; ObjectID = "azV-eE-1Mu"; */
+"azV-eE-1Mu.configuration.title" = "تسجيل";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "azV-eE-1Mu"; */
+"azV-eE-1Mu.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "You're not fit to donate blood"; ObjectID = "bAG-QP-tbT"; */
+"bAG-QP-tbT.text" = "You're not fit to donate blood";
+
+/* Class = "UITextField"; placeholder = "المحافظه"; ObjectID = "bcc-XL-2mu"; */
+"bcc-XL-2mu.placeholder" = "المحافظه";
+
+/* Class = "UILabel"; text = "تفعيل الاشعارات"; ObjectID = "bdU-Ky-8pt"; */
+"bdU-Ky-8pt.text" = "تفعيل الاشعارات";
+
+/* Class = "UIButton"; configuration.title = "تسجيل الدخول"; ObjectID = "c2L-lT-tCm"; */
+"c2L-lT-tCm.configuration.title" = "تسجيل الدخول";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "c2L-lT-tCm"; */
+"c2L-lT-tCm.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "الاعدادات"; ObjectID = "c4R-ii-Hbt"; */
+"c4R-ii-Hbt.configuration.title" = "الاعدادات";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "c4R-ii-Hbt"; */
+"c4R-ii-Hbt.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "---"; ObjectID = "cDs-G5-BNy"; */
+"cDs-G5-BNy.text" = "---";
+
+/* Class = "UIButton"; configuration.title = "حجز موعد للتبرع بالدم"; ObjectID = "cEd-U1-UxZ"; */
+"cEd-U1-UxZ.configuration.title" = "حجز موعد للتبرع بالدم";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "cEd-U1-UxZ"; */
+"cEd-U1-UxZ.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "نحن هنا لمساعدتك في ارسال طلب للحصول علي الدم"; ObjectID = "cdo-KH-9BI"; */
+"cdo-KH-9BI.text" = "نحن هنا لمساعدتك في ارسال طلب للحصول علي الدم";
+
+/* Class = "UITextField"; placeholder = "Blood Type"; ObjectID = "coD-bq-1fZ"; */
+"coD-bq-1fZ.placeholder" = "Blood Type";
+
+/* Class = "UIButton"; configuration.title = "٢٠٠ جنيهاً مصريا"; ObjectID = "d3t-IZ-bGr"; */
+"d3t-IZ-bGr.configuration.title" = "٢٠٠ جنيهاً مصريا";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "d3t-IZ-bGr"; */
+"d3t-IZ-bGr.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "اسم المريض"; ObjectID = "dJG-kA-tjc"; */
+"dJG-kA-tjc.placeholder" = "اسم المريض";
+
+/* Class = "UILabel"; text = "COVID-19 Live Updates"; ObjectID = "dcv-yD-LdL"; */
+"dcv-yD-LdL.text" = "COVID-19 Live Updates";
+
+/* Class = "UILabel"; text = "Description"; ObjectID = "dla-0D-tMP"; */
+"dla-0D-tMP.text" = "Description";
+
+/* Class = "UIButton"; configuration.title = "Back"; ObjectID = "dmp-er-qeZ"; */
+"dmp-er-qeZ.configuration.title" = "Back";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "dmp-er-qeZ"; */
+"dmp-er-qeZ.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "انشاء الطلب"; ObjectID = "eiF-C1-pUs"; */
+"eiF-C1-pUs.configuration.title" = "انشاء الطلب";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "eiF-C1-pUs"; */
+"eiF-C1-pUs.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "انشاء حساب"; ObjectID = "emB-Kx-eVv"; */
+"emB-Kx-eVv.configuration.title" = "انشاء حساب";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "emB-Kx-eVv"; */
+"emB-Kx-eVv.normalTitle" = "Button";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "f9F-w0-aUI"; */
+"f9F-w0-aUI.title" = " ";
+
+/* Class = "UILabel"; text = "طلب دم"; ObjectID = "fY3-Io-kF4"; */
+"fY3-Io-kF4.text" = "طلب دم";
+
+/* Class = "UILabel"; text = "التبرع بالدم"; ObjectID = "feo-P1-c89"; */
+"feo-P1-c89.text" = "التبرع بالدم";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "fuV-pt-iEE"; */
+"fuV-pt-iEE.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "fux-yd-653"; */
+"fux-yd-653.text" = "Subtitle";
+
+/* Class = "UILabel"; text = "الاسم الاول"; ObjectID = "gCV-YZ-d6O"; */
+"gCV-YZ-d6O.text" = "الاسم الاول";
+
+/* Class = "UITabBarItem"; title = "History"; ObjectID = "gEZ-dq-l54"; */
+"gEZ-dq-l54.title" = "History";
+
+/* Class = "UITextField"; placeholder = "المحافظه"; ObjectID = "hDD-is-haa"; */
+"hDD-is-haa.placeholder" = "المحافظه";
+
+/* Class = "UITextField"; text = "الغربيه"; ObjectID = "hDD-is-haa"; */
+"hDD-is-haa.text" = "الغربيه";
+
+/* Class = "UILabel"; text = "طريقه الدفع"; ObjectID = "hFp-jj-loY"; */
+"hFp-jj-loY.text" = "طريقه الدفع";
+
+/* Class = "UIButton"; configuration.title = "نعم"; ObjectID = "hUL-3K-fzP"; */
+"hUL-3K-fzP.configuration.title" = "نعم";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "hUL-3K-fzP"; */
+"hUL-3K-fzP.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "متاح للتبرع"; ObjectID = "hVo-2O-qii"; */
+"hVo-2O-qii.text" = "متاح للتبرع";
+
+/* Class = "UIButton"; configuration.title = "نعم"; ObjectID = "hka-ez-YTs"; */
+"hka-ez-YTs.configuration.title" = "نعم";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "hka-ez-YTs"; */
+"hka-ez-YTs.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "ملحوظه صغيره :)"; ObjectID = "hqS-Jo-tqB"; */
+"hqS-Jo-tqB.placeholder" = "ملحوظه صغيره :)";
+
+/* Class = "UITextField"; placeholder = "رقم الموبايل الثاني"; ObjectID = "i3D-AD-8Cg"; */
+"i3D-AD-8Cg.placeholder" = "رقم الموبايل الثاني";
+
+/* Class = "UITextField"; text = "01019762944"; ObjectID = "i3D-AD-8Cg"; */
+"i3D-AD-8Cg.text" = "01019762944";
+
+/* Class = "UILabel"; text = "ما هي المستشفي او بنك الدم الموجود فيها المريض؟"; ObjectID = "igf-3t-1Z0"; */
+"igf-3t-1Z0.text" = "ما هي المستشفي او بنك الدم الموجود فيها المريض؟";
+
+/* Class = "UITabBarItem"; title = "Account"; ObjectID = "imM-er-fPV"; */
+"imM-er-fPV.title" = "Account";
+
+/* Class = "UILabel"; text = "التبرع بالدم ممكن ان يجعلك بطل لشخص بحاجه للمساعده"; ObjectID = "iuQ-1F-7jd"; */
+"iuQ-1F-7jd.text" = "التبرع بالدم ممكن ان يجعلك بطل لشخص بحاجه للمساعده";
+
+/* Class = "UILabel"; text = "What is your Town?"; ObjectID = "j5e-8q-CVy"; */
+"j5e-8q-CVy.text" = "What is your Town?";
+
+/* Class = "UITextField"; placeholder = "رقم الهاتف"; ObjectID = "jMT-Jv-RTV"; */
+"jMT-Jv-RTV.placeholder" = "رقم الهاتف";
+
+/* Class = "UITextField"; placeholder = "الرقم السري"; ObjectID = "jQD-UV-62h"; */
+"jQD-UV-62h.placeholder" = "الرقم السري";
+
+/* Class = "UITextField"; text = "123456"; ObjectID = "jQD-UV-62h"; */
+"jQD-UV-62h.text" = "123456";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "jaX-7g-uhg"; */
+"jaX-7g-uhg.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Back"; ObjectID = "jjr-KA-vXt"; */
+"jjr-KA-vXt.configuration.title" = "Back";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "jjr-KA-vXt"; */
+"jjr-KA-vXt.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "الجنس"; ObjectID = "jtB-Af-4wi"; */
+"jtB-Af-4wi.text" = "الجنس";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "k1s-eg-HCi"; */
+"k1s-eg-HCi.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "السجلات"; ObjectID = "k87-Wd-p8D"; */
+"k87-Wd-p8D.title" = "السجلات";
+
+/* Class = "UILabel"; text = "شكرا لك"; ObjectID = "klm-Wh-DQG"; */
+"klm-Wh-DQG.text" = "شكرا لك";
+
+/* Class = "UILabel"; text = "اخي بحاجه الي خمسه اكياس دم ف حادثه سياره وحالته خطيره جدا ارجو المساعده ف اسرع وقت ف معمل النور / المنشاه الكبري / السنطه / الغربيه "; ObjectID = "kqe-4u-wih"; */
+"kqe-4u-wih.text" = "اخي بحاجه الي خمسه اكياس دم ف حادثه سياره وحالته خطيره جدا ارجو المساعده ف اسرع وقت ف معمل النور / المنشاه الكبري / السنطه / الغربيه ";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "lAq-Lq-bXu"; */
+"lAq-Lq-bXu.title" = " ";
+
+/* Class = "UILabel"; text = "هل تبرعت بالدم في آخر 56 يومًا؟"; ObjectID = "lFP-8e-y7u"; */
+"lFP-8e-y7u.text" = "هل تبرعت بالدم في آخر 56 يومًا؟";
+
+/* Class = "UIButton"; configuration.title = "قصتك"; ObjectID = "lGs-2u-VjJ"; */
+"lGs-2u-VjJ.configuration.title" = "قصتك";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "lGs-2u-VjJ"; */
+"lGs-2u-VjJ.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "خالد حسين احمد خليفه"; ObjectID = "lLA-2J-0G1"; */
+"lLA-2J-0G1.text" = "خالد حسين احمد خليفه";
+
+/* Class = "UILabel"; text = "المدينه"; ObjectID = "ls2-gJ-mJY"; */
+"ls2-gJ-mJY.text" = "المدينه";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "mCf-Z8-k57"; */
+"mCf-Z8-k57.title" = " ";
+
+/* Class = "UITextField"; placeholder = "ادخل مبلغ آخر"; ObjectID = "mG2-O1-9uA"; */
+"mG2-O1-9uA.placeholder" = "ادخل مبلغ آخر";
+
+/* Class = "UIButton"; configuration.title = "Change Language"; ObjectID = "mHB-Cs-g8l"; */
+"mHB-Cs-g8l.configuration.title" = "Change Language";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "mHB-Cs-g8l"; */
+"mHB-Cs-g8l.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "عيد الميلاد"; ObjectID = "mRI-bt-LOI"; */
+"mRI-bt-LOI.placeholder" = "عيد الميلاد";
+
+/* Class = "UITextField"; text = "8/8/2000"; ObjectID = "mRI-bt-LOI"; */
+"mRI-bt-LOI.text" = "8/8/2000";
+
+/* Class = "UILabel"; text = "انشئ قصه"; ObjectID = "mSJ-yp-CmN"; */
+"mSJ-yp-CmN.text" = "انشئ قصه";
+
+/* Class = "UILabel"; text = "Write a message to the Donors."; ObjectID = "moC-uk-5ef"; */
+"moC-uk-5ef.text" = "Write a message to the Donors.";
+
+/* Class = "UIButton"; configuration.title = "Next"; ObjectID = "mqY-fw-0SZ"; */
+"mqY-fw-0SZ.configuration.title" = "Next";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "mqY-fw-0SZ"; */
+"mqY-fw-0SZ.normalTitle" = "Button";
+
+/* Class = "UITextView"; text = "احكي قصتك"; ObjectID = "n1h-To-2eF"; */
+"n1h-To-2eF.text" = "احكي قصتك";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "nCH-gJ-1LQ"; */
+"nCH-gJ-1LQ.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "نحن بفخر غير هادفين للربح وغير الشركات وغير المساومة. يساعدنا الآلاف من الأشخاص مثلك في التبرع لمساعدتنا. نعتمد على التبرعات لتنفيذ مهمتنا في إبقاء الموقع مفتوحًا ومجانيًا. هل ستتبرع اليوم؟"; ObjectID = "nHI-zt-Uey"; */
+"nHI-zt-Uey.text" = "نحن بفخر غير هادفين للربح وغير الشركات وغير المساومة. يساعدنا الآلاف من الأشخاص مثلك في التبرع لمساعدتنا. نعتمد على التبرعات لتنفيذ مهمتنا في إبقاء الموقع مفتوحًا ومجانيًا. هل ستتبرع اليوم؟";
+
+/* Class = "UIButton"; configuration.title = "Next"; ObjectID = "nof-bu-5ph"; */
+"nof-bu-5ph.configuration.title" = "Next";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "nof-bu-5ph"; */
+"nof-bu-5ph.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "In which hospital do you need a blood donor?"; ObjectID = "q2S-rc-RlG"; */
+"q2S-rc-RlG.text" = "In which hospital do you need a blood donor?";
+
+/* Class = "UITextField"; placeholder = "الاسم الاول"; ObjectID = "q8J-tL-eFn"; */
+"q8J-tL-eFn.placeholder" = "الاسم الاول";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "qbr-JW-cqS"; */
+"qbr-JW-cqS.text" = "Label";
+
+/* Class = "UILabel"; text = "Critical"; ObjectID = "qfk-ks-TRJ"; */
+"qfk-ks-TRJ.text" = "Critical";
+
+/* Class = "UILabel"; text = "---"; ObjectID = "qhn-HG-j4F"; */
+"qhn-HG-j4F.text" = "---";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "r0h-LG-7vj"; */
+"r0h-LG-7vj.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Visit our site"; ObjectID = "r3z-Ot-CCW"; */
+"r3z-Ot-CCW.configuration.title" = "Visit our site";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "r3z-Ot-CCW"; */
+"r3z-Ot-CCW.normalTitle" = "Button";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "r6C-xQ-rWC"; */
+"r6C-xQ-rWC.title" = " ";
+
+/* Class = "UIButton"; configuration.title = "Next"; ObjectID = "rGS-60-SHP"; */
+"rGS-60-SHP.configuration.title" = "Next";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "rGS-60-SHP"; */
+"rGS-60-SHP.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "نعم"; ObjectID = "rOu-Mi-NbX"; */
+"rOu-Mi-NbX.configuration.title" = "نعم";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "rOu-Mi-NbX"; */
+"rOu-Mi-NbX.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Like"; ObjectID = "rr7-5a-znt"; */
+"rr7-5a-znt.configuration.title" = "Like";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "rr7-5a-znt"; */
+"rr7-5a-znt.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "لا"; ObjectID = "rz4-TQ-Y6x"; */
+"rz4-TQ-Y6x.configuration.title" = "لا";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "rz4-TQ-Y6x"; */
+"rz4-TQ-Y6x.normalTitle" = "Button";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "sm7-5e-Ooo"; */
+"sm7-5e-Ooo.title" = "Item";
+
+/* Class = "UIButton"; configuration.title = "الرجوع للشاشه الرئيسيه"; ObjectID = "soO-iE-SnD"; */
+"soO-iE-SnD.configuration.title" = "الرجوع للشاشه الرئيسيه";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "soO-iE-SnD"; */
+"soO-iE-SnD.normalTitle" = "Button";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "u0m-CQ-2Z2"; */
+"u0m-CQ-2Z2.title" = " ";
+
+/* Class = "UIButton"; configuration.title = "Share"; ObjectID = "uH3-mG-ndr"; */
+"uH3-mG-ndr.configuration.title" = "Share";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "uH3-mG-ndr"; */
+"uH3-mG-ndr.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "١٠٠ جنيهاً مصريا"; ObjectID = "uQh-4y-KDz"; */
+"uQh-4y-KDz.configuration.title" = "١٠٠ جنيهاً مصريا";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "uQh-4y-KDz"; */
+"uQh-4y-KDz.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "مبرمح تطبيقات"; ObjectID = "uYf-x7-OWX"; */
+"uYf-x7-OWX.text" = "مبرمح تطبيقات";
+
+/* Class = "UILabel"; text = "هل تزن 45 كجم على الأقل؟"; ObjectID = "uvZ-hh-n8D"; */
+"uvZ-hh-n8D.text" = "هل تزن 45 كجم على الأقل؟";
+
+/* Class = "UIButton"; configuration.title = "لا"; ObjectID = "uyz-qd-0VK"; */
+"uyz-qd-0VK.configuration.title" = "لا";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "uyz-qd-0VK"; */
+"uyz-qd-0VK.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "المدينه"; ObjectID = "v9X-bK-Dw6"; */
+"v9X-bK-Dw6.placeholder" = "المدينه";
+
+/* Class = "UITextField"; text = "Tanta"; ObjectID = "v9X-bK-Dw6"; */
+"v9X-bK-Dw6.text" = "Tanta";
+
+/* Class = "UILabel"; text = "الرقم القومي"; ObjectID = "vCu-P7-Fsb"; */
+"vCu-P7-Fsb.text" = "الرقم القومي";
+
+/* Class = "UILabel"; text = "رقم الموبايل الثاني"; ObjectID = "vWn-Hw-shh"; */
+"vWn-Hw-shh.text" = "رقم الموبايل الثاني";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "vb7-Wc-Edn"; */
+"vb7-Wc-Edn.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "معمل النور / السنطه /طنطا / الغربيه"; ObjectID = "vhs-mE-SwR"; */
+"vhs-mE-SwR.text" = "معمل النور / السنطه /طنطا / الغربيه";
+
+/* Class = "UIButton"; configuration.title = "PayPal"; ObjectID = "vsu-bj-MhL"; */
+"vsu-bj-MhL.configuration.title" = "PayPal";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "vsu-bj-MhL"; */
+"vsu-bj-MhL.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "هل أنت غير متأكد من لياقتك البدنية الكافية للتبرع بالدم؟ خذ اختبار الأهلية السريع"; ObjectID = "vyt-mN-q6d"; */
+"vyt-mN-q6d.text" = "هل أنت غير متأكد من لياقتك البدنية الكافية للتبرع بالدم؟ خذ اختبار الأهلية السريع";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "w1h-9A-WPA"; */
+"w1h-9A-WPA.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "wR5-wG-dV5"; */
+"wR5-wG-dV5.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "859K+"; ObjectID = "wTc-Gp-nCO"; */
+"wTc-Gp-nCO.text" = "859K+";
+
+/* Class = "UISegmentedControl"; wfW-53-VjZ.segmentTitles[0] = "مره واحده"; ObjectID = "wfW-53-VjZ"; */
+"wfW-53-VjZ.segmentTitles[0]" = "مره واحده";
+
+/* Class = "UISegmentedControl"; wfW-53-VjZ.segmentTitles[1] = "شهرياً"; ObjectID = "wfW-53-VjZ"; */
+"wfW-53-VjZ.segmentTitles[1]" = "شهرياً";
+
+/* Class = "UILabel"; text = "Visit our website for a better experience.❤️‍🩹"; ObjectID = "wkC-M1-E9i"; */
+"wkC-M1-E9i.text" = "Visit our website for a better experience.❤️‍🩹";
+
+/* Class = "UILabel"; text = "Global Update"; ObjectID = "wxl-RN-U6d"; */
+"wxl-RN-U6d.text" = "Global Update";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "wzW-9I-DrI"; */
+"wzW-9I-DrI.title" = "Item";
+
+/* Class = "UILabel"; text = "تعلم بنفسك"; ObjectID = "xWL-tw-j4t"; */
+"xWL-tw-j4t.text" = "تعلم بنفسك";
+
+/* Class = "UILabel"; text = "You are fit to donate blood"; ObjectID = "y82-3e-bVe"; */
+"y82-3e-bVe.text" = "You are fit to donate blood";
+
+/* Class = "UIButton"; configuration.title = "تسجيل"; ObjectID = "y8J-hz-azn"; */
+"y8J-hz-azn.configuration.title" = "تسجيل";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "y8J-hz-azn"; */
+"y8J-hz-azn.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "تسجيل الخروج"; ObjectID = "yIf-aX-UlH"; */
+"yIf-aX-UlH.configuration.title" = "تسجيل الخروج";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "yIf-aX-UlH"; */
+"yIf-aX-UlH.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "الثامن من اغسطس عام ٢٠٠٠"; ObjectID = "ycN-Qj-hQi"; */
+"ycN-Qj-hQi.text" = "الثامن من اغسطس عام ٢٠٠٠";
+
+/* Class = "UILabel"; text = "طلب لقاح"; ObjectID = "yh9-GW-lOb"; */
+"yh9-GW-lOb.text" = "طلب لقاح";
+
+/* Class = "UILabel"; text = "---"; ObjectID = "yp7-5B-CR6"; */
+"yp7-5B-CR6.text" = "---";
+
+/* Class = "UILabel"; text = "اهلا وسهلا"; ObjectID = "yvJ-eG-tZ0"; */
+"yvJ-eG-tZ0.text" = "اهلا وسهلا";
+
+/* Class = "UIButton"; configuration.title = "Finish"; ObjectID = "yx8-Od-1OC"; */
+"yx8-Od-1OC.configuration.title" = "Finish";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "yx8-Od-1OC"; */
+"yx8-Od-1OC.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "City"; ObjectID = "zOB-Eu-sjl"; */
+"zOB-Eu-sjl.placeholder" = "City";
+
+/* Class = "UIButton"; configuration.title = "انشاء حساب جديد.!"; ObjectID = "zaZ-jA-Bo8"; */
+"zaZ-jA-Bo8.configuration.title" = "انشاء حساب جديد.!";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "zaZ-jA-Bo8"; */
+"zaZ-jA-Bo8.normalTitle" = "Button";

@@ -8,10 +8,6 @@
 import UIKit
 
 class RequestsTableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var shareBtn: UIButton!
-    @IBOutlet weak var commentBtn: UIButton!
-    @IBOutlet weak var likeBtn: UIButton!
     @IBOutlet weak var donorImage: UIImageView!
     @IBOutlet weak var descriptionLbl: UILabel!
     @IBOutlet weak var timeLbl: UILabel!
@@ -37,9 +33,9 @@ class RequestsTableViewCell: UITableViewCell {
         cardView.layer.cornerRadius = 20.0
         donorImage.layer.cornerRadius = self.donorImage.frame.size.width/2
         
-        shadowBtn.shadowBtn(btn: likeBtn)
-        shadowBtn.shadowBtn(btn: commentBtn)
-        shadowBtn.shadowBtn(btn: shareBtn)
+//        shadowBtn.shadowBtn(btn: likeBtn)
+//        shadowBtn.shadowBtn(btn: commentBtn)
+//        shadowBtn.shadowBtn(btn: shareBtn)
         
         insideView.roundedCornerView(corners: [.topLeft , .bottomLeft], radius: insideView.frame.size.width/0.2)
     }

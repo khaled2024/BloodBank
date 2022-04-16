@@ -112,9 +112,9 @@ You can get paid for donating blood in 25 countries around the world. Some count
 "NameDonor" = "Here,The Name of the Donor";
 "MainSubTitle" = "Be a hero in someone's life o_o ❤️‍🩹";
 // details cell for requestsBlood
-"Like" = "Like";
-"Comment" = "Comment";
-"Share" = "Share";
+//"Like" = "Like";
+//"Comment" = "Comment";
+//"Share" = "Share";
 
 // "Donate Money"
 "Donate Money" = "Donate Money";

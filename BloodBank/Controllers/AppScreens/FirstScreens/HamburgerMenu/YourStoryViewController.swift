@@ -51,7 +51,6 @@ class YourStoryViewController: UIViewController {
         self.animateIn(desireView: blurView)
         self.animateIn(desireView: addStoryView)
         
-        
     }
     private func registerCell(){
         tableView.register(UINib(nibName: "YourStoryTableViewCell", bundle: .main), forCellReuseIdentifier: "YourStoryTableViewCell")

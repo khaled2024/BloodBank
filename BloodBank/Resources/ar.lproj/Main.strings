@@ -534,7 +534,7 @@
 "nCH-gJ-1LQ.normalTitle" = "Button";
 
 /* Class = "UIButton"; configuration.title = "Next"; ObjectID = "nof-bu-5ph"; */
-"nof-bu-5ph.configuration.title" = "Next";
+"nof-bu-5ph.configuration.title" = "استمرار";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "nof-bu-5ph"; */
 "nof-bu-5ph.normalTitle" = "Button";
@@ -579,7 +579,7 @@
 "u0m-CQ-2Z2.title" = " ";
 
 /* Class = "UIButton"; configuration.title = "Share"; ObjectID = "uH3-mG-ndr"; */
-"uH3-mG-ndr.configuration.title" = "Share";
+//"uH3-mG-ndr.configuration.title" = "Share";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "uH3-mG-ndr"; */
 "uH3-mG-ndr.normalTitle" = "Button";

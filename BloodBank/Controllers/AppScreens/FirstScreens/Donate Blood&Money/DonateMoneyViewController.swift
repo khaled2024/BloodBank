@@ -49,7 +49,6 @@ class DonateMoneyViewController: UIViewController {
         if sender == firstMoneyBtn{
             print(firstMoneyBtn.titleLabel?.text ?? "")
             customBtn.toggleForBtn(Btn: firstMoneyBtn)
-            customBtn.confirmBtnSelected(Btn: firstMoneyBtn)
             customBtn.confirmBtnNotSelected(Btn: secondMoneyBtn)
             customBtn.confirmBtnNotSelected(Btn: thirdMoneyBtn)
             customBtn.confirmBtnNotSelected(Btn: fourthMoneyBtn)

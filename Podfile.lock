@@ -1,0 +1,24 @@
+PODS:
+  - BulletinBoard (5.0.0)
+  - CardSlider (0.1.0)
+  - IQKeyboardManagerSwift (6.5.9)
+
+DEPENDENCIES:
+  - BulletinBoard
+  - CardSlider
+  - IQKeyboardManagerSwift
+
+SPEC REPOS:
+  trunk:
+    - BulletinBoard
+    - CardSlider
+    - IQKeyboardManagerSwift
+
+SPEC CHECKSUMS:
+  BulletinBoard: dba77053c2a7b64953f63073f7534165af2edd21
+  CardSlider: 0a8f5f17f5a76701771794b07fdaeddc512358c8
+  IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
+
+PODFILE CHECKSUM: 30414e94ad457cea8e834d9bed15612c4009178f
+
+COCOAPODS: 1.11.2

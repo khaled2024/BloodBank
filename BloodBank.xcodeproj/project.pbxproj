@@ -45,6 +45,8 @@
 		EA4CA33B27F9D3F2003873DC /* YourStoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA4CA33927F9D3F2003873DC /* YourStoryTableViewCell.xib */; };
 		EA4CA33E27F9DF2C003873DC /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4CA33D27F9DF2C003873DC /* Story.swift */; };
 		EA4CA34027F9E604003873DC /* FloatingBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4CA33F27F9E604003873DC /* FloatingBtn.swift */; };
+		EA545C8F2808A7870009C6C7 /* VaccineCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA545C8E2808A7870009C6C7 /* VaccineCollectionViewController.swift */; };
+		EA545C922808C3FC0009C6C7 /* VaccineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA545C912808C3FC0009C6C7 /* VaccineCollectionViewCell.swift */; };
 		EA5A8C8227F269C500FCF61F /* UiimageView+UrlExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A8C8127F269C500FCF61F /* UiimageView+UrlExtension.swift */; };
 		EA6211E227EF6DC000301635 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6211E127EF6DC000301635 /* ApiService.swift */; };
 		EA6211E427EF6FC300301635 /* CoronaAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6211E327EF6FC200301635 /* CoronaAnalysis.swift */; };
@@ -81,6 +83,7 @@
 		EAC252E7276A34BF0033F96F /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC252E6276A34BF0033F96F /* OnboardingSlide.swift */; };
 		EAC252E9276A37BC0033F96F /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC252E8276A37BC0033F96F /* OnboardingCollectionViewCell.swift */; };
 		EAC252EC276A3A4C0033F96F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC252EB276A3A4C0033F96F /* Constants.swift */; };
+		EAC6436228099A1A00109D8D /* VaccineDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC6436128099A1A00109D8D /* VaccineDetailsViewController.swift */; };
 		EACC012C27A41E4F00FFB92B /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC012B27A41E4F00FFB92B /* LoadingViewController.swift */; };
 		EACC012F27A4275700FFB92B /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC012E27A4275700FFB92B /* NavigationManager.swift */; };
 		EACC013127A42C4D00FFB92B /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC013027A42C4D00FFB92B /* StorageManager.swift */; };
@@ -140,6 +143,8 @@
 		EA4CA33927F9D3F2003873DC /* YourStoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YourStoryTableViewCell.xib; sourceTree = "<group>"; };
 		EA4CA33D27F9DF2C003873DC /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		EA4CA33F27F9E604003873DC /* FloatingBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingBtn.swift; sourceTree = "<group>"; };
+		EA545C8E2808A7870009C6C7 /* VaccineCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineCollectionViewController.swift; sourceTree = "<group>"; };
+		EA545C912808C3FC0009C6C7 /* VaccineCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineCollectionViewCell.swift; sourceTree = "<group>"; };
 		EA5A8C8127F269C500FCF61F /* UiimageView+UrlExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiimageView+UrlExtension.swift"; sourceTree = "<group>"; };
 		EA6211E127EF6DC000301635 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		EA6211E327EF6FC200301635 /* CoronaAnalysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronaAnalysis.swift; sourceTree = "<group>"; };
@@ -181,6 +186,7 @@
 		EAC252E6276A34BF0033F96F /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		EAC252E8276A37BC0033F96F /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		EAC252EB276A3A4C0033F96F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EAC6436128099A1A00109D8D /* VaccineDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineDetailsViewController.swift; sourceTree = "<group>"; };
 		EACC012B27A41E4F00FFB92B /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		EACC012E27A4275700FFB92B /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		EACC013027A42C4D00FFB92B /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
@@ -232,6 +238,8 @@
 			isa = PBXGroup;
 			children = (
 				EA34861827FB4F71004A6667 /* VaccineRequestViewController.swift */,
+				EA545C8E2808A7870009C6C7 /* VaccineCollectionViewController.swift */,
+				EAC6436128099A1A00109D8D /* VaccineDetailsViewController.swift */,
 				EA4278A127B01F9C002D444A /* AppointmentViewController.swift */,
 				EA01A0A627C96F4E00BDCC00 /* NotFitAppointmentViewController.swift */,
 				EA01A0B227C984A600BDCC00 /* InformationCenterViewController.swift */,
@@ -282,6 +290,14 @@
 				EA4CA33927F9D3F2003873DC /* YourStoryTableViewCell.xib */,
 			);
 			path = YourStoryCell;
+			sourceTree = "<group>";
+		};
+		EA545C902808C3AA0009C6C7 /* VaccineCell */ = {
+			isa = PBXGroup;
+			children = (
+				EA545C912808C3FC0009C6C7 /* VaccineCollectionViewCell.swift */,
+			);
+			path = VaccineCell;
 			sourceTree = "<group>";
 		};
 		EA91ED4A27CD0DD000F8D02A /* Supporting Files */ = {
@@ -363,6 +379,7 @@
 				EAC252E3276A33320033F96F /* Extensions */,
 				EAC252DA276A2E9F0033F96F /* Model */,
 				EAC252DB276A2EAA0033F96F /* View */,
+				EA545C902808C3AA0009C6C7 /* VaccineCell */,
 				EACC013F27A43A6600FFB92B /* Helper */,
 				EAC252DC276A2EB40033F96F /* Controllers */,
 				EAC252E1276A2F780033F96F /* Resources */,
@@ -730,6 +747,7 @@
 				EA1915F927DC27B100554FF9 /* DetailsCellViewController.swift in Sources */,
 				EA6211E427EF6FC300301635 /* CoronaAnalysis.swift in Sources */,
 				EA064CAE27A4750600A06257 /* MainViewController.swift in Sources */,
+				EA545C922808C3FC0009C6C7 /* VaccineCollectionViewCell.swift in Sources */,
 				EAC252E7276A34BF0033F96F /* OnboardingSlide.swift in Sources */,
 				EA215C0027E80057005A9843 /* EducateDetailsViewController.swift in Sources */,
 				EAE3C90B27B12C6300F42D16 /* MapViewController.swift in Sources */,
@@ -738,6 +756,7 @@
 				EA34861927FB4F72004A6667 /* VaccineRequestViewController.swift in Sources */,
 				EA86A9FB27CA31FB006EA939 /* UserDefultsManager.swift in Sources */,
 				EAA6BDDE27EBBD2E00FE1BCA /* CountryStats.swift in Sources */,
+				EA545C8F2808A7870009C6C7 /* VaccineCollectionViewController.swift in Sources */,
 				EACC013D27A43A5A00FFB92B /* UserCustomBtn.swift in Sources */,
 				EA4278A627B025BF002D444A /* DonationHistoryViewController.swift in Sources */,
 				EAC252C7276A26F00033F96F /* AppDelegate.swift in Sources */,
@@ -753,6 +772,7 @@
 				EA99AAFD276CCF540083F0D1 /* HomeViewController.swift in Sources */,
 				EA45BFA627C5996B00D56AEC /* DonateBloodViewController.swift in Sources */,
 				EAC252E5276A335B0033F96F /* UiView+Extension.swift in Sources */,
+				EAC6436228099A1A00109D8D /* VaccineDetailsViewController.swift in Sources */,
 				EA45D3B527E4E0DA0072E19C /* DataProviderProtocol.swift in Sources */,
 				EAD4B43C27F75CBC00C6924C /* AppBloodRequestViewController.swift in Sources */,
 				EA45D3B427E4E0DA0072E19C /* SessionManager.swift in Sources */,

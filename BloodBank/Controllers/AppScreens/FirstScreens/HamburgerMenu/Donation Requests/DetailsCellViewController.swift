@@ -15,6 +15,9 @@ struct Comment {
 class DetailsCellViewController: UIViewController, UISheetPresentationControllerDelegate  {
     //MARK: - variabels
     
+    @IBOutlet weak var commentTextView: UITextView!
+    @IBOutlet weak var blurView: UIVisualEffectView!
+    @IBOutlet weak var addCommentView: UIView!
     @IBOutlet weak var commentsTableView: UITableView!
     @IBOutlet weak var insideShareBtn: UIButton!
     @IBOutlet weak var insidelikedBtn: UIButton!
@@ -30,8 +33,8 @@ class DetailsCellViewController: UIViewController, UISheetPresentationController
     let customBtn = UserCustomBtn()
     @IBOutlet weak var sharingBtn: UIButton!
     var myPatient: Patient!
-    
-    let comment = [Comment(title: "Amr", subTitle: "i can help you in this blood request send me all details i can help you in this blood request send me all details i can help you in this blood request send me all details"),Comment(title: "khaled", subTitle: "i can help you in this blood request send me all details"),Comment(title: "Amr", subTitle: "i can help you in this blood request send me all details i can help you in this blood request send me all details"),Comment(title: "khaled", subTitle: "i can help you in this blood request send me all details"),Comment(title: "Amr", subTitle: "i can help you in this blood request send me all details")]
+    let customView = CustomView()
+    let comment = [Comment(title: "عمرو", subTitle: "i can help you in this blood request send me all details i can help you in this blood request send me all details i can help you in this blood request send me all details"),Comment(title: "خالد", subTitle: "i can help you in this blood request send me all details"),Comment(title: "Amr", subTitle: "i can help you in this blood request send me all details i can help you in this blood request send me all details"),Comment(title: "khaled", subTitle: "i can help you in this blood request send me all details"),Comment(title: "Amr", subTitle: "i can help you in this blood request send me all details")]
     override var sheetPresentationController: UISheetPresentationController{
         presentationController as! UISheetPresentationController
     }
@@ -44,14 +47,22 @@ class DetailsCellViewController: UIViewController, UISheetPresentationController
         super.viewDidLoad()
         setUpSheetPresentation()
         setUpData()
+        setUpBlurandCommentView()
+        self.likeBtn.customTitleLbl(btn: likeBtn, text: "اعجبني", fontSize: 13)
+        self.commentBtn.customTitleLbl(btn: commentBtn, text: "تعليق", fontSize: 13)
+        self.shareBtn.customTitleLbl(btn: shareBtn, text: "مشاركه", fontSize: 13)
     }
     
     //MARK: - Private func
+    private func setUpBlurandCommentView(){
+        // blurView & size
+        blurView.bounds = self.view.bounds
+        //set add story view 90% of width & 45% of height
+        addCommentView.bounds = CGRect(x: 0, y: 0, width: self.view.bounds.width * 0.9, height: self.view.bounds.height * 0.45)
+    }
     private func setUpDesign(){
-        self.likeBtn.customTitleLbl(btn: likeBtn, text: "Like", fontSize: 18)
-        self.commentBtn.customTitleLbl(btn: commentBtn, text: "Comment", fontSize: 18)
-        self.shareBtn.customTitleLbl(btn: shareBtn, text: "Share", fontSize: 18)
         self.donorImageDetail.layer.cornerRadius = self.donorImageDetail.frame.size.width / 2
+        customView.customView(theView: addCommentView)
     }
     private func setUpSheetPresentation(){
         sheetPresentationController.delegate = self
@@ -77,8 +88,44 @@ class DetailsCellViewController: UIViewController, UISheetPresentationController
         activityController = UIActivityViewController(activityItems: [defaultText , image!], applicationActivities: nil)
         self.present(activityController, animated: true, completion: nil)
     }
+    // for blur & add story view
+    func animateIn(desireView: UIView){
+        let backgroundView = self.view!
+        backgroundView.addSubview(desireView)
+        //set the view scalling 120%
+        desireView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+        desireView.alpha = 0
+        desireView.center = backgroundView.center
+        // animate the effect
+        UIView.animate(withDuration: 0.3) {
+            desireView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+            desireView.alpha = 1
+        }
+    }
+    func animateOut(desireView: UIView){
+        UIView.animate(withDuration: 0.3) {
+            desireView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+            desireView.alpha = 0
+        } completion: { _ in
+            desireView.removeFromSuperview()
+        }
+    }
     
     //MARK: - Actions
+    @IBAction func closeCommentView(_ sender: UIButton) {
+        self.animateOut(desireView: blurView)
+        self.animateOut(desireView: addCommentView)
+    }
+    @IBAction func postCommentBtnTapped(_ sender: UIButton) {
+        if let comment = commentTextView.text , !comment.isEmpty{
+            print(comment)
+            self.animateOut(desireView: blurView)
+            self.animateOut(desireView: addCommentView)
+            commentTextView.text = ""
+        }else{
+            showAlert(title: "Sorry", message: "Please write a Comment.")
+        }
+    }
     @IBAction func shareBtnTapped(_ sender: UIButton) {
         if sender == sharingBtn{
             shareContent()
@@ -90,14 +137,20 @@ class DetailsCellViewController: UIViewController, UISheetPresentationController
     }
     @IBAction func commentBtnTapped(_ sender: UIButton) {
         print("commented")
+        self.animateIn(desireView: blurView)
+        self.animateIn(desireView: addCommentView)
+        
+        
     }
     @IBAction func likeBtnTapped(_ sender: UIButton) {
         print("liked")
         customBtn.toggleBtnByForground(Btn: insidelikedBtn)
     }
-    @IBAction func phoneBtnTapped(_ sender: UIButton) {
-        
+    @IBAction func blurScreenTapped(_ sender: UITapGestureRecognizer) {
+        animateOut(desireView: addCommentView)
+        animateOut(desireView: blurView)
     }
+    
 }
 //MARK: - Extension UITableViewDelegate,UITableViewDataSource
 extension DetailsCellViewController: UITableViewDelegate,UITableViewDataSource {

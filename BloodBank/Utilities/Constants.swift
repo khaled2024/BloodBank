@@ -36,6 +36,7 @@ struct Arrays{
     static let arrayOfTypesRequests = ["الصفائح","ABبلازما","Red Double cell","دم الحبل السري","لااعرف"]
     static let arrayReasonRequest = ["accident","surgery","prejnent","canser","زرع اعضاء","الثلاسيميا","الهيم،جلوبين"]
     static let arrayOfHospitals = ["khaled","hussien","ahmed","khalifa"]
+    static let arrOfNumber = ["1","2","3","4","5","6","7","8","9","10"]
 }
 
 struct EducateTabelArray {

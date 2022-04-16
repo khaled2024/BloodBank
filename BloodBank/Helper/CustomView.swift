@@ -28,6 +28,13 @@ class CustomView: UIView{
         theView.layer.masksToBounds = false
         theView.layer.cornerRadius = 20.0
     }
+    func vaccineCustomView(theView: UIView){
+        theView.layer.shadowColor = UIColor.darkGray.cgColor
+        theView.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+        theView.layer.shadowOpacity = 5.0
+        theView.layer.masksToBounds = false
+        theView.layer.cornerRadius = 20.0
+    }
     
 }
 

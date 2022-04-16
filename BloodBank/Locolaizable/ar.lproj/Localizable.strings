@@ -54,9 +54,9 @@
 "Town Title" = "ما هي مدينتك؟";
 "Hospital Title" = "في أي مستشفى تحتاج إلى متبرع بالدم؟";
 "Notes Title" = "اكتب رسالة إلى المتبرعين.";
-"Next" = "Next";
-"Back" = "Back";
-"Finish" = "Finish";
+"Next" = "استمرار";
+"Back" = "رجوع";
+"Finish" = "انهاء";
 // donate blood
 "Donate Blood" = "حجز موعد للتبرع بالدم";
 
@@ -76,7 +76,7 @@
 "MainSubTitle" = "كن بطلا في حياه شخص ما o_O ❤️‍🩹";
 // details cell for requestsBlood
 // details cell for requestsBlood
-"Like" = "اعجبني";
-"Comment" = "تعليق";
-"Share" = "مشاركه";
+//"Like" = "اعجبني";
+//"Comment" = "تعليق";
+//"Share" = "مشاركه";
 

@@ -28,7 +28,6 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
     @IBOutlet weak var educateLbl: UILabel!
     @IBOutlet weak var educateSubTitle: UILabel!
     
-    
     //views
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var testView: UIView!
@@ -44,7 +43,6 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
     @IBOutlet weak var donateBloodView: UIView!
     @IBOutlet weak var requestBloodView: UIView!
     @IBOutlet weak var educateYourselfView: UIView!
-    
     
     @IBOutlet weak var vaccineRequestImage: UIImageView!
     @IBOutlet weak var donationImage: UIImageView!

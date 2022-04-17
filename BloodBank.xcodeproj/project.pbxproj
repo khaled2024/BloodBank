@@ -20,6 +20,12 @@
 		EA1831C827DA6C1000D9BA90 /* RequestsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA1831C627DA6C1000D9BA90 /* RequestsTableViewCell.xib */; };
 		EA1915F727DBFA3100554FF9 /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1915F627DBFA3100554FF9 /* Patient.swift */; };
 		EA1915F927DC27B100554FF9 /* DetailsCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1915F827DC27B100554FF9 /* DetailsCellViewController.swift */; };
+		EA1F21C2280C601D00DE49F9 /* HistoryVaccineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1F21C0280C601D00DE49F9 /* HistoryVaccineCell.swift */; };
+		EA1F21C3280C601D00DE49F9 /* HistoryVaccineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA1F21C1280C601D00DE49F9 /* HistoryVaccineCell.xib */; };
+		EA1F21C6280C73C200DE49F9 /* BloodOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1F21C4280C73C200DE49F9 /* BloodOrderCell.swift */; };
+		EA1F21C7280C73C200DE49F9 /* BloodOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA1F21C5280C73C200DE49F9 /* BloodOrderCell.xib */; };
+		EA1F21CC280C927C00DE49F9 /* LastDonateHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1F21CA280C927C00DE49F9 /* LastDonateHistoryCell.swift */; };
+		EA1F21CD280C927C00DE49F9 /* LastDonateHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA1F21CB280C927C00DE49F9 /* LastDonateHistoryCell.xib */; };
 		EA215BFC27E7EB98005A9843 /* EducateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA215BFB27E7EB98005A9843 /* EducateCollectionViewCell.swift */; };
 		EA215BFE27E7FA36005A9843 /* String+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA215BFD27E7FA36005A9843 /* String+URL.swift */; };
 		EA215C0027E80057005A9843 /* EducateDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA215BFF27E80057005A9843 /* EducateDetailsViewController.swift */; };
@@ -118,6 +124,12 @@
 		EA1831C627DA6C1000D9BA90 /* RequestsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestsTableViewCell.xib; sourceTree = "<group>"; };
 		EA1915F627DBFA3100554FF9 /* Patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
 		EA1915F827DC27B100554FF9 /* DetailsCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCellViewController.swift; sourceTree = "<group>"; };
+		EA1F21C0280C601D00DE49F9 /* HistoryVaccineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVaccineCell.swift; sourceTree = "<group>"; };
+		EA1F21C1280C601D00DE49F9 /* HistoryVaccineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryVaccineCell.xib; sourceTree = "<group>"; };
+		EA1F21C4280C73C200DE49F9 /* BloodOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodOrderCell.swift; sourceTree = "<group>"; };
+		EA1F21C5280C73C200DE49F9 /* BloodOrderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BloodOrderCell.xib; sourceTree = "<group>"; };
+		EA1F21CA280C927C00DE49F9 /* LastDonateHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastDonateHistoryCell.swift; sourceTree = "<group>"; };
+		EA1F21CB280C927C00DE49F9 /* LastDonateHistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LastDonateHistoryCell.xib; sourceTree = "<group>"; };
 		EA215BFB27E7EB98005A9843 /* EducateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducateCollectionViewCell.swift; sourceTree = "<group>"; };
 		EA215BFD27E7FA36005A9843 /* String+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+URL.swift"; sourceTree = "<group>"; };
 		EA215BFF27E80057005A9843 /* EducateDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducateDetailsViewController.swift; sourceTree = "<group>"; };
@@ -272,6 +284,33 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		EA1F21BF280C5FD100DE49F9 /* VaccineHistoryCell */ = {
+			isa = PBXGroup;
+			children = (
+				EA1F21C0280C601D00DE49F9 /* HistoryVaccineCell.swift */,
+				EA1F21C1280C601D00DE49F9 /* HistoryVaccineCell.xib */,
+			);
+			path = VaccineHistoryCell;
+			sourceTree = "<group>";
+		};
+		EA1F21C8280C73C800DE49F9 /* BloodOrderHistoryCell */ = {
+			isa = PBXGroup;
+			children = (
+				EA1F21C4280C73C200DE49F9 /* BloodOrderCell.swift */,
+				EA1F21C5280C73C200DE49F9 /* BloodOrderCell.xib */,
+			);
+			path = BloodOrderHistoryCell;
+			sourceTree = "<group>";
+		};
+		EA1F21C9280C925800DE49F9 /* LastDonateCell */ = {
+			isa = PBXGroup;
+			children = (
+				EA1F21CA280C927C00DE49F9 /* LastDonateHistoryCell.swift */,
+				EA1F21CB280C927C00DE49F9 /* LastDonateHistoryCell.xib */,
+			);
+			path = LastDonateCell;
+			sourceTree = "<group>";
+		};
 		EA45D3AF27E4E0DA0072E19C /* ApiService */ = {
 			isa = PBXGroup;
 			children = (
@@ -379,7 +418,6 @@
 				EAC252E3276A33320033F96F /* Extensions */,
 				EAC252DA276A2E9F0033F96F /* Model */,
 				EAC252DB276A2EAA0033F96F /* View */,
-				EA545C902808C3AA0009C6C7 /* VaccineCell */,
 				EACC013F27A43A6600FFB92B /* Helper */,
 				EAC252DC276A2EB40033F96F /* Controllers */,
 				EAC252E1276A2F780033F96F /* Resources */,
@@ -409,6 +447,10 @@
 				EAC252E8276A37BC0033F96F /* OnboardingCollectionViewCell.swift */,
 				EAF7D49027E1410300743163 /* RequestCell */,
 				EA4CA33C27F9D3F8003873DC /* YourStoryCell */,
+				EA1F21BF280C5FD100DE49F9 /* VaccineHistoryCell */,
+				EA545C902808C3AA0009C6C7 /* VaccineCell */,
+				EA1F21C8280C73C800DE49F9 /* BloodOrderHistoryCell */,
+				EA1F21C9280C925800DE49F9 /* LastDonateCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -656,9 +698,12 @@
 				EAC252D3276A26F10033F96F /* LaunchScreen.storyboard in Resources */,
 				EA1831C827DA6C1000D9BA90 /* RequestsTableViewCell.xib in Resources */,
 				EA17CD7C27FCFE4F00F356EE /* Almarai-ExtraBold.ttf in Resources */,
+				EA1F21C3280C601D00DE49F9 /* HistoryVaccineCell.xib in Resources */,
 				EAD669EF27C6393C006221A2 /* Almarai-Bold.ttf in Resources */,
+				EA1F21C7280C73C200DE49F9 /* BloodOrderCell.xib in Resources */,
 				EA01A0AF27C9777100BDCC00 /* Poppins-Bold.ttf in Resources */,
 				EA4CA33B27F9D3F2003873DC /* YourStoryTableViewCell.xib in Resources */,
+				EA1F21CD280C927C00DE49F9 /* LastDonateHistoryCell.xib in Resources */,
 				EA92A0A527E89D930060C5C8 /* Localizable.strings in Resources */,
 				EA01A0AB27C9774100BDCC00 /* Poppins-Regular.ttf in Resources */,
 				EA6E702127C5C3CE00F1E76C /* Almarai-Regular.ttf in Resources */,
@@ -719,6 +764,7 @@
 			files = (
 				EA64542C27F8991900376A8B /* LaunchViewController.swift in Sources */,
 				EA92A0B227E917F30060C5C8 /* Color+UIcolor.swift in Sources */,
+				EA1F21CC280C927C00DE49F9 /* LastDonateHistoryCell.swift in Sources */,
 				EA4C711F27E3D626000C8B02 /* CustomPlaceHolder.swift in Sources */,
 				EA4278AC27B025FB002D444A /* SettingViewController.swift in Sources */,
 				EA01A0A727C96F4E00BDCC00 /* NotFitAppointmentViewController.swift in Sources */,
@@ -740,6 +786,7 @@
 				EAD4B43E27F7B7C400C6924C /* UiButtonTitleLbl+Font.swift in Sources */,
 				EABDBFCA276CE69F00738EA3 /* RegisterViewController.swift in Sources */,
 				EAD7D59227F5B62C003E81D3 /* UILable+Font.swift in Sources */,
+				EA1F21C6280C73C200DE49F9 /* BloodOrderCell.swift in Sources */,
 				EACC013127A42C4D00FFB92B /* StorageManager.swift in Sources */,
 				EAD4B44027F7CB7C00C6924C /* ValidationManager.swift in Sources */,
 				EACC012C27A41E4F00FFB92B /* LoadingViewController.swift in Sources */,
@@ -748,6 +795,7 @@
 				EA6211E427EF6FC300301635 /* CoronaAnalysis.swift in Sources */,
 				EA064CAE27A4750600A06257 /* MainViewController.swift in Sources */,
 				EA545C922808C3FC0009C6C7 /* VaccineCollectionViewCell.swift in Sources */,
+				EA1F21C2280C601D00DE49F9 /* HistoryVaccineCell.swift in Sources */,
 				EAC252E7276A34BF0033F96F /* OnboardingSlide.swift in Sources */,
 				EA215C0027E80057005A9843 /* EducateDetailsViewController.swift in Sources */,
 				EAE3C90B27B12C6300F42D16 /* MapViewController.swift in Sources */,
@@ -893,7 +941,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -949,7 +997,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

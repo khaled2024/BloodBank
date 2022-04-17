@@ -9,7 +9,7 @@ import UIKit
 import BLTNBoard
 
 class VaccineDetailsViewController: UIViewController, UISheetPresentationControllerDelegate {
-   
+    
     
     //MARK: - outlets
     //labels
@@ -43,7 +43,7 @@ class VaccineDetailsViewController: UIViewController, UISheetPresentationControl
             string:"تم تقديم طلبك بنجاح" , attributes: [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.8185071945, green: 0.2694924176, blue: 0.2871941328, alpha: 1) , .font: UIFont(name: "Almarai-Bold", size: 20)!])
         item.actionHandler = {_ in
             self.dismiss(animated: true) {
-//                self.navigationController?.popToRootViewController(animated: true)
+                //                self.navigationController?.popToRootViewController(animated: true)
                 let requestsVC = RequestViewController.instantiate()
                 self.navigationController?.pushViewController(requestsVC, animated: true)
                 self.modalTransitionStyle = .coverVertical
@@ -63,7 +63,7 @@ class VaccineDetailsViewController: UIViewController, UISheetPresentationControl
             string:"هذا اللقاح غير متوفر حاليا وسيتم تقديم طلبك والرد عليك لاحقا" , attributes: [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.8185071945, green: 0.2694924176, blue: 0.2871941328, alpha: 1) , .font: UIFont(name: "Almarai-Bold", size: 20)!])
         item.actionHandler = {_ in
             self.dismiss(animated: true) {
-//                self.navigationController?.popToRootViewController(animated: true)
+                //                self.navigationController?.popToRootViewController(animated: true)
                 let requestsVC = RequestViewController.instantiate()
                 self.navigationController?.pushViewController(requestsVC, animated: true)
                 self.modalTransitionStyle = .coverVertical
@@ -83,7 +83,7 @@ class VaccineDetailsViewController: UIViewController, UISheetPresentationControl
         self.backageAmount.inputView = backageAmountPicker
         backageAmountPicker.delegate = self
         backageAmountPicker.dataSource = self
-
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -134,7 +134,7 @@ class VaccineDetailsViewController: UIViewController, UISheetPresentationControl
                 }
             }
         }
-
+        
     }
     private func setUpData(){
         self.vaccineNameLbl.text = myVaccine.scienceVaccineName
@@ -144,7 +144,7 @@ class VaccineDetailsViewController: UIViewController, UISheetPresentationControl
         self.backagePrice.text = String(myVaccine.packagePrice)
         self.totalPrice.text = String(myVaccine.totalPrice)
         self.backageAmount.text = String(myVaccine.packageNumber)
-
+        
     }
     private func setUpViews(){
         customView.vaccineCustomView(theView: VaccineNameView)
@@ -152,7 +152,7 @@ class VaccineDetailsViewController: UIViewController, UISheetPresentationControl
         customView.vaccineCustomView(theView: vaccineOriginView)
         customView.vaccineCustomView(theView: vaccineCountryView)
         customView.vaccineCustomView(theView: buyVaccineView)
-
+        
     }
     private func setUpSheetPresentation(){
         sheetPresentationController.delegate = self
@@ -171,12 +171,7 @@ class VaccineDetailsViewController: UIViewController, UISheetPresentationControl
             return false
         }
     }
-    //MARK: - Actions
-
-    @IBAction func ViewsTapped(_ sender: UITapGestureRecognizer) {
-        self.animated()
-    }
-    @IBAction func orderVaccineBtnTapped(_ sender: UIButton) {
+    private func orderVaccine(){
         if isVaccineIsAvailable(){
             UIView.animate(withDuration: 0.4) {
                 self.buyVaccineView.layer.transform = CATransform3DMakeScale(0.9, 0.9, 1)
@@ -184,14 +179,34 @@ class VaccineDetailsViewController: UIViewController, UISheetPresentationControl
                 if completed{
                     UIView.animate(withDuration: 0.4){
                         self.buyVaccineView.layer.transform = CATransform3DMakeScale(1, 1, 1)
-                        self.vaccineAvailable.showBulletin(above: self)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                            self.vaccineAvailable.showBulletin(above: self)
+                        }
                     }
                 }
             }
-           
         }else{
-            self.vaccineNotAvailable.showBulletin(above: self)
+            UIView.animate(withDuration: 0.4) {
+                self.buyVaccineView.layer.transform = CATransform3DMakeScale(0.9, 0.9, 1)
+            } completion: { completed in
+                if completed{
+                    UIView.animate(withDuration: 0.4){
+                        self.buyVaccineView.layer.transform = CATransform3DMakeScale(1, 1, 1)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                            self.vaccineNotAvailable.showBulletin(above: self)
+                        }
+                    }
+                }
+            }
         }
+    }
+    //MARK: - Actions
+    
+    @IBAction func ViewsTapped(_ sender: UITapGestureRecognizer) {
+        self.animated()
+    }
+    @IBAction func orderVaccineBtnTapped(_ sender: UIButton) {
+        self.orderVaccine()
     }
 }
 //MARK: - Extensions

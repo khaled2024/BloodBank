@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Almarai-Bold.ttf">
+            <string>Almarai-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="158" id="KGk-i7-Jjw" customClass="LastDonateHistoryCell" customModule="BloodBank" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="466" height="158"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="466" height="158"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zjn-GD-kcf">
+                        <rect key="frame" x="8" y="8" width="450" height="142"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="historyVaccine2" translatesAutoresizingMaskIntoConstraints="NO" id="A7i-HK-cvL">
+                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="RcK-mH-C1e"/>
+                                    <constraint firstAttribute="width" constant="30" id="ijn-VV-YZu"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="السبت ،٢ ابريل ٢٠٢٢" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPz-PY-jts">
+                                <rect key="frame" x="20" y="67.5" width="410" height="22.5"/>
+                                <fontDescription key="fontDescription" name="Almarai-Bold" family="Almarai" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اخر مره تبرعت بالدم" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Hc-w3-oKp">
+                                <rect key="frame" x="20" y="29.5" width="410" height="23"/>
+                                <fontDescription key="fontDescription" name="Almarai-Bold" family="Almarai" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="historyVaccine1" translatesAutoresizingMaskIntoConstraints="NO" id="wmS-ZG-dbv">
+                                <rect key="frame" x="420" y="0.0" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Baa-0a-h5y"/>
+                                    <constraint firstAttribute="width" constant="30" id="yo4-Su-6Wz"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.9098039269" green="0.31764706970000001" blue="0.40000003579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="A7i-HK-cvL" firstAttribute="top" secondItem="Zjn-GD-kcf" secondAttribute="top" id="3vx-ng-9HK"/>
+                            <constraint firstItem="hPz-PY-jts" firstAttribute="centerX" secondItem="2Hc-w3-oKp" secondAttribute="centerX" id="44e-JX-u93"/>
+                            <constraint firstItem="A7i-HK-cvL" firstAttribute="leading" secondItem="Zjn-GD-kcf" secondAttribute="leading" id="9zt-lq-f1U"/>
+                            <constraint firstItem="hPz-PY-jts" firstAttribute="height" secondItem="2Hc-w3-oKp" secondAttribute="height" id="KWM-vC-018"/>
+                            <constraint firstItem="2Hc-w3-oKp" firstAttribute="centerY" secondItem="Zjn-GD-kcf" secondAttribute="centerY" constant="-30" id="MD2-08-R10"/>
+                            <constraint firstItem="A7i-HK-cvL" firstAttribute="top" secondItem="Zjn-GD-kcf" secondAttribute="top" id="OiC-d4-E0E"/>
+                            <constraint firstAttribute="trailing" secondItem="wmS-ZG-dbv" secondAttribute="trailing" id="SlV-c9-mPm"/>
+                            <constraint firstItem="hPz-PY-jts" firstAttribute="trailing" secondItem="2Hc-w3-oKp" secondAttribute="trailing" id="UrT-jY-u0F"/>
+                            <constraint firstAttribute="bottom" secondItem="hPz-PY-jts" secondAttribute="bottom" constant="52" id="aUu-Ue-1ST"/>
+                            <constraint firstItem="hPz-PY-jts" firstAttribute="top" secondItem="2Hc-w3-oKp" secondAttribute="bottom" constant="15" id="e6z-cY-fxe"/>
+                            <constraint firstItem="2Hc-w3-oKp" firstAttribute="leading" secondItem="Zjn-GD-kcf" secondAttribute="leading" constant="20" id="ldT-EO-zib"/>
+                            <constraint firstItem="wmS-ZG-dbv" firstAttribute="top" secondItem="Zjn-GD-kcf" secondAttribute="top" id="o5y-cc-1gu"/>
+                            <constraint firstItem="hPz-PY-jts" firstAttribute="leading" secondItem="2Hc-w3-oKp" secondAttribute="leading" id="q5o-I4-pnp"/>
+                            <constraint firstAttribute="trailing" secondItem="2Hc-w3-oKp" secondAttribute="trailing" constant="20" id="xYQ-xi-XQk"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Zjn-GD-kcf" secondAttribute="trailing" constant="8" id="ejE-Wy-CIN"/>
+                    <constraint firstAttribute="bottom" secondItem="Zjn-GD-kcf" secondAttribute="bottom" constant="8" id="jvO-eC-N5J"/>
+                    <constraint firstItem="Zjn-GD-kcf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="wYP-2g-6Od"/>
+                    <constraint firstItem="Zjn-GD-kcf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="wiL-Je-Nag"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="lastDonateView" destination="Zjn-GD-kcf" id="Z17-dw-v9L"/>
+                <outlet property="vaccineImage" destination="wmS-ZG-dbv" id="xhp-lx-H5w"/>
+                <outlet property="voltImage" destination="A7i-HK-cvL" id="nPO-Tu-O9t"/>
+            </connections>
+            <point key="canvasLocation" x="237.68115942028987" y="91.071428571428569"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="historyVaccine1" width="108" height="82"/>
+        <image name="historyVaccine2" width="70" height="78"/>
+    </resources>
+</document>

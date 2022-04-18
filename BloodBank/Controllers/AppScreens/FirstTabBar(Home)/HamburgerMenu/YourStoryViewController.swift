@@ -119,6 +119,4 @@ extension YourStoryViewController: UITableViewDelegate,UITableViewDataSource{
             cell.layer.transform = CATransform3DMakeScale(1, 1, 1)
         }
     }
-    
-    
 }

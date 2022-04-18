@@ -91,19 +91,19 @@ class RegisterViewController: UIViewController {
                 throw SignUpError.isValidPassword
             }
             if password != confirmPassword {
-                showAlert(title: "Sorry", message: "please check the password")
+                showNormalAlert(title: "Sorry", message: "please check the password")
             }
             if !mobile.isValidMobile{
                 throw SignUpError.isValidMobile
             }
             if bloodType.isEmpty{
-                showAlert(title: "Sorry", message: "please check the Blood type")
+                showNormalAlert(title: "Sorry", message: "please check the Blood type")
             }
             if address.isEmpty{
-                showAlert(title: "Sorry", message: "please check the Address")
+                showNormalAlert(title: "Sorry", message: "please check the Address")
             }
             if !checkTextFields(){
-                showAlert(title: "", message: "Please Fill All fields")
+                showNormalAlert(title: "", message: "Please Fill All fields")
             }
             self.animateButtons()
             DispatchQueue.main.asyncAfter(deadline: .now()+1.5) {
@@ -111,6 +111,7 @@ class RegisterViewController: UIViewController {
                     self.animateButtons()
                     self.goToLoginScreen()
                 }
+                
             }
         }
     }
@@ -125,7 +126,7 @@ class RegisterViewController: UIViewController {
                 }
             }
         }else{
-            self.showAlert(title: "Sorry", message: "Please Check your password")
+            self.showNormalAlert(title: "Sorry", message: "Please Check your password")
         }
     }
     private func goToLoginScreen(){
@@ -145,21 +146,21 @@ class RegisterViewController: UIViewController {
     }
     //MARK: - Actions
     @IBAction func confirmBtnTapped(_ sender: UIButton) {
-//        checkAllFields()
+        //        checkAllFields()
         do {
             try checkValidationTextField()
         }catch SignUpError.isValidEmail{
-            showAlert(title: "Sorry", message: "Please Enter Valid Email")
+            showNormalAlert(title: "Sorry", message: "Please Enter Valid Email")
         }catch SignUpError.isValidID{
-            showAlert(title: "Sorry", message: "Please Enter Valid ID")
+            showNormalAlert(title: "Sorry", message: "Please Enter Valid ID")
         } catch SignUpError.isValidName{
-            showAlert(title: "Sorry", message: "Please Enter Valid Name")
+            showNormalAlert(title: "Sorry", message: "Please Enter Valid Name")
         }catch SignUpError.isValidPassword{
-            showAlert(title: "Sorry", message: "Please Enter Valid Password")
+            showNormalAlert(title: "Sorry", message: "Please Enter Valid Password")
         }catch SignUpError.isValidMobile{
-            showAlert(title: "Sorry", message: "Please Enter Valid Mobile")
+            showNormalAlert(title: "Sorry", message: "Please Enter Valid Mobile")
         }catch {
-            showAlert(title: "Sorry", message: "Please Fill All fields")
+            showNormalAlert(title: "Sorry", message: "Please Fill All fields")
         }
     }
 }

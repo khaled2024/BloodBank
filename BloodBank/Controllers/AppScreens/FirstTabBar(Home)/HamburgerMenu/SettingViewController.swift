@@ -41,7 +41,7 @@ class SettingViewController: UIViewController {
                         }
                     }else{
                         print("denied error")
-                        self.showAlertWithAction(title: "Sorry", message: "Please turn on your Notification to get the lastest Notifications")
+                        self.showAlertWithSettingBtn(title: "Sorry", message: "Please turn on your Notification to get the lastest Notifications")
                     }
                     print("switch on")
                 }
@@ -83,7 +83,7 @@ class SettingViewController: UIViewController {
         let newLang = currentLang == "en" ? "ar" : "en"
         UserDefaults.standard.setValue([newLang], forKey: "AppleLanguages")
         print(newLang)
-        self.myAlert(title: "Are you sure you want to change the Language of the Application to (\(newLang))", message: "", style: .default) { _
+        self.showAlertWithCancleBtn(title: "Are you sure you want to change the Language of the Application to (\(newLang))", message: "", style: .default) { _
             in
             exit(0)
         }

@@ -35,7 +35,6 @@
 		EA4278A427B025A7002D444A /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4278A327B025A7002D444A /* RequestViewController.swift */; };
 		EA4278A627B025BF002D444A /* DonationHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4278A527B025BF002D444A /* DonationHistoryViewController.swift */; };
 		EA4278A827B025D4002D444A /* HelpAndSupportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4278A727B025D4002D444A /* HelpAndSupportViewController.swift */; };
-		EA4278AA27B025E9002D444A /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4278A927B025E9002D444A /* PrivacyViewController.swift */; };
 		EA4278AC27B025FB002D444A /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4278AB27B025FB002D444A /* SettingViewController.swift */; };
 		EA4402F127EA80200034C6AF /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4402F027EA80200034C6AF /* CustomView.swift */; };
 		EA45BFA627C5996B00D56AEC /* DonateBloodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA45BFA527C5996B00D56AEC /* DonateBloodViewController.swift */; };
@@ -139,7 +138,6 @@
 		EA4278A327B025A7002D444A /* RequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
 		EA4278A527B025BF002D444A /* DonationHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationHistoryViewController.swift; sourceTree = "<group>"; };
 		EA4278A727B025D4002D444A /* HelpAndSupportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpAndSupportViewController.swift; sourceTree = "<group>"; };
-		EA4278A927B025E9002D444A /* PrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
 		EA4278AB27B025FB002D444A /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		EA4402F027EA80200034C6AF /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		EA45BFA527C5996B00D56AEC /* DonateBloodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonateBloodViewController.swift; sourceTree = "<group>"; };
@@ -264,10 +262,10 @@
 			isa = PBXGroup;
 			children = (
 				EAB1C98E27A54DEE006BB209 /* TabBarController.swift */,
-				EAEF17A527A48B8B0002FFA5 /* FirstScreens */,
-				EAEF17A627A48B9B0002FFA5 /* SecondScreens */,
-				EAEF17A727A48BA10002FFA5 /* ThirdScreens */,
-				EAEF17A827A48BA30002FFA5 /* FourthScreens */,
+				EAEF17A527A48B8B0002FFA5 /* FirstTabBar(Home) */,
+				EAEF17A627A48B9B0002FFA5 /* SecondScreen(History) */,
+				EAEF17A727A48BA10002FFA5 /* ThirdScreen(Location) */,
+				EAEF17A827A48BA30002FFA5 /* FourthScreen(Account) */,
 			);
 			path = AppScreens;
 			sourceTree = "<group>";
@@ -416,9 +414,9 @@
 				EACC012D27A4272D00FFB92B /* Service */,
 				EAC252EA276A3A2B0033F96F /* Utilities */,
 				EAC252E3276A33320033F96F /* Extensions */,
+				EACC013F27A43A6600FFB92B /* Helper */,
 				EAC252DA276A2E9F0033F96F /* Model */,
 				EAC252DB276A2EAA0033F96F /* View */,
-				EACC013F27A43A6600FFB92B /* Helper */,
 				EAC252DC276A2EB40033F96F /* Controllers */,
 				EAC252E1276A2F780033F96F /* Resources */,
 				EAC252E2276A2F820033F96F /* Assets */,
@@ -526,7 +524,6 @@
 				EA2A523727EA429300D92ED3 /* CoronaStatsViewController.swift */,
 				EA4CA33627F9C782003873DC /* YourStoryViewController.swift */,
 				EA4278A727B025D4002D444A /* HelpAndSupportViewController.swift */,
-				EA4278A927B025E9002D444A /* PrivacyViewController.swift */,
 				EA4278AB27B025FB002D444A /* SettingViewController.swift */,
 			);
 			path = HamburgerMenu;
@@ -588,7 +585,7 @@
 			path = EducateYourself;
 			sourceTree = "<group>";
 		};
-		EAEF17A527A48B8B0002FFA5 /* FirstScreens */ = {
+		EAEF17A527A48B8B0002FFA5 /* FirstTabBar(Home) */ = {
 			isa = PBXGroup;
 			children = (
 				EA064CAD27A4750600A06257 /* MainViewController.swift */,
@@ -598,31 +595,31 @@
 				EAE615DA27D962EC00A56C5A /* OrderBlood */,
 				EAE615DB27D962F800A56C5A /* EducateYourself */,
 			);
-			path = FirstScreens;
+			path = "FirstTabBar(Home)";
 			sourceTree = "<group>";
 		};
-		EAEF17A627A48B9B0002FFA5 /* SecondScreens */ = {
+		EAEF17A627A48B9B0002FFA5 /* SecondScreen(History) */ = {
 			isa = PBXGroup;
 			children = (
 				EAD669F027C63A72006221A2 /* HistoryMainViewController.swift */,
 			);
-			path = SecondScreens;
+			path = "SecondScreen(History)";
 			sourceTree = "<group>";
 		};
-		EAEF17A727A48BA10002FFA5 /* ThirdScreens */ = {
+		EAEF17A727A48BA10002FFA5 /* ThirdScreen(Location) */ = {
 			isa = PBXGroup;
 			children = (
 				EAE3C90A27B12C6300F42D16 /* MapViewController.swift */,
 			);
-			path = ThirdScreens;
+			path = "ThirdScreen(Location)";
 			sourceTree = "<group>";
 		};
-		EAEF17A827A48BA30002FFA5 /* FourthScreens */ = {
+		EAEF17A827A48BA30002FFA5 /* FourthScreen(Account) */ = {
 			isa = PBXGroup;
 			children = (
 				EAD669F227C63F50006221A2 /* DonorViewController.swift */,
 			);
-			path = FourthScreens;
+			path = "FourthScreen(Account)";
 			sourceTree = "<group>";
 		};
 		EAF7D49027E1410300743163 /* RequestCell */ = {
@@ -773,7 +770,6 @@
 				EA818B0827E1140C00D36808 /* Sick.swift in Sources */,
 				EA4278A827B025D4002D444A /* HelpAndSupportViewController.swift in Sources */,
 				EA1831C727DA6C1000D9BA90 /* RequestsTableViewCell.swift in Sources */,
-				EA4278AA27B025E9002D444A /* PrivacyViewController.swift in Sources */,
 				EA4278A427B025A7002D444A /* RequestViewController.swift in Sources */,
 				EA86A9FD27CAD4F4006EA939 /* HomeNCViewController.swift in Sources */,
 				EAD669F327C63F50006221A2 /* DonorViewController.swift in Sources */,

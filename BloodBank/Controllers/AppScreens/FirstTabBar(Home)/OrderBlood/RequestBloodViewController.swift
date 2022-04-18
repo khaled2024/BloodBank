@@ -58,7 +58,7 @@ class RequestBloodViewController: UIViewController{
             print("the time is \(time)")
             return true
         }
-        showAlert(title: "Sorry", message: "Please Choose the date.")
+        showNormalAlert(title: "Sorry", message: "Please Choose the date.")
         return false
     }
     private func checkGoingNextRequest(){
@@ -72,7 +72,7 @@ class RequestBloodViewController: UIViewController{
             print("name of hospital is \(bloodBankNameTF.text!)")
             print("the quantity is \(numOfUnitsLbl.text!)")
         }else{
-            self.showAlert(title: "Sorry", message: "Please fill Fields.")
+            self.showNormalAlert(title: "Sorry", message: "Please fill Fields.")
             customBtn.confirmBtnNotSelected(Btn: nextBtn)
         }
     }

@@ -82,11 +82,11 @@ class LoginViewController: UIViewController {
         do {
             try signIn()
         }catch SignUpError.isValidEmail{
-            showAlert(title: "Sorry", message: "Please Enter Valid Email")
+            showNormalAlert(title: "Sorry", message: "Please Enter Valid Email")
         }catch SignUpError.isValidPassword{
-            showAlert(title: "Sorry", message: "Please Enter Valid Password")
+            showNormalAlert(title: "Sorry", message: "Please Enter Valid Password")
         }catch{
-            showAlert(title: "Sorry", message: "Please Fill All fields")
+            showNormalAlert(title: "Sorry", message: "Please Fill All fields")
         }
     }
     @IBAction func newAccountBtnTapped(_ sender: UIButton) {

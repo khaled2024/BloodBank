@@ -7,9 +7,13 @@
 
 import Foundation
 class ApiService{
+    //MARK: - Variables.
     static let sharedService = ApiService()
     let url = URLS.urlCoronaStats
     
+    
+    //MARK: - Private Functions.
+    // Api for global Corona Statistic.
     func getCoronaAnalysis(completion: @escaping(_ coronaAnalysis: CoronaAnalysis?,_ error: Error?)-> Void){
         guard let url = URL(string: "\(url)all" )else{return}
         let session = URLSession.shared
@@ -31,6 +35,7 @@ class ApiService{
         }
         task.resume()
     }
+    //Api for Country Corona Statistic.
     func getCountryInfo(completion: @escaping(_ repositories: [CountryStats]?,_ error: Error?)-> Void){
         guard let url = URL(string: "\(url)countries")else{return}
         let session = URLSession.shared

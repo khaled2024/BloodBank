@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIViewController {
-    func showAlert(title: String , message: String){
+    func showNormalAlert(title: String , message: String){
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .destructive, handler: nil))
         self.present(alert, animated: true, completion: nil)
@@ -19,7 +19,7 @@ extension UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    func showAlertWithAction(title: String , message: String){
+    func showAlertWithSettingBtn(title: String , message: String){
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .destructive, handler: nil))
         alert.addAction(UIAlertAction(title: "Setting", style: .default, handler: { action in
@@ -27,7 +27,7 @@ extension UIViewController {
         }))
         self.present(alert, animated: true, completion: nil)
     }
-    func myAlert(title: String,message: String , style: UIAlertAction.Style,completion: ((UIAlertAction)-> Void)?){
+    func showAlertWithCancleBtn(title: String,message: String , style: UIAlertAction.Style,completion: ((UIAlertAction)-> Void)?){
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: style, handler: completion))
         alert.addAction(UIAlertAction(title: "Cancle", style: style, handler: { _ in
@@ -35,4 +35,7 @@ extension UIViewController {
         }))
         self.present(alert, animated: true, completion: nil)
     }
+    
+    
 }
+    

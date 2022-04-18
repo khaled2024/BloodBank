@@ -123,7 +123,7 @@ class DetailsCellViewController: UIViewController, UISheetPresentationController
             self.animateOut(desireView: addCommentView)
             commentTextView.text = ""
         }else{
-            showAlert(title: "Sorry", message: "Please write a Comment.")
+            showNormalAlert(title: "Sorry", message: "Please write a Comment.")
         }
     }
     @IBAction func shareBtnTapped(_ sender: UIButton) {

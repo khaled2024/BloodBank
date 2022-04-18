@@ -19,4 +19,7 @@ class OnboardingCollectionViewCell: UICollectionViewCell {
         self.descriptionLabel.text = slide.description
     }
     
+
+    
+    
 }

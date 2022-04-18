@@ -45,7 +45,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if isLoggedIn {
 //                TabBarScreen()
                 navigationManager.show(screen: .tapBarController, inController: TabBarController())
-
             }else {
                 goTOHomeScreen()
             }
@@ -61,17 +60,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
    func goTOHomeScreen(){
         let sb = UIStoryboard(name:"Main", bundle: nil)
         let HomeNC = sb.instantiateViewController(withIdentifier: "HomeNC") as! HomeNCViewController
-//        let navController = UINavigationController(rootViewController: HomeNC)
         self.window?.rootViewController = HomeNC
     }
-   
-    
 }
 //MARK: - Extension {UNUserNotificationCenterDelegate}
 extension AppDelegate: UNUserNotificationCenterDelegate{
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler([.banner])
     }
-    
-    
 }

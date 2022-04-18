@@ -308,7 +308,7 @@ class AppBloodRequestViewController: UIViewController{
             }
             self.fitBoardManager.showBulletin(above: self)
         }else{
-            showAlert(title: "Sorry", message: "Please write a message for Donors.")
+            showNormalAlert(title: "Sorry", message: "Please write a message for Donors.")
         }
     }
     

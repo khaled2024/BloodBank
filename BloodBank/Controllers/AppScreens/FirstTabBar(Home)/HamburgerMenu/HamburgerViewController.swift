@@ -26,7 +26,6 @@ class HamburgerViewController: UIViewController {
     @IBOutlet weak var previousDonationsBtn: UIButton!
     @IBOutlet weak var helpBtn: UIButton!
     @IBOutlet weak var yourStory: UIButton!
-    @IBOutlet weak var privcyBtn: UIButton!
     @IBOutlet weak var settingBtn: UIButton!
     @IBOutlet weak var logoutBtn: UIButton!
     
@@ -60,7 +59,6 @@ class HamburgerViewController: UIViewController {
             self.btnCustom.setUpBtnFont(btn: coronaBtn, text: "Corona stats".Localized())
             self.btnCustom.setUpBtnFont(btn: settingBtn, text: "Setting".Localized())
             self.btnCustom.setUpBtnFont(btn: donationRequestsBtn, text: "Donation Requests".Localized())
-            self.btnCustom.setUpBtnFont(btn: privcyBtn, text: "Privacy policy".Localized())
             self.btnCustom.setUpBtnFont(btn: logoutBtn, text: "Log out".Localized())
             self.btnCustom.setUpBtnFont(btn: helpBtn, text: "Help & Support".Localized())
             self.btnCustom.setUpBtnFont(btn: yourStory, text: "Your Story".Localized())
@@ -114,12 +112,6 @@ class HamburgerViewController: UIViewController {
     @IBAction func helpAndSupportBtnTapped(_ sender: UIButton) {
         let helpVC = HelpAndSupportViewController.instantiate()
         navigationController?.pushViewController(helpVC, animated: true)
-        self.modalTransitionStyle = .partialCurl
-        self.dismissHamburgerMenu()
-    }
-    @IBAction func privacyBtnTapped(_ sender: UIButton) {
-        let privacyVC = PrivacyViewController.instantiate()
-        navigationController?.pushViewController(privacyVC, animated: true)
         self.modalTransitionStyle = .partialCurl
         self.dismissHamburgerMenu()
     }

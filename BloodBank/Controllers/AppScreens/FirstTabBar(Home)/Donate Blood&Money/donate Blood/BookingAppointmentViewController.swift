@@ -38,7 +38,7 @@ class BookingAppointmentViewController: UIViewController {
         if isLocationServicesEnabled(){
             checkAuthorization()
         }else{
-            self.showAlert(title: "Sorry", message: "Please Enable location service")
+            self.showNormalAlert(title: "Sorry", message: "Please Enable location service")
         }
     }
     private func displayMaltipleLocations(){
@@ -187,10 +187,10 @@ extension BookingAppointmentViewController: CLLocationManagerDelegate{
             bookingMapView.showsUserLocation = true
             break
         case .denied:
-            self.showAlertWithAction(title: "Sorry", message: "Please Authorize Access to Location")
+            self.showAlertWithSettingBtn(title: "Sorry", message: "Please Authorize Access to Location")
             break
         case .restricted:
-            showAlert(title: "", message: "authorization restricted")
+            showNormalAlert(title: "", message: "authorization restricted")
             break
         default:
             print("default..!")
@@ -208,7 +208,7 @@ extension BookingAppointmentViewController: CLLocationManagerDelegate{
             bookingMapView.showsUserLocation = true
             break
         case .denied:
-            self.showAlertWithAction(title: "Sorry", message:"Please Authorize Access to Location")
+            self.showAlertWithSettingBtn(title: "Sorry", message:"Please Authorize Access to Location")
             break
         default:
             print("default..!")

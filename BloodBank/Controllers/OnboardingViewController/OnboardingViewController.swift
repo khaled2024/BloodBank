@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+// اون بوردينج اسكرين
 class OnboardingViewController: UIViewController {
     
     //MARK: - outlets

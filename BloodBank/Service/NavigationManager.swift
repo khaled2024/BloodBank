@@ -14,6 +14,7 @@ class NavigationManager{
         case onboarding
         case mainApp
         case tapBarController
+        case homeNC
     }
     
     func show(screen: Screen, inController: UIViewController){
@@ -26,6 +27,9 @@ class NavigationManager{
             viewContoller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: Identifier.HomeNC)
         case .tapBarController:
             viewContoller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController")
+        case .homeNC:
+            viewContoller = UIStoryboard(name: "Main", bundle: nil)
+            .instantiateViewController(withIdentifier: "HomeNC")as? HomeNCViewController
         }
     
         if let sceneDelegate = inController.view.window?.windowScene?.delegate as? SceneDelegate, let window = sceneDelegate.window{

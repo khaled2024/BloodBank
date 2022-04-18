@@ -39,7 +39,7 @@ class MapViewController: UIViewController {
         if isLocationServicesEnabled(){
             checkAuthorization()
         }else{
-            self.showAlertWithAction(title: "Sorry", message: "Please Enable location service")
+            self.showAlertWithSettingBtn(title: "Sorry", message: "Please Enable location service")
         }
     }
     private func displayMaltipleLocations(){
@@ -155,10 +155,10 @@ extension MapViewController: CLLocationManagerDelegate{
             mapView.showsUserLocation = true
             break
         case .denied:
-            self.showAlertWithAction(title: "Sorry", message: "Please Authorize Access to Location")
+            self.showAlertWithSettingBtn(title: "Sorry", message: "Please Authorize Access to Location")
             break
         case .restricted:
-            showAlert(title: "", message: "authorization restricted")
+            showNormalAlert(title: "", message: "authorization restricted")
             break
         default:
             print("default..!")
@@ -178,7 +178,7 @@ extension MapViewController: CLLocationManagerDelegate{
             mapView.showsUserLocation = true
             break
         case .denied:
-            self.showAlertWithAction(title: "Sorry", message: "Please Authorize Access to Location")
+            self.showAlertWithSettingBtn(title: "Sorry", message: "Please Authorize Access to Location")
             break
         default:
             print("default..!")

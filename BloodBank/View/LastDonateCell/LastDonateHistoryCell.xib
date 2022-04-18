@@ -14,7 +14,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="158" id="KGk-i7-Jjw" customClass="LastDonateHistoryCell" customModule="BloodBank" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="158" id="KGk-i7-Jjw" customClass="LastDonateHistoryCell" customModule="BloodBank" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="466" height="158"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -25,10 +25,10 @@
                         <rect key="frame" x="8" y="8" width="450" height="142"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="historyVaccine2" translatesAutoresizingMaskIntoConstraints="NO" id="A7i-HK-cvL">
-                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                <rect key="frame" x="10" y="10" width="35" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="RcK-mH-C1e"/>
-                                    <constraint firstAttribute="width" constant="30" id="ijn-VV-YZu"/>
+                                    <constraint firstAttribute="height" constant="35" id="RcK-mH-C1e"/>
+                                    <constraint firstAttribute="width" constant="35" id="ijn-VV-YZu"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="السبت ،٢ ابريل ٢٠٢٢" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPz-PY-jts">
@@ -44,27 +44,26 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="historyVaccine1" translatesAutoresizingMaskIntoConstraints="NO" id="wmS-ZG-dbv">
-                                <rect key="frame" x="420" y="0.0" width="30" height="30"/>
+                                <rect key="frame" x="400" y="10" width="40" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Baa-0a-h5y"/>
-                                    <constraint firstAttribute="width" constant="30" id="yo4-Su-6Wz"/>
+                                    <constraint firstAttribute="height" constant="40" id="Baa-0a-h5y"/>
+                                    <constraint firstAttribute="width" constant="40" id="yo4-Su-6Wz"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.9098039269" green="0.31764706970000001" blue="0.40000003579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="A7i-HK-cvL" firstAttribute="top" secondItem="Zjn-GD-kcf" secondAttribute="top" id="3vx-ng-9HK"/>
                             <constraint firstItem="hPz-PY-jts" firstAttribute="centerX" secondItem="2Hc-w3-oKp" secondAttribute="centerX" id="44e-JX-u93"/>
-                            <constraint firstItem="A7i-HK-cvL" firstAttribute="leading" secondItem="Zjn-GD-kcf" secondAttribute="leading" id="9zt-lq-f1U"/>
+                            <constraint firstItem="A7i-HK-cvL" firstAttribute="leading" secondItem="Zjn-GD-kcf" secondAttribute="leading" constant="10" id="9zt-lq-f1U"/>
                             <constraint firstItem="hPz-PY-jts" firstAttribute="height" secondItem="2Hc-w3-oKp" secondAttribute="height" id="KWM-vC-018"/>
                             <constraint firstItem="2Hc-w3-oKp" firstAttribute="centerY" secondItem="Zjn-GD-kcf" secondAttribute="centerY" constant="-30" id="MD2-08-R10"/>
-                            <constraint firstItem="A7i-HK-cvL" firstAttribute="top" secondItem="Zjn-GD-kcf" secondAttribute="top" id="OiC-d4-E0E"/>
-                            <constraint firstAttribute="trailing" secondItem="wmS-ZG-dbv" secondAttribute="trailing" id="SlV-c9-mPm"/>
+                            <constraint firstItem="A7i-HK-cvL" firstAttribute="top" secondItem="Zjn-GD-kcf" secondAttribute="top" constant="10" id="OiC-d4-E0E"/>
+                            <constraint firstAttribute="trailing" secondItem="wmS-ZG-dbv" secondAttribute="trailing" constant="10" id="SlV-c9-mPm"/>
                             <constraint firstItem="hPz-PY-jts" firstAttribute="trailing" secondItem="2Hc-w3-oKp" secondAttribute="trailing" id="UrT-jY-u0F"/>
                             <constraint firstAttribute="bottom" secondItem="hPz-PY-jts" secondAttribute="bottom" constant="52" id="aUu-Ue-1ST"/>
                             <constraint firstItem="hPz-PY-jts" firstAttribute="top" secondItem="2Hc-w3-oKp" secondAttribute="bottom" constant="15" id="e6z-cY-fxe"/>
                             <constraint firstItem="2Hc-w3-oKp" firstAttribute="leading" secondItem="Zjn-GD-kcf" secondAttribute="leading" constant="20" id="ldT-EO-zib"/>
-                            <constraint firstItem="wmS-ZG-dbv" firstAttribute="top" secondItem="Zjn-GD-kcf" secondAttribute="top" id="o5y-cc-1gu"/>
+                            <constraint firstItem="wmS-ZG-dbv" firstAttribute="top" secondItem="Zjn-GD-kcf" secondAttribute="top" constant="10" id="o5y-cc-1gu"/>
                             <constraint firstItem="hPz-PY-jts" firstAttribute="leading" secondItem="2Hc-w3-oKp" secondAttribute="leading" id="q5o-I4-pnp"/>
                             <constraint firstAttribute="trailing" secondItem="2Hc-w3-oKp" secondAttribute="trailing" constant="20" id="xYQ-xi-XQk"/>
                         </constraints>

@@ -24,7 +24,7 @@ class HistoryMainViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        segmentControll.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Almarai-ExtraBold", size: 9)!], for: .normal)
+        segmentControll.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Almarai-Bold", size: 12)!], for: .normal)
     }
     //MARK: - private func
     private func registerNibCells(){
@@ -60,13 +60,48 @@ class HistoryMainViewController: UIViewController {
             break
         }
     }
+    private func segmentControlSelection(indexPath: IndexPath)-> UITableViewCell{
+        switch segmentSender {
+        case 0:
+            if (indexPath.row == 0 || indexPath.row == 3){
+                let cell = HistorytableView.dequeueReusableCell(withIdentifier: "Requestscell")as! RequestsTableViewCell
+                cell.configure(name: patient[indexPath.row].name!, bloodType: patient[indexPath.row].bloodType!, address: patient[indexPath.row].address!, time: patient[indexPath.row].time!, description: patient[indexPath.row].description!, donorImage: patient[indexPath.row].donorImage!)
+                return cell
+            }else if (indexPath.row == 1 ){
+                let cell = HistorytableView.dequeueReusableCell(withIdentifier: "HistoryVaccineCell")as! HistoryVaccineCell
+                return cell
+            }else if (indexPath.row == 2){
+                let cell = HistorytableView.dequeueReusableCell(withIdentifier: "BloodOrderCell")as! BloodOrderCell
+                return cell
+            }else{
+                let cell = HistorytableView.dequeueReusableCell(withIdentifier: "LastDonateHistoryCell")as! LastDonateHistoryCell
+                return cell
+            }
+        case 1:
+            let cell = HistorytableView.dequeueReusableCell(withIdentifier: "Requestscell")as! RequestsTableViewCell
+            cell.configure(name: patient[indexPath.row].name!, bloodType: patient[indexPath.row].bloodType!, address: patient[indexPath.row].address!, time: patient[indexPath.row].time!, description: patient[indexPath.row].description!, donorImage: patient[indexPath.row].donorImage!)
+            return cell
+        case 2:
+            let cell = HistorytableView.dequeueReusableCell(withIdentifier: "HistoryVaccineCell")as! HistoryVaccineCell
+            return cell
+        case 3:
+            let cell = HistorytableView.dequeueReusableCell(withIdentifier: "BloodOrderCell")as! BloodOrderCell
+            return cell
+        case 4:
+            let cell = HistorytableView.dequeueReusableCell(withIdentifier: "LastDonateHistoryCell")as! LastDonateHistoryCell
+            return cell
+        default:
+            break
+        }
+        return UITableViewCell()
+    }
     private func goToDetailsCell(indexPath: IndexPath){
-        if segmentSender == 1{
+        if segmentSender == 1 || (segmentSender == 0 && indexPath.row == 0) || (segmentSender == 0 && indexPath.row == 3){
             let controller = DetailsCellViewController.instantiate()
             controller.myPatient = patient[indexPath.row]
             self.present(controller, animated: true, completion: nil)
         }else{
-           //
+           return
         }
     }
     //MARK: - actions
@@ -81,27 +116,7 @@ extension HistoryMainViewController: UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch segmentSender {
-        case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "Requestscell")as! RequestsTableViewCell
-            return cell
-        case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "Requestscell")as! RequestsTableViewCell
-            cell.configure(name: patient[indexPath.row].name!, bloodType: patient[indexPath.row].bloodType!, address: patient[indexPath.row].address!, time: patient[indexPath.row].time!, description: patient[indexPath.row].description!, donorImage: patient[indexPath.row].donorImage!)
-            return cell
-        case 2:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryVaccineCell")as! HistoryVaccineCell
-            return cell
-        case 3:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "BloodOrderCell")as! BloodOrderCell
-            return cell
-        case 4:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "LastDonateHistoryCell")as! LastDonateHistoryCell
-            return cell
-        default:
-            break
-        }
-        return UITableViewCell()
+       segmentControlSelection(indexPath: indexPath)
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -115,13 +130,7 @@ extension HistoryMainViewController: UITableViewDelegate,UITableViewDataSource{
         }
     }
 }
-
-
-
-
-
 //MARK: - Comments
-
 //NotificationCenter.default.addObserver(self, selector: #selector(didGetNotification), name: Notification.Name (Notifications.detailNot), object: nil)
 
 //@objc func didGetNotification(_ notification: Notification){

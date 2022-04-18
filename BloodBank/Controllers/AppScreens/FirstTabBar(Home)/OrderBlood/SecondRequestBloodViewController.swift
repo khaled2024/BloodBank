@@ -77,7 +77,7 @@ class SecondRequestBloodViewController: UIViewController {
             self.customBtn.toggleForBtn(Btn: createRequestBtn)
             createRequestBtn.backgroundColor = #colorLiteral(red: 1, green: 0.2901960784, blue: 0.3843137255, alpha: 1)
         }else{
-            self.showAlert(title: "Sorry", message: "Please fill the Fields.")
+            self.showNormalAlert(title: "Sorry", message: "Please fill the Fields.")
         }
         
     }

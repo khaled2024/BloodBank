@@ -6,6 +6,7 @@
 //
 
 import UIKit
+// اللودينج كونتروللر للي هيودينا علي انهو فيو
 class LoadingViewController: UIViewController {
     private var isOnBoardingSeen: Bool!
     private let navigationManager = NavigationManager()

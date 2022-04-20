@@ -12,7 +12,6 @@ class HomeViewController: UIViewController {
     //MARK: - outlets
     @IBOutlet weak var createBtn: UIButton!
     @IBOutlet weak var loginBtn: UIButton!
-    @IBOutlet weak var helpBtn: UIButton!
     //MARK: - lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,9 +26,6 @@ class HomeViewController: UIViewController {
         
     }
     @IBAction func LoginBtnTapped(_ sender: UIButton) {
-        
-    }
-    @IBAction func HelpBtnTapped(_ sender: UIButton) {
         
     }
 }

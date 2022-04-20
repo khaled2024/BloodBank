@@ -20,13 +20,16 @@ class HistoryMainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerNibCells()
-       
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        segmentControll.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Almarai-Bold", size: 12)!], for: .normal)
+        self.setUpDesign()
     }
     //MARK: - private func
+    private func setUpDesign(){
+        segmentControll.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Almarai-Bold", size: 12)!], for: .normal)
+        
+    }
     private func registerNibCells(){
         HistorytableView.register(UINib(nibName: "RequestsTableViewCell", bundle: nil), forCellReuseIdentifier: "Requestscell")
         HistorytableView.register(UINib(nibName: "HistoryVaccineCell", bundle: nibBundle), forCellReuseIdentifier: "HistoryVaccineCell")

@@ -10,6 +10,8 @@ import UIKit
 class PickDateTimeViewController: UIViewController {
     
     
+    @IBOutlet weak var addressOfHospital: UILabel!
+    @IBOutlet weak var govTextField: UITextField!
     @IBOutlet weak var cityTextField: UITextField!
     @IBOutlet weak var bloodTypeTextField: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -18,28 +20,32 @@ class PickDateTimeViewController: UIViewController {
     let navBar = NavigationBar()
     let bloodTypePickerView = UIPickerView()
     let cityPickerView = UIPickerView()
+    let govPickerView = UIPickerView()
     let arrOfBloodType = Arrays.arrayOfBloodType
-    let arrOfCities = Arrays.arrayOfHospitals
-
+    let arrOfCities = Arrays.arrayOfCities
+    let arrOfGov = Arrays.arrayOfGover
+    var HospitalName: String = ""
     
     //MARK: - life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpDesign()
         setUp()
-        
+        addressOfHospital.text = HospitalName
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        confirmDateBtn.backgroundColor =  #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
     }
     //MARK: - private functions
     private func setUp(){
         bloodTypePickerView.tag = 0
-        cityPickerView.tag = 1
+        govPickerView.tag = 1
+        cityPickerView.tag = 2
+        govTextField.inputView = govPickerView
         cityTextField.inputView = cityPickerView
         bloodTypeTextField.inputView = bloodTypePickerView
+        govPickerView.delegate = self
+        govPickerView.dataSource = self
         bloodTypePickerView.delegate = self
         bloodTypePickerView.dataSource = self
         cityPickerView.delegate = self
@@ -61,7 +67,7 @@ class PickDateTimeViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = false
     }
     private func setUpTF()-> Bool{
-        if let dateLbl = dateTimeLabel.text , !dateLbl.isEmpty ,let city = cityTextField.text , !city.isEmpty , let blood = bloodTypeTextField.text , !blood.isEmpty {
+        if let dateLbl = dateTimeLabel.text , !dateLbl.isEmpty ,let city = cityTextField.text , !city.isEmpty , let blood = bloodTypeTextField.text , !blood.isEmpty, let gov = govTextField.text , !gov.isEmpty {
                 return true
         }
         return false
@@ -84,7 +90,7 @@ class PickDateTimeViewController: UIViewController {
         if setUpTF(){
             openSheet()
         }else{
-            self.confirmDateBtn.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+            return
         }
     }
 }
@@ -98,6 +104,8 @@ extension PickDateTimeViewController: UIPickerViewDelegate, UIPickerViewDataSour
         case 0 :
             return arrOfBloodType.count
         case 1 :
+            return arrOfGov.count
+        case 2 :
             return arrOfCities.count
         default:
             return 0
@@ -108,6 +116,8 @@ extension PickDateTimeViewController: UIPickerViewDelegate, UIPickerViewDataSour
         case 0 :
             return arrOfBloodType[row]
         case 1 :
+            return arrOfGov[row]
+        case 2 :
             return arrOfCities[row]
         default:
             return ""
@@ -118,6 +128,8 @@ extension PickDateTimeViewController: UIPickerViewDelegate, UIPickerViewDataSour
         case 0 :
             bloodTypeTextField.text = arrOfBloodType[row]
         case 1 :
+            govTextField.text = arrOfGov[row]
+        case 2 :
             cityTextField.text = arrOfCities[row]
         default:
             return

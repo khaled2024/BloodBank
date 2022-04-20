@@ -61,10 +61,11 @@ You can get paid for donating blood in 25 countries around the world. Some count
 "Available to donate" = "Available to donate";
 "appointment" = "Appointments";
 "Donation Requests" = "Donation Requests";
+"volunteers" = "Volunteers";
 "Donation History" = "Donation History";
 "Corona stats" = "Corona Stats";
 "Help & Support" = "Help & Support";
-"Your Story" = "Your Story";
+"Your Story" = "Stories";
 "Privacy policy" = "Privacy policy";
 "Setting" = "Setting";
 "Log out" = "Log out";
@@ -118,3 +119,30 @@ You can get paid for donating blood in 25 countries around the world. Some count
 
 // "Donate Money"
 "Donate Money" = "Donate Money";
+
+//donor account
+"FistName" = "Fist Name:";
+"FamilyName" = "Family Name:";
+"Email" = "Email:";
+"Governrate" = "Governorate:";
+"City" = "City:";
+"ID" = "ID:";
+"FistNum" = "Fist Number:";
+"SecondNum" = "Second Number:";
+"Password" = "Password:";
+"BloodType" = "Blood Type:";
+"Gender" = "Gender:";
+"BirthDate" = "Date of Birth:";
+
+// History navBar
+"History" = "History";
+
+
+// Location navBar
+"Location" = "Location";
+
+// Profile navBar
+"Profile" = "";
+
+//Home
+"Home" = "";

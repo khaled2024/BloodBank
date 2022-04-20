@@ -18,12 +18,12 @@ class HamburgerViewController: UIViewController {
     @IBOutlet var mainHumbergerView: UIView!
     @IBOutlet weak var humburgerView: UIView!
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var appointmentBtn: UIButton!
+//    @IBOutlet weak var appointmentBtn: UIButton!
     
     @IBOutlet weak var availableToDonate: UILabel!
     @IBOutlet weak var coronaBtn: UIButton!
     @IBOutlet weak var donationRequestsBtn: UIButton!
-    @IBOutlet weak var previousDonationsBtn: UIButton!
+    @IBOutlet weak var volunteersBtn: UIButton!
     @IBOutlet weak var helpBtn: UIButton!
     @IBOutlet weak var yourStory: UIButton!
     @IBOutlet weak var settingBtn: UIButton!
@@ -54,14 +54,14 @@ class HamburgerViewController: UIViewController {
         let currentLang = Locale.current.languageCode
         if currentLang == "en"{
             availableToDonate.text = "Available to donate".Localized()
-            self.btnCustom.setUpBtnFont(btn: appointmentBtn, text: "appointment".Localized())
-            self.btnCustom.setUpBtnFont(btn: previousDonationsBtn, text: "Donation History".Localized())
             self.btnCustom.setUpBtnFont(btn: coronaBtn, text: "Corona stats".Localized())
             self.btnCustom.setUpBtnFont(btn: settingBtn, text: "Setting".Localized())
             self.btnCustom.setUpBtnFont(btn: donationRequestsBtn, text: "Donation Requests".Localized())
             self.btnCustom.setUpBtnFont(btn: logoutBtn, text: "Log out".Localized())
+            self.btnCustom.setUpBtnFont(btn: volunteersBtn, text: "volunteers".Localized())
             self.btnCustom.setUpBtnFont(btn: helpBtn, text: "Help & Support".Localized())
             self.btnCustom.setUpBtnFont(btn: yourStory, text: "Your Story".Localized())
+            
         }else{
             // set the default of Btn Font (Almarai)
         }
@@ -84,12 +84,7 @@ class HamburgerViewController: UIViewController {
     }
 //    MARK: - Actions
 
-    @IBAction func appointmentBtnTapped(_ sender: UIButton) {
-        let appointmentVC = AppointmentViewController.instantiate()
-        navigationController?.pushViewController(appointmentVC, animated: true)
-        self.modalTransitionStyle = .partialCurl
-        self.dismissHamburgerMenu()
-    }
+    
     @IBAction func requestBtnTapped(_ sender: UIButton) {
         let requestVC = RequestViewController.instantiate()
         navigationController?.pushViewController(requestVC, animated: true)
@@ -97,9 +92,9 @@ class HamburgerViewController: UIViewController {
         self.dismissHamburgerMenu()
 
     }
-    @IBAction func donationHistory(_ sender: UIButton) {
-        let donationVC = DonationHistoryViewController.instantiate()
-        navigationController?.pushViewController(donationVC, animated: true)
+    @IBAction func volunteersBtnTapped(_ sender: UIButton) {
+        let volunteersVC = VolunteersViewController.instantiate()
+        navigationController?.pushViewController(volunteersVC, animated: true)
         self.modalTransitionStyle = .partialCurl
         self.dismissHamburgerMenu()
     }

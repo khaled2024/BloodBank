@@ -16,10 +16,6 @@ class DonorViewController: UIViewController {
     @IBOutlet weak var phoneBtn: UIButton!
     @IBOutlet weak var theNameLbl: UILabel!
     @IBOutlet weak var addressLbl: UILabel!
-    let navBar = NavigationBar()
-    let gradient = UserGradientBackground()
-    let customBtn = UserCustomBtn()
-    
     
     
     @IBOutlet weak var editBtn: UIBarButtonItem!
@@ -35,20 +31,42 @@ class DonorViewController: UIViewController {
     @IBOutlet weak var genderTF: UITextField!
     @IBOutlet weak var birthdateTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
+    //labels
+    @IBOutlet weak var firstNameLbl: UILabel!
+    @IBOutlet weak var familyNameLbl: UILabel!
+    @IBOutlet weak var emailLbl: UILabel!
+    @IBOutlet weak var governLbl: UILabel!
+    @IBOutlet weak var cityLbl:
+    UILabel!
+    @IBOutlet weak var firstNumLbl: UILabel!
+    @IBOutlet weak var secondNumLbl: UILabel!
+    @IBOutlet weak var idLbl: UILabel!
+    @IBOutlet weak var passwordLbl: UILabel!
+    @IBOutlet weak var bloodTypeLbl: UILabel!
+    @IBOutlet weak var genderLbl: UILabel!
+    @IBOutlet weak var birthDateLbl: UILabel!
+    //MARK: - Vars
+    let navBar = NavigationBar()
+    let gradient = UserGradientBackground()
+    let customBtn = UserCustomBtn()
     var isEdited = false
     let goverArr = Arrays.arrayOfGover
     let citiesArr = Arrays.arrayOfCities
     let arrBlood = Arrays.arrayOfBloodType
     let arrGender = Arrays.arrayOfGender
+    let datePicker = UIDatePicker()
     //MARK: - lifeCycles
     override func viewDidLoad() {
         super.viewDidLoad()
         serUpPickerViews()
+        createDatePicker()
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.imageView.layer.cornerRadius = imageView.frame.size.height/2
         setUpDesign()
+        localized()
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -56,7 +74,42 @@ class DonorViewController: UIViewController {
         gradientView.roundedCornerView(corners: [.bottomLeft , .bottomRight], radius: gradientView.frame.size.width/6)
     }
     
+    
+    
     //MARK: - private func
+    private func createDatePicker(){
+        let datePickerView = UIDatePicker()
+        datePickerView.datePickerMode = .date
+        birthdateTF.inputView = datePickerView
+        datePickerView.preferredDatePickerStyle = .wheels
+        datePickerView.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
+    }
+    @objc func handleDatePicker(sender: UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        dateFormatter.dateFormat = "dd/MMM/yyyy"
+        birthdateTF.text = dateFormatter.string(from: sender.date)
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    private func localized(){
+        self.firstNameLbl.customLblFont(lbl: firstNameLbl, fontSize: 19, text: "FistName".Localized())
+        self.familyNameLbl.customLblFont(lbl: familyNameLbl, fontSize: 19, text: "FamilyName".Localized())
+        self.emailLbl.customLblFont(lbl: emailLbl, fontSize: 19, text: "Email".Localized())
+        self.governLbl.customLblFont(lbl: governLbl, fontSize: 19, text: "Governrate".Localized())
+        self.cityLbl.customLblFont(lbl: cityLbl, fontSize: 19, text: "City".Localized())
+        self.firstNumLbl.customLblFont(lbl: firstNumLbl, fontSize: 19, text: "FistNum".Localized())
+        self.secondNumLbl.customLblFont(lbl: secondNumLbl, fontSize: 19, text: "SecondNum".Localized())
+        self.idLbl.customLblFont(lbl: idLbl, fontSize: 19, text: "ID".Localized())
+        self.passwordLbl.customLblFont(lbl: passwordLbl, fontSize: 19, text: "Password".Localized())
+        self.bloodTypeLbl.customLblFont(lbl: bloodTypeLbl, fontSize: 19, text: "BloodType".Localized())
+        self.genderLbl.customLblFont(lbl: genderLbl, fontSize: 19, text: "Gender".Localized())
+        self.birthDateLbl.customLblFont(lbl: birthDateLbl, fontSize: 19, text: "BirthDate".Localized())
+        
+    }
     func serUpPickerViews(){
         let goverPickerView = UIPickerView()
         let citiesPickerView = UIPickerView()
@@ -136,7 +189,6 @@ class DonorViewController: UIViewController {
             self.editBtn.image = UIImage(systemName: "checkmark")
             self.donorNameTF.becomeFirstResponder()
             self.passwordTF.isSecureTextEntry = false
-            
         }else{
             isEdited = false
             self.editBtn.image = UIImage(systemName: "square.and.pencil")

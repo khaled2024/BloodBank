@@ -24,7 +24,8 @@
 "appointment" = "حجز موعد للتبرع بالدم";
 "Donation Requests" = "طلبات التبرع";
 "Donation History" = "التبرعات السابقه";
-"Your Story" = "قصتك";
+"Your Story" = "قصص";
+"volunteers" = "المتطوعين";
 "Corona stats" = "احصائيات كورونا";
 "Help & Support" = "المساعده والدعم";
 "Privacy policy" = "سياسه الخصوصيه";
@@ -80,3 +81,29 @@
 //"Comment" = "تعليق";
 //"Share" = "مشاركه";
 
+
+//donor account
+"FistName" = "الاسم الاول";
+"FamilyName" = "اسم العائله";
+"Email" = "البريد الاكتروني";
+"Governrate" = "المحافظه";
+"City" = "المدينه";
+"FistNum" = "رقم الموبايل الاول";
+"SecondNum" = "رقم الموبايل الثاني";
+"Password" = "الرقم السري";
+"BloodType" = "فصيله الدم";
+"Gender" = "الجنس";
+"ID" = "الرقم القومي";
+"BirthDate" = "تاريخ الميلاد";
+// History navBar
+"History" = "السجلات";
+
+// Location navBar
+"Location" = "الموقع";
+
+
+// Profile navBar
+"Profile" = "الصفحه الشخصيه";
+
+//Home
+"Home" = "الرئيسيه";

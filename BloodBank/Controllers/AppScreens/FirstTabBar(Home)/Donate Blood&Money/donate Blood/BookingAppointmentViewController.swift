@@ -19,6 +19,8 @@ class BookingAppointmentViewController: UIViewController {
     var locationManager = CLLocationManager()
     var coordinatePin: CLLocationCoordinate2D?
     var directionArray: [MKDirections] = []
+   
+  
     //MARK: - LifeCycle
     override func viewDidLoad(){
         super.viewDidLoad()
@@ -123,7 +125,9 @@ class BookingAppointmentViewController: UIViewController {
     }
     //MARK: - Actions
     @IBAction func pickDateTimeBtnTapped(_ sender: UIButton) {
-        navigationController?.pushViewController(UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PickDateTimeViewController")as! PickDateTimeViewController, animated: true)
+        let pickDateVC = PickDateTimeViewController.instantiate()
+        pickDateVC.HospitalName = self.bankNameLabel.text ?? ""
+        navigationController?.pushViewController(pickDateVC, animated: true)
     }
     @IBAction func getDirectionsBtnTapped(_ sender: UIButton) {
         if let userLoc = locationManager.location{
@@ -165,6 +169,8 @@ extension BookingAppointmentViewController: MKMapViewDelegate{
         self.getDirectionBtn.isHidden = false
         bankNameLabel.text =  view.annotation?.title!
         bankAddressLabel.text = view.annotation?.subtitle!
+        print("\(bankNameLabel.text!)")
+        
         coordinatePin = view.annotation?.coordinate
     }
 }

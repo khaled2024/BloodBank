@@ -33,7 +33,6 @@
 		EA34861927FB4F72004A6667 /* VaccineRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA34861827FB4F71004A6667 /* VaccineRequestViewController.swift */; };
 		EA4278A227B01F9C002D444A /* AppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4278A127B01F9C002D444A /* AppointmentViewController.swift */; };
 		EA4278A427B025A7002D444A /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4278A327B025A7002D444A /* RequestViewController.swift */; };
-		EA4278A627B025BF002D444A /* DonationHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4278A527B025BF002D444A /* DonationHistoryViewController.swift */; };
 		EA4278A827B025D4002D444A /* HelpAndSupportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4278A727B025D4002D444A /* HelpAndSupportViewController.swift */; };
 		EA4278AC27B025FB002D444A /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4278AB27B025FB002D444A /* SettingViewController.swift */; };
 		EA4402F127EA80200034C6AF /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4402F027EA80200034C6AF /* CustomView.swift */; };
@@ -44,6 +43,7 @@
 		EA45D3B327E4E0DA0072E19C /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA45D3B027E4E0DA0072E19C /* RequestProtocol.swift */; };
 		EA45D3B427E4E0DA0072E19C /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA45D3B127E4E0DA0072E19C /* SessionManager.swift */; };
 		EA45D3B527E4E0DA0072E19C /* DataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA45D3B227E4E0DA0072E19C /* DataProviderProtocol.swift */; };
+		EA4B13AC280F096900B52607 /* VolunteersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4B13AB280F096900B52607 /* VolunteersViewController.swift */; };
 		EA4C711F27E3D626000C8B02 /* CustomPlaceHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4C711E27E3D626000C8B02 /* CustomPlaceHolder.swift */; };
 		EA4CA33727F9C782003873DC /* YourStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4CA33627F9C782003873DC /* YourStoryViewController.swift */; };
 		EA4CA33A27F9D3F2003873DC /* YourStoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4CA33827F9D3F2003873DC /* YourStoryTableViewCell.swift */; };
@@ -136,7 +136,6 @@
 		EA34861827FB4F71004A6667 /* VaccineRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineRequestViewController.swift; sourceTree = "<group>"; };
 		EA4278A127B01F9C002D444A /* AppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentViewController.swift; sourceTree = "<group>"; };
 		EA4278A327B025A7002D444A /* RequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
-		EA4278A527B025BF002D444A /* DonationHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationHistoryViewController.swift; sourceTree = "<group>"; };
 		EA4278A727B025D4002D444A /* HelpAndSupportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpAndSupportViewController.swift; sourceTree = "<group>"; };
 		EA4278AB27B025FB002D444A /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		EA4402F027EA80200034C6AF /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
@@ -147,6 +146,7 @@
 		EA45D3B027E4E0DA0072E19C /* RequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
 		EA45D3B127E4E0DA0072E19C /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		EA45D3B227E4E0DA0072E19C /* DataProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProviderProtocol.swift; sourceTree = "<group>"; };
+		EA4B13AB280F096900B52607 /* VolunteersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteersViewController.swift; sourceTree = "<group>"; };
 		EA4C711E27E3D626000C8B02 /* CustomPlaceHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPlaceHolder.swift; sourceTree = "<group>"; };
 		EA4CA33627F9C782003873DC /* YourStoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourStoryViewController.swift; sourceTree = "<group>"; };
 		EA4CA33827F9D3F2003873DC /* YourStoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourStoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -520,8 +520,8 @@
 			children = (
 				EA8676CF27A6C70A00E95283 /* HamburgerViewController.swift */,
 				EA9F8B1727FBC9A400345E60 /* Donation Requests */,
-				EA4278A527B025BF002D444A /* DonationHistoryViewController.swift */,
 				EA2A523727EA429300D92ED3 /* CoronaStatsViewController.swift */,
+				EA4B13AB280F096900B52607 /* VolunteersViewController.swift */,
 				EA4CA33627F9C782003873DC /* YourStoryViewController.swift */,
 				EA4278A727B025D4002D444A /* HelpAndSupportViewController.swift */,
 				EA4278AB27B025FB002D444A /* SettingViewController.swift */,
@@ -772,6 +772,7 @@
 				EA1831C727DA6C1000D9BA90 /* RequestsTableViewCell.swift in Sources */,
 				EA4278A427B025A7002D444A /* RequestViewController.swift in Sources */,
 				EA86A9FD27CAD4F4006EA939 /* HomeNCViewController.swift in Sources */,
+				EA4B13AC280F096900B52607 /* VolunteersViewController.swift in Sources */,
 				EAD669F327C63F50006221A2 /* DonorViewController.swift in Sources */,
 				EABDBFCE276CE6B500738EA3 /* HelpViewController.swift in Sources */,
 				EA4CA33A27F9D3F2003873DC /* YourStoryTableViewCell.swift in Sources */,
@@ -802,7 +803,6 @@
 				EAA6BDDE27EBBD2E00FE1BCA /* CountryStats.swift in Sources */,
 				EA545C8F2808A7870009C6C7 /* VaccineCollectionViewController.swift in Sources */,
 				EACC013D27A43A5A00FFB92B /* UserCustomBtn.swift in Sources */,
-				EA4278A627B025BF002D444A /* DonationHistoryViewController.swift in Sources */,
 				EAC252C7276A26F00033F96F /* AppDelegate.swift in Sources */,
 				EAD669F127C63A72006221A2 /* HistoryMainViewController.swift in Sources */,
 				EA66461A27E2BAB1001A9E12 /* CustomTF.swift in Sources */,

@@ -29,7 +29,10 @@ class MapViewController: UIViewController {
         mapView.delegate = self
         locationManager.delegate = self
         self.setAllLocationService()
-       
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
     }
     //MARK: - private functions
     private func setAllLocationService(){

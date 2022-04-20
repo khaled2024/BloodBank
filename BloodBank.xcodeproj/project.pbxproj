@@ -30,6 +30,8 @@
 		EA215BFE27E7FA36005A9843 /* String+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA215BFD27E7FA36005A9843 /* String+URL.swift */; };
 		EA215C0027E80057005A9843 /* EducateDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA215BFF27E80057005A9843 /* EducateDetailsViewController.swift */; };
 		EA2A523827EA429300D92ED3 /* CoronaStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2A523727EA429300D92ED3 /* CoronaStatsViewController.swift */; };
+		EA2AF7ED28102C0400ECCB55 /* VolunteersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2AF7EB28102C0400ECCB55 /* VolunteersTableViewCell.swift */; };
+		EA2AF7EE28102C0400ECCB55 /* VolunteersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA2AF7EC28102C0400ECCB55 /* VolunteersTableViewCell.xib */; };
 		EA34861927FB4F72004A6667 /* VaccineRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA34861827FB4F71004A6667 /* VaccineRequestViewController.swift */; };
 		EA4278A227B01F9C002D444A /* AppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4278A127B01F9C002D444A /* AppointmentViewController.swift */; };
 		EA4278A427B025A7002D444A /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4278A327B025A7002D444A /* RequestViewController.swift */; };
@@ -133,6 +135,8 @@
 		EA215BFD27E7FA36005A9843 /* String+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+URL.swift"; sourceTree = "<group>"; };
 		EA215BFF27E80057005A9843 /* EducateDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducateDetailsViewController.swift; sourceTree = "<group>"; };
 		EA2A523727EA429300D92ED3 /* CoronaStatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronaStatsViewController.swift; sourceTree = "<group>"; };
+		EA2AF7EB28102C0400ECCB55 /* VolunteersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteersTableViewCell.swift; sourceTree = "<group>"; };
+		EA2AF7EC28102C0400ECCB55 /* VolunteersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VolunteersTableViewCell.xib; sourceTree = "<group>"; };
 		EA34861827FB4F71004A6667 /* VaccineRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineRequestViewController.swift; sourceTree = "<group>"; };
 		EA4278A127B01F9C002D444A /* AppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentViewController.swift; sourceTree = "<group>"; };
 		EA4278A327B025A7002D444A /* RequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
@@ -309,6 +313,15 @@
 			path = LastDonateCell;
 			sourceTree = "<group>";
 		};
+		EA2AF7EA28102BBE00ECCB55 /* VolunteersCell */ = {
+			isa = PBXGroup;
+			children = (
+				EA2AF7EB28102C0400ECCB55 /* VolunteersTableViewCell.swift */,
+				EA2AF7EC28102C0400ECCB55 /* VolunteersTableViewCell.xib */,
+			);
+			path = VolunteersCell;
+			sourceTree = "<group>";
+		};
 		EA45D3AF27E4E0DA0072E19C /* ApiService */ = {
 			isa = PBXGroup;
 			children = (
@@ -417,6 +430,7 @@
 				EACC013F27A43A6600FFB92B /* Helper */,
 				EAC252DA276A2E9F0033F96F /* Model */,
 				EAC252DB276A2EAA0033F96F /* View */,
+				EA2AF7EA28102BBE00ECCB55 /* VolunteersCell */,
 				EAC252DC276A2EB40033F96F /* Controllers */,
 				EAC252E1276A2F780033F96F /* Resources */,
 				EAC252E2276A2F820033F96F /* Assets */,
@@ -698,6 +712,7 @@
 				EA1F21C3280C601D00DE49F9 /* HistoryVaccineCell.xib in Resources */,
 				EAD669EF27C6393C006221A2 /* Almarai-Bold.ttf in Resources */,
 				EA1F21C7280C73C200DE49F9 /* BloodOrderCell.xib in Resources */,
+				EA2AF7EE28102C0400ECCB55 /* VolunteersTableViewCell.xib in Resources */,
 				EA01A0AF27C9777100BDCC00 /* Poppins-Bold.ttf in Resources */,
 				EA4CA33B27F9D3F2003873DC /* YourStoryTableViewCell.xib in Resources */,
 				EA1F21CD280C927C00DE49F9 /* LastDonateHistoryCell.xib in Resources */,
@@ -762,6 +777,7 @@
 				EA64542C27F8991900376A8B /* LaunchViewController.swift in Sources */,
 				EA92A0B227E917F30060C5C8 /* Color+UIcolor.swift in Sources */,
 				EA1F21CC280C927C00DE49F9 /* LastDonateHistoryCell.swift in Sources */,
+				EA2AF7ED28102C0400ECCB55 /* VolunteersTableViewCell.swift in Sources */,
 				EA4C711F27E3D626000C8B02 /* CustomPlaceHolder.swift in Sources */,
 				EA4278AC27B025FB002D444A /* SettingViewController.swift in Sources */,
 				EA01A0A727C96F4E00BDCC00 /* NotFitAppointmentViewController.swift in Sources */,

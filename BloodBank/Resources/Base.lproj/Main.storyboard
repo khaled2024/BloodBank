@@ -3205,28 +3205,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="v6G-Qm-yfp">
-                                <rect key="frame" x="0.0" y="100" width="414" height="796"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="v6G-Qm-yfp">
+                                <rect key="frame" x="0.0" y="95" width="414" height="801"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="crI-dS-4Lm">
-                                <rect key="frame" x="0.0" y="49" width="414" height="51"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="44" width="359" height="51"/>
+                                <color key="backgroundColor" red="0.98039215690000003" green="0.97647058819999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="filter (1)" translatesAutoresizingMaskIntoConstraints="NO" id="hYa-hi-kdX">
+                                <rect key="frame" x="359" y="44" width="50" height="51"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xk9-hS-RaN">
+                                <rect key="frame" x="359" y="44" width="50" height="51"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="filterBtnTapped:" destination="gPk-Az-bLa" eventType="touchUpInside" id="GDW-kj-evq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ou2-GB-PRQ"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.98039215690000003" green="0.97647058819999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="crI-dS-4Lm" secondAttribute="trailing" id="CUo-R8-gzu"/>
+                            <constraint firstItem="Xk9-hS-RaN" firstAttribute="centerY" secondItem="hYa-hi-kdX" secondAttribute="centerY" id="9LZ-DK-jPc"/>
+                            <constraint firstItem="hYa-hi-kdX" firstAttribute="top" secondItem="crI-dS-4Lm" secondAttribute="top" id="9aA-E4-UL5"/>
+                            <constraint firstItem="hYa-hi-kdX" firstAttribute="bottom" secondItem="crI-dS-4Lm" secondAttribute="bottom" id="BcY-cM-aPC"/>
                             <constraint firstAttribute="bottom" secondItem="v6G-Qm-yfp" secondAttribute="bottom" id="Doc-al-yCE"/>
+                            <constraint firstItem="Xk9-hS-RaN" firstAttribute="width" secondItem="hYa-hi-kdX" secondAttribute="width" id="FRC-DN-y1U"/>
+                            <constraint firstItem="hYa-hi-kdX" firstAttribute="leading" secondItem="crI-dS-4Lm" secondAttribute="trailing" id="HIx-xg-ygR"/>
                             <constraint firstItem="v6G-Qm-yfp" firstAttribute="leading" secondItem="ou2-GB-PRQ" secondAttribute="leading" id="I4M-kM-aSp"/>
                             <constraint firstItem="crI-dS-4Lm" firstAttribute="leading" secondItem="ou2-GB-PRQ" secondAttribute="leading" id="IF4-2P-4kq"/>
-                            <constraint firstItem="crI-dS-4Lm" firstAttribute="top" secondItem="ou2-GB-PRQ" secondAttribute="top" constant="5" id="grk-Nq-9s3"/>
+                            <constraint firstItem="ou2-GB-PRQ" firstAttribute="trailing" secondItem="hYa-hi-kdX" secondAttribute="trailing" constant="5" id="Lvz-Co-aSZ"/>
+                            <constraint firstItem="hYa-hi-kdX" firstAttribute="centerY" secondItem="crI-dS-4Lm" secondAttribute="centerY" id="Vbj-yA-BRK"/>
+                            <constraint firstItem="crI-dS-4Lm" firstAttribute="top" secondItem="ou2-GB-PRQ" secondAttribute="top" id="grk-Nq-9s3"/>
                             <constraint firstItem="v6G-Qm-yfp" firstAttribute="top" secondItem="crI-dS-4Lm" secondAttribute="bottom" id="qqU-y9-Zge"/>
                             <constraint firstItem="v6G-Qm-yfp" firstAttribute="trailing" secondItem="ou2-GB-PRQ" secondAttribute="trailing" id="tvQ-iZ-kmH"/>
+                            <constraint firstItem="Xk9-hS-RaN" firstAttribute="centerX" secondItem="hYa-hi-kdX" secondAttribute="centerX" id="wok-uN-wTL"/>
+                            <constraint firstItem="Xk9-hS-RaN" firstAttribute="height" secondItem="hYa-hi-kdX" secondAttribute="height" id="z1I-lr-VgI"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bloodSearchBar" destination="crI-dS-4Lm" id="3Hm-oE-R9t"/>
+                        <outlet property="filterBtn" destination="Xk9-hS-RaN" id="yy8-QU-Jsb"/>
+                        <outlet property="mainView" destination="36m-eN-Wea" id="5iV-bC-mZy"/>
+                        <outlet property="voluntersTableView" destination="v6G-Qm-yfp" id="56v-SM-MB1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ksv-dU-yXL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -7054,6 +7081,7 @@
         <image name="email" width="512" height="512"/>
         <image name="email (1)" width="512" height="512"/>
         <image name="exit" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="filter (1)" width="50" height="50"/>
         <image name="fitman2" width="200" height="200"/>
         <image name="fitness" width="50" height="50"/>
         <image name="hand.thumbsup.fill" catalog="system" width="128" height="121"/>

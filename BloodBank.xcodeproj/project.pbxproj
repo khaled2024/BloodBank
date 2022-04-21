@@ -430,7 +430,6 @@
 				EACC013F27A43A6600FFB92B /* Helper */,
 				EAC252DA276A2E9F0033F96F /* Model */,
 				EAC252DB276A2EAA0033F96F /* View */,
-				EA2AF7EA28102BBE00ECCB55 /* VolunteersCell */,
 				EAC252DC276A2EB40033F96F /* Controllers */,
 				EAC252E1276A2F780033F96F /* Resources */,
 				EAC252E2276A2F820033F96F /* Assets */,
@@ -463,6 +462,7 @@
 				EA545C902808C3AA0009C6C7 /* VaccineCell */,
 				EA1F21C8280C73C800DE49F9 /* BloodOrderHistoryCell */,
 				EA1F21C9280C925800DE49F9 /* LastDonateCell */,
+				EA2AF7EA28102BBE00ECCB55 /* VolunteersCell */,
 			);
 			path = View;
 			sourceTree = "<group>";

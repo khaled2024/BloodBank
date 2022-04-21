@@ -14,27 +14,41 @@ struct Volunteer {
     var name: String?
     var location: String?
     var bloodType: String?
+    static func setmyData()->[Volunteer]{
+        var volunteerArr = [Volunteer]()
+        volunteerArr.append(.init(image: "donorLogo", name: "خالد حسين", location: "المنشاه الكبري / السنطه / طنطا / الغربيه", bloodType: "A+"))
+        volunteerArr.append(.init(image: "donorLogo", name: "Amr hussien", location: "tanta / el-santa", bloodType: "B+"))
+        volunteerArr.append(.init(image: "f1", name: "Assel hussien", location: "mnofia", bloodType: "AB+"))
+        volunteerArr.append(.init(image: "f2", name: "khaled hussien", location: "tanta / el-santa", bloodType: "OH+"))
+        volunteerArr.append(.init(image: "f3", name: "mohamed hussien", location: "giza", bloodType: "O-"))
+        volunteerArr.append(.init(image: "f4", name: "kaza hussien", location: "tanta / el-santa", bloodType: "O-"))
+        volunteerArr.append(.init(image: "f5", name: "hello hussien", location: "tanta / el-santa", bloodType: "O-"))
+        volunteerArr.append(.init(image: "f6", name: "beo beo hussien", location: "cairo", bloodType: "O-"))
+        return volunteerArr
+    }
 }
 
 class VolunteersViewController: UIViewController{
     //MARK: - Outlets
+    @IBOutlet weak var noDataImageView: UIImageView!
+    @IBOutlet weak var filterSegmentControll: UISegmentedControl!
     @IBOutlet var mainView: UIView!
     @IBOutlet weak var filterBtn: UIButton!
     @IBOutlet weak var bloodSearchBar: UISearchBar!
     @IBOutlet weak var voluntersTableView: UITableView!
     //MARK: - Vars
-    var volunteer =  [Volunteer]()
-    var filteredData = [Volunteer]()
+    var volunteer: [Volunteer] = Volunteer.setmyData()
+    let initialVolunteerAry: [Volunteer] = Volunteer.setmyData()
     let navBar = NavigationBar()
     let transparentView = UIView()
     let filteredtableView = UITableView()
     var selectedBtn = UIButton()
+    var selectedFilter: String!
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
         setUpRegisterCells()
-        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -49,22 +63,18 @@ class VolunteersViewController: UIViewController{
         self.tabBarController?.tabBar.isHidden = false
         navBar.setNavBar(myView: self, title: "volunteers".Localized(), viewController: view, navBarColor: UIColor.navBarColor, navBarTintColor: UIColor.navBarTintColor, forgroundTitle: UIColor.forgroundTitle, bacgroundView: UIColor.backgroundView)
         bloodSearchBar.placeholder = "Search For Donor"
+        bloodSearchBar.layer.cornerRadius = 10
+        bloodSearchBar.backgroundColor = .clear
+        filterSegmentControll.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Almarai-Bold", size: 15)! ], for: .normal)
     }
     private func setUp(){
-        self.volunteer.append(.init(image: "donorLogo", name: "خالد حسين", location: "المنشاه الكبري / السنطه / طنطا / الغربيه", bloodType: "A+"))
-        self.volunteer.append(.init(image: "donorLogo", name: "Amr hussien", location: "tanta / el-santa", bloodType: "B+"))
-        self.volunteer.append(.init(image: "f1", name: "Assel hussien", location: "tanta / el-santa", bloodType: "AB+"))
-        self.volunteer.append(.init(image: "f2", name: "khaled hussien", location: "tanta / el-santa", bloodType: "OH+"))
-        self.volunteer.append(.init(image: "f3", name: "Amr hussien", location: "tanta / el-santa", bloodType: "O-"))
-        self.volunteer.append(.init(image: "f4", name: "Amr hussien", location: "tanta / el-santa", bloodType: "O-"))
-        self.volunteer.append(.init(image: "f5", name: "Amr hussien", location: "tanta / el-santa", bloodType: "O-"))
-        self.volunteer.append(.init(image: "f6", name: "Amr hussien", location: "tanta / el-santa", bloodType: "O-"))
         bloodSearchBar.delegate = self
         voluntersTableView.delegate = self
         voluntersTableView.dataSource = self
         filteredtableView.delegate = self
         filteredtableView.dataSource = self
     }
+    
     private func frameOfTableViewX()-> CGFloat{
         let currentLang = Locale.current.languageCode
         if currentLang == "en"{
@@ -99,6 +109,7 @@ class VolunteersViewController: UIViewController{
             self.navigationController?.navigationBar.backgroundColor = UIColor.clear.withAlphaComponent(0)
         }, completion: nil)
     }
+    
     //MARK: - Actions
     @IBAction func filterBtnTapped(_ sender: UIButton) {
         self.selectedBtn = filterBtn
@@ -130,11 +141,15 @@ extension VolunteersViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         filteredtableView.deselectRow(at: indexPath, animated: true)
         if tableView == self.voluntersTableView{
-            let donorVC = DonorViewController.instantiate()
-            self.present(donorVC, animated: true)
+            //            let donorVC = DonorViewController.instantiate()
+            //            self.present(donorVC, animated: true)
         }else if tableView == self.filteredtableView{
+            let bloodTypeFilter = Arrays.arrayOfBloodType[indexPath.row]
             self.removetransparentView()
-            print(Arrays.arrayOfBloodType[indexPath.row])
+            print(bloodTypeFilter)
+            self.selectedFilter = bloodTypeFilter
+            self.bloodSearchBar.text = bloodTypeFilter
+            self.tvBloodFilteration(text: bloodTypeFilter)
         }
     }
     //for animations
@@ -146,23 +161,66 @@ extension VolunteersViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 //MARK: - extension UISearchBarDelegate:
-extension VolunteersViewController:UISearchBarDelegate,UISearchResultsUpdating{
-    func updateSearchResults(for searchController: UISearchController) {
-        //
+extension VolunteersViewController:UISearchBarDelegate{
+    
+    private func tvBloodFilteration(text: String){
+        let segment = filterSegmentControll.selectedSegmentIndex
+        if  (segment == 0 || segment == 1 || segment == 2) {
+            volunteer = initialVolunteerAry.filter { (data)-> Bool in
+                return (data.bloodType?.lowercased().contains(text.lowercased()))!
+            }
+            voluntersTableView.reloadData()
+            if volunteer.count == 0{
+                self.voluntersTableView.isHidden = true
+            }
+        }
     }
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        if let searchBarText = bloodSearchBar.text , !searchBarText.isEmpty{
-            print(searchBarText)
-            self.view.endEditing(true)
-        }else{
-            print("Enter Blood Type!")
+    private func filterTableView(text: String){
+        
+        switch filterSegmentControll.selectedSegmentIndex{
+        case 0:
+            volunteer = initialVolunteerAry.filter { (data)-> Bool in
+                return (data.bloodType?.lowercased().contains(text.lowercased()))!
+            }
+            voluntersTableView.reloadData()
+            if volunteer.count == 0{
+                self.voluntersTableView.isHidden = true
+            }
+            break
+        case 1:
+            volunteer = initialVolunteerAry.filter { (data)-> Bool in
+                return (data.name?.lowercased().contains(text.lowercased()))!
+            }
+            voluntersTableView.reloadData()
+            if volunteer.count == 0{
+                self.voluntersTableView.isHidden = true
+            }
+            break
+        case 2:
+            volunteer = initialVolunteerAry.filter { (data)-> Bool in
+                return (data.location?.lowercased().contains(text.lowercased()))!
+            }
+            voluntersTableView.reloadData()
+            if volunteer.count == 0{
+                self.voluntersTableView.isHidden = true
+            }
+            break
+        default:
+            volunteer = initialVolunteerAry
+            self.voluntersTableView.reloadData()
+            if volunteer.count == 0{
+                self.voluntersTableView.isHidden = true
+            }
+            break
         }
     }
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        let searchText = searchBar.text!
-        filteredData = volunteer.filter({ volnter in
-            let searchTextMatch = volnter.name?.lowercased().contains(searchText.lowercased())
-            return searchTextMatch!
-        })
+        voluntersTableView.isHidden = false
+         if searchText.isEmpty{
+             volunteer = initialVolunteerAry
+             self.voluntersTableView.reloadData()
+        }else{
+            filterTableView(text: searchText)
+        }
     }
 }

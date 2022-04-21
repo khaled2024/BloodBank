@@ -28,6 +28,7 @@ class VaccineDetailsViewController: UIViewController, UISheetPresentationControl
     @IBOutlet weak var vaccineTradeNameView: UIView!
     @IBOutlet weak var VaccineNameView: UIView!
     @IBOutlet weak var sendOrderVaccineBtn: UIButton!
+    @IBOutlet weak var vaccineBgImage: UIImageView!
     //MARK: - Variabels
     let customView = CustomView()
     var myVaccine: VaccineItem!
@@ -42,13 +43,9 @@ class VaccineDetailsViewController: UIViewController, UISheetPresentationControl
         item.attributedDescriptionText = NSAttributedString(
             string:"تم تقديم طلبك بنجاح" , attributes: [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.8185071945, green: 0.2694924176, blue: 0.2871941328, alpha: 1) , .font: UIFont(name: "Almarai-Bold", size: 20)!])
         item.actionHandler = {_ in
-            self.dismiss(animated: true) {
-                //                self.navigationController?.popToRootViewController(animated: true)
-                let requestsVC = RequestViewController.instantiate()
-                self.navigationController?.pushViewController(requestsVC, animated: true)
-                self.modalTransitionStyle = .coverVertical
-                self.modalPresentationStyle = .fullScreen
-            }
+            self.dismiss(animated: true)
+            self.dismissVC()
+            
         }
         item.appearance.actionButtonColor = #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1)
         item.appearance.actionButtonCornerRadius = 15
@@ -62,19 +59,19 @@ class VaccineDetailsViewController: UIViewController, UISheetPresentationControl
         item.attributedDescriptionText = NSAttributedString(
             string:"هذا اللقاح غير متوفر حاليا وسيتم تقديم طلبك والرد عليك لاحقا" , attributes: [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.8185071945, green: 0.2694924176, blue: 0.2871941328, alpha: 1) , .font: UIFont(name: "Almarai-Bold", size: 20)!])
         item.actionHandler = {_ in
-            self.dismiss(animated: true) {
-                //                self.navigationController?.popToRootViewController(animated: true)
-                let requestsVC = RequestViewController.instantiate()
-                self.navigationController?.pushViewController(requestsVC, animated: true)
-                self.modalTransitionStyle = .coverVertical
-                self.modalPresentationStyle = .fullScreen
-            }
+            self.dismiss(animated: true)
+            self.dismissVC()
         }
         item.appearance.actionButtonColor = #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1)
         item.appearance.actionButtonCornerRadius = 15
         return BLTNItemManager(rootItem: item)
     }()
     //MARK: - LifeCycle
+    private func dismissVC(){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.dismiss(animated: true)
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpSheetPresentation()
@@ -137,6 +134,7 @@ class VaccineDetailsViewController: UIViewController, UISheetPresentationControl
         
     }
     private func setUpData(){
+        self.vaccineBgImage.image = myVaccine.imageVaccine
         self.vaccineNameLbl.text = myVaccine.scienceVaccineName
         self.tradeVaccineNameLbl.text = myVaccine.tradeVaccineName
         self.vaccineOriginLbl.text = myVaccine.vaccineorigin
@@ -181,6 +179,7 @@ class VaccineDetailsViewController: UIViewController, UISheetPresentationControl
                         self.buyVaccineView.layer.transform = CATransform3DMakeScale(1, 1, 1)
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                             self.vaccineAvailable.showBulletin(above: self)
+                           
                         }
                     }
                 }
@@ -201,7 +200,6 @@ class VaccineDetailsViewController: UIViewController, UISheetPresentationControl
         }
     }
     //MARK: - Actions
-    
     @IBAction func ViewsTapped(_ sender: UITapGestureRecognizer) {
         self.animated()
     }

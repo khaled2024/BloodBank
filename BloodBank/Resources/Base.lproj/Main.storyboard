@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MXS-tt-P3e">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Image references" minToolsVersion="12.0"/>
@@ -51,7 +51,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Bgo-6R-ery"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="viewbgColor"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7NC-H4-XYl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -92,13 +92,13 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qci-1N-NG4">
                                                             <rect key="frame" x="163" y="0.0" width="56.5" height="39.5"/>
                                                             <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="28"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" name="MainLblColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dla-0D-tMP">
                                                             <rect key="frame" x="143" y="59.5" width="96" height="24"/>
                                                             <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="17"/>
-                                                            <color key="textColor" name="labelColor"/>
+                                                            <color key="textColor" name="MainLblColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -180,7 +180,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="z5M-tX-Ptb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.98039215690000003" green="0.97647058819999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="viewbgColor"/>
                         <color key="selectedImageTintColor" red="1" green="0.29203916390000001" blue="0.3825939894" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
@@ -204,7 +204,7 @@
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="1PA-Vs-WYZ">
                                 <rect key="frame" x="5" y="88" width="404" height="36"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" name="segmentControllbgColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="iHJ-4A-HYJ"/>
                                 </constraints>
@@ -230,7 +230,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZRR-eL-Myy"/>
-                        <color key="backgroundColor" red="0.98039215690000003" green="0.97647058819999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="viewbgColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="1PA-Vs-WYZ" secondAttribute="trailing" constant="5" id="Aag-de-5ip"/>
                             <constraint firstItem="ZRR-eL-Myy" firstAttribute="bottom" secondItem="Fny-BN-pKw" secondAttribute="bottom" id="PcZ-WG-bh6"/>
@@ -393,6 +393,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="sIT-82-mYf"/>
                                                 </constraints>
+                                                <color key="textColor" name="MainLblColor"/>
                                                 <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" smartDashesType="no" smartInsertDeleteType="no"/>
                                             </textField>
@@ -404,6 +405,7 @@
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="حسين" placeholder="اسم العائله" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6JG-BV-5b9" customClass="myCustomTF" customModule="BloodBank" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="128" width="374" height="40"/>
+                                                <color key="textColor" name="MainLblColor"/>
                                                 <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" smartDashesType="no" smartInsertDeleteType="no"/>
                                             </textField>
@@ -415,6 +417,7 @@
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="k@gmail.com" placeholder="البريد الاكتروني" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0n8-0e-bnH" customClass="myCustomTF" customModule="BloodBank" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="214.5" width="374" height="40"/>
+                                                <color key="textColor" name="MainLblColor"/>
                                                 <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" smartDashesType="no" smartInsertDeleteType="no"/>
                                             </textField>
@@ -426,6 +429,7 @@
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="الغربيه" placeholder="المحافظه" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hDD-is-haa" customClass="myCustomTF" customModule="BloodBank" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="301" width="374" height="40"/>
+                                                <color key="textColor" name="MainLblColor"/>
                                                 <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" smartDashesType="no" smartInsertDeleteType="no"/>
                                             </textField>
@@ -437,6 +441,7 @@
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Tanta" placeholder="المدينه" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v9X-bK-Dw6" customClass="myCustomTF" customModule="BloodBank" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="387.5" width="374" height="40"/>
+                                                <color key="textColor" name="MainLblColor"/>
                                                 <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" smartDashesType="no" smartInsertDeleteType="no"/>
                                             </textField>
@@ -448,6 +453,7 @@
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="01019762944" placeholder="رقم الموبايل الاول" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JAm-aY-FS0" customClass="myCustomTF" customModule="BloodBank" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="474" width="374" height="40"/>
+                                                <color key="textColor" name="MainLblColor"/>
                                                 <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="phonePad" smartDashesType="no" smartInsertDeleteType="no"/>
                                             </textField>
@@ -459,6 +465,7 @@
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="01019762944" placeholder="رقم الموبايل الثاني" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i3D-AD-8Cg" customClass="myCustomTF" customModule="BloodBank" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="560.5" width="374" height="40"/>
+                                                <color key="textColor" name="MainLblColor"/>
                                                 <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="phonePad" smartDashesType="no" smartInsertDeleteType="no"/>
                                             </textField>
@@ -470,6 +477,7 @@
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="30008081600452" placeholder="الرقم القومي" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IOW-Jm-KVP" customClass="myCustomTF" customModule="BloodBank" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="647" width="374" height="40"/>
+                                                <color key="textColor" name="MainLblColor"/>
                                                 <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no"/>
                                             </textField>
@@ -481,6 +489,7 @@
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="8/8/2000" placeholder="عيد الميلاد" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mRI-bt-LOI" customClass="myCustomTF" customModule="BloodBank" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="733.5" width="374" height="40"/>
+                                                <color key="textColor" name="MainLblColor"/>
                                                 <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" smartDashesType="no" smartInsertDeleteType="no" textContentType="date-time"/>
                                             </textField>
@@ -492,6 +501,7 @@
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Male" placeholder="الجنس" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JTa-g3-ysB" customClass="myCustomTF" customModule="BloodBank" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="820" width="374" height="40"/>
+                                                <color key="textColor" name="MainLblColor"/>
                                                 <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" smartDashesType="no" smartInsertDeleteType="no"/>
                                             </textField>
@@ -503,6 +513,7 @@
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="A+" placeholder="فصيله الدم" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ELk-J8-fOM" customClass="myCustomTF" customModule="BloodBank" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="906.5" width="374" height="40"/>
+                                                <color key="textColor" name="MainLblColor"/>
                                                 <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" smartDashesType="no" smartInsertDeleteType="no"/>
                                             </textField>
@@ -514,6 +525,7 @@
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" placeholder="الرقم السري" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jQD-UV-62h" customClass="myCustomTF" customModule="BloodBank" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="993" width="374" height="40"/>
+                                                <color key="textColor" name="MainLblColor"/>
                                                 <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no"/>
                                             </textField>
@@ -622,7 +634,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UuQ-bF-fWu"/>
-                        <color key="backgroundColor" red="0.98039215690000003" green="0.97647058819999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="viewbgColor"/>
                         <constraints>
                             <constraint firstItem="RM6-QL-wA9" firstAttribute="top" secondItem="4VS-iU-g3J" secondAttribute="top" id="5LV-2Y-NvE"/>
                             <constraint firstItem="RM6-QL-wA9" firstAttribute="width" secondItem="4VS-iU-g3J" secondAttribute="width" id="77a-xg-IZe"/>
@@ -1048,7 +1060,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.98431372640000003" green="0.98039215800000001" blue="0.97254908080000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" name="viewbgColor"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="2CD-pX-FRK" firstAttribute="leading" secondItem="5Z7-O4-HO9" secondAttribute="leading" id="1N4-KH-Ybc"/>
@@ -1116,7 +1128,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mml-08-7D3"/>
-                        <color key="backgroundColor" red="0.87450980392156863" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.87450980389999999" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="HQC-QO-oPY" firstAttribute="top" secondItem="mml-08-7D3" secondAttribute="top" id="4Jr-oy-opO"/>
                             <constraint firstItem="mml-08-7D3" firstAttribute="top" secondItem="AlH-eb-QDs" secondAttribute="top" id="5FK-Ut-Hfc"/>
@@ -1216,14 +1228,16 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bp-1g-1sY">
                                 <rect key="frame" x="20.5" y="757" width="373" height="0.0"/>
                                 <fontDescription key="fontDescription" name="Almarai-Bold" family="Almarai" pointSize="18"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" name="subLblDarkGrayColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Blood Type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="coD-bq-1fZ">
                                 <rect key="frame" x="60" y="59" width="334" height="40"/>
+                                <color key="backgroundColor" name="TextFieldColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Hru-Ch-QER"/>
                                 </constraints>
+                                <color key="textColor" name="MainLblColor"/>
                                 <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -1236,9 +1250,11 @@
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Governrate" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zOB-Eu-sjl">
                                 <rect key="frame" x="60" y="114" width="334" height="40"/>
+                                <color key="backgroundColor" name="TextFieldColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ru1-rq-2lX"/>
                                 </constraints>
+                                <color key="textColor" name="MainLblColor"/>
                                 <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -1251,16 +1267,18 @@
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Re-Bd-x2F">
                                 <rect key="frame" x="60" y="159" width="334" height="40"/>
+                                <color key="backgroundColor" name="TextFieldColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="dI6-5P-zj2"/>
                                 </constraints>
+                                <color key="textColor" name="MainLblColor"/>
                                 <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hospital Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="LW2-Vc-pv8">
                                 <rect key="frame" x="60" y="214" width="344" height="19"/>
                                 <fontDescription key="fontDescription" name="Almarai-Bold" family="Almarai" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" name="MainLblColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="detailsBloodImage" translatesAutoresizingMaskIntoConstraints="NO" id="Ujj-k2-r2D">
@@ -1272,7 +1290,7 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mzQ-rk-QiM"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="viewbgColor"/>
                         <constraints>
                             <constraint firstItem="zOB-Eu-sjl" firstAttribute="top" secondItem="coD-bq-1fZ" secondAttribute="bottom" constant="15" id="07g-po-wce"/>
                             <constraint firstItem="zOB-Eu-sjl" firstAttribute="trailing" secondItem="coD-bq-1fZ" secondAttribute="trailing" id="4mR-p8-l8T"/>
@@ -1556,7 +1574,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7MY-u6-Hpg"/>
-                        <color key="backgroundColor" red="0.98431372640000003" green="0.98039215800000001" blue="0.97254908080000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" name="viewbgColor"/>
                         <constraints>
                             <constraint firstItem="382-FW-fiO" firstAttribute="top" secondItem="fna-ar-nGr" secondAttribute="bottom" constant="10" id="0B3-CX-7eq"/>
                             <constraint firstItem="bp9-qR-WLP" firstAttribute="height" secondItem="kCA-Aa-4Ff" secondAttribute="height" id="1wQ-u4-h4Q"/>
@@ -1618,7 +1636,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="قم بشراء اللقاح الذى يتوافق مع احتياجاتك في غضون دقائق" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ARf-Go-t1R">
                                 <rect key="frame" x="20" y="316.5" width="374" height="38"/>
                                 <fontDescription key="fontDescription" name="Almarai-Bold" family="Almarai" pointSize="17"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" name="MainLblColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NxU-YB-zQC">
@@ -1686,7 +1704,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.93691295389999996" green="0.95290476079999997" blue="0.95629113909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="bgIColornsideCell"/>
                                 <constraints>
                                     <constraint firstItem="kEw-km-fkK" firstAttribute="top" secondItem="NxU-YB-zQC" secondAttribute="top" constant="10" id="5zq-GU-xuC"/>
                                     <constraint firstItem="Jqb-0C-l2j" firstAttribute="top" secondItem="kEw-km-fkK" secondAttribute="bottom" constant="5" id="8cb-wN-DKF"/>
@@ -1845,7 +1863,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ow2-as-mi7"/>
-                        <color key="backgroundColor" red="0.98431372640000003" green="0.98039215800000001" blue="0.97254908080000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" name="viewbgColor"/>
                         <constraints>
                             <constraint firstItem="Jc9-qc-dSO" firstAttribute="trailing" secondItem="jt1-kW-ceK" secondAttribute="trailing" id="1Zt-yO-Gy0"/>
                             <constraint firstItem="IgI-Pi-JTW" firstAttribute="height" secondItem="Yev-PL-p2s" secondAttribute="height" id="59O-3L-zi5"/>
@@ -2013,7 +2031,7 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bmy-HF-xhw"/>
-                        <color key="backgroundColor" red="0.98431372640000003" green="0.98039215800000001" blue="0.97254908080000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" name="viewbgColor"/>
                         <constraints>
                             <constraint firstItem="gKp-lL-g9m" firstAttribute="top" secondItem="bmy-HF-xhw" secondAttribute="top" constant="10" id="3Uc-1B-HJV"/>
                             <constraint firstItem="bmy-HF-xhw" firstAttribute="bottom" secondItem="Etb-bD-fWn" secondAttribute="bottom" id="8Ih-G1-cb5"/>
@@ -2591,7 +2609,7 @@
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wfW-53-VjZ">
                                 <rect key="frame" x="20" y="374.5" width="192" height="32"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" name="segmentControllbgColor"/>
                                 <segments>
                                     <segment title="مره واحده"/>
                                     <segment title="شهرياً"/>
@@ -2777,7 +2795,7 @@
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Sle-fe-VFS">
                                 <rect key="frame" x="10" y="59" width="394" height="36"/>
-                                <color key="backgroundColor" red="0.98431372640000003" green="0.98039215800000001" blue="0.97254908080000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" name="segmentControllbgColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="oJn-Fy-SPZ"/>
                                 </constraints>
@@ -2979,6 +2997,7 @@
                                                     <rect key="frame" x="20" y="16.5" width="42" height="22.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="Almarai-Bold" family="Almarai" pointSize="20"/>
+                                                    <color key="textColor" name="bgIColornsideCell"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fux-yd-653">
@@ -3223,7 +3242,7 @@
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="v6G-Qm-yfp">
                                 <rect key="frame" x="0.0" y="136" width="414" height="760"/>
-                                <color key="backgroundColor" red="0.98039215690000003" green="0.97647058819999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="crI-dS-4Lm">
                                 <rect key="frame" x="0.0" y="44" width="371.5" height="51"/>
@@ -3256,7 +3275,7 @@
                             </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ou2-GB-PRQ"/>
-                        <color key="backgroundColor" red="0.98039215690000003" green="0.97647058819999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="viewbgColor"/>
                         <constraints>
                             <constraint firstItem="Xk9-hS-RaN" firstAttribute="centerY" secondItem="hYa-hi-kdX" secondAttribute="centerY" id="9LZ-DK-jPc"/>
                             <constraint firstItem="hYa-hi-kdX" firstAttribute="top" secondItem="crI-dS-4Lm" secondAttribute="top" id="9aA-E4-UL5"/>
@@ -3528,7 +3547,7 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cases" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVP-ns-Sy9">
                                                                 <rect key="frame" x="0.0" y="10" width="124" height="19.5"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                                                <nil key="textColor"/>
+                                                                <color key="textColor" name="labelColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="859K+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTc-Gp-nCO">
@@ -3562,7 +3581,7 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recovered" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Zd-kO-idx">
                                                                 <rect key="frame" x="0.0" y="10" width="124" height="19.5"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                                                <nil key="textColor"/>
+                                                                <color key="textColor" name="labelColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="180K+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PMD-L8-pmf">
@@ -3596,7 +3615,7 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deaths" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXH-EC-1M8">
                                                                 <rect key="frame" x="0.0" y="10" width="124" height="19.5"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                                                <nil key="textColor"/>
+                                                                <color key="textColor" name="labelColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8K+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RhU-ON-1lh">
@@ -3647,6 +3666,7 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Country" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MV4-1H-Uw6">
                                                         <rect key="frame" x="62" y="166" width="322" height="19.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="textColor" name="labelColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
@@ -3656,7 +3676,7 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cases" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AH2-a5-lXd">
                                                                 <rect key="frame" x="0.0" y="10" width="124" height="19.5"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                                                <nil key="textColor"/>
+                                                                <color key="textColor" name="labelColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDs-G5-BNy">
@@ -3689,7 +3709,7 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recovered" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cxm-Ay-5JF">
                                                                 <rect key="frame" x="0.0" y="10" width="124" height="19.5"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                                                <nil key="textColor"/>
+                                                                <color key="textColor" name="labelColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qhn-HG-j4F">
@@ -3723,7 +3743,7 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deaths" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NjQ-5e-9iu">
                                                                 <rect key="frame" x="0.0" y="10" width="124" height="19.5"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                                                <nil key="textColor"/>
+                                                                <color key="textColor" name="labelColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yp7-5B-CR6">
@@ -3763,7 +3783,7 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="population" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0i8-d5-Ji0">
                                                                 <rect key="frame" x="0.0" y="10" width="124" height="19.5"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                                                <nil key="textColor"/>
+                                                                <color key="textColor" name="labelColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Vv-j0-uO2">
@@ -3796,7 +3816,7 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Critical" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfk-ks-TRJ">
                                                                 <rect key="frame" x="0.0" y="10" width="124" height="19.5"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                                                <nil key="textColor"/>
+                                                                <color key="textColor" name="labelColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O8E-0k-o7o">
@@ -3829,7 +3849,7 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Active" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QtG-rO-iSm">
                                                                 <rect key="frame" x="0.0" y="10" width="124" height="19.5"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                                                <nil key="textColor"/>
+                                                                <color key="textColor" name="labelColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1bH-OE-FdK">
@@ -4092,6 +4112,24 @@
                                     <action selector="changeLangBtnTapped:" destination="Gzr-iD-ZGG" eventType="touchUpInside" id="LgL-cC-Ni6"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="gHq-Rj-ljA">
+                                <rect key="frame" x="102.5" y="221.5" width="209.5" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الوضع الليلي" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zN9-Eb-9B9">
+                                        <rect key="frame" x="0.0" y="0.0" width="135.5" height="31"/>
+                                        <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="19"/>
+                                        <color key="textColor" red="1" green="0.29203916390000001" blue="0.3825939894" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="leading" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="S4e-Zc-tJN">
+                                        <rect key="frame" x="160.5" y="0.0" width="51" height="31"/>
+                                        <color key="onTintColor" red="1" green="0.29203916390000001" blue="0.3825939894" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="darkModeSetting:" destination="Gzr-iD-ZGG" eventType="valueChanged" id="Evt-9I-YIY"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="AOx-lL-jaf"/>
                         <color key="backgroundColor" red="0.98039215690000003" green="0.97647058819999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -4099,11 +4137,15 @@
                             <constraint firstItem="U8a-xP-mYE" firstAttribute="top" secondItem="AOx-lL-jaf" secondAttribute="top" constant="50" id="5CX-Oa-orO"/>
                             <constraint firstItem="mHB-Cs-g8l" firstAttribute="top" secondItem="bdU-Ky-8pt" secondAttribute="bottom" constant="30" id="A3n-jS-Cla"/>
                             <constraint firstItem="mHB-Cs-g8l" firstAttribute="centerX" secondItem="AOx-lL-jaf" secondAttribute="centerX" id="G8P-Gv-XNY"/>
+                            <constraint firstItem="gHq-Rj-ljA" firstAttribute="leading" secondItem="U8a-xP-mYE" secondAttribute="leading" id="Z1T-YC-jhi"/>
                             <constraint firstItem="U8a-xP-mYE" firstAttribute="centerX" secondItem="AOx-lL-jaf" secondAttribute="centerX" id="h3A-bd-hOo"/>
+                            <constraint firstItem="gHq-Rj-ljA" firstAttribute="top" secondItem="mHB-Cs-g8l" secondAttribute="bottom" constant="30" id="uxA-Ai-Gls"/>
+                            <constraint firstItem="gHq-Rj-ljA" firstAttribute="trailing" secondItem="U8a-xP-mYE" secondAttribute="trailing" id="vay-Di-dNP"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="changeLangBtn" destination="mHB-Cs-g8l" id="VvQ-oR-Hsf"/>
+                        <outlet property="darkModeSwitch" destination="S4e-Zc-tJN" id="u5B-Qc-92G"/>
                         <outlet property="settingSwitch" destination="Pdv-wN-h9y" id="Qzi-Mg-3L9"/>
                     </connections>
                 </viewController>
@@ -4274,7 +4316,7 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="متاح للتبرع" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVo-2O-qii">
                                                         <rect key="frame" x="44" y="12" width="71" height="19"/>
                                                         <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="17"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" name="MainLblColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -4304,7 +4346,7 @@
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="طلبات التبرع">
                                                             <fontDescription key="titleFontDescription" name="Almarai-Regular" family="Almarai" pointSize="18"/>
-                                                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                                                            <color key="baseForegroundColor" name="MainLblColor"/>
                                                         </buttonConfiguration>
                                                         <connections>
                                                             <action selector="requestBtnTapped:" destination="1aF-1P-rbD" eventType="touchUpInside" id="lUJ-K2-PlA"/>
@@ -4335,7 +4377,7 @@
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="احصائيات كورونا">
                                                             <fontDescription key="titleFontDescription" name="Almarai-Regular" family="Almarai" pointSize="18"/>
-                                                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                                                            <color key="baseForegroundColor" name="MainLblColor"/>
                                                         </buttonConfiguration>
                                                         <connections>
                                                             <action selector="coronaStatsBtnTapped:" destination="1aF-1P-rbD" eventType="touchUpInside" id="sKA-kK-fQe"/>
@@ -4366,7 +4408,7 @@
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="قصص">
                                                             <fontDescription key="titleFontDescription" name="Almarai-Regular" family="Almarai" pointSize="18"/>
-                                                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                                                            <color key="baseForegroundColor" name="MainLblColor"/>
                                                         </buttonConfiguration>
                                                         <connections>
                                                             <action selector="yourStoryBtnTapped:" destination="1aF-1P-rbD" eventType="touchUpInside" id="ZMg-bO-UgD"/>
@@ -4397,7 +4439,7 @@
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="المساعده و الدعم">
                                                             <fontDescription key="titleFontDescription" name="Almarai-Regular" family="Almarai" pointSize="18"/>
-                                                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                                                            <color key="baseForegroundColor" name="MainLblColor"/>
                                                         </buttonConfiguration>
                                                         <connections>
                                                             <action selector="helpAndSupportBtnTapped:" destination="1aF-1P-rbD" eventType="touchUpInside" id="7Nj-HE-pZf"/>
@@ -4428,7 +4470,7 @@
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="الاعدادات">
                                                             <fontDescription key="titleFontDescription" name="Almarai-Regular" family="Almarai" pointSize="18"/>
-                                                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                                                            <color key="baseForegroundColor" name="MainLblColor"/>
                                                         </buttonConfiguration>
                                                         <connections>
                                                             <action selector="settingBtnTapped:" destination="1aF-1P-rbD" eventType="touchUpInside" id="ItH-Dp-gI9"/>
@@ -4459,7 +4501,7 @@
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="تسجيل الخروج">
                                                             <fontDescription key="titleFontDescription" name="Almarai-Regular" family="Almarai" pointSize="18"/>
-                                                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                                                            <color key="baseForegroundColor" name="MainLblColor"/>
                                                         </buttonConfiguration>
                                                         <connections>
                                                             <action selector="logOutBtnTapped:" destination="1aF-1P-rbD" eventType="touchUpInside" id="ANm-P0-k8s"/>
@@ -4490,7 +4532,7 @@
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="المتطوعين">
                                                             <fontDescription key="titleFontDescription" name="Almarai-Regular" family="Almarai" pointSize="18"/>
-                                                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                                                            <color key="baseForegroundColor" name="MainLblColor"/>
                                                         </buttonConfiguration>
                                                         <connections>
                                                             <action selector="volunteersBtnTapped:" destination="1aF-1P-rbD" eventType="touchUpInside" id="Xt1-W9-f23"/>
@@ -4507,7 +4549,7 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.98039215690000003" green="0.97647058819999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" name="viewbgColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="0Vj-kW-uCj" secondAttribute="trailing" id="0qW-is-HyN"/>
                                             <constraint firstItem="gCy-Zb-ZEl" firstAttribute="top" secondItem="i1m-Nc-nkC" secondAttribute="bottom" constant="10" id="78Z-bn-mzL"/>
@@ -4563,7 +4605,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vcB-8S-qwT"/>
-                        <color key="backgroundColor" red="0.98039215690000003" green="0.97647058819999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="viewbgColor"/>
                         <constraints>
                             <constraint firstItem="2aC-xK-VEZ" firstAttribute="top" secondItem="Npm-a9-nLG" secondAttribute="top" id="1GZ-Ln-rkd"/>
                             <constraint firstAttribute="trailing" secondItem="2aC-xK-VEZ" secondAttribute="trailing" id="Qxf-02-ryQ"/>
@@ -4818,7 +4860,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.98039215690000003" green="0.97647058819999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" name="viewbgColor"/>
                                         <constraints>
                                             <constraint firstItem="qbr-JW-cqS" firstAttribute="top" secondItem="DNE-nD-gQU" secondAttribute="top" constant="10" id="BT0-no-LLj"/>
                                             <constraint firstAttribute="trailing" secondItem="qbr-JW-cqS" secondAttribute="trailing" constant="5" id="CJQ-0g-uPk"/>
@@ -4879,7 +4921,7 @@
                                     <constraint firstAttribute="height" constant="50" id="wIm-Fg-DI9"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Almarai-Bold" family="Almarai" pointSize="19"/>
-                                <color key="textColor" red="0.23279672710582466" green="0.23279672710582466" blue="0.23279672710582466" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" name="subLblDarkGrayColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zX4-pu-bos">
@@ -4919,7 +4961,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="bgIColornsideCell"/>
                                 <constraints>
                                     <constraint firstItem="Jiw-5b-sqK" firstAttribute="top" secondItem="CSU-ky-6ZS" secondAttribute="bottom" constant="20" id="3WJ-Jo-f8O"/>
                                     <constraint firstItem="Jiw-5b-sqK" firstAttribute="centerX" secondItem="zX4-pu-bos" secondAttribute="centerX" id="6ga-LG-HuZ"/>
@@ -4990,7 +5032,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="bgIColornsideCell"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="GMU-Dm-XTn" secondAttribute="trailing" id="4a1-8p-ltL"/>
                                     <constraint firstItem="54F-tC-qjp" firstAttribute="leading" secondItem="5I4-JL-SKs" secondAttribute="leading" constant="20" id="Dxy-lc-c4a"/>
@@ -5064,7 +5106,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="bgIColornsideCell"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="6xk-Mz-rF0" secondAttribute="trailing" constant="20" id="B2Q-nj-edi"/>
                                     <constraint firstItem="RPP-gz-XbD" firstAttribute="width" secondItem="UQf-Gv-qhy" secondAttribute="width" multiplier="0.4" id="DrM-gE-z1W"/>
@@ -5139,7 +5181,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="bgIColornsideCell"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="PjO-l9-j1x" secondAttribute="trailing" id="0CW-Fl-v40"/>
                                     <constraint firstItem="PjO-l9-j1x" firstAttribute="leading" secondItem="OIX-Co-Acx" secondAttribute="leading" id="1pI-lX-7CX"/>
@@ -5214,7 +5256,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="bgIColornsideCell"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="2Nf-as-sjV" secondAttribute="trailing" id="59r-Y1-uxx"/>
                                     <constraint firstItem="j5e-8q-CVy" firstAttribute="top" secondItem="q2M-ap-mWX" secondAttribute="top" constant="10" id="6S0-zJ-Zo6"/>
@@ -5289,7 +5331,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="bgIColornsideCell"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="mqY-fw-0SZ" secondAttribute="trailing" constant="20" id="7yr-d9-4ln"/>
                                     <constraint firstItem="S6H-bq-PPE" firstAttribute="height" secondItem="mqY-fw-0SZ" secondAttribute="height" id="89t-mf-B6Y"/>
@@ -5341,11 +5383,11 @@
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RrL-9q-pko">
                                         <rect key="frame" x="10" y="60" width="374" height="216"/>
-                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" name="TextFieldColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="216" id="q6F-fP-ixn"/>
                                         </constraints>
-                                        <color key="textColor" systemColor="labelColor"/>
+                                        <color key="textColor" name="labelColor"/>
                                         <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                         <userDefinedRuntimeAttributes>
@@ -5355,7 +5397,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="bgIColornsideCell"/>
                                 <constraints>
                                     <constraint firstItem="yx8-Od-1OC" firstAttribute="top" secondItem="RrL-9q-pko" secondAttribute="bottom" constant="20" id="108-Db-Ybl"/>
                                     <constraint firstItem="moC-uk-5ef" firstAttribute="top" secondItem="o3v-h3-IcD" secondAttribute="top" constant="10" id="3qy-T5-k8V"/>
@@ -5379,7 +5421,7 @@
                             </pageControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qsC-5Q-DXj"/>
-                        <color key="backgroundColor" red="0.98039215690000003" green="0.97647058819999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="viewbgColor"/>
                         <constraints>
                             <constraint firstItem="o3v-h3-IcD" firstAttribute="leading" secondItem="qsC-5Q-DXj" secondAttribute="leading" constant="10" id="0pp-Bw-tlI"/>
                             <constraint firstItem="9Ew-GY-Jf7" firstAttribute="top" secondItem="qsC-5Q-DXj" secondAttribute="top" constant="10" id="37F-8n-jd4"/>
@@ -5623,7 +5665,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Lks-D6-tLK">
                                 <rect key="frame" x="0.0" y="323" width="414" height="539"/>
-                                <color key="backgroundColor" red="0.98039215690000003" green="0.97647058819999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="viewbgColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" textLabel="NIc-h9-LBW" style="IBUITableViewCellStyleDefault" id="ViZ-KG-xyB">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
@@ -5636,7 +5678,6 @@
                                                     <rect key="frame" x="20" y="0.0" width="357.5" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="19"/>
-                                                    <color key="textColor" red="0.16078431369999999" green="0.16078431369999999" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -5691,7 +5732,7 @@
                             </pageControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="N71-cp-wsx"/>
-                        <color key="backgroundColor" red="0.98039215690000003" green="0.97647058819999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="viewbgColor"/>
                         <constraints>
                             <constraint firstItem="Lks-D6-tLK" firstAttribute="bottom" secondItem="N71-cp-wsx" secondAttribute="bottom" id="67H-Mq-slM"/>
                             <constraint firstItem="Twa-sC-oOw" firstAttribute="leading" secondItem="N71-cp-wsx" secondAttribute="leading" id="86W-Ep-eN8"/>
@@ -5762,7 +5803,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blood Bank" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEn-W3-Siy">
                                         <rect key="frame" x="98" y="34" width="142" height="32.5"/>
                                         <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="28"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="MainLblColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -5803,7 +5844,7 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Jz4-N3-K85"/>
-                        <color key="backgroundColor" red="0.98039215690000003" green="0.97647058819999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="viewbgColor"/>
                         <constraints>
                             <constraint firstItem="WA3-ap-cTN" firstAttribute="trailing" secondItem="Jz4-N3-K85" secondAttribute="trailing" constant="-10" id="1LZ-AO-s5C"/>
                             <constraint firstItem="7V0-km-H6i" firstAttribute="leading" secondItem="WA3-ap-cTN" secondAttribute="leading" id="AXU-AF-U3W"/>
@@ -5871,7 +5912,7 @@
                                                     </view>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="البريد الاكتروني" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QZw-zO-G3s" customClass="CustomPlaceHolder" customModule="BloodBank" customModuleProvider="target">
                                                         <rect key="frame" x="10" y="15.5" width="287" height="24"/>
-                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="textColor" name="subLblDarkGrayColor"/>
                                                         <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" smartDashesType="no" smartInsertDeleteType="no"/>
                                                     </textField>
@@ -5913,7 +5954,7 @@
                                                     </view>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="الاسم الاول" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q8J-tL-eFn" customClass="CustomPlaceHolder" customModule="BloodBank" customModuleProvider="target">
                                                         <rect key="frame" x="10" y="15.5" width="287" height="24"/>
-                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="textColor" name="subLblDarkGrayColor"/>
                                                         <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" smartDashesType="no" smartInsertDeleteType="no"/>
                                                     </textField>
@@ -5956,7 +5997,7 @@
                                                     </view>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" الرقم القومي" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7UN-cb-Yjx" customClass="CustomPlaceHolder" customModule="BloodBank" customModuleProvider="target">
                                                         <rect key="frame" x="10" y="15.5" width="287" height="24"/>
-                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="textColor" name="subLblDarkGrayColor"/>
                                                         <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" smartDashesType="no" smartInsertDeleteType="no"/>
                                                     </textField>
@@ -5999,7 +6040,7 @@
                                                     </view>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="كلمه المرور" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wg3-Hb-aQA" customClass="CustomPlaceHolder" customModule="BloodBank" customModuleProvider="target">
                                                         <rect key="frame" x="10" y="16" width="287" height="23"/>
-                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="textColor" name="subLblDarkGrayColor"/>
                                                         <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no"/>
                                                     </textField>
@@ -6042,7 +6083,7 @@
                                                     </view>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="تاكيد كلمه المرور" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="83Y-jX-F6k" customClass="CustomPlaceHolder" customModule="BloodBank" customModuleProvider="target">
                                                         <rect key="frame" x="10" y="16" width="287" height="23"/>
-                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="textColor" name="subLblDarkGrayColor"/>
                                                         <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no"/>
                                                     </textField>
@@ -6085,7 +6126,7 @@
                                                     </view>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="رقم الهاتف" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jMT-Jv-RTV" customClass="CustomPlaceHolder" customModule="BloodBank" customModuleProvider="target">
                                                         <rect key="frame" x="10" y="15.5" width="287" height="24"/>
-                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="textColor" name="subLblDarkGrayColor"/>
                                                         <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="phonePad" smartDashesType="no" smartInsertDeleteType="no"/>
                                                     </textField>
@@ -6128,7 +6169,7 @@
                                                     </view>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="فصيله الدم" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VnS-gu-MOa" customClass="CustomPlaceHolder" customModule="BloodBank" customModuleProvider="target">
                                                         <rect key="frame" x="10" y="15.5" width="287" height="24"/>
-                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="textColor" name="subLblDarkGrayColor"/>
                                                         <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" smartDashesType="no" smartInsertDeleteType="no"/>
                                                     </textField>
@@ -6171,7 +6212,7 @@
                                                     </view>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="المحافظه" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bcc-XL-2mu" customClass="CustomPlaceHolder" customModule="BloodBank" customModuleProvider="target">
                                                         <rect key="frame" x="10" y="15.5" width="287" height="24"/>
-                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="textColor" name="subLblDarkGrayColor"/>
                                                         <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" smartDashesType="no" smartInsertDeleteType="no"/>
                                                     </textField>
@@ -6234,7 +6275,7 @@
                                                     </view>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="اسم العائله" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6mJ-8b-rvz" customClass="CustomPlaceHolder" customModule="BloodBank" customModuleProvider="target">
                                                         <rect key="frame" x="10" y="15.5" width="287" height="24"/>
-                                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="textColor" name="subLblDarkGrayColor"/>
                                                         <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" smartDashesType="no" smartInsertDeleteType="no"/>
                                                     </textField>
@@ -6258,7 +6299,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.98039215690000003" green="0.97647058819999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" name="viewbgColor"/>
                                         <constraints>
                                             <constraint firstItem="FsD-rL-h6m" firstAttribute="height" secondItem="Ea7-FO-pKa" secondAttribute="height" id="0n6-Ye-f0e"/>
                                             <constraint firstItem="yfr-5h-G5e" firstAttribute="width" secondItem="fju-Qf-tVy" secondAttribute="width" id="4eH-FC-6On"/>
@@ -6317,7 +6358,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="a2O-ao-nsk"/>
-                        <color key="backgroundColor" red="0.98039215690000003" green="0.97647058819999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="viewbgColor"/>
                         <constraints>
                             <constraint firstItem="bHQ-ZN-e6G" firstAttribute="top" secondItem="a2O-ao-nsk" secondAttribute="top" id="3jm-Qx-pPE"/>
                             <constraint firstItem="bHQ-ZN-e6G" firstAttribute="bottom" secondItem="a2O-ao-nsk" secondAttribute="bottom" id="W8r-Fj-cT5"/>
@@ -6383,7 +6424,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="k@gmail.com" placeholder="ادخل البريد الاكتروني" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jg1-YX-JbZ" customClass="CustomPlaceHolder" customModule="BloodBank" customModuleProvider="target">
                                         <rect key="frame" x="10" y="16" width="292" height="23"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" name="subLblDarkGrayColor"/>
                                         <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="19"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                     </textField>
@@ -6427,7 +6468,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="111111111" placeholder="ادخل كلمه المرور" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ck2-Au-8U2" customClass="CustomPlaceHolder" customModule="BloodBank" customModuleProvider="target">
                                         <rect key="frame" x="10" y="16.5" width="292" height="22"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" name="subLblDarkGrayColor"/>
                                         <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="19"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
@@ -6489,7 +6530,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="laA-w3-tBH"/>
-                        <color key="backgroundColor" red="0.98039215690000003" green="0.97647058819999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="viewbgColor"/>
                         <constraints>
                             <constraint firstItem="laA-w3-tBH" firstAttribute="bottom" secondItem="zaZ-jA-Bo8" secondAttribute="bottom" constant="16" id="3Pk-5p-yPZ"/>
                             <constraint firstItem="0IU-8s-0m9" firstAttribute="top" secondItem="Dva-sM-rLa" secondAttribute="bottom" multiplier="1.3" id="3Zy-ah-294"/>
@@ -6558,7 +6599,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thankYou" translatesAutoresizingMaskIntoConstraints="NO" id="xyk-VF-ag3">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thankYou2" translatesAutoresizingMaskIntoConstraints="NO" id="xyk-VF-ag3">
                                 <rect key="frame" x="83" y="238.5" width="248" height="269"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="شكرا لك" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="klm-Wh-DQG">
@@ -6599,7 +6640,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kO9-oQ-KiG"/>
-                        <color key="backgroundColor" red="0.96862745289999996" green="0.96862745289999996" blue="0.96862745289999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" name="viewbgColor"/>
                         <constraints>
                             <constraint firstItem="xyk-VF-ag3" firstAttribute="centerX" secondItem="bQI-Od-JWB" secondAttribute="centerX" id="9I4-nE-tD9"/>
                             <constraint firstItem="4pd-ku-Ohe" firstAttribute="top" secondItem="klm-Wh-DQG" secondAttribute="bottom" constant="15" id="H08-yQ-t3P"/>
@@ -7149,7 +7190,7 @@
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>
         <image name="storySlieMenu" width="50" height="50"/>
         <image name="tattoo" width="100" height="100"/>
-        <image name="thankYou" width="984" height="984"/>
+        <image name="thankYou2" width="984" height="984"/>
         <image name="vaccine" width="50" height="50"/>
         <image name="virus" width="512" height="512"/>
         <image name="volunteer" width="50" height="50"/>
@@ -7157,8 +7198,26 @@
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="MainLblColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TextFieldColor">
+            <color red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="bgIColornsideCell">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <namedColor name="labelColor">
             <color red="0.56300002336502075" green="0.5690000057220459" blue="0.5690000057220459" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="segmentControllbgColor">
+            <color red="0.98039215690000003" green="0.97647058819999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="subLblDarkGrayColor">
+            <color white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
+        <namedColor name="viewbgColor">
+            <color red="0.98039215690000003" green="0.97647058819999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

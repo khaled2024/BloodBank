@@ -9,13 +9,16 @@ import UIKit
 
 class SettingViewController: UIViewController {
     
+    @IBOutlet weak var darkModeSwitch: UISwitch!
     @IBOutlet weak var changeLangBtn: UIButton!
     @IBOutlet weak var settingSwitch: UISwitch!
     let def = UserDefaults.standard
     let navBar = NavigationBar()
+    let appDelegate = UIApplication.shared.windows.first
     override func viewDidLoad() {
         super.viewDidLoad()
         isNotificationOn()
+        isDarkModeOn()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -51,6 +54,24 @@ class SettingViewController: UIViewController {
             }
         }
     }
+    func isDarkModeOn(){
+        if #available(iOS 13.0, *){
+            if let isDarkModeOn = def.object(forKey: "isDarkModeOn") as? Bool{
+                if isDarkModeOn == true{
+                    darkModeSwitch.isOn = true
+                    self.def.set(true, forKey: "isDarkModeOn")
+                    appDelegate?.overrideUserInterfaceStyle = .dark
+                    return
+                }
+                darkModeSwitch.isOn = false
+                self.def.set(false, forKey: "isDarkModeOn")
+                appDelegate?.overrideUserInterfaceStyle = .light
+                return
+            }else{
+                //
+            }
+        }
+    }
     private func scaduleNotification(){
         let content = UNMutableNotificationContent()
         content.title = "Blood Bank"
@@ -63,7 +84,18 @@ class SettingViewController: UIViewController {
         let request = UNNotificationRequest(identifier: "idNotification", content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request)
     }
+    
     //MARK: - Actions
+    @IBAction func darkModeSetting(_ sender: UISwitch) {
+        if sender.isOn{
+            sender.isOn = true
+            self.def.set(true, forKey: "isDarkModeOn")
+            isDarkModeOn()
+        }else{
+            sender.isOn = false
+            self.def.set(false, forKey: "isDarkModeOn")
+            appDelegate?.overrideUserInterfaceStyle = .light        }
+    }
     @IBAction func settingSwitchTapped(_ sender: UISwitch) {
         if sender.isOn{
             sender.isOn = true
@@ -72,7 +104,7 @@ class SettingViewController: UIViewController {
         }else{
             sender.isOn = false
             self.def.set(false, forKey: "isNotificationOn")
-//            isNotificationOn()
+            
         }
     }
    

@@ -16,6 +16,7 @@ class UserDefultsManager{
     enum key: String{
         case isLoggedIn
         case isNotificationOn
+        case isDarkModeOn
     }
     private let def = UserDefaults.standard
     var isLoggedIn: Bool{
@@ -38,6 +39,17 @@ class UserDefultsManager{
                 return false
             }
             return def.bool(forKey: key.isNotificationOn.rawValue)
+        }
+    }
+    var isDarkModeOn: Bool{
+        set{
+            def.set(newValue, forKey: key.isDarkModeOn.rawValue)
+        }
+        get{
+            guard def.object(forKey: key.isDarkModeOn.rawValue) != nil else  {
+                return false
+            }
+            return def.bool(forKey: key.isDarkModeOn.rawValue)
         }
     }
     

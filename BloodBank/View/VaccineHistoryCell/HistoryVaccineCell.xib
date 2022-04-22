@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,7 +31,7 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="Sfa-ft-3nF"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Almarai-Bold" family="Almarai" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" name="MainLblColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="لقد قمت بطلب هذا اللقاح من خلال موقعنا ف تاريخ" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="59z-mx-G7b">
@@ -39,7 +40,7 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="38" id="Xpz-LJ-PBy"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Almarai-Bold" family="Almarai" pointSize="17"/>
-                                <color key="textColor" red="0.11738479528764278" green="0.11738479528764278" blue="0.11738479528764278" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" name="MainLblColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="السبت،٢ ابريل ٢٠٢٢" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b7D-NV-ukO">
@@ -48,7 +49,7 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="19" id="REt-HR-6ea"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Almarai-Bold" family="Almarai" pointSize="17"/>
-                                <color key="textColor" red="0.11738479528764278" green="0.11738479528764278" blue="0.11738479528764278" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" name="MainLblColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8hm-Qo-BdY">
@@ -155,7 +156,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="bgIColornsideCell"/>
                         <constraints>
                             <constraint firstItem="nzS-BN-esy" firstAttribute="width" secondItem="087-yQ-vOf" secondAttribute="width" multiplier="0.35" id="43G-ol-2bw"/>
                             <constraint firstItem="b7D-NV-ukO" firstAttribute="trailing" secondItem="LQF-mh-oIR" secondAttribute="trailing" id="ANr-XW-8Nt"/>
@@ -184,7 +185,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
-                <color key="backgroundColor" red="0.98431372640000003" green="0.98039215800000001" blue="0.98431372640000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                <color key="backgroundColor" name="viewbgColor"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="087-yQ-vOf" secondAttribute="trailing" constant="8" id="IUF-lZ-Le6"/>
                     <constraint firstItem="087-yQ-vOf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Mll-0E-h3m"/>
@@ -204,5 +205,14 @@
     <resources>
         <image name="exit" width="33.333332061767578" height="33.333332061767578"/>
         <image name="orderVaccine" width="924" height="980"/>
+        <namedColor name="MainLblColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="bgIColornsideCell">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="viewbgColor">
+            <color red="0.98039215690000003" green="0.97647058819999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
     </resources>
 </document>

@@ -66,6 +66,7 @@ class VolunteersViewController: UIViewController{
         bloodSearchBar.layer.cornerRadius = 10
         bloodSearchBar.backgroundColor = .clear
         filterSegmentControll.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Almarai-Bold", size: 15)! ], for: .normal)
+        noDataImageView.isHidden = true
     }
     private func setUp(){
         bloodSearchBar.delegate = self
@@ -172,6 +173,7 @@ extension VolunteersViewController:UISearchBarDelegate{
             voluntersTableView.reloadData()
             if volunteer.count == 0{
                 self.voluntersTableView.isHidden = true
+                self.noDataImageView.isHidden = false
             }
         }
     }
@@ -185,6 +187,7 @@ extension VolunteersViewController:UISearchBarDelegate{
             voluntersTableView.reloadData()
             if volunteer.count == 0{
                 self.voluntersTableView.isHidden = true
+                self.noDataImageView.isHidden = false
             }
             break
         case 1:
@@ -194,6 +197,7 @@ extension VolunteersViewController:UISearchBarDelegate{
             voluntersTableView.reloadData()
             if volunteer.count == 0{
                 self.voluntersTableView.isHidden = true
+                self.noDataImageView.isHidden = false
             }
             break
         case 2:
@@ -203,6 +207,7 @@ extension VolunteersViewController:UISearchBarDelegate{
             voluntersTableView.reloadData()
             if volunteer.count == 0{
                 self.voluntersTableView.isHidden = true
+                self.noDataImageView.isHidden = false
             }
             break
         default:
@@ -210,6 +215,7 @@ extension VolunteersViewController:UISearchBarDelegate{
             self.voluntersTableView.reloadData()
             if volunteer.count == 0{
                 self.voluntersTableView.isHidden = true
+                self.noDataImageView.isHidden = false
             }
             break
         }
@@ -217,9 +223,11 @@ extension VolunteersViewController:UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         voluntersTableView.isHidden = false
          if searchText.isEmpty{
+             self.noDataImageView.isHidden = true
              volunteer = initialVolunteerAry
              self.voluntersTableView.reloadData()
         }else{
+            
             filterTableView(text: searchText)
         }
     }

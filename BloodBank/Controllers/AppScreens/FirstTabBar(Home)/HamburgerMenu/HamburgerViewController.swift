@@ -20,7 +20,6 @@ class HamburgerViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
 //    @IBOutlet weak var appointmentBtn: UIButton!
     
-    @IBOutlet weak var availableToDonate: UILabel!
     @IBOutlet weak var coronaBtn: UIButton!
     @IBOutlet weak var donationRequestsBtn: UIButton!
     @IBOutlet weak var volunteersBtn: UIButton!
@@ -31,7 +30,6 @@ class HamburgerViewController: UIViewController {
     @IBOutlet weak var favoriteBtn: UIButton!
     @IBOutlet weak var buyBloodBtn: UIButton!
     
-    @IBOutlet weak var donateSwitch: UISwitch!
     var delegate: HambburgerViewControllerDelegate?
     var delegate2: opacityDelegate?
     let btnCustom = UserCustomBtn()
@@ -40,22 +38,18 @@ class HamburgerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpHumburger()
-        setUpSwitch()
+       
     }
     override func viewWillAppear(_ animated: Bool) {
         setUpLocalizationLabel()
         mainHumbergerView.semanticContentAttribute = .forceLeftToRight
     }
     //MARK: - private functions
-    private func setUpSwitch(){
-        if let donateSwitch = def.value(forKey: "switch"){
-            self.donateSwitch.isOn = donateSwitch as! Bool
-        }
-    }
+   
     private func setUpLocalizationLabel(){
         let currentLang = Locale.current.languageCode
         if currentLang == "en"{
-            availableToDonate.text = "Available to donate".Localized()
+           
             self.btnCustom.setUpBtnFont(btn: coronaBtn, text: "Corona stats".Localized())
             self.btnCustom.setUpBtnFont(btn: settingBtn, text: "Setting".Localized())
             self.btnCustom.setUpBtnFont(btn: donationRequestsBtn, text: "Donation Requests".Localized())
@@ -150,11 +144,5 @@ class HamburgerViewController: UIViewController {
         navigationController?.pushViewController(buyBloodVC, animated: true)
         self.modalTransitionStyle = .partialCurl
         self.dismissHamburgerMenu()
-    }
-    
-    
-    
-    @IBAction func donateSwichTapped(_ sender: UISwitch) {
-        def.set(sender.isOn, forKey: "switch")
     }
 }

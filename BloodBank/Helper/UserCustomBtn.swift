@@ -63,8 +63,8 @@ class UserCustomBtn{
          btn.setTitle(text, for: .normal)
          btn.titleLabel?.font = UIFont(name: "Almarai", size: 20)
     }
-    func shadowBtn(btn: UIButton){
-        btn.layer.shadowColor = UIColor.darkGray.cgColor
+    func shadowBtn(btn: UIButton , colorShadow: CGColor){
+        btn.layer.shadowColor = colorShadow 
         btn.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
         btn.layer.shadowOpacity = 3.0
         btn.layer.masksToBounds = false

@@ -17,6 +17,7 @@ class UserDefultsManager{
         case isLoggedIn
         case isNotificationOn
         case isDarkModeOn
+        case isRequestSaved
     }
     private let def = UserDefaults.standard
     var isLoggedIn: Bool{
@@ -52,5 +53,17 @@ class UserDefultsManager{
             return def.bool(forKey: key.isDarkModeOn.rawValue)
         }
     }
+    var isRequestSaved: Bool{
+        set{
+            def.set(newValue, forKey: key.isRequestSaved.rawValue)
+        }
+        get{
+            guard def.object(forKey: key.isRequestSaved.rawValue) != nil else  {
+                return false
+            }
+            return def.bool(forKey: key.isRequestSaved.rawValue)
+        }
+    }
     
 }
+

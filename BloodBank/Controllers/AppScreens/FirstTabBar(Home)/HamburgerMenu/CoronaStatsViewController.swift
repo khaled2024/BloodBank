@@ -136,7 +136,7 @@ class CoronaStatsViewController: UIViewController{
         populationLbl.customLblFont(lbl: populationLbl, fontSize: 16, text: "population")
         criticalLbl.customLblFont(lbl: criticalLbl, fontSize: 16, text: "Critical")
         activeLbl.customLblFont(lbl: activeLbl, fontSize: 16, text: "Active")
-        customShadow.shadowBtn(btn: bloodBankSiteBtn)
+        customShadow.shadowBtn(btn: bloodBankSiteBtn, colorShadow: UIColor.darkGray.cgColor)
         
         rightArrowBtnSite.isHidden = true
         leftArrowBtnSite.isHidden = true

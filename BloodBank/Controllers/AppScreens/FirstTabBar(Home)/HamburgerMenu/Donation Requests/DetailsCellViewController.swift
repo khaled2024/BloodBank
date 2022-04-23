@@ -19,21 +19,28 @@ class DetailsCellViewController: UIViewController, UISheetPresentationController
     @IBOutlet weak var blurView: UIVisualEffectView!
     @IBOutlet weak var addCommentView: UIView!
     @IBOutlet weak var commentsTableView: UITableView!
-    @IBOutlet weak var insideShareBtn: UIButton!
-    @IBOutlet weak var insidelikedBtn: UIButton!
-    @IBOutlet weak var shareBtn: UIButton!
-    @IBOutlet weak var commentBtn: UIButton!
-    @IBOutlet weak var likeBtn: UIButton!
+    
     @IBOutlet weak var descriptionDetailLbl: UILabel!
     @IBOutlet weak var timeDetailLbl: UILabel!
     @IBOutlet weak var addressDetailLbl: UILabel!
     @IBOutlet weak var bloodTypeDetailLbl: UILabel!
     @IBOutlet weak var donorImageDetail: UIImageView!
     @IBOutlet weak var patientDetailLbl: UILabel!
+    // custom Btn
+    @IBOutlet weak var insideBookMarkBtn: UIButton!
+    @IBOutlet weak var bookMarkBtn: UIButton!
+    @IBOutlet weak var insideAcceptRequestBtn: UIButton!
+    @IBOutlet weak var acceptRequestBtn: UIButton!
+    @IBOutlet weak var volunteeringBtn: UIButton!
+    @IBOutlet weak var insidevolunteeringBtn: UIButton!
+    
     let customBtn = UserCustomBtn()
     @IBOutlet weak var sharingBtn: UIButton!
     var myPatient: Patient!
     let customView = CustomView()
+    let def = UserDefaults.standard
+    
+    
     let comment = [Comment(title: "عمرو", subTitle: "i can help you in this blood request send me all details i can help you in this blood request send me all details i can help you in this blood request send me all details"),Comment(title: "خالد", subTitle: "i can help you in this blood request send me all details"),Comment(title: "Amr", subTitle: "i can help you in this blood request send me all details i can help you in this blood request send me all details"),Comment(title: "khaled", subTitle: "i can help you in this blood request send me all details"),Comment(title: "Amr", subTitle: "i can help you in this blood request send me all details")]
     override var sheetPresentationController: UISheetPresentationController{
         presentationController as! UISheetPresentationController
@@ -48,11 +55,11 @@ class DetailsCellViewController: UIViewController, UISheetPresentationController
         setUpSheetPresentation()
         setUpData()
         setUpBlurandCommentView()
-        self.likeBtn.customTitleLbl(btn: likeBtn, text: "اعجبني", fontSize: 13)
-        self.commentBtn.customTitleLbl(btn: commentBtn, text: "تعليق", fontSize: 13)
-        self.shareBtn.customTitleLbl(btn: shareBtn, text: "مشاركه", fontSize: 13)
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        setBookMark()
+        
+    }
     //MARK: - Private func
     private func setUpBlurandCommentView(){
         // blurView & size
@@ -63,6 +70,12 @@ class DetailsCellViewController: UIViewController, UISheetPresentationController
     private func setUpDesign(){
         self.donorImageDetail.layer.cornerRadius = self.donorImageDetail.frame.size.width / 2
         customView.customView(theView: addCommentView)
+        self.acceptRequestBtn.customTitleLbl(btn: acceptRequestBtn, text: "تلبيه الطلب", fontSize: 13)
+        self.volunteeringBtn.customTitleLbl(btn: volunteeringBtn, text: "تطوع", fontSize: 13)
+        self.bookMarkBtn.customTitleLbl(btn: bookMarkBtn, text: "حفظ", fontSize: 13)
+        customBtn.shadowBtn(btn: bookMarkBtn, colorShadow: UIColor.gray.cgColor)
+        customBtn.shadowBtn(btn: acceptRequestBtn, colorShadow: UIColor.gray.cgColor)
+        customBtn.shadowBtn(btn: volunteeringBtn, colorShadow: UIColor.gray.cgColor)
     }
     private func setUpSheetPresentation(){
         sheetPresentationController.delegate = self
@@ -110,7 +123,37 @@ class DetailsCellViewController: UIViewController, UISheetPresentationController
             desireView.removeFromSuperview()
         }
     }
-    
+    private func setBookMark(){
+        if let isRequestSaved = def.object(forKey: "isRequestSaved")as? Bool{
+            if isRequestSaved == true{
+                self.insideBookMarkBtn.imageView?.image = UIImage(systemName: "bookmark.fill")
+                def.set(true, forKey: "isRequestSaved")
+                print(isRequestSaved)
+            }else{
+                self.insideBookMarkBtn.imageView?.image = UIImage(systemName: "bookmark")
+                def.set(false, forKey: "isRequestSaved")
+                print(isRequestSaved)
+            }
+        }
+    }
+    private func bookMarkTapped(){
+            if let requestValue = self.def.value(forKey: "isRequestSaved")as? Bool{
+                print(requestValue)
+                if requestValue == false{
+                    self.SuccessAlert(title: "", message: "تم حفظ الطلب في المفضلات❤️", style: .default) { _ in
+                        self.insideBookMarkBtn.imageView?.image = UIImage(systemName: "bookmark.fill")
+                        self.def.set(true, forKey: "isRequestSaved")
+                        print(requestValue)
+                    }
+                }else{
+                    self.SuccessAlert(title: "", message: "تم ازاله الطلب من المفضلات❤️‍🩹", style: .default) { _ in
+                        self.insideBookMarkBtn.imageView?.image = UIImage(systemName: "bookmark")
+                        self.def.set(false, forKey: "isRequestSaved")
+                        print(requestValue)
+                    }
+                }
+            }
+    }
     //MARK: - Actions
     @IBAction func closeCommentView(_ sender: UIButton) {
         self.animateOut(desireView: blurView)
@@ -131,33 +174,32 @@ class DetailsCellViewController: UIViewController, UISheetPresentationController
             shareContent()
         }else{
             print("shared")
-            customBtn.toggleBtnByForground(Btn: insideShareBtn)
+            customBtn.toggleBtnByForground(Btn: insideBookMarkBtn)
             shareContent()
         }
     }
-    @IBAction func commentBtnTapped(_ sender: UIButton) {
-        print("commented")
+    @IBAction func bookMarkBtnTapped(_ sender: UIButton) {
+        
+        self.bookMarkTapped()
+    }
+    @IBAction func volunteeringBtnTapped(_ sender: UIButton) {
+        print("volunteering")
         self.animateIn(desireView: blurView)
         self.animateIn(desireView: addCommentView)
-        
-        
     }
-    @IBAction func likeBtnTapped(_ sender: UIButton) {
-        print("liked")
-        customBtn.toggleBtnByForground(Btn: insidelikedBtn)
+    @IBAction func acceptRequestBtnTapped(_ sender: UIButton) {
+        print("AcceptReques")
     }
     @IBAction func blurScreenTapped(_ sender: UITapGestureRecognizer) {
         animateOut(desireView: addCommentView)
         animateOut(desireView: blurView)
     }
-    
 }
 //MARK: - Extension UITableViewDelegate,UITableViewDataSource
 extension DetailsCellViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return comment.count
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = commentsTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = comment[indexPath.row].title

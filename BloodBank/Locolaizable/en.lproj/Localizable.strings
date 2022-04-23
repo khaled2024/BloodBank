@@ -60,12 +60,14 @@ You can get paid for donating blood in 25 countries around the world. Some count
 // humberger menu
 "Available to donate" = "Available to donate";
 "appointment" = "Appointments";
-"Donation Requests" = "Donation Requests";
+"Donation Requests" = "Urgent blood requests";
 "volunteers" = "Volunteers";
 "Donation History" = "Donation History";
 "Corona stats" = "Corona Stats";
 "Help & Support" = "Help & Support";
 "Your Story" = "Stories";
+"Favorite" = "Favorite";
+"Buy Blood" = "Buy Blood";
 "Privacy policy" = "Privacy policy";
 "Setting" = "Setting";
 "Log out" = "Log out";

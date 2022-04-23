@@ -28,6 +28,8 @@ class HamburgerViewController: UIViewController {
     @IBOutlet weak var yourStory: UIButton!
     @IBOutlet weak var settingBtn: UIButton!
     @IBOutlet weak var logoutBtn: UIButton!
+    @IBOutlet weak var favoriteBtn: UIButton!
+    @IBOutlet weak var buyBloodBtn: UIButton!
     
     @IBOutlet weak var donateSwitch: UISwitch!
     var delegate: HambburgerViewControllerDelegate?
@@ -57,6 +59,8 @@ class HamburgerViewController: UIViewController {
             self.btnCustom.setUpBtnFont(btn: coronaBtn, text: "Corona stats".Localized())
             self.btnCustom.setUpBtnFont(btn: settingBtn, text: "Setting".Localized())
             self.btnCustom.setUpBtnFont(btn: donationRequestsBtn, text: "Donation Requests".Localized())
+            self.btnCustom.setUpBtnFont(btn: favoriteBtn, text: "Favorite".Localized())
+            self.btnCustom.setUpBtnFont(btn: buyBloodBtn, text: "Buy Blood".Localized())
             self.btnCustom.setUpBtnFont(btn: logoutBtn, text: "Log out".Localized())
             self.btnCustom.setUpBtnFont(btn: volunteersBtn, text: "volunteers".Localized())
             self.btnCustom.setUpBtnFont(btn: helpBtn, text: "Help & Support".Localized())
@@ -134,6 +138,18 @@ class HamburgerViewController: UIViewController {
         self.modalTransitionStyle = .partialCurl
         self.dismissHamburgerMenu()
         
+    }
+    @IBAction func favoriteBtnTapped(_ sender: UIButton) {
+        let favoriteVC = FavoriteViewController.instantiate()
+        navigationController?.pushViewController(favoriteVC, animated: true)
+        self.modalTransitionStyle = .partialCurl
+        self.dismissHamburgerMenu()
+    }
+    @IBAction func buyBloodBtnTapped(_ sender: UIButton) {
+        let buyBloodVC = BuyBloodViewController.instantiate()
+        navigationController?.pushViewController(buyBloodVC, animated: true)
+        self.modalTransitionStyle = .partialCurl
+        self.dismissHamburgerMenu()
     }
     
     

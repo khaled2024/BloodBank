@@ -22,11 +22,13 @@
 // humberger menu
 "Available to donate" = "متاح للتبرع";
 "appointment" = "حجز موعد للتبرع بالدم";
-"Donation Requests" = "طلبات التبرع";
+"Donation Requests" = "طلبات دم عاجله";
 "Donation History" = "التبرعات السابقه";
 "Your Story" = "قصص";
 "volunteers" = "المتطوعين";
 "Corona stats" = "احصائيات كورونا";
+"Favorite" = "المفضلات";
+"Buy Blood" = "شراء الدم";
 "Help & Support" = "المساعده والدعم";
 "Privacy policy" = "سياسه الخصوصيه";
 "Setting" = "الاعدادات";

@@ -173,8 +173,8 @@
 /* Class = "UILabel"; text = "هل تزن 45 كجم على الأقل؟"; ObjectID = "FWN-o8-eAT"; */
 "FWN-o8-eAT.text" = "هل تزن 45 كجم على الأقل؟";
 
-/* Class = "UIButton"; configuration.title = "طلبات التبرع"; ObjectID = "FfB-Uq-KVo"; */
-"FfB-Uq-KVo.configuration.title" = "طلبات التبرع";
+/* Class = "UIButton"; configuration.title = "طلبات دم عاجله"; ObjectID = "FfB-Uq-KVo"; */
+"FfB-Uq-KVo.configuration.title" = "طلبات دم عاجله";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "FfB-Uq-KVo"; */
 "FfB-Uq-KVo.normalTitle" = "Button";

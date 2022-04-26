@@ -11,6 +11,9 @@
         <array key="Almarai-Bold.ttf">
             <string>Almarai-Bold</string>
         </array>
+        <array key="Almarai-ExtraBold.ttf">
+            <string>Almarai-ExtraBold</string>
+        </array>
         <array key="Almarai-Regular.ttf">
             <string>Almarai-Regular</string>
         </array>
@@ -88,6 +91,18 @@
                                     <constraint firstAttribute="width" constant="90" id="eIY-a8-qqs"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="متطوعون" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2QC-m7-EV2">
+                                <rect key="frame" x="330.5" y="116" width="54.5" height="14"/>
+                                <fontDescription key="fontDescription" name="Almarai-ExtraBold" family="Almarai" pointSize="12"/>
+                                <color key="textColor" name="subLblDarkGrayColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8QL-Mj-O4E">
+                                <rect key="frame" x="318.5" y="115.5" width="7" height="15"/>
+                                <fontDescription key="fontDescription" name="Almarai-ExtraBold" family="Almarai" pointSize="13"/>
+                                <color key="textColor" name="subLblDarkGrayColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" name="bgIColornsideCell"/>
                         <constraints>
@@ -104,8 +119,11 @@
                             <constraint firstItem="TPX-ZE-sbO" firstAttribute="leading" secondItem="bzU-zN-swy" secondAttribute="trailing" constant="10" id="CqF-Op-xzi"/>
                             <constraint firstItem="kw4-fo-VVx" firstAttribute="top" secondItem="TPX-ZE-sbO" secondAttribute="bottom" constant="15" id="D6b-SJ-Mjt"/>
                             <constraint firstItem="ROe-DJ-Id5" firstAttribute="top" secondItem="HiN-nq-o5P" secondAttribute="bottom" constant="20" id="DOM-cB-xtQ"/>
+                            <constraint firstItem="2QC-m7-EV2" firstAttribute="trailing" secondItem="SL3-cA-eca" secondAttribute="trailing" constant="-10" id="EnF-mj-9m8"/>
                             <constraint firstItem="bzU-zN-swy" firstAttribute="width" secondItem="ROe-DJ-Id5" secondAttribute="width" id="EqM-9Q-aNI"/>
                             <constraint firstItem="TPX-ZE-sbO" firstAttribute="top" secondItem="y7G-4P-8yE" secondAttribute="bottom" constant="10" id="HNe-Fx-fJ7"/>
+                            <constraint firstItem="8QL-Mj-O4E" firstAttribute="centerY" secondItem="2QC-m7-EV2" secondAttribute="centerY" id="Ier-IR-7tb"/>
+                            <constraint firstItem="2QC-m7-EV2" firstAttribute="top" secondItem="SL3-cA-eca" secondAttribute="bottom" constant="10" id="QZe-bB-ALw"/>
                             <constraint firstAttribute="trailing" secondItem="SL3-cA-eca" secondAttribute="trailing" constant="8" id="Qs2-mc-hf4"/>
                             <constraint firstItem="bzU-zN-swy" firstAttribute="height" secondItem="ROe-DJ-Id5" secondAttribute="height" id="V3Z-X4-hyQ"/>
                             <constraint firstItem="SL3-cA-eca" firstAttribute="leading" secondItem="ae3-uB-rIx" secondAttribute="trailing" constant="10" id="VV9-Ho-j5H"/>
@@ -114,6 +132,8 @@
                             <constraint firstItem="y7G-4P-8yE" firstAttribute="centerY" secondItem="ROe-DJ-Id5" secondAttribute="centerY" id="bjv-8h-fSg"/>
                             <constraint firstItem="kw4-fo-VVx" firstAttribute="leading" secondItem="ob3-P3-5A6" secondAttribute="leading" constant="8" id="cco-lE-aJ3"/>
                             <constraint firstItem="y7G-4P-8yE" firstAttribute="top" secondItem="ae3-uB-rIx" secondAttribute="bottom" constant="17" id="cy3-Vx-FX8"/>
+                            <constraint firstItem="kw4-fo-VVx" firstAttribute="top" secondItem="2QC-m7-EV2" secondAttribute="bottom" constant="16" id="pJ0-FR-SzD"/>
+                            <constraint firstItem="2QC-m7-EV2" firstAttribute="leading" secondItem="8QL-Mj-O4E" secondAttribute="trailing" constant="5" id="pgf-Ez-Ky7"/>
                             <constraint firstItem="ae3-uB-rIx" firstAttribute="leading" secondItem="HiN-nq-o5P" secondAttribute="trailing" constant="10" id="w3e-S3-DuT"/>
                             <constraint firstItem="y7G-4P-8yE" firstAttribute="leading" secondItem="ROe-DJ-Id5" secondAttribute="trailing" constant="10" id="xDZ-S4-9lu"/>
                             <constraint firstAttribute="trailing" secondItem="kw4-fo-VVx" secondAttribute="trailing" constant="8" id="yNE-eo-BA1"/>
@@ -138,6 +158,7 @@
                 <outlet property="insideView" destination="HiN-nq-o5P" id="3t6-VE-yri"/>
                 <outlet property="patientNameLbl" destination="ae3-uB-rIx" id="Ros-tL-Xen"/>
                 <outlet property="timeLbl" destination="TPX-ZE-sbO" id="fEd-oE-x6E"/>
+                <outlet property="volunteersNumLbl" destination="8QL-Mj-O4E" id="QrH-Te-VAe"/>
             </connections>
             <point key="canvasLocation" x="302.17391304347831" y="119.53125"/>
         </tableViewCell>

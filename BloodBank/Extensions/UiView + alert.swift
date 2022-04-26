@@ -21,8 +21,8 @@ extension UIViewController {
     
     func showAlertWithSettingBtn(title: String , message: String){
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .destructive, handler: nil))
-        alert.addAction(UIAlertAction(title: "Setting", style: .default, handler: { action in
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Setting", style: .destructive, handler: { action in
             UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
         }))
         self.present(alert, animated: true, completion: nil)

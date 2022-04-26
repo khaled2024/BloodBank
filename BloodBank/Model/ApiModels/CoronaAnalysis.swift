@@ -3,7 +3,6 @@
 //  BloodBank
 //
 //  Created by KhaleD HuSsien on 26/03/2022.
-//
 
 import Foundation
 // api for global analysis corona... :)

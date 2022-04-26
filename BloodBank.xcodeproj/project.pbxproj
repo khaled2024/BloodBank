@@ -15,6 +15,7 @@
 		EA01A0B127C9838700BDCC00 /* BookingAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA01A0B027C9838700BDCC00 /* BookingAppointmentViewController.swift */; };
 		EA01A0B327C984A600BDCC00 /* InformationCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA01A0B227C984A600BDCC00 /* InformationCenterViewController.swift */; };
 		EA064CAE27A4750600A06257 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA064CAD27A4750600A06257 /* MainViewController.swift */; };
+		EA1153BC2816E6DE0053C50B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1153BB2816E6DE0053C50B /* User.swift */; };
 		EA17CD7C27FCFE4F00F356EE /* Almarai-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA17CD7B27FCFE4F00F356EE /* Almarai-ExtraBold.ttf */; };
 		EA1831C727DA6C1000D9BA90 /* RequestsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1831C527DA6C1000D9BA90 /* RequestsTableViewCell.swift */; };
 		EA1831C827DA6C1000D9BA90 /* RequestsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA1831C627DA6C1000D9BA90 /* RequestsTableViewCell.xib */; };
@@ -60,6 +61,9 @@
 		EA6211E627EF829600301635 /* formatInt+Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6211E527EF829600301635 /* formatInt+Int.swift */; };
 		EA64542C27F8991900376A8B /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA64542B27F8991900376A8B /* LaunchViewController.swift */; };
 		EA66461A27E2BAB1001A9E12 /* CustomTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA66461927E2BAB1001A9E12 /* CustomTF.swift */; };
+		EA66E54528157ED700443115 /* favoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA66E54328157ED700443115 /* favoriteTableViewCell.swift */; };
+		EA66E54628157ED700443115 /* favoriteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA66E54428157ED700443115 /* favoriteTableViewCell.xib */; };
+		EA66E549281587C800443115 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA66E548281587C800443115 /* Reachability.swift */; };
 		EA6E702127C5C3CE00F1E76C /* Almarai-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA6E702027C5C3CE00F1E76C /* Almarai-Regular.ttf */; };
 		EA6F6123281390BE002E5E5E /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6F6122281390BE002E5E5E /* FavoriteViewController.swift */; };
 		EA6F6125281390CF002E5E5E /* BuyBloodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6F6124281390CF002E5E5E /* BuyBloodViewController.swift */; };
@@ -109,6 +113,7 @@
 		EAD669F327C63F50006221A2 /* DonorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD669F227C63F50006221A2 /* DonorViewController.swift */; };
 		EAD7D59227F5B62C003E81D3 /* UILable+Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD7D59127F5B62C003E81D3 /* UILable+Font.swift */; };
 		EAE3C90B27B12C6300F42D16 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE3C90A27B12C6300F42D16 /* MapViewController.swift */; };
+		EAE546862814C16600DA5A8E /* DonatePlaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE546852814C16600DA5A8E /* DonatePlaces.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -122,6 +127,7 @@
 		EA01A0B027C9838700BDCC00 /* BookingAppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingAppointmentViewController.swift; sourceTree = "<group>"; };
 		EA01A0B227C984A600BDCC00 /* InformationCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationCenterViewController.swift; sourceTree = "<group>"; };
 		EA064CAD27A4750600A06257 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		EA1153BB2816E6DE0053C50B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		EA17CD7B27FCFE4F00F356EE /* Almarai-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Almarai-ExtraBold.ttf"; sourceTree = "<group>"; };
 		EA1831C527DA6C1000D9BA90 /* RequestsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsTableViewCell.swift; sourceTree = "<group>"; };
 		EA1831C627DA6C1000D9BA90 /* RequestsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestsTableViewCell.xib; sourceTree = "<group>"; };
@@ -167,6 +173,9 @@
 		EA6211E527EF829600301635 /* formatInt+Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "formatInt+Int.swift"; sourceTree = "<group>"; };
 		EA64542B27F8991900376A8B /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		EA66461927E2BAB1001A9E12 /* CustomTF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTF.swift; sourceTree = "<group>"; };
+		EA66E54328157ED700443115 /* favoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = favoriteTableViewCell.swift; sourceTree = "<group>"; };
+		EA66E54428157ED700443115 /* favoriteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = favoriteTableViewCell.xib; sourceTree = "<group>"; };
+		EA66E548281587C800443115 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		EA6E702027C5C3CE00F1E76C /* Almarai-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Almarai-Regular.ttf"; sourceTree = "<group>"; };
 		EA6F6122281390BE002E5E5E /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		EA6F6124281390CF002E5E5E /* BuyBloodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyBloodViewController.swift; sourceTree = "<group>"; };
@@ -221,6 +230,7 @@
 		EAD669F227C63F50006221A2 /* DonorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonorViewController.swift; sourceTree = "<group>"; };
 		EAD7D59127F5B62C003E81D3 /* UILable+Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILable+Font.swift"; sourceTree = "<group>"; };
 		EAE3C90A27B12C6300F42D16 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		EAE546852814C16600DA5A8E /* DonatePlaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonatePlaces.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -354,6 +364,23 @@
 			path = VaccineCell;
 			sourceTree = "<group>";
 		};
+		EA66E54228157E9F00443115 /* favoriteCell */ = {
+			isa = PBXGroup;
+			children = (
+				EA66E54328157ED700443115 /* favoriteTableViewCell.swift */,
+				EA66E54428157ED700443115 /* favoriteTableViewCell.xib */,
+			);
+			path = favoriteCell;
+			sourceTree = "<group>";
+		};
+		EA66E547281587A000443115 /* CheckingInternetConnection */ = {
+			isa = PBXGroup;
+			children = (
+				EA66E548281587C800443115 /* Reachability.swift */,
+			);
+			path = CheckingInternetConnection;
+			sourceTree = "<group>";
+		};
 		EA91ED4A27CD0DD000F8D02A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -445,12 +472,11 @@
 		EAC252DA276A2E9F0033F96F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EAE546842814BDD800DA5A8E /* ApiModels */,
 				EAC252E6276A34BF0033F96F /* OnboardingSlide.swift */,
 				EAAD8336276D12C700381854 /* DataPicker.swift */,
 				EA1915F627DBFA3100554FF9 /* Patient.swift */,
 				EA818B0727E1140C00D36808 /* Sick.swift */,
-				EA6211E327EF6FC200301635 /* CoronaAnalysis.swift */,
-				EAA6BDDD27EBBD2E00FE1BCA /* CountryStats.swift */,
 				EA4CA33D27F9DF2C003873DC /* Story.swift */,
 			);
 			path = Model;
@@ -466,6 +492,7 @@
 				EA545C902808C3AA0009C6C7 /* VaccineCell */,
 				EA1F21C8280C73C800DE49F9 /* BloodOrderHistoryCell */,
 				EA1F21C9280C925800DE49F9 /* LastDonateCell */,
+				EA66E54228157E9F00443115 /* favoriteCell */,
 				EA2AF7EA28102BBE00ECCB55 /* VolunteersCell */,
 			);
 			path = View;
@@ -552,6 +579,7 @@
 		EACC012D27A4272D00FFB92B /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				EA66E547281587A000443115 /* CheckingInternetConnection */,
 				EACC012E27A4275700FFB92B /* NavigationManager.swift */,
 				EACC013027A42C4D00FFB92B /* StorageManager.swift */,
 				EA86A9FA27CA31FB006EA939 /* UserDefultsManager.swift */,
@@ -573,6 +601,17 @@
 				EA4CA33F27F9E604003873DC /* FloatingBtn.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		EAE546842814BDD800DA5A8E /* ApiModels */ = {
+			isa = PBXGroup;
+			children = (
+				EA6211E327EF6FC200301635 /* CoronaAnalysis.swift */,
+				EAA6BDDD27EBBD2E00FE1BCA /* CountryStats.swift */,
+				EAE546852814C16600DA5A8E /* DonatePlaces.swift */,
+				EA1153BB2816E6DE0053C50B /* User.swift */,
+			);
+			path = ApiModels;
 			sourceTree = "<group>";
 		};
 		EAE615D927D962DB00A56C5A /* Donate Blood&Money */ = {
@@ -714,6 +753,7 @@
 			files = (
 				EAC252D3276A26F10033F96F /* LaunchScreen.storyboard in Resources */,
 				EA1831C827DA6C1000D9BA90 /* RequestsTableViewCell.xib in Resources */,
+				EA66E54628157ED700443115 /* favoriteTableViewCell.xib in Resources */,
 				EA17CD7C27FCFE4F00F356EE /* Almarai-ExtraBold.ttf in Resources */,
 				EA1F21C3280C601D00DE49F9 /* HistoryVaccineCell.xib in Resources */,
 				EAD669EF27C6393C006221A2 /* Almarai-Bold.ttf in Resources */,
@@ -822,6 +862,7 @@
 				EA45D3B327E4E0DA0072E19C /* RequestProtocol.swift in Sources */,
 				EA92A0AA27E89FFF0060C5C8 /* String+Localized.swift in Sources */,
 				EA34861927FB4F72004A6667 /* VaccineRequestViewController.swift in Sources */,
+				EA1153BC2816E6DE0053C50B /* User.swift in Sources */,
 				EA86A9FB27CA31FB006EA939 /* UserDefultsManager.swift in Sources */,
 				EAA6BDDE27EBBD2E00FE1BCA /* CountryStats.swift in Sources */,
 				EA545C8F2808A7870009C6C7 /* VaccineCollectionViewController.swift in Sources */,
@@ -836,15 +877,18 @@
 				EA01A0B327C984A600BDCC00 /* InformationCenterViewController.swift in Sources */,
 				EAC252DF276A2F250033F96F /* OnboardingViewController.swift in Sources */,
 				EA2A523827EA429300D92ED3 /* CoronaStatsViewController.swift in Sources */,
+				EAE546862814C16600DA5A8E /* DonatePlaces.swift in Sources */,
 				EA99AAFD276CCF540083F0D1 /* HomeViewController.swift in Sources */,
 				EA45BFA627C5996B00D56AEC /* DonateBloodViewController.swift in Sources */,
 				EAC252E5276A335B0033F96F /* UiView+Extension.swift in Sources */,
 				EAC6436228099A1A00109D8D /* VaccineDetailsViewController.swift in Sources */,
 				EA45D3B527E4E0DA0072E19C /* DataProviderProtocol.swift in Sources */,
+				EA66E549281587C800443115 /* Reachability.swift in Sources */,
 				EAD4B43C27F75CBC00C6924C /* AppBloodRequestViewController.swift in Sources */,
 				EA45D3B427E4E0DA0072E19C /* SessionManager.swift in Sources */,
 				EA6F6125281390CF002E5E5E /* BuyBloodViewController.swift in Sources */,
 				EA215BFE27E7FA36005A9843 /* String+URL.swift in Sources */,
+				EA66E54528157ED700443115 /* favoriteTableViewCell.swift in Sources */,
 				EA215BFC27E7EB98005A9843 /* EducateCollectionViewCell.swift in Sources */,
 				EAAD8337276D12C800381854 /* DataPicker.swift in Sources */,
 				EACC012F27A4275700FFB92B /* NavigationManager.swift in Sources */,

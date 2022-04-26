@@ -19,7 +19,8 @@ class BookingAppointmentViewController: UIViewController {
     var locationManager = CLLocationManager()
     var coordinatePin: CLLocationCoordinate2D?
     var directionArray: [MKDirections] = []
-   
+    var arrOfPlaces: [placesData] = [placesData]()
+   let reachability = try! Reachability()
   
     //MARK: - LifeCycle
     override func viewDidLoad(){
@@ -34,6 +35,7 @@ class BookingAppointmentViewController: UIViewController {
     }
     //MARK: - private functions
     private func setAllLocationService(){
+        self.checkingInternetConnection()
         displayMaltipleLocations()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.allowsBackgroundLocationUpdates = true
@@ -44,12 +46,19 @@ class BookingAppointmentViewController: UIViewController {
         }
     }
     private func displayMaltipleLocations(){
-        for location in LocationCoordinate.locations{
-            let annotaion = MKPointAnnotation()
-            annotaion.title = location["title"] as? String
-            annotaion.subtitle = location["description"] as? String
-            annotaion.coordinate = CLLocationCoordinate2D(latitude: location["latitude"] as! Double, longitude: location["longitude"] as! Double)
-            bookingMapView.addAnnotation(annotaion)
+        ApiService.sharedService.getDonatePlace { error, places in
+            if let error = error{
+                print(error)
+            } else if let place = places {
+                self.arrOfPlaces = place
+                for place in self.arrOfPlaces {
+                    let annotaion = MKPointAnnotation()
+                    annotaion.title = "\(place.place_name) - Manager: \(place.place_manager)."
+                    annotaion.subtitle = "open at \(place.open_at) & close at \(place.close_at) & the holiday is \(place.holiday)."
+                    annotaion.coordinate = CLLocationCoordinate2D(latitude: Double(place.lat)!, longitude: Double(place.lng)!)
+                    self.bookingMapView.addAnnotation(annotaion)
+                }
+            }
         }
     }
     private func test(coordinate: CLLocationCoordinate2D)-> CLLocationCoordinate2D?{
@@ -122,6 +131,24 @@ class BookingAppointmentViewController: UIViewController {
         directionArray.append(direction)
         let _ = directionArray.map {$0.cancel()}
         
+    }
+    private func checkingInternetConnection(){
+        self.reachability.whenReachable = { reachability in
+            if reachability.connection == .wifi{
+                print("Reachable to wifi")
+            }else{
+                print("Not Reachable to wifi")
+            }
+        }
+        self.reachability.whenUnreachable = { _ in
+            print("not reachable")
+            self.showAlertWithSettingBtn(title: "No Internet", message: "This Screen Require WiFi/Internet Connenction!")
+        }
+        do {
+            try reachability.startNotifier()
+        } catch  {
+            print("Unreachable to startNotifier")
+        }
     }
     //MARK: - Actions
     @IBAction func pickDateTimeBtnTapped(_ sender: UIButton) {

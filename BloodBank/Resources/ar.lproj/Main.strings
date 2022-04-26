@@ -443,8 +443,8 @@
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "eiF-C1-pUs"; */
 "eiF-C1-pUs.normalTitle" = "Button";
 
-/* Class = "UIButton"; configuration.title = "انشاء حساب"; ObjectID = "emB-Kx-eVv"; */
-"emB-Kx-eVv.configuration.title" = "انشاء حساب";
+/* Class = "UIButton"; configuration.title = "استمرار"; ObjectID = "emB-Kx-eVv"; */
+"emB-Kx-eVv.configuration.title" = "استمرار";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "emB-Kx-eVv"; */
 "emB-Kx-eVv.normalTitle" = "Button";

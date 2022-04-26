@@ -57,7 +57,7 @@ class SecondRequestBloodViewController: UIViewController {
         return false
     }
     private func createBloodRquest(){
-        patient = Patient(name: patientNameTF.text!, bloodType: self.bloodTypeLbl.text!, address: self.bloodBankNameLbl.text!, time: self.timeLbl.text!, description: noteForHelpTF.text!, donorImage: "https://i.pinimg.com/originals/0c/5f/12/0c5f12f37fb6bc00f4d468b5d69e9932.jpg")
+        patient = Patient(name: patientNameTF.text!, bloodType: self.bloodTypeLbl.text!, address: self.bloodBankNameLbl.text!, time: self.timeLbl.text!, description: noteForHelpTF.text!, donorImage: "https://i.pinimg.com/originals/0c/5f/12/0c5f12f37fb6bc00f4d468b5d69e9932.jpg", volunteer: "1")
         NotificationCenter.default.post(name: Notification.Name(Notifications.detailNot), object: patient)
         print("GetPosted")
 

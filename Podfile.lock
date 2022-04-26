@@ -1,24 +1,28 @@
 PODS:
+  - Alamofire (5.4.4)
   - BulletinBoard (5.0.0)
   - CardSlider (0.1.0)
   - IQKeyboardManagerSwift (6.5.9)
 
 DEPENDENCIES:
+  - Alamofire
   - BulletinBoard
   - CardSlider
   - IQKeyboardManagerSwift
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - BulletinBoard
     - CardSlider
     - IQKeyboardManagerSwift
 
 SPEC CHECKSUMS:
+  Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
   BulletinBoard: dba77053c2a7b64953f63073f7534165af2edd21
   CardSlider: 0a8f5f17f5a76701771794b07fdaeddc512358c8
   IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
 
-PODFILE CHECKSUM: 30414e94ad457cea8e834d9bed15612c4009178f
+PODFILE CHECKSUM: 1e9092d415341aa561dc154e56c1086b9cc6827c
 
 COCOAPODS: 1.11.2

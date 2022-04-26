@@ -61,6 +61,9 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
         self.testView.layer.opacity = 1
         self.animateScalling()
     }
+    override func viewDidLayoutSubviews() {
+        animateImages()
+    }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1)
         self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
@@ -69,7 +72,6 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
         self.tabBarController?.tabBar.isHidden = false
         self.navigationController?.navigationBar.isHidden = false
         animateViews()
-        animateImages()
         setUpLocalized()
         mainView.semanticContentAttribute = .forceLeftToRight
 //        testView.semanticContentAttribute = .forceLeftToRight

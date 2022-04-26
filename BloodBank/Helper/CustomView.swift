@@ -35,6 +35,13 @@ class CustomView: UIView{
         theView.layer.masksToBounds = false
         theView.layer.cornerRadius = 20.0
     }
+    func signUpView(theView: UIView){
+        theView.layer.shadowColor = #colorLiteral(red: 0.918268621, green: 0.2490310073, blue: 0.3684441447, alpha: 1)
+        theView.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+        theView.layer.shadowOpacity = 5.0
+        theView.layer.masksToBounds = false
+        theView.layer.cornerRadius = 20.0
+    }
     
 }
 

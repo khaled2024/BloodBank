@@ -21,6 +21,8 @@ class MapViewController: UIViewController {
     let locationManager = CLLocationManager()
     var coordinatePin: CLLocationCoordinate2D?
     var directionArray: [MKDirections] = []
+    var arrOfPlaces: [placesData] = [placesData]()
+    let reachability = try! Reachability()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,12 +32,9 @@ class MapViewController: UIViewController {
         locationManager.delegate = self
         self.setAllLocationService()
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-    }
     //MARK: - private functions
     private func setAllLocationService(){
+        self.checkingInternetConnection()
         displayMaltipleLocations()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.allowsBackgroundLocationUpdates = true
@@ -46,89 +45,116 @@ class MapViewController: UIViewController {
         }
     }
     private func displayMaltipleLocations(){
-        for location in LocationCoordinate.locations{
-            let annotaion = MKPointAnnotation()
-            annotaion.title = location["title"] as? String
-            annotaion.subtitle = location["description"] as? String
-            annotaion.coordinate = CLLocationCoordinate2D(latitude: location["latitude"] as! Double, longitude: location["longitude"] as! Double)
-            mapView.addAnnotation(annotaion)
-        }
-        
-    }
-        // Draw directions
-         private func drawDirections(startingLoc: CLLocationCoordinate2D , destinationLoc: CLLocationCoordinate2D){
-            let startingPlace = MKPlacemark(coordinate: startingLoc)
-            let destinationPlace = MKPlacemark(coordinate: destinationLoc)
-            
-            let startingItem = MKMapItem(placemark: startingPlace)
-            let destinationItem = MKMapItem(placemark: destinationPlace)
-            
-            let request = MKDirections.Request()
-            request.source = startingItem
-            request.destination = destinationItem
-            request.transportType = .automobile
-            
-            let directions = MKDirections(request: request)
-            self.resetMapView(withNew: directions)
-            directions.calculate { response, error in
-                guard let response = response else {
-                    if let error = error{
-                        print("direction error\(error.localizedDescription)")
-                    }
-                    return
-                }
-                for route in response.routes{
-                    self.mapView.addOverlay(route.polyline)
-                    self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
+        ApiService.sharedService.getDonatePlace { error, places in
+            if let error = error{
+                print(error)
+            } else if let place = places {
+                self.arrOfPlaces = place
+                for place in self.arrOfPlaces {
+                    let annotaion = MKPointAnnotation()
+                    annotaion.title = "\(place.place_name) - Manager: \(place.place_manager)."
+                    annotaion.subtitle = "open at \(place.open_at) & close at \(place.close_at) & the holiday is \(place.holiday)."
+                    annotaion.coordinate = CLLocationCoordinate2D(latitude: Double(place.lat)!, longitude: Double(place.lng)!)
+                    self.mapView.addAnnotation(annotaion)
                 }
             }
         }
+    }
+    // Draw directions
+    private func drawDirections(startingLoc: CLLocationCoordinate2D , destinationLoc: CLLocationCoordinate2D){
+        let startingPlace = MKPlacemark(coordinate: startingLoc)
+        let destinationPlace = MKPlacemark(coordinate: destinationLoc)
+        
+        let startingItem = MKMapItem(placemark: startingPlace)
+        let destinationItem = MKMapItem(placemark: destinationPlace)
+        
+        let request = MKDirections.Request()
+        request.source = startingItem
+        request.destination = destinationItem
+        request.transportType = .automobile
+        
+        let directions = MKDirections(request: request)
+        self.resetMapView(withNew: directions)
+        directions.calculate { response, error in
+            guard let response = response else {
+                if let error = error{
+                    print("direction error\(error.localizedDescription)")
+                }
+                return
+            }
+            for route in response.routes{
+                self.mapView.addOverlay(route.polyline)
+                self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
+            }
+        }
+    }
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-       let render = MKPolylineRenderer(overlay: overlay as! MKPolyline)
-        render.strokeColor = .darkGray
-       return render
-   }
+        let render = MKPolylineRenderer(overlay: overlay as! MKPolyline)
+        let appDelegate = UIApplication.shared.windows.first
+        if appDelegate?.overrideUserInterfaceStyle == .dark{
+            render.strokeColor = .systemPink
+        }else{
+            render.strokeColor = .darkGray
+        }
+        return render
+    }
     
     func resetMapView(withNew direction: MKDirections){
-       mapView.removeOverlays(mapView.overlays)
-       directionArray.append(direction)
-       let _ = directionArray.map {$0.cancel()}
-       
-   }
+        mapView.removeOverlays(mapView.overlays)
+        directionArray.append(direction)
+        let _ = directionArray.map {$0.cancel()}
+        
+    }
+    private func checkingInternetConnection(){
+        self.reachability.whenReachable = { reachability in
+            if reachability.connection == .wifi{
+                print("Reachable to wifi")
+            }else{
+                print("Not Reachable to wifi")
+            }
+        }
+        self.reachability.whenUnreachable = { _ in
+            print("not reachable")
+            self.showAlertWithSettingBtn(title: "No Internet", message: "This Screen Require WiFi/Internet Connenction!")
+        }
+        do {
+            try reachability.startNotifier()
+        } catch  {
+            print("Unreachable to startNotifier")
+        }
+    }
     //MARK: - Actions
     @IBAction func getDirectionsBtnTapped(_ sender: UIButton) {
         if let userLoc = locationManager.location{
             self.drawDirections(startingLoc: userLoc.coordinate, destinationLoc: coordinatePin!)
             // or
             //if i wanna select direction with the pin(i will hide this pin now)
-//            self.drawDirections(startingLoc: userLoc.coordinate, destinationLoc: bookingMapView.centerCoordinate)
+            //            self.drawDirections(startingLoc: userLoc.coordinate, destinationLoc: bookingMapView.centerCoordinate)
         }
     }
 }
 // for custom pin
 extension MapViewController: MKMapViewDelegate{
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        guard !(annotation is MKUserLocation) else{
-            return nil
-        }
-        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "custom")
-        if annotationView == nil{
-            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "custom")
-            annotationView?.canShowCallout = true
-        }else{
-            annotationView?.annotation = annotation
-        }
-        annotationView?.image = UIImage(named: "bloodPin")
+        guard !(annotation is MKUserLocation) else{return nil}
+        //        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "custom")
+        //        if annotationView == nil{
+        //            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "custom")
+        //            annotationView?.canShowCallout = true
+        //        }else{
+        //            annotationView?.annotation = annotation
+        //        }
+        //        annotationView?.image = UIImage(named: "bloodPin")
+        //        return annotationView
+        //        or
+        let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "custom")
+        annotationView.canShowCallout = true
+        annotationView.glyphImage = UIImage(named: "bloodPin2")
+        annotationView.markerTintColor = #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1)
+        annotationView.selectedGlyphImage = UIImage(named: "bloodPin")
+        
         return annotationView
-//        or
-//        let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "custom")
-//        annotationView.canShowCallout = true
-//        annotationView.glyphImage = UIImage(named: "bloodPin2")
-//        annotationView.markerTintColor = #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1)
-//        annotationView.selectedGlyphImage = UIImage(named: "bloodPin")
-//
-//        return annotationView
-       
+        
     }
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         detailsView.isHidden = false

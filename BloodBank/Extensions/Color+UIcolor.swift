@@ -12,10 +12,10 @@ extension UIColor{
         return UIColor(named: "viewbgColor")!
     }
     static var navBarTintColor: UIColor{
-        return UIColor(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1)
+        return #colorLiteral(red: 0.9955310225, green: 0.2451720238, blue: 0.3817985058, alpha: 1)
     }
     static var forgroundTitle: UIColor{
-        return UIColor(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1)
+        return #colorLiteral(red: 0.9955310225, green: 0.2451720238, blue: 0.3817985058, alpha: 1)
     }
     
     static var backgroundView: UIColor{

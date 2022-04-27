@@ -4150,39 +4150,39 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="السعر الكلى" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3f0-Nt-XxG">
-                                <rect key="frame" x="10" y="453" width="394" height="20.5"/>
+                                <rect key="frame" x="10" y="454.5" width="394" height="21"/>
                                 <fontDescription key="fontDescription" name="Almarai-Bold" family="Almarai" pointSize="18"/>
                                 <color key="textColor" name="MainLblColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سعر الكيس" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3JJ-zM-feN">
-                                <rect key="frame" x="10" y="357.5" width="394" height="20.5"/>
+                                <rect key="frame" x="10" y="358.5" width="394" height="21"/>
                                 <fontDescription key="fontDescription" name="Almarai-Bold" family="Almarai" pointSize="18"/>
                                 <color key="textColor" name="MainLblColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xsh-uB-5dn">
-                                <rect key="frame" x="10" y="292.5" width="394" height="45"/>
+                                <rect key="frame" x="10" y="293.5" width="394" height="45"/>
                                 <color key="textColor" name="MainLblColor"/>
                                 <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="listNumbers" translatesAutoresizingMaskIntoConstraints="NO" id="Kq7-5v-psq">
-                                <rect key="frame" x="364" y="300" width="30" height="30"/>
+                                <rect key="frame" x="364" y="301" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="26l-ar-AaQ"/>
                                     <constraint firstAttribute="height" constant="30" id="UDB-lU-61n"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="400 جنيه" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IPS-vH-HV0">
-                                <rect key="frame" x="10" y="483.5" width="394" height="45"/>
+                                <rect key="frame" x="10" y="485.5" width="394" height="45"/>
                                 <color key="backgroundColor" red="0.91764706370000004" green="0.92549026010000002" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="textColor" name="MainLblColor"/>
                                 <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="AB+" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MnW-KF-cN1">
-                                <rect key="frame" x="10" y="197" width="394" height="45"/>
+                                <rect key="frame" x="10" y="197.5" width="394" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="IxT-nr-oob"/>
                                 </constraints>
@@ -4191,40 +4191,40 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blood-type (1)" translatesAutoresizingMaskIntoConstraints="NO" id="NoK-q8-7fp">
-                                <rect key="frame" x="364" y="204.5" width="30" height="30"/>
+                                <rect key="frame" x="364" y="205" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="6HE-5n-5FX"/>
                                     <constraint firstAttribute="width" constant="30" id="fdS-Gt-jD7"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="100 جنيه" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RmU-Ym-B3h">
-                                <rect key="frame" x="10" y="388" width="394" height="45"/>
+                                <rect key="frame" x="10" y="389.5" width="394" height="45"/>
                                 <color key="backgroundColor" red="0.91764706370000004" green="0.92549026010000002" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="textColor" name="MainLblColor"/>
                                 <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moneyBag" translatesAutoresizingMaskIntoConstraints="NO" id="7mD-4b-7s0">
-                                <rect key="frame" x="364" y="395.5" width="30" height="30"/>
+                                <rect key="frame" x="364" y="397" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="Ume-Ul-TQV"/>
                                     <constraint firstAttribute="height" constant="30" id="kdg-et-jyu"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="فصيلة الدم" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4x4-hX-O1p">
-                                <rect key="frame" x="10" y="166.5" width="394" height="20.5"/>
+                                <rect key="frame" x="10" y="166.5" width="394" height="21"/>
                                 <fontDescription key="fontDescription" name="Almarai-Bold" family="Almarai" pointSize="18"/>
                                 <color key="textColor" name="MainLblColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="عدد الأكياس" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tp4-wE-Wml">
-                                <rect key="frame" x="10" y="262" width="394" height="20.5"/>
+                                <rect key="frame" x="10" y="262.5" width="394" height="21"/>
                                 <fontDescription key="fontDescription" name="Almarai-Bold" family="Almarai" pointSize="18"/>
                                 <color key="textColor" name="MainLblColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="totalPrice" translatesAutoresizingMaskIntoConstraints="NO" id="HF2-Bv-VLy">
-                                <rect key="frame" x="364" y="491" width="30" height="30"/>
+                                <rect key="frame" x="364" y="493" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="ipn-H4-igB"/>
                                     <constraint firstAttribute="width" constant="30" id="q9d-ku-j8R"/>
@@ -6506,7 +6506,7 @@
                                                                 <rect key="frame" x="10" y="15.5" width="270" height="24"/>
                                                                 <color key="textColor" name="subLblDarkGrayColor"/>
                                                                 <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="20"/>
-                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="phonePad" smartDashesType="no" smartInsertDeleteType="no"/>
+                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" smartDashesType="no" smartInsertDeleteType="no"/>
                                                             </textField>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -6530,7 +6530,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ur-XX-xiR">
                                                         <rect key="frame" x="19" y="150" width="356" height="55"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cityscape" translatesAutoresizingMaskIntoConstraints="NO" id="6ri-B5-CLV">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map-location (1)" translatesAutoresizingMaskIntoConstraints="NO" id="6ri-B5-CLV">
                                                                 <rect key="frame" x="311" y="12.5" width="30" height="30"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
@@ -6633,7 +6633,7 @@
                                                                 <rect key="frame" x="10" y="15.5" width="270" height="24"/>
                                                                 <color key="textColor" name="subLblDarkGrayColor"/>
                                                                 <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="20"/>
-                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="phonePad" smartDashesType="no" smartInsertDeleteType="no"/>
+                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" smartDashesType="no" smartInsertDeleteType="no"/>
                                                             </textField>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -7693,7 +7693,6 @@
         <image name="buyblood" width="50" height="50"/>
         <image name="calendar" width="512" height="512"/>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
-        <image name="cityscape" width="512" height="512"/>
         <image name="clock" width="37.5" height="37.5"/>
         <image name="clock Blood" width="25" height="25"/>
         <image name="corona2" width="612" height="344"/>

@@ -74,8 +74,7 @@ class ApiService{
             }
         }
     }
-    // for registeration
-    
+    // For Registeration
     func addUserData(email: String , fName: String , lName: String, id: String , password: String , fPhone: String, sPhone: String ,bloodType: String , governrate: String, city: String , birthDay:String, gender: String){
         guard let url = URL(string: "\(URLS.patient_Donor)/add")else{return}
         var urlRequest = URLRequest(url: url)
@@ -86,7 +85,7 @@ class ApiService{
             "p_first_name": fName,
             "p_last_name": lName,
             "email": email,
-            "mobile_phone": fName,
+            "mobile_phone": fPhone,
             "home_phone": sPhone,
             "password": password,
             "blood_type": bloodType,
@@ -109,5 +108,76 @@ class ApiService{
         }
         task.resume()
     }
+    // For Governrate
+    func getGovData(completion: @escaping (_ error: Error? , _ gov: [GovData]?) -> Void){
+        AF.request("\(URLS.governorate)/all", method: .get, encoding: URLEncoding.default , headers: nil).response {
+            response in
+            if let error = response.error {
+                completion(error , nil)
+            }
+            if let data = response.data {
+                do{
+                    let gov = try JSONDecoder().decode(Governorate.self, from: data).data
+                    completion(nil,gov)
+                } catch let error {
+                    completion(error , nil)
+                }
+            }
+        }
+    }
+    // For Cities
+    func getCityData(completion: @escaping (_ error: Error? , _ city: [CityData]?) -> Void){
+        AF.request("\(URLS.city)/all", method: .get, encoding: URLEncoding.default , headers: nil).response {
+            response in
+            if let error = response.error {
+                completion(error , nil)
+            }
+            if let data = response.data {
+                do{
+                    let city = try JSONDecoder().decode(City.self, from: data).data
+                    completion(nil,city)
+                } catch let error {
+                    completion(error , nil)
+                }
+            }
+        }
+    }
+    //get all cities by id of governrate
+    func getCitiesById(id: String ,completion: @escaping (_ error: Error? , _ city: [DataCities]?) -> Void){
+        let url = "\(URLS.citiesById)/\(id)"
+        AF.request("\(url)", method: .get, encoding: URLEncoding.default , headers: nil).response {
+            response in
+            if let error = response.error {
+                completion(error , nil)
+            }
+            if let data = response.data {
+                do{
+                    let city = try JSONDecoder().decode(FinalCities.self, from: data).data
+                    completion(nil,city)
+                } catch let error {
+                    completion(error , nil)
+                }
+            }
+        }
+    }
+    //for blood types
+    func getBloodType(completion: @escaping (_ error: Error? , _ blood: [BloodData]?) -> Void){
+        let url = "https://blood-bank.life/api/api/v1/blood_type/424212219/all"
+        AF.request("\(url)", method: .get, encoding: URLEncoding.default , headers: nil).response {
+            response in
+            if let error = response.error {
+                completion(error , nil)
+            }
+            if let data = response.data {
+                do{
+                    let blood = try JSONDecoder().decode(BloodType.self, from: data).data
+                    completion(nil,blood)
+                } catch let error {
+                    completion(error , nil)
+                }
+            }
+        }
+    }
+    
 }
 

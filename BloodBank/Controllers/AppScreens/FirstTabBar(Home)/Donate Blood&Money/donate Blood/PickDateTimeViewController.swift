@@ -24,6 +24,7 @@ class PickDateTimeViewController: UIViewController {
     let arrOfBloodType = Arrays.arrayOfBloodType
     let arrOfCities = Arrays.arrayOfCities
     let arrOfGov = Arrays.arrayOfGover
+  
     var HospitalName: String = ""
     
     //MARK: - life Cycle

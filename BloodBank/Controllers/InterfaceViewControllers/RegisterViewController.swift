@@ -48,18 +48,44 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var backToFirstView: UIButton!
     //MARK: - variables
     private let BloodTypePicker = UIPickerView()
+    private let GovPicker = UIPickerView()
+    private let CityPicker = UIPickerView()
+    private let GenderPicker = UIPickerView()
     private var arrayOfBloodType = Arrays.arrayOfBloodType
     var customBtn = UserCustomBtn()
     var customTF = UserCustomTF()
     let customView = CustomView()
     var gradientBackground = UserGradientBackground()
+    let datePickerView = UIDatePicker()
+    let navBar = NavigationBar()
+    
+    var dicOfGov :[String:String] = [:]
+    var arrOfGov: [GovData] = [GovData]()
+    var CitiesArr: [DataCities] = [DataCities]()
+    var dicOfCity :[String:String] = [:]
+    var arrOfCity: [CityData] = [CityData]()
+    var arrOfBlood: [BloodData] = [BloodData]()
+    var dicOfBloodType: [String:String] = [:]
+    
+    var newCity = userCity( name: "", governoratedId: "")
+    var newGov = userGovernorate(id: "", name: "", cities: [])
+    var finalCities: [String] = []
+    private var arrayOfgover: [userGovernorate] = []
+    private var arrayOfcity: [userCity] = []
+    
+    var rowOfCity: String = ""
+    var rowofGov: String = ""
+    var rowofBlood: String = ""
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpPicker()
         self.firstView.isHidden = false
         self.secondView.isHidden = true
-        self.goToSecondViewBtn.customTitleLbl(btn: goToSecondViewBtn, text: "استمرار", fontSize: 16)
+        setUpDatePicker()
+        setCityData()
+        setGovData()
+        getBlood()
     }
     override func viewWillAppear(_ animated: Bool) {
         setUpDesign()
@@ -67,39 +93,121 @@ class RegisterViewController: UIViewController {
         UserDefaults.standard.set(false, forKey: "isLoggedIn")
     }
     //MARK: - Private functions
-    private func bloodType()-> String?{
-        if let userBloodType = self.bloodTypeTextField.text{
-            let bloodType = Arrays.dicOfBloodType[userBloodType]
-            return bloodType
+    //getting data
+    private func getCitiesWithId(id: String){
+        ApiService.sharedService.getCitiesById(id: rowofGov) { error, city in
+            DispatchQueue.main.async {
+                if let error = error{
+                    print(error)
+                }else if let city = city {
+                    print(city)
+                    self.CitiesArr = city
+                    self.finalCities = []
+                    for cities in self.CitiesArr {
+                        print(cities.name)
+                        self.finalCities.append(cities.name)
+                    }
+                    print(self.finalCities)
+                }
+            }
         }
-        return nil
     }
     private func addUserData(){
-        //        let date = Date()
-        //        let df = DateFormatter()
-        //        df.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        //        let dateString = df.string(from: date)
-        ApiService.sharedService.addUserData(email: emailTextField.text!, fName: nameTextField.text!, lName: familyNameTextField.text!, id: IDTextField.text!, password: passwordTextField.text!, fPhone: fNumberTextField.text!,sPhone: sNumberTextField.text!, bloodType: self.bloodType()! ,governrate: governmentTextField.text! , city: cityTextField.text!,birthDay: birthDayTextField.text!, gender: genderTextField.text!)
+        //  let date = Date()
+        //  let df = DateFormatter()
+        //  df.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        //  let dateString = df.string(from: date)
+        //  print(dateString)
+        ApiService.sharedService.addUserData(email: emailTextField.text!, fName: nameTextField.text!,lName: familyNameTextField.text!, id: IDTextField.text!, password: passwordTextField.text!,fPhone: fNumberTextField.text!,sPhone: sNumberTextField.text!,bloodType:self.rowofBlood,governrate: self.rowofGov,city: self.rowOfCity,birthDay: birthDayTextField.text!, gender: Arrays.dicOfGender[genderTextField.text!]!)
     }
+    private func setGovData(){
+        ApiService.sharedService.getGovData { error, gov in
+            DispatchQueue.main.async {
+                if let error = error{
+                    print(error)
+                } else if let gov = gov {
+                    self.arrOfGov = gov
+                    for gov in self.arrOfGov {
+                        self.dicOfGov[gov.id] = gov.name
+                    }
+                }
+            }
+        }
+    }
+    private func setCityData(){
+        ApiService.sharedService.getCityData { error, city in
+            DispatchQueue.main.async {
+                if let error = error{
+                    print(error)
+                } else if let city = city {
+                    self.arrOfCity = city
+                    for city in self.arrOfCity {
+                        self.dicOfCity[city.gov_id] = city.name
+                    }
+                    print(self.arrOfCity)
+                }
+            }
+        }
+    }
+    private func getBlood(){
+        ApiService.sharedService.getBloodType { error, blood in
+            if let error = error {
+                print(error.localizedDescription)
+            }else if let blood = blood {
+                self.arrOfBlood = blood
+                for blood in self.arrOfBlood {
+                    self.dicOfBloodType[blood.id] = blood.name
+                }
+                print(self.arrOfBlood)
+               
+            }
+        }
+    }
+    //design
     private func setNavBar(){
-        let navBar = NavigationBar()
-        navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: #colorLiteral(red: 0.918268621, green: 0.2490310073, blue: 0.3684441447, alpha: 1),.font: UIFont(name: "Almarai-Bold", size: 25)!]
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.8666378856, green: 0.2537421584, blue: 0.3427102566, alpha: 1)
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.9812720418, green: 0.9763048291, blue: 0.9634613395, alpha: 1)
         navigationController?.navigationBar.scrollEdgeAppearance?.titleTextAttributes = [.foregroundColor: UIColor.white ,.font: UIFont(name: "Almarai-Bold", size: 18)!]
         navBar.setNavBar(myView: self, title: "انشاء حساب جديد", viewController: view, navBarColor: UIColor.navBarColor, navBarTintColor: UIColor.navBarTintColor, forgroundTitle: UIColor.forgroundTitle, bacgroundView: UIColor.backgroundView)
     }
     private func setUpPicker(){
         BloodTypePicker.tag = 1
+        GovPicker.tag = 2
+        CityPicker.tag = 3
+        GenderPicker.tag = 4
         BloodTypePicker.delegate = self
         BloodTypePicker.dataSource = self
         bloodTypeTextField.inputView = BloodTypePicker
+        GovPicker.delegate = self
+        GovPicker.dataSource = self
+        governmentTextField.inputView = GovPicker
+        CityPicker.delegate = self
+        CityPicker.dataSource = self
+        cityTextField.inputView = CityPicker
+        GenderPicker.delegate = self
+        GenderPicker.dataSource = self
+        genderTextField.inputView = GenderPicker
     }
     private func setUpDesign(){
+        self.goToSecondViewBtn.customTitleLbl(btn: goToSecondViewBtn, text: "استمرار", fontSize: 16)
         customBtn.confirmBtnSelected(Btn: goToSecondViewBtn)
         customBtn.confirmBtnSelected(Btn: confirmBtn)
         customView.signUpView(theView: self.firstView)
         customView.signUpView(theView: self.secondView)
+    }
+    //date picker
+    private func setUpDatePicker(){
+        datePickerView.datePickerMode = .date
+        birthDayTextField.inputView = datePickerView
+        datePickerView.addTarget(self, action: #selector(handleDatePicker), for: .valueChanged)
+    }
+    @objc func handleDatePicker(sender: UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        birthDayTextField.text = dateFormatter.string(from: sender.date)
+        print(dateFormatter.string(from: sender.date))
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     private func checkPassword()->Bool{
         if let password = passwordTextField.text , !password.isEmpty , let confirmPassword = confirmPasswordTextField.text , !confirmPassword.isEmpty , password == confirmPassword{
@@ -109,7 +217,7 @@ class RegisterViewController: UIViewController {
         }
     }
     private func checkTextFields()-> Bool{
-        if let email = emailTextField.text , !email.isEmpty , let name = nameTextField.text , !name.isEmpty,let familyName = familyNameTextField.text , !familyName.isEmpty , let ID = IDTextField.text , !ID.isEmpty , let fPhone = fNumberTextField.text , !fPhone.isEmpty, let sPhone = sNumberTextField.text, !sPhone.isEmpty , let bloodType = bloodTypeTextField.text , !bloodType.isEmpty, let password = passwordTextField.text , !password.isEmpty , let confirmPassword = confirmPasswordTextField.text , !confirmPassword.isEmpty , let gov = governmentTextField.text , !gov.isEmpty, let city = cityTextField.text , !city.isEmpty, let birthDay = birthDayTextField.text , !birthDay.isEmpty , let gender = genderTextField.text , !gender.isEmpty{
+        if let email = emailTextField.text , !email.isEmpty , let name = nameTextField.text , !name.isEmpty,let familyName = familyNameTextField.text , !familyName.isEmpty , let ID = IDTextField.text , !ID.isEmpty , let fPhone = fNumberTextField.text , !fPhone.isEmpty, let sPhone = sNumberTextField.text, !sPhone.isEmpty , let bloodType = bloodTypeTextField.text , !bloodType.isEmpty, let password = passwordTextField.text ,!password.isEmpty, checkPassword(), let confirmPassword = confirmPasswordTextField.text , !confirmPassword.isEmpty , let gov = governmentTextField.text , !gov.isEmpty, let city = cityTextField.text , !city.isEmpty, let birthDay = birthDayTextField.text , !birthDay.isEmpty , let gender = genderTextField.text , !gender.isEmpty{
             return true
         }else{
             return false
@@ -117,68 +225,69 @@ class RegisterViewController: UIViewController {
     }
     private func checkValidationTextField() throws {
         if let email = emailTextField.text , let firstName = nameTextField.text ,let familyName = familyNameTextField.text , let ID = IDTextField.text ,  let fPhone = fNumberTextField.text , let sPhone = sNumberTextField.text,  let bloodType = bloodTypeTextField.text ,let password = passwordTextField.text ,  let confirmPassword = confirmPasswordTextField.text , let gov = governmentTextField.text , let city = cityTextField.text, let birthDay = birthDayTextField.text ,  let gender = genderTextField.text {
-//            if !email.isValidEmail{
-//                throw SignUpError.isValidEmail
-//            }
-//            if !firstName.isValidName{
-//                throw SignUpError.isValidName
-//            }
-//            if !familyName.isValidName{
-//                throw SignUpError.isValidName
-//            }
-//            if !ID.isValidID{
-//                throw SignUpError.isValidID
-//            }
-//            if !password.isValidPassword{
-//                throw SignUpError.isValidPassword
-//            }
-//            if !confirmPassword.isValidPassword{
-//                throw SignUpError.isValidPassword
-//            }
-//            if password != confirmPassword {
-//                showNormalAlert(title: "Sorry", message: "please check the password")
-//            }
-//            if !fPhone.isValidMobile{
-//                throw SignUpError.isValidMobile
-//            }
-//            if !sPhone.isValidMobile{
-//                throw SignUpError.isValidMobile
-//            }
-//            if gov.isEmpty{
-//                showNormalAlert(title: "Sorry", message: "please check your Governrate")
-//            }
-//            if city.isEmpty{
-//                showNormalAlert(title: "Sorry", message: "please check the Address")
-//            }
-//            if bloodType.isEmpty{
-//                showNormalAlert(title: "Sorry", message: "please check the Blood type")
-//            }
-//            if birthDay.isEmpty{
-//                showNormalAlert(title: "Sorry", message: "please check your Birth Date")
-//            }
-//            if gender.isEmpty{
-//                showNormalAlert(title: "Sorry", message: "please check your Gender")
-//            }
+                        if !email.isValidEmail{
+                            throw SignUpError.isValidEmail
+                        }
+                        if !firstName.isValidName{
+                            throw SignUpError.isValidName
+                        }
+                        if !familyName.isValidName{
+                            throw SignUpError.isValidName
+                        }
+                        if !ID.isValidID{
+                            throw SignUpError.isValidID
+                        }
+                        if !password.isValidPassword{
+                            throw SignUpError.isValidPassword
+                        }
+                        if !confirmPassword.isValidPassword{
+                            throw SignUpError.isValidPassword
+                        }
+                        if password != confirmPassword {
+                            showNormalAlert(title: "Sorry", message: "please check the password")
+                        }
+                        if !fPhone.isValidMobile{
+                            throw SignUpError.isValidMobile
+                        }
+                        if !sPhone.isValidMobile{
+                            throw SignUpError.isValidMobile
+                        }
+                        if gov.isEmpty{
+                            showNormalAlert(title: "Sorry", message: "please check your Governrate")
+                        }
+                        if city.isEmpty{
+                            showNormalAlert(title: "Sorry", message: "please check the Address")
+                        }
+                        if bloodType.isEmpty{
+                            showNormalAlert(title: "Sorry", message: "please check the Blood type")
+                        }
+                        if birthDay.isEmpty{
+                            showNormalAlert(title: "Sorry", message: "please check your Birth Date")
+                        }
+                        if gender.isEmpty{
+                            showNormalAlert(title: "Sorry", message: "please check your Gender")
+                        }
             if !checkTextFields(){
                 showNormalAlert(title: "", message: "Please Fill All fields")
-            }
-            self.animateButtons()
-            DispatchQueue.main.asyncAfter(deadline: .now()+1.5) {
-                self.SuccessAlert(title: "Congratulation", message: "Your Account Created Succesfully", style: .default) { _ in
-                    self.animateButtons()
-                    self.goToLoginScreen()
-                    self.addUserData()
+            }else{
+                self.animateButtons()
+                DispatchQueue.main.asyncAfter(deadline: .now()+1.5) {
+                    self.SuccessAlert(title: "Congratulation", message: "Your Account Created Succesfully", style: .default) { _ in
+                        self.addUserData()
+                        self.animateButtons()
+                        self.goToLoginScreen()
+                        
+                    }
                 }
             }
         }
     }
     private func checkAllFields(){
-        if checkPassword() && checkPassword(){
+        if checkPassword(){
             self.animateButtons()
             customBtn.toggleForBtn(Btn: self.confirmBtn)
             DispatchQueue.main.asyncAfter(deadline: .now()+1.5) {
                 self.SuccessAlert(title: "Congratulation", message: "Your Account Created Succesfully", style: .default) { _ in
-                    self.animateButtons()
                     self.goToLoginScreen()
                 }
             }
@@ -219,6 +328,7 @@ class RegisterViewController: UIViewController {
         }
     }
     @IBAction func goToSecondView(_ sender: UIButton) {
+        self.animateButtons()
         animate(theview: firstView)
         DispatchQueue.main.asyncAfter(deadline: .now()+0.75) {
             self.secondView.isHidden = false
@@ -226,9 +336,10 @@ class RegisterViewController: UIViewController {
         }
     }
     @IBAction func confirmBtnTapped(_ sender: UIButton) {
-        //        checkAllFields()
+        self.animateButtons()
         do {
             try checkValidationTextField()
+            
         }catch SignUpError.isValidEmail{
             showNormalAlert(title: "Sorry", message: "Please Enter Valid Email")
         }catch SignUpError.isValidID{
@@ -246,17 +357,58 @@ class RegisterViewController: UIViewController {
 }
 //MARK: - UIPickerViewDelegate,UIPickerViewDataSource
 extension RegisterViewController: UIPickerViewDelegate,UIPickerViewDataSource{
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int{
         return 1
     }
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return arrayOfBloodType.count
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
+       
+        switch pickerView.tag{
+        case 1:
+            return dicOfBloodType.count
+        case 2:
+            return dicOfGov.count
+        case 3:
+            return finalCities.count
+        case 4:
+            return Arrays.arrayOfGender.count
+        default:
+            return 0
+        }
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        bloodTypeTextField.text = arrayOfBloodType[row]
+        switch pickerView.tag{
+        case 1:
+            bloodTypeTextField.text = arrOfBlood[row].name
+            self.rowofBlood = arrOfBlood[row].id
+            print(self.rowofBlood)
+        case 2:
+            governmentTextField.text = arrOfGov[row].name
+            self.rowofGov = arrOfGov[row].id
+            print(self.rowofGov)
+            self.getCitiesWithId(id: rowofGov)
+        case 3:
+            cityTextField.text = self.finalCities[row]
+            self.rowOfCity = arrOfCity[row].id
+            print(self.rowOfCity)
+        case 4:
+            genderTextField.text = Arrays.arrayOfGender[row]
+        default:
+            return
+        }
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return arrayOfBloodType[row]
+        switch pickerView.tag{
+        case 1:
+            return arrOfBlood[row].name
+        case 2:
+            return  arrOfGov[row].name
+        case 3:
+            return self.finalCities[row]
+            
+        case 4:
+            return Arrays.arrayOfGender[row]
+        default:
+            return ""
+        }
     }
-    
 }

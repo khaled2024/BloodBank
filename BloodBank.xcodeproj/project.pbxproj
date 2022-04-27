@@ -67,6 +67,9 @@
 		EA6E702127C5C3CE00F1E76C /* Almarai-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA6E702027C5C3CE00F1E76C /* Almarai-Regular.ttf */; };
 		EA6F6123281390BE002E5E5E /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6F6122281390BE002E5E5E /* FavoriteViewController.swift */; };
 		EA6F6125281390CF002E5E5E /* BuyBloodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6F6124281390CF002E5E5E /* BuyBloodViewController.swift */; };
+		EA78BC4428183EF20078DC96 /* Governorate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA78BC4328183EF20078DC96 /* Governorate.swift */; };
+		EA78BC46281840EE0078DC96 /* (Gov+City).Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA78BC45281840EE0078DC96 /* (Gov+City).Data.swift */; };
+		EA78BC4828184A430078DC96 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA78BC4728184A430078DC96 /* City.swift */; };
 		EA818B0827E1140C00D36808 /* Sick.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA818B0727E1140C00D36808 /* Sick.swift */; };
 		EA8676D027A6C70A00E95283 /* HamburgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8676CF27A6C70A00E95283 /* HamburgerViewController.swift */; };
 		EA86A9FB27CA31FB006EA939 /* UserDefultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA86A9FA27CA31FB006EA939 /* UserDefultsManager.swift */; };
@@ -75,6 +78,8 @@
 		EA92A0AA27E89FFF0060C5C8 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA92A0A927E89FFF0060C5C8 /* String+Localized.swift */; };
 		EA92A0AD27E8A92E0060C5C8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA92A0AF27E8A92E0060C5C8 /* InfoPlist.strings */; };
 		EA92A0B227E917F30060C5C8 /* Color+UIcolor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA92A0B127E917F30060C5C8 /* Color+UIcolor.swift */; };
+		EA93304A2818CBC90043EE18 /* FinalCities.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9330492818CBC90043EE18 /* FinalCities.swift */; };
+		EA93304C2818E03B0043EE18 /* BloodType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93304B2818E03B0043EE18 /* BloodType.swift */; };
 		EA99AAFD276CCF540083F0D1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA99AAFC276CCF540083F0D1 /* HomeViewController.swift */; };
 		EA9D400127DCF3D300776F14 /* UiView+Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9D400027DCF3D300776F14 /* UiView+Controller.swift */; };
 		EA9F8B1927FBCA6800345E60 /* DonateMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9F8B1827FBCA6700345E60 /* DonateMoneyViewController.swift */; };
@@ -179,6 +184,9 @@
 		EA6E702027C5C3CE00F1E76C /* Almarai-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Almarai-Regular.ttf"; sourceTree = "<group>"; };
 		EA6F6122281390BE002E5E5E /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		EA6F6124281390CF002E5E5E /* BuyBloodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyBloodViewController.swift; sourceTree = "<group>"; };
+		EA78BC4328183EF20078DC96 /* Governorate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Governorate.swift; sourceTree = "<group>"; };
+		EA78BC45281840EE0078DC96 /* (Gov+City).Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "(Gov+City).Data.swift"; sourceTree = "<group>"; };
+		EA78BC4728184A430078DC96 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		EA818B0727E1140C00D36808 /* Sick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sick.swift; sourceTree = "<group>"; };
 		EA8676CF27A6C70A00E95283 /* HamburgerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerViewController.swift; sourceTree = "<group>"; };
 		EA86A9FA27CA31FB006EA939 /* UserDefultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefultsManager.swift; sourceTree = "<group>"; };
@@ -190,6 +198,8 @@
 		EA92A0AE27E8A92E0060C5C8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EA92A0B027E8A9310060C5C8 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EA92A0B127E917F30060C5C8 /* Color+UIcolor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+UIcolor.swift"; sourceTree = "<group>"; };
+		EA9330492818CBC90043EE18 /* FinalCities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalCities.swift; sourceTree = "<group>"; };
+		EA93304B2818E03B0043EE18 /* BloodType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodType.swift; sourceTree = "<group>"; };
 		EA99AAFC276CCF540083F0D1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EA9D400027DCF3D300776F14 /* UiView+Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiView+Controller.swift"; sourceTree = "<group>"; };
 		EA9F8B1827FBCA6700345E60 /* DonateMoneyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonateMoneyViewController.swift; sourceTree = "<group>"; };
@@ -453,13 +463,13 @@
 			children = (
 				EA91ED4A27CD0DD000F8D02A /* Supporting Files */,
 				EA45D3AF27E4E0DA0072E19C /* ApiService */,
+				EAC252DA276A2E9F0033F96F /* Model */,
 				EA92A0A127E89D5A0060C5C8 /* Locolaizable */,
 				EA09E71227A4C913009A0ED0 /* Fonts */,
 				EACC012D27A4272D00FFB92B /* Service */,
 				EAC252EA276A3A2B0033F96F /* Utilities */,
 				EAC252E3276A33320033F96F /* Extensions */,
 				EACC013F27A43A6600FFB92B /* Helper */,
-				EAC252DA276A2E9F0033F96F /* Model */,
 				EAC252DB276A2EAA0033F96F /* View */,
 				EAC252DC276A2EB40033F96F /* Controllers */,
 				EAC252E1276A2F780033F96F /* Resources */,
@@ -478,6 +488,7 @@
 				EA1915F627DBFA3100554FF9 /* Patient.swift */,
 				EA818B0727E1140C00D36808 /* Sick.swift */,
 				EA4CA33D27F9DF2C003873DC /* Story.swift */,
+				EA78BC45281840EE0078DC96 /* (Gov+City).Data.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -610,6 +621,10 @@
 				EAA6BDDD27EBBD2E00FE1BCA /* CountryStats.swift */,
 				EAE546852814C16600DA5A8E /* DonatePlaces.swift */,
 				EA1153BB2816E6DE0053C50B /* User.swift */,
+				EA78BC4328183EF20078DC96 /* Governorate.swift */,
+				EA78BC4728184A430078DC96 /* City.swift */,
+				EA9330492818CBC90043EE18 /* FinalCities.swift */,
+				EA93304B2818E03B0043EE18 /* BloodType.swift */,
 			);
 			path = ApiModels;
 			sourceTree = "<group>";
@@ -854,6 +869,7 @@
 				EA1915F927DC27B100554FF9 /* DetailsCellViewController.swift in Sources */,
 				EA6211E427EF6FC300301635 /* CoronaAnalysis.swift in Sources */,
 				EA064CAE27A4750600A06257 /* MainViewController.swift in Sources */,
+				EA78BC46281840EE0078DC96 /* (Gov+City).Data.swift in Sources */,
 				EA545C922808C3FC0009C6C7 /* VaccineCollectionViewCell.swift in Sources */,
 				EA1F21C2280C601D00DE49F9 /* HistoryVaccineCell.swift in Sources */,
 				EAC252E7276A34BF0033F96F /* OnboardingSlide.swift in Sources */,
@@ -869,6 +885,7 @@
 				EACC013D27A43A5A00FFB92B /* UserCustomBtn.swift in Sources */,
 				EAC252C7276A26F00033F96F /* AppDelegate.swift in Sources */,
 				EAD669F127C63A72006221A2 /* HistoryMainViewController.swift in Sources */,
+				EA78BC4828184A430078DC96 /* City.swift in Sources */,
 				EA66461A27E2BAB1001A9E12 /* CustomTF.swift in Sources */,
 				EA45BFAE27C5AC4800D56AEC /* NavigationBar.swift in Sources */,
 				EAD3835027D806C300E87893 /* SheetViewController.swift in Sources */,
@@ -894,9 +911,11 @@
 				EACC012F27A4275700FFB92B /* NavigationManager.swift in Sources */,
 				EA01A0B127C9838700BDCC00 /* BookingAppointmentViewController.swift in Sources */,
 				EAB1C99127A554A2006BB209 /* UiView + alert.swift in Sources */,
+				EA93304A2818CBC90043EE18 /* FinalCities.swift in Sources */,
 				EAC252EC276A3A4C0033F96F /* Constants.swift in Sources */,
 				EA5A8C8227F269C500FCF61F /* UiimageView+UrlExtension.swift in Sources */,
 				EA01A0A927C96F6B00BDCC00 /* FitnessAppointmentViewController.swift in Sources */,
+				EA93304C2818E03B0043EE18 /* BloodType.swift in Sources */,
 				EAC252C9276A26F00033F96F /* SceneDelegate.swift in Sources */,
 				EA4CA34027F9E604003873DC /* FloatingBtn.swift in Sources */,
 				EA45BFAA27C5999200D56AEC /* EducateYourselfViewController.swift in Sources */,
@@ -906,6 +925,7 @@
 				EAB1C98F27A54DEE006BB209 /* TabBarController.swift in Sources */,
 				EAC252E9276A37BC0033F96F /* OnboardingCollectionViewCell.swift in Sources */,
 				EA4402F127EA80200034C6AF /* CustomView.swift in Sources */,
+				EA78BC4428183EF20078DC96 /* Governorate.swift in Sources */,
 				EA4CA33E27F9DF2C003873DC /* Story.swift in Sources */,
 				EACC013E27A43A5A00FFB92B /* UserCustomTF.swift in Sources */,
 				EA1915F727DBFA3100554FF9 /* Patient.swift in Sources */,

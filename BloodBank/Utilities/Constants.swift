@@ -14,6 +14,9 @@ struct URLS{
     static let donate_Places = "https://blood-bank.life/api/api/v1/donate_places/\(myCode)"
     static let quick_Request = "https://blood-bank.life/api/api/v1/quick_request/\(myCode)"
     static let patient_Donor = "https://blood-bank.life/api/api/v1/patients_donors/\(myCode)"
+    static let governorate = "https://blood-bank.life/api/api/v1/governorate/\(myCode)"
+    static let city = "https://blood-bank.life/api/api/v1/cities/\(myCode)"
+    static let citiesById = "https://blood-bank.life/api/api/v1/cities_by_gov_id/\(myCode)/gov_id"
 }
 struct Identifier{
     static let CollectionCell = "OnboardingCollectionViewCell"
@@ -36,7 +39,9 @@ struct Arrays{
     static let dicOfBloodType: [String:String] = ["A+":"1","A-":"2","B+":"3","B-":"4","AB+":"5","AB-":"6","O+":"7","O-":"8","OH+":"9","Another":"10"]
     static let arrayOfGover = ["cairo","aswan","mnofia","gharbia"]
     static let arrayOfCities = ["tanta","zakazek","sheben","elsanta"]
-    static let arrayOfGender = ["Male","Female"]
+    static let arrayOfGender = ["male","female"]
+    static let dicOfGender = ["male":"1","female":"2"]
+    
     static let arrayOfTypesRequests = ["الصفائح","ABبلازما","Red Double cell","دم الحبل السري","لااعرف"]
     static let arrayReasonRequest = ["accident","surgery","prejnent","canser","زرع اعضاء","الثلاسيميا","الهيموجلوبين"]
     static let arrayOfHospitals = ["khaled","hussien","ahmed","khalifa"]

@@ -51,7 +51,6 @@
 		EA4CA33727F9C782003873DC /* YourStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4CA33627F9C782003873DC /* YourStoryViewController.swift */; };
 		EA4CA33A27F9D3F2003873DC /* YourStoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4CA33827F9D3F2003873DC /* YourStoryTableViewCell.swift */; };
 		EA4CA33B27F9D3F2003873DC /* YourStoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA4CA33927F9D3F2003873DC /* YourStoryTableViewCell.xib */; };
-		EA4CA33E27F9DF2C003873DC /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4CA33D27F9DF2C003873DC /* Story.swift */; };
 		EA4CA34027F9E604003873DC /* FloatingBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4CA33F27F9E604003873DC /* FloatingBtn.swift */; };
 		EA545C8F2808A7870009C6C7 /* VaccineCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA545C8E2808A7870009C6C7 /* VaccineCollectionViewController.swift */; };
 		EA545C922808C3FC0009C6C7 /* VaccineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA545C912808C3FC0009C6C7 /* VaccineCollectionViewCell.swift */; };
@@ -118,6 +117,8 @@
 		EAD669F327C63F50006221A2 /* DonorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD669F227C63F50006221A2 /* DonorViewController.swift */; };
 		EAD7D59227F5B62C003E81D3 /* UILable+Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD7D59127F5B62C003E81D3 /* UILable+Font.swift */; };
 		EAE3C90B27B12C6300F42D16 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE3C90A27B12C6300F42D16 /* MapViewController.swift */; };
+		EAE3D4982819C363003B514A /* UserStories.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE3D4972819C363003B514A /* UserStories.swift */; };
+		EAE3D49A2819FEEE003B514A /* Vaccine.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE3D4992819FEEE003B514A /* Vaccine.swift */; };
 		EAE546862814C16600DA5A8E /* DonatePlaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE546852814C16600DA5A8E /* DonatePlaces.swift */; };
 /* End PBXBuildFile section */
 
@@ -168,7 +169,6 @@
 		EA4CA33627F9C782003873DC /* YourStoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourStoryViewController.swift; sourceTree = "<group>"; };
 		EA4CA33827F9D3F2003873DC /* YourStoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourStoryTableViewCell.swift; sourceTree = "<group>"; };
 		EA4CA33927F9D3F2003873DC /* YourStoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YourStoryTableViewCell.xib; sourceTree = "<group>"; };
-		EA4CA33D27F9DF2C003873DC /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		EA4CA33F27F9E604003873DC /* FloatingBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingBtn.swift; sourceTree = "<group>"; };
 		EA545C8E2808A7870009C6C7 /* VaccineCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineCollectionViewController.swift; sourceTree = "<group>"; };
 		EA545C912808C3FC0009C6C7 /* VaccineCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -240,6 +240,8 @@
 		EAD669F227C63F50006221A2 /* DonorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonorViewController.swift; sourceTree = "<group>"; };
 		EAD7D59127F5B62C003E81D3 /* UILable+Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILable+Font.swift"; sourceTree = "<group>"; };
 		EAE3C90A27B12C6300F42D16 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		EAE3D4972819C363003B514A /* UserStories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStories.swift; sourceTree = "<group>"; };
+		EAE3D4992819FEEE003B514A /* Vaccine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vaccine.swift; sourceTree = "<group>"; };
 		EAE546852814C16600DA5A8E /* DonatePlaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonatePlaces.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -487,7 +489,6 @@
 				EAAD8336276D12C700381854 /* DataPicker.swift */,
 				EA1915F627DBFA3100554FF9 /* Patient.swift */,
 				EA818B0727E1140C00D36808 /* Sick.swift */,
-				EA4CA33D27F9DF2C003873DC /* Story.swift */,
 				EA78BC45281840EE0078DC96 /* (Gov+City).Data.swift */,
 			);
 			path = Model;
@@ -625,6 +626,8 @@
 				EA78BC4728184A430078DC96 /* City.swift */,
 				EA9330492818CBC90043EE18 /* FinalCities.swift */,
 				EA93304B2818E03B0043EE18 /* BloodType.swift */,
+				EAE3D4972819C363003B514A /* UserStories.swift */,
+				EAE3D4992819FEEE003B514A /* Vaccine.swift */,
 			);
 			path = ApiModels;
 			sourceTree = "<group>";
@@ -841,6 +844,7 @@
 				EA2AF7ED28102C0400ECCB55 /* VolunteersTableViewCell.swift in Sources */,
 				EA4C711F27E3D626000C8B02 /* CustomPlaceHolder.swift in Sources */,
 				EA4278AC27B025FB002D444A /* SettingViewController.swift in Sources */,
+				EAE3D49A2819FEEE003B514A /* Vaccine.swift in Sources */,
 				EA01A0A727C96F4E00BDCC00 /* NotFitAppointmentViewController.swift in Sources */,
 				EA4278A227B01F9C002D444A /* AppointmentViewController.swift in Sources */,
 				EA6211E227EF6DC000301635 /* ApiService.swift in Sources */,
@@ -921,12 +925,12 @@
 				EA45BFAA27C5999200D56AEC /* EducateYourselfViewController.swift in Sources */,
 				EA6211E627EF829600301635 /* formatInt+Int.swift in Sources */,
 				EA9D400127DCF3D300776F14 /* UiView+Controller.swift in Sources */,
+				EAE3D4982819C363003B514A /* UserStories.swift in Sources */,
 				EABDBFCC276CE6A900738EA3 /* LoginViewController.swift in Sources */,
 				EAB1C98F27A54DEE006BB209 /* TabBarController.swift in Sources */,
 				EAC252E9276A37BC0033F96F /* OnboardingCollectionViewCell.swift in Sources */,
 				EA4402F127EA80200034C6AF /* CustomView.swift in Sources */,
 				EA78BC4428183EF20078DC96 /* Governorate.swift in Sources */,
-				EA4CA33E27F9DF2C003873DC /* Story.swift in Sources */,
 				EACC013E27A43A5A00FFB92B /* UserCustomTF.swift in Sources */,
 				EA1915F727DBFA3100554FF9 /* Patient.swift in Sources */,
 			);

@@ -15,6 +15,8 @@ protocol opacityDelegate {
 
 class HamburgerViewController: UIViewController {
     //MARK: - outlets
+    @IBOutlet weak var subNameLbl: UILabel!
+    @IBOutlet weak var donorNameLbl: UILabel!
     @IBOutlet var mainHumbergerView: UIView!
     @IBOutlet weak var humburgerView: UIView!
     @IBOutlet weak var imageView: UIImageView!
@@ -38,6 +40,10 @@ class HamburgerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpHumburger()
+        if let userName = def.object(forKey: "userInfo")as? [String]{
+            self.donorNameLbl.text = "\(userName[1]) \(userName[2])"
+        }
+        subNameLbl.customLblFont(lbl: subNameLbl, fontSize: 18, text: "Hero")
        
     }
     override func viewWillAppear(_ animated: Bool) {

@@ -52,7 +52,7 @@ class MapViewController: UIViewController {
                 self.arrOfPlaces = place
                 for place in self.arrOfPlaces {
                     let annotaion = MKPointAnnotation()
-                    annotaion.title = "\(place.place_name) - Manager: \(place.place_manager)."
+                    annotaion.title = "\(place.governorate_name) - \(place.city_name) - \(place.place_name) - Manager: \(place.place_manager)."
                     annotaion.subtitle = "open at \(place.open_at) & close at \(place.close_at) & the holiday is \(place.holiday)."
                     annotaion.coordinate = CLLocationCoordinate2D(latitude: Double(place.lat)!, longitude: Double(place.lng)!)
                     self.mapView.addAnnotation(annotaion)

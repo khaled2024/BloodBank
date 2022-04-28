@@ -21,4 +21,6 @@ struct placesData: Codable {
     let open_at: String
     let close_at: String
     let holiday: String
+    let city_name: String
+    let governorate_name: String
 }

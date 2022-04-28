@@ -12,12 +12,15 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginBtn: UIButton!
     
+    @IBOutlet weak var signInView: UIView!
     //MARK: - Variables
     var gradientBackground = UserGradientBackground()
     var customTF = UserCustomTF()
+    let customView = CustomView()
     var customBtn = UserCustomBtn()
     let navigationManager = NavigationManager()
     let navBar = NavigationBar()
+    var arrOfUser: [userData] = [userData]()
     //MARK: - lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +35,7 @@ class LoginViewController: UIViewController {
     //MARK: -  private functions
     private func setUpDesign(){
         self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1)
+        customView.signUpView(theView: signInView)
         
     }
     private func goToMainScreen(){
@@ -60,6 +64,35 @@ class LoginViewController: UIViewController {
             }
         }
     }
+    private func checkValidationOfSignIn(){
+        ApiService.sharedService.checkSignIn{ error, user in
+            var userInfo: String = ""
+            if let error = error {
+                print(error.localizedDescription)
+            }else if let user = user {
+                self.arrOfUser = user
+            }
+            for user in self.arrOfUser {
+                if user.email == self.emailTextField.text && user.password == self.passwordTextField.text{
+                    userInfo = "User info: \(user.p_ssn) \( user.p_first_name) \( user.p_last_name) \(user.mobile_phone) \(user.blood_type) \(user.password) \(user.email)"
+                    print(userInfo)
+                    UserDefaults.standard.set([user.p_ssn , user.p_first_name , user.p_last_name,user.email, user.governorate_name, user.city_name,user.mobile_phone,user.home_phone,user.birthday,user.blood_type , user.password , user.gender], forKey: "userInfo")
+                }else{
+                }
+            }
+            if userInfo.isEmpty{
+                print("this user dosnt exist............\(self.arrOfUser.indices)")
+                self.showNormalAlert(title: "Sorry", message: "Please check your Email or Password ")
+            }else{
+                DispatchQueue.main.asyncAfter(deadline: .now()+1.5) {
+                    UserDefaults.standard.set(true, forKey: "isLoggedIn")
+                    self.goToMainScreen()
+                    print("Login succesully")
+                }
+            }
+            
+        }
+    }
     private func signIn() throws{
         if let email = emailTextField.text , let password = passwordTextField.text{
             if !email.isValidEmail {
@@ -67,13 +100,11 @@ class LoginViewController: UIViewController {
             }
             if !password.isValidPassword {
                 throw SignUpError.isValidPassword
-            }
-            self.animateButtons()
-            customBtn.toggleForBtn(Btn: self.loginBtn)
-            DispatchQueue.main.asyncAfter(deadline: .now()+1.5) {
-                UserDefaults.standard.set(true, forKey: "isLoggedIn")
-                self.goToMainScreen()
-                print("Login succesully")
+            }else{
+                self.animateButtons()
+                self.customBtn.confirmBtnSelected(Btn: self.loginBtn)
+                self.checkValidationOfSignIn()
+                
             }
         }
     }

@@ -64,6 +64,17 @@ class UserDefultsManager{
             return def.bool(forKey: key.isRequestSaved.rawValue)
         }
     }
+    var userInfo: [String]{
+        set{
+            def.set(newValue, forKey: "userInfo")
+        }
+        get{
+            guard def.object(forKey: "userInfo") != nil else  {
+                return [""]
+            }
+            return def.stringArray(forKey: "userInfo") ?? [""]
+        }
+    }
     
 }
 

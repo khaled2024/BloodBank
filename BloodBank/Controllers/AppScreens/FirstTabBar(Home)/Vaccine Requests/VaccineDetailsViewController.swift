@@ -9,8 +9,6 @@ import UIKit
 import BLTNBoard
 
 class VaccineDetailsViewController: UIViewController, UISheetPresentationControllerDelegate {
-    
-    
     //MARK: - outlets
     //labels
     @IBOutlet weak var countryVaccineLbl: UILabel!
@@ -31,7 +29,12 @@ class VaccineDetailsViewController: UIViewController, UISheetPresentationControl
     @IBOutlet weak var vaccineBgImage: UIImageView!
     //MARK: - Variabels
     let customView = CustomView()
-    var myVaccine: VaccineItem!
+    var myVaccine: VaccineData!
+    var randomNum: Int!
+    var amountNum: Int!
+    var price: Int!
+    let backageAmountPicker = UIPickerView()
+    
     override var sheetPresentationController: UISheetPresentationController{
         presentationController as! UISheetPresentationController
     }
@@ -76,11 +79,9 @@ class VaccineDetailsViewController: UIViewController, UISheetPresentationControl
         super.viewDidLoad()
         setUpSheetPresentation()
         setUpData()
-        let backageAmountPicker = UIPickerView()
         self.backageAmount.inputView = backageAmountPicker
         backageAmountPicker.delegate = self
         backageAmountPicker.dataSource = self
-        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -131,17 +132,23 @@ class VaccineDetailsViewController: UIViewController, UISheetPresentationControl
                 }
             }
         }
-        
     }
     private func setUpData(){
-        self.vaccineBgImage.image = myVaccine.imageVaccine
-        self.vaccineNameLbl.text = myVaccine.scienceVaccineName
-        self.tradeVaccineNameLbl.text = myVaccine.tradeVaccineName
-        self.vaccineOriginLbl.text = myVaccine.vaccineorigin
-        self.countryVaccineLbl.text = myVaccine.vaccineCountry
-        self.backagePrice.text = String(myVaccine.packagePrice)
-        self.totalPrice.text = String(myVaccine.totalPrice)
-        self.backageAmount.text = String(myVaccine.packageNumber)
+        let amount = myVaccine.amount
+        let amountInt = Int(amount)
+        let price = myVaccine.price
+        self.price = Int(price)
+        let priceInt = Int(price)
+        let total = amountInt! * priceInt!
+        
+        self.vaccineBgImage.image = UIImage(named: "vaccineImage\(randomNum!)")
+        self.vaccineNameLbl.text = myVaccine.scientific_name
+        self.tradeVaccineNameLbl.text = myVaccine.trade_name
+        self.vaccineOriginLbl.text = myVaccine.hospital_name // vaciinee place_id
+        self.countryVaccineLbl.text = myVaccine.country_name
+        self.backagePrice.text = String(myVaccine.price)
+        self.totalPrice.text = String(total)
+        self.backageAmount.text = myVaccine.amount
         
     }
     private func setUpViews(){
@@ -179,7 +186,7 @@ class VaccineDetailsViewController: UIViewController, UISheetPresentationControl
                         self.buyVaccineView.layer.transform = CATransform3DMakeScale(1, 1, 1)
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                             self.vaccineAvailable.showBulletin(above: self)
-                           
+                            
                         }
                     }
                 }
@@ -221,5 +228,9 @@ extension VaccineDetailsViewController:UIPickerViewDelegate, UIPickerViewDataSou
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         backageAmount.text = Arrays.arrOfNumber[row]
+        self.amountNum = Int(Arrays.arrOfNumber[row])
+        totalPrice.text = String(amountNum * self.price)
+        
+        
     }
 }

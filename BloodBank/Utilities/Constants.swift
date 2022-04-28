@@ -11,12 +11,16 @@ struct URLS{
     static let myCode = "424212219"
     static let urlSite = "https://amr-mohamed1.github.io/blood_bank/index.html"
     static let urlCoronaStats = "https://disease.sh/v3/covid-19/"
-    static let donate_Places = "https://blood-bank.life/api/api/v1/donate_places/\(myCode)"
+    static let donate_Places = "https://blood-bank.life/api/api/v1/all_donate_places_info/\(myCode)"
     static let quick_Request = "https://blood-bank.life/api/api/v1/quick_request/\(myCode)"
     static let patient_Donor = "https://blood-bank.life/api/api/v1/patients_donors/\(myCode)"
+    static let All_patient_Donor = "https://blood-bank.life/api/api/v1/all_patients_donners_info/\(myCode)"
+    static let Allstories = "https://blood-bank.life/api/api/v1/all_stories_info/\(myCode)"
+    static let addStory = "https://blood-bank.life/api/api/v1/stories/\(myCode)"
     static let governorate = "https://blood-bank.life/api/api/v1/governorate/\(myCode)"
     static let city = "https://blood-bank.life/api/api/v1/cities/\(myCode)"
     static let citiesById = "https://blood-bank.life/api/api/v1/cities_by_gov_id/\(myCode)/gov_id"
+    static let vaccineInfo = "https://blood-bank.life/api/api/v1/all_vaccones_info/\(myCode)"
 }
 struct Identifier{
     static let CollectionCell = "OnboardingCollectionViewCell"

@@ -17,10 +17,18 @@ class YourStoryViewController: UIViewController {
     let customView = CustomView()
     let floatingBtn = FloatinBtn()
     var indexCell: IndexPath = []
-    let storyArr = [Story(donorName: "خالد حسين خليفه", description: "تخدم الدم لجميع أنواع الأغراض. السرطان (عمليات نقل الدم أثناء العلاج الكيميائي) والجراحة والصدمات وثلاثة أسباب شائعة للتبرع بالدم. تستخدم التبرعات بالدم الكامل في غالبية العلاجات الطبية ، وبعضها لا يتطلب سوى جمع البلازما أو الصفائح الدموية واستخدامها. بشكل عام ، يتطلب 22 علاجًا طبيًا التبرع بالدم. عندما تتبرع بالدم ، عادة ما تقوم منظمات مثل الصليب الأحمر بفصل الدم الكامل إلى خلايا الدم الحمراء والبلازما", donorImage: UIImage(named: "donorLogo")!) , Story(donorName: "عمرو حسين خليفه", description: "ام ، يتطلب 22 علاجًا طبيًا التبرع بالدم. عندما تتبرع بالدم ، عادة ما تقوم منظمات مثل الصليب الأحمر بفصل الدم الكامل إلى خلايا الدم الحمراء والبلازما والصفائح الدمو", donorImage: UIImage(named: "thankYou")!),Story(donorName: "خالد حسين خليفه", description: "تخدم الدم لجميع أنواع الأغراض. السرطان (عمليات نقل الدم أثناء العلاج الكيميائي) والجراحة والصدمات وثلاثة أسباب شائعة للتبرع بالدم. تستخدم التبرعات بالدم الكامل في غالبية العلاجات الطبية ، وبعضها لا يتطلب سوى جمع البلازما أو الصفائح الدموية واستخدامها. بشكل عام ، يتطلب 22 علاجًا طبيًا التبرع بالدم. عندما تتبرع بالدم ، عادة ما تقوم منظمات مثل الصليب الأحمر بفصل الدم الكامل إلى خلايا الدم الحمراء والبلازما", donorImage: UIImage(named: "donorLogo")!) , Story(donorName: "عمرو حسين خليفه", description: "ام ، يتطلب 22 علاجًا طبيًا التبرع بالدم. عندما تتبرع بالدم ، عادة ما تقوم منظمات مثل الصليب الأحمر بفصل الدم الكامل إلى خلايا الدم الحمراء والبلازما والصفائح الدمو", donorImage: UIImage(named: "thankYou")!),Story(donorName: "خالد حسين خليفه", description: "تخدم الدم لجميع أنواع الأغراض. السرطان (عمليات نقل الدم أثناء العلاج الكيميائي) والجراحة والصدمات وثلاثة أسباب شائعة للتبرع بالدم. تستخدم التبرعات بالدم الكامل في غالبية العلاجات الطبية ، وبعضها لا يتطلب سوى جمع البلازما أو الصفائح الدموية واستخدامها. بشكل عام ، يتطلب 22 علاجًا طبيًا التبرع بالدم. عندما تتبرع بالدم ، عادة ما تقوم منظمات مثل الصليب الأحمر بفصل الدم الكامل إلى خلايا الدم الحمراء والبلازما", donorImage: UIImage(named: "donorLogo")!) , Story(donorName: "عمرو حسين خليفه", description: "ام ، يتطلب 22 علاجًا طبيًا التبرع بالدم. عندما تتبرع بالدم ، عادة ما تقوم منظمات مثل الصليب الأحمر بفصل الدم الكامل إلى خلايا الدم الحمراء والبلازما والصفائح الدمو", donorImage: UIImage(named: "thankYou")!)]
+    let refreshControll = UIRefreshControl()
+    let def = UserDefaults.standard
+//    var user: [String] = [String]()
+    
+    var storiesArr:[StoryData] = [StoryData]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setUp()
+        refreshControll.tintColor = .systemPink
+        refreshControll.addTarget(self, action: #selector(reloadData), for: .valueChanged)
+        tableView.addSubview(refreshControll)
     }
     override func viewWillAppear(_ animated: Bool) {
         setUpDesign()
@@ -31,9 +39,33 @@ class YourStoryViewController: UIViewController {
         
     }
     //MARK: - private functions
+    @objc func reloadData(){
+        self.getAllStory()
+        refreshControll.endRefreshing()
+        self.tableView.reloadData()
+    }
+    private func addNewStory(){
+        if let user = def.object(forKey: "userInfo")as? [String]{
+            print(user)
+            ApiService.sharedService.addStory(content: storyDescription.text, p_ssn: "\(user[0])")
+        }
+    }
+    
     private func setUp(){
+        getAllStory()
         registerCell()
         setUpBlurandStoryView()
+    }
+    private func getAllStory(){
+        ApiService.sharedService.getStories { error, story in
+            if let error = error {
+                print(error.localizedDescription)
+            }else if let story = story {
+                self.storiesArr = story
+                
+            }
+            self.tableView.reloadData()
+        }
     }
     private func setUpBlurandStoryView(){
         // blurView & size
@@ -83,6 +115,7 @@ class YourStoryViewController: UIViewController {
             desireView.removeFromSuperview()
         }
     }
+    //MARK: - Action
     @IBAction func closeViewBtnTapped(_ sender: UIButton) {
         self.animateOut(desireView: blurView)
         self.animateOut(desireView: addStoryView)
@@ -90,8 +123,10 @@ class YourStoryViewController: UIViewController {
     }
     @IBAction func createStoryBtnTapped(_ sender: UIButton) {
         if let storyText = storyDescription.text , !storyText.isEmpty{
+            self.addNewStory()
             self.animateOut(desireView: blurView)
             self.animateOut(desireView: addStoryView)
+            
         }
     }
     @IBAction func BlurScreenTapped(_ sender: UITapGestureRecognizer) {
@@ -102,13 +137,13 @@ class YourStoryViewController: UIViewController {
 //MARK: - extension UITableViewDelegate
 extension YourStoryViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return storyArr.count
+        return storiesArr.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "YourStoryTableViewCell", for: indexPath)as! YourStoryTableViewCell
-        cell.config(image: storyArr[indexPath.row].donorImage, donorName: storyArr[indexPath.row].donorName, description: storyArr[indexPath.row].description)
+        cell.config(image: UIImage(named: "donorLogo")!, donorName: "\(storiesArr[indexPath.row].first_name) \(storiesArr[indexPath.row].last_name)", description: storiesArr[indexPath.row].content)
         cell.selectionStyle = .none
         return cell
     }

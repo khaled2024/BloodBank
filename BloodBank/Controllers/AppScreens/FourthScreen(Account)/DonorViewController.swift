@@ -60,6 +60,7 @@ class DonorViewController: UIViewController {
         super.viewDidLoad()
         serUpPickerViews()
         createDatePicker()
+        setDataOfUser()
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -77,6 +78,23 @@ class DonorViewController: UIViewController {
     
     
     //MARK: - private func
+    private func setDataOfUser(){
+        let def = UserDefaults.standard
+        if let userInfo = def.object(forKey: "userInfo")as? [String]{
+            self.idTF.text = userInfo[0]
+            self.donorNameTF.text = userInfo[1]
+            self.familyNameTF.text = userInfo[2]
+            self.emailTF.text = userInfo[3]
+            self.gavernrateTF.text = userInfo[4]
+            self.cityTF.text = userInfo[5]
+            self.firstNumTF.text = userInfo[6]
+            self.secondNumTF.text = userInfo[7]
+            self.birthdateTF.text = userInfo[8]
+            self.bloodTypeTF.text = userInfo[9]
+            self.passwordTF.text = userInfo[10]
+            self.genderTF.text = userInfo[11]
+        }
+    }
     private func createDatePicker(){
         let datePickerView = UIDatePicker()
         datePickerView.datePickerMode = .date

@@ -25,25 +25,29 @@ class VaccineCollectionViewController: UIViewController {
     let navBar = NavigationBar()
     var vaccineItem = [VaccineItem]()
     let cellScale: CGFloat = 0.6
+    var arrOfVaccines: [VaccineData] = [VaccineData]()
+    let randomNum = Int.random(in: 1...6)
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         vaccineCollectionView.delegate = self
         vaccineCollectionView.dataSource = self
-        
-        vaccineItem.append(VaccineItem(imageVaccine: UIImage(named: "f1")!, titleVaccine: "لقاح سينوفارم", subTitleVaccine: "كورونافاك",scienceVaccineName: "الصين",tradeVaccineName: "جونسون",vaccineorigin: "ناقل فيروسي غير متكرر" , vaccineCountry: "الصين",packagePrice: 100,packageNumber: 3,totalPrice: 400))
-        vaccineItem.append(VaccineItem(imageVaccine: UIImage(named: "f2")!, titleVaccine: "لقاح سينوفارم", subTitleVaccine: "كورونافاك",scienceVaccineName: "الصين",tradeVaccineName: "جونسون",vaccineorigin: "ناقل فيروسي غير متكرر" , vaccineCountry: "الصين",packagePrice: 100,packageNumber: 3,totalPrice: 400))
-        vaccineItem.append(VaccineItem(imageVaccine: UIImage(named: "f3")!, titleVaccine: "لقاح سينوفارم", subTitleVaccine: "كورونافاك",scienceVaccineName: "الصين",tradeVaccineName: "جونسون",vaccineorigin: "ناقل فيروسي غير متكرر" , vaccineCountry: "الصين",packagePrice: 100,packageNumber: 3,totalPrice: 400))
-        vaccineItem.append(VaccineItem(imageVaccine: UIImage(named: "f4")!, titleVaccine: "لقاح سينوفارم", subTitleVaccine: "كورونافاك",scienceVaccineName: "الصين",tradeVaccineName: "جونسون",vaccineorigin: "ناقل فيروسي غير متكرر" , vaccineCountry: "الصين",packagePrice: 100,packageNumber: 3,totalPrice: 400))
-        vaccineItem.append(VaccineItem(imageVaccine: UIImage(named: "f5")!, titleVaccine: "لقاح سينوفارم", subTitleVaccine: "كورونافاك",scienceVaccineName: "الصين",tradeVaccineName: "جونسون",vaccineorigin: "ناقل فيروسي غير متكرر" , vaccineCountry: "الصين",packagePrice: 100,packageNumber: 3,totalPrice: 400))
-        vaccineItem.append(VaccineItem(imageVaccine: UIImage(named: "f6")!, titleVaccine: "لقاح سينوفارم", subTitleVaccine: "كورونافاك",scienceVaccineName: "الصين",tradeVaccineName: "جونسون",vaccineorigin: "ناقل فيروسي غير متكرر" , vaccineCountry: "الصين",packagePrice: 100,packageNumber: 3,totalPrice: 400))
-        vaccineItem.append(VaccineItem(imageVaccine: UIImage(named: "f7")!, titleVaccine: "لقاح سينوفارم", subTitleVaccine: "كورونافاك",scienceVaccineName: "الصين",tradeVaccineName: "جونسون",vaccineorigin: "ناقل فيروسي غير متكرر" , vaccineCountry: "الصين",packagePrice: 100,packageNumber: 3,totalPrice: 400))
-        vaccineItem.append(VaccineItem(imageVaccine: UIImage(named: "f8")!, titleVaccine: "لقاح سينوفارم", subTitleVaccine: "كورونافاك",scienceVaccineName: "الصين",tradeVaccineName: "جونسون",vaccineorigin: "ناقل فيروسي غير متكرر" , vaccineCountry: "الصين",packagePrice: 100,packageNumber: 3,totalPrice: 400))
-        vaccineItem.append(VaccineItem(imageVaccine: UIImage(named: "f9")!, titleVaccine: "لقاح سينوفارك", subTitleVaccine: "كورونافاك",scienceVaccineName: "الصين",tradeVaccineName: "جونسون",vaccineorigin: "ناقل فيروسي متكرر" , vaccineCountry: "الصين",packagePrice: 100,packageNumber: 3,totalPrice: 500))
-        navBar.setNavBar(myView: self, title: "", viewController: view, navBarColor: UIColor.navBarColor, navBarTintColor: UIColor.navBarTintColor ,forgroundTitle: UIColor.forgroundTitle, bacgroundView:UIColor.backgroundView)
+        self.getAllVaccine()
+       
         setCellSize()
     }
-    
+    //MARK: - Private func
+    private func getAllVaccine(){
+        ApiService.sharedService.getAllVaccines { error, vaccine in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+            if let vaccine = vaccine {
+                self.arrOfVaccines = vaccine
+            }
+            self.vaccineCollectionView.reloadData()
+        }
+    }
     func setCellSize(){
         let screenSize = UIScreen.main.bounds.size
         let cellWidth = floor(screenSize.width * cellScale)
@@ -57,7 +61,8 @@ class VaccineCollectionViewController: UIViewController {
     }
     func goToVaccineDetails(indesPath: IndexPath){
         let vaccineDetails = VaccineDetailsViewController.instantiate()
-        vaccineDetails.myVaccine = vaccineItem[indesPath.row]
+        vaccineDetails.myVaccine = arrOfVaccines[indesPath.row]
+        vaccineDetails.randomNum = self.randomNum
         self.present(vaccineDetails, animated: true)
     }
 }
@@ -67,17 +72,18 @@ extension VaccineCollectionViewController: UICollectionViewDelegate,UICollection
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return vaccineItem.count
+        return arrOfVaccines.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = vaccineCollectionView.dequeueReusableCell(withReuseIdentifier: "VaccineCollectionViewCell", for: indexPath)as! VaccineCollectionViewCell
-        let vaccineItem = vaccineItem[indexPath.row]
-        cell.setUpCell(vaccineItem: vaccineItem)
+        let vaccineItem = arrOfVaccines[indexPath.row]
+        
+        cell.setUpCell(vaccineItem: vaccineItem , random: self.randomNum)
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(vaccineItem[indexPath.row].titleVaccine)
+        print(arrOfVaccines[indexPath.row].scientific_name)
         goToVaccineDetails(indesPath: indexPath)
         
     }

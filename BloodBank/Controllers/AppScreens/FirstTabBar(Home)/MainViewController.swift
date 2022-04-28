@@ -49,6 +49,8 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
     
     @IBOutlet weak var requestImage: UIImageView!
     @IBOutlet weak var educateImage: UIImageView!
+    let def = UserDefaults.standard
+
     //MARK: - Variables
     var hamburgerViewController: HamburgerViewController?
     var slideIsClicked: Bool = false
@@ -60,6 +62,9 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
         testView.isUserInteractionEnabled = false
         self.testView.layer.opacity = 1
         self.animateScalling()
+        if let userInfo = def.object(forKey: "userInfo")as? [String]{
+            self.nameOfDonorLbl.text = "\(userInfo[1]) \(userInfo[2])"
+        }
     }
     override func viewDidLayoutSubviews() {
         animateImages()
@@ -84,7 +89,6 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
     //MARK: -  private functions
     private func setUpLocalized(){
         welcomeLbl.text = "Welcome".Localized()
-        nameOfDonorLbl.text = "NameDonor".Localized()
         mainSubTitleLbl.text = "MainSubTitle".Localized()
         vaccineRequestLbl.text = "Vaccine request".Localized()
         vaccineReuestSubTitle.text = "vaccineRequestSubTitle".Localized()

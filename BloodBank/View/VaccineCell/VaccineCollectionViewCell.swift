@@ -15,10 +15,11 @@ class VaccineCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var backgroundColorView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     
-    func setUpCell(vaccineItem: VaccineItem){
-        self.imageView.image = vaccineItem.imageVaccine
-        self.titleVaccineLbl.text = vaccineItem.titleVaccine
-        self.subTitleVaccineLbl.text = vaccineItem.subTitleVaccine
+    func setUpCell(vaccineItem: VaccineData,random:Int){
+       
+        self.imageView.image = UIImage(named: "vaccineImage\(random)")
+        self.titleVaccineLbl.text = vaccineItem.trade_name
+        self.subTitleVaccineLbl.text = vaccineItem.scientific_name
         self.backgroundColorView.layer.cornerRadius = 10.0
         self.backgroundColorView.layer.masksToBounds = true
         self.imageView.layer.cornerRadius = 10.0

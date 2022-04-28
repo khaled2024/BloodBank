@@ -24,4 +24,7 @@ struct userData: Codable {
     let img: String
     let time: String
     let city_id: String
+    let gender: String
+    let city_name: String
+    let governorate_name: String
 }

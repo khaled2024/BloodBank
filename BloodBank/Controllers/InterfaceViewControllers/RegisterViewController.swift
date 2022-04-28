@@ -159,13 +159,12 @@ class RegisterViewController: UIViewController {
                     self.dicOfBloodType[blood.id] = blood.name
                 }
                 print(self.arrOfBlood)
-               
             }
         }
     }
     //design
     private func setNavBar(){
-        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.9812720418, green: 0.9763048291, blue: 0.9634613395, alpha: 1)
+        navigationController?.navigationBar.barTintColor = UIColor(named: "viewbgColor")
         navigationController?.navigationBar.scrollEdgeAppearance?.titleTextAttributes = [.foregroundColor: UIColor.white ,.font: UIFont(name: "Almarai-Bold", size: 18)!]
         navBar.setNavBar(myView: self, title: "انشاء حساب جديد", viewController: view, navBarColor: UIColor.navBarColor, navBarTintColor: UIColor.navBarTintColor, forgroundTitle: UIColor.forgroundTitle, bacgroundView: UIColor.backgroundView)
     }
@@ -225,48 +224,48 @@ class RegisterViewController: UIViewController {
     }
     private func checkValidationTextField() throws {
         if let email = emailTextField.text , let firstName = nameTextField.text ,let familyName = familyNameTextField.text , let ID = IDTextField.text ,  let fPhone = fNumberTextField.text , let sPhone = sNumberTextField.text,  let bloodType = bloodTypeTextField.text ,let password = passwordTextField.text ,  let confirmPassword = confirmPasswordTextField.text , let gov = governmentTextField.text , let city = cityTextField.text, let birthDay = birthDayTextField.text ,  let gender = genderTextField.text {
-                        if !email.isValidEmail{
-                            throw SignUpError.isValidEmail
-                        }
-                        if !firstName.isValidName{
-                            throw SignUpError.isValidName
-                        }
-                        if !familyName.isValidName{
-                            throw SignUpError.isValidName
-                        }
-                        if !ID.isValidID{
-                            throw SignUpError.isValidID
-                        }
-                        if !password.isValidPassword{
-                            throw SignUpError.isValidPassword
-                        }
-                        if !confirmPassword.isValidPassword{
-                            throw SignUpError.isValidPassword
-                        }
-                        if password != confirmPassword {
-                            showNormalAlert(title: "Sorry", message: "please check the password")
-                        }
-                        if !fPhone.isValidMobile{
-                            throw SignUpError.isValidMobile
-                        }
-                        if !sPhone.isValidMobile{
-                            throw SignUpError.isValidMobile
-                        }
-                        if gov.isEmpty{
-                            showNormalAlert(title: "Sorry", message: "please check your Governrate")
-                        }
-                        if city.isEmpty{
-                            showNormalAlert(title: "Sorry", message: "please check the Address")
-                        }
-                        if bloodType.isEmpty{
-                            showNormalAlert(title: "Sorry", message: "please check the Blood type")
-                        }
-                        if birthDay.isEmpty{
-                            showNormalAlert(title: "Sorry", message: "please check your Birth Date")
-                        }
-                        if gender.isEmpty{
-                            showNormalAlert(title: "Sorry", message: "please check your Gender")
-                        }
+            if !email.isValidEmail{
+                throw SignUpError.isValidEmail
+            }
+            if !firstName.isValidName{
+                throw SignUpError.isValidName
+            }
+            if !familyName.isValidName{
+                throw SignUpError.isValidName
+            }
+            if !ID.isValidID{
+                throw SignUpError.isValidID
+            }
+            if !password.isValidPassword{
+                throw SignUpError.isValidPassword
+            }
+            if !confirmPassword.isValidPassword{
+                throw SignUpError.isValidPassword
+            }
+            if password != confirmPassword {
+                showNormalAlert(title: "Sorry", message: "please check the password")
+            }
+            if !fPhone.isValidMobile{
+                throw SignUpError.isValidMobile
+            }
+            if !sPhone.isValidMobile{
+                throw SignUpError.isValidMobile
+            }
+            if gov.isEmpty{
+                showNormalAlert(title: "Sorry", message: "please check your Governrate")
+            }
+            if city.isEmpty{
+                showNormalAlert(title: "Sorry", message: "please check the Address")
+            }
+            if bloodType.isEmpty{
+                showNormalAlert(title: "Sorry", message: "please check the Blood type")
+            }
+            if birthDay.isEmpty{
+                showNormalAlert(title: "Sorry", message: "please check your Birth Date")
+            }
+            if gender.isEmpty{
+                showNormalAlert(title: "Sorry", message: "please check your Gender")
+            }
             if !checkTextFields(){
                 showNormalAlert(title: "", message: "Please Fill All fields")
             }else{
@@ -276,7 +275,6 @@ class RegisterViewController: UIViewController {
                         self.addUserData()
                         self.animateButtons()
                         self.goToLoginScreen()
-                        
                     }
                 }
             }
@@ -361,7 +359,7 @@ extension RegisterViewController: UIPickerViewDelegate,UIPickerViewDataSource{
         return 1
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
-       
+        
         switch pickerView.tag{
         case 1:
             return dicOfBloodType.count

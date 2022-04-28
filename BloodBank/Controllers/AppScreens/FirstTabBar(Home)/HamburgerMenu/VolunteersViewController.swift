@@ -37,24 +37,36 @@ class VolunteersViewController: UIViewController{
     @IBOutlet weak var bloodSearchBar: UISearchBar!
     @IBOutlet weak var voluntersTableView: UITableView!
     //MARK: - Vars
-    var volunteer: [Volunteer] = Volunteer.setmyData()
-    let initialVolunteerAry: [Volunteer] = Volunteer.setmyData()
     let navBar = NavigationBar()
     let transparentView = UIView()
     let filteredtableView = UITableView()
     var selectedBtn = UIButton()
     var selectedFilter: String!
+    var initialVolunteerAry: [userData] = [userData]()
+    var arrOfVolunteers: [userData] = [userData]()
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
         setUpRegisterCells()
+        getAllVolunteers()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setUpDesign()
     }
     //MARK: - Private func
+    private func getAllVolunteers(){
+        ApiService.sharedService.checkSignIn { error, user in
+            if let error = error {
+                print(error.localizedDescription)
+            }else if let user = user {
+                self.arrOfVolunteers = user
+                self.initialVolunteerAry = user
+            }
+            self.voluntersTableView.reloadData()
+        }
+    }
     private func setUpRegisterCells(){
         self.voluntersTableView.register(UINib(nibName: "VolunteersTableViewCell", bundle: nil), forCellReuseIdentifier: "VolunteersTableViewCell")
         self.filteredtableView.register(filteredTableViewCell.self, forCellReuseIdentifier: "filteredTableViewCell")
@@ -121,7 +133,7 @@ class VolunteersViewController: UIViewController{
 extension VolunteersViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == self.voluntersTableView{
-            return volunteer.count
+            return arrOfVolunteers.count
         }else if tableView == self.filteredtableView{
             return Arrays.arrayOfBloodType.count
         }
@@ -130,7 +142,7 @@ extension VolunteersViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == self.voluntersTableView{
             let cell = voluntersTableView.dequeueReusableCell(withIdentifier: "VolunteersTableViewCell", for: indexPath)as! VolunteersTableViewCell
-            cell.config(volunteer[indexPath.row])
+            cell.config(arrOfVolunteers[indexPath.row])
             return cell
         }else if tableView == self.filteredtableView{
             let cell = filteredtableView.dequeueReusableCell(withIdentifier: "filteredTableViewCell", for: indexPath) as! filteredTableViewCell
@@ -167,11 +179,11 @@ extension VolunteersViewController:UISearchBarDelegate{
     private func tvBloodFilteration(text: String){
         let segment = filterSegmentControll.selectedSegmentIndex
         if  (segment == 0 || segment == 1 || segment == 2) {
-            volunteer = initialVolunteerAry.filter { (data)-> Bool in
-                return (data.bloodType?.lowercased().contains(text.lowercased()))!
+            arrOfVolunteers = initialVolunteerAry.filter { (data)-> Bool in
+                return (data.blood_type.lowercased().contains(text.lowercased()))
             }
             voluntersTableView.reloadData()
-            if volunteer.count == 0{
+            if arrOfVolunteers.count == 0{
                 self.voluntersTableView.isHidden = true
                 self.noDataImageView.isHidden = false
             }
@@ -181,39 +193,39 @@ extension VolunteersViewController:UISearchBarDelegate{
         
         switch filterSegmentControll.selectedSegmentIndex{
         case 0:
-            volunteer = initialVolunteerAry.filter { (data)-> Bool in
-                return (data.bloodType?.lowercased().contains(text.lowercased()))!
+            arrOfVolunteers = initialVolunteerAry.filter { (data)-> Bool in
+                return (data.blood_type.lowercased().contains(text.lowercased()))
             }
             voluntersTableView.reloadData()
-            if volunteer.count == 0{
+            if arrOfVolunteers.count == 0{
                 self.voluntersTableView.isHidden = true
                 self.noDataImageView.isHidden = false
             }
             break
         case 1:
-            volunteer = initialVolunteerAry.filter { (data)-> Bool in
-                return (data.name?.lowercased().contains(text.lowercased()))!
+            arrOfVolunteers = initialVolunteerAry.filter { (data)-> Bool in
+                return (data.p_first_name.lowercased().contains(text.lowercased()))
             }
             voluntersTableView.reloadData()
-            if volunteer.count == 0{
+            if arrOfVolunteers.count == 0{
                 self.voluntersTableView.isHidden = true
                 self.noDataImageView.isHidden = false
             }
             break
         case 2:
-            volunteer = initialVolunteerAry.filter { (data)-> Bool in
-                return (data.location?.lowercased().contains(text.lowercased()))!
+            arrOfVolunteers = initialVolunteerAry.filter { (data)-> Bool in
+                return (data.governorate_name.lowercased().contains(text.lowercased()))
             }
             voluntersTableView.reloadData()
-            if volunteer.count == 0{
+            if arrOfVolunteers.count == 0{
                 self.voluntersTableView.isHidden = true
                 self.noDataImageView.isHidden = false
             }
             break
         default:
-            volunteer = initialVolunteerAry
+            arrOfVolunteers = initialVolunteerAry
             self.voluntersTableView.reloadData()
-            if volunteer.count == 0{
+            if arrOfVolunteers.count == 0{
                 self.voluntersTableView.isHidden = true
                 self.noDataImageView.isHidden = false
             }
@@ -224,10 +236,9 @@ extension VolunteersViewController:UISearchBarDelegate{
         voluntersTableView.isHidden = false
          if searchText.isEmpty{
              self.noDataImageView.isHidden = true
-             volunteer = initialVolunteerAry
+             arrOfVolunteers = initialVolunteerAry
              self.voluntersTableView.reloadData()
         }else{
-            
             filterTableView(text: searchText)
         }
     }

@@ -35,11 +35,11 @@ class VolunteersTableViewCell: UITableViewCell {
         cardView.layer.masksToBounds = false
         cardView.layer.cornerRadius = 20.0
     }
-    func config(_ volunteer: Volunteer){
-        self.volunteerImage.image = UIImage(named: volunteer.image ?? "")
-        self.volunteerNameLbl.text = volunteer.name
-        self.volunteerLocationLbl.text = volunteer.location
-        self.bloodTypeLbl.text = volunteer.bloodType
+    func config(_ volunteer: userData){
+        self.volunteerImage.image = UIImage(named: "blood-donation")
+        self.volunteerNameLbl.text = "\(volunteer.p_first_name) \(volunteer.p_last_name)"
+        self.volunteerLocationLbl.text = "\(volunteer.governorate_name) \(volunteer.city_name)"
+        self.bloodTypeLbl.text = volunteer.blood_type
     }
     
 }

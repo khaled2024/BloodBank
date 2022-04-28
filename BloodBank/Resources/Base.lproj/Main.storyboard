@@ -4369,15 +4369,28 @@
                                     </switch>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developed By Khaled Hussien Khalifa." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pql-jx-5Mw">
+                                <rect key="frame" x="10" y="752" width="394" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="glh-us-c9C"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SnellRoundhand-Black" family="Snell Roundhand" pointSize="22"/>
+                                <color key="textColor" red="0.7938750457" green="0.30236821949999998" blue="0.39210149560000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="AOx-lL-jaf"/>
                         <color key="backgroundColor" red="0.98039215690000003" green="0.97647058819999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="U8a-xP-mYE" firstAttribute="top" secondItem="AOx-lL-jaf" secondAttribute="top" constant="50" id="5CX-Oa-orO"/>
                             <constraint firstItem="mHB-Cs-g8l" firstAttribute="top" secondItem="bdU-Ky-8pt" secondAttribute="bottom" constant="30" id="A3n-jS-Cla"/>
+                            <constraint firstItem="Pql-jx-5Mw" firstAttribute="centerX" secondItem="AOx-lL-jaf" secondAttribute="centerX" id="FeR-Kn-Til"/>
                             <constraint firstItem="mHB-Cs-g8l" firstAttribute="centerX" secondItem="AOx-lL-jaf" secondAttribute="centerX" id="G8P-Gv-XNY"/>
                             <constraint firstItem="gHq-Rj-ljA" firstAttribute="leading" secondItem="U8a-xP-mYE" secondAttribute="leading" id="Z1T-YC-jhi"/>
                             <constraint firstItem="U8a-xP-mYE" firstAttribute="centerX" secondItem="AOx-lL-jaf" secondAttribute="centerX" id="h3A-bd-hOo"/>
+                            <constraint firstItem="AOx-lL-jaf" firstAttribute="trailing" secondItem="Pql-jx-5Mw" secondAttribute="trailing" constant="10" id="mRZ-9e-ClC"/>
+                            <constraint firstItem="Pql-jx-5Mw" firstAttribute="leading" secondItem="AOx-lL-jaf" secondAttribute="leading" constant="10" id="n8b-4J-DgN"/>
+                            <constraint firstItem="AOx-lL-jaf" firstAttribute="bottom" secondItem="Pql-jx-5Mw" secondAttribute="bottom" constant="50" id="tCS-9H-us1"/>
                             <constraint firstItem="gHq-Rj-ljA" firstAttribute="top" secondItem="mHB-Cs-g8l" secondAttribute="bottom" constant="30" id="uxA-Ai-Gls"/>
                             <constraint firstItem="gHq-Rj-ljA" firstAttribute="trailing" secondItem="U8a-xP-mYE" secondAttribute="trailing" id="vay-Di-dNP"/>
                         </constraints>
@@ -4496,7 +4509,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="280" height="725"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f77-vS-vX0">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="724"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="770"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Vj-kW-uCj">
                                                 <rect key="frame" x="-20" y="-20" width="300" height="200"/>
@@ -4534,10 +4547,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eco-OT-Ige">
-                                                <rect key="frame" x="10" y="200" width="260" height="48"/>
+                                                <rect key="frame" x="10" y="200" width="260" height="43"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="requestsSlideMenu" translatesAutoresizingMaskIntoConstraints="NO" id="0Oa-cv-gwT">
-                                                        <rect key="frame" x="8" y="9" width="30" height="30"/>
+                                                        <rect key="frame" x="8" y="6.5" width="30" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="30" id="9gm-bd-dhR"/>
                                                             <constraint firstAttribute="height" constant="30" id="s4P-WM-5YZ"/>
@@ -4545,7 +4558,7 @@
                                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FfB-Uq-KVo">
-                                                        <rect key="frame" x="38" y="6.5" width="214" height="35"/>
+                                                        <rect key="frame" x="38" y="4" width="214" height="35"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="طلبات دم عاجله">
                                                             <fontDescription key="titleFontDescription" name="Almarai-Regular" family="Almarai" pointSize="18"/>
@@ -4566,17 +4579,17 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XnS-vF-gTW">
-                                                <rect key="frame" x="10" y="311.5" width="260" height="48"/>
+                                                <rect key="frame" x="10" y="302.5" width="260" height="43"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coronaSlieMenu" translatesAutoresizingMaskIntoConstraints="NO" id="dUR-Nw-e6i">
-                                                        <rect key="frame" x="8" y="9" width="30" height="30"/>
+                                                        <rect key="frame" x="8" y="6.5" width="30" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="30" id="4Nz-Rx-B4c"/>
                                                             <constraint firstAttribute="height" constant="30" id="sDt-pl-5fO"/>
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qC-rE-SED">
-                                                        <rect key="frame" x="38" y="6.5" width="214" height="35"/>
+                                                        <rect key="frame" x="38" y="4" width="214" height="35"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="احصائيات كورونا">
                                                             <fontDescription key="titleFontDescription" name="Almarai-Regular" family="Almarai" pointSize="18"/>
@@ -4597,17 +4610,17 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PKf-Wz-d2E">
-                                                <rect key="frame" x="10" y="479" width="260" height="48"/>
+                                                <rect key="frame" x="10" y="455.5" width="260" height="43.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="storySlieMenu" translatesAutoresizingMaskIntoConstraints="NO" id="Eje-6a-xAY">
-                                                        <rect key="frame" x="8" y="9" width="30" height="30"/>
+                                                        <rect key="frame" x="8" y="6.5" width="30" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="30" id="47Z-xK-7YU"/>
                                                             <constraint firstAttribute="height" constant="30" id="ap4-7e-Meh"/>
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGs-2u-VjJ">
-                                                        <rect key="frame" x="38" y="6.5" width="214" height="35"/>
+                                                        <rect key="frame" x="38" y="4" width="214" height="35"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="قصص">
                                                             <fontDescription key="titleFontDescription" name="Almarai-Regular" family="Almarai" pointSize="18"/>
@@ -4628,17 +4641,17 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i1m-Nc-nkC">
-                                                <rect key="frame" x="10" y="535" width="260" height="47.5"/>
+                                                <rect key="frame" x="10" y="507" width="260" height="43"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="helpSlieMenu" translatesAutoresizingMaskIntoConstraints="NO" id="HQh-ea-5ck">
-                                                        <rect key="frame" x="8" y="8.5" width="30" height="30"/>
+                                                        <rect key="frame" x="8" y="6.5" width="30" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="30" id="9gQ-V9-3mt"/>
                                                             <constraint firstAttribute="height" constant="30" id="Xn4-3f-VVo"/>
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dtw-gN-Z2U">
-                                                        <rect key="frame" x="38" y="6" width="214" height="35"/>
+                                                        <rect key="frame" x="38" y="4" width="214" height="35"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="المساعده و الدعم">
                                                             <fontDescription key="titleFontDescription" name="Almarai-Regular" family="Almarai" pointSize="18"/>
@@ -4659,17 +4672,17 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gCy-Zb-ZEl">
-                                                <rect key="frame" x="10" y="590.5" width="260" height="48"/>
+                                                <rect key="frame" x="10" y="558" width="260" height="43"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settingsSlieMenu" translatesAutoresizingMaskIntoConstraints="NO" id="u1r-Cu-9Kv">
-                                                        <rect key="frame" x="8" y="9" width="30" height="30"/>
+                                                        <rect key="frame" x="8" y="6.5" width="30" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="4KQ-jb-KBn"/>
                                                             <constraint firstAttribute="width" constant="30" id="eiN-BJ-ds8"/>
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4R-ii-Hbt">
-                                                        <rect key="frame" x="38" y="6.5" width="214" height="35"/>
+                                                        <rect key="frame" x="38" y="4" width="214" height="35"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="الاعدادات">
                                                             <fontDescription key="titleFontDescription" name="Almarai-Regular" family="Almarai" pointSize="18"/>
@@ -4690,17 +4703,17 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XGg-3p-pAm">
-                                                <rect key="frame" x="10" y="646.5" width="260" height="47.5"/>
+                                                <rect key="frame" x="10" y="609" width="260" height="43"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="power-offSlieMenu" translatesAutoresizingMaskIntoConstraints="NO" id="cLR-AV-J6Y">
-                                                        <rect key="frame" x="8" y="8.5" width="30" height="30"/>
+                                                        <rect key="frame" x="8" y="6.5" width="30" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="E0F-CX-Don"/>
                                                             <constraint firstAttribute="width" constant="30" id="Xgw-hQ-abH"/>
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yIf-aX-UlH">
-                                                        <rect key="frame" x="38" y="6" width="214" height="35"/>
+                                                        <rect key="frame" x="38" y="4.5" width="214" height="34.5"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="تسجيل الخروج">
                                                             <fontDescription key="titleFontDescription" name="Almarai-Regular" family="Almarai" pointSize="18"/>
@@ -4721,17 +4734,17 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q4W-es-kiG">
-                                                <rect key="frame" x="10" y="256" width="260" height="47.5"/>
+                                                <rect key="frame" x="10" y="251" width="260" height="43.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="volunteer" translatesAutoresizingMaskIntoConstraints="NO" id="pC0-2M-NfD">
-                                                        <rect key="frame" x="8" y="8.5" width="30" height="30"/>
+                                                        <rect key="frame" x="8" y="6.5" width="30" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="30" id="qup-ga-x3X"/>
                                                             <constraint firstAttribute="height" constant="30" id="ssb-Ek-FLJ"/>
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fj7-nj-hJH">
-                                                        <rect key="frame" x="38" y="6" width="214" height="35"/>
+                                                        <rect key="frame" x="38" y="4" width="214" height="35"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="المتطوعين">
                                                             <fontDescription key="titleFontDescription" name="Almarai-Regular" family="Almarai" pointSize="18"/>
@@ -4752,10 +4765,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JPL-ls-GVY">
-                                                <rect key="frame" x="10" y="367.5" width="260" height="47.5"/>
+                                                <rect key="frame" x="10" y="353.5" width="260" height="43"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buyblood" translatesAutoresizingMaskIntoConstraints="NO" id="0E1-Ue-0GP">
-                                                        <rect key="frame" x="8" y="9" width="30" height="30"/>
+                                                        <rect key="frame" x="8" y="6.5" width="30" height="30"/>
                                                         <color key="tintColor" red="0.9098039269" green="0.31764706970000001" blue="0.40000003579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="LYM-nb-8UF"/>
@@ -4763,7 +4776,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PmZ-a0-eli">
-                                                        <rect key="frame" x="38" y="6.5" width="214" height="35"/>
+                                                        <rect key="frame" x="38" y="4" width="214" height="35"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="شراء الدم">
                                                             <fontDescription key="titleFontDescription" name="Almarai-Regular" family="Almarai" pointSize="18"/>
@@ -4784,10 +4797,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oHd-a5-34w">
-                                                <rect key="frame" x="10" y="423" width="260" height="48"/>
+                                                <rect key="frame" x="10" y="404.5" width="260" height="43"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bookmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Vex-1d-MWf">
-                                                        <rect key="frame" x="8" y="9" width="30" height="30"/>
+                                                        <rect key="frame" x="8" y="6.5" width="30" height="30"/>
                                                         <color key="tintColor" red="0.89842079624848481" green="0.41389814349784326" blue="0.42230967216844606" alpha="0.71843956953642396" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="30" id="5PS-uW-cTN"/>
@@ -4795,7 +4808,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgI-wj-eZ5">
-                                                        <rect key="frame" x="38" y="6.5" width="214" height="35"/>
+                                                        <rect key="frame" x="38" y="4" width="214" height="35"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="المفضلات">
                                                             <fontDescription key="titleFontDescription" name="Almarai-Regular" family="Almarai" pointSize="18"/>
@@ -4815,6 +4828,15 @@
                                                     <constraint firstItem="fgI-wj-eZ5" firstAttribute="leading" secondItem="Vex-1d-MWf" secondAttribute="trailing" id="mfn-6F-2iR"/>
                                                 </constraints>
                                             </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developed By Khaled Hussien Khalifa" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgb-s3-uqa">
+                                                <rect key="frame" x="10" y="660" width="260" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="3bl-ln-jMx"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="SnellRoundhand-Black" family="Snell Roundhand" pointSize="22"/>
+                                                <color key="textColor" red="0.7938750456504432" green="0.30236821950564441" blue="0.39210149555977808" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" name="viewbgColor"/>
                                         <constraints>
@@ -4840,7 +4862,7 @@
                                             <constraint firstItem="i1m-Nc-nkC" firstAttribute="top" secondItem="PKf-Wz-d2E" secondAttribute="bottom" constant="8" id="U6y-5b-VBg"/>
                                             <constraint firstAttribute="trailing" secondItem="eco-OT-Ige" secondAttribute="trailing" constant="10" id="V5f-lP-Xnh"/>
                                             <constraint firstItem="JPL-ls-GVY" firstAttribute="height" secondItem="XnS-vF-gTW" secondAttribute="height" id="VEx-e9-4EB"/>
-                                            <constraint firstItem="eco-OT-Ige" firstAttribute="height" secondItem="f77-vS-vX0" secondAttribute="height" multiplier="0.066" id="VGR-2a-aIH"/>
+                                            <constraint firstItem="eco-OT-Ige" firstAttribute="height" secondItem="f77-vS-vX0" secondAttribute="height" multiplier="0.056" id="VGR-2a-aIH"/>
                                             <constraint firstItem="Q4W-es-kiG" firstAttribute="top" secondItem="eco-OT-Ige" secondAttribute="bottom" constant="8" id="WDP-R6-y7i"/>
                                             <constraint firstItem="oHd-a5-34w" firstAttribute="height" secondItem="JPL-ls-GVY" secondAttribute="height" id="c1W-HR-LG0"/>
                                             <constraint firstItem="JPL-ls-GVY" firstAttribute="trailing" secondItem="XnS-vF-gTW" secondAttribute="trailing" id="cvF-si-gqh"/>
@@ -4849,17 +4871,21 @@
                                             <constraint firstItem="Q4W-es-kiG" firstAttribute="trailing" secondItem="eco-OT-Ige" secondAttribute="trailing" id="iju-93-agd"/>
                                             <constraint firstItem="XGg-3p-pAm" firstAttribute="top" secondItem="gCy-Zb-ZEl" secondAttribute="bottom" constant="8" id="izH-zC-sdI"/>
                                             <constraint firstItem="PKf-Wz-d2E" firstAttribute="centerX" secondItem="XnS-vF-gTW" secondAttribute="centerX" id="jEO-1C-7tH"/>
+                                            <constraint firstAttribute="bottom" secondItem="vgb-s3-uqa" secondAttribute="bottom" constant="50" id="ja9-CN-XFP"/>
                                             <constraint firstItem="gCy-Zb-ZEl" firstAttribute="centerX" secondItem="i1m-Nc-nkC" secondAttribute="centerX" id="kQ3-jN-8le"/>
                                             <constraint firstItem="JPL-ls-GVY" firstAttribute="width" secondItem="XnS-vF-gTW" secondAttribute="width" id="mwb-oV-gqa"/>
+                                            <constraint firstItem="vgb-s3-uqa" firstAttribute="top" secondItem="XGg-3p-pAm" secondAttribute="bottom" constant="8" id="o8G-my-r6m"/>
                                             <constraint firstItem="PKf-Wz-d2E" firstAttribute="width" secondItem="XnS-vF-gTW" secondAttribute="width" id="oe5-bM-58r"/>
                                             <constraint firstItem="XnS-vF-gTW" firstAttribute="centerX" secondItem="eco-OT-Ige" secondAttribute="centerX" id="pOz-Nw-RUA"/>
                                             <constraint firstItem="0Vj-kW-uCj" firstAttribute="top" secondItem="f77-vS-vX0" secondAttribute="top" constant="-20" id="pyr-hT-FIa"/>
                                             <constraint firstItem="Q4W-es-kiG" firstAttribute="width" secondItem="eco-OT-Ige" secondAttribute="width" id="rz5-2Z-Xek"/>
                                             <constraint firstItem="XGg-3p-pAm" firstAttribute="width" secondItem="gCy-Zb-ZEl" secondAttribute="width" id="t0b-gQ-sqf"/>
                                             <constraint firstItem="gCy-Zb-ZEl" firstAttribute="width" secondItem="i1m-Nc-nkC" secondAttribute="width" id="tjK-ti-vLn"/>
+                                            <constraint firstItem="vgb-s3-uqa" firstAttribute="centerX" secondItem="XGg-3p-pAm" secondAttribute="centerX" id="vVQ-mx-zTM"/>
                                             <constraint firstItem="oHd-a5-34w" firstAttribute="width" secondItem="JPL-ls-GVY" secondAttribute="width" id="wXS-wU-KqV"/>
                                             <constraint firstItem="XnS-vF-gTW" firstAttribute="height" secondItem="eco-OT-Ige" secondAttribute="height" id="y9a-8H-1JQ"/>
                                             <constraint firstItem="i1m-Nc-nkC" firstAttribute="width" secondItem="PKf-Wz-d2E" secondAttribute="width" id="yTg-hr-Uwr"/>
+                                            <constraint firstItem="vgb-s3-uqa" firstAttribute="width" secondItem="XGg-3p-pAm" secondAttribute="width" id="zQu-xF-O9v"/>
                                             <constraint firstItem="JPL-ls-GVY" firstAttribute="leading" secondItem="XnS-vF-gTW" secondAttribute="leading" id="zes-4a-Vaw"/>
                                             <constraint firstItem="gCy-Zb-ZEl" firstAttribute="height" secondItem="i1m-Nc-nkC" secondAttribute="height" id="ztt-ad-Za6"/>
                                         </constraints>
@@ -4872,7 +4898,6 @@
                                     <constraint firstAttribute="bottom" secondItem="f77-vS-vX0" secondAttribute="bottom" id="Vjb-o9-Zdp"/>
                                     <constraint firstAttribute="trailing" secondItem="f77-vS-vX0" secondAttribute="trailing" id="adM-Wl-TOB"/>
                                     <constraint firstItem="f77-vS-vX0" firstAttribute="height" secondItem="2aC-xK-VEZ" secondAttribute="height" priority="250" id="kzD-cI-qgn"/>
-                                    <constraint firstAttribute="bottom" secondItem="XGg-3p-pAm" secondAttribute="bottom" constant="30" id="qdD-JV-GZ4"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="FNK-q8-Aic"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="ejx-DG-gO5"/>

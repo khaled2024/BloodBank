@@ -1144,7 +1144,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="SQb-pG-oHe">
-                        <barButtonItem key="backBarButtonItem" title=" " id="mCf-Z8-k57"/>
+                        <barButtonItem key="backBarButtonItem" title=" " id="0xo-ze-crr"/>
                         <barButtonItem key="leftBarButtonItem" image="menu" id="2CA-Is-1FJ">
                             <connections>
                                 <action selector="barBtnTapped:" destination="cDt-2q-DlZ" id="PIO-Lx-dd0"/>
@@ -4370,7 +4370,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developed By Khaled Hussien Khalifa." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pql-jx-5Mw">
-                                <rect key="frame" x="10" y="752" width="394" height="60"/>
+                                <rect key="frame" x="10" y="782" width="394" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="glh-us-c9C"/>
                                 </constraints>
@@ -4390,7 +4390,7 @@
                             <constraint firstItem="U8a-xP-mYE" firstAttribute="centerX" secondItem="AOx-lL-jaf" secondAttribute="centerX" id="h3A-bd-hOo"/>
                             <constraint firstItem="AOx-lL-jaf" firstAttribute="trailing" secondItem="Pql-jx-5Mw" secondAttribute="trailing" constant="10" id="mRZ-9e-ClC"/>
                             <constraint firstItem="Pql-jx-5Mw" firstAttribute="leading" secondItem="AOx-lL-jaf" secondAttribute="leading" constant="10" id="n8b-4J-DgN"/>
-                            <constraint firstItem="AOx-lL-jaf" firstAttribute="bottom" secondItem="Pql-jx-5Mw" secondAttribute="bottom" constant="50" id="tCS-9H-us1"/>
+                            <constraint firstItem="AOx-lL-jaf" firstAttribute="bottom" secondItem="Pql-jx-5Mw" secondAttribute="bottom" constant="20" id="tCS-9H-us1"/>
                             <constraint firstItem="gHq-Rj-ljA" firstAttribute="top" secondItem="mHB-Cs-g8l" secondAttribute="bottom" constant="30" id="uxA-Ai-Gls"/>
                             <constraint firstItem="gHq-Rj-ljA" firstAttribute="trailing" secondItem="U8a-xP-mYE" secondAttribute="trailing" id="vay-Di-dNP"/>
                         </constraints>
@@ -4522,13 +4522,13 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="خالد حسين احمد خليفه" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="41c-1m-D7W">
-                                                        <rect key="frame" x="78.5" y="140" width="163.5" height="21"/>
-                                                        <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="18"/>
+                                                        <rect key="frame" x="74" y="140" width="172.5" height="21"/>
+                                                        <fontDescription key="fontDescription" name="Almarai-Bold" family="Almarai" pointSize="18"/>
                                                         <color key="textColor" red="0.95162123440000002" green="0.96649295089999998" blue="0.98209780449999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="بطل🦸🏻‍♂️" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYf-x7-OWX">
-                                                        <rect key="frame" x="94.5" y="169" width="131" height="20.5"/>
+                                                        <rect key="frame" x="91" y="169" width="138" height="20.5"/>
                                                         <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="18"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>

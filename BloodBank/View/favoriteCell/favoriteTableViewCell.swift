@@ -9,6 +9,7 @@ import UIKit
 
 class favoriteTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var bloodView: UIView!
     @IBOutlet weak var donorImage: UIImageView!
     @IBOutlet weak var cardView: UIView!
     override func awakeFromNib() {
@@ -20,6 +21,7 @@ class favoriteTableViewCell: UITableViewCell {
         cardView.layer.masksToBounds = false
         cardView.layer.cornerRadius = 20.0
         donorImage.layer.cornerRadius = self.donorImage.frame.size.width/2
+        bloodView.roundedCornerView(corners: [.topLeft , .bottomLeft], radius: bloodView.frame.size.width/0.2)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

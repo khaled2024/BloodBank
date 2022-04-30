@@ -50,7 +50,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="خالد حسين احمد خليفه" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="ae3-uB-rIx">
-                                <rect key="frame" x="60" y="15" width="235" height="29"/>
+                                <rect key="frame" x="60" y="10" width="235" height="41"/>
                                 <fontDescription key="fontDescription" name="Almarai-Bold" family="Almarai" pointSize="19"/>
                                 <color key="textColor" name="MainLblColor"/>
                                 <nil key="highlightedColor"/>
@@ -67,13 +67,16 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مستشفي راضي التخصصي بالسنطه طنطا الغربيه" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7G-4P-8yE">
                                 <rect key="frame" x="45" y="61" width="250" height="43"/>
-                                <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Almarai-Bold" family="Almarai" pointSize="15"/>
                                 <color key="textColor" name="subLblDarkGrayColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="يومان" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPX-ZE-sbO">
-                                <rect key="frame" x="45" y="114" width="250" height="17"/>
-                                <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="15"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="يومان" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="TPX-ZE-sbO">
+                                <rect key="frame" x="45" y="114" width="160" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="TiY-8P-cqe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Almarai-Bold" family="Almarai" pointSize="15"/>
                                 <color key="textColor" name="subLblDarkGrayColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -84,46 +87,59 @@
                                 <color key="textColor" name="MainLblColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SL3-cA-eca">
-                                <rect key="frame" x="305" y="16" width="90" height="90"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoImage" translatesAutoresizingMaskIntoConstraints="NO" id="SL3-cA-eca">
+                                <rect key="frame" x="305" y="10" width="90" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="YV3-LZ-T9A"/>
                                     <constraint firstAttribute="width" constant="90" id="eIY-a8-qqs"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="متطوعون" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2QC-m7-EV2">
-                                <rect key="frame" x="330.5" y="116" width="54.5" height="14"/>
-                                <fontDescription key="fontDescription" name="Almarai-ExtraBold" family="Almarai" pointSize="12"/>
+                                <rect key="frame" x="323.5" y="100" width="63.5" height="26"/>
+                                <fontDescription key="fontDescription" name="Almarai-ExtraBold" family="Almarai" pointSize="14"/>
                                 <color key="textColor" name="subLblDarkGrayColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8QL-Mj-O4E">
-                                <rect key="frame" x="318.5" y="115.5" width="7" height="15"/>
-                                <fontDescription key="fontDescription" name="Almarai-ExtraBold" family="Almarai" pointSize="13"/>
+                                <rect key="frame" x="310.5" y="104.5" width="8" height="17"/>
+                                <fontDescription key="fontDescription" name="Almarai-ExtraBold" family="Almarai" pointSize="15"/>
+                                <color key="textColor" name="subLblDarkGrayColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUI-YV-wo7">
+                                <rect key="frame" x="311.5" y="122.5" width="8" height="17"/>
+                                <fontDescription key="fontDescription" name="Almarai-ExtraBold" family="Almarai" pointSize="15"/>
+                                <color key="textColor" name="subLblDarkGrayColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اكياس دم" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ERJ-cX-XFJ">
+                                <rect key="frame" x="324.5" y="124" width="62.5" height="13.5"/>
+                                <fontDescription key="fontDescription" name="Almarai-ExtraBold" family="Almarai" pointSize="14"/>
                                 <color key="textColor" name="subLblDarkGrayColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" name="bgIColornsideCell"/>
                         <constraints>
-                            <constraint firstItem="TPX-ZE-sbO" firstAttribute="trailing" secondItem="y7G-4P-8yE" secondAttribute="trailing" id="0Z1-lA-17Y"/>
                             <constraint firstItem="TPX-ZE-sbO" firstAttribute="centerY" secondItem="bzU-zN-swy" secondAttribute="centerY" id="0pQ-yZ-fVH"/>
-                            <constraint firstItem="ae3-uB-rIx" firstAttribute="top" secondItem="ob3-P3-5A6" secondAttribute="top" constant="15" id="0yb-ry-e6e"/>
+                            <constraint firstItem="ae3-uB-rIx" firstAttribute="top" secondItem="ob3-P3-5A6" secondAttribute="top" constant="10" id="0yb-ry-e6e"/>
                             <constraint firstItem="HiN-nq-o5P" firstAttribute="leading" secondItem="ob3-P3-5A6" secondAttribute="leading" id="1b3-UY-dJP"/>
+                            <constraint firstItem="kw4-fo-VVx" firstAttribute="top" secondItem="ERJ-cX-XFJ" secondAttribute="bottom" constant="8.5" id="3Y9-SQ-vWI"/>
                             <constraint firstItem="ROe-DJ-Id5" firstAttribute="leading" secondItem="HiN-nq-o5P" secondAttribute="leading" constant="10" id="691-4s-Yuq"/>
-                            <constraint firstItem="kw4-fo-VVx" firstAttribute="top" secondItem="SL3-cA-eca" secondAttribute="bottom" constant="40" id="6OS-mT-fFO"/>
                             <constraint firstItem="bzU-zN-swy" firstAttribute="centerX" secondItem="ROe-DJ-Id5" secondAttribute="centerX" id="7SG-2d-JTG"/>
+                            <constraint firstItem="ERJ-cX-XFJ" firstAttribute="top" secondItem="2QC-m7-EV2" secondAttribute="bottom" constant="-2" id="7UE-Me-MAS"/>
                             <constraint firstItem="HiN-nq-o5P" firstAttribute="top" secondItem="ob3-P3-5A6" secondAttribute="top" id="7W0-I2-0bJ"/>
-                            <constraint firstItem="SL3-cA-eca" firstAttribute="top" secondItem="ob3-P3-5A6" secondAttribute="top" constant="16" id="7ca-0n-X47"/>
+                            <constraint firstItem="SL3-cA-eca" firstAttribute="top" secondItem="ob3-P3-5A6" secondAttribute="top" constant="10" id="7ca-0n-X47"/>
                             <constraint firstItem="y7G-4P-8yE" firstAttribute="trailing" secondItem="ae3-uB-rIx" secondAttribute="trailing" id="CPW-9g-2m8"/>
                             <constraint firstItem="TPX-ZE-sbO" firstAttribute="leading" secondItem="bzU-zN-swy" secondAttribute="trailing" constant="10" id="CqF-Op-xzi"/>
                             <constraint firstItem="kw4-fo-VVx" firstAttribute="top" secondItem="TPX-ZE-sbO" secondAttribute="bottom" constant="15" id="D6b-SJ-Mjt"/>
                             <constraint firstItem="ROe-DJ-Id5" firstAttribute="top" secondItem="HiN-nq-o5P" secondAttribute="bottom" constant="20" id="DOM-cB-xtQ"/>
-                            <constraint firstItem="2QC-m7-EV2" firstAttribute="trailing" secondItem="SL3-cA-eca" secondAttribute="trailing" constant="-10" id="EnF-mj-9m8"/>
+                            <constraint firstItem="2QC-m7-EV2" firstAttribute="trailing" secondItem="SL3-cA-eca" secondAttribute="trailing" constant="-8" id="EnF-mj-9m8"/>
                             <constraint firstItem="bzU-zN-swy" firstAttribute="width" secondItem="ROe-DJ-Id5" secondAttribute="width" id="EqM-9Q-aNI"/>
                             <constraint firstItem="TPX-ZE-sbO" firstAttribute="top" secondItem="y7G-4P-8yE" secondAttribute="bottom" constant="10" id="HNe-Fx-fJ7"/>
+                            <constraint firstItem="ERJ-cX-XFJ" firstAttribute="leading" secondItem="bUI-YV-wo7" secondAttribute="trailing" constant="5" id="HeG-A6-tf3"/>
                             <constraint firstItem="8QL-Mj-O4E" firstAttribute="centerY" secondItem="2QC-m7-EV2" secondAttribute="centerY" id="Ier-IR-7tb"/>
-                            <constraint firstItem="2QC-m7-EV2" firstAttribute="top" secondItem="SL3-cA-eca" secondAttribute="bottom" constant="10" id="QZe-bB-ALw"/>
+                            <constraint firstItem="2QC-m7-EV2" firstAttribute="top" secondItem="SL3-cA-eca" secondAttribute="bottom" id="QZe-bB-ALw"/>
                             <constraint firstAttribute="trailing" secondItem="SL3-cA-eca" secondAttribute="trailing" constant="8" id="Qs2-mc-hf4"/>
                             <constraint firstItem="bzU-zN-swy" firstAttribute="height" secondItem="ROe-DJ-Id5" secondAttribute="height" id="V3Z-X4-hyQ"/>
                             <constraint firstItem="SL3-cA-eca" firstAttribute="leading" secondItem="ae3-uB-rIx" secondAttribute="trailing" constant="10" id="VV9-Ho-j5H"/>
@@ -131,8 +147,10 @@
                             <constraint firstItem="bzU-zN-swy" firstAttribute="top" secondItem="ROe-DJ-Id5" secondAttribute="bottom" constant="15" id="abu-jy-jIs"/>
                             <constraint firstItem="y7G-4P-8yE" firstAttribute="centerY" secondItem="ROe-DJ-Id5" secondAttribute="centerY" id="bjv-8h-fSg"/>
                             <constraint firstItem="kw4-fo-VVx" firstAttribute="leading" secondItem="ob3-P3-5A6" secondAttribute="leading" constant="8" id="cco-lE-aJ3"/>
-                            <constraint firstItem="y7G-4P-8yE" firstAttribute="top" secondItem="ae3-uB-rIx" secondAttribute="bottom" constant="17" id="cy3-Vx-FX8"/>
-                            <constraint firstItem="kw4-fo-VVx" firstAttribute="top" secondItem="2QC-m7-EV2" secondAttribute="bottom" constant="16" id="pJ0-FR-SzD"/>
+                            <constraint firstItem="y7G-4P-8yE" firstAttribute="top" secondItem="ae3-uB-rIx" secondAttribute="bottom" constant="10" id="cy3-Vx-FX8"/>
+                            <constraint firstItem="bUI-YV-wo7" firstAttribute="centerY" secondItem="ERJ-cX-XFJ" secondAttribute="centerY" id="jLo-Ko-zKz"/>
+                            <constraint firstItem="kw4-fo-VVx" firstAttribute="top" secondItem="2QC-m7-EV2" secondAttribute="bottom" constant="20" id="pJ0-FR-SzD"/>
+                            <constraint firstItem="ERJ-cX-XFJ" firstAttribute="trailing" secondItem="2QC-m7-EV2" secondAttribute="trailing" id="pbq-Kx-rOw"/>
                             <constraint firstItem="2QC-m7-EV2" firstAttribute="leading" secondItem="8QL-Mj-O4E" secondAttribute="trailing" constant="5" id="pgf-Ez-Ky7"/>
                             <constraint firstItem="ae3-uB-rIx" firstAttribute="leading" secondItem="HiN-nq-o5P" secondAttribute="trailing" constant="10" id="w3e-S3-DuT"/>
                             <constraint firstItem="y7G-4P-8yE" firstAttribute="leading" secondItem="ROe-DJ-Id5" secondAttribute="trailing" constant="10" id="xDZ-S4-9lu"/>
@@ -156,16 +174,18 @@
                 <outlet property="descriptionLbl" destination="kw4-fo-VVx" id="yrI-i6-dqp"/>
                 <outlet property="donorImage" destination="SL3-cA-eca" id="KlU-9J-7gD"/>
                 <outlet property="insideView" destination="HiN-nq-o5P" id="3t6-VE-yri"/>
+                <outlet property="numberOfBagsLbl" destination="bUI-YV-wo7" id="zEc-2w-aiY"/>
                 <outlet property="patientNameLbl" destination="ae3-uB-rIx" id="Ros-tL-Xen"/>
                 <outlet property="timeLbl" destination="TPX-ZE-sbO" id="fEd-oE-x6E"/>
                 <outlet property="volunteersNumLbl" destination="8QL-Mj-O4E" id="QrH-Te-VAe"/>
             </connections>
-            <point key="canvasLocation" x="302.17391304347831" y="119.53125"/>
+            <point key="canvasLocation" x="219.56521739130437" y="96.763392857142847"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="bloodPin2" width="33.333332061767578" height="33.333332061767578"/>
         <image name="clock" width="37.5" height="37.5"/>
+        <image name="logoImage" width="1999.5" height="1331"/>
         <namedColor name="MainLblColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

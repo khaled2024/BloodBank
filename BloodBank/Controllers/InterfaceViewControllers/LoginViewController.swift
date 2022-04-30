@@ -21,6 +21,7 @@ class LoginViewController: UIViewController {
     let navigationManager = NavigationManager()
     let navBar = NavigationBar()
     var arrOfUser: [userData] = [userData]()
+    var arrOfUserData = [String]()
     //MARK: - lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,7 +77,9 @@ class LoginViewController: UIViewController {
                 if user.email == self.emailTextField.text && user.password == self.passwordTextField.text{
                     userInfo = "User info: \(user.p_ssn) \( user.p_first_name) \( user.p_last_name) \(user.mobile_phone) \(user.blood_type) \(user.password) \(user.email)"
                     print(userInfo)
-                    UserDefaults.standard.set([user.p_ssn , user.p_first_name , user.p_last_name,user.email, user.governorate_name, user.city_name,user.mobile_phone,user.home_phone,user.birthday,user.blood_type , user.password , user.gender], forKey: "userInfo")
+                    UserDefaults.standard.set([user.p_ssn , user.p_first_name , user.p_last_name,user.email, user.governorate_name, user.city_name,user.mobile_phone,user.home_phone,user.birthday,user.blood_type , user.password , user.gender, user.city_id], forKey: "userInfo")
+                    print(user.city_id)
+                    print(user.city_name)
                 }else{
                 }
             }

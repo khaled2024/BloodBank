@@ -9,6 +9,7 @@ import UIKit
 
 class TabBarController: UITabBarController {
     
+    var myReternOfUserData = [String]()
     //MARK: - lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()

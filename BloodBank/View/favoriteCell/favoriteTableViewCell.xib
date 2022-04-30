@@ -204,6 +204,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="sIf-Rn-wyc"/>
             <connections>
+                <outlet property="bloodView" destination="Ry8-D6-FBR" id="zqW-Ae-qid"/>
                 <outlet property="cardView" destination="iNQ-xf-w3i" id="ZfE-HC-M9x"/>
                 <outlet property="donorImage" destination="3hD-gg-4Yq" id="NbH-98-rp5"/>
             </connections>

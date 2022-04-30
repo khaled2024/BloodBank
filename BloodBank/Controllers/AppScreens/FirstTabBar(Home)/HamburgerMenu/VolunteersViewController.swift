@@ -9,24 +9,6 @@ import UIKit
 // for filteded tableview
 class filteredTableViewCell: UITableViewCell{
 }
-struct Volunteer {
-    var image: String?
-    var name: String?
-    var location: String?
-    var bloodType: String?
-    static func setmyData()->[Volunteer]{
-        var volunteerArr = [Volunteer]()
-        volunteerArr.append(.init(image: "donorLogo", name: "خالد حسين", location: "المنشاه الكبري / السنطه / طنطا / الغربيه", bloodType: "A+"))
-        volunteerArr.append(.init(image: "donorLogo", name: "Amr hussien", location: "tanta / el-santa", bloodType: "B+"))
-        volunteerArr.append(.init(image: "f1", name: "Assel hussien", location: "mnofia", bloodType: "AB+"))
-        volunteerArr.append(.init(image: "f2", name: "khaled hussien", location: "tanta / el-santa", bloodType: "OH+"))
-        volunteerArr.append(.init(image: "f3", name: "mohamed hussien", location: "giza", bloodType: "O-"))
-        volunteerArr.append(.init(image: "f4", name: "kaza hussien", location: "tanta / el-santa", bloodType: "O-"))
-        volunteerArr.append(.init(image: "f5", name: "hello hussien", location: "tanta / el-santa", bloodType: "O-"))
-        volunteerArr.append(.init(image: "f6", name: "beo beo hussien", location: "cairo", bloodType: "O-"))
-        return volunteerArr
-    }
-}
 
 class VolunteersViewController: UIViewController{
     //MARK: - Outlets

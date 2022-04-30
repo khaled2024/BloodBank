@@ -55,13 +55,31 @@ class DonorViewController: UIViewController {
     let arrBlood = Arrays.arrayOfBloodType
     let arrGender = Arrays.arrayOfGender
     let datePicker = UIDatePicker()
+    var arrOfUser:[userData] = [userData]()
+    let def = UserDefaults.standard
+    var cityId: String!
+    // arrays
+    var rowOfCity: String = ""
+    var rowofGov: String = ""
+    var rowofBlood: String = ""
+    var arrOfBlood: [BloodData] = [BloodData]()
+    var dicOfBloodType: [String:String] = [:]
+    var dicOfGov :[String:String] = [:]
+    var finalCities: [String] = []
+    var CitiesArr: [DataCities] = [DataCities]()
+    var arrOfGov: [GovData] = [GovData]()
+    var arrOfCity: [CityData] = [CityData]()
+    var dicOfCity :[String:String] = [:]
+    static let arrayOfGender = ["male","female"]
     //MARK: - lifeCycles
     override func viewDidLoad() {
         super.viewDidLoad()
+        setCityData()
+        setGovData()
+        getBlood()
         serUpPickerViews()
         createDatePicker()
         setDataOfUser()
-        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -74,10 +92,80 @@ class DonorViewController: UIViewController {
         super.viewDidLayoutSubviews()
         gradientView.roundedCornerView(corners: [.bottomLeft , .bottomRight], radius: gradientView.frame.size.width/6)
     }
-    
-    
-    
     //MARK: - private func
+    // get blood data
+    private func getBlood(){
+        ApiService.sharedService.getBloodType { error, blood in
+            if let error = error {
+                print(error.localizedDescription)
+            }else if let blood = blood {
+                self.arrOfBlood = blood
+                for blood in self.arrOfBlood {
+                    self.dicOfBloodType[blood.id] = blood.name
+                }
+                print(self.arrOfBlood)
+            }
+        }
+    }
+    private func setGovData(){
+        ApiService.sharedService.getGovData { error, gov in
+            DispatchQueue.main.async {
+                if let error = error{
+                    print(error)
+                } else if let gov = gov {
+                    self.arrOfGov = gov
+                    for gov in self.arrOfGov {
+                        self.dicOfGov[gov.id] = gov.name
+                    }
+                }
+            }
+        }
+    }
+    private func getCitiesWithId(id: String){
+        ApiService.sharedService.getCitiesById(id: rowofGov) { error, city in
+            DispatchQueue.main.async {
+                if let error = error{
+                    print(error)
+                }else if let city = city {
+                    print(city)
+                    self.CitiesArr = city
+                    self.finalCities = []
+                    for cities in self.CitiesArr {
+                        print(cities.name)
+                        self.finalCities.append(cities.name)
+                    }
+                    print(self.finalCities)
+                }
+            }
+        }
+    }
+    private func setCityData(){
+        ApiService.sharedService.getCityData { error, city in
+            DispatchQueue.main.async {
+                if let error = error{
+                    print(error)
+                } else if let city = city {
+                    self.arrOfCity = city
+                    for city in self.arrOfCity {
+                        self.dicOfCity[city.gov_id] = city.name
+                    }
+                    print(self.arrOfCity)
+                }
+            }
+        }
+    }
+    private func updateUserData(){
+        if let user = def.object(forKey: "userInfo")as? [String]{
+            if let p_ssn = self.idTF.text,!p_ssn.isEmpty, let f_name = self.donorNameTF.text,!f_name.isEmpty , let l_name = self.familyNameTF.text,!l_name.isEmpty, let email = self.emailTF.text , !email.isEmpty , let mopilePhone = self.firstNumTF.text,!mopilePhone.isEmpty , let secondPhone = secondNumTF.text,!secondPhone.isEmpty , let password = self.passwordTF.text ,!password.isEmpty , let bloodType = self.bloodTypeTF.text , !bloodType.isEmpty , let birthDay = self.birthdateTF.text , !birthDay.isEmpty , let city = self.cityTF.text , !city.isEmpty , let gov = self.gavernrateTF.text , !gov.isEmpty , let password = self.passwordTF.text , !password.isEmpty , let gender = self.genderTF.text , !gender.isEmpty{
+                
+                ApiService.sharedService.updateUserData(p_ssn: user[0], p_first_name: f_name, p_last_name: l_name ,email: email,gov: gov,city: self.rowOfCity, mopilePhone:mopilePhone,secondPhone:secondPhone,birthDay:birthDay,bloodType:self.rowofBlood,password:password,gender:Arrays.dicOfGender[genderTF.text!]!)
+                UserDefaults.standard.set([p_ssn , f_name , l_name, email, gov, city,mopilePhone,secondPhone,birthDay,bloodType ,password, gender,self.cityId], forKey: "userInfo")
+            }
+            
+        }else{
+            print("error")
+        }
+    }
     private func setDataOfUser(){
         let def = UserDefaults.standard
         if let userInfo = def.object(forKey: "userInfo")as? [String]{
@@ -93,6 +181,8 @@ class DonorViewController: UIViewController {
             self.bloodTypeTF.text = userInfo[9]
             self.passwordTF.text = userInfo[10]
             self.genderTF.text = userInfo[11]
+            self.cityId = userInfo[12]
+            print("city id : \(userInfo[12])")
         }
     }
     private func createDatePicker(){
@@ -106,7 +196,7 @@ class DonorViewController: UIViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .none
-        dateFormatter.dateFormat = "dd/MMM/yyyy"
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         birthdateTF.text = dateFormatter.string(from: sender.date)
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -214,6 +304,7 @@ class DonorViewController: UIViewController {
             self.theNameLbl.text = "\(self.donorNameTF.text!) \(self.familyNameTF.text!)"
             self.addressLbl.text = "\(self.gavernrateTF.text!)/\(self.cityTF.text!)"
             self.passwordTF.isSecureTextEntry = true
+            self.updateUserData()
         }
     }
 }
@@ -228,11 +319,11 @@ extension DonorViewController: UIPickerViewDelegate,UIPickerViewDataSource{
         case 0:
             return goverArr.count
         case 1:
-            return citiesArr.count
+            return finalCities.count
         case 2:
-            return arrGender.count
+            return Arrays.arrayOfGender.count
         case 3:
-            return arrBlood.count
+            return dicOfBloodType.count
         default:
             return 0
         }
@@ -240,13 +331,20 @@ extension DonorViewController: UIPickerViewDelegate,UIPickerViewDataSource{
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch pickerView.tag {
         case 0:
-            gavernrateTF.text = goverArr[row]
+            gavernrateTF.text = arrOfGov[row].name
+            self.rowofGov = arrOfGov[row].id
+            print(self.rowofGov)
+            self.getCitiesWithId(id: rowofGov)
         case 1:
-            cityTF.text = citiesArr[row]
+            cityTF.text = self.finalCities[row]
+            self.rowOfCity = arrOfCity[row].id
+            print(self.rowOfCity)
         case 2:
-            genderTF.text = arrGender[row]
+            genderTF.text = Arrays.arrayOfGender[row]
         case 3:
-            bloodTypeTF.text = arrBlood[row]
+            self.bloodTypeTF.text = arrOfBlood[row].name
+            self.rowofBlood = arrOfBlood[row].id
+            print(self.rowofBlood)
         default:
             return
         }
@@ -254,13 +352,13 @@ extension DonorViewController: UIPickerViewDelegate,UIPickerViewDataSource{
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         switch pickerView.tag {
         case 0:
-            return goverArr[row]
+            return arrOfGov[row].name
         case 1:
-            return citiesArr[row]
+            return finalCities[row]
         case 2:
-            return arrGender[row]
+            return Arrays.arrayOfGender[row]
         case 3:
-            return arrBlood[row]
+            return arrOfBlood[row].name
         default:
             return ""
         }
@@ -277,3 +375,7 @@ extension DonorViewController: UIPickerViewDelegate,UIPickerViewDataSource{
 //        self.lbl.text = patient.name
 //        view.backgroundColor = .darkGray
 //    }
+
+
+//
+

@@ -39,7 +39,7 @@ class DetailsCellViewController: UIViewController, UISheetPresentationController
     var myPatient: Patient!
     let customView = CustomView()
     let def = UserDefaults.standard
-    
+    var arrOfQuickRequestDetail: QuickRequestData!
     
     let comment = [Comment(title: "عمرو", subTitle: "i can help you in this blood request send me all details i can help you in this blood request send me all details i can help you in this blood request send me all details"),Comment(title: "خالد", subTitle: "i can help you in this blood request send me all details"),Comment(title: "Amr", subTitle: "i can help you in this blood request send me all details i can help you in this blood request send me all details"),Comment(title: "khaled", subTitle: "i can help you in this blood request send me all details"),Comment(title: "Amr", subTitle: "i can help you in this blood request send me all details")]
     override var sheetPresentationController: UISheetPresentationController{
@@ -79,7 +79,7 @@ class DetailsCellViewController: UIViewController, UISheetPresentationController
     }
     private func setUpSheetPresentation(){
         sheetPresentationController.delegate = self
-        sheetPresentationController.selectedDetentIdentifier = .large
+        sheetPresentationController.selectedDetentIdentifier = .medium
         sheetPresentationController.prefersGrabberVisible = true
         sheetPresentationController.detents = [
             .medium(),
@@ -87,12 +87,14 @@ class DetailsCellViewController: UIViewController, UISheetPresentationController
         ]
     }
     private func setUpData(){
-        patientDetailLbl.text = myPatient.name
-        bloodTypeDetailLbl.text = myPatient.bloodType
-        addressDetailLbl.text = myPatient.address
-        timeDetailLbl.text = myPatient.time
-        descriptionDetailLbl.text = myPatient.description
-        donorImageDetail.load(urlString: myPatient.donorImage!)
+        patientDetailLbl.text = "\(arrOfQuickRequestDetail.first_name) \(arrOfQuickRequestDetail.last_name)"
+        bloodTypeDetailLbl.text = arrOfQuickRequestDetail.blood_type
+        addressDetailLbl.text = "(\(arrOfQuickRequestDetail.hospital_name))- \(arrOfQuickRequestDetail.city_of_hospital)- \(arrOfQuickRequestDetail.governorate_name)"
+        let time = arrOfQuickRequestDetail.time
+        let subTime = time.prefix(15)
+        timeDetailLbl.text = String(subTime)
+        descriptionDetailLbl.text = arrOfQuickRequestDetail.message
+        donorImageDetail.load(urlString: arrOfQuickRequestDetail.patient_image)
     }
     private func shareContent(){
         let activityController: UIActivityViewController

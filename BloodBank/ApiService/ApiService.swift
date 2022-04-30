@@ -109,6 +109,7 @@ class ApiService{
         task.resume()
     }
     //MARK: - For SignIn.
+    // get all users
     func checkSignIn(completion: @escaping (_ error: Error? , _ user: [userData]?) -> Void){
         AF.request("\(URLS.All_patient_Donor)/all", method: .get, encoding: URLEncoding.default , headers: nil).response {
             response in
@@ -124,6 +125,7 @@ class ApiService{
                 }
             }
         }
+    
     }
     //MARK: - For Governrate
     func getGovData(completion: @escaping (_ error: Error? , _ gov: [GovData]?) -> Void){
@@ -142,6 +144,42 @@ class ApiService{
             }
         }
     }
+    // update userData
+    func updateUserData(p_ssn: String , p_first_name:String , p_last_name: String,email: String,gov:String,city:String,mopilePhone:String,secondPhone:String,birthDay:String,bloodType:String,password:String,gender:String){
+            guard let url = URL(string: "\(URLS.patient_Donor)/update")else{return}
+            var urlRequest = URLRequest(url: url)
+            urlRequest.httpMethod = "PUT"
+            urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            let body : [String:AnyHashable] = [
+                "id": p_ssn,
+                   "data":[
+                    "p_first_name": p_first_name,
+                    "p_last_name": p_last_name,
+                    "email": email,
+                    "mobile_phone": mopilePhone,
+                    "home_phone": secondPhone,
+                    "password": password,
+                    "blood_type": bloodType,
+                    "birthday": birthDay,
+                    "gender_id": gender,
+                    "city_id": city,
+                   ]
+            ]
+            urlRequest.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
+            let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+                guard let data = data, error == nil else {
+                    return
+                }
+                do {
+                    let response = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
+                    print("success : \(response)")
+                } catch  {
+                    print(error)
+                }
+            }
+            task.resume()
+        }
+        
     //MARK: -For Cities
     func getCityData(completion: @escaping (_ error: Error? , _ city: [CityData]?) -> Void){
         AF.request("\(URLS.city)/all", method: .get, encoding: URLEncoding.default , headers: nil).response {
@@ -239,7 +277,7 @@ class ApiService{
         }
         task.resume()
     }
-//MARK: - Vaccine All
+    //MARK: - Vaccine All
     func getAllVaccines(completion: @escaping (_ error: Error? , _ vaccine: [VaccineData]?) -> Void){
         let url = "\(URLS.vaccineInfo)/all"
         AF.request("\(url)", method: .get, encoding: URLEncoding.default , headers: nil).response {
@@ -257,5 +295,67 @@ class ApiService{
             }
         }
     }
+    // add order vaccine
+    func addOrderVaccine(vaccineID: String, delivered_place: String, amount: String, p_ssn: String){
+        guard let url = URL(string: "\(URLS.order_vaccine)/add")else{return}
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let body : [String:AnyHashable] = [
+            "vaccine_id": vaccineID,
+            "delivered_place": delivered_place,
+            "amount": amount,
+            "p_ssn": p_ssn
+        ]
+        urlRequest.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
+        let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+            guard let data = data, error == nil else {return}
+            do{
+                let response = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
+                print("success : \(response)")
+            }catch{
+                print(error)
+        
+            }
+        }
+        task.resume()
+    }
+    // available Vaccine
+    func availableVaccine(completion: @escaping (_ error: Error? , _ availablevaccine: [AvailableVaccineData]?) -> Void){
+        let url = "\(URLS.available_Vaccine)/all"
+        AF.request("\(url)", method: .get, encoding: URLEncoding.default , headers: nil).response {
+            response in
+            if let error = response.error {
+                completion(error , nil)
+            }
+            if let data = response.data {
+                do{
+                    let availablevaccine = try JSONDecoder().decode(AvailableVaccines.self, from: data).data
+                    completion(nil, availablevaccine)
+                } catch let error {
+                    completion(error , nil)
+                }
+            }
+        }
+    }
+    //MARK: - quickRequests
+    //all quick vaccines
+    func allQuickRequests(completion: @escaping (_ error: Error? , _ request: [QuickRequestData]?) -> Void){
+        AF.request("\(URLS.All_quick_Requests)/all", method: .get, encoding: URLEncoding.default , headers: nil).response {
+            response in
+            if let error = response.error {
+                completion(error , nil)
+            }
+            if let data = response.data {
+                do{
+                    let request = try JSONDecoder().decode(QuickRequest.self, from: data).data
+                    completion(nil,request)
+                } catch let error {
+                    completion(error , nil)
+                }
+            }
+        }
+    }
+    
 }
 

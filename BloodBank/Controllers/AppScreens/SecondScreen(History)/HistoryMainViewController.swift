@@ -68,7 +68,7 @@ class HistoryMainViewController: UIViewController {
         case 0:
             if (indexPath.row == 0 || indexPath.row == 3){
                 let cell = HistorytableView.dequeueReusableCell(withIdentifier: "Requestscell")as! RequestsTableViewCell
-                cell.configure(name: patient[indexPath.row].name!, bloodType: patient[indexPath.row].bloodType!, address: patient[indexPath.row].address!, time: patient[indexPath.row].time!, description: patient[indexPath.row].description!, donorImage: patient[indexPath.row].donorImage!, volunteers: patient[indexPath.row].volunteer!)
+                cell.configure(name: patient[indexPath.row].name!, bloodType: patient[indexPath.row].bloodType!, address: patient[indexPath.row].address!, time: patient[indexPath.row].time!, description: patient[indexPath.row].description!, donorImage: patient[indexPath.row].donorImage!, volunteers: patient[indexPath.row].volunteer!, numberOfBags: "1")
                 return cell
             }else if (indexPath.row == 1 ){
                 let cell = HistorytableView.dequeueReusableCell(withIdentifier: "HistoryVaccineCell")as! HistoryVaccineCell
@@ -82,7 +82,7 @@ class HistoryMainViewController: UIViewController {
             }
         case 1:
             let cell = HistorytableView.dequeueReusableCell(withIdentifier: "Requestscell")as! RequestsTableViewCell
-            cell.configure(name: patient[indexPath.row].name!, bloodType: patient[indexPath.row].bloodType!, address: patient[indexPath.row].address!, time: patient[indexPath.row].time!, description: patient[indexPath.row].description!, donorImage: patient[indexPath.row].donorImage!, volunteers: patient[indexPath.row].volunteer!)
+            cell.configure(name: patient[indexPath.row].name!, bloodType: patient[indexPath.row].bloodType!, address: patient[indexPath.row].address!, time: patient[indexPath.row].time!, description: patient[indexPath.row].description!, donorImage: patient[indexPath.row].donorImage!, volunteers: patient[indexPath.row].volunteer!, numberOfBags: "1")
             return cell
         case 2:
             let cell = HistorytableView.dequeueReusableCell(withIdentifier: "HistoryVaccineCell")as! HistoryVaccineCell

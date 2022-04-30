@@ -62,9 +62,7 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
         testView.isUserInteractionEnabled = false
         self.testView.layer.opacity = 1
         self.animateScalling()
-        if let userInfo = def.object(forKey: "userInfo")as? [String]{
-            self.nameOfDonorLbl.text = "\(userInfo[1]) \(userInfo[2])"
-        }
+        
     }
     override func viewDidLayoutSubviews() {
         animateImages()
@@ -79,6 +77,9 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
         animateViews()
         setUpLocalized()
         mainView.semanticContentAttribute = .forceLeftToRight
+        if let userInfo = def.object(forKey: "userInfo")as? [String]{
+            self.nameOfDonorLbl.text = "\(userInfo[1]) \(userInfo[2])"
+        }
 //        testView.semanticContentAttribute = .forceLeftToRight
 //        humbergerView.semanticContentAttribute = .forceLeftToRight
 //        backViewForHumburger.semanticContentAttribute = .forceLeftToRight

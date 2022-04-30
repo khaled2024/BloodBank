@@ -124,13 +124,13 @@ You can get paid for donating blood in 25 countries around the world. Some count
 "Donate Money" = "Donate Money";
 
 //donor account
-"FistName" = "Fist Name:";
+"FistName" = "First Name:";
 "FamilyName" = "Family Name:";
 "Email" = "Email:";
 "Governrate" = "Governorate:";
 "City" = "City:";
 "ID" = "ID:";
-"FistNum" = "Fist Number:";
+"FistNum" = "First Number:";
 "SecondNum" = "Second Number:";
 "Password" = "Password:";
 "BloodType" = "Blood Type:";

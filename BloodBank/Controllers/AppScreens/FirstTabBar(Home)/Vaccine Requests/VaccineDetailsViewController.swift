@@ -7,6 +7,7 @@
 
 import UIKit
 import BLTNBoard
+import Alamofire
 
 class VaccineDetailsViewController: UIViewController, UISheetPresentationControllerDelegate {
     //MARK: - outlets
@@ -34,7 +35,14 @@ class VaccineDetailsViewController: UIViewController, UISheetPresentationControl
     var amountNum: Int!
     var price: Int!
     let backageAmountPicker = UIPickerView()
-    
+    let def = UserDefaults.standard
+    var cityId: String!
+    var p_ssn: String!
+    var vaccinePlaceId: String!
+    var delivered_Vaccine_Place: String!
+    var vaccineIdSelected: String!
+    var arrOfPlaces: [placesData] = [placesData]()
+    var arrOfavailableVaccines: [AvailableVaccineData] = [AvailableVaccineData]()
     override var sheetPresentationController: UISheetPresentationController{
         presentationController as! UISheetPresentationController
     }
@@ -79,9 +87,14 @@ class VaccineDetailsViewController: UIViewController, UISheetPresentationControl
         super.viewDidLoad()
         setUpSheetPresentation()
         setUpData()
+       
         self.backageAmount.inputView = backageAmountPicker
         backageAmountPicker.delegate = self
         backageAmountPicker.dataSource = self
+        self.amountNum = Int(backageAmount.text!)
+        print(amountNum!)
+        
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -94,6 +107,73 @@ class VaccineDetailsViewController: UIViewController, UISheetPresentationControl
     
     
     //MARK: - Functions
+    private func setUpData(){
+        let amount = myVaccine.amount
+        let amountInt = Int(amount)
+        let price = myVaccine.price
+        self.price = Int(price)
+        let priceInt = Int(price)
+        let total = amountInt! * priceInt!
+        self.vaccineBgImage.image = UIImage(named: "vaccineImage\(randomNum!)")
+        self.vaccineNameLbl.text = myVaccine.scientific_name
+        self.tradeVaccineNameLbl.text = myVaccine.trade_name
+        self.vaccineOriginLbl.text = myVaccine.hospital_name // vaciinee place_id
+        self.countryVaccineLbl.text = myVaccine.country_name
+        self.backagePrice.text = String(myVaccine.price)
+        self.totalPrice.text = String(total)
+        self.backageAmount.text = myVaccine.amount
+        self.vaccineIdSelected = myVaccine.vaccine_id
+        print(" vaccine id : \(vaccineIdSelected ?? "")")
+        if let user = def.object(forKey: "userInfo")as? [String]{
+            print("Order sent succesfully.")
+            self.cityId = user[12]
+            self.p_ssn = user[0]
+            print("cityId:\(self.cityId!) , p_ssn: \(self.p_ssn!)")
+        }
+        self.getDeliveredPlace()
+        
+    }
+    private func getDeliveredPlace(){
+        ApiService.sharedService.getDonatePlace { error, places in
+            if let error = error {
+                print(error.localizedDescription)
+            }else if let places = places {
+                self.arrOfPlaces = places
+                for place in self.arrOfPlaces{
+                    if self.cityId == place.city_id{
+                        self.vaccinePlaceId =  place.id
+                        print( "vaccine place :\(self.vaccinePlaceId ?? "") ")
+                    }else{
+                        print("There is Not places with this CityID\(self.cityId ?? "")")
+                    }
+                }
+            }
+            
+        }
+        ApiService.sharedService.availableVaccine { error, availablevaccine in
+            if let error = error {
+                print(error.localizedDescription)
+            }else if let availablevaccine = availablevaccine {
+                self.arrOfavailableVaccines = availablevaccine
+                for availVaccine in self.arrOfavailableVaccines{
+                    if self.vaccinePlaceId == availVaccine.vaccine_place_id && self.vaccineIdSelected == availVaccine.vaccine_id{
+                        self.delivered_Vaccine_Place = availVaccine.vaccine_place_id
+                        print(" vaccinePlace \(availVaccine.vaccine_place_id) ,vaccineId \( availVaccine.vaccine_id) , vaccineCountry \(availVaccine.country_id) , vaccineAmount \(availVaccine.amount) , vaccine price \(availVaccine.price)")
+                    }else{
+                        print("This vaccine dosnt available with is vaccine Place \(self.self.vaccinePlaceId ?? "" )")
+                    }
+                }
+            }
+        }
+    }
+    private func sendVaccineOrder()-> Bool{
+        if let vaccinePlace = self.delivered_Vaccine_Place , !vaccinePlace.isEmpty{
+            ApiService.sharedService.addOrderVaccine(vaccineID: self.myVaccine.id, delivered_place: vaccinePlace, amount: String(self.amountNum), p_ssn: self.p_ssn)
+            return true
+        }else{
+            return false
+        }
+    }
     private func animated(){
         UIView.animate(withDuration: 0.5) {
             self.VaccineNameView.layer.transform = CATransform3DMakeScale(1.2, 1.2, 1)
@@ -133,31 +213,13 @@ class VaccineDetailsViewController: UIViewController, UISheetPresentationControl
             }
         }
     }
-    private func setUpData(){
-        let amount = myVaccine.amount
-        let amountInt = Int(amount)
-        let price = myVaccine.price
-        self.price = Int(price)
-        let priceInt = Int(price)
-        let total = amountInt! * priceInt!
-        
-        self.vaccineBgImage.image = UIImage(named: "vaccineImage\(randomNum!)")
-        self.vaccineNameLbl.text = myVaccine.scientific_name
-        self.tradeVaccineNameLbl.text = myVaccine.trade_name
-        self.vaccineOriginLbl.text = myVaccine.hospital_name // vaciinee place_id
-        self.countryVaccineLbl.text = myVaccine.country_name
-        self.backagePrice.text = String(myVaccine.price)
-        self.totalPrice.text = String(total)
-        self.backageAmount.text = myVaccine.amount
-        
-    }
+   
     private func setUpViews(){
         customView.vaccineCustomView(theView: VaccineNameView)
         customView.vaccineCustomView(theView: vaccineTradeNameView)
         customView.vaccineCustomView(theView: vaccineOriginView)
         customView.vaccineCustomView(theView: vaccineCountryView)
         customView.vaccineCustomView(theView: buyVaccineView)
-        
     }
     private func setUpSheetPresentation(){
         sheetPresentationController.delegate = self
@@ -170,7 +232,7 @@ class VaccineDetailsViewController: UIViewController, UISheetPresentationControl
         
     }
     private func isVaccineIsAvailable()-> Bool{
-        if let backagePrice = self.backagePrice.text , !backagePrice.isEmpty , let backageNumber = self.backageAmount.text , !backageNumber.isEmpty , let totalPrice = self.totalPrice.text , !totalPrice.isEmpty{
+        if let backagePrice = self.backagePrice.text , !backagePrice.isEmpty , let backageNumber = self.backageAmount.text , !backageNumber.isEmpty , let totalPrice = self.totalPrice.text, !totalPrice.isEmpty, sendVaccineOrder(){
             return true
         }else{
             return false
@@ -186,7 +248,6 @@ class VaccineDetailsViewController: UIViewController, UISheetPresentationControl
                         self.buyVaccineView.layer.transform = CATransform3DMakeScale(1, 1, 1)
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                             self.vaccineAvailable.showBulletin(above: self)
-                            
                         }
                     }
                 }
@@ -225,12 +286,12 @@ extension VaccineDetailsViewController:UIPickerViewDelegate, UIPickerViewDataSou
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return Arrays.arrOfNumber[row]
+        
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         backageAmount.text = Arrays.arrOfNumber[row]
         self.amountNum = Int(Arrays.arrOfNumber[row])
         totalPrice.text = String(amountNum * self.price)
-        
         
     }
 }

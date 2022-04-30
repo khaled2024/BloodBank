@@ -49,6 +49,9 @@ class HamburgerViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         setUpLocalizationLabel()
         mainHumbergerView.semanticContentAttribute = .forceLeftToRight
+        if let userInfo = def.object(forKey: "userInfo")as? [String]{
+            self.donorNameLbl.text = "\(userInfo[1]) \(userInfo[2])"
+        }
     }
     //MARK: - private functions
    

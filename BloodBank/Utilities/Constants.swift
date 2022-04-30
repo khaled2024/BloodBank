@@ -21,6 +21,10 @@ struct URLS{
     static let city = "https://blood-bank.life/api/api/v1/cities/\(myCode)"
     static let citiesById = "https://blood-bank.life/api/api/v1/cities_by_gov_id/\(myCode)/gov_id"
     static let vaccineInfo = "https://blood-bank.life/api/api/v1/all_vaccones_info/\(myCode)"
+    static let order_vaccine = "https://blood-bank.life/api/api/v1/order_vaccine/\(myCode)"
+    static let available_Vaccine = "https://blood-bank.life/api/api/v1/avilable_vaccines/\(myCode)"
+    static let All_quick_Requests = "https://blood-bank.life/api/api/v1/all_quick_requests_info/\(myCode)"
+    
 }
 struct Identifier{
     static let CollectionCell = "OnboardingCollectionViewCell"

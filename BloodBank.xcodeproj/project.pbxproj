@@ -66,6 +66,10 @@
 		EA6E702127C5C3CE00F1E76C /* Almarai-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA6E702027C5C3CE00F1E76C /* Almarai-Regular.ttf */; };
 		EA6F6123281390BE002E5E5E /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6F6122281390BE002E5E5E /* FavoriteViewController.swift */; };
 		EA6F6125281390CF002E5E5E /* BuyBloodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6F6124281390CF002E5E5E /* BuyBloodViewController.swift */; };
+		EA7403B9281C7F2D0068D677 /* privateRequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7403B7281C7F2D0068D677 /* privateRequestCell.swift */; };
+		EA7403BA281C7F2D0068D677 /* privateRequestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA7403B8281C7F2D0068D677 /* privateRequestCell.xib */; };
+		EA75CF53281ADF870032FA14 /* QuickRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA75CF52281ADF870032FA14 /* QuickRequest.swift */; };
+		EA75CF55281B72770032FA14 /* AvailableVaccines.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA75CF54281B72770032FA14 /* AvailableVaccines.swift */; };
 		EA78BC4428183EF20078DC96 /* Governorate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA78BC4328183EF20078DC96 /* Governorate.swift */; };
 		EA78BC46281840EE0078DC96 /* (Gov+City).Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA78BC45281840EE0078DC96 /* (Gov+City).Data.swift */; };
 		EA78BC4828184A430078DC96 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA78BC4728184A430078DC96 /* City.swift */; };
@@ -184,6 +188,10 @@
 		EA6E702027C5C3CE00F1E76C /* Almarai-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Almarai-Regular.ttf"; sourceTree = "<group>"; };
 		EA6F6122281390BE002E5E5E /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		EA6F6124281390CF002E5E5E /* BuyBloodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyBloodViewController.swift; sourceTree = "<group>"; };
+		EA7403B7281C7F2D0068D677 /* privateRequestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = privateRequestCell.swift; sourceTree = "<group>"; };
+		EA7403B8281C7F2D0068D677 /* privateRequestCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = privateRequestCell.xib; sourceTree = "<group>"; };
+		EA75CF52281ADF870032FA14 /* QuickRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickRequest.swift; sourceTree = "<group>"; };
+		EA75CF54281B72770032FA14 /* AvailableVaccines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableVaccines.swift; sourceTree = "<group>"; };
 		EA78BC4328183EF20078DC96 /* Governorate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Governorate.swift; sourceTree = "<group>"; };
 		EA78BC45281840EE0078DC96 /* (Gov+City).Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "(Gov+City).Data.swift"; sourceTree = "<group>"; };
 		EA78BC4728184A430078DC96 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
@@ -393,6 +401,27 @@
 			path = CheckingInternetConnection;
 			sourceTree = "<group>";
 		};
+		EA7403B6281C7EF10068D677 /* Private RequestCell */ = {
+			isa = PBXGroup;
+			children = (
+				EA7403B7281C7F2D0068D677 /* privateRequestCell.swift */,
+				EA7403B8281C7F2D0068D677 /* privateRequestCell.xib */,
+			);
+			path = "Private RequestCell";
+			sourceTree = "<group>";
+		};
+		EA75CF56281B728E0032FA14 /* OtherModels */ = {
+			isa = PBXGroup;
+			children = (
+				EAC252E6276A34BF0033F96F /* OnboardingSlide.swift */,
+				EAAD8336276D12C700381854 /* DataPicker.swift */,
+				EA1915F627DBFA3100554FF9 /* Patient.swift */,
+				EA818B0727E1140C00D36808 /* Sick.swift */,
+				EA78BC45281840EE0078DC96 /* (Gov+City).Data.swift */,
+			);
+			path = OtherModels;
+			sourceTree = "<group>";
+		};
 		EA91ED4A27CD0DD000F8D02A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -485,11 +514,7 @@
 			isa = PBXGroup;
 			children = (
 				EAE546842814BDD800DA5A8E /* ApiModels */,
-				EAC252E6276A34BF0033F96F /* OnboardingSlide.swift */,
-				EAAD8336276D12C700381854 /* DataPicker.swift */,
-				EA1915F627DBFA3100554FF9 /* Patient.swift */,
-				EA818B0727E1140C00D36808 /* Sick.swift */,
-				EA78BC45281840EE0078DC96 /* (Gov+City).Data.swift */,
+				EA75CF56281B728E0032FA14 /* OtherModels */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -499,6 +524,7 @@
 			children = (
 				EAC252E8276A37BC0033F96F /* OnboardingCollectionViewCell.swift */,
 				EAF7D49027E1410300743163 /* RequestCell */,
+				EA7403B6281C7EF10068D677 /* Private RequestCell */,
 				EA4CA33C27F9D3F8003873DC /* YourStoryCell */,
 				EA1F21BF280C5FD100DE49F9 /* VaccineHistoryCell */,
 				EA545C902808C3AA0009C6C7 /* VaccineCell */,
@@ -628,6 +654,8 @@
 				EA93304B2818E03B0043EE18 /* BloodType.swift */,
 				EAE3D4972819C363003B514A /* UserStories.swift */,
 				EAE3D4992819FEEE003B514A /* Vaccine.swift */,
+				EA75CF52281ADF870032FA14 /* QuickRequest.swift */,
+				EA75CF54281B72770032FA14 /* AvailableVaccines.swift */,
 			);
 			path = ApiModels;
 			sourceTree = "<group>";
@@ -784,6 +812,7 @@
 				EA01A0AB27C9774100BDCC00 /* Poppins-Regular.ttf in Resources */,
 				EA6E702127C5C3CE00F1E76C /* Almarai-Regular.ttf in Resources */,
 				EAC252D0276A26F10033F96F /* Assets.xcassets in Resources */,
+				EA7403BA281C7F2D0068D677 /* privateRequestCell.xib in Resources */,
 				EAC252CE276A26F00033F96F /* Main.storyboard in Resources */,
 				EA92A0AD27E8A92E0060C5C8 /* InfoPlist.strings in Resources */,
 			);
@@ -857,6 +886,7 @@
 				EA4B13AC280F096900B52607 /* VolunteersViewController.swift in Sources */,
 				EAD669F327C63F50006221A2 /* DonorViewController.swift in Sources */,
 				EABDBFCE276CE6B500738EA3 /* HelpViewController.swift in Sources */,
+				EA75CF53281ADF870032FA14 /* QuickRequest.swift in Sources */,
 				EA4CA33A27F9D3F2003873DC /* YourStoryTableViewCell.swift in Sources */,
 				EA4CA33727F9C782003873DC /* YourStoryViewController.swift in Sources */,
 				EA9F8B1927FBCA6800345E60 /* DonateMoneyViewController.swift in Sources */,
@@ -878,6 +908,7 @@
 				EA1F21C2280C601D00DE49F9 /* HistoryVaccineCell.swift in Sources */,
 				EAC252E7276A34BF0033F96F /* OnboardingSlide.swift in Sources */,
 				EA215C0027E80057005A9843 /* EducateDetailsViewController.swift in Sources */,
+				EA7403B9281C7F2D0068D677 /* privateRequestCell.swift in Sources */,
 				EAE3C90B27B12C6300F42D16 /* MapViewController.swift in Sources */,
 				EA45D3B327E4E0DA0072E19C /* RequestProtocol.swift in Sources */,
 				EA92A0AA27E89FFF0060C5C8 /* String+Localized.swift in Sources */,
@@ -932,6 +963,7 @@
 				EA4402F127EA80200034C6AF /* CustomView.swift in Sources */,
 				EA78BC4428183EF20078DC96 /* Governorate.swift in Sources */,
 				EACC013E27A43A5A00FFB92B /* UserCustomTF.swift in Sources */,
+				EA75CF55281B72770032FA14 /* AvailableVaccines.swift in Sources */,
 				EA1915F727DBFA3100554FF9 /* Patient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

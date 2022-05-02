@@ -70,6 +70,8 @@ class DonorViewController: UIViewController {
     var arrOfGov: [GovData] = [GovData]()
     var arrOfCity: [CityData] = [CityData]()
     var dicOfCity :[String:String] = [:]
+    var myDicOfCity :[String:String] = [:]
+    
     static let arrayOfGender = ["male","female"]
     //MARK: - lifeCycles
     override func viewDidLoad() {
@@ -80,6 +82,7 @@ class DonorViewController: UIViewController {
         serUpPickerViews()
         createDatePicker()
         setDataOfUser()
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -94,6 +97,7 @@ class DonorViewController: UIViewController {
     }
     //MARK: - private func
     // get blood data
+    
     private func getBlood(){
         ApiService.sharedService.getBloodType { error, blood in
             if let error = error {
@@ -101,7 +105,7 @@ class DonorViewController: UIViewController {
             }else if let blood = blood {
                 self.arrOfBlood = blood
                 for blood in self.arrOfBlood {
-                    self.dicOfBloodType[blood.id] = blood.name
+                    self.dicOfBloodType[blood.name] = blood.id
                 }
                 print(self.arrOfBlood)
             }
@@ -148,9 +152,14 @@ class DonorViewController: UIViewController {
                     self.arrOfCity = city
                     for city in self.arrOfCity {
                         self.dicOfCity[city.gov_id] = city.name
+                        self.myDicOfCity[city.name] = city.id
+                        
                     }
                     print(self.arrOfCity)
+                    
                 }
+                self.rowOfCity = self.myDicOfCity[self.cityTF.text!]!
+                print("\(self.rowOfCity)")
             }
         }
     }
@@ -158,8 +167,9 @@ class DonorViewController: UIViewController {
         if let user = def.object(forKey: "userInfo")as? [String]{
             if let p_ssn = self.idTF.text,!p_ssn.isEmpty, let f_name = self.donorNameTF.text,!f_name.isEmpty , let l_name = self.familyNameTF.text,!l_name.isEmpty, let email = self.emailTF.text , !email.isEmpty , let mopilePhone = self.firstNumTF.text,!mopilePhone.isEmpty , let secondPhone = secondNumTF.text,!secondPhone.isEmpty , let password = self.passwordTF.text ,!password.isEmpty , let bloodType = self.bloodTypeTF.text , !bloodType.isEmpty , let birthDay = self.birthdateTF.text , !birthDay.isEmpty , let city = self.cityTF.text , !city.isEmpty , let gov = self.gavernrateTF.text , !gov.isEmpty , let password = self.passwordTF.text , !password.isEmpty , let gender = self.genderTF.text , !gender.isEmpty{
                 
-                ApiService.sharedService.updateUserData(p_ssn: user[0], p_first_name: f_name, p_last_name: l_name ,email: email,gov: gov,city: self.rowOfCity, mopilePhone:mopilePhone,secondPhone:secondPhone,birthDay:birthDay,bloodType:self.rowofBlood,password:password,gender:Arrays.dicOfGender[genderTF.text!]!)
-                UserDefaults.standard.set([p_ssn , f_name , l_name, email, gov, city,mopilePhone,secondPhone,birthDay,bloodType ,password, gender,self.cityId], forKey: "userInfo")
+                ApiService.sharedService.updateUserData(p_ssn: user[0], p_first_name: f_name, p_last_name: l_name ,email: email,gov: gov,city: self.rowOfCity, mopilePhone:mopilePhone,secondPhone:secondPhone,birthDay:birthDay,bloodType:self.dicOfBloodType[self.bloodTypeTF.text!]!,password:password,gender:Arrays.dicOfGender[genderTF.text!]!)
+                UserDefaults.standard.set([p_ssn , f_name , l_name, email, gov, city,mopilePhone,secondPhone,birthDay,bloodType ,password, gender,self.rowOfCity], forKey: "userInfo")
+                
             }
             
         }else{
@@ -313,11 +323,10 @@ extension DonorViewController: UIPickerViewDelegate,UIPickerViewDataSource{
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         switch pickerView.tag {
         case 0:
-            return goverArr.count
+            return dicOfGov.count
         case 1:
             return finalCities.count
         case 2:
@@ -337,8 +346,8 @@ extension DonorViewController: UIPickerViewDelegate,UIPickerViewDataSource{
             self.getCitiesWithId(id: rowofGov)
         case 1:
             cityTF.text = self.finalCities[row]
-            self.rowOfCity = arrOfCity[row].id
-            print(self.rowOfCity)
+            self.rowOfCity = myDicOfCity[self.cityTF.text!]!
+            print("city id in picker view : \(self.rowOfCity)")
         case 2:
             genderTF.text = Arrays.arrayOfGender[row]
         case 3:

@@ -215,9 +215,62 @@ class ApiService{
             }
         }
     }
+    //MARK: - get all hospital by is of city
+    func getHospitalsById(id: String,completion: @escaping (_ error: Error? , _ places: [placesData]?) -> Void){
+        AF.request("\(URLS.donate_Places)/all", method: .get, encoding: URLEncoding.default , headers: nil).response {
+            response in
+            if let error = response.error {
+                completion(error , nil)
+            }
+            if let data = response.data {
+                do{
+                    let place = try JSONDecoder().decode(DonatePlaces.self, from: data).data
+                    completion(nil,place)
+                } catch let error {
+                    completion(error , nil)
+                }
+            }
+        }
+    }
+    //MARK: - requestBloodType
+    func getRequestBloodType(completion: @escaping (_ error: Error? , _ requestType: [RequestBloodTypeData]?) -> Void){
+        AF.request("\(URLS.request_Blood_Type)/all", method: .get, encoding: URLEncoding.default , headers: nil).response {
+            response in
+            if let error = response.error {
+                completion(error , nil)
+            }
+            if let data = response.data {
+                do{
+                    let requestType = try JSONDecoder().decode(RequestBloodType.self, from: data).data
+                    completion(nil,requestType)
+                } catch let error {
+                    completion(error , nil)
+                }
+            }
+        }
+    }
+    
+    //MARK: - donate reason
+    func getDonateReason(completion: @escaping (_ error: Error? , _ donateReason: [DonateReasonData]?) -> Void){
+        AF.request("\(URLS.donate_Reason)/all", method: .get, encoding: URLEncoding.default , headers: nil).response {
+            response in
+            if let error = response.error {
+                completion(error , nil)
+            }
+            if let data = response.data {
+                do{
+                    let donateReason = try JSONDecoder().decode(DonateReason.self, from: data).data
+                    completion(nil,donateReason)
+                } catch let error {
+                    completion(error , nil)
+                }
+            }
+        }
+    }
+    
     //MARK: -for blood types
     func getBloodType(completion: @escaping (_ error: Error? , _ blood: [BloodData]?) -> Void){
-        let url = "https://blood-bank.life/api/api/v1/blood_type/424212219/all"
+        let url = "https://blood-bank.life/api/api/v1/blood_type/230422052801/all"
         AF.request("\(url)", method: .get, encoding: URLEncoding.default , headers: nil).response {
             response in
             if let error = response.error {
@@ -355,6 +408,35 @@ class ApiService{
                 }
             }
         }
+    }
+    //MARK: - add quick request blood
+    // add order vaccine
+    func sendQuickBloodRequest(p_ssn: String , message:String,donateReason: String,bloodType: String,requestType: String,bloodBagNum:String , placeId: String){
+        guard let url = URL(string: "\(URLS.quick_Request)/add")else{return}
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let body : [String:AnyHashable] = [
+            "place_id": placeId,
+            "blood_bags_number": bloodBagNum,
+            "blood_type": bloodType,
+            "request_type": requestType,
+            "donate_reason": donateReason,
+            "message": message,
+            "p_ssn": p_ssn,
+        ]
+        urlRequest.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
+        let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+            guard let data = data, error == nil else {return}
+            do{
+                let response = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
+                print("success : \(response)")
+            }catch{
+                print(error)
+        
+            }
+        }
+        task.resume()
     }
     
 }

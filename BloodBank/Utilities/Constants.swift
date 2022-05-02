@@ -8,7 +8,7 @@
 import UIKit
 
 struct URLS{
-    static let myCode = "424212219"
+    static let myCode = "230422052801"
     static let urlSite = "https://amr-mohamed1.github.io/blood_bank/index.html"
     static let urlCoronaStats = "https://disease.sh/v3/covid-19/"
     static let donate_Places = "https://blood-bank.life/api/api/v1/all_donate_places_info/\(myCode)"
@@ -24,6 +24,8 @@ struct URLS{
     static let order_vaccine = "https://blood-bank.life/api/api/v1/order_vaccine/\(myCode)"
     static let available_Vaccine = "https://blood-bank.life/api/api/v1/avilable_vaccines/\(myCode)"
     static let All_quick_Requests = "https://blood-bank.life/api/api/v1/all_quick_requests_info/\(myCode)"
+    static let request_Blood_Type = "https://blood-bank.life/api/api/v1/request_blood_type/\(myCode)"
+    static let donate_Reason = "https://blood-bank.life/api/api/v1/donate_reasons/\(myCode)"
     
 }
 struct Identifier{
@@ -52,7 +54,8 @@ struct Arrays{
     
     static let arrayOfTypesRequests = ["الصفائح","ABبلازما","Red Double cell","دم الحبل السري","لااعرف"]
     static let arrayReasonRequest = ["accident","surgery","prejnent","canser","زرع اعضاء","الثلاسيميا","الهيموجلوبين"]
-    static let arrayOfHospitals = ["khaled","hussien","ahmed","khalifa"]
+    static let arrOfBags = ["1","2","3","4","5"]
+    static let arrayOfHospitals = ["khaled","hussien","ahmed","hussien","khalifa"]
     static let arrOfNumber = ["1","2","3","4","5","6","7","8","9","10"]
 }
 struct EducateTabelArray {

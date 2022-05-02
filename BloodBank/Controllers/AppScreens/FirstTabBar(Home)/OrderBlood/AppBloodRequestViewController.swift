@@ -9,6 +9,14 @@ import UIKit
 import BLTNBoard
 
 class AppBloodRequestViewController: UIViewController{
+    // text fields
+    @IBOutlet weak var donateReasonTextField: UITextField!
+    @IBOutlet weak var requestTypeTextField: UITextField!
+    @IBOutlet weak var hospitalTextField: UITextField!
+    @IBOutlet weak var cityTextField: UITextField!
+    @IBOutlet weak var governrateTextField: UITextField!
+    @IBOutlet weak var bloodTypeTextField: UITextField!
+    
     
     @IBOutlet weak var bloodRequestLbl: UILabel!
     @IBOutlet weak var secondTitleLbl: UILabel!
@@ -19,6 +27,11 @@ class AppBloodRequestViewController: UIViewController{
     @IBOutlet weak var bloodTitleLbl: UILabel!
     @IBOutlet weak var bloodNextBtn: UIButton!
     @IBOutlet weak var bloodBackBtn: UIButton!
+    //number of bags
+    @IBOutlet weak var numberOfBagsLbl: UILabel!
+    
+    @IBOutlet weak var bagsBackBtn: UIButton!
+    @IBOutlet weak var bagsNextBtn: UIButton!
     //reason
     @IBOutlet weak var reasonTitleLbl: UILabel!
     @IBOutlet weak var reasonNextBtn: UIButton!
@@ -29,12 +42,8 @@ class AppBloodRequestViewController: UIViewController{
     @IBOutlet weak var cityBackBtn: UIButton!
     //town
     @IBOutlet weak var townTitleLbl: UILabel!
-    
     @IBOutlet weak var townNextBtn: UIButton!
-    
     @IBOutlet weak var townBackBtn: UIButton!
-    
-    
     //hospital
     @IBOutlet weak var hospitalTitleLbl: UILabel!
     @IBOutlet weak var hospitalNextBtn: UIButton!
@@ -46,37 +55,54 @@ class AppBloodRequestViewController: UIViewController{
     // views& pickerViews
     @IBOutlet var mainView: UIView!
     @IBOutlet weak var requestTypeView: UIView!
-    @IBOutlet weak var requestTypePickerView: UIPickerView!
     @IBOutlet weak var bloodTypeView: UIView!
-    @IBOutlet weak var bloodTypePickerView: UIPickerView!
+    @IBOutlet weak var numOfBagsView: UIView!
     @IBOutlet weak var reasonRequestView: UIView!
-    @IBOutlet weak var reasonPickerView: UIPickerView!
     @IBOutlet weak var hospitalRequestView: UIView!
-    @IBOutlet weak var hospitalPickerView: UIPickerView!
     @IBOutlet weak var notesView: UIView!
     @IBOutlet weak var notesTextView: UITextView!
-    
     @IBOutlet weak var cityView: UIView!
-    @IBOutlet weak var cityPickerView: UIPickerView!
-    
     @IBOutlet weak var townView: UIView!
-    @IBOutlet weak var townPickerView: UIPickerView!
+    @IBOutlet weak var numOfBagsPickerView: UIPickerView!
+    
     @IBOutlet weak var reguestPageControll: UIPageControl!
+    //arrays of data
+    var rowOfCity: String = ""
+    var rowofGov: String = ""
+    var rowOfHospital: String = ""
+    var rowofBlood: String = ""
+    var rowofRequestType: String = ""
+    var rowOfDonateReason: String = ""
+    
+    var arrOfBlood: [BloodData] = [BloodData]()
+    var dicOfBloodType: [String:String] = [:]
+    var arrOfRequestType: [RequestBloodTypeData] = [RequestBloodTypeData]()
+    var dicOfRequestType: [String:String] = [:]
+    var arrOfDonateReason: [DonateReasonData] = [DonateReasonData]()
+    var dicOfDonateReason: [String:String] = [:]
+    var dicOfGov :[String:String] = [:]
+    var finalCities: [String] = []
+    var CitiesArr: [DataCities] = [DataCities]()
+    var arrOfGov: [GovData] = [GovData]()
+    var arrOfCity: [CityData] = [CityData]()
+    var dicOfCity :[String:String] = [:]
+    var myDicOfCity :[String:String] = [:]
+    var finalHospital: [String] = []
+    var arrofHospitals:[placesData] = [placesData]()
+    var dicOfHospitals :[String:String] = [:]
+    //picker views
+    let bloodTypePicker = UIPickerView()
+    let governratePicker = UIPickerView()
+    let cityPicker = UIPickerView()
+    let hospitalPicker = UIPickerView()
+    let requestTypePicker = UIPickerView()
+    let donateReasonPicker = UIPickerView()
+    var p_ssn: String!
     //MARK: - vars
     var myCurrentPage = 0
-    var requestTypeResult = ""
-    var bloodTypeResult = ""
-    var reasonRequestResult = ""
-    var cityResult = ""
-    var townResult = ""
-    var hospitalResult = ""
-  
-    let arrTypeRequest = Arrays.arrayOfTypesRequests
-    let arrBloodType = Arrays.arrayOfBloodType
-    let arrReason = Arrays.arrayReasonRequest
-    let arrHospitals = Arrays.arrayOfHospitals
-    let arrCities = Arrays.arrayReasonRequest
-    let arrTowns = Arrays.arrayOfHospitals
+    var numOfBagsResult = ""
+    let arrOfBags = Arrays.arrOfBags
+    
     let navBar = NavigationBar()
     let customView = CustomView()
     private lazy var fitBoardManager: BLTNItemManager = {
@@ -88,7 +114,7 @@ class AppBloodRequestViewController: UIViewController{
             string:"Your Blood Request Created Successfully" , attributes: [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.8185071945, green: 0.2694924176, blue: 0.2871941328, alpha: 1) , .font: UIFont(name: "Almarai-Bold", size: 20)!])
         item.actionHandler = {_ in
             self.dismiss(animated: true) {
-//                self.navigationController?.popToRootViewController(animated: true)
+                //self.navigationController?.popToRootViewController(animated: true)
                 let requestsVC = RequestViewController.instantiate()
                 self.navigationController?.pushViewController(requestsVC, animated: true)
                 self.modalTransitionStyle = .coverVertical
@@ -102,57 +128,81 @@ class AppBloodRequestViewController: UIViewController{
     //MARK: - life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        requestTypePickerView.delegate = self
-        requestTypePickerView.dataSource = self
-        bloodTypePickerView.delegate = self
-        bloodTypePickerView.dataSource = self
-        reasonPickerView.delegate = self
-        reasonPickerView.dataSource = self
-        hospitalPickerView.delegate = self
-        hospitalPickerView.dataSource = self
-        cityPickerView.dataSource = self
-        cityPickerView.delegate = self
-        townPickerView.dataSource = self
-        townPickerView.delegate = self
-        
-        
-//        requestTypePickerView.selectRow(2, inComponent: 0, animated: true)
-//        bloodTypePickerView.selectRow(2, inComponent: 0, animated: true)
-//        reasonPickerView.selectRow(2, inComponent: 0, animated: true)
-//        hospitalPickerView.selectRow(2, inComponent: 0, animated: true)
-//        cityPickerView.selectRow(2, inComponent: 0, animated: true)
-//        townPickerView.selectRow(2, inComponent: 0, animated: true)
-        
-        
-        requestTypeView.isHidden = false
-        bloodTypeView.isHidden = true
-        reasonRequestView.isHidden = true
-        cityView.isHidden = true
-        townView.isHidden = true
-        hospitalRequestView.isHidden = true
-        notesView.isHidden = true
-        
+        setDataOfUser()
+        setUpData()
+        getBlood()
+        setGovData()
+        setCityData()
+        getRequestBloodType()
+        getDonateReason()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setUpDesign()
         self.localizedItems()
-        self.reguestPageControll.numberOfPages = 7
+        self.reguestPageControll.numberOfPages = 8
     }
     //MARK: - private functions
+    private func setUpData(){
+        bloodTypePicker.delegate = self
+        bloodTypePicker.dataSource = self
+        bloodTypeTextField.inputView = bloodTypePicker
+        
+        numOfBagsPickerView.delegate = self
+        numOfBagsPickerView.dataSource = self
+        
+        donateReasonPicker.delegate = self
+        donateReasonPicker.dataSource = self
+        donateReasonTextField.inputView = donateReasonPicker
+        
+        hospitalPicker.delegate = self
+        hospitalPicker.dataSource = self
+        hospitalTextField.inputView = hospitalPicker
+        
+        cityPicker.dataSource = self
+        cityPicker.delegate = self
+        cityTextField.inputView = cityPicker
+        
+        governratePicker.dataSource = self
+        governratePicker.delegate = self
+        governrateTextField.inputView = governratePicker
+        
+        requestTypePicker.dataSource = self
+        requestTypePicker.delegate = self
+        requestTypeTextField.inputView = requestTypePicker
+        // views display
+        requestTypeView.isHidden = false
+        bloodTypeView.isHidden = true
+        numOfBagsView.isHidden = true
+        reasonRequestView.isHidden = true
+        cityView.isHidden = true
+        townView.isHidden = true
+        hospitalRequestView.isHidden = true
+        notesView.isHidden = true
+        // tags
+        requestTypePicker.tag = 0
+        bloodTypePicker.tag = 1
+        numOfBagsPickerView.tag = 2
+        donateReasonPicker.tag = 3
+        governratePicker.tag = 4
+        cityPicker.tag = 5
+        hospitalPicker.tag = 6
+    }
     private func setUpDesign(){
         navBar.setNavBar(myView: self, title: "انشاء طلب دم", viewController: view, navBarColor: UIColor.navBarColor, navBarTintColor: UIColor.navBarTintColor ,forgroundTitle: UIColor.forgroundTitle, bacgroundView:UIColor.backgroundView)
         self.navigationController?.navigationBar.isHidden = false
+        // This will show in the next view controller being pushed
         let backItem = UIBarButtonItem()
         backItem.title = ""
-        navigationItem.backBarButtonItem = backItem// This will show in the next view controller being pushed
+        navigationItem.backBarButtonItem = backItem
+        
     }
     
     private func localizedItems(){
         bloodRequestLbl.customLblFont(lbl: bloodRequestLbl, fontSize: 25, text: "First Title")
         secondTitleLbl.customLblFont(lbl: secondTitleLbl, fontSize: 19, text: "Second Title")
         requestTypeLbl.customLblFont(lbl: requestTypeLbl, fontSize: 19, text: "Request Type")
+        numberOfBagsLbl.customLblFont(lbl: numberOfBagsLbl, fontSize: 19, text: "Number Of Bags")
         bloodTitleLbl.customLblFont(lbl: bloodTitleLbl, fontSize: 19, text: "Blood Type")
         reasonTitleLbl.customLblFont(lbl: reasonTitleLbl, fontSize: 19, text: "Reason of the Request")
         cityTitleLbl.customLblFont(lbl: cityTitleLbl, fontSize: 19, text: "City Title")
@@ -162,10 +212,12 @@ class AppBloodRequestViewController: UIViewController{
         
         requestNext.customTitleLbl(btn: requestNext, text: "Next", fontSize: 18)
         bloodNextBtn.customTitleLbl(btn: bloodNextBtn, text: "Next", fontSize: 18)
-        reasonNextBtn.customTitleLbl(btn: reasonNextBtn, text: "Next", fontSize: 18)
-        hospitalNextBtn.customTitleLbl(btn: hospitalNextBtn, text: "Next", fontSize: 18)
         bloodBackBtn.customTitleLbl(btn: bloodBackBtn, text: "Back", fontSize: 18)
+        bagsNextBtn.customTitleLbl(btn: bagsNextBtn, text: "Next", fontSize: 18)
+        bagsBackBtn.customTitleLbl(btn: bagsBackBtn, text: "Back", fontSize: 18)
+        reasonNextBtn.customTitleLbl(btn: reasonNextBtn, text: "Next", fontSize: 18)
         reasonBackBtn.customTitleLbl(btn: reasonBackBtn, text: "Back", fontSize: 18)
+        hospitalNextBtn.customTitleLbl(btn: hospitalNextBtn, text: "Next", fontSize: 18)
         hospitalBackBtn.customTitleLbl(btn: hospitalBackBtn, text: "Back", fontSize: 18)
         cityNextBtn.customTitleLbl(btn: cityNextBtn, text: "Next", fontSize: 18)
         cityBackBtn.customTitleLbl(btn: cityBackBtn, text: "Back", fontSize: 18)
@@ -174,6 +226,7 @@ class AppBloodRequestViewController: UIViewController{
         notesFinishBtn.customTitleLbl(btn: notesFinishBtn, text: "Finish", fontSize: 18)
         customView.requestView(theView: requestTypeView)
         customView.requestView(theView: bloodTypeView)
+        customView.requestView(theView: numOfBagsView)
         customView.requestView(theView: reasonRequestView)
         customView.requestView(theView: cityView)
         customView.requestView(theView: townView)
@@ -187,7 +240,126 @@ class AppBloodRequestViewController: UIViewController{
             theview.isHidden = true
         })
     }
-    
+    // get data (gov,city,hospital,bloodType,Donate Reason,type of Request)
+    private func getBlood(){
+        ApiService.sharedService.getBloodType { error, blood in
+            if let error = error {
+                print(error.localizedDescription)
+            }else if let blood = blood {
+                self.arrOfBlood = blood
+                for blood in self.arrOfBlood {
+                    self.dicOfBloodType[blood.name] = blood.id
+                }
+                print(self.arrOfBlood)
+            }
+        }
+    }
+    private func setGovData(){
+        ApiService.sharedService.getGovData { error, gov in
+            DispatchQueue.main.async {
+                if let error = error{
+                    print(error)
+                } else if let gov = gov {
+                    self.arrOfGov = gov
+                    for gov in self.arrOfGov {
+                        self.dicOfGov[gov.id] = gov.name
+                    }
+                }
+            }
+        }
+    }
+    private func getCitiesWithId(id: String){
+        ApiService.sharedService.getCitiesById(id: rowofGov) { error, city in
+            DispatchQueue.main.async {
+                if let error = error{
+                    print(error)
+                }else if let city = city {
+                    print(city)
+                    self.CitiesArr = city
+                    self.finalCities = []
+                    for cities in self.CitiesArr {
+                        print(cities.name)
+                        self.finalCities.append(cities.name)
+                    }
+                    print(self.finalCities)
+                }
+            }
+        }
+    }
+    private func setCityData(){
+        ApiService.sharedService.getCityData { error, city in
+            DispatchQueue.main.async {
+                if let error = error{
+                    print(error)
+                } else if let city = city {
+                    self.arrOfCity = city
+                    for city in self.arrOfCity {
+                        self.dicOfCity[city.gov_id] = city.name
+                        self.myDicOfCity[city.name] = city.id
+                    }
+                    print(self.arrOfCity)
+                    
+                }
+                print("\(self.rowOfCity)")
+            }
+        }
+    }
+    private func getRequestBloodType(){
+        ApiService.sharedService.getRequestBloodType { error, requestType in
+            if let error = error {
+                print(error.localizedDescription)
+            }else if let requestType = requestType {
+                self.arrOfRequestType = requestType
+                for requestType in self.arrOfRequestType {
+                    self.dicOfRequestType[requestType.type] = requestType.id
+                }
+                print(self.arrOfRequestType)
+            }
+        }
+    }
+    private func getDonateReason(){
+        ApiService.sharedService.getDonateReason { error, donateReason in
+            if let error = error {
+                print(error.localizedDescription)
+            }else if let donateReason = donateReason {
+                self.arrOfDonateReason = donateReason
+                for donateReason in self.arrOfDonateReason {
+                    self.dicOfDonateReason[donateReason.reason] = donateReason.id
+                }
+                print(self.arrOfDonateReason)
+            }
+        }
+    }
+    private func setHospitalDatawithId(id: String){
+        ApiService.sharedService.getHospitalsById(id: self.rowOfCity) { error, places in
+            if let error = error {
+                print(error.localizedDescription)
+            }else if let places = places {
+                self.arrofHospitals = places
+                for hospital in self.arrofHospitals {
+                    if self.rowOfCity == hospital.city_id{
+                        self.finalHospital.append(hospital.place_name)
+                        self.dicOfHospitals[hospital.place_name] = hospital.id
+                    }else{
+                        print("error")
+                    }
+                }
+                print(" dic of hospitals :\(self.dicOfHospitals)")
+                print(self.finalHospital)
+            }
+        }
+    }
+    private func sendQuickRequest(){
+        ApiService.sharedService.sendQuickBloodRequest(p_ssn: self.p_ssn, message: self.notesTextView.text, donateReason: self.rowOfDonateReason, bloodType: self.rowofBlood, requestType: self.rowofRequestType, bloodBagNum: numOfBagsResult, placeId: self.rowOfHospital)
+    }
+    private func setDataOfUser(){
+        let def = UserDefaults.standard
+        if let userInfo = def.object(forKey: "userInfo")as? [String]{
+            self.p_ssn = userInfo[0]
+            print(self.p_ssn!)
+            print("city id : \(userInfo[12])")
+        }
+    }
     //MARK: - Actions
     @IBAction func requestTypenextBtn(_ sender: UIButton) {
         animate(theview: requestTypeView)
@@ -198,13 +370,12 @@ class AppBloodRequestViewController: UIViewController{
             self.reguestPageControll.currentPage = self.myCurrentPage
         }
     }
-    
     //blood type
     @IBAction func nextbloodTypeBtnTapped(_ sender: UIButton) {
         animate(theview: bloodTypeView)
         DispatchQueue.main.asyncAfter(deadline: .now()+0.75) {
-            self.reasonRequestView.isHidden = false
-            self.reasonRequestView.alpha = 1
+            self.numOfBagsView.isHidden = false
+            self.numOfBagsView.alpha = 1
             self.myCurrentPage += 1
             self.reguestPageControll.currentPage = self.myCurrentPage
         }
@@ -216,7 +387,24 @@ class AppBloodRequestViewController: UIViewController{
         self.myCurrentPage -= 1
         self.reguestPageControll.currentPage = self.myCurrentPage
     }
-    
+    // Num of bags
+    @IBAction func bagsNextBtnTapped(_ sender: UIButton) {
+        animate(theview: numOfBagsView)
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.75) {
+            self.reasonRequestView.isHidden = false
+            self.reasonRequestView.alpha = 1
+            self.myCurrentPage += 1
+            self.reguestPageControll.currentPage = self.myCurrentPage
+        }
+    }
+    @IBAction func bagsBackBtnTapped(_ sender: UIButton) {
+        self.animate(theview: self.numOfBagsView)
+        self.bloodTypeView.isHidden = false
+        self.requestTypeView.isHidden = true
+        bloodTypeView.alpha = 1
+        self.myCurrentPage -= 1
+        self.reguestPageControll.currentPage = self.myCurrentPage
+    }
     //reason
     @IBAction func reasonNextTapped(_ sender: UIButton) {
         animate(theview: reasonRequestView)
@@ -227,17 +415,16 @@ class AppBloodRequestViewController: UIViewController{
             self.reguestPageControll.currentPage = self.myCurrentPage
         }
     }
-    
     @IBAction func reasonBackTapped(_ sender: UIButton) {
         animate(theview: reasonRequestView)
-        bloodTypeView.isHidden = false
+        numOfBagsView.isHidden = false
         requestTypeView.isHidden = true
-        self.bloodTypeView.alpha = 1
+        bloodTypeView.isHidden = true
+        self.numOfBagsView.alpha = 1
         self.myCurrentPage -= 1
         self.reguestPageControll.currentPage = self.myCurrentPage
     }
     // city
-    
     @IBAction func cityNextBtnTapped(_ sender: UIButton) {
         animate(theview: cityView)
         DispatchQueue.main.asyncAfter(deadline: .now()+0.75) {
@@ -251,13 +438,13 @@ class AppBloodRequestViewController: UIViewController{
         animate(theview: cityView)
         reasonRequestView.isHidden = false
         bloodTypeView.isHidden = true
+        numOfBagsView.isHidden = true
         requestTypeView.isHidden = true
         self.reasonRequestView.alpha = 1
         self.myCurrentPage -= 1
         self.reguestPageControll.currentPage = self.myCurrentPage
     }
     //town
-    
     @IBAction func townNextBtnTapped(_ sender: UIButton) {
         animate(theview: townView)
         DispatchQueue.main.asyncAfter(deadline: .now()+0.75) {
@@ -266,20 +453,20 @@ class AppBloodRequestViewController: UIViewController{
             self.myCurrentPage += 1
             self.reguestPageControll.currentPage = self.myCurrentPage
         }
+        setHospitalDatawithId(id: self.rowOfCity)
     }
-    
     @IBAction func townBackBtnTapped(_ sender: UIButton) {
         animate(theview: townView)
         cityView.isHidden = false
         requestTypeView.isHidden = true
         bloodTypeView.isHidden = true
+        numOfBagsView.isHidden = true
         requestTypeView.isHidden = true
         self.cityView.alpha = 1
         self.myCurrentPage -= 1
         self.reguestPageControll.currentPage = self.myCurrentPage
     }
     // hospital
-    
     @IBAction func hospitalNext(_ sender: UIButton) {
         animate(theview: hospitalRequestView)
         DispatchQueue.main.asyncAfter(deadline: .now()+0.75) {
@@ -294,6 +481,7 @@ class AppBloodRequestViewController: UIViewController{
         townView.isHidden = false
         reasonRequestView.isHidden = true
         cityView.isHidden = true
+        numOfBagsView.isHidden = true
         bloodTypeView.isHidden = true
         requestTypeView.isHidden = true
         self.townView.alpha = 1
@@ -304,15 +492,14 @@ class AppBloodRequestViewController: UIViewController{
     @IBAction func finishNotesTapped(_ sender: UIButton) {
         if let noteResult = notesTextView.text , !noteResult.isEmpty{
             DispatchQueue.main.asyncAfter(deadline: .now()+1) {
-                print("\(self.requestTypeResult) - \(self.bloodTypeResult) - \(self.reasonRequestResult) - \(self.hospitalResult) - \(noteResult)")
+                self.sendQuickRequest()
+                print("\(self.rowofBlood) - \(self.rowOfHospital) - \(self.rowofRequestType) - \(self.rowOfDonateReason) - \(noteResult)")
             }
             self.fitBoardManager.showBulletin(above: self)
         }else{
             showNormalAlert(title: "Sorry", message: "Please write a message for Donors.")
         }
     }
-    
-
 }
 //MARK: - UIPickerViewDelegate
 extension AppBloodRequestViewController: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -321,51 +508,86 @@ extension AppBloodRequestViewController: UIPickerViewDelegate, UIPickerViewDataS
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        
         switch pickerView.tag{
         case 0:
-            return arrTypeRequest.count
+            return dicOfRequestType.count
         case 1:
-            return arrBloodType.count
+            return dicOfBloodType.count
         case 2:
-            return arrReason.count
+            return arrOfBags.count
         case 3:
-            return arrCities.count
+            return dicOfDonateReason.count
         case 4:
-            return arrTowns.count
+            return dicOfGov.count
         case 5:
-            return arrHospitals.count
+            return finalCities.count
+        case 6:
+            return dicOfHospitals.count
         default:
             return 1
         }
-        
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         switch pickerView.tag{
         case 0:
-            self.requestTypeResult = arrTypeRequest[row]
-            return arrTypeRequest[row]
+            return arrOfRequestType[row].type
         case 1:
-            self.bloodTypeResult = arrBloodType[row]
-            return arrBloodType[row]
+            return self.arrOfBlood[row].name
         case 2:
-            self.reasonRequestResult = arrReason[row]
-            return arrReason[row]
+            self.numOfBagsResult = arrOfBags[row]
+            return arrOfBags[row]
         case 3:
-            self.cityResult = arrCities[row]
-            return arrCities[row]
+            return arrOfDonateReason[row].reason
         case 4:
-            self.townResult = arrTowns[row]
-            return arrTowns[row]
+            return self.arrOfGov[row].name
         case 5:
-            self.hospitalResult = arrHospitals[row]
-            return arrHospitals[row]
+            return self.finalCities[row]
+        case 6:
+            
+            return finalHospital[row]
         default:
             return ""
+        }
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        switch pickerView.tag{
+        case 0:
+            self.rowofRequestType = arrOfRequestType[row].id
+            self.requestTypeTextField.text = arrOfRequestType[row].type
+            print(self.rowofRequestType)
+        case 1:
+            self.rowofBlood = arrOfBlood[row].id
+            self.bloodTypeTextField.text = arrOfBlood[row].name
+            print(self.rowofBlood)
+        case 2:
+            self.numOfBagsResult = arrOfBags[row]
+        case 3:
+            self.rowOfDonateReason = arrOfDonateReason[row].id
+            self.donateReasonTextField.text = arrOfDonateReason[row].reason
+            print(self.rowOfDonateReason)
+        case 4:
+            self.rowofGov = arrOfGov[row].id
+            self.governrateTextField.text = arrOfGov[row].name
+            print(self.rowofGov)
+            self.getCitiesWithId(id: rowofGov)
+        case 5:
+            cityTextField.text = self.finalCities[row]
+            self.rowOfCity = myDicOfCity[self.cityTextField.text!]!
+            print("city id in picker view : \(self.rowOfCity)")
+        case 6:
+            self.hospitalTextField.text = finalHospital[row]
+            self.rowOfHospital = dicOfHospitals[hospitalTextField.text!]!
+            print(self.rowOfHospital)
+            print("final hospitals : \(finalHospital)")
+            
+        default:
+            return
         }
     }
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
         return 40
     }
-    
 }
+
+
+

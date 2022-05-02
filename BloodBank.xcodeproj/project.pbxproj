@@ -46,6 +46,8 @@
 		EA45D3B327E4E0DA0072E19C /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA45D3B027E4E0DA0072E19C /* RequestProtocol.swift */; };
 		EA45D3B427E4E0DA0072E19C /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA45D3B127E4E0DA0072E19C /* SessionManager.swift */; };
 		EA45D3B527E4E0DA0072E19C /* DataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA45D3B227E4E0DA0072E19C /* DataProviderProtocol.swift */; };
+		EA48885A281FD15800A2700A /* RequestBloodType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA488859281FD15800A2700A /* RequestBloodType.swift */; };
+		EA48885C281FD51700A2700A /* DonateReason.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA48885B281FD51700A2700A /* DonateReason.swift */; };
 		EA4B13AC280F096900B52607 /* VolunteersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4B13AB280F096900B52607 /* VolunteersViewController.swift */; };
 		EA4C711F27E3D626000C8B02 /* CustomPlaceHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4C711E27E3D626000C8B02 /* CustomPlaceHolder.swift */; };
 		EA4CA33727F9C782003873DC /* YourStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4CA33627F9C782003873DC /* YourStoryViewController.swift */; };
@@ -168,6 +170,8 @@
 		EA45D3B027E4E0DA0072E19C /* RequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
 		EA45D3B127E4E0DA0072E19C /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		EA45D3B227E4E0DA0072E19C /* DataProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProviderProtocol.swift; sourceTree = "<group>"; };
+		EA488859281FD15800A2700A /* RequestBloodType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBloodType.swift; sourceTree = "<group>"; };
+		EA48885B281FD51700A2700A /* DonateReason.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonateReason.swift; sourceTree = "<group>"; };
 		EA4B13AB280F096900B52607 /* VolunteersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteersViewController.swift; sourceTree = "<group>"; };
 		EA4C711E27E3D626000C8B02 /* CustomPlaceHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPlaceHolder.swift; sourceTree = "<group>"; };
 		EA4CA33627F9C782003873DC /* YourStoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourStoryViewController.swift; sourceTree = "<group>"; };
@@ -656,6 +660,8 @@
 				EAE3D4992819FEEE003B514A /* Vaccine.swift */,
 				EA75CF52281ADF870032FA14 /* QuickRequest.swift */,
 				EA75CF54281B72770032FA14 /* AvailableVaccines.swift */,
+				EA488859281FD15800A2700A /* RequestBloodType.swift */,
+				EA48885B281FD51700A2700A /* DonateReason.swift */,
 			);
 			path = ApiModels;
 			sourceTree = "<group>";
@@ -879,6 +885,7 @@
 				EA6211E227EF6DC000301635 /* ApiService.swift in Sources */,
 				EA818B0827E1140C00D36808 /* Sick.swift in Sources */,
 				EA6F6123281390BE002E5E5E /* FavoriteViewController.swift in Sources */,
+				EA48885A281FD15800A2700A /* RequestBloodType.swift in Sources */,
 				EA4278A827B025D4002D444A /* HelpAndSupportViewController.swift in Sources */,
 				EA1831C727DA6C1000D9BA90 /* RequestsTableViewCell.swift in Sources */,
 				EA4278A427B025A7002D444A /* RequestViewController.swift in Sources */,
@@ -942,6 +949,7 @@
 				EA215BFE27E7FA36005A9843 /* String+URL.swift in Sources */,
 				EA66E54528157ED700443115 /* favoriteTableViewCell.swift in Sources */,
 				EA215BFC27E7EB98005A9843 /* EducateCollectionViewCell.swift in Sources */,
+				EA48885C281FD51700A2700A /* DonateReason.swift in Sources */,
 				EAAD8337276D12C800381854 /* DataPicker.swift in Sources */,
 				EACC012F27A4275700FFB92B /* NavigationManager.swift in Sources */,
 				EA01A0B127C9838700BDCC00 /* BookingAppointmentViewController.swift in Sources */,

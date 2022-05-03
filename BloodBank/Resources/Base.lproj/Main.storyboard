@@ -220,6 +220,10 @@
                                     <action selector="segmentControllTapped:" destination="Teo-GT-zTx" eventType="valueChanged" id="vSp-S2-Zht"/>
                                 </connections>
                             </segmentedControl>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icloud.slash" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ilr-ch-zv0">
+                                <rect key="frame" x="0.0" y="132" width="414" height="681"/>
+                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Fny-BN-pKw">
                                 <rect key="frame" x="0.0" y="131" width="414" height="682"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -233,12 +237,16 @@
                         <color key="backgroundColor" name="viewbgColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="1PA-Vs-WYZ" secondAttribute="trailing" constant="5" id="Aag-de-5ip"/>
+                            <constraint firstItem="ilr-ch-zv0" firstAttribute="top" secondItem="Fny-BN-pKw" secondAttribute="top" id="G4c-gH-dNM"/>
                             <constraint firstItem="ZRR-eL-Myy" firstAttribute="bottom" secondItem="Fny-BN-pKw" secondAttribute="bottom" id="PcZ-WG-bh6"/>
                             <constraint firstItem="1PA-Vs-WYZ" firstAttribute="top" secondItem="ZRR-eL-Myy" secondAttribute="top" id="YDJ-j0-EVc"/>
+                            <constraint firstItem="ilr-ch-zv0" firstAttribute="trailing" secondItem="Fny-BN-pKw" secondAttribute="trailing" id="Ylx-Rt-vEi"/>
                             <constraint firstItem="Fny-BN-pKw" firstAttribute="top" secondItem="1PA-Vs-WYZ" secondAttribute="bottom" constant="8" symbolic="YES" id="cFK-1Y-b8k"/>
                             <constraint firstItem="Fny-BN-pKw" firstAttribute="trailing" secondItem="ZRR-eL-Myy" secondAttribute="trailing" id="dEd-Tz-dn2"/>
                             <constraint firstItem="1PA-Vs-WYZ" firstAttribute="leading" secondItem="ZRR-eL-Myy" secondAttribute="leading" constant="5" id="dxd-D2-oaX"/>
+                            <constraint firstItem="ilr-ch-zv0" firstAttribute="leading" secondItem="Fny-BN-pKw" secondAttribute="leading" id="kDp-bb-b2X"/>
                             <constraint firstItem="Fny-BN-pKw" firstAttribute="leading" secondItem="ZRR-eL-Myy" secondAttribute="leading" id="pp0-bt-afR"/>
+                            <constraint firstItem="ilr-ch-zv0" firstAttribute="bottom" secondItem="Fny-BN-pKw" secondAttribute="bottom" id="pzs-sb-dq2"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="2OG-F4-whn"/>
@@ -247,6 +255,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="HistorytableView" destination="Fny-BN-pKw" id="N3x-7v-bQu"/>
+                        <outlet property="noDataImageView" destination="ilr-ch-zv0" id="Q8u-GQ-91Y"/>
                         <outlet property="segmentControll" destination="1PA-Vs-WYZ" id="Q6d-j1-ee7"/>
                     </connections>
                 </viewController>

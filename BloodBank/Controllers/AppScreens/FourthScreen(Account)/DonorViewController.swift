@@ -53,7 +53,6 @@ class DonorViewController: UIViewController {
     let goverArr = Arrays.arrayOfGover
     let citiesArr = Arrays.arrayOfCities
     let arrBlood = Arrays.arrayOfBloodType
-    let arrGender = Arrays.arrayOfGender
     let datePicker = UIDatePicker()
     var arrOfUser:[userData] = [userData]()
     let def = UserDefaults.standard
@@ -72,7 +71,6 @@ class DonorViewController: UIViewController {
     var dicOfCity :[String:String] = [:]
     var myDicOfCity :[String:String] = [:]
     
-    static let arrayOfGender = ["male","female"]
     //MARK: - lifeCycles
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -207,6 +205,7 @@ class DonorViewController: UIViewController {
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .none
         dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.locale = Locale(identifier: "en")
         birthdateTF.text = dateFormatter.string(from: sender.date)
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -330,7 +329,7 @@ extension DonorViewController: UIPickerViewDelegate,UIPickerViewDataSource{
         case 1:
             return finalCities.count
         case 2:
-            return Arrays.arrayOfGender.count
+            return Arrays.arrOfGender.count
         case 3:
             return dicOfBloodType.count
         default:
@@ -349,7 +348,7 @@ extension DonorViewController: UIPickerViewDelegate,UIPickerViewDataSource{
             self.rowOfCity = myDicOfCity[self.cityTF.text!]!
             print("city id in picker view : \(self.rowOfCity)")
         case 2:
-            genderTF.text = Arrays.arrayOfGender[row]
+            genderTF.text = Arrays.arrOfGender[row]
         case 3:
             self.bloodTypeTF.text = arrOfBlood[row].name
             self.rowofBlood = arrOfBlood[row].id
@@ -365,7 +364,7 @@ extension DonorViewController: UIPickerViewDelegate,UIPickerViewDataSource{
         case 1:
             return finalCities[row]
         case 2:
-            return Arrays.arrayOfGender[row]
+            return Arrays.arrOfGender[row]
         case 3:
             return arrOfBlood[row].name
         default:

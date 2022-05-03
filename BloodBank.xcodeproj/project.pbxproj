@@ -56,6 +56,7 @@
 		EA4CA34027F9E604003873DC /* FloatingBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4CA33F27F9E604003873DC /* FloatingBtn.swift */; };
 		EA545C8F2808A7870009C6C7 /* VaccineCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA545C8E2808A7870009C6C7 /* VaccineCollectionViewController.swift */; };
 		EA545C922808C3FC0009C6C7 /* VaccineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA545C912808C3FC0009C6C7 /* VaccineCollectionViewCell.swift */; };
+		EA5972622821C36D0053DFD5 /* OrderVaccine.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5972612821C36D0053DFD5 /* OrderVaccine.swift */; };
 		EA5A8C8227F269C500FCF61F /* UiimageView+UrlExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A8C8127F269C500FCF61F /* UiimageView+UrlExtension.swift */; };
 		EA6211E227EF6DC000301635 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6211E127EF6DC000301635 /* ApiService.swift */; };
 		EA6211E427EF6FC300301635 /* CoronaAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6211E327EF6FC200301635 /* CoronaAnalysis.swift */; };
@@ -180,6 +181,7 @@
 		EA4CA33F27F9E604003873DC /* FloatingBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingBtn.swift; sourceTree = "<group>"; };
 		EA545C8E2808A7870009C6C7 /* VaccineCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineCollectionViewController.swift; sourceTree = "<group>"; };
 		EA545C912808C3FC0009C6C7 /* VaccineCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineCollectionViewCell.swift; sourceTree = "<group>"; };
+		EA5972612821C36D0053DFD5 /* OrderVaccine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderVaccine.swift; sourceTree = "<group>"; };
 		EA5A8C8127F269C500FCF61F /* UiimageView+UrlExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiimageView+UrlExtension.swift"; sourceTree = "<group>"; };
 		EA6211E127EF6DC000301635 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		EA6211E327EF6FC200301635 /* CoronaAnalysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronaAnalysis.swift; sourceTree = "<group>"; };
@@ -662,6 +664,7 @@
 				EA75CF54281B72770032FA14 /* AvailableVaccines.swift */,
 				EA488859281FD15800A2700A /* RequestBloodType.swift */,
 				EA48885B281FD51700A2700A /* DonateReason.swift */,
+				EA5972612821C36D0053DFD5 /* OrderVaccine.swift */,
 			);
 			path = ApiModels;
 			sourceTree = "<group>";
@@ -910,6 +913,7 @@
 				EA1915F927DC27B100554FF9 /* DetailsCellViewController.swift in Sources */,
 				EA6211E427EF6FC300301635 /* CoronaAnalysis.swift in Sources */,
 				EA064CAE27A4750600A06257 /* MainViewController.swift in Sources */,
+				EA5972622821C36D0053DFD5 /* OrderVaccine.swift in Sources */,
 				EA78BC46281840EE0078DC96 /* (Gov+City).Data.swift in Sources */,
 				EA545C922808C3FC0009C6C7 /* VaccineCollectionViewCell.swift in Sources */,
 				EA1F21C2280C601D00DE49F9 /* HistoryVaccineCell.swift in Sources */,

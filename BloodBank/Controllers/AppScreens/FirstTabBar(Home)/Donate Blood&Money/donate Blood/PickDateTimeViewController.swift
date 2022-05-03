@@ -21,18 +21,28 @@ class PickDateTimeViewController: UIViewController {
     let bloodTypePickerView = UIPickerView()
     let cityPickerView = UIPickerView()
     let govPickerView = UIPickerView()
+    var userBloodType: String = ""
+    var user_Pssn: String = ""
     let arrOfBloodType = Arrays.arrayOfBloodType
     let arrOfCities = Arrays.arrayOfCities
     let arrOfGov = Arrays.arrayOfGover
-  
+    let def = UserDefaults.standard
     var HospitalName: String = ""
-    
+    var userCityId: String = ""
+    var userHospitalId: String = ""
+    var userGovName: String = ""
+    var userCityName: String = ""
     //MARK: - life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpDesign()
         setUp()
         addressOfHospital.text = HospitalName
+        print(userCityId)
+        print(userHospitalId)
+        print(userGovName)
+        print(userCityName)
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -55,6 +65,23 @@ class PickDateTimeViewController: UIViewController {
         datePicker.date = Date()
         datePicker.locale = .current
         datePicker.addTarget(self, action: #selector(dateSelected), for: .valueChanged)
+        self.textFieldsData()
+    }
+    private func textFieldsData(){
+        //blood type & p_ssn & city & gov
+        self.bloodTypeTextField.isUserInteractionEnabled = false
+        self.bloodTypeTextField.backgroundColor = .lightGray.withAlphaComponent(0.6)
+        self.govTextField.isUserInteractionEnabled = false
+        self.govTextField.backgroundColor = .lightGray.withAlphaComponent(0.6)
+        self.cityTextField.isUserInteractionEnabled = false
+        self.cityTextField.backgroundColor = .lightGray.withAlphaComponent(0.6)
+        if let user = def.object(forKey: "userInfo")as? [String]{
+            self.userBloodType = user[9]
+            self.user_Pssn = user[0]
+        }
+        self.bloodTypeTextField.text = self.userBloodType
+        self.govTextField.text = self.userGovName
+        self.cityTextField.text = self.userCityName
     }
     private func setUpDesign(){
         title = "حدد الوقت والتاريخ"
@@ -73,6 +100,9 @@ class PickDateTimeViewController: UIViewController {
         }
         return false
     }
+    private func addBloodDonation(){
+        ApiService.sharedService.addBloodDonation(p_ssn: self.user_Pssn, city_id: self.userCityId, donate_place_id: self.userHospitalId, time: self.dateTimeLabel.text!)
+    }
     //MARK: - Actions
     private func openSheet(){
         let sheetPresentationController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SheetViewController")as! SheetViewController
@@ -82,6 +112,8 @@ class PickDateTimeViewController: UIViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .full
         dateFormatter.timeStyle = .short
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        dateFormatter.locale = Locale(identifier: "en")
         let date = dateFormatter.string(from: datePicker.date)
         dateTimeLabel.text = date
         self.confirmDateBtn.backgroundColor = #colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1)
@@ -89,9 +121,12 @@ class PickDateTimeViewController: UIViewController {
     
     @IBAction func confirmDateBtnTapped(_ sender: UIButton) {
         if setUpTF(){
-            openSheet()
+            self.addBloodDonation()
+            DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                self.openSheet()
+            }
         }else{
-            return
+            showNormalAlert(title: "Sorry", message: "Please Fill All Fields.")
         }
     }
 }

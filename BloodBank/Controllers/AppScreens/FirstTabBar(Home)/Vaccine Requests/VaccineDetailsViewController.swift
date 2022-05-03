@@ -104,8 +104,6 @@ class VaccineDetailsViewController: UIViewController, UISheetPresentationControl
         sendOrderVaccineBtn.customTitleLbl(btn: sendOrderVaccineBtn, text: "ارسال الطلب", fontSize: 17)
         self.animated()
     }
-    
-    
     //MARK: - Functions
     private func setUpData(){
         let amount = myVaccine.amount

@@ -53,7 +53,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8hm-Qo-BdY">
-                                <rect key="frame" x="5" y="117" width="398" height="38"/>
+                                <rect key="frame" x="5" y="154" width="398" height="38"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="للاسف لقد تم رفض طلبك" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="lpY-Ac-NUy">
                                         <rect key="frame" x="114.5" y="10.5" width="169.5" height="17"/>
@@ -113,7 +113,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rIN-2u-3Ol">
                                         <rect key="frame" x="5" y="187" width="210" height="25"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="٣٠ جنيهاً" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zRp-NN-hBG">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="٣٠ كيس دم" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zRp-NN-hBG">
                                                 <rect key="frame" x="0.0" y="4.5" width="210" height="16"/>
                                                 <fontDescription key="fontDescription" name="Almarai-Bold" family="Almarai" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -155,28 +155,40 @@
                                     <constraint firstItem="rIN-2u-3Ol" firstAttribute="leading" secondItem="tsV-Be-sHS" secondAttribute="leading" id="vnv-Y1-3TW"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مكان الاستلام:مستشفي طنطا الجامعي" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qBA-Bq-mQM">
+                                <rect key="frame" x="5" y="115" width="398" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="19" id="pMP-dC-tQC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Almarai-Bold" family="Almarai" pointSize="17"/>
+                                <color key="textColor" name="MainLblColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" name="bgIColornsideCell"/>
                         <constraints>
                             <constraint firstItem="nzS-BN-esy" firstAttribute="width" secondItem="087-yQ-vOf" secondAttribute="width" multiplier="0.35" id="43G-ol-2bw"/>
+                            <constraint firstItem="8hm-Qo-BdY" firstAttribute="top" secondItem="qBA-Bq-mQM" secondAttribute="bottom" constant="20" id="7aC-T8-YPp"/>
                             <constraint firstItem="b7D-NV-ukO" firstAttribute="trailing" secondItem="LQF-mh-oIR" secondAttribute="trailing" id="ANr-XW-8Nt"/>
                             <constraint firstItem="59z-mx-G7b" firstAttribute="width" secondItem="LQF-mh-oIR" secondAttribute="width" multiplier="0.7" id="C12-9e-KqW"/>
                             <constraint firstItem="8hm-Qo-BdY" firstAttribute="centerX" secondItem="b7D-NV-ukO" secondAttribute="centerX" id="DpI-Kb-oRl"/>
                             <constraint firstItem="nzS-BN-esy" firstAttribute="top" secondItem="087-yQ-vOf" secondAttribute="top" id="Mmf-do-1Pe"/>
                             <constraint firstItem="8hm-Qo-BdY" firstAttribute="leading" secondItem="LQF-mh-oIR" secondAttribute="leading" id="Pvg-Fw-w2s"/>
                             <constraint firstAttribute="trailing" secondItem="nzS-BN-esy" secondAttribute="trailing" id="QaE-sh-Twa"/>
+                            <constraint firstItem="qBA-Bq-mQM" firstAttribute="top" secondItem="b7D-NV-ukO" secondAttribute="bottom" constant="18" id="Slg-Aq-xo5"/>
                             <constraint firstAttribute="bottom" secondItem="nzS-BN-esy" secondAttribute="bottom" id="X24-id-ZOn"/>
                             <constraint firstItem="59z-mx-G7b" firstAttribute="centerX" secondItem="LQF-mh-oIR" secondAttribute="centerX" id="bo0-CU-vVO"/>
                             <constraint firstItem="b7D-NV-ukO" firstAttribute="leading" secondItem="LQF-mh-oIR" secondAttribute="leading" id="d7y-SW-UT5"/>
                             <constraint firstItem="8hm-Qo-BdY" firstAttribute="height" secondItem="b7D-NV-ukO" secondAttribute="height" multiplier="2" id="dbX-LY-Jet"/>
                             <constraint firstItem="nzS-BN-esy" firstAttribute="leading" secondItem="LQF-mh-oIR" secondAttribute="trailing" constant="5" id="gNO-Pn-VvO"/>
+                            <constraint firstItem="qBA-Bq-mQM" firstAttribute="trailing" secondItem="b7D-NV-ukO" secondAttribute="trailing" id="gb9-Co-v7V"/>
                             <constraint firstItem="59z-mx-G7b" firstAttribute="top" secondItem="LQF-mh-oIR" secondAttribute="bottom" constant="5" id="hHT-dG-hqW"/>
                             <constraint firstItem="LQF-mh-oIR" firstAttribute="leading" secondItem="087-yQ-vOf" secondAttribute="leading" constant="5" id="jKP-5r-hDw"/>
                             <constraint firstItem="8hm-Qo-BdY" firstAttribute="trailing" secondItem="LQF-mh-oIR" secondAttribute="trailing" id="l5W-oO-508"/>
                             <constraint firstItem="LQF-mh-oIR" firstAttribute="top" secondItem="087-yQ-vOf" secondAttribute="top" constant="10" id="mKO-Y3-1yM"/>
                             <constraint firstItem="b7D-NV-ukO" firstAttribute="centerX" secondItem="LQF-mh-oIR" secondAttribute="centerX" id="mZD-r5-lAi"/>
-                            <constraint firstItem="8hm-Qo-BdY" firstAttribute="top" secondItem="b7D-NV-ukO" secondAttribute="bottom" constant="20" id="mp0-NH-fro"/>
                             <constraint firstItem="b7D-NV-ukO" firstAttribute="top" secondItem="59z-mx-G7b" secondAttribute="bottom" constant="5" id="qml-EI-g20"/>
+                            <constraint firstItem="qBA-Bq-mQM" firstAttribute="leading" secondItem="b7D-NV-ukO" secondAttribute="leading" id="xrx-nh-9da"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -196,7 +208,11 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="cardView" destination="087-yQ-vOf" id="8NF-Ry-01F"/>
+                <outlet property="placeOfReciving" destination="qBA-Bq-mQM" id="GE8-aO-2f8"/>
+                <outlet property="timeOfOrder" destination="b7D-NV-ukO" id="I22-FH-zxb"/>
+                <outlet property="vaccineAmount" destination="zRp-NN-hBG" id="TsX-Xl-I67"/>
                 <outlet property="vaccineImage" destination="cj5-7w-my2" id="99C-Kd-myV"/>
+                <outlet property="vaccineName" destination="Shy-ya-orm" id="e72-sL-ht8"/>
                 <outlet property="vaccineView" destination="nzS-BN-esy" id="cRP-is-fo4"/>
             </connections>
             <point key="canvasLocation" x="195.6521739130435" y="82.366071428571431"/>

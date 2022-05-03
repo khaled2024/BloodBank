@@ -8,7 +8,14 @@
 import UIKit
 
 class privateRequestCell: UITableViewCell {
-
+    
+    @IBOutlet weak var numOfBagsLbl: UILabel!
+    @IBOutlet weak var volunteerNumLbl: UILabel!
+    @IBOutlet weak var bloodTypeLbl: UILabel!
+    @IBOutlet weak var messageLbl: UILabel!
+    @IBOutlet weak var timeLbl: UILabel!
+    @IBOutlet weak var hospitalName: UILabel!
+    @IBOutlet weak var patientName: UILabel!
     @IBOutlet weak var saveBtn: UIButton!
     @IBOutlet weak var goingOrderBtn: UIButton!
     @IBOutlet weak var volunteerBtn: UIButton!
@@ -19,6 +26,9 @@ class privateRequestCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+       setDesign()
+    }
+    private func setDesign(){
         cardView.layer.shadowColor = UIColor.gray.cgColor
         cardView.layer.shadowOffset = CGSize(width: 5.0, height: 5.0)
         cardView.layer.shadowOpacity = 5.0
@@ -30,11 +40,16 @@ class privateRequestCell: UITableViewCell {
         customBtn.shadowBtn(btn: goingOrderBtn, colorShadow: UIColor.gray.cgColor)
         customBtn.shadowBtn(btn: volunteerBtn, colorShadow: UIColor.gray.cgColor)
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func configure(name: String, bloodType: String, address: String, time: String, description: String , donorImage: String,volunteers: String, numberOfBags: String){
+        patientName.text = name
+        bloodTypeLbl.text = bloodType
+        hospitalName.text = address
+        timeLbl.text = time
+        messageLbl.text = description
+        volunteerNumLbl.text = volunteers
+        numOfBagsLbl.text = numberOfBags
+        //  let imageFromSite = donorImage.asURL
+        self.donorImage.load(urlString: donorImage)
     }
     
 }

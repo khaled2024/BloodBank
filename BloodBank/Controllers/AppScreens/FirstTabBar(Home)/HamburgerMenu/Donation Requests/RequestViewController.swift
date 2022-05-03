@@ -13,13 +13,17 @@ class RequestViewController: UIViewController{
     @IBOutlet weak var tableView: UITableView!
     let navBar = NavigationBar()
     var segmentSender = 0
-   
+    var p_ssn: String!
     var arrOfQuickRequest: [QuickRequestData] = [QuickRequestData]()
+    var arrOfPrivateQuickRequest: [QuickRequestData] = [QuickRequestData]()
+    
     //MARK: - --------------------------------------------------------
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setDataOfUser()
         self.getAllQuickRequests()
+        self.privateQuickRequests()
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -27,6 +31,16 @@ class RequestViewController: UIViewController{
         setUpDesign()
     }
     //MARK: - Private functions
+    private func setUpDesign(){
+        self.tabBarController?.tabBar.isHidden = false
+        navBar.setNavBar(myView: self, title: "Donation Requests".Localized(), viewController: view, navBarColor: UIColor.navBarColor, navBarTintColor: UIColor.navBarTintColor, forgroundTitle: UIColor.forgroundTitle, bacgroundView: UIColor.backgroundView)
+        segmentedControl.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Almarai-Bold", size: 15)!], for: .normal)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UINib(nibName: "RequestsTableViewCell", bundle: nil), forCellReuseIdentifier: "Requestscell")
+        tableView.register(UINib(nibName: "privateRequestCell", bundle: nil), forCellReuseIdentifier: "privateRequestCell")
+    }
+    
     private func getAllQuickRequests(){
         DispatchQueue.main.async {
             
@@ -40,14 +54,30 @@ class RequestViewController: UIViewController{
             }
         }
     }
-    private func setUpDesign(){
-        self.tabBarController?.tabBar.isHidden = false
-        navBar.setNavBar(myView: self, title: "Donation Requests".Localized(), viewController: view, navBarColor: UIColor.navBarColor, navBarTintColor: UIColor.navBarTintColor, forgroundTitle: UIColor.forgroundTitle, bacgroundView: UIColor.backgroundView)
-        segmentedControl.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Almarai-Bold", size: 15)!], for: .normal)
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(UINib(nibName: "RequestsTableViewCell", bundle: nil), forCellReuseIdentifier: "Requestscell")
-        tableView.register(UINib(nibName: "privateRequestCell", bundle: nil), forCellReuseIdentifier: "privateRequestCell")
+    private func privateQuickRequests(){
+        ApiService.sharedService.allQuickRequests { error, request in
+            if let error = error {
+                print(error.localizedDescription)
+            }else if let request = request {
+                self.arrOfQuickRequest = request
+                print(self.arrOfQuickRequest)
+                for request in self.arrOfQuickRequest {
+                    if  self.p_ssn == request.p_ssn{
+                        self.arrOfPrivateQuickRequest.append(request)
+                        print("private arr :\(self.arrOfPrivateQuickRequest)")
+                    }
+                    self.tableView.reloadData()
+                }
+            }
+        }
+    }
+    private func setDataOfUser(){
+        let def = UserDefaults.standard
+        if let userInfo = def.object(forKey: "userInfo")as? [String]{
+            self.p_ssn = userInfo[0]
+            print(self.p_ssn!)
+            
+        }
     }
     private func goTODiffDetailsCell(indexPath: IndexPath){
         if segmentSender == 0{
@@ -55,11 +85,13 @@ class RequestViewController: UIViewController{
             controller.arrOfQuickRequestDetail = arrOfQuickRequest[indexPath.row]
             self.present(controller, animated: true, completion: nil)
         }else{
-//            let controller = DetailsCellViewController.instantiate()
-//            controller.arrOfQuickRequestDetail = arrOfQuickRequest[indexPath.row]
-//            self.present(controller, animated: true, completion: nil)
+            //            let controller = DetailsCellViewController.instantiate()
+            //            controller.arrOfQuickRequestDetail = arrOfQuickRequest[indexPath.row]
+            //            self.present(controller, animated: true, completion: nil)
         }
+        
     }
+    
     //MARK: - Action
     @IBAction func segmentedControlTapped(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0{
@@ -80,7 +112,7 @@ extension RequestViewController: UITableViewDelegate, UITableViewDataSource {
         case 0:
             return arrOfQuickRequest.count
         case 1:
-            return 10
+            return arrOfPrivateQuickRequest.count
         default:
             break
         }
@@ -96,9 +128,10 @@ extension RequestViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "privateRequestCell")as! privateRequestCell
-//            let time = arrOfQuickRequest[indexPath.row].time
-//            let subTime = time.prefix(16)
-//            cell.configure(name: "\(arrOfQuickRequest[indexPath.row].first_name) \(arrOfQuickRequest[indexPath.row].last_name)", bloodType: arrOfQuickRequest[indexPath.row].blood_type, address: "(\(arrOfQuickRequest[indexPath.row].hospital_name))- \(arrOfQuickRequest[indexPath.row].city_of_hospital)- \(arrOfQuickRequest[indexPath.row].governorate_name)", time: String(subTime), description: arrOfQuickRequest[indexPath.row].message, donorImage: arrOfQuickRequest[indexPath.row].patient_image, volunteers: arrOfQuickRequest[indexPath.row].blood_bags_number, numberOfBags: arrOfQuickRequest[indexPath.row].blood_bags_number)
+            let time = arrOfQuickRequest[indexPath.row].time
+            let subTime = time.prefix(16)
+            cell.configure(name: "\(arrOfPrivateQuickRequest[indexPath.row].first_name) \(arrOfPrivateQuickRequest[indexPath.row].last_name)", bloodType: arrOfPrivateQuickRequest[indexPath.row].blood_type, address: "(\(arrOfPrivateQuickRequest[indexPath.row].hospital_name))- \(arrOfPrivateQuickRequest[indexPath.row].city_of_hospital)- \(arrOfPrivateQuickRequest[indexPath.row].governorate_name)", time: String(subTime), description: arrOfPrivateQuickRequest[indexPath.row].message, donorImage: arrOfPrivateQuickRequest[indexPath.row].patient_image, volunteers: arrOfPrivateQuickRequest[indexPath.row].blood_bags_number, numberOfBags: arrOfPrivateQuickRequest[indexPath.row].blood_bags_number)
+            
             return cell
         default:
             break

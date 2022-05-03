@@ -100,7 +100,7 @@ class AppBloodRequestViewController: UIViewController{
     var p_ssn: String!
     //MARK: - vars
     var myCurrentPage = 0
-    var numOfBagsResult = ""
+    var numOfBagsResult: String!
     let arrOfBags = Arrays.arrOfBags
     
     let navBar = NavigationBar()
@@ -490,7 +490,7 @@ class AppBloodRequestViewController: UIViewController{
     }
     //notes
     @IBAction func finishNotesTapped(_ sender: UIButton) {
-        if let noteResult = notesTextView.text , !noteResult.isEmpty{
+        if let noteResult = notesTextView.text , !noteResult.isEmpty,let requestType = requestTypeTextField.text , !requestType.isEmpty , let donateReason = self.donateReasonTextField.text , !donateReason.isEmpty, let bloodType = self.bloodTypeTextField.text , !bloodType.isEmpty , let numOfBags = self.numOfBagsResult , !numOfBags.isEmpty, let gov = self.governrateTextField.text , !gov.isEmpty , let city = self.cityTextField.text , !city.isEmpty , let hospital = self.hospitalTextField.text , !hospital.isEmpty {
             DispatchQueue.main.asyncAfter(deadline: .now()+1) {
                 self.sendQuickRequest()
                 print("\(self.rowofBlood) - \(self.rowOfHospital) - \(self.rowofRequestType) - \(self.rowOfDonateReason) - \(noteResult)")

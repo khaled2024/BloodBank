@@ -202,6 +202,7 @@ class RegisterViewController: UIViewController {
     @objc func handleDatePicker(sender: UIDatePicker) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.locale = Locale(identifier: "en")
         birthDayTextField.text = dateFormatter.string(from: sender.date)
         print(dateFormatter.string(from: sender.date))
     }
@@ -368,7 +369,7 @@ extension RegisterViewController: UIPickerViewDelegate,UIPickerViewDataSource{
         case 3:
             return finalCities.count
         case 4:
-            return Arrays.arrayOfGender.count
+            return Arrays.arrOfGender.count
         default:
             return 0
         }
@@ -389,7 +390,7 @@ extension RegisterViewController: UIPickerViewDelegate,UIPickerViewDataSource{
             self.rowOfCity = arrOfCity[row].id
             print(self.rowOfCity)
         case 4:
-            genderTextField.text = Arrays.arrayOfGender[row]
+            genderTextField.text = Arrays.arrOfGender[row]
         default:
             return
         }
@@ -404,7 +405,7 @@ extension RegisterViewController: UIPickerViewDelegate,UIPickerViewDataSource{
             return self.finalCities[row]
             
         case 4:
-            return Arrays.arrayOfGender[row]
+            return Arrays.arrOfGender[row]
         default:
             return ""
         }

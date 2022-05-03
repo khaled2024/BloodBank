@@ -39,6 +39,7 @@ class DetailsCellViewController: UIViewController, UISheetPresentationController
     var myPatient: Patient!
     let customView = CustomView()
     let def = UserDefaults.standard
+    
     var arrOfQuickRequestDetail: QuickRequestData!
     
     let comment = [Comment(title: "عمرو", subTitle: "i can help you in this blood request send me all details i can help you in this blood request send me all details i can help you in this blood request send me all details"),Comment(title: "خالد", subTitle: "i can help you in this blood request send me all details"),Comment(title: "Amr", subTitle: "i can help you in this blood request send me all details i can help you in this blood request send me all details"),Comment(title: "khaled", subTitle: "i can help you in this blood request send me all details"),Comment(title: "Amr", subTitle: "i can help you in this blood request send me all details")]
@@ -86,6 +87,7 @@ class DetailsCellViewController: UIViewController, UISheetPresentationController
             .large()
         ]
     }
+    // data
     private func setUpData(){
         patientDetailLbl.text = "\(arrOfQuickRequestDetail.first_name) \(arrOfQuickRequestDetail.last_name)"
         bloodTypeDetailLbl.text = arrOfQuickRequestDetail.blood_type
@@ -96,6 +98,9 @@ class DetailsCellViewController: UIViewController, UISheetPresentationController
         descriptionDetailLbl.text = arrOfQuickRequestDetail.message
         donorImageDetail.load(urlString: arrOfQuickRequestDetail.patient_image)
     }
+    
+    
+    //designs
     private func shareContent(){
         let activityController: UIActivityViewController
         let defaultText = "Hello \(patientDetailLbl.text!),I see you need a \(bloodTypeDetailLbl.text!) group, i Can help you Call me."

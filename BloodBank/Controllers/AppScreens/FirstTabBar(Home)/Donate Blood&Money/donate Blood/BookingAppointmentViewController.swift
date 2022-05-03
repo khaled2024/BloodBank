@@ -20,8 +20,12 @@ class BookingAppointmentViewController: UIViewController {
     var coordinatePin: CLLocationCoordinate2D?
     var directionArray: [MKDirections] = []
     var arrOfPlaces: [placesData] = [placesData]()
-   let reachability = try! Reachability()
-  
+    let reachability = try! Reachability()
+    var selectedAnnotation: MKPointAnnotation!
+    var cityId: String = ""
+    var hospitalId: String = ""
+    var govName: String = ""
+    var cityName: String = ""
     //MARK: - LifeCycle
     override func viewDidLoad(){
         super.viewDidLoad()
@@ -54,7 +58,8 @@ class BookingAppointmentViewController: UIViewController {
                 for place in self.arrOfPlaces {
                     let annotaion = MKPointAnnotation()
                     annotaion.title = "\(place.governorate_name) - \(place.city_name) - \(place.place_name) - Manager: \(place.place_manager)."
-                    annotaion.subtitle = "open at \(place.open_at) & close at \(place.close_at) & the holiday is \(place.holiday)."
+                    annotaion.subtitle = "open at \(place.open_at) & close at \(place.close_at) & the holiday: \(place.holiday)."
+                    annotaion.accessibilityUserInputLabels = [place.city_id,place.id,place.governorate_name,place.city_name]
                     annotaion.coordinate = CLLocationCoordinate2D(latitude: Double(place.lat)!, longitude: Double(place.lng)!)
                     self.bookingMapView.addAnnotation(annotaion)
                 }
@@ -154,6 +159,10 @@ class BookingAppointmentViewController: UIViewController {
     @IBAction func pickDateTimeBtnTapped(_ sender: UIButton) {
         let pickDateVC = PickDateTimeViewController.instantiate()
         pickDateVC.HospitalName = self.bankNameLabel.text ?? ""
+        pickDateVC.userCityId = self.cityId
+        pickDateVC.userHospitalId = self.hospitalId
+        pickDateVC.userGovName = self.govName
+        pickDateVC.userCityName = self.cityName
         navigationController?.pushViewController(pickDateVC, animated: true)
     }
     @IBAction func getDirectionsBtnTapped(_ sender: UIButton) {
@@ -197,7 +206,12 @@ extension BookingAppointmentViewController: MKMapViewDelegate{
         bankNameLabel.text =  view.annotation?.title!
         bankAddressLabel.text = view.annotation?.subtitle!
         print("\(bankNameLabel.text!)")
-        
+        self.selectedAnnotation = view.annotation as? MKPointAnnotation
+        self.cityId = self.selectedAnnotation.accessibilityUserInputLabels[0]
+        self.hospitalId = self.selectedAnnotation.accessibilityUserInputLabels[1]
+        self.govName = self.selectedAnnotation.accessibilityUserInputLabels[2]
+        self.cityName = self.selectedAnnotation.accessibilityUserInputLabels[3]
+        print("city id: \(self.cityId) - hospital id:\(self.hospitalId) - govName: \(self.govName) - cityName: \(self.cityName)")
         coordinatePin = view.annotation?.coordinate
     }
 }

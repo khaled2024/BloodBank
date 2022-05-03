@@ -391,8 +391,26 @@ class ApiService{
             }
         }
     }
+    //all order vaccines
+    func allOrderVaccines(completion: @escaping (_ error: Error? , _ orderVaccine: [OrderVaccineData]?) -> Void){
+        let url = "\(URLS.order_vaccine)/all"
+        AF.request("\(url)", method: .get, encoding: URLEncoding.default , headers: nil).response {
+            response in
+            if let error = response.error {
+                completion(error , nil)
+            }
+            if let data = response.data {
+                do{
+                    let orderVaccine = try JSONDecoder().decode(OrderVaccine.self, from: data).data
+                    completion(nil, orderVaccine)
+                } catch let error {
+                    completion(error , nil)
+                }
+            }
+        }
+    }
     //MARK: - quickRequests
-    //all quick vaccines
+    //all quick request
     func allQuickRequests(completion: @escaping (_ error: Error? , _ request: [QuickRequestData]?) -> Void){
         AF.request("\(URLS.All_quick_Requests)/all", method: .get, encoding: URLEncoding.default , headers: nil).response {
             response in
@@ -409,7 +427,6 @@ class ApiService{
             }
         }
     }
-    //MARK: - add quick request blood
     // add order vaccine
     func sendQuickBloodRequest(p_ssn: String , message:String,donateReason: String,bloodType: String,requestType: String,bloodBagNum:String , placeId: String){
         guard let url = URL(string: "\(URLS.quick_Request)/add")else{return}
@@ -439,5 +456,30 @@ class ApiService{
         task.resume()
     }
     
+//MARK: - blood_Donation
+    //add blood donation
+    func addBloodDonation(p_ssn: String , city_id:String,donate_place_id: String,time: String){
+        guard let url = URL(string: "\(URLS.blood_Donation)/add")else{return}
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let body : [String:AnyHashable] = [
+            "p_ssn": p_ssn,
+            "city_id": city_id,
+            "donate_place_id": donate_place_id,
+            "time": time
+        ]
+        urlRequest.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
+        let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+            guard let data = data, error == nil else {return}
+            do{
+                let response = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
+                print("success : \(response)")
+            }catch{
+                print(error)
+            }
+        }
+        task.resume()
+    }
 }
 

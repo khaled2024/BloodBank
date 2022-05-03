@@ -26,6 +26,7 @@ struct URLS{
     static let All_quick_Requests = "https://blood-bank.life/api/api/v1/all_quick_requests_info/\(myCode)"
     static let request_Blood_Type = "https://blood-bank.life/api/api/v1/request_blood_type/\(myCode)"
     static let donate_Reason = "https://blood-bank.life/api/api/v1/donate_reasons/\(myCode)"
+    static let blood_Donation = "https://blood-bank.life/api/api/v1/blood_donation/\(myCode)"
     
 }
 struct Identifier{
@@ -49,8 +50,8 @@ struct Arrays{
     static let dicOfBloodType: [String:String] = ["A+":"1","A-":"2","B+":"3","B-":"4","AB+":"5","AB-":"6","O+":"7","O-":"8","OH+":"9","Another":"10"]
     static let arrayOfGover = ["cairo","aswan","mnofia","gharbia"]
     static let arrayOfCities = ["tanta","zakazek","sheben","elsanta"]
-    static let arrayOfGender = ["male","female"]
-    static let dicOfGender = ["male":"1","female":"2"]
+    static let arrOfGender = ["Male","Female"]
+    static let dicOfGender = ["Male":"1","Female":"2"]
     
     static let arrayOfTypesRequests = ["الصفائح","ABبلازما","Red Double cell","دم الحبل السري","لااعرف"]
     static let arrayReasonRequest = ["accident","surgery","prejnent","canser","زرع اعضاء","الثلاسيميا","الهيموجلوبين"]

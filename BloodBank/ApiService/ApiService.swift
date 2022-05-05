@@ -330,6 +330,56 @@ class ApiService{
         }
         task.resume()
     }
+    //delete story
+    func deleteStoryData(id: String){
+        guard let url = URL(string: "\(URLS.addStory)/delete")else{return}
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "DELETE"
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let body : [String:AnyHashable] = [
+            "id": id
+        ]
+        urlRequest.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
+        let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+            guard let data = data, error == nil else {
+                return
+            }
+            do {
+                let response = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
+                print("success : \(response)")
+            } catch  {
+                print(error)
+            }
+        }
+        task.resume()
+    }
+    //updateStory
+    func updateData(id: String , content: String){
+        guard let url = URL(string: "\(URLS.addStory)/update")else{return}
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "PUT"
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let body : [String:AnyHashable] = [
+            "id": id,
+               "data":[
+                "content": content,
+               ]
+        ]
+        urlRequest.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
+        let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+            guard let data = data, error == nil else {
+                return
+            }
+            do {
+                let response = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
+                print("success : \(response)")
+            } catch  {
+                print(error)
+            }
+        }
+        task.resume()
+    }
+
     //MARK: - Vaccine All
     func getAllVaccines(completion: @escaping (_ error: Error? , _ vaccine: [VaccineData]?) -> Void){
         let url = "\(URLS.vaccineInfo)/all"
@@ -480,6 +530,23 @@ class ApiService{
             }
         }
         task.resume()
+    }
+    //MARK: - Last donate
+    func myLastDonate(completion: @escaping (_ error: Error? , _ lastDonate: [LastDonateData]?) -> Void){
+        AF.request("\(URLS.last_Donate)/all", method: .get, encoding: URLEncoding.default , headers: nil).response {
+            response in
+            if let error = response.error {
+                completion(error , nil)
+            }
+            if let data = response.data {
+                do{
+                    let lastDonate = try JSONDecoder().decode(LastDonate.self, from: data).data
+                    completion(nil,lastDonate)
+                } catch let error {
+                    completion(error , nil)
+                }
+            }
+        }
     }
 }
 

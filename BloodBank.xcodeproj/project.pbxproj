@@ -33,6 +33,7 @@
 		EA2A523827EA429300D92ED3 /* CoronaStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2A523727EA429300D92ED3 /* CoronaStatsViewController.swift */; };
 		EA2AF7ED28102C0400ECCB55 /* VolunteersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2AF7EB28102C0400ECCB55 /* VolunteersTableViewCell.swift */; };
 		EA2AF7EE28102C0400ECCB55 /* VolunteersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA2AF7EC28102C0400ECCB55 /* VolunteersTableViewCell.xib */; };
+		EA32DC6D282215C800856119 /* LastDonate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA32DC6C282215C800856119 /* LastDonate.swift */; };
 		EA34861927FB4F72004A6667 /* VaccineRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA34861827FB4F71004A6667 /* VaccineRequestViewController.swift */; };
 		EA4278A227B01F9C002D444A /* AppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4278A127B01F9C002D444A /* AppointmentViewController.swift */; };
 		EA4278A427B025A7002D444A /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4278A327B025A7002D444A /* RequestViewController.swift */; };
@@ -158,6 +159,7 @@
 		EA2A523727EA429300D92ED3 /* CoronaStatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronaStatsViewController.swift; sourceTree = "<group>"; };
 		EA2AF7EB28102C0400ECCB55 /* VolunteersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteersTableViewCell.swift; sourceTree = "<group>"; };
 		EA2AF7EC28102C0400ECCB55 /* VolunteersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VolunteersTableViewCell.xib; sourceTree = "<group>"; };
+		EA32DC6C282215C800856119 /* LastDonate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastDonate.swift; sourceTree = "<group>"; };
 		EA34861827FB4F71004A6667 /* VaccineRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineRequestViewController.swift; sourceTree = "<group>"; };
 		EA4278A127B01F9C002D444A /* AppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentViewController.swift; sourceTree = "<group>"; };
 		EA4278A327B025A7002D444A /* RequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
@@ -665,6 +667,7 @@
 				EA488859281FD15800A2700A /* RequestBloodType.swift */,
 				EA48885B281FD51700A2700A /* DonateReason.swift */,
 				EA5972612821C36D0053DFD5 /* OrderVaccine.swift */,
+				EA32DC6C282215C800856119 /* LastDonate.swift */,
 			);
 			path = ApiModels;
 			sourceTree = "<group>";
@@ -972,6 +975,7 @@
 				EABDBFCC276CE6A900738EA3 /* LoginViewController.swift in Sources */,
 				EAB1C98F27A54DEE006BB209 /* TabBarController.swift in Sources */,
 				EAC252E9276A37BC0033F96F /* OnboardingCollectionViewCell.swift in Sources */,
+				EA32DC6D282215C800856119 /* LastDonate.swift in Sources */,
 				EA4402F127EA80200034C6AF /* CustomView.swift in Sources */,
 				EA78BC4428183EF20078DC96 /* Governorate.swift in Sources */,
 				EACC013E27A43A5A00FFB92B /* UserCustomTF.swift in Sources */,

@@ -81,6 +81,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="lastDonateView" destination="Zjn-GD-kcf" id="Z17-dw-v9L"/>
+                <outlet property="timeOfLastDonationLbl" destination="hPz-PY-jts" id="m6u-DM-d4S"/>
                 <outlet property="vaccineImage" destination="wmS-ZG-dbv" id="xhp-lx-H5w"/>
                 <outlet property="voltImage" destination="A7i-HK-cvL" id="nPO-Tu-O9t"/>
             </connections>
@@ -91,7 +92,7 @@
         <image name="historyVaccine1" width="108" height="82"/>
         <image name="historyVaccine2" width="70" height="78"/>
         <namedColor name="viewbgColor">
-            <color red="0.98039215690000003" green="0.97647058819999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.98000001907348633" green="0.97600001096725464" blue="0.9649999737739563" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

@@ -20,12 +20,14 @@ class HistoryMainViewController: UIViewController {
     var placeId: String = ""
     var vaccineName: String = ""
     var placeName: String = ""
+    var timeOfLastDonate: String = ""
     //quick request
     var arrOfQuickRequest: [QuickRequestData] = [QuickRequestData]()
     var arrOfPrivateQuickRequest: [QuickRequestData] = [QuickRequestData]()
     //vaccine
     var arrOfVaccine: [OrderVaccineData] = [OrderVaccineData]()
     var arrOfPrivateVaccine: [OrderVaccineData] = [OrderVaccineData]()
+    var arrOfPrivateDonations: [LastDonateData] = [LastDonateData]()
     
     let def = UserDefaults.standard
     var patient = [Patient(name: "خالد", bloodType: "AB", address: "معمل النور / المنشاه الكبري / السنطه/ الغربيه", time: "خالد", description: "اخي بحاجه الي خمسه اكياس دم ف حادثه سياره وحالته خطيره جدا ارجو المساعده ف اسرع وقت ف معمل النور / المنشاه الكبري / السنطه / الغربيهي خمسه اكياس دم ف حادثه سياره وحالته خطيره جدا ارجو المساعده ف اسرع وقت ف معمل النور / المنشاه الكبري / السنطه / الغربيه  خمسه اكياس دم ف حادثه سياره وحالته خطيره جدا ارجو المساعده ف اسرع وقت ف معمل ا خمسه اكياس دم ف حادثه سياره وحالته خطي خمسه اكياس دم ف حادثه سياره وحالته خطيره جدا ارجو المساعده ف اسرع وقت ف معمل النور / المنشاه الكبري / السنطه / الغربيه  خمسه اكياس دم ف حادثه سياره وحالته خطيره جدا ارجو المساعده ف اسرع وقت ف معمل ا خمسه اكياس دم ف حادثه سياره وحالته خط ",donorImage: "https://i.pinimg.com/originals/0c/5f/12/0c5f12f37fb6bc00f4d468b5d69e9932.jpg",volunteer: "2") ,Patient(name: "خالد حسين احمد خليفه", bloodType: "B-", address:"معمل النور / المنشاه الكبري / السنطه/ الغربيه", time: "الخامس من يناير عام ٢٠٢٢", description: "اخي بحاجه الي خمسه اكياس دم ف حادثه سياره وحالته خطيره جدا ارجو المساعده ف اسرع وقت ف معمل النور / المنشاه الكبري / السنطه / الغربيه خالد",donorImage: "https://i.pinimg.com/originals/57/05/e8/5705e8133fc15fa61e7c5a9951470601.jpg",volunteer: "0"),Patient(name: "خالد", bloodType: "AB-", address: "خالد", time: "خالد", description: "خالد",donorImage: "https://i.pinimg.com/originals/2c/00/c9/2c00c914fb375017343a072aea3be073.jpg",volunteer: "4"),Patient(name: "عمرو", bloodType: "OH-", address: "معمل النور / المنشاه الكبري / السنطه/ الغربيه خالد", time: "خالد", description: "خالد",donorImage: "https://i.pinimg.com/originals/0c/5f/12/0c5f12f37fb6bc00f4d468b5d69e9932.jpg",volunteer: "5"),Patient(name: "خالد حسين احمد حسين خليفه", bloodType: "B-", address: "خالد معمل النور / المنشاه الكبري / السنطه/ الغربيه ", time: "خالد", description: "خالد",donorImage: "https://i.pinimg.com/originals/57/05/e8/5705e8133fc15fa61e7c5a9951470601.jpg",volunteer: "1"),Patient(name: "خالد", bloodType: "AB-", address: "خالد", time: "خالد", description: " اخي بحاجه الي خمسه اكياس دم ف حادثه سياره وحالته خطيره جدا ارجو المساعده ف اسرع وقت ف معمل النور / المنشاه الكبري / السنطه / الغربيه خالد",donorImage: "https://i.pinimg.com/originals/0c/5f/12/0c5f12f37fb6bc00f4d468b5d69e9932.jpg",volunteer: "5"),Patient(name: "خالد", bloodType: "OH-", address: "خالد معمل النور / المنشاه الكبري / السنطه/ الغربيه", time: "خالد", description: "خالد",donorImage: "https://i.pinimg.com/originals/2c/00/c9/2c00c914fb375017343a072aea3be073.jpg",volunteer: "6")]
@@ -33,13 +35,18 @@ class HistoryMainViewController: UIViewController {
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         registerNibCells()
         if let user = def.object(forKey: "userInfo")as? [String]{
             self.p_ssn = user[0]
             print(self.p_ssn ?? "")
         }
         myQuickRequests()
-
+        myVaccine()
+        getVaccineInfo()
+        getPlaceNameOfOrderVaccine()
+        getMyLastDonate()
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -64,67 +71,98 @@ class HistoryMainViewController: UIViewController {
             print(segmentIndex)
             self.segmentSender = segmentIndex
             HistorytableView.reloadData()
+            
         case 1 :
-            print(segmentIndex)
-            self.segmentSender = segmentIndex
-            HistorytableView.reloadData()
+            //            myQuickRequests()
+            if self.arrOfPrivateQuickRequest.count == 0 {
+                self.HistorytableView.isHidden = true
+                self.noDataImageView.isHidden = false
+            }else{
+                self.HistorytableView.isHidden = false
+                self.noDataImageView.isHidden = true
+                print(segmentIndex)
+                self.segmentSender = segmentIndex
+                HistorytableView.reloadData()
+            }
+            
         case 2 :
-            myVaccine()
-            getVaccineInfo()
-            getPlaceNameOfOrderVaccine()
-            print(segmentIndex)
-            self.segmentSender = segmentIndex
-            HistorytableView.reloadData()
+            if self.arrOfPrivateVaccine.count == 0 {
+                self.HistorytableView.isHidden = true
+                self.noDataImageView.isHidden = false
+            }else{
+                self.HistorytableView.isHidden = false
+                self.noDataImageView.isHidden = true
+                print(segmentIndex)
+                self.segmentSender = segmentIndex
+                HistorytableView.reloadData()
+            }
+            
         case 3 :
             print(segmentIndex)
             self.segmentSender = segmentIndex
             HistorytableView.reloadData()
         case 4 :
-            print(segmentIndex)
-            self.segmentSender = segmentIndex
-            HistorytableView.reloadData()
+            
+            if self.arrOfPrivateDonations.count == 0 {
+                self.HistorytableView.isHidden = true
+                self.noDataImageView.isHidden = false
+            }else{
+                self.HistorytableView.isHidden = false
+                self.noDataImageView.isHidden = true
+                print(segmentIndex)
+                self.segmentSender = segmentIndex
+                HistorytableView.reloadData()
+            }
+            
         default:
             break
         }
     }
     // put data from api
+    // my quick request
     private func myQuickRequests(){
-        ApiService.sharedService.allQuickRequests { error, request in
-            if let error = error {
-                print(error.localizedDescription)
-            }else if let request = request {
-                self.arrOfQuickRequest = request
-                print(self.arrOfQuickRequest)
-                for request in self.arrOfQuickRequest {
-                    if  self.p_ssn == request.p_ssn{
-                        self.arrOfPrivateQuickRequest.append(request)
-                        print("my quick request arr:\(self.arrOfPrivateQuickRequest)")
+        DispatchQueue.main.async {
+            ApiService.sharedService.allQuickRequests { error, request in
+                if let error = error {
+                    print(error.localizedDescription)
+                }else if let request = request {
+                    self.arrOfQuickRequest = request
+                    print(self.arrOfQuickRequest)
+                    for request in self.arrOfQuickRequest {
+                        if  self.p_ssn == request.p_ssn{
+                            self.arrOfPrivateQuickRequest.append(request)
+                            print("my quick request arr:\(self.arrOfPrivateQuickRequest)")
+                        }else{
+                        }
+                        self.HistorytableView.reloadData()
                     }
-                    self.HistorytableView.reloadData()
                 }
             }
         }
+        
     }
+    // my vaccine order
     private func myVaccine(){
-        ApiService.sharedService.allOrderVaccines { error, orderVaccine in
-            if let error = error {
-                print(error.localizedDescription)
-            }else if let orderVaccine = orderVaccine {
-                self.arrOfVaccine = orderVaccine
-                print(self.arrOfVaccine)
-                for orderVaccine in self.arrOfVaccine {
-                    if  self.p_ssn == orderVaccine.p_ssn{
-                        self.arrOfPrivateVaccine.append(orderVaccine)
-                        print("my vaccine arr:\(self.arrOfPrivateVaccine)")
-                        self.vaccineId = orderVaccine.vaccine_id
-                        self.placeId = orderVaccine.delivered_place
-                        print("\(self.vaccineId ),\( self.placeId)")
+        DispatchQueue.main.async {
+            ApiService.sharedService.allOrderVaccines { error, orderVaccine in
+                if let error = error {
+                    print(error.localizedDescription)
+                }else if let orderVaccine = orderVaccine {
+                    self.arrOfVaccine = orderVaccine
+                    print(self.arrOfVaccine)
+                    for orderVaccine in self.arrOfVaccine {
+                        if  "3009072355125" == orderVaccine.p_ssn{
+                            self.arrOfPrivateVaccine.append(orderVaccine)
+                            print("my vaccine arr:\(self.arrOfPrivateVaccine)")
+                            self.vaccineId = orderVaccine.vaccine_id
+                            self.placeId = orderVaccine.delivered_place
+                            print("\(self.vaccineId ),\( self.placeId)")
+                        }else{
+                            //                        self.showNormalAlert(title: "Sorry", message: "There are no vaccination requests :(")
+                        }
+                        self.HistorytableView.reloadData()
                     }
-                    self.HistorytableView.reloadData()
                 }
-            }else{
-                self.noDataImageView.isHidden = false
-                self.showNormalAlert(title: "Sorry", message: "There are no vaccination requests :(")
             }
         }
     }
@@ -160,26 +198,49 @@ class HistoryMainViewController: UIViewController {
             }
         }
     }
+    // my last donate
+    private func getMyLastDonate(){
+        DispatchQueue.main.async {
+            ApiService.sharedService.myLastDonate { error, lastDonate in
+                if let error = error {
+                    print(error.localizedDescription)
+                }else if let lastDonate = lastDonate {
+                    for lastDonate in lastDonate {
+                        if "3009072355125"  == lastDonate.p_ssn{
+                            self.arrOfPrivateDonations.append(lastDonate)
+                            self.timeOfLastDonate = lastDonate.time
+                            print(self.timeOfLastDonate)
+                        }else{
+                            //                        self.showNormalAlert(title: "Sorry", message: "You have never donated blood before :(")
+                        }
+                        self.HistorytableView.reloadData()
+                    }
+                }
+            }
+        }
+    }
     private func segmentControlSelection(indexPath: IndexPath)-> UITableViewCell{
         switch segmentSender {
         case 0:
-            if (indexPath.row == 0 || indexPath.row == 1){
+//            if (indexPath.row == 0 || indexPath.row == 1 || indexPath.row == 2){
                 let cell = HistorytableView.dequeueReusableCell(withIdentifier: "privateRequestCell")as! privateRequestCell
                 let time = arrOfPrivateQuickRequest[indexPath.row].time
                 let subTime = time.prefix(16)
                 cell.configure(name: "\(arrOfPrivateQuickRequest[indexPath.row].first_name) \(arrOfPrivateQuickRequest[indexPath.row].last_name)", bloodType: arrOfPrivateQuickRequest[indexPath.row].blood_type, address: "(\(arrOfPrivateQuickRequest[indexPath.row].hospital_name))- \(arrOfPrivateQuickRequest[indexPath.row].city_of_hospital)- \(arrOfPrivateQuickRequest[indexPath.row].governorate_name)", time: String(subTime), description: arrOfPrivateQuickRequest[indexPath.row].message, donorImage: arrOfPrivateQuickRequest[indexPath.row].patient_image, volunteers: arrOfPrivateQuickRequest[indexPath.row].blood_bags_number, numberOfBags: arrOfPrivateQuickRequest[indexPath.row].blood_bags_number)
                 return cell
                 
-            }else if (indexPath.row == 3 ){
-                let cell = HistorytableView.dequeueReusableCell(withIdentifier: "HistoryVaccineCell")as! HistoryVaccineCell
-                return cell
-            }else if (indexPath.row == 2){
-                let cell = HistorytableView.dequeueReusableCell(withIdentifier: "BloodOrderCell")as! BloodOrderCell
-                return cell
-            }else{
-                let cell = HistorytableView.dequeueReusableCell(withIdentifier: "LastDonateHistoryCell")as! LastDonateHistoryCell
-                return cell
-            }
+//            }else if (indexPath.row == 3 ){
+//                let cell = HistorytableView.dequeueReusableCell(withIdentifier: "HistoryVaccineCell")as! HistoryVaccineCell
+//                cell.configure(vaccineName: vaccineName, vaccineAmount: "\(arrOfPrivateVaccine[indexPath.row].amount) كيس دم", timeOrderVaccine: arrOfPrivateVaccine[indexPath.row].time, placeOfOrder: self.placeName)
+//                return cell
+//            }else if (indexPath.row == 4){
+//                let cell = HistorytableView.dequeueReusableCell(withIdentifier: "BloodOrderCell")as! BloodOrderCell
+//                return cell
+//            }else{
+//                let cell = HistorytableView.dequeueReusableCell(withIdentifier: "LastDonateHistoryCell")as! LastDonateHistoryCell
+//                cell.configure(timeOfLastDonation: self.timeOfLastDonate)
+//                return cell
+//            }
         case 1:
             let cell = HistorytableView.dequeueReusableCell(withIdentifier: "privateRequestCell")as! privateRequestCell
             let time = arrOfPrivateQuickRequest[indexPath.row].time
@@ -195,6 +256,7 @@ class HistoryMainViewController: UIViewController {
             return cell
         case 4:
             let cell = HistorytableView.dequeueReusableCell(withIdentifier: "LastDonateHistoryCell")as! LastDonateHistoryCell
+            cell.configure(timeOfLastDonation: self.timeOfLastDonate)
             return cell
         default:
             break
@@ -220,11 +282,17 @@ extension HistoryMainViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch segmentSender{
         case 0:
-            return self.arrOfPrivateQuickRequest.count  // ممكن اعمل مثلا البرايفت بلس اللقاحات بلس اخر تبرع وهكذا..     (...+...+...+...+...+...)
+            return self.arrOfPrivateQuickRequest.count
+//            + self.arrOfPrivateVaccine.count + self.arrOfPrivateDonations.count
+            // ممكن اعمل مثلا البرايفت بلس اللقاحات بلس اخر تبرع وهكذا..     (...+...+...+...+...+...)
         case 1:
             return self.arrOfPrivateQuickRequest.count
         case 2:
             return self.arrOfPrivateVaccine.count
+        case 3:
+            return 0
+        case 4:
+            return self.arrOfPrivateDonations.count
         default:
             return 0
         }

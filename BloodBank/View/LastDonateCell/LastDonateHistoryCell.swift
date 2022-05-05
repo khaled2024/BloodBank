@@ -8,6 +8,7 @@
 import UIKit
 
 class LastDonateHistoryCell: UITableViewCell {
+    @IBOutlet weak var timeOfLastDonationLbl: UILabel!
     @IBOutlet weak var voltImage: UIImageView!
     @IBOutlet weak var vaccineImage: UIImageView!
     @IBOutlet weak var lastDonateView: UIView!
@@ -23,6 +24,9 @@ class LastDonateHistoryCell: UITableViewCell {
         vaccineImage.layer.cornerRadius = 20.0
     }
 
+    func configure(timeOfLastDonation: String){
+        self.timeOfLastDonationLbl.text = timeOfLastDonation
+    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

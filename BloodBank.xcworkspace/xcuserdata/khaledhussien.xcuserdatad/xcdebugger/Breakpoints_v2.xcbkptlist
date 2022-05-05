@@ -7,48 +7,128 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2D6F867B-6AE3-44BF-8C1E-583F5F5B1875"
+            uuid = "8DF11411-5175-4C51-9C3C-A154D0380DB8"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BloodBank/Controllers/AppScreens/SecondScreen(History)/HistoryMainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "202"
+            endingLineNumber = "202"
+            landmarkName = "getMyLastDonate()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D6A31324-42C0-4A42-82DD-B948281830B3"
+            uuid = "E5D1F48D-5C4E-400D-812B-37FBC9CBC1E9"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BloodBank/Controllers/AppScreens/SecondScreen(History)/HistoryMainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
-            landmarkName = "myQuickRequests()"
+            startingLineNumber = "258"
+            endingLineNumber = "258"
+            landmarkName = "segmentControlSelection(indexPath:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "FE940848-D8D8-40A8-8B87-3E5CF307BAA2"
+            uuid = "56446ED8-E23B-4828-9D26-3CB718A528F5"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BloodBank/Controllers/AppScreens/SecondScreen(History)/HistoryMainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
-            landmarkName = "myQuickRequests()"
+            startingLineNumber = "259"
+            endingLineNumber = "259"
+            landmarkName = "segmentControlSelection(indexPath:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EACDFAAF-9F1B-43E7-B788-DBE356C88E84"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BloodBank/Controllers/AppScreens/SecondScreen(History)/HistoryMainViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "257"
+            endingLineNumber = "257"
+            landmarkName = "segmentControlSelection(indexPath:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9169E4B9-F378-4EE6-8942-97784BF8FDB6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BloodBank/Controllers/AppScreens/SecondScreen(History)/HistoryMainViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "227"
+            endingLineNumber = "227"
+            landmarkName = "segmentControlSelection(indexPath:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "85D99A0A-73F6-4C5C-AE37-8992D05B488D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BloodBank/Controllers/AppScreens/FirstTabBar(Home)/HamburgerMenu/YourStoryViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
+            landmarkName = "getPrivateStory()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E3208300-216E-42AD-BD16-F34447540918"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BloodBank/Controllers/AppScreens/FirstTabBar(Home)/HamburgerMenu/YourStoryViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
+            landmarkName = "getPrivateStory()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "71C3939E-43C9-466F-B386-B34F4B00B1CF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BloodBank/Controllers/AppScreens/FirstTabBar(Home)/HamburgerMenu/YourStoryViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "getPrivateStory()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

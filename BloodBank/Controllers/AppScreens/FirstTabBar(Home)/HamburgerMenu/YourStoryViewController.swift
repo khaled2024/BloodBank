@@ -9,9 +9,12 @@ import UIKit
 
 class YourStoryViewController: UIViewController {
     
+    @IBOutlet weak var updateTextViewContext: UITextView!
+    @IBOutlet weak var storySegmentControll: UISegmentedControl!
     @IBOutlet weak var storyDescription: UITextView!
     @IBOutlet var blurView: UIVisualEffectView!
     @IBOutlet var addStoryView: UIView!
+    @IBOutlet var updateStoryView: UIView!
     @IBOutlet weak var tableView: UITableView!
     let navBar = NavigationBar()
     let customView = CustomView()
@@ -19,12 +22,24 @@ class YourStoryViewController: UIViewController {
     var indexCell: IndexPath = []
     let refreshControll = UIRefreshControl()
     let def = UserDefaults.standard
-//    var user: [String] = [String]()
-    
+    var segmentSender = 0
+    var p_ssn = ""
+    var arrOfPrivateStory: [StoryData] = [StoryData]()
     var storiesArr:[StoryData] = [StoryData]()
+    var idOfStory = ""
+    //MARK: - AppCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if let user = def.object(forKey: "userInfo")as? [String]{
+            self.p_ssn = user[0]
+        }
+        //        if self.segmentSender == 0 {
+        //            self.getAllStory()
+        //        }else{
+        //            self.getPrivateStory()
+        //        }
+        self.getAllStory()
+        self.getPrivateStory()
         setUp()
         refreshControll.tintColor = .systemPink
         refreshControll.addTarget(self, action: #selector(reloadData), for: .valueChanged)
@@ -41,18 +56,14 @@ class YourStoryViewController: UIViewController {
     //MARK: - private functions
     @objc func reloadData(){
         self.getAllStory()
+        getPrivateStory()
         refreshControll.endRefreshing()
-        self.tableView.reloadData()
     }
     private func addNewStory(){
-        if let user = def.object(forKey: "userInfo")as? [String]{
-            print(user)
-            ApiService.sharedService.addStory(content: storyDescription.text, p_ssn: "\(user[0])")
-        }
+        ApiService.sharedService.addStory(content: storyDescription.text, p_ssn: self.p_ssn)
     }
-    
     private func setUp(){
-        getAllStory()
+        //     getAllStory()
         registerCell()
         setUpBlurandStoryView()
     }
@@ -72,6 +83,7 @@ class YourStoryViewController: UIViewController {
         blurView.bounds = self.view.bounds
         //set add story view 90% of width & 45% of height
         addStoryView.bounds = CGRect(x: 0, y: 0, width: self.view.bounds.width * 0.9, height: self.view.bounds.height * 0.45)
+        updateStoryView.bounds = CGRect(x: 0, y: 0, width: self.view.bounds.width * 0.9, height: self.view.bounds.height * 0.45)
     }
     private func setUpFloatingBtn(){
         floatingBtn.floatingBtn.frame = CGRect(x: view.frame.size.width - 80, y: view.frame.size.height - 150, width: 60, height: 60)
@@ -90,7 +102,9 @@ class YourStoryViewController: UIViewController {
     private func setUpDesign(){
         navBar.setNavBar(myView: self, title: "Your Story".Localized(), viewController: view, navBarColor: UIColor.navBarColor, navBarTintColor: UIColor.navBarTintColor, forgroundTitle: UIColor.forgroundTitle, bacgroundView: UIColor.backgroundView)
         view.addSubview(floatingBtn.floatingBtn)
+        storySegmentControll.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Almarai-Bold", size: 15)!], for: .normal)
         customView.customView(theView: self.addStoryView)
+        customView.customView(theView: self.updateStoryView)
         
     }
     // for blur & add story view
@@ -115,10 +129,54 @@ class YourStoryViewController: UIViewController {
             desireView.removeFromSuperview()
         }
     }
+    //get data of story:>
+    private func getPrivateStory(){
+        ApiService.sharedService.getStories { error, story in
+            self.arrOfPrivateStory = []
+            if let error = error {
+                print(error.localizedDescription)
+            }else if let story = story {
+                for story in story {
+                    if self.p_ssn == story.p_ssn{
+                        self.arrOfPrivateStory.append(story)
+                    }else{
+                        print("there is no private story for u")
+                    }
+                    print(self.arrOfPrivateStory)
+                    self.tableView.reloadData()
+                }
+            }
+        }
+    }
+    private func setUpSegment(){
+        let segmentIndex = self.storySegmentControll.selectedSegmentIndex
+        switch segmentIndex{
+        case 0:
+            print(segmentIndex)
+            self.segmentSender = segmentIndex
+            tableView.reloadData()
+        case 1:
+            print(segmentIndex)
+            self.segmentSender = segmentIndex
+            tableView.reloadData()
+        default:
+            break
+        }
+    }
+    private func deleteStory(){
+        ApiService.sharedService.deleteStoryData(id: self.idOfStory)
+    }
+    private func updateStory(){
+        ApiService.sharedService.updateData(id: self.idOfStory, content: self.updateTextViewContext.text)
+    }
     //MARK: - Action
+    @IBAction func segmentControllTapped(_ sender: UISegmentedControl) {
+        setUpSegment()
+    }
     @IBAction func closeViewBtnTapped(_ sender: UIButton) {
         self.animateOut(desireView: blurView)
         self.animateOut(desireView: addStoryView)
+        self.animateOut(desireView: updateStoryView)
         
     }
     @IBAction func createStoryBtnTapped(_ sender: UIButton) {
@@ -129,6 +187,13 @@ class YourStoryViewController: UIViewController {
             
         }
     }
+    @IBAction func updateStoryBtnTapped(_ sender: UIButton) {
+        tableView.beginUpdates()
+        self.updateStory()
+        tableView.endUpdates()
+        self.animateOut(desireView: updateStoryView)
+        self.animateOut(desireView: blurView)
+    }
     @IBAction func BlurScreenTapped(_ sender: UITapGestureRecognizer) {
         animateOut(desireView: blurView)
         animateOut(desireView: addStoryView)
@@ -137,15 +202,55 @@ class YourStoryViewController: UIViewController {
 //MARK: - extension UITableViewDelegate
 extension YourStoryViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return storiesArr.count
+        if self.segmentSender == 0{
+            return storiesArr.count
+        }else{
+            return arrOfPrivateStory.count
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if  self.segmentSender == 0{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "YourStoryTableViewCell", for: indexPath)as! YourStoryTableViewCell
+            cell.config(image: UIImage(named: "donorLogo")!, donorName: "\(storiesArr[indexPath.row].first_name) \(storiesArr[indexPath.row].last_name)", description: storiesArr[indexPath.row].content)
+            cell.selectionStyle = .none
+            return cell
+        }else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "YourStoryTableViewCell", for: indexPath)as! YourStoryTableViewCell
+            cell.config(image: UIImage(named: "donorLogo")!, donorName: "\(arrOfPrivateStory[indexPath.row].first_name) \(arrOfPrivateStory[indexPath.row].last_name)", description: arrOfPrivateStory[indexPath.row].content)
+            cell.selectionStyle = .none
+            return cell
+        }
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "YourStoryTableViewCell", for: indexPath)as! YourStoryTableViewCell
-        cell.config(image: UIImage(named: "donorLogo")!, donorName: "\(storiesArr[indexPath.row].first_name) \(storiesArr[indexPath.row].last_name)", description: storiesArr[indexPath.row].content)
-        cell.selectionStyle = .none
-        return cell
+    }
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        if self.segmentSender == 1 {
+            self.idOfStory = arrOfPrivateStory[indexPath.row].id
+            let deleteAction = UIContextualAction(style: .normal, title: "حذف") { action, view, completionHandeler in
+                self.deleteStory()
+                self.arrOfPrivateStory.remove(at: indexPath.row)
+                tableView.beginUpdates()
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+                tableView.endUpdates()
+                completionHandeler(true)
+            }
+            let updateAction = UIContextualAction(style: .normal, title: "تعديل") { action, view, completioHandeler in
+                self.animateIn(desireView: self.blurView)
+                self.animateIn(desireView: self.updateStoryView)
+                completioHandeler(true)
+            }
+            deleteAction.image = UIImage(systemName: "trash")
+            deleteAction.backgroundColor = .systemRed
+            updateAction.image = UIImage(systemName: "pencil")
+            updateAction.backgroundColor = .systemGray
+            return UISwipeActionsConfiguration(actions: [deleteAction,updateAction])
+            
+        }else{
+            print("cant swipe here")
+        }
+        return UISwipeActionsConfiguration()
+        
     }
     //for animations
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

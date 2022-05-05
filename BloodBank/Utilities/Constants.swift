@@ -27,6 +27,7 @@ struct URLS{
     static let request_Blood_Type = "https://blood-bank.life/api/api/v1/request_blood_type/\(myCode)"
     static let donate_Reason = "https://blood-bank.life/api/api/v1/donate_reasons/\(myCode)"
     static let blood_Donation = "https://blood-bank.life/api/api/v1/blood_donation/\(myCode)"
+    static let last_Donate = "https://blood-bank.life/api/api/v1/last_donate/\(myCode)"
     
 }
 struct Identifier{

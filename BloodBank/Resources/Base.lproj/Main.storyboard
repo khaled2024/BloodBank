@@ -209,7 +209,6 @@
                                     <constraint firstAttribute="height" constant="35" id="iHJ-4A-HYJ"/>
                                 </constraints>
                                 <segments>
-                                    <segment title="الكل"/>
                                     <segment title="طلبات التبرع"/>
                                     <segment title="طلب اللقاح"/>
                                     <segment title="طلب الدم"/>
@@ -534,7 +533,7 @@
                                                 <color key="textColor" red="0.84705877299999999" green="0.3058823645" blue="0.3803921938" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" placeholder="الرقم السري" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jQD-UV-62h" customClass="myCustomTF" customModule="BloodBank" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ادخل الرقم السري الجديد" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jQD-UV-62h" customClass="myCustomTF" customModule="BloodBank" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="993" width="374" height="40"/>
                                                 <color key="textColor" name="MainLblColor"/>
                                                 <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="18"/>
@@ -4288,7 +4287,7 @@
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="400 جنيه" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IPS-vH-HV0">
                                 <rect key="frame" x="10" y="485.5" width="394" height="45"/>
-                                <color key="backgroundColor" red="0.91764706370000004" green="0.92549026010000002" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" name="TextFieldColor"/>
                                 <color key="textColor" name="MainLblColor"/>
                                 <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -4311,7 +4310,7 @@
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="100 جنيه" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RmU-Ym-B3h">
                                 <rect key="frame" x="10" y="389.5" width="394" height="45"/>
-                                <color key="backgroundColor" red="0.91764706370000004" green="0.92549026010000002" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" name="TextFieldColor"/>
                                 <color key="textColor" name="MainLblColor"/>
                                 <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>

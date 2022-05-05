@@ -108,6 +108,8 @@
 		EAC252E7276A34BF0033F96F /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC252E6276A34BF0033F96F /* OnboardingSlide.swift */; };
 		EAC252E9276A37BC0033F96F /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC252E8276A37BC0033F96F /* OnboardingCollectionViewCell.swift */; };
 		EAC252EC276A3A4C0033F96F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC252EB276A3A4C0033F96F /* Constants.swift */; };
+		EAC3745A282417C4001F28C8 /* PurchaseOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC37459282417C4001F28C8 /* PurchaseOrder.swift */; };
+		EAC3747E282456F3001F28C8 /* Sha1Encryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC3747D282456F3001F28C8 /* Sha1Encryption.swift */; };
 		EAC6436228099A1A00109D8D /* VaccineDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC6436128099A1A00109D8D /* VaccineDetailsViewController.swift */; };
 		EACC012C27A41E4F00FFB92B /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC012B27A41E4F00FFB92B /* LoadingViewController.swift */; };
 		EACC012F27A4275700FFB92B /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC012E27A4275700FFB92B /* NavigationManager.swift */; };
@@ -239,6 +241,8 @@
 		EAC252E6276A34BF0033F96F /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		EAC252E8276A37BC0033F96F /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		EAC252EB276A3A4C0033F96F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EAC37459282417C4001F28C8 /* PurchaseOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseOrder.swift; sourceTree = "<group>"; };
+		EAC3747D282456F3001F28C8 /* Sha1Encryption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sha1Encryption.swift; sourceTree = "<group>"; };
 		EAC6436128099A1A00109D8D /* VaccineDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineDetailsViewController.swift; sourceTree = "<group>"; };
 		EACC012B27A41E4F00FFB92B /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		EACC012E27A4275700FFB92B /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
@@ -630,6 +634,7 @@
 				EACC013027A42C4D00FFB92B /* StorageManager.swift */,
 				EA86A9FA27CA31FB006EA939 /* UserDefultsManager.swift */,
 				EAD4B43F27F7CB7C00C6924C /* ValidationManager.swift */,
+				EAC3747D282456F3001F28C8 /* Sha1Encryption.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -668,6 +673,7 @@
 				EA48885B281FD51700A2700A /* DonateReason.swift */,
 				EA5972612821C36D0053DFD5 /* OrderVaccine.swift */,
 				EA32DC6C282215C800856119 /* LastDonate.swift */,
+				EAC37459282417C4001F28C8 /* PurchaseOrder.swift */,
 			);
 			path = ApiModels;
 			sourceTree = "<group>";
@@ -897,6 +903,7 @@
 				EA4278A427B025A7002D444A /* RequestViewController.swift in Sources */,
 				EA86A9FD27CAD4F4006EA939 /* HomeNCViewController.swift in Sources */,
 				EA4B13AC280F096900B52607 /* VolunteersViewController.swift in Sources */,
+				EAC3747E282456F3001F28C8 /* Sha1Encryption.swift in Sources */,
 				EAD669F327C63F50006221A2 /* DonorViewController.swift in Sources */,
 				EABDBFCE276CE6B500738EA3 /* HelpViewController.swift in Sources */,
 				EA75CF53281ADF870032FA14 /* QuickRequest.swift in Sources */,
@@ -910,6 +917,7 @@
 				EAD7D59227F5B62C003E81D3 /* UILable+Font.swift in Sources */,
 				EA1F21C6280C73C200DE49F9 /* BloodOrderCell.swift in Sources */,
 				EACC013127A42C4D00FFB92B /* StorageManager.swift in Sources */,
+				EAC3745A282417C4001F28C8 /* PurchaseOrder.swift in Sources */,
 				EAD4B44027F7CB7C00C6924C /* ValidationManager.swift in Sources */,
 				EACC012C27A41E4F00FFB92B /* LoadingViewController.swift in Sources */,
 				EACC013C27A43A5A00FFB92B /* UserGradientBackground.swift in Sources */,

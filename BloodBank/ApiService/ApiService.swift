@@ -548,5 +548,23 @@ class ApiService{
             }
         }
     }
+    
+    //MARK: - purchase_order
+    func myPurchaseOrder(completion: @escaping (_ error: Error? , _ purchaseOrder: [PurchaseOrderData]?) -> Void){
+        AF.request("\(URLS.purchaseOrder)/all", method: .get, encoding: URLEncoding.default , headers: nil).response {
+            response in
+            if let error = response.error {
+                completion(error , nil)
+            }
+            if let data = response.data {
+                do{
+                    let purchaseOrder = try JSONDecoder().decode(PurchaseOrder.self, from: data).data
+                    completion(nil,purchaseOrder)
+                } catch let error {
+                    completion(error , nil)
+                }
+            }
+        }
+    }
 }
 

@@ -8,7 +8,7 @@
 import Foundation
 extension String{
     var isValidName: Bool{
-        return self.count > 3
+        return self.count >= 3
     }
     var isValidEmail: Bool{
         let format = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
@@ -26,7 +26,7 @@ extension String{
         return predicate.evaluate(with: self)
     }
     var isValidPassword: Bool{
-        return self.count > 5
+        return self.count >= 5
     }
 }
 enum SignUpError: Error {

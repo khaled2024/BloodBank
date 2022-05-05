@@ -80,6 +80,7 @@ class DonorViewController: UIViewController {
         serUpPickerViews()
         createDatePicker()
         setDataOfUser()
+        passwordTF.placeholder = ""
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -164,11 +165,15 @@ class DonorViewController: UIViewController {
     private func updateUserData(){
         if let user = def.object(forKey: "userInfo")as? [String]{
             if let p_ssn = self.idTF.text,!p_ssn.isEmpty, let f_name = self.donorNameTF.text,!f_name.isEmpty , let l_name = self.familyNameTF.text,!l_name.isEmpty, let email = self.emailTF.text , !email.isEmpty , let mopilePhone = self.firstNumTF.text,!mopilePhone.isEmpty , let secondPhone = secondNumTF.text,!secondPhone.isEmpty , let password = self.passwordTF.text ,!password.isEmpty , let bloodType = self.bloodTypeTF.text , !bloodType.isEmpty , let birthDay = self.birthdateTF.text , !birthDay.isEmpty , let city = self.cityTF.text , !city.isEmpty , let gov = self.gavernrateTF.text , !gov.isEmpty , let password = self.passwordTF.text , !password.isEmpty , let gender = self.genderTF.text , !gender.isEmpty{
-                
-                ApiService.sharedService.updateUserData(p_ssn: user[0], p_first_name: f_name, p_last_name: l_name ,email: email,gov: gov,city: self.rowOfCity, mopilePhone:mopilePhone,secondPhone:secondPhone,birthDay:birthDay,bloodType:self.dicOfBloodType[self.bloodTypeTF.text!]!,password:password,gender:Arrays.dicOfGender[genderTF.text!]!)
-                UserDefaults.standard.set([p_ssn , f_name , l_name, email, gov, city,mopilePhone,secondPhone,birthDay,bloodType ,password, gender,self.rowOfCity], forKey: "userInfo")
-                
+                if password.count < 5{
+                    showNormalAlert(title: "Sorry", message: "Please enter a password consisting of five characters or more")
+                }
+                else{
+                    ApiService.sharedService.updateUserData(p_ssn: user[0], p_first_name: f_name, p_last_name: l_name ,email: email,gov: gov,city: self.rowOfCity, mopilePhone:mopilePhone,secondPhone:secondPhone,birthDay:birthDay,bloodType:self.dicOfBloodType[self.bloodTypeTF.text!]!,password:password.sha1(),gender:Arrays.dicOfGender[genderTF.text!]!)
+                    UserDefaults.standard.set([p_ssn , f_name , l_name, email, gov, city,mopilePhone,secondPhone,birthDay,bloodType ,password, gender,self.rowOfCity], forKey: "userInfo")
+                }
             }
+            self.passwordTF.text = ""
             
         }else{
             print("error")
@@ -187,7 +192,7 @@ class DonorViewController: UIViewController {
             self.secondNumTF.text = userInfo[7]
             self.birthdateTF.text = userInfo[8]
             self.bloodTypeTF.text = userInfo[9]
-            self.passwordTF.text = userInfo[10]
+            //            self.passwordTF.text = userInfo[10]
             self.genderTF.text = userInfo[11]
             self.cityId = userInfo[12]
             print("city id : \(userInfo[12])")
@@ -304,6 +309,7 @@ class DonorViewController: UIViewController {
             isEdited = true
             self.makeTFInteract(result: true)
             self.editBtn.image = UIImage(systemName: "checkmark")
+            passwordTF.placeholder = "ادخل الرقم السري الجديد"
             self.donorNameTF.becomeFirstResponder()
             self.passwordTF.isSecureTextEntry = false
         }else{

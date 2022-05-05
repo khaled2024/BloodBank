@@ -9,9 +9,12 @@ import UIKit
 
 class BloodOrderCell: UITableViewCell {
 
+    @IBOutlet weak var placeNameLbl: UILabel!
     @IBOutlet weak var voltImage: UIImageView!
     @IBOutlet weak var vaccineImage: UIImageView!
     @IBOutlet weak var bloodOrderView: UIView!
+    @IBOutlet weak var bloodTypeLbl: UILabel!
+    @IBOutlet weak var timeOfOrderLbl: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -27,6 +30,11 @@ class BloodOrderCell: UITableViewCell {
         voltImage.layer.cornerRadius = 20.0
         vaccineImage.layer.cornerRadius = 20.0
        
+    }
+    func configure(bloodType: String , time: String , placeName: String){
+        self.bloodTypeLbl.text = bloodType
+        self.timeOfOrderLbl.text = time
+        self.placeNameLbl.text = placeName
     }
     
 }

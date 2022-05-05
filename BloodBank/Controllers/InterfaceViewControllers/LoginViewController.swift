@@ -74,8 +74,8 @@ class LoginViewController: UIViewController {
                 self.arrOfUser = user
             }
             for user in self.arrOfUser {
-                if user.email == self.emailTextField.text && user.password == self.passwordTextField.text{
-                    userInfo = "User info: \(user.p_ssn) \( user.p_first_name) \( user.p_last_name) \(user.mobile_phone) \(user.blood_type) \(user.password) \(user.email)"
+                if user.email == self.emailTextField.text && user.password == (self.passwordTextField.text?.sha1()){
+                    userInfo = "User info: \(user.p_ssn) \( user.p_first_name) \( user.p_last_name) \(user.mobile_phone) \(user.blood_type) \(user.password) \(user.email) \(user.city_id) \(user.governorate_name) \(user.city_name)"
                     print(userInfo)
                     UserDefaults.standard.set([user.p_ssn , user.p_first_name , user.p_last_name,user.email, user.governorate_name, user.city_name,user.mobile_phone,user.home_phone,user.birthday,user.blood_type , user.password , user.gender, user.city_id], forKey: "userInfo")
                     print(user.city_id)

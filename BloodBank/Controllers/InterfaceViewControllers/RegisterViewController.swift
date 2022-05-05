@@ -72,7 +72,7 @@ class RegisterViewController: UIViewController {
     var finalCities: [String] = []
     private var arrayOfgover: [userGovernorate] = []
     private var arrayOfcity: [userCity] = []
-    
+    var myDicOfCity :[String:String] = [:]
     var rowOfCity: String = ""
     var rowofGov: String = ""
     var rowofBlood: String = ""
@@ -94,6 +94,34 @@ class RegisterViewController: UIViewController {
     }
     //MARK: - Private functions
     //getting data
+    
+    private func getBlood(){
+        ApiService.sharedService.getBloodType { error, blood in
+            if let error = error {
+                print(error.localizedDescription)
+            }else if let blood = blood {
+                self.arrOfBlood = blood
+                for blood in self.arrOfBlood {
+                    self.dicOfBloodType[blood.name] = blood.id
+                }
+                print(self.arrOfBlood)
+            }
+        }
+    }
+    private func setGovData(){
+        ApiService.sharedService.getGovData { error, gov in
+            DispatchQueue.main.async {
+                if let error = error{
+                    print(error)
+                } else if let gov = gov {
+                    self.arrOfGov = gov
+                    for gov in self.arrOfGov {
+                        self.dicOfGov[gov.id] = gov.name
+                    }
+                }
+            }
+        }
+    }
     private func getCitiesWithId(id: String){
         ApiService.sharedService.getCitiesById(id: rowofGov) { error, city in
             DispatchQueue.main.async {
@@ -112,28 +140,6 @@ class RegisterViewController: UIViewController {
             }
         }
     }
-    private func addUserData(){
-        //  let date = Date()
-        //  let df = DateFormatter()
-        //  df.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        //  let dateString = df.string(from: date)
-        //  print(dateString)
-        ApiService.sharedService.addUserData(email: emailTextField.text!, fName: nameTextField.text!,lName: familyNameTextField.text!, id: IDTextField.text!, password: passwordTextField.text!,fPhone: fNumberTextField.text!,sPhone: sNumberTextField.text!,bloodType:self.rowofBlood,governrate: self.rowofGov,city: self.rowOfCity,birthDay: birthDayTextField.text!, gender: Arrays.dicOfGender[genderTextField.text!]!)
-    }
-    private func setGovData(){
-        ApiService.sharedService.getGovData { error, gov in
-            DispatchQueue.main.async {
-                if let error = error{
-                    print(error)
-                } else if let gov = gov {
-                    self.arrOfGov = gov
-                    for gov in self.arrOfGov {
-                        self.dicOfGov[gov.id] = gov.name
-                    }
-                }
-            }
-        }
-    }
     private func setCityData(){
         ApiService.sharedService.getCityData { error, city in
             DispatchQueue.main.async {
@@ -143,25 +149,22 @@ class RegisterViewController: UIViewController {
                     self.arrOfCity = city
                     for city in self.arrOfCity {
                         self.dicOfCity[city.gov_id] = city.name
+                        self.myDicOfCity[city.name] = city.id
                     }
                     print(self.arrOfCity)
+                    
                 }
+                self.rowOfCity = self.myDicOfCity[self.cityTextField.text!] ?? ""
+                print("\(self.rowOfCity)")
             }
         }
     }
-    private func getBlood(){
-        ApiService.sharedService.getBloodType { error, blood in
-            if let error = error {
-                print(error.localizedDescription)
-            }else if let blood = blood {
-                self.arrOfBlood = blood
-                for blood in self.arrOfBlood {
-                    self.dicOfBloodType[blood.id] = blood.name
-                }
-                print(self.arrOfBlood)
-            }
-        }
+    private func addUserData(){
+        let sha1Pasword =  (passwordTextField.text?.sha1())!
+        ApiService.sharedService.addUserData(email: emailTextField.text!, fName: nameTextField.text!,lName: familyNameTextField.text!, id: IDTextField.text!, password: sha1Pasword,fPhone: fNumberTextField.text!,sPhone: sNumberTextField.text!,bloodType:self.rowofBlood,governrate: self.rowofGov,city: self.rowOfCity,birthDay: birthDayTextField.text!, gender: Arrays.dicOfGender[genderTextField.text!]!)
+        print("password: \(sha1Pasword)")
     }
+   
     //design
     private func setNavBar(){
         navigationController?.navigationBar.barTintColor = UIColor(named: "viewbgColor")
@@ -387,8 +390,8 @@ extension RegisterViewController: UIPickerViewDelegate,UIPickerViewDataSource{
             self.getCitiesWithId(id: rowofGov)
         case 3:
             cityTextField.text = self.finalCities[row]
-            self.rowOfCity = arrOfCity[row].id
-            print(self.rowOfCity)
+            self.rowOfCity = myDicOfCity[self.cityTextField.text!]!
+            print("city id in picker view : \(self.rowOfCity)")
         case 4:
             genderTextField.text = Arrays.arrOfGender[row]
         default:

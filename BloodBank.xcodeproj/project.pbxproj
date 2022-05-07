@@ -108,6 +108,7 @@
 		EAC252E7276A34BF0033F96F /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC252E6276A34BF0033F96F /* OnboardingSlide.swift */; };
 		EAC252E9276A37BC0033F96F /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC252E8276A37BC0033F96F /* OnboardingCollectionViewCell.swift */; };
 		EAC252EC276A3A4C0033F96F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC252EB276A3A4C0033F96F /* Constants.swift */; };
+		EAC267BF2825F42300BFEAA9 /* SavedBloodRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC267BE2825F42300BFEAA9 /* SavedBloodRequest.swift */; };
 		EAC3745A282417C4001F28C8 /* PurchaseOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC37459282417C4001F28C8 /* PurchaseOrder.swift */; };
 		EAC3747E282456F3001F28C8 /* Sha1Encryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC3747D282456F3001F28C8 /* Sha1Encryption.swift */; };
 		EAC6436228099A1A00109D8D /* VaccineDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC6436128099A1A00109D8D /* VaccineDetailsViewController.swift */; };
@@ -241,6 +242,7 @@
 		EAC252E6276A34BF0033F96F /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		EAC252E8276A37BC0033F96F /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		EAC252EB276A3A4C0033F96F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EAC267BE2825F42300BFEAA9 /* SavedBloodRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedBloodRequest.swift; sourceTree = "<group>"; };
 		EAC37459282417C4001F28C8 /* PurchaseOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseOrder.swift; sourceTree = "<group>"; };
 		EAC3747D282456F3001F28C8 /* Sha1Encryption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sha1Encryption.swift; sourceTree = "<group>"; };
 		EAC6436128099A1A00109D8D /* VaccineDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineDetailsViewController.swift; sourceTree = "<group>"; };
@@ -668,6 +670,7 @@
 				EAE3D4972819C363003B514A /* UserStories.swift */,
 				EAE3D4992819FEEE003B514A /* Vaccine.swift */,
 				EA75CF52281ADF870032FA14 /* QuickRequest.swift */,
+				EAC267BE2825F42300BFEAA9 /* SavedBloodRequest.swift */,
 				EA75CF54281B72770032FA14 /* AvailableVaccines.swift */,
 				EA488859281FD15800A2700A /* RequestBloodType.swift */,
 				EA48885B281FD51700A2700A /* DonateReason.swift */,
@@ -989,6 +992,7 @@
 				EACC013E27A43A5A00FFB92B /* UserCustomTF.swift in Sources */,
 				EA75CF55281B72770032FA14 /* AvailableVaccines.swift in Sources */,
 				EA1915F727DBFA3100554FF9 /* Patient.swift in Sources */,
+				EAC267BF2825F42300BFEAA9 /* SavedBloodRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

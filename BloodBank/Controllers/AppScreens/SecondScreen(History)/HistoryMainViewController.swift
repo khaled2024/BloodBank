@@ -36,6 +36,7 @@ class HistoryMainViewController: UIViewController {
     var arrOfPrivatePurchaseOrder: [PurchaseOrderData] = [PurchaseOrderData]()
     
     let def = UserDefaults.standard
+    var refreshControll = UIRefreshControl()
     
     //MARK: - LifeCycle
     override func viewDidLoad() {
@@ -46,17 +47,27 @@ class HistoryMainViewController: UIViewController {
             self.p_ssn = user[0]
             print(self.p_ssn ?? "")
         }
+        refreshControll.tintColor = .systemPink
+        refreshControll.addTarget(self, action: #selector(refreshTapped), for: .valueChanged)
+        self.HistorytableView.addSubview(refreshControll)
         myQuickRequests()
         getPurchase_order()
         getBlood()
         getMyLastDonate()
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setUpDesign()
+        self.HistorytableView.reloadData()
         
     }
     //MARK: - private func
+    @objc func refreshTapped(){
+        myQuickRequests()
+        self.HistorytableView.reloadData()
+        refreshControll.endRefreshing()
+    }
     private func setUpDesign(){
         segmentControll.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Almarai-Bold", size: 15)!], for: .normal)
     }
@@ -71,7 +82,6 @@ class HistoryMainViewController: UIViewController {
     private func setUpSegment(){
         let segmentIndex = self.segmentControll.selectedSegmentIndex
         switch segmentIndex{
-            
         case 0 :
             if self.arrOfPrivateQuickRequest.count == 0 {
                 self.HistorytableView.isHidden = true
@@ -125,6 +135,7 @@ class HistoryMainViewController: UIViewController {
     private func myQuickRequests(){
         DispatchQueue.main.async {
             ApiService.sharedService.allQuickRequests { error, request in
+                self.arrOfPrivateQuickRequest = []
                 if let error = error {
                     print(error.localizedDescription)
                 }else if let request = request {

@@ -566,5 +566,66 @@ class ApiService{
             }
         }
     }
+    //MARK: - saved Blood Request
+    func allSavedBloodRequests(completion: @escaping (_ error: Error? , _ savedRequest: [SavedBloodRequestData]?) -> Void){
+        AF.request("\(URLS.savedBloodRequest)/all", method: .get, encoding: URLEncoding.default , headers: nil).response {
+            response in
+            if let error = response.error {
+                completion(error , nil)
+            }
+            if let data = response.data {
+                do{
+                    let savedRequest = try JSONDecoder().decode(SavedBloodRequest.self, from: data).data
+                    completion(nil,savedRequest)
+                } catch let error {
+                    completion(error , nil)
+                }
+            }
+        }
+    }
+    func savedBloodRequest(p_ssn: String , request_id:String){
+        guard let url = URL(string: "\(URLS.savedBloodRequest)/add")else{return}
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let body : [String:AnyHashable] = [
+            "p_ssn": p_ssn,
+            "request_id": request_id
+        ]
+        urlRequest.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
+        let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+            guard let data = data, error == nil else {return}
+            do{
+                let response = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
+                print("success : \(response)")
+            }catch{
+                print(error)
+            }
+        }
+        task.resume()
+    }
+    //delete request from favorite
+    func deleteFavoriteRequest(id: String){
+        guard let url = URL(string: "\(URLS.savedBloodRequest)/delete")else{return}
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "DELETE"
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let body : [String:AnyHashable] = [
+            "id": id
+        ]
+        urlRequest.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
+        let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+            guard let data = data, error == nil else {
+                return
+            }
+            do {
+                let response = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
+                print("success : \(response)")
+            } catch  {
+                print(error)
+            }
+        }
+        task.resume()
+    }
 }
 

@@ -39,7 +39,8 @@ class DetailsCellViewController: UIViewController, UISheetPresentationController
     var myPatient: Patient!
     let customView = CustomView()
     let def = UserDefaults.standard
-    
+    var p_ssn = ""
+    var requestId = ""
     var arrOfQuickRequestDetail: QuickRequestData!
     
     let comment = [Comment(title: "عمرو", subTitle: "i can help you in this blood request send me all details i can help you in this blood request send me all details i can help you in this blood request send me all details"),Comment(title: "خالد", subTitle: "i can help you in this blood request send me all details"),Comment(title: "Amr", subTitle: "i can help you in this blood request send me all details i can help you in this blood request send me all details"),Comment(title: "khaled", subTitle: "i can help you in this blood request send me all details"),Comment(title: "Amr", subTitle: "i can help you in this blood request send me all details")]
@@ -50,17 +51,21 @@ class DetailsCellViewController: UIViewController, UISheetPresentationController
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setUpDesign()
+        def.set(false, forKey: "isRequestSaved")
+        setBookMark()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpSheetPresentation()
         setUpData()
         setUpBlurandCommentView()
+        if let userInfo = def.object(forKey: "userInfo")as? [String]{
+            self.p_ssn = userInfo[0]
+        }
+        print(self.p_ssn)
+        print(self.requestId)
     }
-    override func viewDidAppear(_ animated: Bool) {
-        setBookMark()
-        
-    }
+  
     //MARK: - Private func
     private func setUpBlurandCommentView(){
         // blurView & size
@@ -143,6 +148,9 @@ class DetailsCellViewController: UIViewController, UISheetPresentationController
             }
         }
     }
+    private func addRequestToFavorite(){
+        ApiService.sharedService.savedBloodRequest(p_ssn: self.p_ssn, request_id: self.requestId)
+    }
     private func bookMarkTapped(){
             if let requestValue = self.def.value(forKey: "isRequestSaved")as? Bool{
                 print(requestValue)
@@ -160,6 +168,7 @@ class DetailsCellViewController: UIViewController, UISheetPresentationController
                     }
                 }
             }
+        addRequestToFavorite()
     }
     //MARK: - Actions
     @IBAction func closeCommentView(_ sender: UIButton) {

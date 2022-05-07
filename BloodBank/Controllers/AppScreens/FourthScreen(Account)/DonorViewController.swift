@@ -57,6 +57,9 @@ class DonorViewController: UIViewController {
     var arrOfUser:[userData] = [userData]()
     let def = UserDefaults.standard
     var cityId: String!
+    var oldUserPassword = ""
+    var newUserPassword = ""
+    
     // arrays
     var rowOfCity: String = ""
     var rowofGov: String = ""
@@ -80,8 +83,6 @@ class DonorViewController: UIViewController {
         serUpPickerViews()
         createDatePicker()
         setDataOfUser()
-        passwordTF.placeholder = ""
-        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -163,21 +164,41 @@ class DonorViewController: UIViewController {
         }
     }
     private func updateUserData(){
+        print(self.oldUserPassword)
+       
         if let user = def.object(forKey: "userInfo")as? [String]{
-            if let p_ssn = self.idTF.text,!p_ssn.isEmpty, let f_name = self.donorNameTF.text,!f_name.isEmpty , let l_name = self.familyNameTF.text,!l_name.isEmpty, let email = self.emailTF.text , !email.isEmpty , let mopilePhone = self.firstNumTF.text,!mopilePhone.isEmpty , let secondPhone = secondNumTF.text,!secondPhone.isEmpty , let password = self.passwordTF.text ,!password.isEmpty , let bloodType = self.bloodTypeTF.text , !bloodType.isEmpty , let birthDay = self.birthdateTF.text , !birthDay.isEmpty , let city = self.cityTF.text , !city.isEmpty , let gov = self.gavernrateTF.text , !gov.isEmpty , let password = self.passwordTF.text , !password.isEmpty , let gender = self.genderTF.text , !gender.isEmpty{
-                if password.count < 5{
-                    showNormalAlert(title: "Sorry", message: "Please enter a password consisting of five characters or more")
-                }
-                else{
-                    ApiService.sharedService.updateUserData(p_ssn: user[0], p_first_name: f_name, p_last_name: l_name ,email: email,gov: gov,city: self.rowOfCity, mopilePhone:mopilePhone,secondPhone:secondPhone,birthDay:birthDay,bloodType:self.dicOfBloodType[self.bloodTypeTF.text!]!,password:password.sha1(),gender:Arrays.dicOfGender[genderTF.text!]!)
-                    UserDefaults.standard.set([p_ssn , f_name , l_name, email, gov, city,mopilePhone,secondPhone,birthDay,bloodType ,password, gender,self.rowOfCity], forKey: "userInfo")
-                }
+            let passwordOld = user[10]
+            print("passwordold: \(passwordOld)")
+            if let p_ssn = self.idTF.text,!p_ssn.isEmpty, let f_name = self.donorNameTF.text,!f_name.isEmpty , let l_name = self.familyNameTF.text,!l_name.isEmpty, let email = self.emailTF.text , !email.isEmpty , let mopilePhone = self.firstNumTF.text,!mopilePhone.isEmpty , let secondPhone = secondNumTF.text,!secondPhone.isEmpty , let password = self.passwordTF.text ,password.isEmpty , let bloodType = self.bloodTypeTF.text , !bloodType.isEmpty , let birthDay = self.birthdateTF.text , !birthDay.isEmpty , let city = self.cityTF.text , !city.isEmpty , let gov = self.gavernrateTF.text , !gov.isEmpty ,let gender = self.genderTF.text , !gender.isEmpty{
+                ApiService.sharedService.updateUserData(p_ssn: user[0], p_first_name: f_name, p_last_name: l_name ,email: email,gov: gov,city: self.rowOfCity, mopilePhone:mopilePhone,secondPhone:secondPhone,birthDay:birthDay,bloodType:self.dicOfBloodType[self.bloodTypeTF.text!]!,password:passwordOld,gender:Arrays.dicOfGender[genderTF.text!]!)
+                UserDefaults.standard.set([p_ssn , f_name , l_name, email, gov, city,mopilePhone,secondPhone,birthDay,bloodType ,passwordOld, gender,self.rowOfCity], forKey: "userInfo")
+                print(passwordOld)
             }
-            self.passwordTF.text = ""
-            
         }else{
             print("error")
         }
+    }
+    private func updateUserDataWithPassword(){
+        let passwordNew = self.passwordTF.text!
+        if let user = def.object(forKey: "userInfo")as? [String]{
+            if let p_ssn = self.idTF.text,!p_ssn.isEmpty, let f_name = self.donorNameTF.text,!f_name.isEmpty , let l_name = self.familyNameTF.text,!l_name.isEmpty, let email = self.emailTF.text , !email.isEmpty , let mopilePhone = self.firstNumTF.text,!mopilePhone.isEmpty , let secondPhone = secondNumTF.text,!secondPhone.isEmpty , let password = self.passwordTF.text ,!password.isEmpty , let bloodType = self.bloodTypeTF.text , !bloodType.isEmpty , let birthDay = self.birthdateTF.text , !birthDay.isEmpty , let city = self.cityTF.text , !city.isEmpty , let gov = self.gavernrateTF.text , !gov.isEmpty ,let gender = self.genderTF.text , !gender.isEmpty{
+                if passwordNew.count < 5{
+                    showNormalAlert(title: "Sorry", message: "Please enter a password consisting of five characters or more")
+                    isEdited = true
+                    self.makeTFInteract(result: true)
+                    self.editBtn.image = UIImage(systemName: "checkmark")
+                }else{
+                    ApiService.sharedService.updateUserData(p_ssn: user[0], p_first_name: f_name, p_last_name: l_name ,email: email,gov: gov,city: self.rowOfCity, mopilePhone:mopilePhone,secondPhone:secondPhone,birthDay:birthDay,bloodType:self.dicOfBloodType[self.bloodTypeTF.text!]!,password:passwordNew.sha1(),gender:Arrays.dicOfGender[genderTF.text!]!)
+                    UserDefaults.standard.set([p_ssn , f_name , l_name, email, gov, city,mopilePhone,secondPhone,birthDay,bloodType ,passwordNew.sha1(), gender,self.rowOfCity], forKey: "userInfo")
+                    print(passwordNew)
+                    print(passwordNew.sha1())
+                    self.passwordTF.placeholder = "تم تحديث الرقم السري"
+                }
+            }
+        }else{
+            print("error")
+        }
+        
     }
     private func setDataOfUser(){
         let def = UserDefaults.standard
@@ -192,10 +213,11 @@ class DonorViewController: UIViewController {
             self.secondNumTF.text = userInfo[7]
             self.birthdateTF.text = userInfo[8]
             self.bloodTypeTF.text = userInfo[9]
-            //            self.passwordTF.text = userInfo[10]
+            self.oldUserPassword = userInfo[10]
             self.genderTF.text = userInfo[11]
             self.cityId = userInfo[12]
             print("city id : \(userInfo[12])")
+            print(oldUserPassword)
         }
     }
     private func createDatePicker(){
@@ -305,13 +327,13 @@ class DonorViewController: UIViewController {
         
     }
     @IBAction func editBtnTapped(_ sender: UIBarButtonItem) {
+        passwordTF.placeholder = "ادخل الرقم السري الجديد"
         if isEdited == false{
             isEdited = true
             self.makeTFInteract(result: true)
             self.editBtn.image = UIImage(systemName: "checkmark")
-            passwordTF.placeholder = "ادخل الرقم السري الجديد"
             self.donorNameTF.becomeFirstResponder()
-            self.passwordTF.isSecureTextEntry = false
+            self.passwordTF.isSecureTextEntry = true
         }else{
             isEdited = false
             self.editBtn.image = UIImage(systemName: "square.and.pencil")
@@ -319,7 +341,13 @@ class DonorViewController: UIViewController {
             self.theNameLbl.text = "\(self.donorNameTF.text!) \(self.familyNameTF.text!)"
             self.addressLbl.text = "\(self.gavernrateTF.text!)/\(self.cityTF.text!)"
             self.passwordTF.isSecureTextEntry = true
-            self.updateUserData()
+            if passwordTF.text == ""{
+                self.updateUserData()
+                passwordTF.text = ""
+            }else{
+                self.updateUserDataWithPassword()
+                passwordTF.text = ""
+            }
         }
     }
 }

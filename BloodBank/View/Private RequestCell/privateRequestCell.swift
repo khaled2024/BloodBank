@@ -51,5 +51,7 @@ class privateRequestCell: UITableViewCell {
         //  let imageFromSite = donorImage.asURL
         self.donorImage.load(urlString: donorImage)
     }
+    //MARK: - action
+    
     
 }

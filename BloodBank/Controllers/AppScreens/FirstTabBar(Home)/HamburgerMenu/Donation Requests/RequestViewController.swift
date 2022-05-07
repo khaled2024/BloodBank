@@ -16,6 +16,7 @@ class RequestViewController: UIViewController{
     var p_ssn: String!
     var arrOfQuickRequest: [QuickRequestData] = [QuickRequestData]()
     var arrOfPrivateQuickRequest: [QuickRequestData] = [QuickRequestData]()
+    let refreshControll = UIRefreshControl()
     
     //MARK: - --------------------------------------------------------
     
@@ -24,11 +25,21 @@ class RequestViewController: UIViewController{
         setDataOfUser()
         self.getAllQuickRequests()
         self.privateQuickRequests()
+        refreshControll.tintColor = .systemRed
+        refreshControll.addTarget(self, action: #selector(refreshTapped), for: .valueChanged)
+        self.tableView.addSubview(refreshControll)
         
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setUpDesign()
+        self.tableView.reloadData()
+       
+    }
+    @objc func refreshTapped(){
+        self.getAllQuickRequests()
+        self.privateQuickRequests()
+        refreshControll.endRefreshing()
     }
     //MARK: - Private functions
     private func setUpDesign(){
@@ -43,7 +54,7 @@ class RequestViewController: UIViewController{
     
     private func getAllQuickRequests(){
         DispatchQueue.main.async {
-            
+            self.arrOfPrivateQuickRequest = []
             ApiService.sharedService.allQuickRequests { error, request in
                 if let error = error {
                     print(error.localizedDescription)
@@ -83,6 +94,7 @@ class RequestViewController: UIViewController{
         if segmentSender == 0{
             let controller = DetailsCellViewController.instantiate()
             controller.arrOfQuickRequestDetail = arrOfQuickRequest[indexPath.row]
+            controller.requestId = arrOfQuickRequest[indexPath.row].id
             self.present(controller, animated: true, completion: nil)
         }else{
             //            let controller = DetailsCellViewController.instantiate()
@@ -128,7 +140,7 @@ extension RequestViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "privateRequestCell")as! privateRequestCell
-            let time = arrOfQuickRequest[indexPath.row].time
+            let time = arrOfPrivateQuickRequest[indexPath.row].time
             let subTime = time.prefix(16)
             cell.configure(name: "\(arrOfPrivateQuickRequest[indexPath.row].first_name) \(arrOfPrivateQuickRequest[indexPath.row].last_name)", bloodType: arrOfPrivateQuickRequest[indexPath.row].blood_type, address: "(\(arrOfPrivateQuickRequest[indexPath.row].hospital_name))- \(arrOfPrivateQuickRequest[indexPath.row].city_of_hospital)- \(arrOfPrivateQuickRequest[indexPath.row].governorate_name)", time: String(subTime), description: arrOfPrivateQuickRequest[indexPath.row].message, donorImage: arrOfPrivateQuickRequest[indexPath.row].patient_image, volunteers: arrOfPrivateQuickRequest[indexPath.row].blood_bags_number, numberOfBags: arrOfPrivateQuickRequest[indexPath.row].blood_bags_number)
             

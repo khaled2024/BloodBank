@@ -73,7 +73,6 @@ class YourStoryViewController: UIViewController {
                 print(error.localizedDescription)
             }else if let story = story {
                 self.storiesArr = story
-                
             }
             self.tableView.reloadData()
         }

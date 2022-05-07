@@ -347,6 +347,9 @@ class AppBloodRequestViewController: UIViewController{
                 print(" dic of hospitals :\(self.dicOfHospitals)")
                 print(self.finalHospital)
             }
+            if self.finalHospital.count == 0{
+                self.showNormalAlert(title: "Sorry", message: "There are no hospitals that you can order Blood in this city.")
+            }
         }
     }
     private func sendQuickRequest(){

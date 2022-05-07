@@ -51,13 +51,18 @@ class FavoriteViewController: UIViewController {
             self.arrOfRequestsId = []
             if let error = error {
                 print(error.localizedDescription)
+                self.showNormalAlert(title: "للاسف", message: "لا يمكن الاتصال بالخادم")
+                self.favoriteTableView.isHidden = true
+                self.noDataImage.isHidden = false
             }else if let savedRequest = savedRequest {
+                self.favoriteTableView.isHidden = false
+                self.noDataImage.isHidden = true
                 for savedRequest in savedRequest {
                     if self.p_ssn == savedRequest.p_ssn{
                         self.arrOfRequestsId.append(savedRequest.request_id)
                         self.arrOfIds.append(savedRequest.id)
                     }else{
-                        self.showNormalAlert(title: "Sorry", message: "There are not saved Requests :(")
+                        self.showNormalAlert(title: "Sorry", message: "لا يوجد طلبات دم عاجله محفوظه :(")
                     }
                 }
                 print(self.arrOfRequestsId)

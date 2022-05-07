@@ -9,6 +9,7 @@ import UIKit
 
 class RequestViewController: UIViewController{
     
+    @IBOutlet weak var noDataImage: UIImageView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     let navBar = NavigationBar()
@@ -57,8 +58,13 @@ class RequestViewController: UIViewController{
             self.arrOfPrivateQuickRequest = []
             ApiService.sharedService.allQuickRequests { error, request in
                 if let error = error {
+                    self.showNormalAlert(title: "للاسف", message: "لا يمكن الاتصال بالخادم")
+                    self.tableView.isHidden = true
+                    self.noDataImage.isHidden = false
                     print(error.localizedDescription)
                 }else if let request = request {
+                    self.tableView.isHidden = false
+                    self.noDataImage.isHidden = true
                     self.arrOfQuickRequest = request
                 }
                 self.tableView.reloadData()

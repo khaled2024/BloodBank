@@ -21,6 +21,7 @@ struct VaccineItem {
 }
 class VaccineCollectionViewController: UIViewController {
     //MARK: - Outlets
+    @IBOutlet weak var noDataImage: UIImageView!
     @IBOutlet weak var vaccineCollectionView: UICollectionView!
     let navBar = NavigationBar()
     var vaccineItem = [VaccineItem]()
@@ -41,11 +42,21 @@ class VaccineCollectionViewController: UIViewController {
         ApiService.sharedService.getAllVaccines { error, vaccine in
             if let error = error {
                 print(error.localizedDescription)
+                self.showNormalAlert(title: "للاسف", message: "لا يمكن الاتصال بالخادم")
+                self.vaccineCollectionView.isHidden = true
+                self.noDataImage.isHidden = false
+            }else{
+                self.vaccineCollectionView.isHidden = false
+                self.noDataImage.isHidden = true
             }
             if let vaccine = vaccine {
                 self.arrOfVaccines = vaccine
             }
-            self.vaccineCollectionView.reloadData()
+            if self.arrOfVaccines.count == 0{
+                self.showNormalAlert(title: "للاسف", message: "لا يوجد لقاحات متاحه لعرضها :(")
+            }else{
+                self.vaccineCollectionView.reloadData()
+            }
         }
     }
     func setCellSize(){

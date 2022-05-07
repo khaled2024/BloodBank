@@ -138,16 +138,30 @@ class HistoryMainViewController: UIViewController {
                 self.arrOfPrivateQuickRequest = []
                 if let error = error {
                     print(error.localizedDescription)
+                    self.showNormalAlert(title: "للاسف", message: "لا يمكن الاتصال بالخادم:(")
+                    self.HistorytableView.isHidden = true
+                    self.noDataImageView.isHidden = false
                 }else if let request = request {
                     self.arrOfQuickRequest = request
                     print(self.arrOfQuickRequest)
-                    for request in self.arrOfQuickRequest {
-                        if  self.p_ssn == request.p_ssn{
-                            self.arrOfPrivateQuickRequest.append(request)
-                            print("my quick request arr:\(self.arrOfPrivateQuickRequest)")
-                        }else{
+                    if self.arrOfQuickRequest.count == 0{
+                        self.showNormalAlert(title: "للاسف", message: "لا يوجد طلبات  لعرضها:(")
+                        self.HistorytableView.isHidden = true
+                        self.noDataImageView.isHidden = false
+                    }else{
+                        self.HistorytableView.isHidden = false
+                        self.noDataImageView.isHidden = true
+                        for request in self.arrOfQuickRequest {
+                            if  self.p_ssn == request.p_ssn{
+                                self.arrOfPrivateQuickRequest.append(request)
+                                print("my quick request arr:\(self.arrOfPrivateQuickRequest)")
+                            }else{
+                                self.showNormalAlert(title: "للاسف", message: "لا يوجد طلبات دم شخصيه لعرضها :(")
+                                self.HistorytableView.isHidden = true
+                                self.noDataImageView.isHidden = false
+                            }
+                            self.HistorytableView.reloadData()
                         }
-                        self.HistorytableView.reloadData()
                     }
                 }
                 self.myVaccine()

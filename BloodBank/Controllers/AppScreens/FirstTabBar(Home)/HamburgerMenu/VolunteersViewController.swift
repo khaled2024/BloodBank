@@ -42,7 +42,11 @@ class VolunteersViewController: UIViewController{
         ApiService.sharedService.checkSignIn { error, user in
             if let error = error {
                 print(error.localizedDescription)
+                self.showNormalAlert(title: "للاسف", message: "لا يمكن الاتصال بالخادم")
+                self.voluntersTableView.isHidden = true
+                self.noDataImageView.isHidden = false
             }else if let user = user {
+                self.voluntersTableView.isHidden = false
                 self.arrOfVolunteers = user
                 self.initialVolunteerAry = user
             }
@@ -168,6 +172,7 @@ extension VolunteersViewController:UISearchBarDelegate{
             if arrOfVolunteers.count == 0{
                 self.voluntersTableView.isHidden = true
                 self.noDataImageView.isHidden = false
+                self.showNormalAlert(title: "", message: "لا يوجد متبرعين في الوقت الحالي ")
             }
         }
     }

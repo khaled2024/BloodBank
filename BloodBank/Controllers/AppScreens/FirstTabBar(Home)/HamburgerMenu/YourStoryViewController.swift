@@ -9,6 +9,7 @@ import UIKit
 
 class YourStoryViewController: UIViewController {
     
+    @IBOutlet weak var noDataImage: UIImageView!
     @IBOutlet weak var updateTextViewContext: UITextView!
     @IBOutlet weak var storySegmentControll: UISegmentedControl!
     @IBOutlet weak var storyDescription: UITextView!
@@ -71,10 +72,20 @@ class YourStoryViewController: UIViewController {
         ApiService.sharedService.getStories { error, story in
             if let error = error {
                 print(error.localizedDescription)
+                self.showNormalAlert(title: "للاسف", message: "لا يمكن الاتصال بالخادم")
+                self.tableView.isHidden = true
+                self.noDataImage.isHidden = false
             }else if let story = story {
+                self.tableView.isHidden = false
+                self.noDataImage.isHidden = true
                 self.storiesArr = story
             }
-            self.tableView.reloadData()
+            if self.storiesArr.count == 0{
+                self.showNormalAlert(title: "للاسف", message: "لا يوجد قصص لعرضها في الوقت الحالي")
+            }else{
+                self.tableView.reloadData()
+
+            }
         }
     }
     private func setUpBlurandStoryView(){
@@ -139,7 +150,7 @@ class YourStoryViewController: UIViewController {
                     if self.p_ssn == story.p_ssn{
                         self.arrOfPrivateStory.append(story)
                     }else{
-                        print("there is no private story for u")
+                        self.showNormalAlert(title: "للاسف", message: "انت لم تكتب قصه لك حتي الآن ، اضغط علي انشاء لتتمكن من انشاء قصه لك")
                     }
                     print(self.arrOfPrivateStory)
                     self.tableView.reloadData()

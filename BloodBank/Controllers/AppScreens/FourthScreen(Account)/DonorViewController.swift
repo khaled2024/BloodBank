@@ -17,7 +17,6 @@ class DonorViewController: UIViewController {
     @IBOutlet weak var theNameLbl: UILabel!
     @IBOutlet weak var addressLbl: UILabel!
     
-    
     @IBOutlet weak var editBtn: UIBarButtonItem!
     @IBOutlet weak var donorNameTF: UITextField!
     @IBOutlet weak var bloodTypeTF: UITextField!
@@ -36,8 +35,7 @@ class DonorViewController: UIViewController {
     @IBOutlet weak var familyNameLbl: UILabel!
     @IBOutlet weak var emailLbl: UILabel!
     @IBOutlet weak var governLbl: UILabel!
-    @IBOutlet weak var cityLbl:
-    UILabel!
+    @IBOutlet weak var cityLbl: UILabel!
     @IBOutlet weak var firstNumLbl: UILabel!
     @IBOutlet weak var secondNumLbl: UILabel!
     @IBOutlet weak var idLbl: UILabel!
@@ -50,9 +48,9 @@ class DonorViewController: UIViewController {
     let gradient = UserGradientBackground()
     let customBtn = UserCustomBtn()
     var isEdited = false
-    let goverArr = Arrays.arrayOfGover
-    let citiesArr = Arrays.arrayOfCities
-    let arrBlood = Arrays.arrayOfBloodType
+//    let goverArr = Arrays.arrayOfGover
+//    let citiesArr = Arrays.arrayOfCities
+//    let arrBlood = Arrays.arrayOfBloodType
     let datePicker = UIDatePicker()
     var arrOfUser:[userData] = [userData]()
     let def = UserDefaults.standard
@@ -77,12 +75,14 @@ class DonorViewController: UIViewController {
     //MARK: - lifeCycles
     override func viewDidLoad() {
         super.viewDidLoad()
+        setDataOfUser()
+        serUpPickerViews()
+        createDatePicker()
         setCityData()
         setGovData()
         getBlood()
-        serUpPickerViews()
-        createDatePicker()
-        setDataOfUser()
+        
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -102,6 +102,7 @@ class DonorViewController: UIViewController {
         ApiService.sharedService.getBloodType { error, blood in
             if let error = error {
                 print(error.localizedDescription)
+                //                self.showNormalAlert(title: "Sorry", message: "لا يمكن الاتصال بالخادم")
             }else if let blood = blood {
                 self.arrOfBlood = blood
                 for blood in self.arrOfBlood {
@@ -116,6 +117,7 @@ class DonorViewController: UIViewController {
             DispatchQueue.main.async {
                 if let error = error{
                     print(error)
+                    //                    self.showNormalAlert(title: "Sorry", message: "لا يمكن الاتصال بالخادم")
                 } else if let gov = gov {
                     self.arrOfGov = gov
                     for gov in self.arrOfGov {
@@ -148,51 +150,63 @@ class DonorViewController: UIViewController {
             DispatchQueue.main.async {
                 if let error = error{
                     print(error)
+                    //                    self.showNormalAlert(title: "Sorry", message: "لا يمكن الاتصال بالخادم")
                 } else if let city = city {
                     self.arrOfCity = city
                     for city in self.arrOfCity {
                         self.dicOfCity[city.gov_id] = city.name
                         self.myDicOfCity[city.name] = city.id
-                        
                     }
                     print(self.arrOfCity)
-                    
+                    self.rowOfCity = self.myDicOfCity[self.cityTF.text!]!
                 }
-                self.rowOfCity = self.myDicOfCity[self.cityTF.text!]!
+                // self.rowOfCity = self.myDicOfCity[self.cityTF.text!]!
                 print("\(self.rowOfCity)")
             }
         }
     }
+    // if user didnt change password
     private func updateUserData(){
         print(self.oldUserPassword)
-       
         if let user = def.object(forKey: "userInfo")as? [String]{
             let passwordOld = user[10]
             print("passwordold: \(passwordOld)")
             if let p_ssn = self.idTF.text,!p_ssn.isEmpty, let f_name = self.donorNameTF.text,!f_name.isEmpty , let l_name = self.familyNameTF.text,!l_name.isEmpty, let email = self.emailTF.text , !email.isEmpty , let mopilePhone = self.firstNumTF.text,!mopilePhone.isEmpty , let secondPhone = secondNumTF.text,!secondPhone.isEmpty , let password = self.passwordTF.text ,password.isEmpty , let bloodType = self.bloodTypeTF.text , !bloodType.isEmpty , let birthDay = self.birthdateTF.text , !birthDay.isEmpty , let city = self.cityTF.text , !city.isEmpty , let gov = self.gavernrateTF.text , !gov.isEmpty ,let gender = self.genderTF.text , !gender.isEmpty{
-                ApiService.sharedService.updateUserData(p_ssn: user[0], p_first_name: f_name, p_last_name: l_name ,email: email,gov: gov,city: self.rowOfCity, mopilePhone:mopilePhone,secondPhone:secondPhone,birthDay:birthDay,bloodType:self.dicOfBloodType[self.bloodTypeTF.text!]!,password:passwordOld,gender:Arrays.dicOfGender[genderTF.text!]!)
-                UserDefaults.standard.set([p_ssn , f_name , l_name, email, gov, city,mopilePhone,secondPhone,birthDay,bloodType ,passwordOld, gender,self.rowOfCity], forKey: "userInfo")
-                print(passwordOld)
+                if dicOfBloodType.count == 0 || self.rowOfCity == ""{
+                    self.showNormalAlert(title: "للاسف", message: "لا يمكن الاتصال بالخادم")
+                }else{
+                    ApiService.sharedService.updateUserData(p_ssn: user[0], p_first_name: f_name, p_last_name: l_name ,email: email,gov: gov,city: self.rowOfCity, mopilePhone:mopilePhone,secondPhone:secondPhone,birthDay:birthDay,bloodType:self.dicOfBloodType[self.bloodTypeTF.text!]!,password:passwordOld,gender:Arrays.dicOfGender[genderTF.text!]!)
+                    UserDefaults.standard.set([p_ssn , f_name , l_name, email, gov, city,mopilePhone,secondPhone,birthDay,bloodType ,passwordOld, gender,self.rowOfCity], forKey: "userInfo")
+                    print(passwordOld)
+                }
+                
+            }else{
+                self.showNormalAlert(title: "للاسف", message: "لا يمكن الاتصال بالخادم")
             }
         }else{
-            print("error")
+            self.showNormalAlert(title: "للاسف", message: "لا يمكن الاتصال بالخادم")
         }
     }
+    // if user change password
     private func updateUserDataWithPassword(){
         let passwordNew = self.passwordTF.text!
         if let user = def.object(forKey: "userInfo")as? [String]{
             if let p_ssn = self.idTF.text,!p_ssn.isEmpty, let f_name = self.donorNameTF.text,!f_name.isEmpty , let l_name = self.familyNameTF.text,!l_name.isEmpty, let email = self.emailTF.text , !email.isEmpty , let mopilePhone = self.firstNumTF.text,!mopilePhone.isEmpty , let secondPhone = secondNumTF.text,!secondPhone.isEmpty , let password = self.passwordTF.text ,!password.isEmpty , let bloodType = self.bloodTypeTF.text , !bloodType.isEmpty , let birthDay = self.birthdateTF.text , !birthDay.isEmpty , let city = self.cityTF.text , !city.isEmpty , let gov = self.gavernrateTF.text , !gov.isEmpty ,let gender = self.genderTF.text , !gender.isEmpty{
-                if passwordNew.count < 5{
-                    showNormalAlert(title: "Sorry", message: "Please enter a password consisting of five characters or more")
-                    isEdited = true
-                    self.makeTFInteract(result: true)
-                    self.editBtn.image = UIImage(systemName: "checkmark")
+                if dicOfBloodType.count == 0 || self.rowOfCity == ""{
+                    self.showNormalAlert(title: "Sorry", message: "لا يمكن الاتصال بالخادم")
                 }else{
-                    ApiService.sharedService.updateUserData(p_ssn: user[0], p_first_name: f_name, p_last_name: l_name ,email: email,gov: gov,city: self.rowOfCity, mopilePhone:mopilePhone,secondPhone:secondPhone,birthDay:birthDay,bloodType:self.dicOfBloodType[self.bloodTypeTF.text!]!,password:passwordNew.sha1(),gender:Arrays.dicOfGender[genderTF.text!]!)
-                    UserDefaults.standard.set([p_ssn , f_name , l_name, email, gov, city,mopilePhone,secondPhone,birthDay,bloodType ,passwordNew.sha1(), gender,self.rowOfCity], forKey: "userInfo")
-                    print(passwordNew)
-                    print(passwordNew.sha1())
-                    self.passwordTF.placeholder = "تم تحديث الرقم السري"
+                    if passwordNew.count < 5{
+                        showNormalAlert(title: "Sorry", message: "Please enter a password consisting of five characters or more")
+                        isEdited = true
+                        self.makeTFInteract(result: true)
+                        self.editBtn.image = UIImage(systemName: "checkmark")
+                    }else{
+                        ApiService.sharedService.updateUserData(p_ssn: user[0], p_first_name: f_name, p_last_name: l_name ,email: email,gov: gov,city: self.rowOfCity, mopilePhone:mopilePhone,secondPhone:secondPhone,birthDay:birthDay,bloodType:self.dicOfBloodType[self.bloodTypeTF.text!]!,password:passwordNew.sha1(),gender:Arrays.dicOfGender[genderTF.text!]!)
+                        UserDefaults.standard.set([p_ssn , f_name , l_name, email, gov, city,mopilePhone,secondPhone,birthDay,bloodType ,passwordNew.sha1(), gender,self.rowOfCity], forKey: "userInfo")
+                        print(passwordNew)
+                        print(passwordNew.sha1())
+                        self.passwordTF.placeholder = "تم تحديث الرقم السري"
+                    }
                 }
             }
         }else{
@@ -373,20 +387,33 @@ extension DonorViewController: UIPickerViewDelegate,UIPickerViewDataSource{
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch pickerView.tag {
         case 0:
-            gavernrateTF.text = arrOfGov[row].name
-            self.rowofGov = arrOfGov[row].id
-            print(self.rowofGov)
-            self.getCitiesWithId(id: rowofGov)
+            if arrOfGov.count == 0{
+                showNormalAlert(title: "للاسف", message: "لا يوجد محافظات لعرضها :(")
+            }else{
+                gavernrateTF.text = arrOfGov[row].name
+                self.rowofGov = arrOfGov[row].id
+                print(self.rowofGov)
+                self.getCitiesWithId(id: rowofGov)
+            }
         case 1:
-            cityTF.text = self.finalCities[row]
-            self.rowOfCity = myDicOfCity[self.cityTF.text!]!
-            print("city id in picker view : \(self.rowOfCity)")
+            if self.myDicOfCity.count == 0{
+                showNormalAlert(title: "للاسف", message: "لا يوجد مدن لعرضها :(")
+            }else{
+                cityTF.text = self.finalCities[row]
+                self.rowOfCity = myDicOfCity[self.cityTF.text!]!
+                print("city id in picker view : \(self.rowOfCity)")
+            }
+            
         case 2:
             genderTF.text = Arrays.arrOfGender[row]
         case 3:
-            self.bloodTypeTF.text = arrOfBlood[row].name
-            self.rowofBlood = arrOfBlood[row].id
-            print(self.rowofBlood)
+            if arrOfBlood.count == 0{
+                showNormalAlert(title: "للاسف", message: "لا يوجد فصائل دم لعرضها :(")
+            }else{
+                self.bloodTypeTF.text = arrOfBlood[row].name
+                self.rowofBlood = arrOfBlood[row].id
+                print(self.rowofBlood)
+            }
         default:
             return
         }

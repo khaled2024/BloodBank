@@ -70,6 +70,7 @@ class LoginViewController: UIViewController {
             var userInfo: String = ""
             if let error = error {
                 print(error.localizedDescription)
+                self.showNormalAlert(title: "للاسف", message: "لا يمكن اتمام عمليه التسجيل ، لا يمكن الاتصال بالخادم :(")
             }else if let user = user {
                 self.arrOfUser = user
             }

@@ -145,6 +145,7 @@ class RegisterViewController: UIViewController {
             DispatchQueue.main.async {
                 if let error = error{
                     print(error)
+                    self.showNormalAlert(title: "للاسف ", message: "لا يمكن الاتصال بالخادم :(")
                 } else if let city = city {
                     self.arrOfCity = city
                     for city in self.arrOfCity {
@@ -152,7 +153,6 @@ class RegisterViewController: UIViewController {
                         self.myDicOfCity[city.name] = city.id
                     }
                     print(self.arrOfCity)
-                    
                 }
                 self.rowOfCity = self.myDicOfCity[self.cityTextField.text!] ?? ""
                 print("\(self.rowOfCity)")
@@ -272,7 +272,11 @@ class RegisterViewController: UIViewController {
             }
             if !checkTextFields(){
                 showNormalAlert(title: "", message: "Please Fill All fields")
-            }else{
+            }
+            if self.arrOfBlood.count == 0 || arrOfGov.count == 0 || self.myDicOfCity.count == 0 {
+                showNormalAlert(title: "للاسف", message: "لا يمكن تسجيل حساب جديد، لا يمكن الاتصال بالخادم لاتمام العمليه :(")
+            }
+            else{
                 self.animateButtons()
                 DispatchQueue.main.asyncAfter(deadline: .now()+1.5) {
                     self.SuccessAlert(title: "Congratulation", message: "Your Account Created Succesfully", style: .default) { _ in
@@ -380,18 +384,31 @@ extension RegisterViewController: UIPickerViewDelegate,UIPickerViewDataSource{
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch pickerView.tag{
         case 1:
-            bloodTypeTextField.text = arrOfBlood[row].name
-            self.rowofBlood = arrOfBlood[row].id
-            print(self.rowofBlood)
+            if arrOfBlood.count == 0{
+                self.showNormalAlert(title: "للاسف", message: "لا يوجد فصائل دم لعرضها :(")
+            }else{
+                bloodTypeTextField.text = arrOfBlood[row].name
+                self.rowofBlood = arrOfBlood[row].id
+                print(self.rowofBlood)
+            }
         case 2:
-            governmentTextField.text = arrOfGov[row].name
-            self.rowofGov = arrOfGov[row].id
-            print(self.rowofGov)
-            self.getCitiesWithId(id: rowofGov)
+            if arrOfGov.count == 0{
+                self.showNormalAlert(title: "للاسف", message: "لا يوجد محافظات لعرضها :(")
+            }else{
+                governmentTextField.text = arrOfGov[row].name
+                self.rowofGov = arrOfGov[row].id
+                print(self.rowofGov)
+                self.getCitiesWithId(id: rowofGov)
+            }
         case 3:
-            cityTextField.text = self.finalCities[row]
-            self.rowOfCity = myDicOfCity[self.cityTextField.text!]!
-            print("city id in picker view : \(self.rowOfCity)")
+            if self.myDicOfCity.count == 0{
+                self.showNormalAlert(title: "للاسف", message: "لا يوجد مدن لعرضها :(")
+
+            }else{
+                cityTextField.text = self.finalCities[row]
+                self.rowOfCity = myDicOfCity[self.cityTextField.text!]!
+                print("city id in picker view : \(self.rowOfCity)")
+            }
         case 4:
             genderTextField.text = Arrays.arrOfGender[row]
         default:

@@ -10,7 +10,6 @@ import UIKit
 class privateRequestCell: UITableViewCell {
     
     @IBOutlet weak var numOfBagsLbl: UILabel!
-    @IBOutlet weak var volunteerNumLbl: UILabel!
     @IBOutlet weak var bloodTypeLbl: UILabel!
     @IBOutlet weak var messageLbl: UILabel!
     @IBOutlet weak var timeLbl: UILabel!
@@ -45,13 +44,12 @@ class privateRequestCell: UITableViewCell {
         bloodView.roundedCornerView(corners: [.topLeft , .bottomLeft], radius: bloodView.frame.size.width/0.2)
         
     }
-    func configure(name: String, bloodType: String, address: String, time: String, description: String , donorImage: String,volunteers: String, numberOfBags: String){
+    func configure(name: String, bloodType: String, address: String, time: String, description: String , donorImage: String, numberOfBags: String){
         patientName.text = name
         bloodTypeLbl.text = bloodType
         hospitalName.text = address
         timeLbl.text = time
         messageLbl.text = description
-        volunteerNumLbl.text = volunteers
         numOfBagsLbl.text = numberOfBags
         //  let imageFromSite = donorImage.asURL
         self.donorImage.load(urlString: donorImage)

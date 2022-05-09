@@ -63,6 +63,7 @@ class DetailsCellViewController: UIViewController, UISheetPresentationController
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setUpDesign()
+        self.insideAcceptRequestBtn.imageView?.image = UIImage(systemName: "hand.thumbsup")
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,9 +79,9 @@ class DetailsCellViewController: UIViewController, UISheetPresentationController
     //MARK: - Private func
     private func setUpDesign(){
         self.donorImageDetail.layer.cornerRadius = self.donorImageDetail.frame.size.width / 2
-        self.acceptRequestBtn.customTitleLbl(btn: acceptRequestBtn, text: "تلبيه الطلب", fontSize: 13)
+        self.acceptRequestBtn.customTitleLbl(btn: acceptRequestBtn, text: "تلبيه الطلب", fontSize: 15)
         
-        self.bookMarkBtn.customTitleLbl(btn: bookMarkBtn, text: "حفظ", fontSize: 13)
+        self.bookMarkBtn.customTitleLbl(btn: bookMarkBtn, text: "حفظ", fontSize: 15)
         customBtn.shadowBtn(btn: bookMarkBtn, colorShadow: UIColor.gray.cgColor)
         customBtn.shadowBtn(btn: acceptRequestBtn, colorShadow: UIColor.gray.cgColor)
         
@@ -180,8 +181,8 @@ class DetailsCellViewController: UIViewController, UISheetPresentationController
                 for mySavedReq in self.arrOfSavedRequests {
                     if self.requestId == mySavedReq.request_id{
                         print("already exist")
+                        self.bookMarkBtn.titleLabel?.text = "تم الحفظ"
                         self.bookMarkBtn.isEnabled = false
-                        self.bookMarkBtn.titleLabel?.text = "تم"
                         self.insideBookMarkBtn.imageView?.image = UIImage(systemName: "bookmark.fill")
                         break
                     }else{
@@ -236,7 +237,10 @@ class DetailsCellViewController: UIViewController, UISheetPresentationController
                     }
                     if self.p_ssn == myGoingRequest.donner_id && idOfRequest == myGoingRequest.request_id{
                         self.showNormalAlert(title: "للاسف ", message: "لقد تطوعت لهذا الطلب من قبل ")
+                        self.acceptRequestBtn.titleLabel?.text = "تم التطوع"
                         self.acceptRequestBtn.isEnabled = false
+                        self.insideAcceptRequestBtn.imageView?.image = UIImage(systemName: "hand.thumbsup.fill")
+                        
                     }
                     
                 }
@@ -244,6 +248,7 @@ class DetailsCellViewController: UIViewController, UISheetPresentationController
             }
         }
     }
+    
     private func acceptRequest(){
         if self.volunteersNum == 5{
             showNormalAlert(title: "للاسف", message: "تم اكتمال عدد المتطوعين لهذا الطلب :)")
@@ -251,7 +256,7 @@ class DetailsCellViewController: UIViewController, UISheetPresentationController
             print(self.requestId)
             print(self.p_ssn)
             ApiService.sharedService.acceptRequest(request_id: self.requestId, donner_id: self.p_ssn)
-            self.showNormalAlert(title: "احسنت", message: "لقد تم التطوع للمساعده في هذا الطلب :)")
+//            self.showNormalAlert(title: "احسنت", message: "لقد تم التطوع للمساعده في هذا الطلب :)")
         }
         
     }

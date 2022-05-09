@@ -8,6 +8,8 @@
 import UIKit
 class DetailPrivateCellViewController: UIViewController, UISheetPresentationControllerDelegate  {
     //MARK: - variabels
+    @IBOutlet weak var noVolunteerLbl: UILabel!
+    @IBOutlet weak var noVolunteersData: UIImageView!
     
     @IBOutlet weak var bloddBagsNumLbl: UILabel!
     @IBOutlet weak var volunteersNumLbl: UILabel!
@@ -21,8 +23,7 @@ class DetailPrivateCellViewController: UIViewController, UISheetPresentationCont
     // custom Btn
     @IBOutlet weak var insideBookMarkBtn: UIButton!
     @IBOutlet weak var bookMarkBtn: UIButton!
-    @IBOutlet weak var volunteeringBtn: UIButton!
-    @IBOutlet weak var insidevolunteeringBtn: UIButton!
+    
     
     let customBtn = UserCustomBtn()
     @IBOutlet weak var sharingBtn: UIButton!
@@ -31,6 +32,10 @@ class DetailPrivateCellViewController: UIViewController, UISheetPresentationCont
     let def = UserDefaults.standard
     var p_ssn = ""
     var requestId = ""
+    var arrOfDonors: [String] = []
+    var volunteersNum = 0
+    var volunt = [myVolunteer]()
+
     var arrOfPrivateQuickRequestDetail: QuickRequestData!
     var arrOfSavedRequests : [SavedBloodRequestData] = [SavedBloodRequestData]()
     
@@ -39,6 +44,12 @@ class DetailPrivateCellViewController: UIViewController, UISheetPresentationCont
         presentationController as! UISheetPresentationController
     }
     //MARK: - LifeCycle
+    override func viewWillLayoutSubviews() {
+        if let userInfo = def.object(forKey: "userInfo")as? [String]{
+            self.p_ssn = userInfo[0]
+        }
+        setUpData()
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setUpDesign()
@@ -47,23 +58,79 @@ class DetailPrivateCellViewController: UIViewController, UISheetPresentationCont
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpSheetPresentation()
-        setUpData()
-        if let userInfo = def.object(forKey: "userInfo")as? [String]{
-            self.p_ssn = userInfo[0]
-        }
+        self.allGoingDonor(idOfRequest: self.requestId)
         print(self.p_ssn)
         print(self.requestId)
         self.checkRequestIsInfavoriteForDidLoad()
+        self.getVolunteerData()
+        self.getDonorsDetails()
+        setUpSheetPresentation()
     }
     //MARK: - Private func
-    
+    func allGoingDonor(idOfRequest: String){
+        print(idOfRequest)
+        ApiService.sharedService.allGoingAccept { error, goingRequest in
+            if let error = error {
+                print(error.localizedDescription)
+            }else if let goingRequest = goingRequest {
+                for myGoingRequest in goingRequest{
+                    if self.requestId == myGoingRequest.request_id{
+                        self.volunteersNum += 1
+                    }
+                    if self.p_ssn == myGoingRequest.donner_id && idOfRequest == myGoingRequest.request_id{
+                        self.showNormalAlert(title: "للاسف ", message: "لقد تطوعت لهذا الطلب من قبل ")
+                    }
+                }
+                print("volunteer of this request : \(self.volunteersNum)")
+            }
+        }
+    }
+    private func getVolunteerData(){
+        ApiService.sharedService.allGoingAccept { error, goingRequest in
+            if let error = error {
+                print(error.localizedDescription)
+            }else if let goingRequest = goingRequest {
+                for goingRequest in goingRequest{
+                    if self.requestId == goingRequest.request_id{
+                        self.arrOfDonors.append(goingRequest.donner_id)
+                        self.volunteersTableView.isHidden = false
+                        self.noVolunteersData.isHidden = true
+                        self.noVolunteerLbl.isHidden = true
+                    }
+                    if self.arrOfDonors.count == 0{
+                        self.volunteersTableView.isHidden = true
+                        self.noVolunteersData.isHidden = false
+                        self.noVolunteerLbl.isHidden = false
+                    }
+                }
+                print("arr of donors\(self.arrOfDonors)")
+            }
+            self.volunteersTableView.reloadData()
+        }
+    }
+    private func getDonorsDetails(){
+        ApiService.sharedService.checkSignIn { error, user in
+            if let error = error {
+                print(error.localizedDescription)
+            }else if let user = user {
+                for user in user {
+                    for donor in self.arrOfDonors {
+                        if user.p_ssn == donor{
+                            self.volunt.append(myVolunteer(Name: "\(user.p_first_name) \(user.p_last_name)", PhoneNumber: user.mobile_phone))
+                        }
+                    }
+                    
+                }
+                print("Volunteers :\(self.volunt)")
+            }
+            self.volunteersTableView.reloadData()
+        }
+    }
     private func setUpDesign(){
         self.donorImageDetail.layer.cornerRadius = self.donorImageDetail.frame.size.width / 2
-        self.volunteeringBtn.customTitleLbl(btn: volunteeringBtn, text: "تطوع", fontSize: 13)
-        self.bookMarkBtn.customTitleLbl(btn: bookMarkBtn, text: "حفظ", fontSize: 13)
+        
+        self.bookMarkBtn.customTitleLbl(btn: bookMarkBtn, text: "حفظ", fontSize: 15)
         customBtn.shadowBtn(btn: bookMarkBtn, colorShadow: UIColor.gray.cgColor)
-        customBtn.shadowBtn(btn: volunteeringBtn, colorShadow: UIColor.gray.cgColor)
     }
     private func setUpSheetPresentation(){
         sheetPresentationController.delegate = self
@@ -84,7 +151,7 @@ class DetailPrivateCellViewController: UIViewController, UISheetPresentationCont
         timeDetailLbl.text = String(subTime)
         descriptionDetailLbl.text = arrOfPrivateQuickRequestDetail.message
         bloddBagsNumLbl.text = arrOfPrivateQuickRequestDetail.blood_bags_number
-        volunteersNumLbl.text = arrOfPrivateQuickRequestDetail.blood_bags_number
+        volunteersNumLbl.text = String(self.volunteersNum)
         donorImageDetail.load(urlString: arrOfPrivateQuickRequestDetail.patient_image)
     }
     
@@ -147,8 +214,8 @@ class DetailPrivateCellViewController: UIViewController, UISheetPresentationCont
                         
                         break
                     }else{
-                        self.bookMarkBtn.isEnabled = true
                         self.insideBookMarkBtn.imageView?.image = UIImage(systemName: "bookmark")
+                        self.bookMarkBtn.isEnabled = true
                     }
                 }
             }
@@ -198,7 +265,6 @@ class DetailPrivateCellViewController: UIViewController, UISheetPresentationCont
         }
     }
     @IBAction func bookMarkBtnTapped(_ sender: UIButton) {
-        
         self.bookMarkTapped()
     }
     @IBAction func volunteeringBtnTapped(_ sender: UIButton) {
@@ -210,12 +276,12 @@ class DetailPrivateCellViewController: UIViewController, UISheetPresentationCont
 //MARK: - Extension UITableViewDelegate,UITableViewDataSource
 extension DetailPrivateCellViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return volunteer.count
+        return volunt.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = volunteersTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = volunteer[indexPath.row].title
-        cell.detailTextLabel?.text = volunteer[indexPath.row].subTitle
+        cell.textLabel?.text = volunt[indexPath.row].Name
+        cell.detailTextLabel?.text = volunt[indexPath.row].PhoneNumber
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

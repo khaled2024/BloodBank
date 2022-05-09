@@ -19,8 +19,9 @@ class RequestViewController: UIViewController{
     var arrOfPrivateQuickRequest: [QuickRequestData] = [QuickRequestData]()
     let refreshControll = UIRefreshControl()
     var privateRequestId = ""
+    var volunteersNum = 0
     var arrOfSavedRequests : [SavedBloodRequestData] = [SavedBloodRequestData]()
-    
+    var myRequestId  = ""
     //MARK: - --------------------------------------------------------
     
     override func viewDidLoad() {
@@ -97,6 +98,25 @@ class RequestViewController: UIViewController{
             }
         }
     }
+    func allGoingDonor(idOfRequest: String){
+        print(self.myRequestId)
+        ApiService.sharedService.allGoingAccept { error, goingRequest in
+            if let error = error {
+                print(error.localizedDescription)
+            }else if let goingRequest = goingRequest {
+                for myGoingRequest in goingRequest{
+                    if idOfRequest == myGoingRequest.request_id{
+                        self.volunteersNum += 1
+                    }
+                    if self.p_ssn == myGoingRequest.donner_id && idOfRequest == myGoingRequest.request_id{
+                        self.showNormalAlert(title: "للاسف ", message: "لقد تطوعت لهذا الطلب من قبل ")
+                        
+                    }
+                }
+                print("volunteer of this request : \(self.volunteersNum)")
+            }
+        }
+    }
     private func setDataOfUser(){
         let def = UserDefaults.standard
         if let userInfo = def.object(forKey: "userInfo")as? [String]{
@@ -109,19 +129,21 @@ class RequestViewController: UIViewController{
         if segmentSender == 0{
             let controller = DetailsCellViewController.instantiate()
             controller.arrOfQuickRequestDetail = arrOfQuickRequest[indexPath.row]
+//            self.myRequestId = arrOfQuickRequest[indexPath.row].id
             controller.requestId = arrOfQuickRequest[indexPath.row].id
+//            print(arrOfQuickRequest[indexPath.row].id)
+//            self.allGoingDonor(idOfRequest: self.myRequestId)
+          
             self.present(controller, animated: true, completion: nil)
+            
         }else{
             let controller = DetailPrivateCellViewController.instantiate()
             controller.arrOfPrivateQuickRequestDetail = arrOfPrivateQuickRequest[indexPath.row]
             controller.requestId = arrOfPrivateQuickRequest[indexPath.row].id
-            
             self.present(controller, animated: true, completion: nil)
         }
         
     }
-   
-        
 //    private func checkRequestIsInfavoriteForDidLoad(){
 //        ApiService.sharedService.allSavedBloodRequests { error, savedRequest in
 //            print(self.privateRequestId)
@@ -173,7 +195,7 @@ extension RequestViewController: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "Requestscell")as! RequestsTableViewCell
             let time = arrOfQuickRequest[indexPath.row].time
             let subTime = time.prefix(16)
-            cell.configure(name: "\(arrOfQuickRequest[indexPath.row].first_name) \(arrOfQuickRequest[indexPath.row].last_name)", bloodType: arrOfQuickRequest[indexPath.row].blood_type, address: "(\(arrOfQuickRequest[indexPath.row].hospital_name))- \(arrOfQuickRequest[indexPath.row].city_of_hospital)- \(arrOfQuickRequest[indexPath.row].governorate_name)", time: String(subTime), description: arrOfQuickRequest[indexPath.row].message, donorImage: arrOfQuickRequest[indexPath.row].patient_image, volunteers: arrOfQuickRequest[indexPath.row].blood_bags_number, numberOfBags: arrOfQuickRequest[indexPath.row].blood_bags_number)
+            cell.configure(name: "\(arrOfQuickRequest[indexPath.row].first_name) \(arrOfQuickRequest[indexPath.row].last_name)", bloodType: arrOfQuickRequest[indexPath.row].blood_type, address: "(\(arrOfQuickRequest[indexPath.row].hospital_name))- \(arrOfQuickRequest[indexPath.row].city_of_hospital)- \(arrOfQuickRequest[indexPath.row].governorate_name)", time: String(subTime), description: arrOfQuickRequest[indexPath.row].message, donorImage: arrOfQuickRequest[indexPath.row].patient_image, numberOfBags: arrOfQuickRequest[indexPath.row].blood_bags_number)
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "privateRequestCell")as! privateRequestCell

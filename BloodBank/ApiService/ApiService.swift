@@ -649,5 +649,47 @@ class ApiService{
         }
         task.resume()
     }
+    
+//MARK: - going_donners
+    // add request going
+    func acceptRequest(request_id: String , donner_id:String){
+        guard let url = URL(string: "\(URLS.going_Donor)/add")else{return}
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let body : [String:AnyHashable] = [
+            "request_id": request_id,
+            "donner_id": donner_id
+        ]
+        urlRequest.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
+        let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+            guard let data = data, error == nil else {return}
+            do{
+                let response = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
+                print("success : \(response)")
+            }catch{
+                print(error)
+            }
+        }
+        task.resume()
+    }
+// show all going requests
+    func allGoingAccept(completion: @escaping (_ error: Error? , _ goingRequest: [Going_DonnersData]?) -> Void){
+        AF.request("\(URLS.going_Donor)/all", method: .get, encoding: URLEncoding.default , headers: nil).response {
+            response in
+            if let error = response.error {
+                completion(error , nil)
+            }
+            if let data = response.data {
+                do{
+                    let goingRequest = try JSONDecoder().decode(Going_Donners.self, from: data).data
+                    completion(nil,goingRequest)
+                } catch let error {
+                    completion(error , nil)
+                }
+            }
+        }
+    }
+    
 }
 

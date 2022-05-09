@@ -16,7 +16,6 @@ class RequestsTableViewCell: UITableViewCell {
     @IBOutlet weak var bloodTypeLbl: UILabel!
     @IBOutlet weak var insideView: UIView!
     @IBOutlet weak var cardView: UIView!
-    @IBOutlet weak var volunteersNumLbl: UILabel!
     @IBOutlet weak var numberOfBagsLbl: UILabel!
     let shadowBtn = UserCustomBtn()
     override func awakeFromNib() {
@@ -41,13 +40,12 @@ class RequestsTableViewCell: UITableViewCell {
         
         insideView.roundedCornerView(corners: [.topLeft , .bottomLeft], radius: insideView.frame.size.width/0.2)
     }
-    func configure(name: String, bloodType: String, address: String, time: String, description: String , donorImage: String,volunteers: String, numberOfBags: String){
+    func configure(name: String, bloodType: String, address: String, time: String, description: String , donorImage: String, numberOfBags: String){
         patientNameLbl.text = name
         bloodTypeLbl.text = bloodType
         addressLbl.text = address
         timeLbl.text = time
         descriptionLbl.text = description
-        volunteersNumLbl.text = volunteers
         numberOfBagsLbl.text = numberOfBags
 //        let imageFromSite = donorImage.asURL
         self.donorImage.load(urlString: donorImage)

@@ -30,6 +30,7 @@ struct URLS{
     static let last_Donate = "https://blood-bank.life/api/api/v1/last_donate/\(myCode)"
     static let purchaseOrder = "https://blood-bank.life/api/api/v1/purchase_order/\(myCode)"
     static let savedBloodRequest = "https://blood-bank.life/api/api/v1/saved_blood_requests/\(myCode)"
+    static let going_Donor = "https://blood-bank.life/api/api/v1/going_donners/\(myCode)"
     
 }
 struct Identifier{

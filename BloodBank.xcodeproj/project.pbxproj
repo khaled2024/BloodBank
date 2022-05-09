@@ -58,6 +58,7 @@
 		EA545C8F2808A7870009C6C7 /* VaccineCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA545C8E2808A7870009C6C7 /* VaccineCollectionViewController.swift */; };
 		EA545C922808C3FC0009C6C7 /* VaccineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA545C912808C3FC0009C6C7 /* VaccineCollectionViewCell.swift */; };
 		EA5972622821C36D0053DFD5 /* OrderVaccine.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5972612821C36D0053DFD5 /* OrderVaccine.swift */; };
+		EA5A2BE82829397D00B3B272 /* Going_Donners.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A2BE72829397D00B3B272 /* Going_Donners.swift */; };
 		EA5A8C8227F269C500FCF61F /* UiimageView+UrlExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A8C8127F269C500FCF61F /* UiimageView+UrlExtension.swift */; };
 		EA6211E227EF6DC000301635 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6211E127EF6DC000301635 /* ApiService.swift */; };
 		EA6211E427EF6FC300301635 /* CoronaAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6211E327EF6FC200301635 /* CoronaAnalysis.swift */; };
@@ -190,6 +191,7 @@
 		EA545C8E2808A7870009C6C7 /* VaccineCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineCollectionViewController.swift; sourceTree = "<group>"; };
 		EA545C912808C3FC0009C6C7 /* VaccineCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineCollectionViewCell.swift; sourceTree = "<group>"; };
 		EA5972612821C36D0053DFD5 /* OrderVaccine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderVaccine.swift; sourceTree = "<group>"; };
+		EA5A2BE72829397D00B3B272 /* Going_Donners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Going_Donners.swift; sourceTree = "<group>"; };
 		EA5A8C8127F269C500FCF61F /* UiimageView+UrlExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiimageView+UrlExtension.swift"; sourceTree = "<group>"; };
 		EA6211E127EF6DC000301635 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		EA6211E327EF6FC200301635 /* CoronaAnalysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronaAnalysis.swift; sourceTree = "<group>"; };
@@ -404,6 +406,16 @@
 			path = VaccineCell;
 			sourceTree = "<group>";
 		};
+		EA5A2BE62829329100B3B272 /* AllQuickRequests */ = {
+			isa = PBXGroup;
+			children = (
+				EA4278A327B025A7002D444A /* RequestViewController.swift */,
+				EA1915F827DC27B100554FF9 /* DetailsCellViewController.swift */,
+				EA62CA0228288D5B007BD085 /* DetailPrivateCellViewController.swift */,
+			);
+			path = AllQuickRequests;
+			sourceTree = "<group>";
+		};
 		EA62CA062828AE6E007BD085 /* FavoriteVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -467,16 +479,6 @@
 				EA92A0AF27E8A92E0060C5C8 /* InfoPlist.strings */,
 			);
 			path = Locolaizable;
-			sourceTree = "<group>";
-		};
-		EA9F8B1727FBC9A400345E60 /* Donation Requests */ = {
-			isa = PBXGroup;
-			children = (
-				EA4278A327B025A7002D444A /* RequestViewController.swift */,
-				EA1915F827DC27B100554FF9 /* DetailsCellViewController.swift */,
-				EA62CA0228288D5B007BD085 /* DetailPrivateCellViewController.swift */,
-			);
-			path = "Donation Requests";
 			sourceTree = "<group>";
 		};
 		EA9F8B1A27FBCB9200345E60 /* donate Blood */ = {
@@ -632,7 +634,7 @@
 			isa = PBXGroup;
 			children = (
 				EA8676CF27A6C70A00E95283 /* HamburgerViewController.swift */,
-				EA9F8B1727FBC9A400345E60 /* Donation Requests */,
+				EA5A2BE62829329100B3B272 /* AllQuickRequests */,
 				EA2A523727EA429300D92ED3 /* CoronaStatsViewController.swift */,
 				EA4B13AB280F096900B52607 /* VolunteersViewController.swift */,
 				EA4CA33627F9C782003873DC /* YourStoryViewController.swift */,
@@ -693,6 +695,7 @@
 				EA5972612821C36D0053DFD5 /* OrderVaccine.swift */,
 				EA32DC6C282215C800856119 /* LastDonate.swift */,
 				EAC37459282417C4001F28C8 /* PurchaseOrder.swift */,
+				EA5A2BE72829397D00B3B272 /* Going_Donners.swift */,
 			);
 			path = ApiModels;
 			sourceTree = "<group>";
@@ -909,6 +912,7 @@
 				EA92A0B227E917F30060C5C8 /* Color+UIcolor.swift in Sources */,
 				EA1F21CC280C927C00DE49F9 /* LastDonateHistoryCell.swift in Sources */,
 				EA2AF7ED28102C0400ECCB55 /* VolunteersTableViewCell.swift in Sources */,
+				EA5A2BE82829397D00B3B272 /* Going_Donners.swift in Sources */,
 				EA4C711F27E3D626000C8B02 /* CustomPlaceHolder.swift in Sources */,
 				EA4278AC27B025FB002D444A /* SettingViewController.swift in Sources */,
 				EAE3D49A2819FEEE003B514A /* Vaccine.swift in Sources */,

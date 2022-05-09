@@ -11,10 +11,16 @@ struct Volunteer {
     let title: String
     let subTitle: String?
 }
+struct myVolunteer {
+    let Name: String
+    let PhoneNumber: String
+}
 
 class DetailsCellViewController: UIViewController, UISheetPresentationControllerDelegate  {
     //MARK: - variabels
     
+    @IBOutlet weak var noVolunteerLbl: UILabel!
+    @IBOutlet weak var noVolunteersData: UIImageView!
     @IBOutlet weak var volunteersNumLbl: UILabel!
     @IBOutlet weak var bloodBagNumLbl: UILabel!
     @IBOutlet weak var volunteersTableView: UITableView!
@@ -30,53 +36,95 @@ class DetailsCellViewController: UIViewController, UISheetPresentationController
     @IBOutlet weak var bookMarkBtn: UIButton!
     @IBOutlet weak var insideAcceptRequestBtn: UIButton!
     @IBOutlet weak var acceptRequestBtn: UIButton!
-    @IBOutlet weak var volunteeringBtn: UIButton!
-    @IBOutlet weak var insidevolunteeringBtn: UIButton!
     
     let customBtn = UserCustomBtn()
     @IBOutlet weak var sharingBtn: UIButton!
     var myPatient: Patient!
     let customView = CustomView()
     let def = UserDefaults.standard
+    var arrOfDonors: [String] = []
     var p_ssn = ""
     var requestId = ""
+    var volunteersNum = 0
     var arrOfQuickRequestDetail: QuickRequestData!
     var arrOfSavedRequests : [SavedBloodRequestData] = [SavedBloodRequestData]()
     
-    let volunteer = [Volunteer(title: "عمرو", subTitle: "12222111"),Volunteer(title: "خالد", subTitle: "1039484848"),Volunteer(title: "Amr", subTitle: "02920920933"),Volunteer(title: "khaled", subTitle: "1221781723"),Volunteer(title: "Amr", subTitle: "12093094090")]
+    var volunt = [myVolunteer]()
     override var sheetPresentationController: UISheetPresentationController{
         presentationController as! UISheetPresentationController
     }
     //MARK: - LifeCycle
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        setUpDesign()
-        //        def.set(false, forKey: "isRequestSaved")
-        //        setBookMark()
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setUpSheetPresentation()
-        setUpData()
+    override func viewWillLayoutSubviews() {
         if let userInfo = def.object(forKey: "userInfo")as? [String]{
             self.p_ssn = userInfo[0]
         }
+        setUpData()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setUpDesign()
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.allGoingDonor(idOfRequest: self.requestId)
         print(self.p_ssn)
         print(self.requestId)
         self.checkRequestIsInfavoriteForDidLoad()
-        
+        self.getVolunteerData()
+        self.getDonorsDetails()
+        setUpSheetPresentation()
     }
     
     //MARK: - Private func
-   
     private func setUpDesign(){
         self.donorImageDetail.layer.cornerRadius = self.donorImageDetail.frame.size.width / 2
         self.acceptRequestBtn.customTitleLbl(btn: acceptRequestBtn, text: "تلبيه الطلب", fontSize: 13)
-        self.volunteeringBtn.customTitleLbl(btn: volunteeringBtn, text: "تطوع", fontSize: 13)
+        
         self.bookMarkBtn.customTitleLbl(btn: bookMarkBtn, text: "حفظ", fontSize: 13)
         customBtn.shadowBtn(btn: bookMarkBtn, colorShadow: UIColor.gray.cgColor)
         customBtn.shadowBtn(btn: acceptRequestBtn, colorShadow: UIColor.gray.cgColor)
-        customBtn.shadowBtn(btn: volunteeringBtn, colorShadow: UIColor.gray.cgColor)
+        
+    }
+    private func getVolunteerData(){
+        ApiService.sharedService.allGoingAccept { error, goingRequest in
+            if let error = error {
+                print(error.localizedDescription)
+            }else if let goingRequest = goingRequest {
+                for goingRequest in goingRequest{
+                    if self.requestId == goingRequest.request_id{
+                        self.arrOfDonors.append(goingRequest.donner_id)
+                        self.volunteersTableView.isHidden = false
+                        self.noVolunteersData.isHidden = true
+                        self.noVolunteerLbl.isHidden = true
+                    }
+                    if self.arrOfDonors.count == 0{
+                        self.volunteersTableView.isHidden = true
+                        self.noVolunteersData.isHidden = false
+                        self.noVolunteerLbl.isHidden = false
+                    }
+                }
+                print("arr of donors\(self.arrOfDonors)")
+            }
+            self.volunteersTableView.reloadData()
+        }
+    }
+    private func getDonorsDetails(){
+        ApiService.sharedService.checkSignIn { error, user in
+            if let error = error {
+                print(error.localizedDescription)
+            }else if let user = user {
+                for user in user {
+                    for donor in self.arrOfDonors {
+                        if user.p_ssn == donor{
+                            self.volunt.append(myVolunteer(Name: "\(user.p_first_name) \(user.p_last_name)", PhoneNumber: user.mobile_phone))
+                        }
+                    }
+                    
+                }
+                print("Volunteers :\(self.volunt)")
+            }
+            self.volunteersTableView.reloadData()
+        }
     }
     private func setUpSheetPresentation(){
         sheetPresentationController.delegate = self
@@ -96,7 +144,8 @@ class DetailsCellViewController: UIViewController, UISheetPresentationController
         let subTime = time.prefix(15)
         timeDetailLbl.text = String(subTime)
         descriptionDetailLbl.text = arrOfQuickRequestDetail.message
-        volunteersNumLbl.text = arrOfQuickRequestDetail.blood_bags_number
+        volunteersNumLbl.text = String(self.volunteersNum)
+        print(self.volunteersNumLbl.text!)
         bloodBagNumLbl.text = arrOfQuickRequestDetail.blood_bags_number
         donorImageDetail.load(urlString: arrOfQuickRequestDetail.patient_image)
     }
@@ -108,7 +157,7 @@ class DetailsCellViewController: UIViewController, UISheetPresentationController
         activityController = UIActivityViewController(activityItems: [defaultText , image!], applicationActivities: nil)
         self.present(activityController, animated: true, completion: nil)
     }
-   
+    
     private func setBookMark(){
         if let isRequestSaved = def.object(forKey: "isRequestSaved")as? Bool{
             if isRequestSaved == true{
@@ -175,43 +224,79 @@ class DetailsCellViewController: UIViewController, UISheetPresentationController
     private func bookMarkTapped(){
         self.checkRequestId()
     }
-   
+    func allGoingDonor(idOfRequest: String){
+        print(idOfRequest)
+        ApiService.sharedService.allGoingAccept { error, goingRequest in
+            if let error = error {
+                print(error.localizedDescription)
+            }else if let goingRequest = goingRequest {
+                for myGoingRequest in goingRequest{
+                    if self.requestId == myGoingRequest.request_id{
+                        self.volunteersNum += 1
+                    }
+                    if self.p_ssn == myGoingRequest.donner_id && idOfRequest == myGoingRequest.request_id{
+                        self.showNormalAlert(title: "للاسف ", message: "لقد تطوعت لهذا الطلب من قبل ")
+                        self.acceptRequestBtn.isEnabled = false
+                    }
+                    
+                }
+                print("volunteer of this request : \(self.volunteersNum)")
+            }
+        }
+    }
+    private func acceptRequest(){
+        if self.volunteersNum == 5{
+            showNormalAlert(title: "للاسف", message: "تم اكتمال عدد المتطوعين لهذا الطلب :)")
+        }else{
+            print(self.requestId)
+            print(self.p_ssn)
+            ApiService.sharedService.acceptRequest(request_id: self.requestId, donner_id: self.p_ssn)
+            self.showNormalAlert(title: "احسنت", message: "لقد تم التطوع للمساعده في هذا الطلب :)")
+        }
+        
+    }
+    
     //MARK: - Actions
-   
+    
+    @IBAction func volunteerBtnTapped(_ sender: UIButton) {
+        //        self.getVolunteerData()
+        //        self.getDonorsDetails()
+        //        self.volunteersTableView.isHidden = false
+    }
     @IBAction func shareBtnTapped(_ sender: UIButton) {
         if sender == sharingBtn{
-            shareContent()
-        }else{
-            print("shared")
-            customBtn.toggleBtnByForground(Btn: insideBookMarkBtn)
             shareContent()
         }
     }
     @IBAction func bookMarkBtnTapped(_ sender: UIButton) {
-        
         self.bookMarkTapped()
     }
-    @IBAction func volunteeringBtnTapped(_ sender: UIButton) {
-        print("volunteering")
-       
-    }
     @IBAction func acceptRequestBtnTapped(_ sender: UIButton) {
-        print("AcceptReques")
+        print("AcceptRequests")
+        self.acceptRequest()
     }
-   
+    
 }
 //MARK: - Extension UITableViewDelegate,UITableViewDataSource
 extension DetailsCellViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return volunteer.count
+        print(volunt.count)
+        return volunt.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = volunteersTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = volunteer[indexPath.row].title
-        cell.detailTextLabel?.text = volunteer[indexPath.row].subTitle
+        cell.textLabel?.text = volunt[indexPath.row].Name
+        cell.detailTextLabel?.text = volunt[indexPath.row].PhoneNumber
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+        //for animations
+        func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+            cell.layer.transform = CATransform3DMakeScale(0.1, 0.1, 1)
+            UIView.animate(withDuration: 0.35) {
+                cell.layer.transform = CATransform3DMakeScale(1, 1, 1)
+            }
+        }
 }

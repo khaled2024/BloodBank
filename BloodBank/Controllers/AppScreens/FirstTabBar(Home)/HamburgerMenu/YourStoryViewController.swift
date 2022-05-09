@@ -58,10 +58,23 @@ class YourStoryViewController: UIViewController {
     @objc func reloadData(){
         self.getAllStory()
         getPrivateStory()
+        if self.segmentSender == 0 && self.arrOfPrivateStory.count == 0{
+            self.tableView.isHidden = true
+            self.noDataImage.isHidden = false
+            tableView.reloadData()
+        }else if self.segmentSender == 0 && self.arrOfPrivateStory.count != 0{
+            self.tableView.isHidden = false
+            self.noDataImage.isHidden = true
+            tableView.reloadData()
+        }
         refreshControll.endRefreshing()
     }
     private func addNewStory(){
+        tableView.beginUpdates()
         ApiService.sharedService.addStory(content: storyDescription.text, p_ssn: self.p_ssn)
+        tableView.endUpdates()
+
+        
     }
     private func setUp(){
         //     getAllStory()
@@ -149,8 +162,6 @@ class YourStoryViewController: UIViewController {
                 for story in story {
                     if self.p_ssn == story.p_ssn{
                         self.arrOfPrivateStory.append(story)
-                    }else{
-                        self.showNormalAlert(title: "للاسف", message: "انت لم تكتب قصه لك حتي الآن ، اضغط علي انشاء لتتمكن من انشاء قصه لك")
                     }
                     print(self.arrOfPrivateStory)
                     self.tableView.reloadData()
@@ -162,13 +173,30 @@ class YourStoryViewController: UIViewController {
         let segmentIndex = self.storySegmentControll.selectedSegmentIndex
         switch segmentIndex{
         case 0:
-            print(segmentIndex)
-            self.segmentSender = segmentIndex
-            tableView.reloadData()
+            if self.storiesArr.count == 0{
+                self.tableView.isHidden = true
+                self.noDataImage.isHidden = false
+            }else{
+                self.tableView.isHidden = false
+                self.noDataImage.isHidden = true
+                print(segmentIndex)
+                self.segmentSender = segmentIndex
+                tableView.reloadData()
+            }
+            
         case 1:
-            print(segmentIndex)
-            self.segmentSender = segmentIndex
-            tableView.reloadData()
+            if self.arrOfPrivateStory.count == 0{
+                self.showNormalAlert(title: "للاسف", message: "انت لم تكتب قصه لك حتي الآن ، اضغط علي انشاء لتتمكن من انشاء قصه ")
+                self.tableView.isHidden = true
+                self.noDataImage.isHidden = false
+            }else{
+                self.tableView.isHidden = false
+                self.noDataImage.isHidden = true
+                print(segmentIndex)
+                self.segmentSender = segmentIndex
+                tableView.reloadData()
+            }
+           
         default:
             break
         }
@@ -192,6 +220,9 @@ class YourStoryViewController: UIViewController {
     @IBAction func createStoryBtnTapped(_ sender: UIButton) {
         if let storyText = storyDescription.text , !storyText.isEmpty{
             self.addNewStory()
+            self.noDataImage.isHidden = true
+            self.tableView.isHidden = false
+//            self.storySegmentControll.selectedSegmentIndex = 0
             self.animateOut(desireView: blurView)
             self.animateOut(desireView: addStoryView)
             

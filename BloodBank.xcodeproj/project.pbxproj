@@ -62,6 +62,9 @@
 		EA6211E227EF6DC000301635 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6211E127EF6DC000301635 /* ApiService.swift */; };
 		EA6211E427EF6FC300301635 /* CoronaAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6211E327EF6FC200301635 /* CoronaAnalysis.swift */; };
 		EA6211E627EF829600301635 /* formatInt+Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6211E527EF829600301635 /* formatInt+Int.swift */; };
+		EA62CA0328288D5B007BD085 /* DetailPrivateCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA62CA0228288D5B007BD085 /* DetailPrivateCellViewController.swift */; };
+		EA62CA0528289885007BD085 /* HistoryRequestDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA62CA0428289885007BD085 /* HistoryRequestDetailsViewController.swift */; };
+		EA62CA082828AE89007BD085 /* FavoriteDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA62CA072828AE89007BD085 /* FavoriteDetailsViewController.swift */; };
 		EA64542C27F8991900376A8B /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA64542B27F8991900376A8B /* LaunchViewController.swift */; };
 		EA66461A27E2BAB1001A9E12 /* CustomTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA66461927E2BAB1001A9E12 /* CustomTF.swift */; };
 		EA66E54528157ED700443115 /* favoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA66E54328157ED700443115 /* favoriteTableViewCell.swift */; };
@@ -191,6 +194,9 @@
 		EA6211E127EF6DC000301635 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		EA6211E327EF6FC200301635 /* CoronaAnalysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronaAnalysis.swift; sourceTree = "<group>"; };
 		EA6211E527EF829600301635 /* formatInt+Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "formatInt+Int.swift"; sourceTree = "<group>"; };
+		EA62CA0228288D5B007BD085 /* DetailPrivateCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPrivateCellViewController.swift; sourceTree = "<group>"; };
+		EA62CA0428289885007BD085 /* HistoryRequestDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRequestDetailsViewController.swift; sourceTree = "<group>"; };
+		EA62CA072828AE89007BD085 /* FavoriteDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDetailsViewController.swift; sourceTree = "<group>"; };
 		EA64542B27F8991900376A8B /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		EA66461927E2BAB1001A9E12 /* CustomTF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTF.swift; sourceTree = "<group>"; };
 		EA66E54328157ED700443115 /* favoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = favoriteTableViewCell.swift; sourceTree = "<group>"; };
@@ -398,6 +404,15 @@
 			path = VaccineCell;
 			sourceTree = "<group>";
 		};
+		EA62CA062828AE6E007BD085 /* FavoriteVC */ = {
+			isa = PBXGroup;
+			children = (
+				EA6F6122281390BE002E5E5E /* FavoriteViewController.swift */,
+				EA62CA072828AE89007BD085 /* FavoriteDetailsViewController.swift */,
+			);
+			path = FavoriteVC;
+			sourceTree = "<group>";
+		};
 		EA66E54228157E9F00443115 /* favoriteCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -459,6 +474,7 @@
 			children = (
 				EA4278A327B025A7002D444A /* RequestViewController.swift */,
 				EA1915F827DC27B100554FF9 /* DetailsCellViewController.swift */,
+				EA62CA0228288D5B007BD085 /* DetailPrivateCellViewController.swift */,
 			);
 			path = "Donation Requests";
 			sourceTree = "<group>";
@@ -622,7 +638,7 @@
 				EA4CA33627F9C782003873DC /* YourStoryViewController.swift */,
 				EA4278A727B025D4002D444A /* HelpAndSupportViewController.swift */,
 				EA4278AB27B025FB002D444A /* SettingViewController.swift */,
-				EA6F6122281390BE002E5E5E /* FavoriteViewController.swift */,
+				EA62CA062828AE6E007BD085 /* FavoriteVC */,
 				EA6F6124281390CF002E5E5E /* BuyBloodViewController.swift */,
 			);
 			path = HamburgerMenu;
@@ -728,6 +744,7 @@
 			isa = PBXGroup;
 			children = (
 				EAD669F027C63A72006221A2 /* HistoryMainViewController.swift */,
+				EA62CA0428289885007BD085 /* HistoryRequestDetailsViewController.swift */,
 			);
 			path = "SecondScreen(History)";
 			sourceTree = "<group>";
@@ -923,6 +940,7 @@
 				EAC3745A282417C4001F28C8 /* PurchaseOrder.swift in Sources */,
 				EAD4B44027F7CB7C00C6924C /* ValidationManager.swift in Sources */,
 				EACC012C27A41E4F00FFB92B /* LoadingViewController.swift in Sources */,
+				EA62CA0328288D5B007BD085 /* DetailPrivateCellViewController.swift in Sources */,
 				EACC013C27A43A5A00FFB92B /* UserGradientBackground.swift in Sources */,
 				EA1915F927DC27B100554FF9 /* DetailsCellViewController.swift in Sources */,
 				EA6211E427EF6FC300301635 /* CoronaAnalysis.swift in Sources */,
@@ -967,6 +985,7 @@
 				EA215BFE27E7FA36005A9843 /* String+URL.swift in Sources */,
 				EA66E54528157ED700443115 /* favoriteTableViewCell.swift in Sources */,
 				EA215BFC27E7EB98005A9843 /* EducateCollectionViewCell.swift in Sources */,
+				EA62CA0528289885007BD085 /* HistoryRequestDetailsViewController.swift in Sources */,
 				EA48885C281FD51700A2700A /* DonateReason.swift in Sources */,
 				EAAD8337276D12C800381854 /* DataPicker.swift in Sources */,
 				EACC012F27A4275700FFB92B /* NavigationManager.swift in Sources */,
@@ -989,6 +1008,7 @@
 				EA32DC6D282215C800856119 /* LastDonate.swift in Sources */,
 				EA4402F127EA80200034C6AF /* CustomView.swift in Sources */,
 				EA78BC4428183EF20078DC96 /* Governorate.swift in Sources */,
+				EA62CA082828AE89007BD085 /* FavoriteDetailsViewController.swift in Sources */,
 				EACC013E27A43A5A00FFB92B /* UserCustomTF.swift in Sources */,
 				EA75CF55281B72770032FA14 /* AvailableVaccines.swift in Sources */,
 				EA1915F727DBFA3100554FF9 /* Patient.swift in Sources */,

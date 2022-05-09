@@ -3,7 +3,6 @@
 //  BloodBank
 //
 //  Created by KhaleD HuSsien on 08/03/2022.
-//
 
 import UIKit
 

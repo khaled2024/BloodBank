@@ -8,7 +8,7 @@
 import UIKit
 
 class favoriteTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var bookMarkImage: UIImageView!
     @IBOutlet weak var bloodBagsLbl: UILabel!
     @IBOutlet weak var volunteerLbl: UILabel!
@@ -21,6 +21,9 @@ class favoriteTableViewCell: UITableViewCell {
     @IBOutlet weak var donorImage: UIImageView!
     @IBOutlet weak var cardView: UIView!
     var requestId: String!
+    var tableView = UITableView()
+    var p_ssn = ""
+    var arrOfFav : [SavedBloodRequestData] = [SavedBloodRequestData]()
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -33,7 +36,7 @@ class favoriteTableViewCell: UITableViewCell {
         bloodView.roundedCornerView(corners: [.topLeft , .bottomLeft], radius: bloodView.frame.size.width/0.2)
         
     }
-
+    
     func configure(bloodBags: String , volunteer: String,message: String , time: String , address: String , name: String , bloodType: String , bloodImage: String){
         self.userName.text = name
         self.bloodType.text = bloodType
@@ -48,17 +51,26 @@ class favoriteTableViewCell: UITableViewCell {
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
     }
     
+    @IBAction func volunteersTapped(_ sender: UIButton) {
+        print(" request id : \(self.requestId ?? "" ) ")
+    }
     @IBAction func nonSavedRequest(_ sender: UIButton) {
         print(" request id : \(self.requestId ?? "" ) ")
         self.bookMarkImage.image = UIImage(systemName: "bookmark")
         print("removed from favorite")
         
+        tableView.beginUpdates()
         removeRequest()
+        tableView.endUpdates()
+        
     }
     private func removeRequest(){
         ApiService.sharedService.deleteFavoriteRequest(id: requestId)
+        
     }
+    
 }
+

@@ -17,9 +17,11 @@ class FavoriteViewController: UIViewController {
     let def = UserDefaults.standard
     var arrOfFavoriteRequest: [QuickRequestData] = [QuickRequestData]()
     var p_ssn = ""
+    var id = ""
     var arrOfRequestsId: [String] = []
     var arrOfIds: [String] = []
     var refreshControll = UIRefreshControl()
+    var arrOfMyFav: [SavedBloodRequestData] = [SavedBloodRequestData]()
     //MARK: - lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,9 +43,11 @@ class FavoriteViewController: UIViewController {
     }
     //MARK: - private functions
     @objc func refreshTapped(){
+        favoriteTableView.beginUpdates()
         allSavedRequests()
         getDetailsOfSavedRequest()
         favoriteTableView.reloadData()
+        favoriteTableView.endUpdates()
         refreshControll.endRefreshing()
     }
     private func allSavedRequests(){
@@ -59,17 +63,19 @@ class FavoriteViewController: UIViewController {
                 self.noDataImage.isHidden = true
                 for savedRequest in savedRequest {
                     if self.p_ssn == savedRequest.p_ssn{
+                        self.arrOfMyFav.append(savedRequest)
                         self.arrOfRequestsId.append(savedRequest.request_id)
                         self.arrOfIds.append(savedRequest.id)
-                    }else{
-                        self.showNormalAlert(title: "Sorry", message: "لا يوجد طلبات دم عاجله محفوظه :(")
+                        //                        self.arrOfIds.insert(savedRequest.id, at: 0)
                     }
+                }
+                if self.arrOfIds.count == 0{
+                    self.showNormalAlert(title: "Sorry", message: "لا يوجد طلبات دم عاجله محفوظه :(")
                 }
                 print(self.arrOfRequestsId)
                 print(self.arrOfIds)
             }
             self.favoriteTableView.reloadData()
-
         }
     }
     func getDetailsOfSavedRequest(){
@@ -95,16 +101,23 @@ class FavoriteViewController: UIViewController {
                 print(self.arrOfFavoriteRequest)
             }
             self.favoriteTableView.reloadData()
-
+            
         }
     }
     private func setUpDesign(){
         navBar.setNavBar(myView: self, title: "Favorite".Localized(), viewController: view, navBarColor: UIColor.navBarColor, navBarTintColor: UIColor.navBarTintColor, forgroundTitle: UIColor.forgroundTitle, bacgroundView: UIColor.backgroundView)
     }
-    
+    private func diffDetails(indexPath: IndexPath){
+        let controll = FavoriteDetailsViewController.instantiate()
+        controll.arrOfFavoriteRequestDetail = self.arrOfFavoriteRequest[indexPath.row]
+        controll.requestId = arrOfIds[indexPath.row]
+        controll.p_ssn = self.p_ssn
+        controll.tableView = favoriteTableView
+        print("id of request : \(arrOfIds[indexPath.row])")
+                self.present(controll, animated: true, completion: nil)
+        
+    }
     //MARK: - Actions
-    
-
 }
 //MARK: - UITableViewDelegate, UITableViewDataSource
 extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource{
@@ -118,7 +131,8 @@ extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource{
         let subTime = time.prefix(16)
         cell.configure(bloodBags: self.arrOfFavoriteRequest[indexPath.row].blood_bags_number, volunteer:self.arrOfFavoriteRequest[indexPath.row].blood_bags_number , message: self.arrOfFavoriteRequest[indexPath.row].message, time: String(subTime), address: "(\(arrOfFavoriteRequest[indexPath.row].hospital_name))- \(arrOfFavoriteRequest[indexPath.row].city_of_hospital)- \(arrOfFavoriteRequest[indexPath.row].governorate_name)", name: "\(arrOfFavoriteRequest[indexPath.row].first_name) \(arrOfFavoriteRequest[indexPath.row].last_name)", bloodType: arrOfFavoriteRequest[indexPath.row].blood_type, bloodImage: "f2")
         cell.requestId = arrOfIds[indexPath.row]
-        
+        cell.p_ssn = self.p_ssn
+        cell.tableView = favoriteTableView
         print("id of request : \(arrOfIds[indexPath.row])")
         
         return cell
@@ -130,6 +144,28 @@ extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource{
             cell.layer.transform = CATransform3DMakeScale(1, 1, 1)
         }
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        self.diffDetails(indexPath: indexPath)
+    }
+    private func removeRequest(){
+        ApiService.sharedService.deleteFavoriteRequest(id: self.id)
+        
+    }
+//    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+//        self.id = arrOfMyFav[indexPath.row].id
+//        let deleteAction = UIContextualAction(style: .normal, title: "") { action, view, completionHandeler in
+//            self.removeRequest()
+//            self.arrOfMyFav.remove(at: indexPath.row)
+//            tableView.beginUpdates()
+//            tableView.deleteRows(at: [indexPath], with: .automatic)
+//            tableView.endUpdates()
+//            completionHandeler(true)
+//        }
+//        deleteAction.image = UIImage(systemName: "trash")
+//        deleteAction.backgroundColor = .systemRed
+//
+//        return UISwipeActionsConfiguration(actions: [deleteAction])
+//    }
     
 }

@@ -155,10 +155,6 @@ class HistoryMainViewController: UIViewController {
                             if  self.p_ssn == request.p_ssn{
                                 self.arrOfPrivateQuickRequest.append(request)
                                 print("my quick request arr:\(self.arrOfPrivateQuickRequest)")
-                            }else{
-                                self.showNormalAlert(title: "للاسف", message: "لا يوجد طلبات دم شخصيه لعرضها :(")
-                                self.HistorytableView.isHidden = true
-                                self.noDataImageView.isHidden = false
                             }
                             self.HistorytableView.reloadData()
                         }
@@ -305,6 +301,7 @@ class HistoryMainViewController: UIViewController {
             let time = arrOfPrivateQuickRequest[indexPath.row].time
             let subTime = time.prefix(16)
             cell.configure(name: "\(arrOfPrivateQuickRequest[indexPath.row].first_name) \(arrOfPrivateQuickRequest[indexPath.row].last_name)", bloodType: arrOfPrivateQuickRequest[indexPath.row].blood_type, address: "(\(arrOfPrivateQuickRequest[indexPath.row].hospital_name))- \(arrOfPrivateQuickRequest[indexPath.row].city_of_hospital)- \(arrOfPrivateQuickRequest[indexPath.row].governorate_name)", time: String(subTime), description: arrOfPrivateQuickRequest[indexPath.row].message, donorImage: arrOfPrivateQuickRequest[indexPath.row].patient_image, volunteers: arrOfPrivateQuickRequest[indexPath.row].blood_bags_number, numberOfBags: arrOfPrivateQuickRequest[indexPath.row].blood_bags_number)
+            cell.privateRequestId = arrOfPrivateQuickRequest[indexPath.row].id
             return cell
         case 1:
             let cell = HistorytableView.dequeueReusableCell(withIdentifier: "HistoryVaccineCell")as! HistoryVaccineCell
@@ -325,6 +322,15 @@ class HistoryMainViewController: UIViewController {
         }
         return UITableViewCell()
     }
+    private func goTODiffDetailsCell(indexPath: IndexPath){
+        if segmentSender == 0{
+            let controller = HistoryRequestDetailsViewController.instantiate()
+            controller.arrOfPrivateHistoryRequestDetail = arrOfPrivateQuickRequest[indexPath.row]
+            controller.requestId = arrOfPrivateQuickRequest[indexPath.row].id
+            
+            self.present(controller, animated: true, completion: nil)
+        }
+    }
     //MARK: - actions
     @IBAction func segmentControllTapped(_ sender: UISegmentedControl) {
         setUpSegment()
@@ -332,6 +338,7 @@ class HistoryMainViewController: UIViewController {
 }
 //MARK: - Extensions
 extension HistoryMainViewController: UITableViewDelegate,UITableViewDataSource{
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch segmentSender{
             
@@ -347,12 +354,18 @@ extension HistoryMainViewController: UITableViewDelegate,UITableViewDataSource{
             return 0
         }
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         segmentControlSelection(indexPath: indexPath)
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        //        goToDetailsCell(indexPath: indexPath)
+        if segmentSender == 0{
+            self.goTODiffDetailsCell(indexPath: indexPath)
+        }else{
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+        
+        
     }
     //for animations
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -361,6 +374,7 @@ extension HistoryMainViewController: UITableViewDelegate,UITableViewDataSource{
             cell.layer.transform = CATransform3DMakeScale(1, 1, 1)
         }
     }
+    
 }
 //MARK: - Comments
 //NotificationCenter.default.addObserver(self, selector: #selector(didGetNotification), name: Notification.Name (Notifications.detailNot), object: nil)

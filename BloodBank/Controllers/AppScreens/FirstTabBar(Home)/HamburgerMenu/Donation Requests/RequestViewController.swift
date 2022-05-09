@@ -18,6 +18,8 @@ class RequestViewController: UIViewController{
     var arrOfQuickRequest: [QuickRequestData] = [QuickRequestData]()
     var arrOfPrivateQuickRequest: [QuickRequestData] = [QuickRequestData]()
     let refreshControll = UIRefreshControl()
+    var privateRequestId = ""
+    var arrOfSavedRequests : [SavedBloodRequestData] = [SavedBloodRequestData]()
     
     //MARK: - --------------------------------------------------------
     
@@ -38,9 +40,16 @@ class RequestViewController: UIViewController{
        
     }
     @objc func refreshTapped(){
-        self.getAllQuickRequests()
-        self.privateQuickRequests()
-        refreshControll.endRefreshing()
+        if segmentSender == 0{
+            tableView.beginUpdates()
+            self.getAllQuickRequests()
+            self.privateQuickRequests()
+            tableView.endUpdates()
+            refreshControll.endRefreshing()
+        }else{
+            //
+        }
+       
     }
     //MARK: - Private functions
     private func setUpDesign(){
@@ -103,12 +112,34 @@ class RequestViewController: UIViewController{
             controller.requestId = arrOfQuickRequest[indexPath.row].id
             self.present(controller, animated: true, completion: nil)
         }else{
-            //            let controller = DetailsCellViewController.instantiate()
-            //            controller.arrOfQuickRequestDetail = arrOfQuickRequest[indexPath.row]
-            //            self.present(controller, animated: true, completion: nil)
+            let controller = DetailPrivateCellViewController.instantiate()
+            controller.arrOfPrivateQuickRequestDetail = arrOfPrivateQuickRequest[indexPath.row]
+            controller.requestId = arrOfPrivateQuickRequest[indexPath.row].id
+            
+            self.present(controller, animated: true, completion: nil)
         }
         
     }
+   
+        
+//    private func checkRequestIsInfavoriteForDidLoad(){
+//        ApiService.sharedService.allSavedBloodRequests { error, savedRequest in
+//            print(self.privateRequestId)
+//            if let error = error {
+//                print(error.localizedDescription)
+//            }else if let savedRequest = savedRequest {
+//                self.arrOfSavedRequests = savedRequest
+//                for mySavedReq in self.arrOfSavedRequests {
+//                    if self.privateRequestId == mySavedReq.request_id{
+//                        print("already exist")
+//                        self.bookMarkImage.image = UIImage(systemName: "bookmark.fill")
+//                        self.bookMarkBtn.isEnabled = false
+//                        break
+//                    }
+//                }
+//            }
+//        }
+//    }
     
     //MARK: - Action
     @IBAction func segmentedControlTapped(_ sender: UISegmentedControl) {
@@ -149,7 +180,7 @@ extension RequestViewController: UITableViewDelegate, UITableViewDataSource {
             let time = arrOfPrivateQuickRequest[indexPath.row].time
             let subTime = time.prefix(16)
             cell.configure(name: "\(arrOfPrivateQuickRequest[indexPath.row].first_name) \(arrOfPrivateQuickRequest[indexPath.row].last_name)", bloodType: arrOfPrivateQuickRequest[indexPath.row].blood_type, address: "(\(arrOfPrivateQuickRequest[indexPath.row].hospital_name))- \(arrOfPrivateQuickRequest[indexPath.row].city_of_hospital)- \(arrOfPrivateQuickRequest[indexPath.row].governorate_name)", time: String(subTime), description: arrOfPrivateQuickRequest[indexPath.row].message, donorImage: arrOfPrivateQuickRequest[indexPath.row].patient_image, volunteers: arrOfPrivateQuickRequest[indexPath.row].blood_bags_number, numberOfBags: arrOfPrivateQuickRequest[indexPath.row].blood_bags_number)
-            
+//            cell.privateRequestId = arrOfPrivateQuickRequest[indexPath.row].id
             return cell
         default:
             break

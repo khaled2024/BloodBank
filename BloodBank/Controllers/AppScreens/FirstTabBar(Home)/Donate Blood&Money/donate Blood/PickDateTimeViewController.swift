@@ -103,6 +103,9 @@ class PickDateTimeViewController: UIViewController {
     private func addBloodDonation(){
         ApiService.sharedService.addBloodDonation(p_ssn: self.user_Pssn, city_id: self.userCityId, donate_place_id: self.userHospitalId, time: self.dateTimeLabel.text!)
     }
+    private func addToLastDonate(){
+        ApiService.sharedService.addLastDonate(p_ssn: self.user_Pssn, donate_place_id: self.userHospitalId, time: self.dateTimeLabel.text!)
+    }
     //MARK: - Actions
     private func openSheet(){
         let sheetPresentationController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SheetViewController")as! SheetViewController
@@ -122,6 +125,7 @@ class PickDateTimeViewController: UIViewController {
     @IBAction func confirmDateBtnTapped(_ sender: UIButton) {
         if setUpTF(){
             self.addBloodDonation()
+            self.addToLastDonate()
             DispatchQueue.main.asyncAfter(deadline: .now()+1) {
                 self.openSheet()
             }

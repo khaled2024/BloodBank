@@ -548,7 +548,29 @@ class ApiService{
             }
         }
     }
-    
+    //add last donate
+    func addLastDonate(p_ssn: String , donate_place_id:String,time: String){
+        guard let url = URL(string: "\(URLS.last_Donate)/add")else{return}
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let body : [String:AnyHashable] = [
+            "donate_place_id": donate_place_id,
+            "time": time,
+            "p_ssn": p_ssn
+        ]
+        urlRequest.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
+        let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+            guard let data = data, error == nil else {return}
+            do{
+                let response = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
+                print("success : \(response)")
+            }catch{
+                print(error)
+            }
+        }
+        task.resume()
+    }
     //MARK: - purchase_order
     func myPurchaseOrder(completion: @escaping (_ error: Error? , _ purchaseOrder: [PurchaseOrderData]?) -> Void){
         AF.request("\(URLS.purchaseOrder)/all", method: .get, encoding: URLEncoding.default , headers: nil).response {

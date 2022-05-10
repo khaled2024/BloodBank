@@ -74,7 +74,7 @@ class HistoryRequestDetailsViewController: UIViewController, UISheetPresentation
                     }
                     if self.p_ssn == myGoingRequest.donner_id && idOfRequest == myGoingRequest.request_id{
                         self.showNormalAlert(title: "للاسف ", message: "لقد تطوعت لهذا الطلب من قبل ")
-                        self.acceptRequestBtn.titleLabel?.text = "تم التطوع"
+                        self.acceptRequestBtn.setTitle("تم التطوع", for: .normal)
                         self.acceptRequestBtn.isEnabled = false
                         self.insideacceptRequestBtn.imageView?.image = UIImage(systemName: "hand.thumbsup.fill")
                         
@@ -128,8 +128,8 @@ class HistoryRequestDetailsViewController: UIViewController, UISheetPresentation
     }
     private func setUpDesign(){
         self.donorImageDetail.layer.cornerRadius = self.donorImageDetail.frame.size.width / 2
-        self.acceptRequestBtn.customTitleLbl(btn: acceptRequestBtn, text: "تلبيه الطلب", fontSize: 13)
-        self.bookMarkBtn.customTitleLbl(btn: bookMarkBtn, text: "حفظ", fontSize: 13)
+//        self.acceptRequestBtn.customTitleLbl(btn: acceptRequestBtn, text: "تلبيه الطلب", fontSize: 13)
+//        self.bookMarkBtn.customTitleLbl(btn: bookMarkBtn, text: "حفظ", fontSize: 13)
         customBtn.shadowBtn(btn: bookMarkBtn, colorShadow: UIColor.gray.cgColor)
         customBtn.shadowBtn(btn: acceptRequestBtn, colorShadow: UIColor.gray.cgColor)
     }
@@ -198,7 +198,7 @@ class HistoryRequestDetailsViewController: UIViewController, UISheetPresentation
                     if self.requestId == mySavedReq.request_id && self.p_ssn == mySavedReq.p_ssn{
                         print("already exist")
                         self.bookMarkBtn.isEnabled = false
-                        self.bookMarkBtn.titleLabel?.text = "تم"
+                        self.bookMarkBtn.setTitle("تم الحفظ", for: .normal  )
                         self.insideBookMarkBtn.imageView?.image = UIImage(systemName: "bookmark.fill")
                         
                         break
@@ -236,7 +236,8 @@ class HistoryRequestDetailsViewController: UIViewController, UISheetPresentation
     private func addRequestToFavorite(){
         print(self.requestId)
         ApiService.sharedService.savedBloodRequest(p_ssn: self.p_ssn, request_id: self.requestId)
-        self.bookMarkBtn.titleLabel?.text = "تم الحفظ"
+        self.bookMarkBtn.setTitle("تم الحفظ", for: .normal)
+        self.bookMarkBtn.isEnabled = false
         self.insideBookMarkBtn.imageView?.image = UIImage(systemName: "bookmark.fill")
     }
     private func bookMarkTapped(){

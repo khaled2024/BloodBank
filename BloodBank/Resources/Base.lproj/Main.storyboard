@@ -2925,15 +2925,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uH3-mG-ndr">
-                                <rect key="frame" x="15" y="280" width="100" height="35"/>
+                                <rect key="frame" x="15" y="280" width="110" height="35"/>
                                 <color key="backgroundColor" red="0.96470588450000005" green="0.96470588450000005" blue="0.96470588450000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="KnV-UV-Och"/>
+                                    <constraint firstAttribute="width" constant="110" id="KnV-UV-Och"/>
                                     <constraint firstAttribute="height" constant="35" id="wKi-v2-1cg"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="حفظ">
-                                    <fontDescription key="titleFontDescription" name="Almarai-Bold" family="Almarai" pointSize="12"/>
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
                                     <color key="baseForegroundColor" red="0.13333332540000001" green="0.13333332540000001" blue="0.1294117719" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
@@ -2960,14 +2960,14 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rr7-5a-znt">
-                                <rect key="frame" x="269" y="280" width="130" height="35"/>
+                                <rect key="frame" x="267" y="280" width="132" height="35"/>
                                 <color key="backgroundColor" red="0.96470588450000005" green="0.96470588450000005" blue="0.96470588450000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="lxS-N7-yZi"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="تلبيه الطلب">
-                                    <fontDescription key="titleFontDescription" name="Almarai-Bold" family="Almarai" pointSize="12"/>
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
                                     <color key="baseForegroundColor" red="0.13333332540000001" green="0.13333332540000001" blue="0.1294117719" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
@@ -3001,7 +3001,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w1h-9A-WPA">
-                                <rect key="frame" x="77" y="282" width="30" height="31"/>
+                                <rect key="frame" x="88" y="282" width="33" height="31"/>
                                 <color key="tintColor" systemColor="systemPinkColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="bookmark.fill" catalog="system">
@@ -3009,7 +3009,7 @@
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fuV-pt-iEE">
-                                <rect key="frame" x="360" y="280" width="39" height="35"/>
+                                <rect key="frame" x="359.5" y="280" width="39.5" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="hand.thumbsup.fill" catalog="system">
                                     <color key="baseForegroundColor" systemColor="systemPinkColor"/>
@@ -3143,7 +3143,7 @@
                             <constraint firstItem="6Zr-I5-TtS" firstAttribute="leading" secondItem="ZwJ-cj-a5E" secondAttribute="trailing" constant="20" id="lHU-2z-Haz"/>
                             <constraint firstItem="5aV-Bc-ryu" firstAttribute="leading" secondItem="cXA-K7-IG3" secondAttribute="trailing" constant="10" id="lWo-Oq-9qn"/>
                             <constraint firstItem="AZd-Kr-Qbj" firstAttribute="trailing" secondItem="rr7-5a-znt" secondAttribute="trailing" constant="15" id="lsm-NG-X4u"/>
-                            <constraint firstItem="rr7-5a-znt" firstAttribute="width" secondItem="uH3-mG-ndr" secondAttribute="width" multiplier="1.3" id="m5c-u6-4eL"/>
+                            <constraint firstItem="rr7-5a-znt" firstAttribute="width" secondItem="uH3-mG-ndr" secondAttribute="width" multiplier="1.2" id="m5c-u6-4eL"/>
                             <constraint firstItem="fuV-pt-iEE" firstAttribute="width" secondItem="rr7-5a-znt" secondAttribute="width" multiplier="0.3" id="mS3-Bu-dto"/>
                             <constraint firstItem="Bxv-mB-Xol" firstAttribute="height" secondItem="9fZ-q5-A7h" secondAttribute="height" id="mff-qA-Ouo"/>
                             <constraint firstItem="w1h-9A-WPA" firstAttribute="centerY" secondItem="uH3-mG-ndr" secondAttribute="centerY" id="nZg-75-23Y"/>
@@ -3152,7 +3152,7 @@
                             <constraint firstItem="ZOR-Sd-PzX" firstAttribute="leading" secondItem="WkK-HW-3o0" secondAttribute="trailing" constant="5" id="pZr-Gz-5AB"/>
                             <constraint firstItem="lDV-gr-CCC" firstAttribute="height" secondItem="6Zr-I5-TtS" secondAttribute="height" id="phm-VA-hJS"/>
                             <constraint firstItem="wuB-pZ-OQZ" firstAttribute="top" secondItem="ZOR-Sd-PzX" secondAttribute="bottom" constant="5" id="pu2-mK-Nec"/>
-                            <constraint firstItem="w1h-9A-WPA" firstAttribute="trailing" secondItem="uH3-mG-ndr" secondAttribute="trailing" constant="-8" id="t5F-dz-iL9"/>
+                            <constraint firstItem="w1h-9A-WPA" firstAttribute="trailing" secondItem="uH3-mG-ndr" secondAttribute="trailing" constant="-4" id="t5F-dz-iL9"/>
                             <constraint firstItem="fuV-pt-iEE" firstAttribute="height" secondItem="rr7-5a-znt" secondAttribute="height" id="wWO-wb-Wxv"/>
                             <constraint firstItem="lDV-gr-CCC" firstAttribute="width" secondItem="6Zr-I5-TtS" secondAttribute="width" id="wl3-rp-flL"/>
                             <constraint firstItem="6Zr-I5-TtS" firstAttribute="top" secondItem="Bav-XC-Y42" secondAttribute="bottom" constant="20" id="xyM-vm-rNY"/>
@@ -7963,7 +7963,7 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="حفظ">
-                                    <fontDescription key="titleFontDescription" name="Almarai-Bold" family="Almarai" pointSize="15"/>
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
                                     <color key="baseForegroundColor" red="0.13333332540000001" green="0.13333332540000001" blue="0.1294117719" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
@@ -8057,7 +8057,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gHd-1H-dHD">
-                                <rect key="frame" x="221" y="282" width="33" height="31"/>
+                                <rect key="frame" x="226" y="282" width="33" height="31"/>
                                 <color key="tintColor" systemColor="systemPinkColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="bookmark.fill" catalog="system">
@@ -8111,7 +8111,7 @@
                             <constraint firstItem="yiV-O4-kWi" firstAttribute="centerY" secondItem="GvJ-ar-P2f" secondAttribute="centerY" id="Lbv-DP-Vbz"/>
                             <constraint firstItem="r6F-hw-i32" firstAttribute="top" secondItem="wpX-hq-v4x" secondAttribute="top" id="MkJ-Lr-5yv"/>
                             <constraint firstItem="F4v-YF-iv1" firstAttribute="width" secondItem="Y4Z-Pj-KVX" secondAttribute="width" id="Ojr-q5-Vjk"/>
-                            <constraint firstItem="gHd-1H-dHD" firstAttribute="trailing" secondItem="95j-e4-c0u" secondAttribute="trailing" constant="-8" id="PDu-Eb-lFZ"/>
+                            <constraint firstItem="gHd-1H-dHD" firstAttribute="trailing" secondItem="95j-e4-c0u" secondAttribute="trailing" constant="-3" id="PDu-Eb-lFZ"/>
                             <constraint firstItem="4mM-q9-DLb" firstAttribute="leading" secondItem="mdY-js-fJ9" secondAttribute="leading" id="QfO-KK-dtt"/>
                             <constraint firstItem="5FZ-be-KkY" firstAttribute="top" secondItem="biw-oz-TkL" secondAttribute="bottom" constant="20" id="RDA-rD-rl0"/>
                             <constraint firstItem="biw-oz-TkL" firstAttribute="centerY" secondItem="srM-uI-Rk3" secondAttribute="centerY" id="Sfc-l7-J7E"/>
@@ -8234,15 +8234,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jvb-nG-EkR">
-                                <rect key="frame" x="15" y="280" width="100" height="35"/>
+                                <rect key="frame" x="15" y="280" width="110" height="35"/>
                                 <color key="backgroundColor" red="0.96470588450000005" green="0.96470588450000005" blue="0.96470588450000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="JWY-Rm-EYN"/>
-                                    <constraint firstAttribute="width" constant="100" id="a5t-fO-nHG"/>
+                                    <constraint firstAttribute="width" constant="110" id="a5t-fO-nHG"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="حفظ">
-                                    <fontDescription key="titleFontDescription" name="Almarai-Bold" family="Almarai" pointSize="12"/>
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
                                     <color key="baseForegroundColor" red="0.13333332540000001" green="0.13333332540000001" blue="0.1294117719" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
@@ -8269,14 +8269,14 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HLx-Nf-zEx">
-                                <rect key="frame" x="279" y="280" width="120" height="35"/>
+                                <rect key="frame" x="267" y="280" width="132" height="35"/>
                                 <color key="backgroundColor" red="0.96470588450000005" green="0.96470588450000005" blue="0.96470588450000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="4B3-b3-n4y"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="تلبيه الطلب">
-                                    <fontDescription key="titleFontDescription" name="Almarai-Bold" family="Almarai" pointSize="12"/>
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
                                     <color key="baseForegroundColor" red="0.13333332540000001" green="0.13333332540000001" blue="0.1294117719" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
@@ -8289,7 +8289,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ev5-6W-gA2">
-                                <rect key="frame" x="355" y="280" width="36" height="35"/>
+                                <rect key="frame" x="355.5" y="280" width="39.5" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="hand.thumbsup.fill" catalog="system">
                                     <color key="baseForegroundColor" systemColor="systemPinkColor"/>
@@ -8363,7 +8363,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="65e-QD-1Af">
-                                <rect key="frame" x="77" y="282" width="30" height="31"/>
+                                <rect key="frame" x="87" y="282" width="33" height="31"/>
                                 <color key="tintColor" systemColor="systemPinkColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="bookmark.fill" catalog="system">
@@ -8405,7 +8405,7 @@
                             <constraint firstItem="A0S-Ag-CBu" firstAttribute="centerY" secondItem="jCi-8E-umQ" secondAttribute="centerY" id="7Fd-2F-JTT"/>
                             <constraint firstItem="Fz6-x9-dNd" firstAttribute="bottom" secondItem="HLx-Nf-zEx" secondAttribute="bottom" id="ABl-BV-jUP"/>
                             <constraint firstItem="y0H-yJ-uDq" firstAttribute="centerX" secondItem="cQx-n4-k21" secondAttribute="centerX" id="Bgs-2X-dsd"/>
-                            <constraint firstItem="Ev5-6W-gA2" firstAttribute="trailing" secondItem="HLx-Nf-zEx" secondAttribute="trailing" constant="-8" id="DLR-V4-oFJ"/>
+                            <constraint firstItem="Ev5-6W-gA2" firstAttribute="trailing" secondItem="HLx-Nf-zEx" secondAttribute="trailing" constant="-4" id="DLR-V4-oFJ"/>
                             <constraint firstItem="cBP-qa-GZT" firstAttribute="height" secondItem="jFY-K7-RWR" secondAttribute="height" multiplier="1.5" id="DSo-y3-kkT"/>
                             <constraint firstItem="jFY-K7-RWR" firstAttribute="leading" secondItem="LYz-un-SEz" secondAttribute="leading" constant="10" id="DaU-0W-FdH"/>
                             <constraint firstItem="b56-ZX-H8z" firstAttribute="centerX" secondItem="jFY-K7-RWR" secondAttribute="centerX" id="GuZ-sI-ARF"/>
@@ -8453,7 +8453,7 @@
                             <constraint firstItem="cQx-n4-k21" firstAttribute="leading" secondItem="j6v-hC-SSd" secondAttribute="leading" id="kwP-8c-1QD"/>
                             <constraint firstItem="y0H-yJ-uDq" firstAttribute="top" secondItem="cQx-n4-k21" secondAttribute="bottom" constant="30" id="lLh-XR-hx7"/>
                             <constraint firstItem="cBP-qa-GZT" firstAttribute="leading" secondItem="jFY-K7-RWR" secondAttribute="trailing" constant="17" id="mSl-Zs-39C"/>
-                            <constraint firstItem="65e-QD-1Af" firstAttribute="trailing" secondItem="Jvb-nG-EkR" secondAttribute="trailing" constant="-8" id="o7P-sa-ZkT"/>
+                            <constraint firstItem="65e-QD-1Af" firstAttribute="trailing" secondItem="Jvb-nG-EkR" secondAttribute="trailing" constant="-5" id="o7P-sa-ZkT"/>
                             <constraint firstItem="PLG-eZ-EKk" firstAttribute="top" secondItem="LYz-un-SEz" secondAttribute="bottom" constant="20" id="oRY-PV-a5A"/>
                             <constraint firstItem="heT-st-rHu" firstAttribute="leading" secondItem="cBP-qa-GZT" secondAttribute="trailing" constant="10" id="pFc-xw-eKH"/>
                             <constraint firstItem="jCi-8E-umQ" firstAttribute="width" secondItem="Fz6-x9-dNd" secondAttribute="width" id="ppm-Qm-tBD"/>
@@ -8572,7 +8572,7 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="تلبيه الطلب">
-                                    <fontDescription key="titleFontDescription" name="Almarai-Bold" family="Almarai" pointSize="12"/>
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
                                     <color key="baseForegroundColor" red="0.13333332540000001" green="0.13333332540000001" blue="0.1294117719" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
@@ -8585,7 +8585,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="amO-Xu-ZEq">
-                                <rect key="frame" x="229.5" y="280" width="46" height="35"/>
+                                <rect key="frame" x="234.5" y="280" width="46" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="hand.thumbsup.fill" catalog="system">
                                     <color key="baseForegroundColor" systemColor="systemPinkColor"/>
@@ -8737,7 +8737,7 @@
                             <constraint firstItem="rUR-S7-HMt" firstAttribute="centerX" secondItem="FRG-Nn-PjR" secondAttribute="centerX" id="j28-Zf-r0X"/>
                             <constraint firstItem="tgN-K5-FQS" firstAttribute="centerY" secondItem="552-Zu-hhc" secondAttribute="centerY" id="jmU-rQ-edR"/>
                             <constraint firstItem="7NS-x2-bdL" firstAttribute="trailing" secondItem="v5u-0V-jYT" secondAttribute="trailing" id="kkQ-b6-VSg"/>
-                            <constraint firstItem="amO-Xu-ZEq" firstAttribute="trailing" secondItem="aUL-Xt-2ZU" secondAttribute="trailing" constant="-8" id="lSf-gK-dCn"/>
+                            <constraint firstItem="amO-Xu-ZEq" firstAttribute="trailing" secondItem="aUL-Xt-2ZU" secondAttribute="trailing" constant="-3" id="lSf-gK-dCn"/>
                             <constraint firstItem="Ba4-qC-CVU" firstAttribute="leading" secondItem="9ah-eP-xgt" secondAttribute="trailing" constant="5" id="mqi-mk-tVe"/>
                             <constraint firstItem="0fW-Mj-Q8y" firstAttribute="leading" secondItem="fMR-hC-OtR" secondAttribute="trailing" constant="10" id="nmX-41-GaD"/>
                             <constraint firstItem="0zq-Tp-Zjr" firstAttribute="trailing" secondItem="v5u-0V-jYT" secondAttribute="trailing" id="oNX-BG-Of7"/>

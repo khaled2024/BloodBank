@@ -70,8 +70,8 @@ class FavoriteDetailsViewController: UIViewController, UISheetPresentationContro
     
     private func setUpDesign(){
         self.donorImageDetail.layer.cornerRadius = self.donorImageDetail.frame.size.width / 2
-        self.acceptRequestBtn.customTitleLbl(btn: acceptRequestBtn, text: "تلبيه الطلب", fontSize: 13)
-        
+//        self.acceptRequestBtn.customTitleLbl(btn: acceptRequestBtn, text: "تلبيه الطلب", fontSize: 13)
+//
         customBtn.shadowBtn(btn: acceptRequestBtn, colorShadow: UIColor.gray.cgColor)
     }
     private func setUpSheetPresentation(){
@@ -210,7 +210,7 @@ class FavoriteDetailsViewController: UIViewController, UISheetPresentationContro
                     }
                     if self.p_ssn == myGoingRequest.donner_id && idOfRequest == myGoingRequest.request_id{
                         self.showNormalAlert(title: "للاسف ", message: "لقد تطوعت لهذا الطلب من قبل ")
-                        self.acceptRequestBtn.titleLabel?.text = "تم التطوع"
+                        self.acceptRequestBtn.setTitle("تم التطوع", for: .normal)
                         self.acceptRequestBtn.isEnabled = false
                         self.insideAcceptRequestBtn.imageView?.image = UIImage(systemName: "hand.thumbsup.fill")
                     }
@@ -220,7 +220,7 @@ class FavoriteDetailsViewController: UIViewController, UISheetPresentationContro
         }
     }
     private func checkVolunteerMaximum(){
-        if self.volunteersNum == 8{
+        if self.volunteersNum >= 8{
             showNormalAlert(title: "للاسف", message: "تم اكتمال عدد المتطوعين لهذا الطلب :)")
         }
     }
@@ -228,12 +228,15 @@ class FavoriteDetailsViewController: UIViewController, UISheetPresentationContro
         if self.volunteersNum >= 8{
             self.showNormalAlert(title: "للاسف", message: "تم اكتمال عدد المتطوعين لهذا الطلب :)")
             self.acceptRequestBtn.isEnabled = false
+            self.acceptRequestBtn.isEnabled = false
             self.insideAcceptRequestBtn.imageView?.image = UIImage(systemName: "hand.thumbsup.fill")
             
         }else{
             print(self.requestId)
             print(self.p_ssn)
             ApiService.sharedService.acceptRequest(request_id: self.requestId, donner_id: self.p_ssn)
+            self.acceptRequestBtn.setTitle("تم التطوع", for: .normal)
+            self.acceptRequestBtn.isEnabled = false
             self.showNormalAlert(title: "احسنت", message: "لقد تم التطوع للمساعده في هذا الطلب :)")
         }
         

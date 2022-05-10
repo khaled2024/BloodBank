@@ -77,6 +77,7 @@ class HistoryMainViewController: UIViewController {
         HistorytableView.register(UINib(nibName: "HistoryVaccineCell", bundle: nibBundle), forCellReuseIdentifier: "HistoryVaccineCell")
         HistorytableView.register(UINib(nibName: "BloodOrderCell", bundle: nil), forCellReuseIdentifier: "BloodOrderCell")
         HistorytableView.register(UINib(nibName: "LastDonateHistoryCell", bundle: nil), forCellReuseIdentifier: "LastDonateHistoryCell")
+        HistorytableView.register(UINib(nibName: "AcceptHistoryVaccineCell", bundle: nil), forCellReuseIdentifier: "AcceptHistoryVaccineCell")
         self.noDataImageView.isHidden = true
     }
     private func setUpSegment(){

@@ -206,7 +206,7 @@ class DetailPrivateCellViewController: UIViewController, UISheetPresentationCont
                     if self.requestId == mySavedReq.request_id && self.p_ssn == mySavedReq.p_ssn{
                         print("already exist")
                         self.bookMarkBtn.isEnabled = false
-                        self.bookMarkBtn.titleLabel?.text = "تم"
+                        self.bookMarkBtn.setTitle("تم الحفظ", for: .normal)
                         self.insideBookMarkBtn.imageView?.image = UIImage(systemName: "bookmark.fill")
                         break
                     }else{
@@ -243,7 +243,8 @@ class DetailPrivateCellViewController: UIViewController, UISheetPresentationCont
     private func addRequestToFavorite(){
         print(self.requestId)
         ApiService.sharedService.savedBloodRequest(p_ssn: self.p_ssn, request_id: self.requestId)
-        self.bookMarkBtn.titleLabel?.text = "تم الحفظ"
+        self.bookMarkBtn.setTitle("تم الحفظ", for: .normal  )
+        self.bookMarkBtn.isEnabled = false
         self.insideBookMarkBtn.imageView?.image = UIImage(systemName: "bookmark.fill")
     }
     private func bookMarkTapped(){

@@ -11,7 +11,6 @@ class favoriteTableViewCell: UITableViewCell {
     
     @IBOutlet weak var bookMarkImage: UIImageView!
     @IBOutlet weak var bloodBagsLbl: UILabel!
-    @IBOutlet weak var volunteerLbl: UILabel!
     @IBOutlet weak var message: UILabel!
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var addressLbl: UILabel!
@@ -20,6 +19,7 @@ class favoriteTableViewCell: UITableViewCell {
     @IBOutlet weak var bloodView: UIView!
     @IBOutlet weak var donorImage: UIImageView!
     @IBOutlet weak var cardView: UIView!
+    
     var requestId: String!
     var tableView = UITableView()
     var p_ssn = ""
@@ -37,10 +37,9 @@ class favoriteTableViewCell: UITableViewCell {
         
     }
     
-    func configure(bloodBags: String , volunteer: String,message: String , time: String , address: String , name: String , bloodType: String , bloodImage: String){
+    func configure(bloodBags: String ,message: String , time: String , address: String , name: String , bloodType: String , bloodImage: String){
         self.userName.text = name
         self.bloodType.text = bloodType
-        self.volunteerLbl.text = volunteer
         self.message.text = message
         self.time.text = time
         self.addressLbl.text = address
@@ -49,28 +48,27 @@ class favoriteTableViewCell: UITableViewCell {
         
         
     }
+    private func removeRequest(id: String){
+        print(id)
+        ApiService.sharedService.deleteFavoriteRequest(id: id)
+        
+    }
+   
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
     }
-    
-    @IBAction func volunteersTapped(_ sender: UIButton) {
-        print(" request id : \(self.requestId ?? "" ) ")
-    }
-    @IBAction func nonSavedRequest(_ sender: UIButton) {
-        print(" request id : \(self.requestId ?? "" ) ")
-        self.bookMarkImage.image = UIImage(systemName: "bookmark")
-        print("removed from favorite")
-        
-        tableView.beginUpdates()
-        removeRequest()
-        tableView.endUpdates()
-        
-    }
-    private func removeRequest(){
-        ApiService.sharedService.deleteFavoriteRequest(id: requestId)
-        
-    }
-    
+//    @IBAction func nonSavedRequest(_ sender: UIButton) {
+//        print(" request id : \(self.requestId ?? "" ) ")
+//        self.bookMarkImage.image = UIImage(systemName: "bookmark")
+//        print("removed from favorite")
+//        tableView.beginUpdates()
+//        removeRequest()
+//        tableView.endUpdates()
+//        tableView.reloadData()
+//    }
+//    private func removeRequest(){
+//        ApiService.sharedService.deleteFavoriteRequest(id: requestId)
+//    }
 }
 

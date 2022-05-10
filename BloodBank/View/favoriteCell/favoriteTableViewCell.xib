@@ -88,27 +88,12 @@
                                     <constraint firstAttribute="height" constant="90" id="TcO-YU-5Ef"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="متطوعون" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08y-Ix-rZD">
-                                <rect key="frame" x="369.5" y="109" width="54.5" height="14"/>
-                                <fontDescription key="fontDescription" name="Almarai-ExtraBold" family="Almarai" pointSize="12"/>
-                                <color key="textColor" name="subLblDarkGrayColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zg5-eS-8hf">
-                                <rect key="frame" x="357.5" y="108.5" width="7" height="15"/>
-                                <fontDescription key="fontDescription" name="Almarai-ExtraBold" family="Almarai" pointSize="13"/>
-                                <color key="textColor" name="subLblDarkGrayColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gff-ck-dRw">
-                                <rect key="frame" x="302" y="216.5" width="100" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gff-ck-dRw">
+                                <rect key="frame" x="66.5" y="216.5" width="309" height="31"/>
                                 <color key="backgroundColor" red="0.91372549530000002" green="0.30980393290000002" blue="0.39607840779999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="54T-Yt-K7q"/>
-                                </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="حفظ">
+                                <buttonConfiguration key="configuration" style="plain" title="اسحب لليمين للحذف من المفضله">
                                     <fontDescription key="titleFontDescription" name="Almarai-Bold" family="Almarai" pointSize="15"/>
                                 </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
@@ -116,43 +101,19 @@
                                         <real key="value" value="12"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="nonSavedRequest:" destination="yEn-Sx-klK" eventType="touchUpInside" id="epe-vh-20K"/>
-                                </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bookmark.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="DYl-Lf-ueZ">
-                                <rect key="frame" x="367" y="219.5" width="30" height="25"/>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oEE-6g-B8H">
-                                <rect key="frame" x="40" y="216.5" width="140" height="31"/>
-                                <color key="backgroundColor" red="0.91372549530000002" green="0.30980393290000002" blue="0.39607840779999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="المتطوعين">
-                                    <fontDescription key="titleFontDescription" name="Almarai-Bold" family="Almarai" pointSize="15"/>
-                                </buttonConfiguration>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="12"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="volunteersTapped:" destination="yEn-Sx-klK" eventType="touchUpInside" id="lWd-6B-qaZ"/>
-                                </connections>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hand.raised" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="yRw-ir-BpP">
-                                <rect key="frame" x="138" y="218.5" width="42" height="25.5"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bookmark.slash.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="DYl-Lf-ueZ">
+                                <rect key="frame" x="340" y="219.5" width="30.5" height="25"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اكياس دم" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nai-4B-C18">
-                                <rect key="frame" x="369.5" y="123" width="54.5" height="14"/>
+                                <rect key="frame" x="362" y="123" width="54" height="14"/>
                                 <fontDescription key="fontDescription" name="Almarai-ExtraBold" family="Almarai" pointSize="12"/>
                                 <color key="textColor" name="subLblDarkGrayColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UqU-NI-9se">
-                                <rect key="frame" x="357.5" y="122.5" width="7" height="15"/>
+                                <rect key="frame" x="350" y="122.5" width="7" height="15"/>
                                 <fontDescription key="fontDescription" name="Almarai-ExtraBold" family="Almarai" pointSize="13"/>
                                 <color key="textColor" name="subLblDarkGrayColor"/>
                                 <nil key="highlightedColor"/>
@@ -160,39 +121,27 @@
                         </subviews>
                         <color key="backgroundColor" name="bgIColornsideCell"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="oEE-6g-B8H" secondAttribute="bottom" constant="25.5" id="0c0-8J-txA"/>
                             <constraint firstItem="gnk-sR-8wk" firstAttribute="leading" secondItem="Ry8-D6-FBR" secondAttribute="leading" constant="10" id="0cX-hY-z4S"/>
                             <constraint firstItem="Ry8-D6-FBR" firstAttribute="leading" secondItem="iNQ-xf-w3i" secondAttribute="leading" id="1zc-dG-Y9b"/>
-                            <constraint firstItem="zg5-eS-8hf" firstAttribute="centerY" secondItem="08y-Ix-rZD" secondAttribute="centerY" id="3aS-It-pED"/>
+                            <constraint firstItem="Nai-4B-C18" firstAttribute="centerX" secondItem="3hD-gg-4Yq" secondAttribute="centerX" id="2q6-KY-n9s"/>
+                            <constraint firstItem="gff-ck-dRw" firstAttribute="width" secondItem="iNQ-xf-w3i" secondAttribute="width" multiplier="0.7" id="5br-fb-UHC"/>
                             <constraint firstItem="UqU-NI-9se" firstAttribute="centerY" secondItem="Nai-4B-C18" secondAttribute="centerY" id="5ey-5P-pkr"/>
-                            <constraint firstItem="08y-Ix-rZD" firstAttribute="top" secondItem="3hD-gg-4Yq" secondAttribute="bottom" constant="3" id="6jZ-IL-Jya"/>
                             <constraint firstItem="8dS-nb-obv" firstAttribute="leading" secondItem="JRd-zD-U1A" secondAttribute="trailing" constant="10" id="7am-WS-Ueg"/>
-                            <constraint firstItem="yRw-ir-BpP" firstAttribute="width" secondItem="DYl-Lf-ueZ" secondAttribute="width" multiplier="1.4" id="9hv-Qr-Ahc"/>
-                            <constraint firstItem="oEE-6g-B8H" firstAttribute="height" secondItem="gff-ck-dRw" secondAttribute="height" id="BoP-7J-BN8"/>
                             <constraint firstItem="rqf-5w-tgy" firstAttribute="leading" secondItem="iNQ-xf-w3i" secondAttribute="leading" constant="8" id="Cgt-1s-h34"/>
-                            <constraint firstItem="08y-Ix-rZD" firstAttribute="trailing" secondItem="3hD-gg-4Yq" secondAttribute="trailing" constant="-10" id="D5p-Nj-f44"/>
                             <constraint firstItem="gff-ck-dRw" firstAttribute="top" secondItem="rqf-5w-tgy" secondAttribute="bottom" constant="20" id="Djc-Eo-7LB"/>
                             <constraint firstItem="DYl-Lf-ueZ" firstAttribute="centerY" secondItem="gff-ck-dRw" secondAttribute="centerY" id="E5v-nT-U2H"/>
-                            <constraint firstAttribute="trailing" secondItem="gff-ck-dRw" secondAttribute="trailing" constant="40" id="EPI-bd-KJZ"/>
-                            <constraint firstItem="yRw-ir-BpP" firstAttribute="trailing" secondItem="oEE-6g-B8H" secondAttribute="trailing" id="EfL-6p-BMm"/>
                             <constraint firstItem="ibG-YR-0hj" firstAttribute="trailing" secondItem="CMN-dv-OoE" secondAttribute="trailing" id="GhO-2w-fem"/>
-                            <constraint firstItem="oEE-6g-B8H" firstAttribute="width" secondItem="gff-ck-dRw" secondAttribute="width" multiplier="1.4" id="IiA-AV-ynL"/>
                             <constraint firstItem="ibG-YR-0hj" firstAttribute="leading" secondItem="gnk-sR-8wk" secondAttribute="trailing" constant="10" id="Lh7-CT-7FU"/>
                             <constraint firstItem="ibG-YR-0hj" firstAttribute="top" secondItem="CMN-dv-OoE" secondAttribute="bottom" constant="17" id="M3N-lE-MGb"/>
-                            <constraint firstItem="Nai-4B-C18" firstAttribute="leading" secondItem="08y-Ix-rZD" secondAttribute="leading" id="NXD-Qp-Fl1"/>
                             <constraint firstItem="8dS-nb-obv" firstAttribute="centerY" secondItem="JRd-zD-U1A" secondAttribute="centerY" id="SQf-Pb-9kF"/>
                             <constraint firstItem="JRd-zD-U1A" firstAttribute="height" secondItem="gnk-sR-8wk" secondAttribute="height" id="Tgb-J3-dPd"/>
                             <constraint firstItem="JRd-zD-U1A" firstAttribute="width" secondItem="gnk-sR-8wk" secondAttribute="width" id="Ujt-ER-jgF"/>
                             <constraint firstItem="8dS-nb-obv" firstAttribute="trailing" secondItem="ibG-YR-0hj" secondAttribute="trailing" id="Und-nk-J4D"/>
-                            <constraint firstItem="yRw-ir-BpP" firstAttribute="centerY" secondItem="oEE-6g-B8H" secondAttribute="centerY" id="VMK-8r-ooI"/>
                             <constraint firstItem="DYl-Lf-ueZ" firstAttribute="height" secondItem="gff-ck-dRw" secondAttribute="height" multiplier="0.8" id="WEP-45-w9R"/>
                             <constraint firstItem="8dS-nb-obv" firstAttribute="top" secondItem="ibG-YR-0hj" secondAttribute="bottom" constant="10" id="XI8-rc-lHS"/>
-                            <constraint firstItem="Nai-4B-C18" firstAttribute="centerX" secondItem="08y-Ix-rZD" secondAttribute="centerX" id="YCu-Ac-ykp"/>
                             <constraint firstItem="ibG-YR-0hj" firstAttribute="centerY" secondItem="gnk-sR-8wk" secondAttribute="centerY" id="Ytm-5t-oyI"/>
                             <constraint firstAttribute="trailing" secondItem="3hD-gg-4Yq" secondAttribute="trailing" constant="8" id="ZnJ-X3-TAK"/>
-                            <constraint firstItem="08y-Ix-rZD" firstAttribute="leading" secondItem="zg5-eS-8hf" secondAttribute="trailing" constant="5" id="bh2-UK-xMU"/>
-                            <constraint firstItem="oEE-6g-B8H" firstAttribute="leading" secondItem="iNQ-xf-w3i" secondAttribute="leading" constant="40" id="cig-1j-yXE"/>
-                            <constraint firstItem="Nai-4B-C18" firstAttribute="top" secondItem="08y-Ix-rZD" secondAttribute="bottom" id="cxo-Tt-GrY"/>
+                            <constraint firstItem="gff-ck-dRw" firstAttribute="centerX" secondItem="rqf-5w-tgy" secondAttribute="centerX" id="baC-f0-64c"/>
                             <constraint firstItem="gnk-sR-8wk" firstAttribute="top" secondItem="Ry8-D6-FBR" secondAttribute="bottom" constant="20" id="dAO-lW-IcI"/>
                             <constraint firstItem="rqf-5w-tgy" firstAttribute="top" secondItem="Nai-4B-C18" secondAttribute="bottom" constant="9" id="dfc-Pq-gNN"/>
                             <constraint firstItem="JRd-zD-U1A" firstAttribute="top" secondItem="gnk-sR-8wk" secondAttribute="bottom" constant="15" id="eW3-hC-xfF"/>
@@ -204,12 +153,10 @@
                             <constraint firstItem="3hD-gg-4Yq" firstAttribute="leading" secondItem="CMN-dv-OoE" secondAttribute="trailing" constant="10" id="pgV-gY-q5f"/>
                             <constraint firstItem="rqf-5w-tgy" firstAttribute="top" secondItem="8dS-nb-obv" secondAttribute="bottom" constant="15" id="qp0-bs-11e"/>
                             <constraint firstItem="CMN-dv-OoE" firstAttribute="top" secondItem="iNQ-xf-w3i" secondAttribute="top" constant="15" id="sdN-Kz-7e3"/>
-                            <constraint firstItem="yRw-ir-BpP" firstAttribute="height" secondItem="DYl-Lf-ueZ" secondAttribute="height" id="ttA-Zf-Y6Y"/>
                             <constraint firstItem="Nai-4B-C18" firstAttribute="leading" secondItem="UqU-NI-9se" secondAttribute="trailing" constant="5" id="uXs-gA-BIG"/>
                             <constraint firstItem="DYl-Lf-ueZ" firstAttribute="trailing" secondItem="gff-ck-dRw" secondAttribute="trailing" constant="-5" id="ufV-E4-ygs"/>
-                            <constraint firstItem="oEE-6g-B8H" firstAttribute="top" secondItem="rqf-5w-tgy" secondAttribute="bottom" constant="20" id="xFf-3y-MIx"/>
                             <constraint firstAttribute="trailing" secondItem="rqf-5w-tgy" secondAttribute="trailing" constant="8" id="y03-S5-DWR"/>
-                            <constraint firstItem="DYl-Lf-ueZ" firstAttribute="width" secondItem="gff-ck-dRw" secondAttribute="width" multiplier="0.3" id="zuC-3r-5LU"/>
+                            <constraint firstItem="DYl-Lf-ueZ" firstAttribute="width" secondItem="gff-ck-dRw" secondAttribute="width" multiplier="0.1" id="zuC-3r-5LU"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -233,7 +180,6 @@
                 <outlet property="message" destination="rqf-5w-tgy" id="hLH-tX-WrL"/>
                 <outlet property="time" destination="8dS-nb-obv" id="i70-4Q-UuP"/>
                 <outlet property="userName" destination="CMN-dv-OoE" id="MIN-9o-5tF"/>
-                <outlet property="volunteerLbl" destination="zg5-eS-8hf" id="Bci-V2-xwJ"/>
             </connections>
             <point key="canvasLocation" x="328.98550724637681" y="132.92410714285714"/>
         </tableViewCell>
@@ -241,9 +187,8 @@
     <resources>
         <image name="blood-donation" width="170.5" height="170.5"/>
         <image name="bloodPin2" width="33.333332061767578" height="33.333332061767578"/>
-        <image name="bookmark.fill" catalog="system" width="112" height="128"/>
+        <image name="bookmark.slash.fill" catalog="system" width="115" height="128"/>
         <image name="clock" width="37.5" height="37.5"/>
-        <image name="hand.raised" catalog="system" width="128" height="128"/>
         <namedColor name="MainLblColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

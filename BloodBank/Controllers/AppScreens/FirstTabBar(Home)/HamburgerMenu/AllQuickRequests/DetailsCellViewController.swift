@@ -63,7 +63,7 @@ class DetailsCellViewController: UIViewController, UISheetPresentationController
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setUpDesign()
-        self.insideAcceptRequestBtn.imageView?.image = UIImage(systemName: "hand.thumbsup")
+        self.insideAcceptRequestBtn.imageView?.image = UIImage(systemName: "hand.thumbsup.fill")
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -179,7 +179,7 @@ class DetailsCellViewController: UIViewController, UISheetPresentationController
             }else if let savedRequest = savedRequest {
                 self.arrOfSavedRequests = savedRequest
                 for mySavedReq in self.arrOfSavedRequests {
-                    if self.requestId == mySavedReq.request_id{
+                    if self.requestId == mySavedReq.request_id && self.p_ssn == mySavedReq.p_ssn{
                         print("already exist")
                         self.bookMarkBtn.titleLabel?.text = "تم الحفظ"
                         self.bookMarkBtn.isEnabled = false
@@ -187,7 +187,7 @@ class DetailsCellViewController: UIViewController, UISheetPresentationController
                         break
                     }else{
                         self.bookMarkBtn.isEnabled = true
-                        self.insideBookMarkBtn.imageView?.image = UIImage(systemName: "bookmark")
+                        self.insideBookMarkBtn.imageView?.image = UIImage(systemName: "bookmark.fill")
                     }
                 }
             }
@@ -220,6 +220,7 @@ class DetailsCellViewController: UIViewController, UISheetPresentationController
         print(self.requestId)
         ApiService.sharedService.savedBloodRequest(p_ssn: self.p_ssn, request_id: self.requestId)
         self.bookMarkBtn.titleLabel?.text = "تم الحفظ"
+        self.showNormalAlert(title: "للاسف ", message: "تمت الاضافه في المفضلات :)")
         self.insideBookMarkBtn.imageView?.image = UIImage(systemName: "bookmark.fill")
     }
     private func bookMarkTapped(){
@@ -250,13 +251,15 @@ class DetailsCellViewController: UIViewController, UISheetPresentationController
     }
     
     private func acceptRequest(){
-        if self.volunteersNum == 5{
-            showNormalAlert(title: "للاسف", message: "تم اكتمال عدد المتطوعين لهذا الطلب :)")
+        if self.volunteersNum >= 8{
+            self.showNormalAlert(title: "للاسف", message: "تم اكتمال عدد المتطوعين لهذا الطلب :)")
+            self.acceptRequestBtn.isEnabled = false
+            self.insideAcceptRequestBtn.imageView?.image = UIImage(systemName: "hand.thumbsup.fill")
         }else{
             print(self.requestId)
             print(self.p_ssn)
             ApiService.sharedService.acceptRequest(request_id: self.requestId, donner_id: self.p_ssn)
-//            self.showNormalAlert(title: "احسنت", message: "لقد تم التطوع للمساعده في هذا الطلب :)")
+            self.showNormalAlert(title: "احسنت", message: "لقد تم التطوع للمساعده في هذا الطلب :)")
         }
         
     }

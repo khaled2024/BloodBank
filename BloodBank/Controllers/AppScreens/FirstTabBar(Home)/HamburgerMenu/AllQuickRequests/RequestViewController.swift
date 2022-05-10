@@ -38,7 +38,6 @@ class RequestViewController: UIViewController{
         super.viewWillAppear(animated)
         setUpDesign()
         self.tableView.reloadData()
-       
     }
     @objc func refreshTapped(){
         if segmentSender == 0{
@@ -48,7 +47,7 @@ class RequestViewController: UIViewController{
             tableView.endUpdates()
             refreshControll.endRefreshing()
         }else{
-            //
+            refreshControll.endRefreshing()
         }
        
     }

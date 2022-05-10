@@ -39,7 +39,6 @@ class DetailPrivateCellViewController: UIViewController, UISheetPresentationCont
     var arrOfPrivateQuickRequestDetail: QuickRequestData!
     var arrOfSavedRequests : [SavedBloodRequestData] = [SavedBloodRequestData]()
     
-    let volunteer = [Volunteer(title: "عمرو", subTitle: "12222111"),Volunteer(title: "خالد", subTitle: "1039484848"),Volunteer(title: "Amr", subTitle: "02920920933"),Volunteer(title: "khaled", subTitle: "1221781723"),Volunteer(title: "Amr", subTitle: "12093094090")]
     override var sheetPresentationController: UISheetPresentationController{
         presentationController as! UISheetPresentationController
     }
@@ -53,8 +52,6 @@ class DetailPrivateCellViewController: UIViewController, UISheetPresentationCont
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setUpDesign()
-        //        def.set(false, forKey: "isRequestSaved")
-        //        setBookMark()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -193,7 +190,7 @@ class DetailPrivateCellViewController: UIViewController, UISheetPresentationCont
                 def.set(true, forKey: "isRequestSaved")
                 print(isRequestSaved)
             }else{
-                self.insideBookMarkBtn.imageView?.image = UIImage(systemName: "bookmark")
+                self.insideBookMarkBtn.imageView?.image = UIImage(systemName: "bookmark.fill")
                 def.set(false, forKey: "isRequestSaved")
                 print(isRequestSaved)
             }
@@ -206,15 +203,14 @@ class DetailPrivateCellViewController: UIViewController, UISheetPresentationCont
             }else if let savedRequest = savedRequest {
                 self.arrOfSavedRequests = savedRequest
                 for mySavedReq in self.arrOfSavedRequests {
-                    if self.requestId == mySavedReq.request_id{
+                    if self.requestId == mySavedReq.request_id && self.p_ssn == mySavedReq.p_ssn{
                         print("already exist")
                         self.bookMarkBtn.isEnabled = false
                         self.bookMarkBtn.titleLabel?.text = "تم"
                         self.insideBookMarkBtn.imageView?.image = UIImage(systemName: "bookmark.fill")
-                        
                         break
                     }else{
-                        self.insideBookMarkBtn.imageView?.image = UIImage(systemName: "bookmark")
+                        self.insideBookMarkBtn.imageView?.image = UIImage(systemName: "bookmark.fill")
                         self.bookMarkBtn.isEnabled = true
                     }
                 }
@@ -267,9 +263,8 @@ class DetailPrivateCellViewController: UIViewController, UISheetPresentationCont
     @IBAction func bookMarkBtnTapped(_ sender: UIButton) {
         self.bookMarkTapped()
     }
-    @IBAction func volunteeringBtnTapped(_ sender: UIButton) {
-        print("volunteering")
-        
+    
+    @IBAction func acceptRequest(_ sender: UIButton) {
     }
     
 }

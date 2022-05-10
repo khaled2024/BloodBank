@@ -22,6 +22,7 @@ class FavoriteViewController: UIViewController {
     var arrOfIds: [String] = []
     var refreshControll = UIRefreshControl()
     var arrOfMyFav: [SavedBloodRequestData] = [SavedBloodRequestData]()
+    var dicOfIds:[String:String] = [:]
     //MARK: - lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,9 +67,11 @@ class FavoriteViewController: UIViewController {
                         self.arrOfMyFav.append(savedRequest)
                         self.arrOfRequestsId.append(savedRequest.request_id)
                         self.arrOfIds.append(savedRequest.id)
-                        //                        self.arrOfIds.insert(savedRequest.id, at: 0)
+                        self.dicOfIds[savedRequest.request_id] = savedRequest.id
+                        
                     }
                 }
+                print("Dic of the ids:\(self.dicOfIds)")
                 if self.arrOfIds.count == 0{
                     self.showNormalAlert(title: "Sorry", message: "لا يوجد طلبات دم عاجله محفوظه :(")
                 }
@@ -110,11 +113,12 @@ class FavoriteViewController: UIViewController {
     private func diffDetails(indexPath: IndexPath){
         let controll = FavoriteDetailsViewController.instantiate()
         controll.arrOfFavoriteRequestDetail = self.arrOfFavoriteRequest[indexPath.row]
-        controll.requestId = arrOfIds[indexPath.row]
+        controll.requestIdOfFaorite = arrOfIds[indexPath.row]
         controll.p_ssn = self.p_ssn
-        controll.tableView = favoriteTableView
+        controll.requestId = arrOfMyFav[indexPath.row].request_id
         print("id of request : \(arrOfIds[indexPath.row])")
                 self.present(controll, animated: true, completion: nil)
+        print(" idrequest of the request\(arrOfMyFav[indexPath.row].request_id)")
         
     }
     //MARK: - Actions
@@ -126,15 +130,17 @@ extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        self.id = arrOfFavoriteRequest[indexPath.row].id
+        print(self.id)
+        print(self.dicOfIds[self.id]!)
         let cell = favoriteTableView.dequeueReusableCell(withIdentifier: "favoriteTableViewCell", for: indexPath)as! favoriteTableViewCell
         let time = arrOfFavoriteRequest[indexPath.row].time
         let subTime = time.prefix(16)
-        cell.configure(bloodBags: self.arrOfFavoriteRequest[indexPath.row].blood_bags_number, volunteer:self.arrOfFavoriteRequest[indexPath.row].blood_bags_number , message: self.arrOfFavoriteRequest[indexPath.row].message, time: String(subTime), address: "(\(arrOfFavoriteRequest[indexPath.row].hospital_name))- \(arrOfFavoriteRequest[indexPath.row].city_of_hospital)- \(arrOfFavoriteRequest[indexPath.row].governorate_name)", name: "\(arrOfFavoriteRequest[indexPath.row].first_name) \(arrOfFavoriteRequest[indexPath.row].last_name)", bloodType: arrOfFavoriteRequest[indexPath.row].blood_type, bloodImage: "f2")
+        cell.configure(bloodBags: self.arrOfFavoriteRequest[indexPath.row].blood_bags_number , message: self.arrOfFavoriteRequest[indexPath.row].message, time: String(subTime), address: "(\(arrOfFavoriteRequest[indexPath.row].hospital_name))- \(arrOfFavoriteRequest[indexPath.row].city_of_hospital)- \(arrOfFavoriteRequest[indexPath.row].governorate_name)", name: "\(arrOfFavoriteRequest[indexPath.row].first_name) \(arrOfFavoriteRequest[indexPath.row].last_name)", bloodType: arrOfFavoriteRequest[indexPath.row].blood_type, bloodImage: "f2")
         cell.requestId = arrOfIds[indexPath.row]
         cell.p_ssn = self.p_ssn
         cell.tableView = favoriteTableView
         print("id of request : \(arrOfIds[indexPath.row])")
-        
         return cell
     }
     //for animations
@@ -148,24 +154,29 @@ extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource{
         tableView.deselectRow(at: indexPath, animated: true)
         self.diffDetails(indexPath: indexPath)
     }
-    private func removeRequest(){
-        ApiService.sharedService.deleteFavoriteRequest(id: self.id)
+    private func removeRequest(id: String){
+        print(id)
+        ApiService.sharedService.deleteFavoriteRequest(id: id)
         
     }
-//    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-//        self.id = arrOfMyFav[indexPath.row].id
-//        let deleteAction = UIContextualAction(style: .normal, title: "") { action, view, completionHandeler in
-//            self.removeRequest()
-//            self.arrOfMyFav.remove(at: indexPath.row)
-//            tableView.beginUpdates()
-//            tableView.deleteRows(at: [indexPath], with: .automatic)
-//            tableView.endUpdates()
-//            completionHandeler(true)
-//        }
-//        deleteAction.image = UIImage(systemName: "trash")
-//        deleteAction.backgroundColor = .systemRed
-//
-//        return UISwipeActionsConfiguration(actions: [deleteAction])
-//    }
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        self.id = arrOfFavoriteRequest[indexPath.row].id
+        print(self.id)
+        print(self.dicOfIds[self.id]!)
+        
+        let unSaveAction = UIContextualAction(style: .normal, title: "") { action, view, completionHandeler in
+            self.removeRequest(id: self.dicOfIds[self.arrOfFavoriteRequest[indexPath.row].id]!)
+            self.arrOfFavoriteRequest.remove(at: indexPath.row)
+            self.favoriteTableView.beginUpdates()
+            self.favoriteTableView.deleteRows(at: [indexPath], with: .automatic)
+            self.favoriteTableView.endUpdates()
+            completionHandeler(true)
+        }
+        unSaveAction.title = "عدم الحفظ"
+        unSaveAction.image = UIImage(systemName: "bookmark.slash.fill")
+        unSaveAction.backgroundColor = .systemPink
+
+        return UISwipeActionsConfiguration(actions: [unSaveAction])
+    }
     
 }

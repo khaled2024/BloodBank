@@ -9,6 +9,7 @@ import UIKit
 
 class YourStoryViewController: UIViewController {
     
+    @IBOutlet weak var noStoryToShown: UILabel!
     @IBOutlet weak var noDataImage: UIImageView!
     @IBOutlet weak var updateTextViewContext: UITextView!
     @IBOutlet weak var storySegmentControll: UISegmentedControl!
@@ -34,11 +35,7 @@ class YourStoryViewController: UIViewController {
         if let user = def.object(forKey: "userInfo")as? [String]{
             self.p_ssn = user[0]
         }
-        //        if self.segmentSender == 0 {
-        //            self.getAllStory()
-        //        }else{
-        //            self.getPrivateStory()
-        //        }
+               
         self.getAllStory()
         self.getPrivateStory()
         setUp()
@@ -52,7 +49,6 @@ class YourStoryViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.setUpFloatingBtn()
-        
     }
     //MARK: - private functions
     @objc func reloadData(){
@@ -73,11 +69,8 @@ class YourStoryViewController: UIViewController {
         tableView.beginUpdates()
         ApiService.sharedService.addStory(content: storyDescription.text, p_ssn: self.p_ssn)
         tableView.endUpdates()
-
-        
     }
     private func setUp(){
-        //     getAllStory()
         registerCell()
         setUpBlurandStoryView()
     }
@@ -87,17 +80,23 @@ class YourStoryViewController: UIViewController {
                 print(error.localizedDescription)
                 self.showNormalAlert(title: "للاسف", message: "لا يمكن الاتصال بالخادم")
                 self.tableView.isHidden = true
+                self.noStoryToShown.isHidden = true
                 self.noDataImage.isHidden = false
+                self.noDataImage.image = UIImage(named: "someThinfWrong2")
             }else if let story = story {
                 self.tableView.isHidden = false
+                self.noStoryToShown.isHidden = true
                 self.noDataImage.isHidden = true
                 self.storiesArr = story
             }
             if self.storiesArr.count == 0{
+                self.tableView.isHidden = true
+                self.noStoryToShown.isHidden = false
+                self.noDataImage.isHidden = false
+                self.noDataImage.image = UIImage(named: "emptyPage-2")
                 self.showNormalAlert(title: "للاسف", message: "لا يوجد قصص لعرضها في الوقت الحالي")
             }else{
                 self.tableView.reloadData()
-
             }
         }
     }
@@ -175,9 +174,12 @@ class YourStoryViewController: UIViewController {
         case 0:
             if self.storiesArr.count == 0{
                 self.tableView.isHidden = true
+                self.noStoryToShown.isHidden = false
                 self.noDataImage.isHidden = false
+                self.noDataImage.image = UIImage(named: "emptyPage-2")
             }else{
                 self.tableView.isHidden = false
+                self.noStoryToShown.isHidden = true
                 self.noDataImage.isHidden = true
                 print(segmentIndex)
                 self.segmentSender = segmentIndex
@@ -186,17 +188,20 @@ class YourStoryViewController: UIViewController {
             
         case 1:
             if self.arrOfPrivateStory.count == 0{
-                self.showNormalAlert(title: "للاسف", message: "انت لم تكتب قصه لك حتي الآن ، اضغط علي انشاء لتتمكن من انشاء قصه ")
+//                self.showNormalAlert(title: "للاسف", message: "انت لم تكتب قصه لك حتي الآن ، اضغط علي انشاء لتتمكن من انشاء قصه ")
                 self.tableView.isHidden = true
+                self.noStoryToShown.isHidden = false
                 self.noDataImage.isHidden = false
+                self.noDataImage.image = UIImage(named: "emptyPage-2")
             }else{
                 self.tableView.isHidden = false
+                self.noStoryToShown.isHidden = true
                 self.noDataImage.isHidden = true
                 print(segmentIndex)
                 self.segmentSender = segmentIndex
                 tableView.reloadData()
             }
-           
+            
         default:
             break
         }
@@ -215,17 +220,28 @@ class YourStoryViewController: UIViewController {
         self.animateOut(desireView: blurView)
         self.animateOut(desireView: addStoryView)
         self.animateOut(desireView: updateStoryView)
-        
     }
     @IBAction func createStoryBtnTapped(_ sender: UIButton) {
         if let storyText = storyDescription.text , !storyText.isEmpty{
             self.addNewStory()
-            self.noDataImage.isHidden = true
             self.tableView.isHidden = false
-//            self.storySegmentControll.selectedSegmentIndex = 0
+            self.noStoryToShown.isHidden = true
+            self.segmentSender = self.storySegmentControll.selectedSegmentIndex
+            self.storySegmentControll.selectedSegmentIndex = segmentSender
+            self.noDataImage.isHidden = true
+            if self.segmentSender == 0 {
+                tableView.beginUpdates()
+                self.getAllStory()
+                tableView.reloadData()
+                tableView.endUpdates()
+            }else{
+                tableView.beginUpdates()
+                self.getPrivateStory()
+                tableView.reloadData()
+                tableView.endUpdates()
+            }
             self.animateOut(desireView: blurView)
             self.animateOut(desireView: addStoryView)
-            
         }
     }
     @IBAction func updateStoryBtnTapped(_ sender: UIButton) {
@@ -263,7 +279,6 @@ extension YourStoryViewController: UITableViewDelegate,UITableViewDataSource{
             cell.selectionStyle = .none
             return cell
         }
-        
     }
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         if self.segmentSender == 1 {
@@ -273,6 +288,11 @@ extension YourStoryViewController: UITableViewDelegate,UITableViewDataSource{
                 self.arrOfPrivateStory.remove(at: indexPath.row)
                 tableView.beginUpdates()
                 tableView.deleteRows(at: [indexPath], with: .automatic)
+                if self.arrOfPrivateStory.count == 0{
+                    self.tableView.isHidden = true
+                    self.noStoryToShown.isHidden = false
+                    self.noDataImage.isHidden = false
+                }
                 tableView.endUpdates()
                 completionHandeler(true)
             }
@@ -286,12 +306,10 @@ extension YourStoryViewController: UITableViewDelegate,UITableViewDataSource{
             updateAction.image = UIImage(systemName: "pencil")
             updateAction.backgroundColor = .systemGray
             return UISwipeActionsConfiguration(actions: [deleteAction,updateAction])
-            
         }else{
             print("cant swipe here")
         }
         return UISwipeActionsConfiguration()
-        
     }
     //for animations
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

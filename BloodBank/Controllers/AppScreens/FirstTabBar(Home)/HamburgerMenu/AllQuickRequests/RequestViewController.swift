@@ -9,6 +9,7 @@ import UIKit
 
 class RequestViewController: UIViewController{
     
+    @IBOutlet weak var emptyPageLbl: UILabel!
     @IBOutlet weak var noDataImage: UIImageView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
@@ -61,7 +62,8 @@ class RequestViewController: UIViewController{
         tableView.register(UINib(nibName: "RequestsTableViewCell", bundle: nil), forCellReuseIdentifier: "Requestscell")
         tableView.register(UINib(nibName: "privateRequestCell", bundle: nil), forCellReuseIdentifier: "privateRequestCell")
     }
-    
+//    emptyPage-2
+//    someThinfWrong2
     private func getAllQuickRequests(){
         DispatchQueue.main.async {
             self.arrOfPrivateQuickRequest = []
@@ -69,11 +71,14 @@ class RequestViewController: UIViewController{
                 if let error = error {
                     self.showNormalAlert(title: "للاسف", message: "لا يمكن الاتصال بالخادم")
                     self.tableView.isHidden = true
+                    self.noDataImage.image = UIImage(named: "someThinfWrong2")
+                    self.emptyPageLbl.isHidden = true
                     self.noDataImage.isHidden = false
                     print(error.localizedDescription)
                 }else if let request = request {
                     self.tableView.isHidden = false
                     self.noDataImage.isHidden = true
+                    self.emptyPageLbl.isHidden = true
                     self.arrOfQuickRequest = request
                 }
                 self.tableView.reloadData()
@@ -93,29 +98,17 @@ class RequestViewController: UIViewController{
                         print("private arr :\(self.arrOfPrivateQuickRequest)")
                     }
                     self.tableView.reloadData()
+                    if self.arrOfPrivateQuickRequest.count == 0{
+                        self.tableView.isHidden = true
+                        self.noDataImage.isHidden = false
+                        self.noDataImage.image = UIImage(named: "emptyPage-2")
+                        self.emptyPageLbl.isHidden = false
+                    }
                 }
             }
         }
     }
-    func allGoingDonor(idOfRequest: String){
-        print(self.myRequestId)
-        ApiService.sharedService.allGoingAccept { error, goingRequest in
-            if let error = error {
-                print(error.localizedDescription)
-            }else if let goingRequest = goingRequest {
-                for myGoingRequest in goingRequest{
-                    if idOfRequest == myGoingRequest.request_id{
-                        self.volunteersNum += 1
-                    }
-                    if self.p_ssn == myGoingRequest.donner_id && idOfRequest == myGoingRequest.request_id{
-                        self.showNormalAlert(title: "للاسف ", message: "لقد تطوعت لهذا الطلب من قبل ")
-                        
-                    }
-                }
-                print("volunteer of this request : \(self.volunteersNum)")
-            }
-        }
-    }
+    
     private func setDataOfUser(){
         let def = UserDefaults.standard
         if let userInfo = def.object(forKey: "userInfo")as? [String]{
@@ -134,7 +127,6 @@ class RequestViewController: UIViewController{
 //            self.allGoingDonor(idOfRequest: self.myRequestId)
           
             self.present(controller, animated: true, completion: nil)
-            
         }else{
             let controller = DetailPrivateCellViewController.instantiate()
             controller.arrOfPrivateQuickRequestDetail = arrOfPrivateQuickRequest[indexPath.row]
@@ -143,35 +135,36 @@ class RequestViewController: UIViewController{
         }
         
     }
-//    private func checkRequestIsInfavoriteForDidLoad(){
-//        ApiService.sharedService.allSavedBloodRequests { error, savedRequest in
-//            print(self.privateRequestId)
-//            if let error = error {
-//                print(error.localizedDescription)
-//            }else if let savedRequest = savedRequest {
-//                self.arrOfSavedRequests = savedRequest
-//                for mySavedReq in self.arrOfSavedRequests {
-//                    if self.privateRequestId == mySavedReq.request_id{
-//                        print("already exist")
-//                        self.bookMarkImage.image = UIImage(systemName: "bookmark.fill")
-//                        self.bookMarkBtn.isEnabled = false
-//                        break
-//                    }
-//                }
-//            }
-//        }
-//    }
     
     //MARK: - Action
     @IBAction func segmentedControlTapped(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0{
-            self.segmentSender = sender.selectedSegmentIndex
-            print(segmentSender)
-            tableView.reloadData()
+            if self.arrOfQuickRequest.count == 0{
+                self.tableView.isHidden = true
+                self.noDataImage.isHidden = false
+                self.noDataImage.image = UIImage(named: "emptyPage-2")
+                self.emptyPageLbl.isHidden = false
+            }else{
+                self.segmentSender = sender.selectedSegmentIndex
+                print(segmentSender)
+            self.tableView.isHidden = false
+                self.noDataImage.isHidden = true
+                self.emptyPageLbl.isHidden = true
+                tableView.reloadData()
+            }
         }else if sender.selectedSegmentIndex == 1{
-            self.segmentSender = sender.selectedSegmentIndex
-            print(segmentSender)
-            tableView.reloadData()
+            if self.arrOfPrivateQuickRequest.count == 0{
+                self.tableView.isHidden = true
+                self.noDataImage.isHidden = false
+                self.noDataImage.image = UIImage(named: "emptyPage-2")
+                self.emptyPageLbl.isHidden = false
+            }else{
+                self.segmentSender = sender.selectedSegmentIndex
+                print(segmentSender)
+                self.noDataImage.isHidden = true
+                self.emptyPageLbl.isHidden = true
+                tableView.reloadData()
+            }
         }
     }
 }

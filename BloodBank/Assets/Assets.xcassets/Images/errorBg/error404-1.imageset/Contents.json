@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "25 Creative Yet Funny 404 Error Page Designs for Inspiration_ccexpress.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -38,11 +38,14 @@ class VolunteersViewController: UIViewController{
         self.setUpDesign()
     }
     //MARK: - Private func
+//    someThinfWrong2
+//    errorSearch
     private func getAllVolunteers(){
         ApiService.sharedService.checkSignIn { error, user in
             if let error = error {
                 print(error.localizedDescription)
                 self.showNormalAlert(title: "للاسف", message: "لا يمكن الاتصال بالخادم")
+                self.noDataImageView.image = UIImage(named: "someThinfWrong2")
                 self.voluntersTableView.isHidden = true
                 self.noDataImageView.isHidden = false
             }else if let user = user {
@@ -171,8 +174,9 @@ extension VolunteersViewController:UISearchBarDelegate{
             voluntersTableView.reloadData()
             if arrOfVolunteers.count == 0{
                 self.voluntersTableView.isHidden = true
+                self.noDataImageView.image = UIImage(named: "errorSearch")
                 self.noDataImageView.isHidden = false
-                self.showNormalAlert(title: "", message: "لا يوجد متبرعين في الوقت الحالي ")
+//                self.showNormalAlert(title: "", message: "لا يوجد متبرعين في الوقت الحالي ")
             }
         }
     }
@@ -186,6 +190,7 @@ extension VolunteersViewController:UISearchBarDelegate{
             voluntersTableView.reloadData()
             if arrOfVolunteers.count == 0{
                 self.voluntersTableView.isHidden = true
+                self.noDataImageView.image = UIImage(named: "errorSearch")
                 self.noDataImageView.isHidden = false
             }
             break
@@ -196,6 +201,7 @@ extension VolunteersViewController:UISearchBarDelegate{
             voluntersTableView.reloadData()
             if arrOfVolunteers.count == 0{
                 self.voluntersTableView.isHidden = true
+                self.noDataImageView.image = UIImage(named: "errorSearch")
                 self.noDataImageView.isHidden = false
             }
             break
@@ -206,6 +212,7 @@ extension VolunteersViewController:UISearchBarDelegate{
             voluntersTableView.reloadData()
             if arrOfVolunteers.count == 0{
                 self.voluntersTableView.isHidden = true
+                self.noDataImageView.image = UIImage(named: "errorSearch")
                 self.noDataImageView.isHidden = false
             }
             break
@@ -214,6 +221,7 @@ extension VolunteersViewController:UISearchBarDelegate{
             self.voluntersTableView.reloadData()
             if arrOfVolunteers.count == 0{
                 self.voluntersTableView.isHidden = true
+                self.noDataImageView.image = UIImage(named: "errorSearch")
                 self.noDataImageView.isHidden = false
             }
             break

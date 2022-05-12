@@ -690,6 +690,74 @@ class ApiService{
             }
         }
     }
-    
+
+    //MARK: - Blood_Info
+    func getAllBloodInfo(completion: @escaping (_ error: Error? , _ blood: [Blood_info_Data]?) -> Void){
+        let url = "\(URLS.Blood_Info)/all"
+        AF.request("\(url)", method: .get, encoding: URLEncoding.default , headers: nil).response {
+            response in
+            if let error = response.error {
+                completion(error , nil)
+            }
+            if let data = response.data {
+                do{
+                    let blood = try JSONDecoder().decode(Blood_info.self, from: data).data
+                    completion(nil, blood)
+                } catch let error {
+                    completion(error , nil)
+                }
+            }
+        }
+    }
+    //add blood order (purachers)
+    func orderBlood(p_ssn: String , blood_type:String,delivered_place: String,amount: String){
+        guard let url = URL(string: "\(URLS.purchaseOrder)/add")else{return}
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let body : [String:AnyHashable] = [
+            "p_id": p_ssn,
+            "blood_type": blood_type,
+            "delivered_place": delivered_place,
+            "amount": amount
+        ]
+        urlRequest.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
+        let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+            guard let data = data, error == nil else {return}
+            do{
+                let response = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
+                print("success : \(response)")
+            }catch{
+                print(error)
+            }
+        }
+        task.resume()
+    }
+    // update orderBlood
+    func updateOrderBlood( amount: String){
+            guard let url = URL(string: "\(URLS.Blood_Info)/update")else{return}
+            var urlRequest = URLRequest(url: url)
+            urlRequest.httpMethod = "PUT"
+            urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            let body : [String:AnyHashable] = [
+                "id": "4",
+                   "data":[
+                    "amount": amount
+                   ]
+            ]
+            urlRequest.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
+            let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+                guard let data = data, error == nil else {
+                    return
+                }
+                do {
+                    let response = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
+                    print("success : \(response)")
+                } catch  {
+                    print(error)
+                }
+            }
+            task.resume()
+        }
 }
 

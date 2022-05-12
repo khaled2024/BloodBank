@@ -9,6 +9,7 @@ import UIKit
 
 class FavoriteViewController: UIViewController {
     //MARK: - Outlets
+    @IBOutlet weak var nofavoriteLbl: UILabel!
     @IBOutlet weak var noDataImage: UIImageView!
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var favoriteTableView: UITableView!
@@ -36,7 +37,6 @@ class FavoriteViewController: UIViewController {
         refreshControll.tintColor = .systemPink
         favoriteTableView.addSubview(refreshControll)
         refreshControll.addTarget(self, action: #selector(refreshTapped), for: .valueChanged)
-        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -59,9 +59,12 @@ class FavoriteViewController: UIViewController {
                 self.showNormalAlert(title: "للاسف", message: "لا يمكن الاتصال بالخادم")
                 self.favoriteTableView.isHidden = true
                 self.noDataImage.isHidden = false
+                self.nofavoriteLbl.isHidden = true
+                self.noDataImage.image = UIImage(named: "someThinfWrong2")
             }else if let savedRequest = savedRequest {
                 self.favoriteTableView.isHidden = false
                 self.noDataImage.isHidden = true
+                self.nofavoriteLbl.isHidden = true
                 for savedRequest in savedRequest {
                     if self.p_ssn == savedRequest.p_ssn{
                         self.arrOfMyFav.append(savedRequest)
@@ -74,6 +77,9 @@ class FavoriteViewController: UIViewController {
                 print("Dic of the ids:\(self.dicOfIds)")
                 if self.arrOfIds.count == 0{
                     self.showNormalAlert(title: "Sorry", message: "لا يوجد طلبات دم عاجله محفوظه :(")
+                    self.noDataImage.isHidden = false
+                    self.nofavoriteLbl.isHidden = false
+                    self.noDataImage.image = UIImage(named: "emptyPage-2")
                 }
                 print(self.arrOfRequestsId)
                 print(self.arrOfIds)
@@ -169,6 +175,13 @@ extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource{
             self.arrOfFavoriteRequest.remove(at: indexPath.row)
             self.favoriteTableView.beginUpdates()
             self.favoriteTableView.deleteRows(at: [indexPath], with: .automatic)
+            if self.arrOfFavoriteRequest.count == 0{
+                self.showNormalAlert(title: "Sorry", message: "لا يوجد طلبات دم عاجله محفوظه :(")
+                self.favoriteTableView.isHidden = true
+                self.noDataImage.isHidden = false
+                self.nofavoriteLbl.isHidden = false
+                self.noDataImage.image = UIImage(named: "emptyPage-2")
+            }
             self.favoriteTableView.endUpdates()
             completionHandeler(true)
         }

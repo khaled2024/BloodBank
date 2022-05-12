@@ -237,6 +237,7 @@ class FavoriteDetailsViewController: UIViewController, UISheetPresentationContro
             ApiService.sharedService.acceptRequest(request_id: self.requestId, donner_id: self.p_ssn)
             self.acceptRequestBtn.setTitle("تم التطوع", for: .normal)
             self.acceptRequestBtn.isEnabled = false
+            
             self.showNormalAlert(title: "احسنت", message: "لقد تم التطوع للمساعده في هذا الطلب :)")
         }
         

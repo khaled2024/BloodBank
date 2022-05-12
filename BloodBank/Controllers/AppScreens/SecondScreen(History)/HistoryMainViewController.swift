@@ -63,6 +63,8 @@ class HistoryMainViewController: UIViewController {
         
     }
     //MARK: - private func
+//    emptyPage-2
+//    someThinfWrong2
     @objc func refreshTapped(){
         myQuickRequests()
         self.HistorytableView.reloadData()
@@ -141,6 +143,7 @@ class HistoryMainViewController: UIViewController {
                     print(error.localizedDescription)
                     self.showNormalAlert(title: "للاسف", message: "لا يمكن الاتصال بالخادم:(")
                     self.HistorytableView.isHidden = true
+                    self.noDataImageView.image = UIImage(named: "someThinfWrong2")
                     self.noDataImageView.isHidden = false
                 }else if let request = request {
                     self.arrOfQuickRequest = request
@@ -149,6 +152,7 @@ class HistoryMainViewController: UIViewController {
                         self.showNormalAlert(title: "للاسف", message: "لا يوجد طلبات  لعرضها:(")
                         self.HistorytableView.isHidden = true
                         self.noDataImageView.isHidden = false
+                        self.noDataImageView.image = UIImage(named: "emptyPage-2")
                     }else{
                         self.HistorytableView.isHidden = false
                         self.noDataImageView.isHidden = true

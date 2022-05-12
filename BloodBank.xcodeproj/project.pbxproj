@@ -63,6 +63,7 @@
 		EA6211E227EF6DC000301635 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6211E127EF6DC000301635 /* ApiService.swift */; };
 		EA6211E427EF6FC300301635 /* CoronaAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6211E327EF6FC200301635 /* CoronaAnalysis.swift */; };
 		EA6211E627EF829600301635 /* formatInt+Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6211E527EF829600301635 /* formatInt+Int.swift */; };
+		EA624303282C72B300C4B2CE /* Blood_info.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA624302282C72B300C4B2CE /* Blood_info.swift */; };
 		EA62CA0328288D5B007BD085 /* DetailPrivateCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA62CA0228288D5B007BD085 /* DetailPrivateCellViewController.swift */; };
 		EA62CA0528289885007BD085 /* HistoryRequestDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA62CA0428289885007BD085 /* HistoryRequestDetailsViewController.swift */; };
 		EA62CA082828AE89007BD085 /* FavoriteDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA62CA072828AE89007BD085 /* FavoriteDetailsViewController.swift */; };
@@ -198,6 +199,7 @@
 		EA6211E127EF6DC000301635 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		EA6211E327EF6FC200301635 /* CoronaAnalysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronaAnalysis.swift; sourceTree = "<group>"; };
 		EA6211E527EF829600301635 /* formatInt+Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "formatInt+Int.swift"; sourceTree = "<group>"; };
+		EA624302282C72B300C4B2CE /* Blood_info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blood_info.swift; sourceTree = "<group>"; };
 		EA62CA0228288D5B007BD085 /* DetailPrivateCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPrivateCellViewController.swift; sourceTree = "<group>"; };
 		EA62CA0428289885007BD085 /* HistoryRequestDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRequestDetailsViewController.swift; sourceTree = "<group>"; };
 		EA62CA072828AE89007BD085 /* FavoriteDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDetailsViewController.swift; sourceTree = "<group>"; };
@@ -642,10 +644,10 @@
 				EA2A523727EA429300D92ED3 /* CoronaStatsViewController.swift */,
 				EA4B13AB280F096900B52607 /* VolunteersViewController.swift */,
 				EA4CA33627F9C782003873DC /* YourStoryViewController.swift */,
-				EA4278A727B025D4002D444A /* HelpAndSupportViewController.swift */,
-				EA4278AB27B025FB002D444A /* SettingViewController.swift */,
 				EA62CA062828AE6E007BD085 /* FavoriteVC */,
 				EA6F6124281390CF002E5E5E /* BuyBloodViewController.swift */,
+				EA4278A727B025D4002D444A /* HelpAndSupportViewController.swift */,
+				EA4278AB27B025FB002D444A /* SettingViewController.swift */,
 			);
 			path = HamburgerMenu;
 			sourceTree = "<group>";
@@ -718,6 +720,7 @@
 				EA32DC6C282215C800856119 /* LastDonate.swift */,
 				EAC37459282417C4001F28C8 /* PurchaseOrder.swift */,
 				EA5A2BE72829397D00B3B272 /* Going_Donners.swift */,
+				EA624302282C72B300C4B2CE /* Blood_info.swift */,
 			);
 			path = ApiModels;
 			sourceTree = "<group>";
@@ -936,6 +939,7 @@
 				EA1F21CC280C927C00DE49F9 /* LastDonateHistoryCell.swift in Sources */,
 				EA2AF7ED28102C0400ECCB55 /* VolunteersTableViewCell.swift in Sources */,
 				EA5A2BE82829397D00B3B272 /* Going_Donners.swift in Sources */,
+				EA624303282C72B300C4B2CE /* Blood_info.swift in Sources */,
 				EA4C711F27E3D626000C8B02 /* CustomPlaceHolder.swift in Sources */,
 				EA4278AC27B025FB002D444A /* SettingViewController.swift in Sources */,
 				EAE3D49A2819FEEE003B514A /* Vaccine.swift in Sources */,

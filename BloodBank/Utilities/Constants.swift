@@ -32,7 +32,8 @@ struct URLS{
     static let savedBloodRequest = "https://blood-bank.life/api/api/v1/saved_blood_requests/\(myCode)"
     static let going_Donor = "https://blood-bank.life/api/api/v1/going_donners/\(myCode)"
     static let Blood_Info = "https://blood-bank.life/api/api/v1/all_blood_info/\(myCode)"
-    
+    static let AvailableBlood = "https://blood-bank.life/api/api/v1/avilable_blood/\(myCode)"
+    static let buy_Blood = "https://blood-bank.life/api/api/v1/buy_blood/\(myCode)/all"
 }
 struct Identifier{
     static let CollectionCell = "OnboardingCollectionViewCell"

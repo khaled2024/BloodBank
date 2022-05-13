@@ -125,7 +125,7 @@ class ApiService{
                 }
             }
         }
-    
+        
     }
     //MARK: - For Governrate
     func getGovData(completion: @escaping (_ error: Error? , _ gov: [GovData]?) -> Void){
@@ -146,40 +146,40 @@ class ApiService{
     }
     // update userData
     func updateUserData(p_ssn: String , p_first_name:String , p_last_name: String,email: String,gov:String,city:String,mopilePhone:String,secondPhone:String,birthDay:String,bloodType:String,password:String,gender:String){
-            guard let url = URL(string: "\(URLS.patient_Donor)/update")else{return}
-            var urlRequest = URLRequest(url: url)
-            urlRequest.httpMethod = "PUT"
-            urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            let body : [String:AnyHashable] = [
-                "id": p_ssn,
-                   "data":[
-                    "p_first_name": p_first_name,
-                    "p_last_name": p_last_name,
-                    "email": email,
-                    "mobile_phone": mopilePhone,
-                    "home_phone": secondPhone,
-                    "password": password,
-                    "blood_type": bloodType,
-                    "birthday": birthDay,
-                    "gender_id": gender,
-                    "city_id": city,
-                   ]
+        guard let url = URL(string: "\(URLS.patient_Donor)/update")else{return}
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "PUT"
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let body : [String:AnyHashable] = [
+            "id": p_ssn,
+            "data":[
+                "p_first_name": p_first_name,
+                "p_last_name": p_last_name,
+                "email": email,
+                "mobile_phone": mopilePhone,
+                "home_phone": secondPhone,
+                "password": password,
+                "blood_type": bloodType,
+                "birthday": birthDay,
+                "gender_id": gender,
+                "city_id": city,
             ]
-            urlRequest.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
-            let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
-                guard let data = data, error == nil else {
-                    return
-                }
-                do {
-                    let response = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
-                    print("success : \(response)")
-                } catch  {
-                    print(error)
-                }
+        ]
+        urlRequest.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
+        let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+            guard let data = data, error == nil else {
+                return
             }
-            task.resume()
+            do {
+                let response = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
+                print("success : \(response)")
+            } catch  {
+                print(error)
+            }
         }
-        
+        task.resume()
+    }
+    
     //MARK: -For Cities
     func getCityData(completion: @escaping (_ error: Error? , _ city: [CityData]?) -> Void){
         AF.request("\(URLS.city)/all", method: .get, encoding: URLEncoding.default , headers: nil).response {
@@ -361,9 +361,9 @@ class ApiService{
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         let body : [String:AnyHashable] = [
             "id": id,
-               "data":[
+            "data":[
                 "content": content,
-               ]
+            ]
         ]
         urlRequest.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
         let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
@@ -379,7 +379,7 @@ class ApiService{
         }
         task.resume()
     }
-
+    
     //MARK: - Vaccine All
     func getAllVaccines(completion: @escaping (_ error: Error? , _ vaccine: [VaccineData]?) -> Void){
         let url = "\(URLS.vaccineInfo)/all"
@@ -418,7 +418,7 @@ class ApiService{
                 print("success : \(response)")
             }catch{
                 print(error)
-        
+                
             }
         }
         task.resume()
@@ -500,13 +500,13 @@ class ApiService{
                 print("success : \(response)")
             }catch{
                 print(error)
-        
+                
             }
         }
         task.resume()
     }
     
-//MARK: - blood_Donation
+    //MARK: - blood_Donation
     //add blood donation
     func addBloodDonation(p_ssn: String , city_id:String,donate_place_id: String,time: String){
         guard let url = URL(string: "\(URLS.blood_Donation)/add")else{return}
@@ -650,7 +650,7 @@ class ApiService{
         task.resume()
     }
     
-//MARK: - going_donners
+    //MARK: - going_donners
     // add request going
     func acceptRequest(request_id: String , donner_id:String){
         guard let url = URL(string: "\(URLS.going_Donor)/add")else{return}
@@ -673,7 +673,7 @@ class ApiService{
         }
         task.resume()
     }
-// show all going requests
+    // show all going requests
     func allGoingAccept(completion: @escaping (_ error: Error? , _ goingRequest: [Going_DonnersData]?) -> Void){
         AF.request("\(URLS.going_Donor)/all", method: .get, encoding: URLEncoding.default , headers: nil).response {
             response in
@@ -690,8 +690,25 @@ class ApiService{
             }
         }
     }
-
+    
     //MARK: - Blood_Info
+    func getAvailableBlood(completion: @escaping (_ error: Error? , _ availableblood: [AvailableBloodData]?) -> Void){
+        let url = "\(URLS.AvailableBlood)/all"
+        AF.request("\(url)", method: .get, encoding: URLEncoding.default , headers: nil).response {
+            response in
+            if let error = response.error {
+                completion(error , nil)
+            }
+            if let data = response.data {
+                do{
+                    let availableblood = try JSONDecoder().decode(AvailableBlood.self, from: data).data
+                    completion(nil, availableblood)
+                } catch let error {
+                    completion(error , nil)
+                }
+            }
+        }
+    }
     func getAllBloodInfo(completion: @escaping (_ error: Error? , _ blood: [Blood_info_Data]?) -> Void){
         let url = "\(URLS.Blood_Info)/all"
         AF.request("\(url)", method: .get, encoding: URLEncoding.default , headers: nil).response {
@@ -733,31 +750,109 @@ class ApiService{
         }
         task.resume()
     }
-    // update orderBlood
-    func updateOrderBlood( amount: String){
-            guard let url = URL(string: "\(URLS.Blood_Info)/update")else{return}
-            var urlRequest = URLRequest(url: url)
-            urlRequest.httpMethod = "PUT"
-            urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            let body : [String:AnyHashable] = [
-                "id": "4",
-                   "data":[
-                    "amount": amount
-                   ]
+    // update OrderBlood
+    func updateOrderBlood(idOfAvailableBlood: String, amount: String){
+        guard let url = URL(string: "\(URLS.AvailableBlood)/update")else{return}
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "PUT"
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let body : [String:AnyHashable] = [
+            "id": idOfAvailableBlood,
+            "data":[
+                "amount": amount
             ]
-            urlRequest.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
-            let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
-                guard let data = data, error == nil else {
-                    return
-                }
-                do {
-                    let response = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
-                    print("success : \(response)")
-                } catch  {
-                    print(error)
+        ]
+        urlRequest.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
+        let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+            guard let data = data, error == nil else {
+                return
+            }
+            do {
+                let response = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
+                print("success : \(response)")
+            } catch  {
+                print(error)
+            }
+        }
+        task.resume()
+    }
+    // buy blood api link
+    func buyBlood(p_ssn: String , city_id:String,blood_id: String,amount: String){
+        guard let url = URL(string: "\(URLS.buy_Blood)")else{return}
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let body : [String:AnyHashable] = [
+            "data":[
+                "p_ssn": p_ssn,
+                "city_id": city_id,
+                "blood_id": blood_id,
+                "amount": amount
+            ]
+        ]
+        urlRequest.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
+        let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+            guard let data = data, error == nil else {return}
+            do{
+                let response = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
+                print("success : \(response)")
+            }catch{
+                print(error)
+            }
+        }
+        task.resume()
+    }
+    func getMsg(p_ssn: String , city_id:String,blood_id: String,amount: String, completion: @escaping (_ error: Error? , _ mydata: [x]?) -> Void){
+        let url = "\(URLS.buy_Blood)/all"
+        let body : [String:AnyHashable] = [
+            "data":[
+                "p_ssn": p_ssn,
+                "city_id": city_id,
+                "blood_id": blood_id,
+                "amount": amount
+            ]
+        ]
+        let header: HTTPHeaders = ["Content-Type": "application/json"]
+        AF.request("\(url)", method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).response {
+            response in
+            if let error = response.error {
+                completion(error , nil)
+            }
+            if let data = response.data {
+                do{
+                    let myData = try JSONDecoder().decode(myData.self, from: data).msg
+                    completion(nil, myData)
+                } catch let error {
+                    completion(error , nil)
                 }
             }
-            task.resume()
         }
+    }
+    func getOneMsg(p_ssn: String , city_id:String,blood_id: String,amount: String, completion: @escaping (_ error: Error? , _ mydata: y?) -> Void){
+        let url = "\(URLS.buy_Blood)/all"
+        let body : [String:AnyHashable] = [
+            "data":[
+                "p_ssn": p_ssn,
+                "city_id": city_id,
+                "blood_id": blood_id,
+                "amount": amount
+            ]
+        ]
+        let header: HTTPHeaders = ["Content-Type": "application/json"]
+        AF.request("\(url)", method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).response {
+            response in
+            if let error = response.error {
+                completion(error , nil)
+            }
+            if let data = response.data {
+                do{
+                    let myData = try JSONDecoder().decode(oneData.self, from: data).msg
+                    completion(nil, myData)
+                } catch let error {
+                    completion(error , nil)
+                }
+            }
+        }
+    }
 }
 

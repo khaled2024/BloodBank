@@ -4284,7 +4284,7 @@
                                 <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="A+" borderStyle="roundedRect" placeholder="حدد فصيله الدم التي تحتاجها" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MnW-KF-cN1">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="حدد فصيله الدم التي تحتاجها" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MnW-KF-cN1">
                                 <rect key="frame" x="10" y="182.5" width="394" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="IxT-nr-oob"/>
@@ -4334,14 +4334,20 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yrC-s0-f9b">
-                                <rect key="frame" x="62" y="747" width="290" height="40"/>
+                                <rect key="frame" x="41.5" y="510.5" width="331" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="sRn-h4-SP0"/>
+                                    <constraint firstAttribute="height" constant="60" id="sRn-h4-SP0"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Almarai-Bold" family="Almarai" pointSize="16"/>
                                 <color key="textColor" red="0.91764706370000004" green="0.31372550129999999" blue="0.39607840779999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="حدد المكان الذي تريد شراء الدم منه" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xC7-P6-ziz">
+                                <rect key="frame" x="49.5" y="580.5" width="315" height="45"/>
+                                <color key="textColor" name="MainLblColor"/>
+                                <fontDescription key="fontDescription" name="Almarai-Regular" family="Almarai" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CWy-Lt-CYn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -4356,7 +4362,6 @@
                             <constraint firstItem="3JJ-zM-feN" firstAttribute="trailing" secondItem="xsh-uB-5dn" secondAttribute="trailing" id="BvY-qk-vPN"/>
                             <constraint firstItem="Kq7-5v-psq" firstAttribute="centerY" secondItem="xsh-uB-5dn" secondAttribute="centerY" id="CWT-mR-gNJ"/>
                             <constraint firstItem="3f0-Nt-XxG" firstAttribute="top" secondItem="RmU-Ym-B3h" secondAttribute="bottom" constant="15" id="DKq-io-QZL"/>
-                            <constraint firstItem="ja3-9J-oxj" firstAttribute="top" secondItem="yrC-s0-f9b" secondAttribute="bottom" constant="30" id="DP5-wq-8fI"/>
                             <constraint firstItem="Kq7-5v-psq" firstAttribute="leading" secondItem="xsh-uB-5dn" secondAttribute="trailing" constant="-40" id="DqQ-ZC-iG6"/>
                             <constraint firstItem="xsh-uB-5dn" firstAttribute="trailing" secondItem="Tp4-wE-Wml" secondAttribute="trailing" id="Dys-sw-nJT"/>
                             <constraint firstItem="3f0-Nt-XxG" firstAttribute="trailing" secondItem="RmU-Ym-B3h" secondAttribute="trailing" id="FqW-cJ-Yry"/>
@@ -4368,6 +4373,7 @@
                             <constraint firstItem="CWy-Lt-CYn" firstAttribute="bottom" secondItem="ja3-9J-oxj" secondAttribute="bottom" constant="10" id="It2-3J-8cQ"/>
                             <constraint firstItem="vzM-y6-D5Y" firstAttribute="leading" secondItem="CWy-Lt-CYn" secondAttribute="leading" constant="10" id="KtJ-Wp-pZD"/>
                             <constraint firstItem="CWy-Lt-CYn" firstAttribute="trailing" secondItem="vzM-y6-D5Y" secondAttribute="trailing" constant="10" id="Lsy-KY-2Pc"/>
+                            <constraint firstItem="xC7-P6-ziz" firstAttribute="height" secondItem="IPS-vH-HV0" secondAttribute="height" id="Oc4-gv-M6l"/>
                             <constraint firstItem="3f0-Nt-XxG" firstAttribute="leading" secondItem="RmU-Ym-B3h" secondAttribute="leading" id="Oll-vF-Cjw"/>
                             <constraint firstItem="MnW-KF-cN1" firstAttribute="trailing" secondItem="4x4-hX-O1p" secondAttribute="trailing" id="PFL-yR-7Ub"/>
                             <constraint firstItem="MnW-KF-cN1" firstAttribute="leading" secondItem="4x4-hX-O1p" secondAttribute="leading" id="Ptq-zJ-G4k"/>
@@ -4380,17 +4386,21 @@
                             <constraint firstItem="RmU-Ym-B3h" firstAttribute="top" secondItem="3JJ-zM-feN" secondAttribute="bottom" constant="10" id="XcF-Kf-HIk"/>
                             <constraint firstItem="NoK-q8-7fp" firstAttribute="centerY" secondItem="MnW-KF-cN1" secondAttribute="centerY" id="ZzH-0G-iOd"/>
                             <constraint firstItem="7mD-4b-7s0" firstAttribute="centerY" secondItem="RmU-Ym-B3h" secondAttribute="centerY" id="bVb-xh-SWL"/>
+                            <constraint firstItem="xC7-P6-ziz" firstAttribute="centerX" secondItem="IPS-vH-HV0" secondAttribute="centerX" id="dRO-0K-erO"/>
                             <constraint firstItem="4x4-hX-O1p" firstAttribute="top" secondItem="wcM-kg-iRV" secondAttribute="bottom" constant="10" id="ddH-oJ-tkV"/>
                             <constraint firstItem="yrC-s0-f9b" firstAttribute="centerX" secondItem="ja3-9J-oxj" secondAttribute="centerX" id="fuB-We-qsw"/>
                             <constraint firstItem="xsh-uB-5dn" firstAttribute="top" secondItem="Tp4-wE-Wml" secondAttribute="bottom" constant="10" id="h63-gH-q1n"/>
                             <constraint firstItem="NoK-q8-7fp" firstAttribute="leading" secondItem="MnW-KF-cN1" secondAttribute="trailing" constant="-40" id="hCo-TH-k7o"/>
+                            <constraint firstItem="yrC-s0-f9b" firstAttribute="top" secondItem="IPS-vH-HV0" secondAttribute="bottom" constant="10" id="nmf-9B-eiC"/>
                             <constraint firstItem="3JJ-zM-feN" firstAttribute="top" secondItem="xsh-uB-5dn" secondAttribute="bottom" constant="15" id="o4z-XD-2ca"/>
-                            <constraint firstItem="yrC-s0-f9b" firstAttribute="width" secondItem="cHq-Au-pAC" secondAttribute="width" multiplier="0.7" id="oub-Vo-9iO"/>
+                            <constraint firstItem="yrC-s0-f9b" firstAttribute="width" secondItem="cHq-Au-pAC" secondAttribute="width" multiplier="0.8" id="oub-Vo-9iO"/>
                             <constraint firstItem="HF2-Bv-VLy" firstAttribute="leading" secondItem="IPS-vH-HV0" secondAttribute="trailing" constant="-40" id="p4s-mL-xdu"/>
                             <constraint firstItem="4x4-hX-O1p" firstAttribute="trailing" secondItem="wcM-kg-iRV" secondAttribute="trailing" id="qGF-MT-68b"/>
+                            <constraint firstItem="xC7-P6-ziz" firstAttribute="width" secondItem="IPS-vH-HV0" secondAttribute="width" multiplier="0.8" id="rPf-Dh-wYF"/>
                             <constraint firstItem="wcM-kg-iRV" firstAttribute="leading" secondItem="vzM-y6-D5Y" secondAttribute="leading" id="rzI-0I-kdS"/>
                             <constraint firstItem="xsh-uB-5dn" firstAttribute="height" secondItem="MnW-KF-cN1" secondAttribute="height" id="sqF-gq-5f1"/>
                             <constraint firstItem="vzM-y6-D5Y" firstAttribute="top" secondItem="CWy-Lt-CYn" secondAttribute="top" constant="10" id="uAH-YS-UBc"/>
+                            <constraint firstItem="xC7-P6-ziz" firstAttribute="top" secondItem="yrC-s0-f9b" secondAttribute="bottom" constant="10" id="uBe-tg-Ys3"/>
                             <constraint firstItem="wcM-kg-iRV" firstAttribute="trailing" secondItem="vzM-y6-D5Y" secondAttribute="trailing" id="wOu-FR-BY0"/>
                             <constraint firstItem="Tp4-wE-Wml" firstAttribute="leading" secondItem="4x4-hX-O1p" secondAttribute="leading" id="wne-7p-G9M"/>
                         </constraints>
@@ -4400,6 +4410,7 @@
                         <outlet property="bloodTypeTextField" destination="MnW-KF-cN1" id="kue-8L-E4o"/>
                         <outlet property="findingBloodError" destination="yrC-s0-f9b" id="T4S-yU-KMh"/>
                         <outlet property="orderRequestBtn" destination="ja3-9J-oxj" id="dUH-aA-2rH"/>
+                        <outlet property="placeChoiseTF" destination="xC7-P6-ziz" id="2sc-Dt-UqC"/>
                         <outlet property="priceTextField" destination="RmU-Ym-B3h" id="Wta-gz-SNw"/>
                         <outlet property="totalPriceTextField" destination="IPS-vH-HV0" id="I8D-9q-7Bm"/>
                     </connections>

@@ -15,6 +15,8 @@
 		EA01A0B127C9838700BDCC00 /* BookingAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA01A0B027C9838700BDCC00 /* BookingAppointmentViewController.swift */; };
 		EA01A0B327C984A600BDCC00 /* InformationCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA01A0B227C984A600BDCC00 /* InformationCenterViewController.swift */; };
 		EA064CAE27A4750600A06257 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA064CAD27A4750600A06257 /* MainViewController.swift */; };
+		EA0A078D282D93F2000C3EDF /* Available_Blood.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0A078C282D93F2000C3EDF /* Available_Blood.swift */; };
+		EA0A078F282DAD5B000C3EDF /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0A078E282DAD5B000C3EDF /* Data.swift */; };
 		EA1153BC2816E6DE0053C50B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1153BB2816E6DE0053C50B /* User.swift */; };
 		EA17CD7C27FCFE4F00F356EE /* Almarai-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA17CD7B27FCFE4F00F356EE /* Almarai-ExtraBold.ttf */; };
 		EA1831C727DA6C1000D9BA90 /* RequestsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1831C527DA6C1000D9BA90 /* RequestsTableViewCell.swift */; };
@@ -151,6 +153,8 @@
 		EA01A0B027C9838700BDCC00 /* BookingAppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingAppointmentViewController.swift; sourceTree = "<group>"; };
 		EA01A0B227C984A600BDCC00 /* InformationCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationCenterViewController.swift; sourceTree = "<group>"; };
 		EA064CAD27A4750600A06257 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		EA0A078C282D93F2000C3EDF /* Available_Blood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Available_Blood.swift; sourceTree = "<group>"; };
+		EA0A078E282DAD5B000C3EDF /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		EA1153BB2816E6DE0053C50B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		EA17CD7B27FCFE4F00F356EE /* Almarai-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Almarai-ExtraBold.ttf"; sourceTree = "<group>"; };
 		EA1831C527DA6C1000D9BA90 /* RequestsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsTableViewCell.swift; sourceTree = "<group>"; };
@@ -721,6 +725,8 @@
 				EAC37459282417C4001F28C8 /* PurchaseOrder.swift */,
 				EA5A2BE72829397D00B3B272 /* Going_Donners.swift */,
 				EA624302282C72B300C4B2CE /* Blood_info.swift */,
+				EA0A078C282D93F2000C3EDF /* Available_Blood.swift */,
+				EA0A078E282DAD5B000C3EDF /* Data.swift */,
 			);
 			path = ApiModels;
 			sourceTree = "<group>";
@@ -998,6 +1004,7 @@
 				EA78BC4828184A430078DC96 /* City.swift in Sources */,
 				EA66461A27E2BAB1001A9E12 /* CustomTF.swift in Sources */,
 				EA45BFAE27C5AC4800D56AEC /* NavigationBar.swift in Sources */,
+				EA0A078D282D93F2000C3EDF /* Available_Blood.swift in Sources */,
 				EAD3835027D806C300E87893 /* SheetViewController.swift in Sources */,
 				EA8676D027A6C70A00E95283 /* HamburgerViewController.swift in Sources */,
 				EAA3C9D427DFB546007C5B47 /* SecondRequestBloodViewController.swift in Sources */,
@@ -1017,6 +1024,7 @@
 				EA215BFE27E7FA36005A9843 /* String+URL.swift in Sources */,
 				EA66E54528157ED700443115 /* favoriteTableViewCell.swift in Sources */,
 				EA215BFC27E7EB98005A9843 /* EducateCollectionViewCell.swift in Sources */,
+				EA0A078F282DAD5B000C3EDF /* Data.swift in Sources */,
 				EA62CA0528289885007BD085 /* HistoryRequestDetailsViewController.swift in Sources */,
 				EA48885C281FD51700A2700A /* DonateReason.swift in Sources */,
 				EAAD8337276D12C800381854 /* DataPicker.swift in Sources */,

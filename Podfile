@@ -10,7 +10,7 @@ pod 'IQKeyboardManagerSwift'
 pod 'BulletinBoard'
 pod 'CardSlider'
 pod 'Alamofire'
-#pod 'lottie-ios'
+pod 'lottie-ios'
 #pod 'RAMAnimatedTabBarController'
 
 end

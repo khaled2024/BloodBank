@@ -69,6 +69,5 @@ class UserCustomBtn{
         btn.layer.shadowOpacity = 3.0
         btn.layer.masksToBounds = false
         btn.layer.cornerRadius = 15.0
-        btn.layer.masksToBounds = false
     }
 }

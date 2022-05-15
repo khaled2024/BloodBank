@@ -152,8 +152,8 @@
 /* Class = "UITextField"; placeholder = "ادخل كلمه المرور"; ObjectID = "Ck2-Au-8U2"; */
 "Ck2-Au-8U2.placeholder" = "ادخل كلمه المرور";
 
-/* Class = "UIButton"; configuration.title = "المساعده و الدعم"; ObjectID = "Dtw-gN-Z2U"; */
-"Dtw-gN-Z2U.configuration.title" = "المساعده و الدعم";
+/* Class = "UIButton"; configuration.title = "تواصل معنا"; ObjectID = "Dtw-gN-Z2U"; */
+"Dtw-gN-Z2U.configuration.title" = "تواصل معنا";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Dtw-gN-Z2U"; */
 "Dtw-gN-Z2U.normalTitle" = "Button";

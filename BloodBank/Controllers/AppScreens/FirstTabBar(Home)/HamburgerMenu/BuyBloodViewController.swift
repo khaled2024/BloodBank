@@ -101,7 +101,7 @@ class BuyBloodViewController: UIViewController{
     }
     //MARK: - private func
     private func setUp(){
-      
+        
         bloodBagsTextField.inputView = bloodBagsPickerView
         bloodTypeTextField.inputView = bloodTypePickerView
         placeChoiseTF.inputView = placeChoisePickerView
@@ -171,15 +171,15 @@ class BuyBloodViewController: UIViewController{
             if let error = error {
                 print(error.localizedDescription)
             }else if let places = places {
-                    for otherCity in self.arrOfOtherCities {
-                        for place in places {
-                            if self.cityId == place.city_id{
-                                self.idOfHospital = place.id
-                                print(self.idOfHospital!)
-                            }
+                for otherCity in self.arrOfOtherCities {
+                    for place in places {
+                        if self.cityId == place.city_id{
+                            self.idOfHospital = place.id
+                            print(self.idOfHospital!)
                         }
-                        self.cityId = otherCity
                     }
+                    self.cityId = otherCity
+                }
                 
                 print(self.idOfHospital ?? "error in id of hospital")
             }
@@ -209,7 +209,7 @@ class BuyBloodViewController: UIViewController{
                         self.placeChoiseTF.isHidden = false
                         if self.arrOfAvailableBloodCitiesName.count == 0{
                             self.placeChoiseTF.isEnabled = false
-                            self.placeChoiseTF.placeholder = "لم يتوفر مكان حتي الان لشراء الدم"
+                            self.placeChoiseTF.placeholder = "لا يتوفر مكان حتي الان لشراء الدم"
                         }else{
                             self.placeChoiseTF.isEnabled = true
                             self.orderRequestBtn.isEnabled = false
@@ -369,7 +369,7 @@ class BuyBloodViewController: UIViewController{
         print("---------")
         let updatedAmount: Int = Int(self.amount)! - Int(self.numOfBags)!
         ApiService.sharedService.updateOrderBlood(idOfAvailableBlood: self.idOfAvailableBlood ,amount: String(updatedAmount))
-//        print("available blood is \(self.idOfAvailableBlood!)")
+        //        print("available blood is \(self.idOfAvailableBlood!)")
     }
     private func buyBlood(){
         print(self.p_ssn!)
@@ -437,7 +437,7 @@ extension BuyBloodViewController:UIPickerViewDelegate, UIPickerViewDataSource {
             //            print("final hospital is = \(self.finalIdOfHospial!)")
             self.bloodTypeTextField.endEditing(true)
             //            print(self.final_place_id ?? "error in final place")
-           
+            
             self.getIdOfAvailableBlood()
         case 1:
             bloodBagsTextField.text = Arrays.arrOfNumber[row]
@@ -445,7 +445,7 @@ extension BuyBloodViewController:UIPickerViewDelegate, UIPickerViewDataSource {
             self.changePriceWithNumOfBags()
         case 2:
             if arrOfAvailableBloodCitiesName.count == 0{
-               
+                
                 self.placeChoiseTF.isEnabled = false
                 self.placeChoiseTF.placeholder = "لم يتوفر مكان حتي الان لشراء الدم"
             }else{

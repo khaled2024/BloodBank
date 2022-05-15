@@ -28,6 +28,12 @@ class AcceptHistoryVaccineCell: UITableViewCell {
         vaccineImage.layer.cornerRadius = self.vaccineImage.frame.size.width/2
        
     }
+    func configure(vaccineName: String , vaccineAmount: String , timeOrderVaccine: String,placeOfOrder: String){
+        self.vaccineName.text = vaccineName
+        self.vaccineAmount.text = vaccineAmount
+        self.timeOfOrder.text = timeOrderVaccine
+        self.placeOfReciving.text = placeOfOrder
+    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

@@ -35,7 +35,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="لقد قمت بطلب هذا اللقاح من خلال موقعنا ف تاريخ" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5Z-sN-TyU">
-                                <rect key="frame" x="64.5" y="35" width="279" height="38"/>
+                                <rect key="frame" x="5" y="35" width="398" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="38" id="wkf-gr-Dte"/>
                                 </constraints>
@@ -187,7 +187,7 @@
                             <constraint firstItem="YPa-Qa-PSq" firstAttribute="leading" secondItem="5Or-zC-S88" secondAttribute="leading" id="hci-tX-Wuv"/>
                             <constraint firstItem="HKQ-Gh-ukw" firstAttribute="height" secondItem="v5Z-sN-TyU" secondAttribute="height" multiplier="0.8" id="jCm-xo-I0C"/>
                             <constraint firstItem="xbl-dn-p9d" firstAttribute="width" secondItem="vJA-Jb-3Pf" secondAttribute="width" multiplier="0.35" id="odu-DD-qJi"/>
-                            <constraint firstItem="v5Z-sN-TyU" firstAttribute="width" secondItem="5Or-zC-S88" secondAttribute="width" multiplier="0.7" id="qwG-rY-Lfg"/>
+                            <constraint firstItem="v5Z-sN-TyU" firstAttribute="width" secondItem="5Or-zC-S88" secondAttribute="width" id="qwG-rY-Lfg"/>
                             <constraint firstItem="v5Z-sN-TyU" firstAttribute="centerX" secondItem="5Or-zC-S88" secondAttribute="centerX" id="qyO-J7-QKv"/>
                             <constraint firstItem="xbl-dn-p9d" firstAttribute="leading" secondItem="5Or-zC-S88" secondAttribute="trailing" constant="5" id="rje-j1-riF"/>
                             <constraint firstItem="YPa-Qa-PSq" firstAttribute="top" secondItem="HKQ-Gh-ukw" secondAttribute="bottom" constant="20" id="w5R-Do-5vZ"/>

@@ -24,6 +24,11 @@ class HistoryMainViewController: UIViewController {
     var timeOfLastDonate: String = ""
     var bloodTypeName = ""
     var bloodId = ""
+    
+    var arrOfTimesOfDonation: [String] = []
+    var dicOfBloodTypes: [String:String] = [:]
+    var dicOfPlaceNames: [String:String] = [:]
+    var dicOfPlaceNamesOfVaccine: [String:String] = [:]
     //quick request
     var arrOfQuickRequest: [QuickRequestData] = [QuickRequestData]()
     var arrOfPrivateQuickRequest: [QuickRequestData] = [QuickRequestData]()
@@ -34,14 +39,13 @@ class HistoryMainViewController: UIViewController {
     var arrOfPrivateDonations: [LastDonateData] = [LastDonateData]()
     // Last donation
     var arrOfPrivatePurchaseOrder: [PurchaseOrderData] = [PurchaseOrderData]()
-    
+    //refresh Controll
     let def = UserDefaults.standard
     var refreshControll = UIRefreshControl()
     
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         registerNibCells()
         if let user = def.object(forKey: "userInfo")as? [String]{
             self.p_ssn = user[0]
@@ -49,12 +53,14 @@ class HistoryMainViewController: UIViewController {
         }
         refreshControll.tintColor = .systemPink
         refreshControll.addTarget(self, action: #selector(refreshTapped), for: .valueChanged)
-        self.HistorytableView.addSubview(refreshControll)
+        //func
+        getAllBloodNames()
+        getPlaceNamesForPurchaseBlood()
+        getPlaceNameOfOrderVaccine()
         myQuickRequests()
         getPurchase_order()
         getBlood()
         getMyLastDonate()
-        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -62,11 +68,18 @@ class HistoryMainViewController: UIViewController {
         self.HistorytableView.reloadData()
         
     }
+    override func viewDidLayoutSubviews() {
+        self.HistorytableView.addSubview(refreshControll)
+    }
     //MARK: - private func
-//    emptyPage-2
-//    someThinfWrong2
+    //    emptyPage-2
+    //    someThinfWrong2
     @objc func refreshTapped(){
         myQuickRequests()
+        getAllBloodNames()
+        getPlaceNamesForPurchaseBlood()
+        getPlaceNameOfOrderVaccine()
+        getPurchase_order()
         self.HistorytableView.reloadData()
         refreshControll.endRefreshing()
     }
@@ -80,6 +93,7 @@ class HistoryMainViewController: UIViewController {
         HistorytableView.register(UINib(nibName: "BloodOrderCell", bundle: nil), forCellReuseIdentifier: "BloodOrderCell")
         HistorytableView.register(UINib(nibName: "LastDonateHistoryCell", bundle: nil), forCellReuseIdentifier: "LastDonateHistoryCell")
         HistorytableView.register(UINib(nibName: "AcceptHistoryVaccineCell", bundle: nil), forCellReuseIdentifier: "AcceptHistoryVaccineCell")
+        HistorytableView.register(UINib(nibName: "AcceptOrderBloodCell", bundle: nil), forCellReuseIdentifier: "AcceptOrderBloodCell")
         self.noDataImageView.isHidden = true
     }
     private func setUpSegment(){
@@ -198,7 +212,6 @@ class HistoryMainViewController: UIViewController {
         }
     }
     private func getVaccineInfo(){
-        
         DispatchQueue.main.async {
             ApiService.sharedService.getAllVaccines { error, vaccine in
                 if let error = error {
@@ -216,7 +229,6 @@ class HistoryMainViewController: UIViewController {
                 }
             }
         }
-        
     }
     private func getPlaceNameOfOrderVaccine(){
         DispatchQueue.main.async {
@@ -230,17 +242,30 @@ class HistoryMainViewController: UIViewController {
                             self.placeNameOfPurchaseOrder = place.place_name
                             print(self.placeName)
                             print(self.placeNameOfPurchaseOrder)
+                            self.dicOfPlaceNamesOfVaccine[place.id] = place.place_name
                         }else{
                             print("error in vaccine place name")
                         }
                     }
+                    print("dicOfPlaceNamesOfVaccine: \(self.dicOfPlaceNamesOfVaccine)")
                 }
+            }
+        }
+    }
+    private func getPlaceNamesForPurchaseBlood(){
+        ApiService.sharedService.getAllBloodInfo { error, blood in
+            if let error = error {
+                print(error.localizedDescription)
+            }else if let blood = blood {
+                for blood in blood {
+                    self.dicOfPlaceNames[blood.hospital_id] = blood.hospital_name
+                }
+                print(self.dicOfPlaceNames)
             }
         }
     }
     // my last donate
     private func getMyLastDonate(){
-        
         DispatchQueue.main.async {
             ApiService.sharedService.myLastDonate { error, lastDonate in
                 if let error = error {
@@ -250,13 +275,17 @@ class HistoryMainViewController: UIViewController {
                         if self.p_ssn  == lastDonate.p_ssn{
                             self.arrOfPrivateDonations.append(lastDonate)
                             self.timeOfLastDonate = lastDonate.time
+                            self.arrOfTimesOfDonation.append(lastDonate.time)
+                            
                             print(self.timeOfLastDonate)
                         }else{
                             // self.showNormalAlert(title: "Sorry", message: "You have never donated blood before :(")
                         }
                         self.HistorytableView.reloadData()
                     }
+                    print(self.arrOfTimesOfDonation)
                 }
+                
             }
         }
     }
@@ -274,6 +303,7 @@ class HistoryMainViewController: UIViewController {
                             self.arrOfPrivatePurchaseOrder.append(purchaseOrder)
                         }
                     }
+                    print("purchaseOrder is : \(self.arrOfPrivatePurchaseOrder)")
                     self.HistorytableView.reloadData()
                 }
             }
@@ -291,12 +321,24 @@ class HistoryMainViewController: UIViewController {
                         if self.bloodId == blood.id{
                             self.bloodTypeName = blood.name
                             print(self.bloodTypeName)
+                            
                         }
                     }
                 }
             }
         }
-        
+    }
+    private func getAllBloodNames(){
+        ApiService.sharedService.getBloodType { error, blood in
+            if let error = error {
+                print(error.localizedDescription)
+            }else if let blood = blood {
+                for blood in blood {
+                    self.dicOfBloodTypes[blood.id] = blood.name
+                }
+                print("dicOfBloodTypes is \(self.dicOfBloodTypes)")
+            }
+        }
     }
     //segment delegation & functions
     private func segmentControlSelection(indexPath: IndexPath)-> UITableViewCell{
@@ -309,18 +351,25 @@ class HistoryMainViewController: UIViewController {
             cell.privateRequestId = arrOfPrivateQuickRequest[indexPath.row].id
             return cell
         case 1:
-            let cell = HistorytableView.dequeueReusableCell(withIdentifier: "HistoryVaccineCell")as! HistoryVaccineCell
-            cell.configure(vaccineName: vaccineName, vaccineAmount: "\(arrOfPrivateVaccine[indexPath.row].amount) كيس دم", timeOrderVaccine: arrOfPrivateVaccine[indexPath.row].time, placeOfOrder: self.placeName)
+            let cell = HistorytableView.dequeueReusableCell(withIdentifier: "AcceptHistoryVaccineCell")as! AcceptHistoryVaccineCell
+            
+            cell.configure(vaccineName: vaccineName, vaccineAmount: "\(arrOfPrivateVaccine[indexPath.row].amount) كيس دم", timeOrderVaccine: arrOfPrivateVaccine[indexPath.row].time, placeOfOrder:self.dicOfPlaceNamesOfVaccine[self.arrOfPrivateVaccine[indexPath.row].delivered_place]!)
+            
+            //            let cell = HistorytableView.dequeueReusableCell(withIdentifier: "HistoryVaccineCell")as! HistoryVaccineCell
+            //            cell.configure(vaccineName: vaccineName, vaccineAmount: "\(arrOfPrivateVaccine[indexPath.row].amount) كيس دم", timeOrderVaccine: arrOfPrivateVaccine[indexPath.row].time, placeOfOrder: self.placeName)
             return cell
         case 2:
-            let cell = HistorytableView.dequeueReusableCell(withIdentifier: "BloodOrderCell")as! BloodOrderCell
+//            let cell = HistorytableView.dequeueReusableCell(withIdentifier: "BloodOrderCell")as! BloodOrderCell
+            let cell = HistorytableView.dequeueReusableCell(withIdentifier: "AcceptOrderBloodCell")as! AcceptOrderBloodCell
             let time = arrOfPrivatePurchaseOrder[indexPath.row].time
             let subTime = time.prefix(16)
-            cell.configure(bloodType: self.bloodTypeName, time: String(subTime), placeName: self.placeNameOfPurchaseOrder)
+            cell.configure(bloodType: "فصيله الدم \(self.dicOfBloodTypes[self.arrOfPrivatePurchaseOrder[indexPath.row].blood_type]!)", time: String(subTime), placeName: self.dicOfPlaceNames[self.arrOfPrivatePurchaseOrder[indexPath.row].delivered_place]!)
             return cell
         case 3:
             let cell = HistorytableView.dequeueReusableCell(withIdentifier: "LastDonateHistoryCell")as! LastDonateHistoryCell
-            cell.configure(timeOfLastDonation: self.timeOfLastDonate)
+            let time = self.arrOfTimesOfDonation.last
+            let subTime = time!.prefix(16)
+            cell.configure(timeOfLastDonation: String(subTime))
             return cell
         default:
             break
@@ -343,10 +392,8 @@ class HistoryMainViewController: UIViewController {
 }
 //MARK: - Extensions
 extension HistoryMainViewController: UITableViewDelegate,UITableViewDataSource{
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch segmentSender{
-            
         case 0:
             return self.arrOfPrivateQuickRequest.count
         case 1:
@@ -354,12 +401,11 @@ extension HistoryMainViewController: UITableViewDelegate,UITableViewDataSource{
         case 2:
             return self.arrOfPrivatePurchaseOrder.count
         case 3:
-            return self.arrOfPrivateDonations.count
+            return 1
         default:
             return 0
         }
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         segmentControlSelection(indexPath: indexPath)
     }

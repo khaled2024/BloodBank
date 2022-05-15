@@ -3,12 +3,14 @@ PODS:
   - BulletinBoard (5.0.0)
   - CardSlider (0.1.0)
   - IQKeyboardManagerSwift (6.5.9)
+  - lottie-ios (3.3.0)
 
 DEPENDENCIES:
   - Alamofire
   - BulletinBoard
   - CardSlider
   - IQKeyboardManagerSwift
+  - lottie-ios
 
 SPEC REPOS:
   trunk:
@@ -16,13 +18,15 @@ SPEC REPOS:
     - BulletinBoard
     - CardSlider
     - IQKeyboardManagerSwift
+    - lottie-ios
 
 SPEC CHECKSUMS:
   Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
   BulletinBoard: dba77053c2a7b64953f63073f7534165af2edd21
   CardSlider: 0a8f5f17f5a76701771794b07fdaeddc512358c8
   IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
+  lottie-ios: 6ac74dcc09904798f59b18cb3075c089d76be9ae
 
-PODFILE CHECKSUM: 1e9092d415341aa561dc154e56c1086b9cc6827c
+PODFILE CHECKSUM: d765c4ddbb6aefcbc022bc347ef238bdcb01f092
 
 COCOAPODS: 1.11.2

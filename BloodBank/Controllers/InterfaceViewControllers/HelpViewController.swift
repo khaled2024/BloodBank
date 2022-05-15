@@ -6,7 +6,6 @@
 //
 
 import UIKit
-
 class HelpViewController: UIViewController {
     //MARK: - variables
     var gradientBackground = UserGradientBackground()

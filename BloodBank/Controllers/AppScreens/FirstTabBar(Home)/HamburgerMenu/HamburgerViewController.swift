@@ -66,7 +66,7 @@ class HamburgerViewController: UIViewController {
             self.btnCustom.setUpBtnFont(btn: buyBloodBtn, text: "Buy Blood".Localized())
             self.btnCustom.setUpBtnFont(btn: logoutBtn, text: "Log out".Localized())
             self.btnCustom.setUpBtnFont(btn: volunteersBtn, text: "volunteers".Localized())
-            self.btnCustom.setUpBtnFont(btn: helpBtn, text: "Help & Support".Localized())
+            self.btnCustom.setUpBtnFont(btn: helpBtn, text: "Connect with us".Localized())
             self.btnCustom.setUpBtnFont(btn: yourStory, text: "Your Story".Localized())
             
         }else{

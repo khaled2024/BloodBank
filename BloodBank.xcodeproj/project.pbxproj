@@ -88,6 +88,7 @@
 		EA8676D027A6C70A00E95283 /* HamburgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8676CF27A6C70A00E95283 /* HamburgerViewController.swift */; };
 		EA86A9FB27CA31FB006EA939 /* UserDefultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA86A9FA27CA31FB006EA939 /* UserDefultsManager.swift */; };
 		EA86A9FD27CAD4F4006EA939 /* HomeNCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA86A9FC27CAD4F4006EA939 /* HomeNCViewController.swift */; };
+		EA8C0F2D2831988D00723D37 /* LottieEmailSend.json in Resources */ = {isa = PBXBuildFile; fileRef = EA8C0F2C2831988D00723D37 /* LottieEmailSend.json */; };
 		EA92A0A527E89D930060C5C8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA92A0A727E89D930060C5C8 /* Localizable.strings */; };
 		EA92A0AA27E89FFF0060C5C8 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA92A0A927E89FFF0060C5C8 /* String+Localized.swift */; };
 		EA92A0AD27E8A92E0060C5C8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA92A0AF27E8A92E0060C5C8 /* InfoPlist.strings */; };
@@ -136,6 +137,8 @@
 		EAD7D59227F5B62C003E81D3 /* UILable+Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD7D59127F5B62C003E81D3 /* UILable+Font.swift */; };
 		EADC3E3A282AB438009E1DCC /* AcceptHistoryVaccineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC3E38282AB438009E1DCC /* AcceptHistoryVaccineCell.swift */; };
 		EADC3E3B282AB438009E1DCC /* AcceptHistoryVaccineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EADC3E39282AB438009E1DCC /* AcceptHistoryVaccineCell.xib */; };
+		EAE16B632831554000D0772D /* AcceptOrderBloodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE16B612831554000D0772D /* AcceptOrderBloodCell.swift */; };
+		EAE16B642831554000D0772D /* AcceptOrderBloodCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAE16B622831554000D0772D /* AcceptOrderBloodCell.xib */; };
 		EAE3C90B27B12C6300F42D16 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE3C90A27B12C6300F42D16 /* MapViewController.swift */; };
 		EAE3D4982819C363003B514A /* UserStories.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE3D4972819C363003B514A /* UserStories.swift */; };
 		EAE3D49A2819FEEE003B514A /* Vaccine.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE3D4992819FEEE003B514A /* Vaccine.swift */; };
@@ -226,6 +229,7 @@
 		EA8676CF27A6C70A00E95283 /* HamburgerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerViewController.swift; sourceTree = "<group>"; };
 		EA86A9FA27CA31FB006EA939 /* UserDefultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefultsManager.swift; sourceTree = "<group>"; };
 		EA86A9FC27CAD4F4006EA939 /* HomeNCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNCViewController.swift; sourceTree = "<group>"; };
+		EA8C0F2C2831988D00723D37 /* LottieEmailSend.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LottieEmailSend.json; sourceTree = "<group>"; };
 		EA92A0A427E89D860060C5C8 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		EA92A0A627E89D930060C5C8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EA92A0A827E89D980060C5C8 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -279,6 +283,8 @@
 		EAD7D59127F5B62C003E81D3 /* UILable+Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILable+Font.swift"; sourceTree = "<group>"; };
 		EADC3E38282AB438009E1DCC /* AcceptHistoryVaccineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptHistoryVaccineCell.swift; sourceTree = "<group>"; };
 		EADC3E39282AB438009E1DCC /* AcceptHistoryVaccineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AcceptHistoryVaccineCell.xib; sourceTree = "<group>"; };
+		EAE16B612831554000D0772D /* AcceptOrderBloodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptOrderBloodCell.swift; sourceTree = "<group>"; };
+		EAE16B622831554000D0772D /* AcceptOrderBloodCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AcceptOrderBloodCell.xib; sourceTree = "<group>"; };
 		EAE3C90A27B12C6300F42D16 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		EAE3D4972819C363003B514A /* UserStories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStories.swift; sourceTree = "<group>"; };
 		EAE3D4992819FEEE003B514A /* Vaccine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vaccine.swift; sourceTree = "<group>"; };
@@ -364,8 +370,8 @@
 		EA1F21C8280C73C800DE49F9 /* BloodOrderHistoryCell */ = {
 			isa = PBXGroup;
 			children = (
-				EA1F21C4280C73C200DE49F9 /* BloodOrderCell.swift */,
-				EA1F21C5280C73C200DE49F9 /* BloodOrderCell.xib */,
+				EAE16B602831550D00D0772D /* AcceptOrderBlood */,
+				EAE16B5E283154CF00D0772D /* RefuseOrderBlood */,
 			);
 			path = BloodOrderHistoryCell;
 			sourceTree = "<group>";
@@ -473,6 +479,14 @@
 			path = OtherModels;
 			sourceTree = "<group>";
 		};
+		EA8C0F2B2831986900723D37 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				EA8C0F2C2831988D00723D37 /* LottieEmailSend.json */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
 		EA91ED4A27CD0DD000F8D02A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -569,8 +583,8 @@
 				EA7403B6281C7EF10068D677 /* Private RequestCell */,
 				EA4CA33C27F9D3F8003873DC /* YourStoryCell */,
 				EA1F21BF280C5FD100DE49F9 /* VaccineHistoryCell */,
-				EA545C902808C3AA0009C6C7 /* VaccineCell */,
 				EA1F21C8280C73C800DE49F9 /* BloodOrderHistoryCell */,
+				EA545C902808C3AA0009C6C7 /* VaccineCell */,
 				EA1F21C9280C925800DE49F9 /* LastDonateCell */,
 				EA66E54228157E9F00443115 /* favoriteCell */,
 				EA2AF7EA28102BBE00ECCB55 /* VolunteersCell */,
@@ -610,6 +624,7 @@
 		EAC252E2276A2F820033F96F /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				EA8C0F2B2831986900723D37 /* Lottie */,
 				EAC252CF276A26F10033F96F /* Assets.xcassets */,
 			);
 			path = Assets;
@@ -700,6 +715,24 @@
 				EADC3E39282AB438009E1DCC /* AcceptHistoryVaccineCell.xib */,
 			);
 			path = AcceptVaccineRequest;
+			sourceTree = "<group>";
+		};
+		EAE16B5E283154CF00D0772D /* RefuseOrderBlood */ = {
+			isa = PBXGroup;
+			children = (
+				EA1F21C4280C73C200DE49F9 /* BloodOrderCell.swift */,
+				EA1F21C5280C73C200DE49F9 /* BloodOrderCell.xib */,
+			);
+			path = RefuseOrderBlood;
+			sourceTree = "<group>";
+		};
+		EAE16B602831550D00D0772D /* AcceptOrderBlood */ = {
+			isa = PBXGroup;
+			children = (
+				EAE16B612831554000D0772D /* AcceptOrderBloodCell.swift */,
+				EAE16B622831554000D0772D /* AcceptOrderBloodCell.xib */,
+			);
+			path = AcceptOrderBlood;
 			sourceTree = "<group>";
 		};
 		EAE546842814BDD800DA5A8E /* ApiModels */ = {
@@ -882,10 +915,12 @@
 				EA1F21CD280C927C00DE49F9 /* LastDonateHistoryCell.xib in Resources */,
 				EA92A0A527E89D930060C5C8 /* Localizable.strings in Resources */,
 				EA01A0AB27C9774100BDCC00 /* Poppins-Regular.ttf in Resources */,
+				EA8C0F2D2831988D00723D37 /* LottieEmailSend.json in Resources */,
 				EADC3E3B282AB438009E1DCC /* AcceptHistoryVaccineCell.xib in Resources */,
 				EA6E702127C5C3CE00F1E76C /* Almarai-Regular.ttf in Resources */,
 				EAC252D0276A26F10033F96F /* Assets.xcassets in Resources */,
 				EA7403BA281C7F2D0068D677 /* privateRequestCell.xib in Resources */,
+				EAE16B642831554000D0772D /* AcceptOrderBloodCell.xib in Resources */,
 				EAC252CE276A26F00033F96F /* Main.storyboard in Resources */,
 				EA92A0AD27E8A92E0060C5C8 /* InfoPlist.strings in Resources */,
 			);
@@ -1011,6 +1046,7 @@
 				EA01A0B327C984A600BDCC00 /* InformationCenterViewController.swift in Sources */,
 				EAC252DF276A2F250033F96F /* OnboardingViewController.swift in Sources */,
 				EA2A523827EA429300D92ED3 /* CoronaStatsViewController.swift in Sources */,
+				EAE16B632831554000D0772D /* AcceptOrderBloodCell.swift in Sources */,
 				EAE546862814C16600DA5A8E /* DonatePlaces.swift in Sources */,
 				EA99AAFD276CCF540083F0D1 /* HomeViewController.swift in Sources */,
 				EA45BFA627C5996B00D56AEC /* DonateBloodViewController.swift in Sources */,

@@ -10,6 +10,10 @@ import BLTNBoard
 
 class BuyBloodViewController: UIViewController{
     //MARK: - outles
+    @IBOutlet weak var totalPriceLbl: UILabel!
+    @IBOutlet weak var bloodPriceLbl: UILabel!
+    @IBOutlet weak var bloodBagsLbl: UILabel!
+    @IBOutlet weak var bloodTypeLbl: UILabel!
     @IBOutlet weak var placeChoiseTF: UITextField!
     @IBOutlet weak var orderRequestBtn: UIButton!
     @IBOutlet weak var bloodBagsTextField: UITextField!
@@ -17,6 +21,8 @@ class BuyBloodViewController: UIViewController{
     @IBOutlet weak var priceTextField: UITextField!
     @IBOutlet weak var totalPriceTextField: UITextField!
     @IBOutlet weak var findingBloodError: UILabel!
+    @IBOutlet weak var titleBloodOrderLbl: UILabel!
+    @IBOutlet weak var subTitleLbl: UILabel!
     //MARK: - vars
     let navBar = NavigationBar()
     let def = UserDefaults.standard
@@ -50,6 +56,7 @@ class BuyBloodViewController: UIViewController{
     var placeChoisePickerView = UIPickerView()
     let bloodTypePickerView = UIPickerView()
     let bloodBagsPickerView = UIPickerView()
+    let currentLang = Locale.current.languageCode
     
     private lazy var canBuyBlood: BLTNItemManager = {
         let item = BLTNPageItem(title: "Congratulation")
@@ -98,8 +105,21 @@ class BuyBloodViewController: UIViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setUpDesign()
+        localization()
     }
     //MARK: - private func
+    
+    private func localization(){
+        self.titleBloodOrderLbl.text = "BloodOrderTitle".Localized()
+        self.subTitleLbl.text = "BloodOrderSubTitle".Localized()
+        self.bloodTypeLbl.text = "Blood Type".Localized()
+        self.bloodBagsLbl.text = "Number Of Bags".Localized()
+        self.bloodPriceLbl.text = "Price Of Bags".Localized()
+        self.totalPriceLbl.text = "Total Price".Localized()
+        self.bloodTypeTextField.placeholder = "BloodTypePlaceHolder".Localized()
+//        orderRequestBtn.setTitle("Send Order".Localized(), for: .normal)
+        orderRequestBtn.customTitleLbl(btn: orderRequestBtn, text: "Send Order", fontSize: 15)
+    }
     private func setUp(){
         
         bloodBagsTextField.inputView = bloodBagsPickerView
@@ -195,25 +215,43 @@ class BuyBloodViewController: UIViewController{
                     if idOfHospital == blood.hospital_id && self.rowofBlood == blood.blood_type_id && self.numOfBags < blood.amount{
                         self.finalIdOfHospial = idOfHospital
                         print("my final id of hospital : \(self.finalIdOfHospial!)")
-                        self.showNormalAlert(title: "", message: "تم العثور علي فصيله دم من نوع \(self.bloodTypeTextField.text!) في \(blood.hospital_name)")
+                        
+                        
+                        if self.currentLang == "en"{
+                            self.showNormalAlert(title: "", message:"A blood type (\(self.bloodTypeTextField.text!)) was found in (\(blood.hospital_name))" )
+                        }else{
+                            self.showNormalAlert(title: "", message: "تم العثور علي فصيله دم من نوع \(self.bloodTypeTextField.text!) في \(blood.hospital_name)")
+                        }
                         self.findingBloodError.isHidden = false
-                        self.findingBloodError.text = "تم العثور علي فصيله دم من نوع \(self.bloodTypeTextField.text!) في \(blood.hospital_name)"
+                        
+                        if self.currentLang == "en"{
+                            self.findingBloodError.text = "A blood type (\(self.bloodTypeTextField.text!)) was found in (\(blood.hospital_name))"
+                        }else{
+                            self.findingBloodError.text = "تم العثور علي فصيله دم من نوع \(self.bloodTypeTextField.text!) في \(blood.hospital_name)"
+                        }
+            
                         self.orderRequestBtn.isEnabled = true
                         self.placeChoiseTF.isHidden = false
                         break
                     }
                     if idOfHospital != blood.hospital_id || self.rowofBlood != blood.blood_type_id || self.numOfBags > blood.amount{
                         self.findingBloodError.isHidden = false
-                        self.findingBloodError.text = "لم يتم العثور علي فصيله دم من نوع \(self.bloodTypeTextField.text!) بالقرب منك حدد المكان الذي تريد شراء الدم منه!"
+                       
+                        if self.currentLang == "en"{
+                            self.findingBloodError.text = "No blood type of (\(self.bloodTypeTextField.text!)) has been found near you. Mark where you want to buy blood from!"
+                        }else{
+                            self.findingBloodError.text = "لم يتم العثور علي فصيله دم من نوع (\(self.bloodTypeTextField.text!))بالقرب منك حدد المكان الذي تريد شراء الدم منه!"
+                        }
+                       
                         self.orderRequestBtn.isEnabled = false
                         self.placeChoiseTF.isHidden = false
                         if self.arrOfAvailableBloodCitiesName.count == 0{
                             self.placeChoiseTF.isEnabled = false
-                            self.placeChoiseTF.placeholder = "لا يتوفر مكان حتي الان لشراء الدم"
+                            self.placeChoiseTF.placeholder = "placeChoiseTFFound".Localized()
                         }else{
                             self.placeChoiseTF.isEnabled = true
                             self.orderRequestBtn.isEnabled = false
-                            self.placeChoiseTF.placeholder = "حدد المكان الذي تريد شراء الدم منه"
+                            self.placeChoiseTF.placeholder = "placeChoiseTFNotFound".Localized()
                         }
                     }
                 }

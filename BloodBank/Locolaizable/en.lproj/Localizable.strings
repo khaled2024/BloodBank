@@ -151,3 +151,47 @@ You can get paid for donating blood in 25 countries around the world. Some count
 
 //Home
 "Home" = "";
+
+// onboarding
+"Get Started" = "Get Started";
+"Next" = "Next";
+// help and support
+"Email Support" = "Email Support";
+// history segments
+"Donation Requests" = "Donation Requests";
+"Vaccine Requests" = "Vaccine Requests";
+"Blood Orders" = "Blood Orders";
+"Last Donation" = "Last Donation";
+// donation request segment controller
+"General" = "General";
+"Private" = "Private";
+
+// volunteers segment controll
+"Blood Type" = "Blood Type";
+"Name" = "Name";
+"Location" = "Location";
+
+//blood order vc
+"BloodOrderTitle" = "Buy blood bags that meet your needs within minutes";
+"BloodOrderSubTitle" = "blood specification";
+"Number Of Bags" = "Number Of Bags";
+"Price Of Bags" = "Price Of Bags";
+"Total Price" = "Total Price";
+"placeChoiseTFFound" = "There is no place yet to buy blood";
+"placeChoiseTFNotFound" = "Select where you want to buy blood";
+"BloodTypePlaceHolder" = "Select the blood type you need";
+"BloodTypeNotFound" = "No blood type of this type has been found near you. Mark where you want to buy blood from!";
+"BloodTypeFounded" = "";
+"Send Order" = "Send Order";
+
+// favorite vc
+"FavoriteTitle" = "You have saved some Requests that you were interested in";
+"NoFavoriteRequests" = "No urgent blood requests saved :(";
+
+// story vc
+"NoStories" = "There are no stories to display at the moment :(";
+"Create Story" = "Create Story";
+"Create" = "Create";
+"Update Story" = "Update Story";
+"Update" = "Update";
+"Delete" = "Delete";

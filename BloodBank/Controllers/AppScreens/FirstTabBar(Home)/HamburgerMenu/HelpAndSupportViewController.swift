@@ -12,21 +12,24 @@ import Lottie
 
 
 class HelpAndSupportViewController: UIViewController {
+    @IBOutlet weak var emailSupportBtn: UIButton!
     @IBOutlet weak var animationView: AnimationView!
-    @IBOutlet weak var emailSendImageView: UIImageView!
     let navBar = NavigationBar()
+    let currentLang = Locale.current.languageCode
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        emailSendImageView.layer.shadowColor = UIColor.darkGray.cgColor
-        //        emailSendImageView.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-        //        emailSendImageView.layer.shadowOpacity = 3.0
-        //        emailSendImageView.layer.masksToBounds = false
+        print(currentLang!)
+        if currentLang == "en"{
+            emailSupportBtn.setTitle("Email Support", for: .normal)
+        }else{
+            emailSupportBtn.setTitle("دعم البريد الاكتروني", for: .normal)
+        }
+        
         self.lottieSendEmail()
-        
-        
     }
     override func viewWillAppear(_ animated: Bool) {
         navBar.setNavBar(myView: self, title: "Connect with us".Localized(), viewController: view, navBarColor: UIColor.navBarColor, navBarTintColor: UIColor.navBarTintColor, forgroundTitle: UIColor.forgroundTitle, bacgroundView: UIColor.backgroundView)
+        
     }
     //MARK: - private func
     private func lottieSendEmail(){

@@ -111,3 +111,43 @@
 
 //Home
 "Home" = "الرئيسيه";
+// onboarding
+"Get Started" = "ابدا";
+"Next" = "استمرار";
+// help and support
+"Email Support" = "دعم البريد الإلكتروني";
+// history segments
+"Donation Requests" = "طلبات التبرع";
+"Vaccine Requests" = "طلب اللقاح";
+"Blood Orders" = "طلب الدم";
+"Last Donation" = "اخر تبرع";
+// donation request segment controller
+"General" = "عام";
+"Private" = "خاص";
+// volunteers segment controll
+"Blood Type" = "فصيله الدم";
+"Name" = "الاسم";
+"Location" = "الموقع";
+//blood order vc
+"BloodOrderTitle" = "قم بشراء أكياس دم تتوافق مع احتياجاتك في غضون دقائق";
+"BloodOrderSubTitle" = "مواصفات الدم";
+"Number Of Bags" = "عدد الاكياس";
+"Price Of Bags" = "سعر الكيس";
+"Total Price" = "السعر الكلي";
+"placeChoiseTFFound" = "لا يتوفر مكان حتي الان لشراء الدم";
+"placeChoiseTFNotFound" = "حدد المكان الذي تريد شراء الدم منه";
+"BloodTypePlaceHolder" = "حدد فصيله الدم التي تحتاجها";
+"BloodTypeNotFound" = "لم يتم العثور علي  فصيله دم من هذا نوع  بالقرب منك حدد المكان الذي تريد شراء الدم منه!";
+"BloodTypeFounded" = "";
+"Send Order" = "ارسال الطلب";
+// favorite vc
+"FavoriteTitle" = "لقد قمت بحفظ عدد من الطلبات التى كنت مهتم بها";
+"NoFavoriteRequests" = "لا يوجد طلبات دم عاجله محفوظه :(";
+
+// story vc
+"NoStories" = "لا يوجد قصص لعرضها في الوقت الحالي :(";
+"Create Story" = "انشاء قصه";
+"Create" = "انشاء";
+"Update Story" = "تعديل قصه";
+"Update" = "تعديل";
+"Delete" = "حذف";

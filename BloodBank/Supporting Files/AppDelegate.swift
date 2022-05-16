@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
         //root
         // here when we wanna to reset the onboarding screen again
-        storageManager.resetOnboardingSeen()
+//        storageManager.resetOnboardingSeen()
         setRoot()
 
         UNUserNotificationCenter.current().delegate = self

@@ -42,7 +42,7 @@ class HistoryMainViewController: UIViewController {
     //refresh Controll
     let def = UserDefaults.standard
     var refreshControll = UIRefreshControl()
-    
+    let currentLang = Locale.current.languageCode
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,7 +84,16 @@ class HistoryMainViewController: UIViewController {
         refreshControll.endRefreshing()
     }
     private func setUpDesign(){
-        segmentControll.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Almarai-Bold", size: 15)!], for: .normal)
+        if currentLang == "en"{
+            segmentControll.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Almarai", size: 9)!], for: .normal)
+        }else{
+            segmentControll.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Almarai-Bold", size: 14)!], for: .normal)
+        }
+        segmentControll.setTitle("Donation Requests".Localized(), forSegmentAt: 0)
+        segmentControll.setTitle("Vaccine Requests".Localized(), forSegmentAt: 1)
+        segmentControll.setTitle("Blood Orders".Localized(), forSegmentAt: 2)
+        segmentControll.setTitle("Last Donation".Localized(), forSegmentAt: 3)
+       
     }
     private func registerNibCells(){
         HistorytableView.register(UINib(nibName: "privateRequestCell", bundle: nil), forCellReuseIdentifier: "privateRequestCell")

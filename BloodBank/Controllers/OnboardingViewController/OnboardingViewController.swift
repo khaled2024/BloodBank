@@ -10,6 +10,7 @@ import UIKit
 class OnboardingViewController: UIViewController {
     
     //MARK: - outlets
+    @IBOutlet var onboardingView: UIView!
     @IBOutlet weak var PageController: UIPageControl!
     @IBOutlet weak var NextBtn: UIButton!
     @IBOutlet weak var CollectionView: UICollectionView!
@@ -20,9 +21,11 @@ class OnboardingViewController: UIViewController {
         didSet{
             PageController.currentPage = currentPage
             if currentPage == SlideArray.count - 1{
-                self.NextBtn.setTitle("Get Started", for: .normal)
+                self.NextBtn.setTitle("Get Started".Localized().Localized(), for: .normal)
+//                self.NextBtn.customTitleLbl(btn: NextBtn, text: "ابدا", fontSize: 17)
             }else{
-                self.NextBtn.setTitle("Next", for: .normal)
+                self.NextBtn.setTitle("Next".Localized(), for: .normal)
+//                self.NextBtn.customTitleLbl(btn: NextBtn, text: "استمرار", fontSize: 17)
             }
         }
     }
@@ -32,6 +35,12 @@ class OnboardingViewController: UIViewController {
         updateFlag()
         setUp()
         PageController.numberOfPages = SlideArray.count
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        onboardingView.semanticContentAttribute = .forceLeftToRight
+        PageController.semanticContentAttribute = .forceLeftToRight
+        CollectionView.semanticContentAttribute = .forceLeftToRight
     }
     //MARK: - private functions
     private func setUp(){

@@ -132,7 +132,7 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Next">
-                                    <fontDescription key="titleFontDescription" name="Poppins-Regular" family="Poppins" pointSize="17"/>
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="17"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
@@ -167,6 +167,7 @@
                         <outlet property="CollectionView" destination="PEw-eW-ugT" id="ry8-yG-hbr"/>
                         <outlet property="NextBtn" destination="nof-bu-5ph" id="wq2-Gj-Mkb"/>
                         <outlet property="PageController" destination="W8J-xW-a6e" id="ONw-wg-xRN"/>
+                        <outlet property="onboardingView" destination="8bC-Xf-vdC" id="cPE-b7-zVr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -3354,11 +3355,15 @@
                     <connections>
                         <outlet property="addStoryView" destination="2wd-g1-Fio" id="xgE-v0-oon"/>
                         <outlet property="blurView" destination="pip-Wk-bgB" id="7ql-0Z-cEW"/>
+                        <outlet property="craeteStoryLbl" destination="mSJ-yp-CmN" id="G23-f1-poN"/>
+                        <outlet property="createBtn" destination="Waq-4E-hBl" id="Znl-C6-DjM"/>
                         <outlet property="noDataImage" destination="jFk-m2-Bop" id="KMo-29-ZBf"/>
                         <outlet property="noStoryToShown" destination="LQv-yU-Gsb" id="EWE-pb-rAO"/>
                         <outlet property="storyDescription" destination="n1h-To-2eF" id="ma2-LU-p37"/>
                         <outlet property="storySegmentControll" destination="CY4-wK-OWe" id="KL1-vH-L8O"/>
                         <outlet property="tableView" destination="P4o-iL-o2h" id="Cbj-ON-btg"/>
+                        <outlet property="updateBtn" destination="FSG-SW-acu" id="MIJ-0x-yHQ"/>
+                        <outlet property="updateStoryLbl" destination="QpQ-0L-fwF" id="Hx2-N0-ffs"/>
                         <outlet property="updateStoryView" destination="udM-64-zzF" id="4uo-BL-0fb"/>
                         <outlet property="updateTextViewContext" destination="G86-0d-aUS" id="Vrg-8L-tQj"/>
                     </connections>
@@ -4241,7 +4246,7 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="ارسال الطلب">
-                                    <fontDescription key="titleFontDescription" name="Almarai-Regular" family="Almarai" pointSize="18"/>
+                                    <fontDescription key="titleFontDescription" name="Almarai-Regular" family="Almarai" pointSize="15"/>
                                 </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -4406,12 +4411,18 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bloodBagsLbl" destination="Tp4-wE-Wml" id="RSj-77-9N8"/>
                         <outlet property="bloodBagsTextField" destination="xsh-uB-5dn" id="OKE-xc-0K2"/>
+                        <outlet property="bloodPriceLbl" destination="3JJ-zM-feN" id="qkT-yW-mZp"/>
+                        <outlet property="bloodTypeLbl" destination="4x4-hX-O1p" id="9Sv-Jd-hCh"/>
                         <outlet property="bloodTypeTextField" destination="MnW-KF-cN1" id="kue-8L-E4o"/>
                         <outlet property="findingBloodError" destination="yrC-s0-f9b" id="T4S-yU-KMh"/>
                         <outlet property="orderRequestBtn" destination="ja3-9J-oxj" id="dUH-aA-2rH"/>
                         <outlet property="placeChoiseTF" destination="xC7-P6-ziz" id="2sc-Dt-UqC"/>
                         <outlet property="priceTextField" destination="RmU-Ym-B3h" id="Wta-gz-SNw"/>
+                        <outlet property="subTitleLbl" destination="wcM-kg-iRV" id="ayD-0d-EA9"/>
+                        <outlet property="titleBloodOrderLbl" destination="vzM-y6-D5Y" id="5jN-PL-eWW"/>
+                        <outlet property="totalPriceLbl" destination="3f0-Nt-XxG" id="uGW-2I-tZ4"/>
                         <outlet property="totalPriceTextField" destination="IPS-vH-HV0" id="I8D-9q-7Bm"/>
                     </connections>
                 </viewController>
@@ -4427,9 +4438,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emailSend" translatesAutoresizingMaskIntoConstraints="NO" id="rPF-zU-wVa">
-                                <rect key="frame" x="52" y="273.5" width="290" height="269"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTM-c5-Og3">
                                 <rect key="frame" x="103.5" y="782" width="207" height="40"/>
                                 <color key="backgroundColor" red="1" green="0.2901960784" blue="0.38431372549999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -4438,8 +4446,8 @@
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Email Support">
-                                    <fontDescription key="titleFontDescription" name="Almarai-Regular" family="Almarai" pointSize="17"/>
+                                <buttonConfiguration key="configuration" style="plain" title="دعم البريد الاكتروني">
+                                    <fontDescription key="titleFontDescription" name="Almarai-Bold" family="Almarai" pointSize="17"/>
                                 </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -4464,23 +4472,14 @@
                             <constraint firstItem="HTM-c5-Og3" firstAttribute="width" secondItem="Rl1-z6-y8N" secondAttribute="width" multiplier="0.5" id="0b4-Uy-Cvh"/>
                             <constraint firstItem="pV8-C5-VSJ" firstAttribute="width" secondItem="Rl1-z6-y8N" secondAttribute="width" multiplier="0.9" id="3Ry-lJ-m69"/>
                             <constraint firstItem="kYk-kj-VIv" firstAttribute="bottom" secondItem="HTM-c5-Og3" secondAttribute="bottom" constant="40" id="4IQ-1t-E4D"/>
-                            <constraint firstItem="rPF-zU-wVa" firstAttribute="height" secondItem="Rl1-z6-y8N" secondAttribute="height" multiplier="0.3" id="5Rs-8K-Wao"/>
-                            <constraint firstItem="rPF-zU-wVa" firstAttribute="centerY" secondItem="Rl1-z6-y8N" secondAttribute="centerY" constant="-40" id="7IV-ZH-1wh"/>
-                            <constraint firstItem="rPF-zU-wVa" firstAttribute="centerX" secondItem="Rl1-z6-y8N" secondAttribute="centerX" constant="-10" id="H8b-hf-Ecx"/>
                             <constraint firstItem="pV8-C5-VSJ" firstAttribute="centerY" secondItem="Rl1-z6-y8N" secondAttribute="centerY" constant="-40" id="IPi-2y-4wc"/>
                             <constraint firstItem="pV8-C5-VSJ" firstAttribute="centerX" secondItem="Rl1-z6-y8N" secondAttribute="centerX" id="cX1-eq-eOk"/>
-                            <constraint firstItem="rPF-zU-wVa" firstAttribute="width" secondItem="Rl1-z6-y8N" secondAttribute="width" multiplier="0.7" id="heZ-12-rao"/>
                             <constraint firstItem="HTM-c5-Og3" firstAttribute="centerX" secondItem="kYk-kj-VIv" secondAttribute="centerX" id="zDv-Hd-avu"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="rPF-zU-wVa"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="animationView" destination="pV8-C5-VSJ" id="LaN-IF-Q4t"/>
-                        <outlet property="emailSendImageView" destination="rPF-zU-wVa" id="87M-Mz-8RJ"/>
+                        <outlet property="emailSupportBtn" destination="HTM-c5-Og3" id="vSO-tp-B8U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yYb-IW-QGD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -8897,6 +8896,9 @@
             <point key="canvasLocation" x="9053.6231884057979" y="-179.46428571428569"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="pV8-C5-VSJ"/>
+    </designables>
     <resources>
         <image name="NotFitness" width="133.33332824707031" height="133.33332824707031"/>
         <image name="blood (1)" width="512" height="512"/>
@@ -8925,7 +8927,6 @@
         <image name="educateYourself" width="50" height="50"/>
         <image name="email" width="512" height="512"/>
         <image name="email (1)" width="512" height="512"/>
-        <image name="emailSend" width="512" height="512"/>
         <image name="emptyPage-2" width="800" height="600"/>
         <image name="error404-1" width="600" height="350"/>
         <image name="errorSearch" width="800" height="600"/>

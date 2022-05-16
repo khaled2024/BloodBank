@@ -9,6 +9,10 @@ import UIKit
 
 class YourStoryViewController: UIViewController {
     
+    @IBOutlet weak var updateBtn: UIButton!
+    @IBOutlet weak var updateStoryLbl: UILabel!
+    @IBOutlet weak var createBtn: UIButton!
+    @IBOutlet weak var craeteStoryLbl: UILabel!
     @IBOutlet weak var noStoryToShown: UILabel!
     @IBOutlet weak var noDataImage: UIImageView!
     @IBOutlet weak var updateTextViewContext: UITextView!
@@ -45,6 +49,11 @@ class YourStoryViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         setUpDesign()
+        self.noStoryToShown.text = "NoStories".Localized()
+        self.craeteStoryLbl.text = "Create Story".Localized()
+        self.updateStoryLbl.text = "Update Story".Localized()
+        self.createBtn.customTitleLbl(btn: createBtn, text: "Create", fontSize: 18)
+        self.updateBtn.customTitleLbl(btn: updateBtn, text: "Update", fontSize: 18)
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -94,7 +103,7 @@ class YourStoryViewController: UIViewController {
                 self.noStoryToShown.isHidden = false
                 self.noDataImage.isHidden = false
                 self.noDataImage.image = UIImage(named: "emptyPage-2")
-                self.showNormalAlert(title: "للاسف", message: "لا يوجد قصص لعرضها في الوقت الحالي")
+                self.showNormalAlert(title: "للاسف", message: "NoStories".Localized())
             }else{
                 self.tableView.reloadData()
             }
@@ -111,12 +120,10 @@ class YourStoryViewController: UIViewController {
         floatingBtn.floatingBtn.frame = CGRect(x: view.frame.size.width - 80, y: view.frame.size.height - 150, width: 60, height: 60)
         floatingBtn.floatingBtn.addTarget(self, action: #selector(addStoryBtnTapped), for: .touchUpInside)
     }
-    
     @objc func addStoryBtnTapped(){
         print("add story tapped")
         self.animateIn(desireView: blurView)
         self.animateIn(desireView: addStoryView)
-        
     }
     private func registerCell(){
         tableView.register(UINib(nibName: "YourStoryTableViewCell", bundle: .main), forCellReuseIdentifier: "YourStoryTableViewCell")
@@ -125,6 +132,9 @@ class YourStoryViewController: UIViewController {
         navBar.setNavBar(myView: self, title: "Your Story".Localized(), viewController: view, navBarColor: UIColor.navBarColor, navBarTintColor: UIColor.navBarTintColor, forgroundTitle: UIColor.forgroundTitle, bacgroundView: UIColor.backgroundView)
         view.addSubview(floatingBtn.floatingBtn)
         storySegmentControll.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Almarai-Bold", size: 15)!], for: .normal)
+        storySegmentControll.setTitle("General".Localized(), forSegmentAt: 0)
+        storySegmentControll.setTitle("Private".Localized(), forSegmentAt: 1)
+
         customView.customView(theView: self.addStoryView)
         customView.customView(theView: self.updateStoryView)
         
@@ -283,7 +293,7 @@ extension YourStoryViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         if self.segmentSender == 1 {
             self.idOfStory = arrOfPrivateStory[indexPath.row].id
-            let deleteAction = UIContextualAction(style: .normal, title: "حذف") { action, view, completionHandeler in
+            let deleteAction = UIContextualAction(style: .normal, title: "Delete".Localized()) { action, view, completionHandeler in
                 self.deleteStory()
                 self.arrOfPrivateStory.remove(at: indexPath.row)
                 tableView.beginUpdates()
@@ -296,7 +306,7 @@ extension YourStoryViewController: UITableViewDelegate,UITableViewDataSource{
                 tableView.endUpdates()
                 completionHandeler(true)
             }
-            let updateAction = UIContextualAction(style: .normal, title: "تعديل") { action, view, completioHandeler in
+            let updateAction = UIContextualAction(style: .normal, title: "Update".Localized()) { action, view, completioHandeler in
                 self.animateIn(desireView: self.blurView)
                 self.animateIn(desireView: self.updateStoryView)
                 completioHandeler(true)

@@ -56,7 +56,11 @@ class RequestViewController: UIViewController{
     private func setUpDesign(){
         self.tabBarController?.tabBar.isHidden = false
         navBar.setNavBar(myView: self, title: "Donation Requests".Localized(), viewController: view, navBarColor: UIColor.navBarColor, navBarTintColor: UIColor.navBarTintColor, forgroundTitle: UIColor.forgroundTitle, bacgroundView: UIColor.backgroundView)
+        
         segmentedControl.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Almarai-Bold", size: 15)!], for: .normal)
+        segmentedControl.setTitle("General".Localized(), forSegmentAt: 0)
+        segmentedControl.setTitle("Private".Localized(), forSegmentAt: 1)
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "RequestsTableViewCell", bundle: nil), forCellReuseIdentifier: "Requestscell")

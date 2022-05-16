@@ -24,6 +24,7 @@ class FavoriteViewController: UIViewController {
     var refreshControll = UIRefreshControl()
     var arrOfMyFav: [SavedBloodRequestData] = [SavedBloodRequestData]()
     var dicOfIds:[String:String] = [:]
+    let currentLang = Locale.current.languageCode
     //MARK: - lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,8 +42,14 @@ class FavoriteViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setUpDesign()
+        localalization()
     }
     //MARK: - private functions
+    private func localalization(){
+        self.titleLbl.text = "FavoriteTitle".Localized()
+        self.nofavoriteLbl.text = "NoFavoriteRequests".Localized()
+    }
+
     @objc func refreshTapped(){
         favoriteTableView.beginUpdates()
         allSavedRequests()
@@ -76,7 +83,7 @@ class FavoriteViewController: UIViewController {
                 }
                 print("Dic of the ids:\(self.dicOfIds)")
                 if self.arrOfIds.count == 0{
-                    self.showNormalAlert(title: "Sorry", message: "لا يوجد طلبات دم عاجله محفوظه :(")
+                    self.showNormalAlert(title: "Sorry", message: "NoFavoriteRequests".Localized())
                     self.noDataImage.isHidden = false
                     self.nofavoriteLbl.isHidden = false
                     self.noDataImage.image = UIImage(named: "emptyPage-2")
@@ -176,7 +183,7 @@ extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource{
             self.favoriteTableView.beginUpdates()
             self.favoriteTableView.deleteRows(at: [indexPath], with: .automatic)
             if self.arrOfFavoriteRequest.count == 0{
-                self.showNormalAlert(title: "Sorry", message: "لا يوجد طلبات دم عاجله محفوظه :(")
+                self.showNormalAlert(title: "Sorry", message: "NoFavoriteRequests".Localized())
                 self.favoriteTableView.isHidden = true
                 self.noDataImage.isHidden = false
                 self.nofavoriteLbl.isHidden = false

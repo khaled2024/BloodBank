@@ -67,6 +67,9 @@ class VolunteersViewController: UIViewController{
         bloodSearchBar.layer.cornerRadius = 10
         bloodSearchBar.backgroundColor = .clear
         filterSegmentControll.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Almarai-Bold", size: 15)! ], for: .normal)
+        filterSegmentControll.setTitle("Blood Type".Localized(), forSegmentAt: 0)
+        filterSegmentControll.setTitle("Name".Localized(), forSegmentAt: 1)
+        filterSegmentControll.setTitle("Location".Localized(), forSegmentAt: 2)
         noDataImageView.isHidden = true
     }
     private func setUp(){

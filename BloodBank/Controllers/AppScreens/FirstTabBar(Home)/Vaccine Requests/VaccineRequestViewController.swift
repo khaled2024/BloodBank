@@ -21,7 +21,6 @@ class VaccineRequestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navBar.setNavBar(myView: self, title: "Vaccine request".Localized(), viewController: view, navBarColor: UIColor.navBarColor, navBarTintColor: UIColor.navBarTintColor ,forgroundTitle: UIColor.forgroundTitle, bacgroundView:UIColor.backgroundView)
-        self.navigationItem.backBarButtonItem?.title = "khaled"
         takeAlookBtn.customTitleLbl(btn: takeAlookBtn, text: "القي نظره", fontSize: 19)
         customBtn.confirmBtnSelected(Btn: takeAlookBtn)
         btnChangesInViewWithLang()

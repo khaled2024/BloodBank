@@ -106,12 +106,12 @@ class AppBloodRequestViewController: UIViewController{
     let navBar = NavigationBar()
     let customView = CustomView()
     private lazy var fitBoardManager: BLTNItemManager = {
-        let item = BLTNPageItem(title: "Congratulation")
+        let item = BLTNPageItem(title: "Ok".Localized())
         item.image = UIImage(named: "launch")
-        item.actionButtonTitle = "OK"
+        item.actionButtonTitle = "Ok".Localized()
         item.actionButton?.titleLabel?.font = UIFont(name: "Almarai", size: 20)
         item.attributedDescriptionText = NSAttributedString(
-            string:"Your Blood Request Created Successfully" , attributes: [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.8185071945, green: 0.2694924176, blue: 0.2871941328, alpha: 1) , .font: UIFont(name: "Almarai-Bold", size: 20)!])
+            string:"titleRequest".Localized() , attributes: [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.8185071945, green: 0.2694924176, blue: 0.2871941328, alpha: 1) , .font: UIFont(name: "Almarai-Bold", size: 20)!])
         item.actionHandler = {_ in
             self.dismiss(animated: true) {
                 //self.navigationController?.popToRootViewController(animated: true)
@@ -189,7 +189,7 @@ class AppBloodRequestViewController: UIViewController{
         hospitalPicker.tag = 6
     }
     private func setUpDesign(){
-        navBar.setNavBar(myView: self, title: "انشاء طلب دم", viewController: view, navBarColor: UIColor.navBarColor, navBarTintColor: UIColor.navBarTintColor ,forgroundTitle: UIColor.forgroundTitle, bacgroundView:UIColor.backgroundView)
+        navBar.setNavBar(myView: self, title: "Create Blood Order".Localized(), viewController: view, navBarColor: UIColor.navBarColor, navBarTintColor: UIColor.navBarTintColor ,forgroundTitle: UIColor.forgroundTitle, bacgroundView:UIColor.backgroundView)
         self.navigationController?.navigationBar.isHidden = false
         // This will show in the next view controller being pushed
         let backItem = UIBarButtonItem()

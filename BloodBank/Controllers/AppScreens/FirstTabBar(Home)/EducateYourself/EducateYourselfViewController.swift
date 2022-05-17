@@ -34,7 +34,7 @@ class EducateYourselfViewController: UIViewController {
         pageControll.numberOfPages = educateImagesArray.count
     }
     private func setUpDesign(){
-        navBar.setNavBar(myView: self, title: "تعلم بنفسك", viewController: view, navBarColor: UIColor.navBarColor, navBarTintColor: UIColor.navBarTintColor, forgroundTitle: UIColor.forgroundTitle, bacgroundView: UIColor.backgroundView)
+        navBar.setNavBar(myView: self, title: "Educate YourSelf".Localized(), viewController: view, navBarColor: UIColor.navBarColor, navBarTintColor: UIColor.navBarTintColor, forgroundTitle: UIColor.forgroundTitle, bacgroundView: UIColor.backgroundView)
         
     }
     

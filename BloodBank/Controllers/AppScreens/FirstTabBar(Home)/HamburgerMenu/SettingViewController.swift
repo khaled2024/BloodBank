@@ -9,9 +9,11 @@ import UIKit
 
 class SettingViewController: UIViewController {
     
+    @IBOutlet weak var darkModeLbl: UILabel!
     @IBOutlet weak var darkModeSwitch: UISwitch!
     @IBOutlet weak var changeLangBtn: UIButton!
     @IBOutlet weak var settingSwitch: UISwitch!
+    @IBOutlet weak var activateNotificationLbl: UILabel!
     let def = UserDefaults.standard
     let navBar = NavigationBar()
     let appDelegate = UIApplication.shared.windows.first
@@ -29,6 +31,8 @@ class SettingViewController: UIViewController {
     
     private func setUpDesign(){
         navBar.setNavBar(myView: self, title: "Setting".Localized(), viewController: view, navBarColor: UIColor.navBarColor, navBarTintColor: UIColor.navBarTintColor, forgroundTitle: UIColor.forgroundTitle, bacgroundView: UIColor.backgroundView)
+        self.activateNotificationLbl.text = "Activate Notification".Localized()
+        self.darkModeLbl.text = "Dark mode".Localized()
         
     }
     func isNotificationOn(){

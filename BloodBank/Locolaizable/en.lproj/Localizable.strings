@@ -111,7 +111,7 @@ You can get paid for donating blood in 25 countries around the world. Some count
 "donateBloodSubTitle" = "Donating blood & money can make you a hero to someone in need";
 "order Blood" = "Order Blood";
 "orderBloodSubTitle" = "We are here to help you submit a request for blood";
-"educate" = "Educate yourSelf";
+"educate" = "Educate YourSelf";
 "educateSubTitle" = "Learn more about blood, its types, and how to donate blood";
 "Welcome" = "Welcome";
 "NameDonor" = "Here,The Name of the Donor";
@@ -120,7 +120,6 @@ You can get paid for donating blood in 25 countries around the world. Some count
 //"Like" = "Like";
 //"Comment" = "Comment";
 //"Share" = "Share";
-
 // "Donate Money"
 "Donate Money" = "Donate Money";
 
@@ -148,10 +147,8 @@ You can get paid for donating blood in 25 countries around the world. Some count
 
 // Profile navBar
 "Profile" = "";
-
 //Home
 "Home" = "";
-
 // onboarding
 "Get Started" = "Get Started";
 "Next" = "Next";
@@ -187,7 +184,6 @@ You can get paid for donating blood in 25 countries around the world. Some count
 // favorite vc
 "FavoriteTitle" = "You have saved some Requests that you were interested in";
 "NoFavoriteRequests" = "No urgent blood requests saved :(";
-
 // story vc
 "NoStories" = "There are no stories to display at the moment :(";
 "Create Story" = "Create Story";
@@ -195,3 +191,27 @@ You can get paid for donating blood in 25 countries around the world. Some count
 "Update Story" = "Update Story";
 "Update" = "Update";
 "Delete" = "Delete";
+// setting
+"Dark mode" = "Dark mode";
+"Activate Notification" = "Activate Notification";
+// craete blood order
+"Create Blood Order" = "Create Blood Request";
+"Ok" = "Ok";
+"titleRequest" = "Your Blood Request Created Successfully";
+// learn yourself
+"Educate YourSelf" = "Educate YourSelf";
+// onboarding vc
+"FirstTitle" = "Check Eligibility";
+"FirstOnboarding" = "Take a quick self assessment test to know
+if you are fit enough to donate blood by
+answering a few simple questions.";
+
+"SecondTitle" = "Schedule Appointment";
+"SecondOnboarding" = "Schedule blood donation by picking
+available date and time slots according to
+your preference.";
+
+"ThirdTitle" = "Post a Blood Donation Request";
+"ThirdOnboarding" = "Request for blood to thousands of users
+from your country in a few quick simple
+steps.";

@@ -17,6 +17,7 @@ class OnboardingViewController: UIViewController {
     //MARK: - variables
     private let storageManager = StorageManager()
     var SlideArray: [OnboardingSlide] = []
+    let currentLang = Locale.current.languageCode
     var currentPage = 0 {
         didSet{
             PageController.currentPage = currentPage
@@ -46,10 +47,17 @@ class OnboardingViewController: UIViewController {
     private func setUp(){
         CollectionView.delegate = self
         CollectionView.dataSource = self
-        SlideArray = [
-            OnboardingSlide(title: SlidesArray.title1, description:          SlidesArray.description1, Image: UIImage(named: "1")!),
-            OnboardingSlide(title: SlidesArray.title2, description: SlidesArray.description2, Image: UIImage(named: "2")!),
-            OnboardingSlide(title: SlidesArray.title3, description: SlidesArray.description3, Image: UIImage(named: "3")!)]
+        if currentLang == "ar"{
+            SlideArray = [
+                OnboardingSlide(title: "تحقق من الأهلية", description: "قم بإجراء اختبار سريع للتقييم الذاتي لتعرف إذا كنت لائقًا بما يكفي للتبرع بالدم والإجابة على بعض الأسئلة البسيطة.", Image: UIImage(named: "1")!),
+                OnboardingSlide(title: "جدولة موعد", description: "حدد موعدًا للتبرع بالدم بالقطف فتحات التاريخ والوقت المتاحة وفقًا لـمفضلاتك.", Image: UIImage(named: "2")!),
+                OnboardingSlide(title: "انشر طلب تبرع بالدم", description: "طلب دم لآلاف المستخدمين من بلدك في بضع خطوات بسيطة.", Image: UIImage(named: "3")!)]
+        }else{
+            SlideArray = [
+                OnboardingSlide(title: "Check Eligibility", description: "Take a quick self assessment test to know if you are fit enough to donate blood by answering a few simple questions." , Image: UIImage(named: "1")!),
+                OnboardingSlide(title: "Schedule Appointment", description: "Schedule blood donation by picking available date and time slots according to your preference.", Image: UIImage(named: "2")!),
+                OnboardingSlide(title: "Post a Blood Donation Request", description: "Request for blood to thousands of users from your country in a few quick simple steps.", Image: UIImage(named: "3")!)]
+        }
     }
     private func updateFlag(){
         storageManager.setOnboardingSeen()

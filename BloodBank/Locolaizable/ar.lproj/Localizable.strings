@@ -151,3 +151,28 @@
 "Update Story" = "تعديل قصه";
 "Update" = "تعديل";
 "Delete" = "حذف";
+// setting
+"Dark mode" = "الوضع الليلي";
+"Activate Notification" = "تفعيل الاشعارات";
+
+// craete blood order
+"Create Blood Order" = "انشاء طلب دم";
+"Ok" = "احسنت";
+"titleRequest" = "تم إنشاء طلب الدم الخاص بك بنجاح";
+// "Educate YourSelf"
+"Educate YourSelf" = "تعلم بنفسك";
+// onboarding vc
+"FirstTitle" = "تحقق من الأهلية";
+"FirstOnboarding" = "خذ اختبار تقييم ذاتي سريع لتعرف
+إذا كنت لائقًا بما يكفي للتبرع بالدم
+الإجابة على بعض الأسئلة البسيطة.";
+
+"SecondTitle" = "جدولة موعد";
+"SecondOnboarding" = "حدد موعدًا للتبرع بالدم بالقطف
+فتحات التاريخ والوقت المتاحة وفقًا لـ
+مفضلاتك.";
+
+"ThirdTitle" = "انشر طلب تبرع بالدم";
+"ThirdOnboarding" = "طلب دم لآلاف المستخدمين
+من بلدك في بضع خطوات بسيطة
+خطوات.";

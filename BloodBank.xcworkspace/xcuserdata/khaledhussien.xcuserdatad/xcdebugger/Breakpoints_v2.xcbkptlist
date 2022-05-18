@@ -62,8 +62,8 @@
             filePath = "BloodBank/ApiService/ApiService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "730"
-            endingLineNumber = "730"
+            startingLineNumber = "753"
+            endingLineNumber = "753"
             landmarkName = "orderBlood(p_ssn:blood_type:delivered_place:amount:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -78,8 +78,8 @@
             filePath = "BloodBank/ApiService/ApiService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "732"
-            endingLineNumber = "732"
+            startingLineNumber = "755"
+            endingLineNumber = "755"
             landmarkName = "orderBlood(p_ssn:blood_type:delivered_place:amount:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -94,8 +94,8 @@
             filePath = "BloodBank/ApiService/ApiService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "736"
-            endingLineNumber = "736"
+            startingLineNumber = "759"
+            endingLineNumber = "759"
             landmarkName = "orderBlood(p_ssn:blood_type:delivered_place:amount:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -110,8 +110,8 @@
             filePath = "BloodBank/ApiService/ApiService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "741"
-            endingLineNumber = "741"
+            startingLineNumber = "764"
+            endingLineNumber = "764"
             landmarkName = "orderBlood(p_ssn:blood_type:delivered_place:amount:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -126,8 +126,8 @@
             filePath = "BloodBank/ApiService/ApiService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "745"
-            endingLineNumber = "745"
+            startingLineNumber = "768"
+            endingLineNumber = "768"
             landmarkName = "orderBlood(p_ssn:blood_type:delivered_place:amount:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -372,7 +372,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "CFE4E55D-DF3C-47C2-9C68-D271278CD6F6 - 47e006ef38d513bc"
+                  uuid = "CFE4E55D-DF3C-47C2-9C68-D271278CD6F6 - 47e006ef38d51692"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -382,12 +382,12 @@
                   urlString = "file:///Users/khaledhussien/SWIFT/BloodBankApp/BloodBank/BloodBank/Controllers/AppScreens/FirstTabBar(Home)/HamburgerMenu/BuyBloodViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "266"
-                  endingLineNumber = "266"
+                  startingLineNumber = "304"
+                  endingLineNumber = "304"
                   offsetFromSymbolStart = "168">
                </Location>
                <Location
-                  uuid = "CFE4E55D-DF3C-47C2-9C68-D271278CD6F6 - 47e006ef38d513bc"
+                  uuid = "CFE4E55D-DF3C-47C2-9C68-D271278CD6F6 - 47e006ef38d51692"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -397,8 +397,8 @@
                   urlString = "file:///Users/khaledhussien/SWIFT/BloodBankApp/BloodBank/BloodBank/Controllers/AppScreens/FirstTabBar(Home)/HamburgerMenu/BuyBloodViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "266"
-                  endingLineNumber = "266"
+                  startingLineNumber = "304"
+                  endingLineNumber = "304"
                   offsetFromSymbolStart = "504">
                </Location>
             </Locations>
@@ -657,6 +657,86 @@
             startingLineNumber = "484"
             endingLineNumber = "484"
             landmarkName = "pickerView(_:didSelectRow:inComponent:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0B104DBC-B460-486E-A300-071CD22CD846"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BloodBank/Controllers/AppScreens/FirstTabBar(Home)/HamburgerMenu/AllQuickRequests/DetailsCellViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "264"
+            endingLineNumber = "264"
+            landmarkName = "acceptRequest()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CA7EA425-92E8-4B6D-B7D1-6F5243AF29EA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BloodBank/Controllers/AppScreens/FirstTabBar(Home)/HamburgerMenu/AllQuickRequests/DetailsCellViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "288"
+            endingLineNumber = "288"
+            landmarkName = "refuseRequest()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9DC79A85-9241-42DB-815F-82BBCB6702B9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BloodBank/Controllers/AppScreens/FirstTabBar(Home)/HamburgerMenu/AllQuickRequests/DetailsCellViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "273"
+            endingLineNumber = "273"
+            landmarkName = "getIdOfGoingRequestForDeletion()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "99E0A90C-2E56-47FE-B9B9-AA3B6CDC2CE7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BloodBank/Controllers/AppScreens/FirstTabBar(Home)/HamburgerMenu/AllQuickRequests/DetailsCellViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "305"
+            endingLineNumber = "305"
+            landmarkName = "acceptRequestBtnTapped(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "54278D81-0100-463A-B774-B04390E764D9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BloodBank/Controllers/AppScreens/FirstTabBar(Home)/HamburgerMenu/AllQuickRequests/DetailsCellViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -66,15 +66,15 @@ class BookingAppointmentViewController: UIViewController {
             }
         }
     }
-    private func test(coordinate: CLLocationCoordinate2D)-> CLLocationCoordinate2D?{
-        for location in LocationCoordinate.locations{
-            let annotaion = MKPointAnnotation()
-            annotaion.coordinate = CLLocationCoordinate2D(latitude: location["latitude"] as! Double, longitude: location["longitude"] as! Double)
-            print(annotaion.coordinate)
-            return coordinate
-        }
-        return nil
-    }
+//    private func test(coordinate: CLLocationCoordinate2D)-> CLLocationCoordinate2D?{
+//        for location in LocationCoordinate.locations{
+//            let annotaion = MKPointAnnotation()
+//            annotaion.coordinate = CLLocationCoordinate2D(latitude: location["latitude"] as! Double, longitude: location["longitude"] as! Double)
+//            print(annotaion.coordinate)
+//            return coordinate
+//        }
+//        return nil
+//    }
     private func setUpDesign(){
 //        title = "حجز موعد للتبرع"
         self.getDirectionBtn.titleLabel?.font = UIFont(name: "Almarai", size: 18)

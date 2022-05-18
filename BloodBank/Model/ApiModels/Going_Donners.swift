@@ -11,6 +11,7 @@ struct Going_Donners:Codable{
     var data: [Going_DonnersData]
 }
 struct Going_DonnersData:Codable{
+    var id: String
     var request_id: String
     var donner_id: String
 }

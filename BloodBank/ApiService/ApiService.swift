@@ -673,6 +673,29 @@ class ApiService{
         }
         task.resume()
     }
+    //delete request going
+    func deleteGoingRequest(id: String){
+        guard let url = URL(string: "\(URLS.going_Donor)/delete")else{return}
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "DELETE"
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let body : [String:AnyHashable] = [
+            "id": id
+        ]
+        urlRequest.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
+        let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+            guard let data = data, error == nil else {
+                return
+            }
+            do {
+                let response = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
+                print("success : \(response)")
+            } catch  {
+                print(error)
+            }
+        }
+        task.resume()
+    }
     // show all going requests
     func allGoingAccept(completion: @escaping (_ error: Error? , _ goingRequest: [Going_DonnersData]?) -> Void){
         AF.request("\(URLS.going_Donor)/all", method: .get, encoding: URLEncoding.default , headers: nil).response {

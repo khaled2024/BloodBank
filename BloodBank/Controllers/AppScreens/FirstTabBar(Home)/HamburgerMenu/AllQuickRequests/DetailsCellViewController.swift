@@ -45,6 +45,7 @@ class DetailsCellViewController: UIViewController, UISheetPresentationController
     var arrOfDonors: [String] = []
     var p_ssn = ""
     var requestId = ""
+    var IdOfRequestForDeletion = "error in request id"
     var volunteersNum = 0
     var arrOfQuickRequestDetail: QuickRequestData!
     var arrOfSavedRequests : [SavedBloodRequestData] = [SavedBloodRequestData]()
@@ -59,10 +60,12 @@ class DetailsCellViewController: UIViewController, UISheetPresentationController
             self.p_ssn = userInfo[0]
         }
         setUpData()
+
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setUpDesign()
+        self.getIdOfGoingRequestForDeletion()
         self.insideAcceptRequestBtn.imageView?.image = UIImage(systemName: "hand.thumbsup.fill")
     }
     override func viewDidLoad() {
@@ -79,9 +82,9 @@ class DetailsCellViewController: UIViewController, UISheetPresentationController
     //MARK: - Private func
     private func setUpDesign(){
         self.donorImageDetail.layer.cornerRadius = self.donorImageDetail.frame.size.width / 2
-//        self.acceptRequestBtn.customTitleLbl(btn: acceptRequestBtn, text: "تلبيه الطلب", fontSize: 15)
-//
-//        self.bookMarkBtn.customTitleLbl(btn: bookMarkBtn, text: "حفظ", fontSize: 15)
+        //        self.acceptRequestBtn.customTitleLbl(btn: acceptRequestBtn, text: "تلبيه الطلب", fontSize: 15)
+        //
+        //        self.bookMarkBtn.customTitleLbl(btn: bookMarkBtn, text: "حفظ", fontSize: 15)
         customBtn.shadowBtn(btn: bookMarkBtn, colorShadow: UIColor.gray.cgColor)
         customBtn.shadowBtn(btn: acceptRequestBtn, colorShadow: UIColor.gray.cgColor)
         
@@ -241,7 +244,7 @@ class DetailsCellViewController: UIViewController, UISheetPresentationController
                     if self.p_ssn == myGoingRequest.donner_id && idOfRequest == myGoingRequest.request_id{
                         self.showNormalAlert(title: "للاسف ", message: "لقد تطوعت لهذا الطلب من قبل ")
                         self.acceptRequestBtn.setTitle("تم التطوع", for: .normal)
-                        self.acceptRequestBtn.isEnabled = false
+//                        self.acceptRequestBtn.isEnabled = false
                         self.insideAcceptRequestBtn.imageView?.image = UIImage(systemName: "hand.thumbsup.fill")
                         
                     }
@@ -255,21 +258,36 @@ class DetailsCellViewController: UIViewController, UISheetPresentationController
     private func acceptRequest(){
         if self.volunteersNum >= 8{
             self.showNormalAlert(title: "للاسف", message: "تم اكتمال عدد المتطوعين لهذا الطلب :)")
-            self.acceptRequestBtn.isEnabled = false
+//            self.acceptRequestBtn.isEnabled = false
             self.insideAcceptRequestBtn.imageView?.image = UIImage(systemName: "hand.thumbsup.fill")
         }else{
             print(self.requestId)
             print(self.p_ssn)
             ApiService.sharedService.acceptRequest(request_id: self.requestId, donner_id: self.p_ssn)
             self.acceptRequestBtn.setTitle("تم التطوع", for: .normal)
-            self.acceptRequestBtn.isEnabled = false
+//            self.acceptRequestBtn.isEnabled = false
             self.showNormalAlert(title: "احسنت", message: "لقد تم التطوع للمساعده في هذا الطلب :)")
         }
-        
     }
-    
+    private func getIdOfGoingRequestForDeletion(){
+        ApiService.sharedService.allGoingAccept { error, goingRequest in
+            if let error = error {
+                print(error.localizedDescription)
+            }else if let goingRequest = goingRequest {
+                for goingRequest in goingRequest {
+                    if self.p_ssn == goingRequest.donner_id && self.requestId == goingRequest.request_id{
+                        self.IdOfRequestForDeletion = goingRequest.id
+                       
+                    }
+                }
+                print(" id of request for deletion : \(self.IdOfRequestForDeletion)")
+            }
+        }
+    }
+    private func refuseRequest(){
+        ApiService.sharedService.deleteGoingRequest(id: self.IdOfRequestForDeletion)
+    }
     //MARK: - Actions
-    
     @IBAction func volunteerBtnTapped(_ sender: UIButton) {
         //        self.getVolunteerData()
         //        self.getDonorsDetails()
@@ -284,10 +302,17 @@ class DetailsCellViewController: UIViewController, UISheetPresentationController
         self.bookMarkTapped()
     }
     @IBAction func acceptRequestBtnTapped(_ sender: UIButton) {
-        print("AcceptRequests")
-        self.acceptRequest()
+        
+        if acceptRequestBtn.titleLabel?.text == "تلبيه الطلب"{
+            print("AcceptRequests")
+            self.acceptRequest()
+        }else{
+            print("refuseRquest")
+            self.refuseRequest()
+            self.showNormalAlert(title: "", message: "تم الغاء الطلب بنجاح :(")
+            self.acceptRequestBtn.setTitle("تلبيه الطلب", for: .normal)
+        }
     }
-    
 }
 //MARK: - Extension UITableViewDelegate,UITableViewDataSource
 extension DetailsCellViewController: UITableViewDelegate,UITableViewDataSource {
@@ -304,11 +329,11 @@ extension DetailsCellViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
-        //for animations
-        func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-            cell.layer.transform = CATransform3DMakeScale(0.1, 0.1, 1)
-            UIView.animate(withDuration: 0.35) {
-                cell.layer.transform = CATransform3DMakeScale(1, 1, 1)
-            }
+    //for animations
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.layer.transform = CATransform3DMakeScale(0.1, 0.1, 1)
+        UIView.animate(withDuration: 0.35) {
+            cell.layer.transform = CATransform3DMakeScale(1, 1, 1)
         }
+    }
 }

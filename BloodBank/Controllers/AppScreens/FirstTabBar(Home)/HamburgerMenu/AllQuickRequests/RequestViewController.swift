@@ -23,6 +23,7 @@ class RequestViewController: UIViewController{
     var volunteersNum = 0
     var arrOfSavedRequests : [SavedBloodRequestData] = [SavedBloodRequestData]()
     var myRequestId  = ""
+    var IdOfRequestForDeletion = "error in request id"
     //MARK: - --------------------------------------------------------
     
     override func viewDidLoad() {
@@ -50,7 +51,7 @@ class RequestViewController: UIViewController{
         }else{
             refreshControll.endRefreshing()
         }
-       
+        
     }
     //MARK: - Private functions
     private func setUpDesign(){
@@ -66,8 +67,8 @@ class RequestViewController: UIViewController{
         tableView.register(UINib(nibName: "RequestsTableViewCell", bundle: nil), forCellReuseIdentifier: "Requestscell")
         tableView.register(UINib(nibName: "privateRequestCell", bundle: nil), forCellReuseIdentifier: "privateRequestCell")
     }
-//    emptyPage-2
-//    someThinfWrong2
+    //    emptyPage-2
+    //    someThinfWrong2
     private func getAllQuickRequests(){
         DispatchQueue.main.async {
             self.arrOfPrivateQuickRequest = []
@@ -125,11 +126,11 @@ class RequestViewController: UIViewController{
         if segmentSender == 0{
             let controller = DetailsCellViewController.instantiate()
             controller.arrOfQuickRequestDetail = arrOfQuickRequest[indexPath.row]
-//            self.myRequestId = arrOfQuickRequest[indexPath.row].id
+            //            self.myRequestId = arrOfQuickRequest[indexPath.row].id
             controller.requestId = arrOfQuickRequest[indexPath.row].id
-//            print(arrOfQuickRequest[indexPath.row].id)
-//            self.allGoingDonor(idOfRequest: self.myRequestId)
-          
+            //            print(arrOfQuickRequest[indexPath.row].id)
+            //            self.allGoingDonor(idOfRequest: self.myRequestId)
+            
             self.present(controller, animated: true, completion: nil)
         }else{
             let controller = DetailPrivateCellViewController.instantiate()
@@ -151,7 +152,7 @@ class RequestViewController: UIViewController{
             }else{
                 self.segmentSender = sender.selectedSegmentIndex
                 print(segmentSender)
-            self.tableView.isHidden = false
+                self.tableView.isHidden = false
                 self.noDataImage.isHidden = true
                 self.emptyPageLbl.isHidden = true
                 tableView.reloadData()
@@ -198,7 +199,7 @@ extension RequestViewController: UITableViewDelegate, UITableViewDataSource {
             let time = arrOfPrivateQuickRequest[indexPath.row].time
             let subTime = time.prefix(16)
             cell.configure(name: "\(arrOfPrivateQuickRequest[indexPath.row].first_name) \(arrOfPrivateQuickRequest[indexPath.row].last_name)", bloodType: arrOfPrivateQuickRequest[indexPath.row].blood_type, address: "(\(arrOfPrivateQuickRequest[indexPath.row].hospital_name))- \(arrOfPrivateQuickRequest[indexPath.row].city_of_hospital)- \(arrOfPrivateQuickRequest[indexPath.row].governorate_name)", time: String(subTime), description: arrOfPrivateQuickRequest[indexPath.row].message, donorImage: arrOfPrivateQuickRequest[indexPath.row].patient_image, numberOfBags: arrOfPrivateQuickRequest[indexPath.row].blood_bags_number)
-//            cell.privateRequestId = arrOfPrivateQuickRequest[indexPath.row].id
+            //            cell.privateRequestId = arrOfPrivateQuickRequest[indexPath.row].id
             return cell
         default:
             break

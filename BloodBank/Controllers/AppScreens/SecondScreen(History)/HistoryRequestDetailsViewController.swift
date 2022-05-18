@@ -32,6 +32,7 @@ class HistoryRequestDetailsViewController: UIViewController, UISheetPresentation
     let def = UserDefaults.standard
     var p_ssn = ""
     var requestId = ""
+    var IdOfRequestForDeletion = "error in request id"
     var arrOfPrivateHistoryRequestDetail: QuickRequestData!
     var arrOfSavedRequests : [SavedBloodRequestData] = [SavedBloodRequestData]()
     var arrOfDonors: [String] = []
@@ -50,6 +51,7 @@ class HistoryRequestDetailsViewController: UIViewController, UISheetPresentation
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setUpDesign()
+        self.getIdOfGoingRequestForDeletion()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,7 +77,7 @@ class HistoryRequestDetailsViewController: UIViewController, UISheetPresentation
                     if self.p_ssn == myGoingRequest.donner_id && idOfRequest == myGoingRequest.request_id{
                         self.showNormalAlert(title: "للاسف ", message: "لقد تطوعت لهذا الطلب من قبل ")
                         self.acceptRequestBtn.setTitle("تم التطوع", for: .normal)
-                        self.acceptRequestBtn.isEnabled = false
+//                        self.acceptRequestBtn.isEnabled = false
                         self.insideacceptRequestBtn.imageView?.image = UIImage(systemName: "hand.thumbsup.fill")
                         
                     }
@@ -246,17 +248,35 @@ class HistoryRequestDetailsViewController: UIViewController, UISheetPresentation
     private func acceptRequest(){
         if self.volunteersNum >= 8{
             self.showNormalAlert(title: "للاسف", message: "تم اكتمال عدد المتطوعين لهذا الطلب :)")
-            self.acceptRequestBtn.isEnabled = false
+//            self.acceptRequestBtn.isEnabled = false
             self.insideacceptRequestBtn.imageView?.image = UIImage(systemName: "hand.thumbsup.fill")
         }else{
             print(self.requestId)
             print(self.p_ssn)
             ApiService.sharedService.acceptRequest(request_id: self.requestId, donner_id: self.p_ssn)
             self.acceptRequestBtn.setTitle("تم التطوع", for: .normal)
-            self.acceptRequestBtn.isEnabled = false
+//            self.acceptRequestBtn.isEnabled = false
             self.showNormalAlert(title: "احسنت", message: "لقد تم التطوع للمساعده في هذا الطلب :)")
         }
         
+    }
+    private func getIdOfGoingRequestForDeletion(){
+        ApiService.sharedService.allGoingAccept { error, goingRequest in
+            if let error = error {
+                print(error.localizedDescription)
+            }else if let goingRequest = goingRequest {
+                for goingRequest in goingRequest {
+                    if self.p_ssn == goingRequest.donner_id && self.requestId == goingRequest.request_id{
+                        self.IdOfRequestForDeletion = goingRequest.id
+                       
+                    }
+                }
+                print(" id of request for deletion : \(self.IdOfRequestForDeletion)")
+            }
+        }
+    }
+    private func refuseRequest(){
+        ApiService.sharedService.deleteGoingRequest(id: self.IdOfRequestForDeletion)
     }
   
     //MARK: - Actions
@@ -275,10 +295,17 @@ class HistoryRequestDetailsViewController: UIViewController, UISheetPresentation
     }
     
     @IBAction func acceptRequestBtnTapped(_ sender: UIButton) {
-        print("accept request")
-        acceptRequest()
+        if acceptRequestBtn.titleLabel?.text == "تلبيه الطلب"{
+            print("AcceptRequests")
+            self.acceptRequest()
+        }else{
+            print("refuseRquest")
+            self.refuseRequest()
+            self.showNormalAlert(title: "", message: "تم الغاء الطلب بنجاح :(")
+            self.acceptRequestBtn.setTitle("تلبيه الطلب", for: .normal)
+        }
+       
     }
-    
 }
 //MARK: - Extension UITableViewDelegate,UITableViewDataSource
 extension HistoryRequestDetailsViewController: UITableViewDelegate,UITableViewDataSource {

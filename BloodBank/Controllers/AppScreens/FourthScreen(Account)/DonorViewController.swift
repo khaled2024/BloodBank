@@ -48,9 +48,6 @@ class DonorViewController: UIViewController {
     let gradient = UserGradientBackground()
     let customBtn = UserCustomBtn()
     var isEdited = false
-//    let goverArr = Arrays.arrayOfGover
-//    let citiesArr = Arrays.arrayOfCities
-//    let arrBlood = Arrays.arrayOfBloodType
     let datePicker = UIDatePicker()
     var arrOfUser:[userData] = [userData]()
     let def = UserDefaults.standard
@@ -81,13 +78,12 @@ class DonorViewController: UIViewController {
         setCityData()
         setGovData()
         getBlood()
-        
-        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.imageView.layer.cornerRadius = imageView.frame.size.height/2
         setUpDesign()
+        setProfileImage()
         localized()
     }
     override func viewDidLayoutSubviews() {
@@ -95,7 +91,16 @@ class DonorViewController: UIViewController {
         super.viewDidLayoutSubviews()
         gradientView.roundedCornerView(corners: [.bottomLeft , .bottomRight], radius: gradientView.frame.size.width/6)
     }
+    
     //MARK: - private func
+    // set profileImage
+    private func setProfileImage(){
+        if let gender = genderTF.text ,gender == "Male"{
+            self.imageView.image = UIImage(named: "profileMale")
+        }else {
+            self.imageView.image = UIImage(named: "profileFemale")
+        }
+    }
     // get blood data
     
     private func getBlood(){
@@ -346,7 +351,6 @@ class DonorViewController: UIViewController {
             isEdited = true
             self.makeTFInteract(result: true)
             self.editBtn.image = UIImage(systemName: "checkmark")
-            self.donorNameTF.becomeFirstResponder()
             self.passwordTF.isSecureTextEntry = true
         }else{
             isEdited = false
@@ -354,7 +358,10 @@ class DonorViewController: UIViewController {
             self.makeTFInteract(result: false)
             self.theNameLbl.text = "\(self.donorNameTF.text!) \(self.familyNameTF.text!)"
             self.addressLbl.text = "\(self.gavernrateTF.text!)/\(self.cityTF.text!)"
+            setProfileImage()
             self.passwordTF.isSecureTextEntry = true
+//            self.setDataOfUser()
+              UserDefaults.standard.set([donorNameTF.text , familyNameTF.text , genderTF.text], forKey: "userNameAndImage")
             if passwordTF.text == ""{
                 self.updateUserData()
                 passwordTF.text = ""
@@ -433,6 +440,7 @@ extension DonorViewController: UIPickerViewDelegate,UIPickerViewDataSource{
         }
     }
 }
+
 //MARK: - comments
 
 //        NotificationCenter.default.addObserver(self, selector: #selector(didGetNotification), name: Notification.Name (Notifications.detailNot), object: nil)

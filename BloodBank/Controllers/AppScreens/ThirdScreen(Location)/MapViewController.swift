@@ -115,7 +115,7 @@ class MapViewController: UIViewController {
         }
         self.reachability.whenUnreachable = { _ in
             print("not reachable")
-            self.showAlertWithSettingBtn(title: "No Internet", message: "This Screen Require WiFi/Internet Connenction!")
+            self.showAlertWithSettingBtn(title:"No Internet".Localized(), message: "Error Connection".Localized())
         }
         do {
             try reachability.startNotifier()

@@ -26,6 +26,7 @@ class CoronaStatsViewController: UIViewController{
     @IBOutlet weak var recoveredLbl: UILabel!
     @IBOutlet weak var deathsLbl: UILabel!
     
+    @IBOutlet weak var coronaVisitTitle: UILabel!
     
     @IBOutlet weak var countryDeathsLbl: UILabel!
     @IBOutlet weak var countryRecoveredLbl: UILabel!
@@ -78,6 +79,8 @@ class CoronaStatsViewController: UIViewController{
             setUpPicker()
             self.getCoronaAnalysis()
             self.getCountryStats()
+      
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         self.setUpDesign()
@@ -146,7 +149,8 @@ class CoronaStatsViewController: UIViewController{
         }else{
             leftArrowBtnSite.isHidden = false
         }
-        
+        self.coronaVisitTitle.text = "coronaTitle".Localized()
+        bloodBankSiteBtn.setTitle("coronaBtn".Localized(), for: .normal)
     }
     private func setCountryData(_ row: Int){
         DispatchQueue.main.async {

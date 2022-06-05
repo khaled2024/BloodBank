@@ -43,6 +43,7 @@ class FavoriteViewController: UIViewController {
         super.viewWillAppear(animated)
         setUpDesign()
         localalization()
+     
     }
     //MARK: - private functions
     private func localalization(){
@@ -132,7 +133,8 @@ class FavoriteViewController: UIViewController {
         print("id of request : \(arrOfIds[indexPath.row])")
                 self.present(controll, animated: true, completion: nil)
         print(" idrequest of the request\(arrOfMyFav[indexPath.row].request_id)")
-        
+        self.nofavoriteLbl.isHidden = true
+        self.noDataImage.isHidden = true
     }
     //MARK: - Actions
 }

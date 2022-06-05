@@ -54,6 +54,7 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
     //MARK: - Variables
     var hamburgerViewController: HamburgerViewController?
     var slideIsClicked: Bool = false
+    let userInfo = UserDefaults.standard.object(forKey: "userInfo")as? [String]
     
     //MARK: - LifeCycle
     override func viewDidLoad() {
@@ -77,9 +78,7 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
         animateViews()
         setUpLocalized()
         mainView.semanticContentAttribute = .forceLeftToRight
-        if let userInfo = def.object(forKey: "userInfo")as? [String]{
-            self.nameOfDonorLbl.text = "\(userInfo[1]) \(userInfo[2])"
-        }
+        self.nameOfDonorLbl.text = "\(userInfo![1]) \(userInfo![2])"
 //        testView.semanticContentAttribute = .forceLeftToRight
 //        humbergerView.semanticContentAttribute = .forceLeftToRight
 //        backViewForHumburger.semanticContentAttribute = .forceLeftToRight
@@ -179,13 +178,20 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
             UIView.animate(withDuration: 0.1) {
                 self.leading.constant = 0
                 self.view.layoutIfNeeded()
-            } completion: { status in
+            } completion: { [self] status in
                 self.humbergerView.isHidden = false
                 self.backViewForHumburger.layer.opacity = 0.60
                 self.testView.isUserInteractionEnabled = true
                 self.testView.layer.opacity = 0.60
                 self.isHamburgerMenuShown = true
                 self.slideIsClicked = true
+                if let userNameAndImage = UserDefaults.standard.object(forKey: "userNameAndImage")as? [String]{
+                    self.hamburgerViewController?.donorNameLbl.text = "\(userNameAndImage[0]) \(userNameAndImage[1])"
+                    print(userNameAndImage[0])
+                    print(userNameAndImage[1])
+                    print(userNameAndImage[2])
+                    self.hamburgerViewController?.setProfileImage(userGender: userNameAndImage[2])
+                }
             }
         }
     }

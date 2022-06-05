@@ -76,6 +76,18 @@ class UserDefultsManager{
         }
     }
     
+    var userNameAndImage: [String]{
+        set{
+            def.set(newValue, forKey: "userNameAndImage")
+        }
+        get{
+            guard def.object(forKey: "userNameAndImage") != nil else  {
+                return [""]
+            }
+            return def.stringArray(forKey: "userNameAndImage") ?? [""]
+        }
+    }
+    
     
 }
 

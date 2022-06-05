@@ -87,7 +87,7 @@
                                 <color key="textColor" name="MainLblColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoImage" translatesAutoresizingMaskIntoConstraints="NO" id="SL3-cA-eca">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blood-donation" translatesAutoresizingMaskIntoConstraints="NO" id="SL3-cA-eca">
                                 <rect key="frame" x="305" y="10" width="90" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="YV3-LZ-T9A"/>
@@ -165,9 +165,9 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="blood-donation" width="170.5" height="170.5"/>
         <image name="bloodPin2" width="33.333332061767578" height="33.333332061767578"/>
         <image name="clock" width="37.5" height="37.5"/>
-        <image name="logoImage" width="1999.5" height="1331"/>
         <namedColor name="MainLblColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

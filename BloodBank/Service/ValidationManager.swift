@@ -6,6 +6,14 @@
 //
 
 import Foundation
+enum SignUpError: Error {
+    case isValidEmail
+    case isValidName
+    case isValidID
+    case isValidMobile
+    case isValidPassword
+}
+
 extension String{
     var isValidName: Bool{
         return self.count >= 3
@@ -28,12 +36,5 @@ extension String{
     var isValidPassword: Bool{
         return self.count >= 5
     }
-}
-enum SignUpError: Error {
-    case isValidEmail
-    case isValidName
-    case isValidID
-    case isValidMobile
-    case isValidPassword
 }
 

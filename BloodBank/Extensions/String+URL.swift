@@ -6,10 +6,9 @@
 //
 
 import Foundation
-
 // تحويل الصوره من ال api الي صوره 
 extension String{
-var asURL: URL?{
-    return URL(string: self)
-}
+    var asURL: URL?{
+        return URL(string: self)
+    }
 }

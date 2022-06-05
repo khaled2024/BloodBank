@@ -35,26 +35,36 @@ class HamburgerViewController: UIViewController {
     var delegate: HambburgerViewControllerDelegate?
     var delegate2: opacityDelegate?
     let btnCustom = UserCustomBtn()
-    let def = UserDefaults.standard
+    let userName = UserDefaults.standard.object(forKey: "userInfo")as? [String]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpHumburger()
-        if let userName = def.object(forKey: "userInfo")as? [String]{
-            self.donorNameLbl.text = "\(userName[1]) \(userName[2])"
-        }
+        self.donorNameLbl.text = "\(userName![1]) \(userName![2])"
+        setProfileImage()
         subNameLbl.customLblFont(lbl: subNameLbl, fontSize: 18, text: "Hero")
        
     }
     override func viewWillAppear(_ animated: Bool) {
         setUpLocalizationLabel()
         mainHumbergerView.semanticContentAttribute = .forceLeftToRight
-        if let userInfo = def.object(forKey: "userInfo")as? [String]{
-            self.donorNameLbl.text = "\(userInfo[1]) \(userInfo[2])"
-        }
     }
     //MARK: - private functions
-   
+    // set profileImage
+    func setProfileImage(){
+        if userName![11] == "Male" {
+            self.imageView.image = UIImage(named: "profileMale")
+        }else{
+            self.imageView.image = UIImage(named: "profileFemale")
+        }
+    }
+    func setProfileImage(userGender: String){
+        if userGender == "Male" {
+            self.imageView.image = UIImage(named: "profileMale")
+        }else{
+            self.imageView.image = UIImage(named: "profileFemale")
+        }
+    }
     private func setUpLocalizationLabel(){
         let currentLang = Locale.current.languageCode
         if currentLang == "en"{

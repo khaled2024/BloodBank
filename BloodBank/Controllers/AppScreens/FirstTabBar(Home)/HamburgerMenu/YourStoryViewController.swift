@@ -137,6 +137,8 @@ class YourStoryViewController: UIViewController {
 
         customView.customView(theView: self.addStoryView)
         customView.customView(theView: self.updateStoryView)
+        self.noStoryToShown.isHidden = true
+        self.noDataImage.isHidden = true
         
     }
     // for blur & add story view

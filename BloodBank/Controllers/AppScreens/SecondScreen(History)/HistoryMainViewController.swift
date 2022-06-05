@@ -368,8 +368,8 @@ class HistoryMainViewController: UIViewController {
             //            cell.configure(vaccineName: vaccineName, vaccineAmount: "\(arrOfPrivateVaccine[indexPath.row].amount) كيس دم", timeOrderVaccine: arrOfPrivateVaccine[indexPath.row].time, placeOfOrder: self.placeName)
             return cell
         case 2:
-//            let cell = HistorytableView.dequeueReusableCell(withIdentifier: "BloodOrderCell")as! BloodOrderCell
             let cell = HistorytableView.dequeueReusableCell(withIdentifier: "AcceptOrderBloodCell")as! AcceptOrderBloodCell
+            print(self.arrOfPrivatePurchaseOrder)
             let time = arrOfPrivatePurchaseOrder[indexPath.row].time
             let subTime = time.prefix(16)
             cell.configure(bloodType: "فصيله الدم \(self.dicOfBloodTypes[self.arrOfPrivatePurchaseOrder[indexPath.row].blood_type]!)", time: String(subTime), placeName: self.dicOfPlaceNames[self.arrOfPrivatePurchaseOrder[indexPath.row].delivered_place]!)

@@ -40,6 +40,7 @@ class RequestViewController: UIViewController{
         super.viewWillAppear(animated)
         setUpDesign()
         self.tableView.reloadData()
+        
     }
     @objc func refreshTapped(){
         if segmentSender == 0{
@@ -66,9 +67,9 @@ class RequestViewController: UIViewController{
         tableView.dataSource = self
         tableView.register(UINib(nibName: "RequestsTableViewCell", bundle: nil), forCellReuseIdentifier: "Requestscell")
         tableView.register(UINib(nibName: "privateRequestCell", bundle: nil), forCellReuseIdentifier: "privateRequestCell")
+        self.emptyPageLbl.isHidden = true
+        self.noDataImage.isHidden = true
     }
-    //    emptyPage-2
-    //    someThinfWrong2
     private func getAllQuickRequests(){
         DispatchQueue.main.async {
             self.arrOfPrivateQuickRequest = []

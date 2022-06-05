@@ -207,7 +207,7 @@
 "JJL-Ay-MKA.text" = "دعنا نعرف معلومات قليله عن الشخص المحتاج للدم.";
 
 /* Class = "UITextField"; placeholder = "ادخل البريد الاكتروني"; ObjectID = "Jg1-YX-JbZ"; */
-"Jg1-YX-JbZ.placeholder" = "ادخل البريد الاكتروني";
+"Jg1-YX-JbZ.placeholder" = "ادخل الرقم القومي";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "JoT-zV-erU"; */
 "JoT-zV-erU.normalTitle" = "Button";

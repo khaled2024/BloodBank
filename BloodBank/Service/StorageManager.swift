@@ -11,7 +11,6 @@ class StorageManager{
     enum key: String{
         case onboardingSeen
     }
-    
     func isOnboardingSeen()-> Bool{
         UserDefaults.standard.bool(forKey: key.onboardingSeen.rawValue)
     }

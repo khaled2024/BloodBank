@@ -8,7 +8,7 @@
 import UIKit
 class LoginViewController: UIViewController {
     //MARK: - outlets
-    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginBtn: UIButton!
     
@@ -43,7 +43,7 @@ class LoginViewController: UIViewController {
         navigationManager.show(screen: .tapBarController, inController: self)
     }
     private func checkTextFields()-> Bool{
-        if let email = emailTextField.text , !email.isEmpty , let password = passwordTextField.text , !password.isEmpty{
+        if let email = idTextField.text , !email.isEmpty , let password = passwordTextField.text , !password.isEmpty{
             return true
         }else{
             return false
@@ -75,7 +75,7 @@ class LoginViewController: UIViewController {
                 self.arrOfUser = user
             }
             for user in self.arrOfUser {
-                if user.email == self.emailTextField.text && user.password == (self.passwordTextField.text?.sha1()){
+                if user.p_ssn == self.idTextField.text && user.password == (self.passwordTextField.text?.sha1()){
                     userInfo = "User info: \(user.p_ssn) \( user.p_first_name) \( user.p_last_name) \(user.mobile_phone) \(user.blood_type) \(user.password) \(user.email) \(user.city_id) \(user.governorate_name) \(user.city_name)"
                     print(userInfo)
                     UserDefaults.standard.set([user.p_ssn , user.p_first_name , user.p_last_name,user.email, user.governorate_name, user.city_name,user.mobile_phone,user.home_phone,user.birthday,user.blood_type , user.password , user.gender, user.city_id], forKey: "userInfo")
@@ -86,7 +86,7 @@ class LoginViewController: UIViewController {
             }
             if userInfo.isEmpty{
                 print("this user dosnt exist............\(self.arrOfUser.indices)")
-                self.showNormalAlert(title: "Sorry", message: "Please check your Email or Password ")
+                self.showNormalAlert(title: "Sorry", message: "Please check your identify or Password ")
             }else{
                 DispatchQueue.main.asyncAfter(deadline: .now()+1.5) {
                     UserDefaults.standard.set(true, forKey: "isLoggedIn")
@@ -98,9 +98,9 @@ class LoginViewController: UIViewController {
         }
     }
     private func signIn() throws{
-        if let email = emailTextField.text , let password = passwordTextField.text{
-            if !email.isValidEmail {
-                throw SignUpError.isValidEmail
+        if let email = idTextField.text , let password = passwordTextField.text{
+            if !email.isValidID {
+                throw SignUpError.isValidID
             }
             if !password.isValidPassword {
                 throw SignUpError.isValidPassword
@@ -116,8 +116,8 @@ class LoginViewController: UIViewController {
     @IBAction func loginBtnTapped(_ sender: UIButton) {
         do {
             try signIn()
-        }catch SignUpError.isValidEmail{
-            showNormalAlert(title: "Sorry", message: "Please Enter Valid Email")
+        }catch SignUpError.isValidID{
+            showNormalAlert(title: "Sorry", message: "Please Enter Valid id")
         }catch SignUpError.isValidPassword{
             showNormalAlert(title: "Sorry", message: "Please Enter Valid Password")
         }catch{

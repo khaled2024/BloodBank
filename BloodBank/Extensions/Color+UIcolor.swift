@@ -21,7 +21,4 @@ extension UIColor{
     static var backgroundView: UIColor{
         return UIColor(named: "viewbgColor")!
     }
-    
-    
-    
 }

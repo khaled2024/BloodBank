@@ -34,7 +34,7 @@ class VaccineCollectionViewController: UIViewController {
         vaccineCollectionView.delegate = self
         vaccineCollectionView.dataSource = self
         self.getAllVaccine()
-       
+        self.noDataImage.isHidden = true
         setCellSize()
     }
     //MARK: - Private func

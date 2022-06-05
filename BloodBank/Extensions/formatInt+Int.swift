@@ -4,23 +4,19 @@
 //
 //  Created by KhaleD HuSsien on 26/03/2022.
 //
-
 import Foundation
 var key1: String = ""
 var key2: String = ""
 var key3: String = ""
 extension Int {
     func formatUsingAbbrevation () -> String {
-       
         let numFormatter = NumberFormatter()
         typealias Abbrevation = (threshold:Double, divisor:Double, suffix:String)
         let abbreviations:[Abbrevation] = [(0, 1, ""),
                                            (1000.0, 1000.0, "K".Localized()),
                                            (100_000.0, 1_000_000.0, "M".Localized()),
                                            (100_000_000.0, 1_000_000_000.0, "B".Localized())]
-                                           // you can add more !
-
-        
+        // you can add more !
         let startValue = Double (abs(self))
         let abbreviation:Abbrevation = {
             var prevAbbreviation = abbreviations[0]
@@ -32,7 +28,6 @@ extension Int {
             }
             return prevAbbreviation
         } ()
-
         let value = Double(self) / abbreviation.divisor
         numFormatter.positiveSuffix = abbreviation.suffix
         numFormatter.negativeSuffix = abbreviation.suffix
@@ -40,8 +35,6 @@ extension Int {
         numFormatter.minimumIntegerDigits = 1
         numFormatter.minimumFractionDigits = 0
         numFormatter.maximumFractionDigits = 1
-
         return numFormatter.string(from: NSNumber (value:value))!
     }
-
 }

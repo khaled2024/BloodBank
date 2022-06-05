@@ -6,7 +6,6 @@
 //
 
 import UIKit
-
 extension UIView{
     @IBInspectable var cornerRadius: CGFloat{
         get{
@@ -17,7 +16,6 @@ extension UIView{
         }
     }
 }
-
 //rounded corner radius in spacifc corners
 extension UIView{
     func roundedCornerView(corners: UIRectCorner , radius: CGFloat){

@@ -84,7 +84,7 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.42053862130000003" green="0.80747059560000001" blue="0.4254572975" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.71764707569999997" green="0.270588249" blue="0.34117650989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="fko-DJ-OnU" firstAttribute="centerY" secondItem="OFZ-Of-1LA" secondAttribute="centerY" id="K9O-Ma-WcT"/>
                                     <constraint firstAttribute="height" constant="32" id="flE-L5-LOZ"/>
@@ -99,7 +99,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.28785347570000003" green="0.71764707569999997" blue="0.0063218126860000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.84705877299999999" green="0.30980393290000002" blue="0.38431376220000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="EGL-8J-V8J" firstAttribute="leading" secondItem="d76-QV-2fA" secondAttribute="leading" constant="30" id="0jN-Lz-uyc"/>
                             <constraint firstItem="hbG-GL-kfa" firstAttribute="leading" secondItem="EGL-8J-V8J" secondAttribute="leading" id="15C-n6-967"/>

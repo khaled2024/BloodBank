@@ -57,7 +57,7 @@ class BuyBloodViewController: UIViewController{
     let bloodTypePickerView = UIPickerView()
     let bloodBagsPickerView = UIPickerView()
     let currentLang = Locale.current.languageCode
-    
+    let reachability = try! Reachability()
     private lazy var canBuyBlood: BLTNItemManager = {
         let item = BLTNPageItem(title: "Congratulation")
         item.image = UIImage(named: "launch")
@@ -106,9 +106,27 @@ class BuyBloodViewController: UIViewController{
         super.viewWillAppear(animated)
         setUpDesign()
         localization()
+        checkingInternetConnection()
     }
     //MARK: - private func
-    
+    private func checkingInternetConnection(){
+        self.reachability.whenReachable = { reachability in
+            if reachability.connection == .wifi{
+                print("Reachable to wifi")
+            }else{
+                print("Not Reachable to wifi")
+            }
+        }
+        self.reachability.whenUnreachable = { _ in
+            print("not reachable")
+            self.showAlertWithSettingBtn(title:"No Internet".Localized(), message: "Error Connection".Localized())
+        }
+        do {
+            try reachability.startNotifier()
+        } catch  {
+            print("Unreachable to startNotifier")
+        }
+    }
     private func localization(){
         self.titleBloodOrderLbl.text = "BloodOrderTitle".Localized()
         self.subTitleLbl.text = "BloodOrderSubTitle".Localized()
@@ -117,7 +135,7 @@ class BuyBloodViewController: UIViewController{
         self.bloodPriceLbl.text = "Price Of Bags".Localized()
         self.totalPriceLbl.text = "Total Price".Localized()
         self.bloodTypeTextField.placeholder = "BloodTypePlaceHolder".Localized()
-//        orderRequestBtn.setTitle("Send Order".Localized(), for: .normal)
+        //        orderRequestBtn.setTitle("Send Order".Localized(), for: .normal)
         orderRequestBtn.customTitleLbl(btn: orderRequestBtn, text: "Send Order", fontSize: 15)
     }
     private func setUp(){
@@ -229,20 +247,20 @@ class BuyBloodViewController: UIViewController{
                         }else{
                             self.findingBloodError.text = "تم العثور علي فصيله دم من نوع \(self.bloodTypeTextField.text!) في \(blood.hospital_name)"
                         }
-            
+                        
                         self.orderRequestBtn.isEnabled = true
                         self.placeChoiseTF.isHidden = false
                         break
                     }
                     if idOfHospital != blood.hospital_id || self.rowofBlood != blood.blood_type_id || self.numOfBags > blood.amount{
                         self.findingBloodError.isHidden = false
-                       
+                        
                         if self.currentLang == "en"{
                             self.findingBloodError.text = "No blood type of (\(self.bloodTypeTextField.text!)) has been found near you. Mark where you want to buy blood from!"
                         }else{
                             self.findingBloodError.text = "لم يتم العثور علي فصيله دم من نوع (\(self.bloodTypeTextField.text!))بالقرب منك حدد المكان الذي تريد شراء الدم منه!"
                         }
-                       
+                        
                         self.orderRequestBtn.isEnabled = false
                         self.placeChoiseTF.isHidden = false
                         if self.arrOfAvailableBloodCitiesName.count == 0{
@@ -331,99 +349,21 @@ class BuyBloodViewController: UIViewController{
             }
         }
     }
-    //    private func searchInOtherGov(){
-    //        ApiService.sharedService.getAllBloodInfo { error, blood in
-    //            if let error = error {
-    //                print(error.localizedDescription)
-    //            }else if let blood = blood {
-    //                for blood in blood {
-    //                    if self.rowofBlood == blood.blood_type_id && self.numOfBags <= blood.amount{
-    //                        self.arrOfOtherHospitals.append(blood.hospital_id)
-    //                        self.arrOfNamesOtherHospitals.append(blood.hospital_name)
-    //                    }
-    //                }
-    //                print(self.arrOfOtherHospitals)
-    //                print(self.arrOfNamesOtherHospitals)
-    //            }
-    //        }
-    //    }
-    //    private func getMyData(){
-    //        ApiService.sharedService.getMsg(p_ssn: self.p_ssn, city_id: self.cityId, blood_id: self.rowofBlood, amount: self.numOfBags) { error, mydata in
-    //            if let error = error {
-    //                print(error.localizedDescription)
-    //            }else if let mydata = mydata {
-    //                self.msg = mydata
-    //                for mydata in mydata {
-    //                    print(self.msg!)
-    //                    self.arrOfFinalPlaceId.append(mydata.placeID)
-    //                }
-    //                print(self.arrOfFinalPlaceId )
-    //            }
-    //        }
-    //    }
-    //    private func getOnlyData(){
-    //        print(self.p_ssn!)
-    //        print(self.cityId!)
-    //        print(self.rowofBlood)
-    //        print(self.numOfBags)
-    //        ApiService.sharedService.getOneMsg(p_ssn: self.p_ssn, city_id: self.cityId, blood_id: self.rowofBlood, amount: self.numOfBags) { error, mydata in
-    //            if let error = error {
-    //                print(error.localizedDescription)
-    //            }else if let mydata = mydata {
-    //                self.oneMsg = mydata
-    //                print(self.oneMsg!)
-    //                self.final_place_id = self.oneMsg.placeID
-    //                if self.final_place_id.isEmpty == false{
-    //                    self.findingBloodError.isHidden = false
-    //                    self.getPlaceNameWithId()
-    ////                    self.orderRequest(id: self.final_place_id)
-    //                }
-    //            }
-    //            print(self.final_place_id ?? "error")
-    //        }
-    //    }
-    //    private func getPlaceNameWithId(){
-    //        ApiService.sharedService.getAllBloodInfo { error, blood in
-    //            if let error = error {
-    //                print(error.localizedDescription)
-    //            }else if let blood = blood {
-    //                for blood in blood {
-    //                    if self.final_place_id == blood.hospital_id{
-    //                        self.HospitalName = blood.hospital_name
-    //                        self.findingBloodError.text = "تم العثور علي فصيله دم من نوع \(self.bloodTypeTextField.text!) في \(blood.hospital_name)"
-    //                        print(self.HospitalName!)
-    //                    }
-    //                }
-    //            }
-    //        }
-    //    }
     private func orderRequest(){
         print("---------")
         print(self.p_ssn!)
         print(self.rowofBlood)
         print(self.numOfBags)
-        
         ApiService.sharedService.orderBlood(p_ssn: self.p_ssn, blood_type: self.rowofBlood, delivered_place: self.finalIdOfHospial, amount: self.numOfBags)
         print("---------")
         let updatedAmount: Int = Int(self.amount)! - Int(self.numOfBags)!
         ApiService.sharedService.updateOrderBlood(idOfAvailableBlood: self.idOfAvailableBlood ,amount: String(updatedAmount))
-        //        print("available blood is \(self.idOfAvailableBlood!)")
     }
-    private func buyBlood(){
-        print(self.p_ssn!)
-        print(self.cityId!)
-        print(self.rowofBlood)
-        print(self.numOfBags)
-        print("#############")
-        //        self.getMyData()
-        //        self.getOnlyData()
-        //                ApiService.sharedService.buyBlood(p_ssn: self.p_ssn, city_id: self.cityId, blood_id: self.rowofBlood, amount: self.numOfBags)
-    }
+    
     //MARK: - Actions
     @IBAction func sendRequestBtnTapped(_ sender: UIButton) {
         if let bloodType = self.bloodTypeTextField.text ,!bloodType.isEmpty ,let bloodBag = self.bloodBagsTextField.text ,!bloodBag.isEmpty{
             self.orderRequest()
-            //            self.buyBlood()
             self.canBuyBlood.showBulletin(above: self)
         }else{
             self.cantBuyBlood.showBulletin(above: self)
@@ -431,7 +371,7 @@ class BuyBloodViewController: UIViewController{
     }
 }
 //MARK: - UIPickerViewDelegate,UIPickerViewDataSource
-extension BuyBloodViewController:UIPickerViewDelegate, UIPickerViewDataSource {
+extension BuyBloodViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -439,6 +379,7 @@ extension BuyBloodViewController:UIPickerViewDelegate, UIPickerViewDataSource {
         switch pickerView.tag{
         case 0:
             return arrOfBlood.count
+            
         case 1:
             return Arrays.arrOfNumber.count
         case 2:
@@ -462,28 +403,31 @@ extension BuyBloodViewController:UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch pickerView.tag{
         case 0:
-            bloodTypeTextField.text = arrOfBlood[row].name
-            self.rowofBlood = arrOfBlood[row].id
-            placeChoiseTF.text = ""
-            print("row of blood : \(rowofBlood)")
-            self.getAllAvailableBloodPlacesInCountry()
-            self.getCityIdOfAvailableBloodPlace()
-            self.BloodInfo()
-            self.getDelivered_place()
-            //            searchInOtherGov()
-            print("city id is = \(self.cityId!)")
-            //            print("final hospital is = \(self.finalIdOfHospial!)")
-            self.bloodTypeTextField.endEditing(true)
-            //            print(self.final_place_id ?? "error in final place")
-            
-            self.getIdOfAvailableBlood()
+            if arrOfBlood.count == 0{
+                showNormalAlert(title: "فشل في الاتصال", message: "لا يوجد بيانات متوفره")
+            }else{
+                bloodTypeTextField.text = arrOfBlood[row].name
+                self.rowofBlood = arrOfBlood[row].id
+                placeChoiseTF.text = ""
+                print("row of blood : \(rowofBlood)")
+                self.getAllAvailableBloodPlacesInCountry()
+                self.getCityIdOfAvailableBloodPlace()
+                self.BloodInfo()
+                self.getDelivered_place()
+                print("city id is = \(self.cityId!)")
+                self.bloodTypeTextField.endEditing(true)
+                self.getIdOfAvailableBlood()
+            }
         case 1:
-            bloodBagsTextField.text = Arrays.arrOfNumber[row]
-            self.numOfBags = Arrays.arrOfNumber[row]
-            self.changePriceWithNumOfBags()
+            if arrOfBlood.count == 0{
+                showNormalAlert(title: "فشل في الاتصال", message: "لا يوجد بيانات متوفره")
+            }else{
+                bloodBagsTextField.text = Arrays.arrOfNumber[row]
+                self.numOfBags = Arrays.arrOfNumber[row]
+                self.changePriceWithNumOfBags()
+            }
         case 2:
             if arrOfAvailableBloodCitiesName.count == 0{
-                
                 self.placeChoiseTF.isEnabled = false
                 self.placeChoiseTF.placeholder = "لم يتوفر مكان حتي الان لشراء الدم"
             }else{
@@ -502,3 +446,72 @@ extension BuyBloodViewController:UIPickerViewDelegate, UIPickerViewDataSource {
         }
     }
 }
+
+//MARK: - Comments
+
+//    private func searchInOtherGov(){
+//        ApiService.sharedService.getAllBloodInfo { error, blood in
+//            if let error = error {
+//                print(error.localizedDescription)
+//            }else if let blood = blood {
+//                for blood in blood {
+//                    if self.rowofBlood == blood.blood_type_id && self.numOfBags <= blood.amount{
+//                        self.arrOfOtherHospitals.append(blood.hospital_id)
+//                        self.arrOfNamesOtherHospitals.append(blood.hospital_name)
+//                    }
+//                }
+//                print(self.arrOfOtherHospitals)
+//                print(self.arrOfNamesOtherHospitals)
+//            }
+//        }
+//    }
+//    private func getMyData(){
+//        ApiService.sharedService.getMsg(p_ssn: self.p_ssn, city_id: self.cityId, blood_id: self.rowofBlood, amount: self.numOfBags) { error, mydata in
+//            if let error = error {
+//                print(error.localizedDescription)
+//            }else if let mydata = mydata {
+//                self.msg = mydata
+//                for mydata in mydata {
+//                    print(self.msg!)
+//                    self.arrOfFinalPlaceId.append(mydata.placeID)
+//                }
+//                print(self.arrOfFinalPlaceId )
+//            }
+//        }
+//    }
+//    private func getOnlyData(){
+//        print(self.p_ssn!)
+//        print(self.cityId!)
+//        print(self.rowofBlood)
+//        print(self.numOfBags)
+//        ApiService.sharedService.getOneMsg(p_ssn: self.p_ssn, city_id: self.cityId, blood_id: self.rowofBlood, amount: self.numOfBags) { error, mydata in
+//            if let error = error {
+//                print(error.localizedDescription)
+//            }else if let mydata = mydata {
+//                self.oneMsg = mydata
+//                print(self.oneMsg!)
+//                self.final_place_id = self.oneMsg.placeID
+//                if self.final_place_id.isEmpty == false{
+//                    self.findingBloodError.isHidden = false
+//                    self.getPlaceNameWithId()
+////                    self.orderRequest(id: self.final_place_id)
+//                }
+//            }
+//            print(self.final_place_id ?? "error")
+//        }
+//    }
+//    private func getPlaceNameWithId(){
+//        ApiService.sharedService.getAllBloodInfo { error, blood in
+//            if let error = error {
+//                print(error.localizedDescription)
+//            }else if let blood = blood {
+//                for blood in blood {
+//                    if self.final_place_id == blood.hospital_id{
+//                        self.HospitalName = blood.hospital_name
+//                        self.findingBloodError.text = "تم العثور علي فصيله دم من نوع \(self.bloodTypeTextField.text!) في \(blood.hospital_name)"
+//                        print(self.HospitalName!)
+//                    }
+//                }
+//            }
+//        }
+//    }

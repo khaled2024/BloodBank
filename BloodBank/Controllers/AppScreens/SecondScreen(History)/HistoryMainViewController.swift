@@ -43,6 +43,8 @@ class HistoryMainViewController: UIViewController {
     let def = UserDefaults.standard
     var refreshControll = UIRefreshControl()
     let currentLang = Locale.current.languageCode
+    let reachability = try! Reachability()
+
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,27 +55,55 @@ class HistoryMainViewController: UIViewController {
         }
         refreshControll.tintColor = .systemPink
         refreshControll.addTarget(self, action: #selector(refreshTapped), for: .valueChanged)
-        //func
-        getAllBloodNames()
-        getPlaceNamesForPurchaseBlood()
-        getPlaceNameOfOrderVaccine()
-        myQuickRequests()
-        getPurchase_order()
-        getBlood()
-        getMyLastDonate()
+       
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        checkingInternetConnection()
         self.setUpDesign()
         self.HistorytableView.reloadData()
-        
     }
     override func viewDidLayoutSubviews() {
         self.HistorytableView.addSubview(refreshControll)
     }
     //MARK: - private func
-    //    emptyPage-2
-    //    someThinfWrong2
+    private func checkingInternetConnection(){
+        self.reachability.whenReachable = { reachability in
+            if reachability.connection == .wifi{
+                print("Reachable to wifi")
+                self.noDataImageView.isHidden = true
+                self.HistorytableView.isHidden = false
+                //func
+                self.getAllBloodNames()
+                self.getPlaceNamesForPurchaseBlood()
+                self.getPlaceNameOfOrderVaccine()
+                self.myQuickRequests()
+                self.getPurchase_order()
+                self.getBlood()
+                self.getMyLastDonate()
+            }else{
+                print("Not Reachable to wifi")
+                self.noDataImageView.isHidden = false
+                self.HistorytableView.isHidden = true
+            }
+        }
+        self.reachability.whenUnreachable = { _ in
+            print("not reachable")
+            self.showAlertWithSettingBtn(title:"No Internet".Localized(), message: "Error Connection".Localized())
+            self.noDataImageView.isHidden = false
+            self.HistorytableView.isHidden = true
+            self.arrOfQuickRequest = []
+            self.arrOfPrivateQuickRequest = []
+            self.arrOfPrivateVaccine = []
+            self.arrOfPrivateDonations = []
+            self.arrOfPrivatePurchaseOrder = []
+        }
+        do {
+            try reachability.startNotifier()
+        } catch  {
+            print("Unreachable to startNotifier")
+        }
+    }
     @objc func refreshTapped(){
         myQuickRequests()
         getAllBloodNames()
@@ -81,7 +111,8 @@ class HistoryMainViewController: UIViewController {
         getPlaceNameOfOrderVaccine()
         getPurchase_order()
         self.HistorytableView.reloadData()
-        refreshControll.endRefreshing()
+        self.refreshControll.endRefreshing()
+
     }
     private func setUpDesign(){
         if currentLang == "en"{
@@ -317,7 +348,6 @@ class HistoryMainViewController: UIViewController {
                 }
             }
         }
-        
     }
     //get bloodType
     private func getBlood(){
@@ -363,7 +393,6 @@ class HistoryMainViewController: UIViewController {
             let cell = HistorytableView.dequeueReusableCell(withIdentifier: "AcceptHistoryVaccineCell")as! AcceptHistoryVaccineCell
             
             cell.configure(vaccineName: vaccineName, vaccineAmount: "\(arrOfPrivateVaccine[indexPath.row].amount) كيس دم", timeOrderVaccine: arrOfPrivateVaccine[indexPath.row].time, placeOfOrder:self.dicOfPlaceNamesOfVaccine[self.arrOfPrivateVaccine[indexPath.row].delivered_place]!)
-            
             //            let cell = HistorytableView.dequeueReusableCell(withIdentifier: "HistoryVaccineCell")as! HistoryVaccineCell
             //            cell.configure(vaccineName: vaccineName, vaccineAmount: "\(arrOfPrivateVaccine[indexPath.row].amount) كيس دم", timeOrderVaccine: arrOfPrivateVaccine[indexPath.row].time, placeOfOrder: self.placeName)
             return cell

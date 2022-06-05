@@ -187,8 +187,11 @@ extension CoronaStatsViewController: UIPickerViewDelegate, UIPickerViewDataSourc
         return countryArr.count
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.setCountryData(row)
-        
+        if countryArr.count == 0 {
+            showNormalAlert(title: "لا يمكن الاتصال بالسيرفر", message: "لا يوجد بيانات لعرضها")
+        }else{
+            self.setCountryData(row)
+        }
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return countryArr[row]

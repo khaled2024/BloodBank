@@ -50,7 +50,7 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
     @IBOutlet weak var requestImage: UIImageView!
     @IBOutlet weak var educateImage: UIImageView!
     let def = UserDefaults.standard
-
+    
     //MARK: - Variables
     var hamburgerViewController: HamburgerViewController?
     var slideIsClicked: Bool = false
@@ -63,7 +63,6 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
         testView.isUserInteractionEnabled = false
         self.testView.layer.opacity = 1
         self.animateScalling()
-        
     }
     override func viewDidLayoutSubviews() {
         animateImages()
@@ -79,11 +78,11 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
         setUpLocalized()
         mainView.semanticContentAttribute = .forceLeftToRight
         self.nameOfDonorLbl.text = "\(userInfo![1]) \(userInfo![2])"
-//        testView.semanticContentAttribute = .forceLeftToRight
-//        humbergerView.semanticContentAttribute = .forceLeftToRight
-//        backViewForHumburger.semanticContentAttribute = .forceLeftToRight
-//        scrollView.semanticContentAttribute = .forceLeftToRight
         
+        //        testView.semanticContentAttribute = .forceLeftToRight
+        //        humbergerView.semanticContentAttribute = .forceLeftToRight
+        //        backViewForHumburger.semanticContentAttribute = .forceLeftToRight
+        //        scrollView.semanticContentAttribute = .forceLeftToRight
     }
     
     //MARK: -  private functions
@@ -165,6 +164,20 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
             }
         }
     }
+    private func setUserNameInSlideMenu(){
+        if let userNameAndImage = UserDefaults.standard.object(forKey: "userNameAndImage")as? [String]{
+            if userNameAndImage[0] != userInfo![1] && userNameAndImage[1] != userInfo![2] {
+                self.nameOfDonorLbl.text = "\(userInfo![1]) \(userInfo![2])"
+                self.hamburgerViewController?.donorNameLbl.text = "\(userInfo![1]) \(userInfo![2])"
+                print("\(userInfo![1]) \(userInfo![2])")
+            }else{
+                self.nameOfDonorLbl.text = "\(userNameAndImage[0]) \(userNameAndImage[1])"
+                self.hamburgerViewController?.donorNameLbl.text = "\(userNameAndImage[0]) \(userNameAndImage[1])"
+                print("\(userNameAndImage[0]) \(userNameAndImage[1])")
+            }
+            self.hamburgerViewController?.setProfileImage(userGender: userNameAndImage[2])
+        }
+    }
     func backViewForHumburgerObacity() {
         self.backViewForHumburger.layer.opacity = 1
         self.scrollView.layer.opacity = 1
@@ -185,13 +198,7 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
                 self.testView.layer.opacity = 0.60
                 self.isHamburgerMenuShown = true
                 self.slideIsClicked = true
-                if let userNameAndImage = UserDefaults.standard.object(forKey: "userNameAndImage")as? [String]{
-                    self.hamburgerViewController?.donorNameLbl.text = "\(userNameAndImage[0]) \(userNameAndImage[1])"
-                    print(userNameAndImage[0])
-                    print(userNameAndImage[1])
-                    print(userNameAndImage[2])
-                    self.hamburgerViewController?.setProfileImage(userGender: userNameAndImage[2])
-                }
+                self.setUserNameInSlideMenu()
             }
         }
     }
@@ -294,9 +301,7 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
             self.scrollView.layer.opacity = 1
             self.backViewForHumburger.layer.opacity = 1
         }
-        
     }
-
     @IBAction func bookingAppintment(_ sender: UIButton) {
         self.requestVaccine()
         

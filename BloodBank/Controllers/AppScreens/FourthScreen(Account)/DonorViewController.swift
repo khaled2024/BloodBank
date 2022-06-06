@@ -68,6 +68,9 @@ class DonorViewController: UIViewController {
     var arrOfCity: [CityData] = [CityData]()
     var dicOfCity :[String:String] = [:]
     var myDicOfCity :[String:String] = [:]
+    var oldFname: String!
+    var oldLName: String!
+    var oldGender: String!
     
     //MARK: - lifeCycles
     override func viewDidLoad() {
@@ -85,6 +88,11 @@ class DonorViewController: UIViewController {
         setUpDesign()
         setProfileImage()
         localized()
+        self.oldFname = self.donorNameTF.text ?? ""
+        self.oldLName = self.familyNameTF.text ?? ""
+        self.oldGender = self.genderTF.text ?? ""
+        print(oldFname! , oldLName! , oldGender!)
+        
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -360,8 +368,11 @@ class DonorViewController: UIViewController {
             self.addressLbl.text = "\(self.gavernrateTF.text!)/\(self.cityTF.text!)"
             setProfileImage()
             self.passwordTF.isSecureTextEntry = true
-//            self.setDataOfUser()
-              UserDefaults.standard.set([donorNameTF.text , familyNameTF.text , genderTF.text], forKey: "userNameAndImage")
+            if oldFname != self.donorNameTF.text || oldLName != self.familyNameTF.text || genderTF.text != oldGender{
+                UserDefaults.standard.set([donorNameTF.text , familyNameTF.text , genderTF.text], forKey: "userNameAndImage")
+            }else{
+                print("same textFields")
+            }
             if passwordTF.text == ""{
                 self.updateUserData()
                 passwordTF.text = ""

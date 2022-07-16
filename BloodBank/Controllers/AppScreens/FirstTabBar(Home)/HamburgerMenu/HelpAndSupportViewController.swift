@@ -10,7 +10,6 @@ import MessageUI
 import Lottie
 
 
-
 class HelpAndSupportViewController: UIViewController {
     @IBOutlet weak var emailSupportBtn: UIButton!
     @IBOutlet weak var animationView: AnimationView!
@@ -46,7 +45,7 @@ class HelpAndSupportViewController: UIViewController {
         }
         let composer = MFMailComposeViewController()
         composer.mailComposeDelegate = self
-        composer.setToRecipients(["anakhaled209@gmail.com"])
+        composer.setToRecipients(["info@blood-bank.life"])
         composer.setSubject("help!")
         composer.setMessageBody("hello world>:)", isHTML: false)
         present(composer, animated: true)

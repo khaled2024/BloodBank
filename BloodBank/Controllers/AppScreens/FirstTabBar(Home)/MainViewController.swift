@@ -148,6 +148,8 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
             }
         }
     }
+    
+    
     func hideHamburgerMenu() {
         UIView.animate(withDuration: 0.2) {
             self.leading.constant = 5
@@ -164,6 +166,8 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
             }
         }
     }
+    
+    
     private func setUserNameInSlideMenu(){
         if let userNameAndImage = UserDefaults.standard.object(forKey: "userNameAndImage")as? [String]{
             if userNameAndImage[0] != userInfo![1] && userNameAndImage[1] != userInfo![2] {
@@ -217,6 +221,7 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
             }
         }
     }
+    // when user start touch the slide menu
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         if(isHamburgerMenuShown){
             if let touch = touches.first{
@@ -227,12 +232,12 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
                     diffrence = diffFromBeginPoint
                     self.testView.layer.opacity = Float(0.60+(0.60*diffFromBeginPoint/280))
                     self.backViewForHumburger.layer.opacity = Float(0.60+(0.60*diffFromBeginPoint/280))
-                    //print("diff is - \(diffFromBeginPoint)")
                     self.testView.isUserInteractionEnabled = false
                 }
             }
         }
     }
+    // when user end touch the slide menu
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if(isHamburgerMenuShown){
             if (diffrence < 140){
@@ -246,7 +251,6 @@ class MainViewController: UIViewController , HambburgerViewControllerDelegate, o
                     self.scrollView.layer.opacity = 1
                     self.backViewForHumburger.layer.opacity = 1
                     self.slideIsClicked = false
-                    
                 }
             }else{
                 UIView.animate(withDuration: 0.1) {

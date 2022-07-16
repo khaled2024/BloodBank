@@ -51,6 +51,6 @@ class RequestsTableViewCell: UITableViewCell {
         self.donorImage.load(urlString: donorImage)
     }
     
-    //MARK: - Actions
     
 }
+

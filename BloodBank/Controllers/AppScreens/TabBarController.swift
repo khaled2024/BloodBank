@@ -13,7 +13,7 @@ class TabBarController: UITabBarController {
     //MARK: - lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-       setUp()
+        setUp()
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -26,7 +26,7 @@ class TabBarController: UITabBarController {
         self.tabBarController?.tabBar.isHidden = false
         self.navigationController?.navigationBar.isHidden = false
         self.tabBar.unselectedItemTintColor = #colorLiteral(red: 0.4037812054, green: 0.4088639319, blue: 0.4087744653, alpha: 1)
-
+        
     }
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         self.SimpleAnnimationWhenSelectItem(item)

@@ -459,6 +459,60 @@ class ApiService{
             }
         }
     }
+    // buy vaccine with
+    
+//    func buyVaccine(vaccine_id: String, city_id: String, amount: String, p_ssn: String,completion: @escaping (_ error: Error? , _ mydata: msg?) -> Void){
+//        guard let url = URL(string: "\(URLS.buy_Vaccine)")else{return}
+//        var urlRequest = URLRequest(url: url)
+//        urlRequest.httpMethod = "POST"
+//        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+//        let body : [String:AnyHashable] = [
+//            "data":[
+//            "p_ssn":p_ssn,
+//            "city_id":city_id,
+//            "vaccine_id":vaccine_id,
+//            "amount":amount
+//        ]
+//    ]
+//        urlRequest.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
+//        let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+//            guard let data = data, error == nil else {return}
+//            do{
+//                let response = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
+//                print("success : \(response)")
+//            }catch{
+//                print(error)
+//            }
+//        }
+//        task.resume()
+//    }
+    func buyVaccine(vaccine_id: String, city_id: String, amount: String, p_ssn: String,email: String,completion: @escaping (_ error: Error? , _ mydata: [Msg]) -> Void){
+        let url = "\(URLS.buy_Vaccine)"
+        let body : [String:AnyHashable] = [
+            "data":[
+            "p_ssn":p_ssn,
+            "city_id":city_id,
+            "vaccine_id":vaccine_id,
+            "amount":amount,
+            "email": email
+        ]
+    ]
+        let header: HTTPHeaders = ["Content-Type": "application/json"]
+        AF.request("\(url)", method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).response {
+            response in
+            if let error = response.error {
+                completion(error, [])
+            }
+            if let data = response.data {
+                do{
+                    let myData = try JSONDecoder().decode(VaccineMsg.self, from: data).msg
+                    completion(nil, myData)
+                } catch let error {
+                    completion(error , [])
+                }
+            }
+        }
+    }
     //MARK: - quickRequests
     //all quick request
     func allQuickRequests(completion: @escaping (_ error: Error? , _ request: [QuickRequestData]?) -> Void){

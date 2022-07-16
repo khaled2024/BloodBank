@@ -10,10 +10,8 @@
 		0BF285CA90D39C621537FA03 /* Pods_BloodBank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB8F4C3B3A310575AD50AC30 /* Pods_BloodBank.framework */; };
 		EA01A0A727C96F4E00BDCC00 /* NotFitAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA01A0A627C96F4E00BDCC00 /* NotFitAppointmentViewController.swift */; };
 		EA01A0A927C96F6B00BDCC00 /* FitnessAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA01A0A827C96F6B00BDCC00 /* FitnessAppointmentViewController.swift */; };
-		EA01A0AB27C9774100BDCC00 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA01A0AA27C9774100BDCC00 /* Poppins-Regular.ttf */; };
 		EA01A0AF27C9777100BDCC00 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA01A0AE27C9777100BDCC00 /* Poppins-Bold.ttf */; };
 		EA01A0B127C9838700BDCC00 /* BookingAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA01A0B027C9838700BDCC00 /* BookingAppointmentViewController.swift */; };
-		EA01A0B327C984A600BDCC00 /* InformationCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA01A0B227C984A600BDCC00 /* InformationCenterViewController.swift */; };
 		EA064CAE27A4750600A06257 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA064CAD27A4750600A06257 /* MainViewController.swift */; };
 		EA0A078D282D93F2000C3EDF /* Available_Blood.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0A078C282D93F2000C3EDF /* Available_Blood.swift */; };
 		EA0A078F282DAD5B000C3EDF /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0A078E282DAD5B000C3EDF /* Data.swift */; };
@@ -56,6 +54,7 @@
 		EA4CA33A27F9D3F2003873DC /* YourStoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4CA33827F9D3F2003873DC /* YourStoryTableViewCell.swift */; };
 		EA4CA33B27F9D3F2003873DC /* YourStoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA4CA33927F9D3F2003873DC /* YourStoryTableViewCell.xib */; };
 		EA4CA34027F9E604003873DC /* FloatingBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4CA33F27F9E604003873DC /* FloatingBtn.swift */; };
+		EA5165692852DAAB0021775E /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA5165682852DAAB0021775E /* Poppins-Regular.ttf */; };
 		EA545C8F2808A7870009C6C7 /* VaccineCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA545C8E2808A7870009C6C7 /* VaccineCollectionViewController.swift */; };
 		EA545C922808C3FC0009C6C7 /* VaccineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA545C912808C3FC0009C6C7 /* VaccineCollectionViewCell.swift */; };
 		EA5972622821C36D0053DFD5 /* OrderVaccine.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5972612821C36D0053DFD5 /* OrderVaccine.swift */; };
@@ -117,12 +116,14 @@
 		EAC3745A282417C4001F28C8 /* PurchaseOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC37459282417C4001F28C8 /* PurchaseOrder.swift */; };
 		EAC3747E282456F3001F28C8 /* Sha1Encryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC3747D282456F3001F28C8 /* Sha1Encryption.swift */; };
 		EAC6436228099A1A00109D8D /* VaccineDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC6436128099A1A00109D8D /* VaccineDetailsViewController.swift */; };
+		EAC93EB2288249FA00669715 /* VaccineMsg.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC93EB1288249FA00669715 /* VaccineMsg.swift */; };
 		EACC012C27A41E4F00FFB92B /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC012B27A41E4F00FFB92B /* LoadingViewController.swift */; };
 		EACC012F27A4275700FFB92B /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC012E27A4275700FFB92B /* NavigationManager.swift */; };
 		EACC013127A42C4D00FFB92B /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC013027A42C4D00FFB92B /* StorageManager.swift */; };
 		EACC013C27A43A5A00FFB92B /* UserGradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC013927A43A5A00FFB92B /* UserGradientBackground.swift */; };
 		EACC013D27A43A5A00FFB92B /* UserCustomBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC013A27A43A5A00FFB92B /* UserCustomBtn.swift */; };
 		EACC013E27A43A5A00FFB92B /* UserCustomTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC013B27A43A5A00FFB92B /* UserCustomTF.swift */; };
+		EACFC555287EDB0B00F05A72 /* InformationCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACFC554287EDB0B00F05A72 /* InformationCenterViewController.swift */; };
 		EAD3834C27D7BF3B00E87893 /* PickDateTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD3834B27D7BF3B00E87893 /* PickDateTimeViewController.swift */; };
 		EAD3835027D806C300E87893 /* SheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD3834F27D806C300E87893 /* SheetViewController.swift */; };
 		EAD4B43C27F75CBC00C6924C /* AppBloodRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD4B43B27F75CBC00C6924C /* AppBloodRequestViewController.swift */; };
@@ -150,10 +151,8 @@
 		DB8F4C3B3A310575AD50AC30 /* Pods_BloodBank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BloodBank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA01A0A627C96F4E00BDCC00 /* NotFitAppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotFitAppointmentViewController.swift; sourceTree = "<group>"; };
 		EA01A0A827C96F6B00BDCC00 /* FitnessAppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessAppointmentViewController.swift; sourceTree = "<group>"; };
-		EA01A0AA27C9774100BDCC00 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-Regular.ttf"; path = "../../../../../Downloads/Poppins/Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		EA01A0AE27C9777100BDCC00 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		EA01A0B027C9838700BDCC00 /* BookingAppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingAppointmentViewController.swift; sourceTree = "<group>"; };
-		EA01A0B227C984A600BDCC00 /* InformationCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationCenterViewController.swift; sourceTree = "<group>"; };
 		EA064CAD27A4750600A06257 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		EA0A078C282D93F2000C3EDF /* Available_Blood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Available_Blood.swift; sourceTree = "<group>"; };
 		EA0A078E282DAD5B000C3EDF /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
@@ -196,6 +195,7 @@
 		EA4CA33827F9D3F2003873DC /* YourStoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourStoryTableViewCell.swift; sourceTree = "<group>"; };
 		EA4CA33927F9D3F2003873DC /* YourStoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YourStoryTableViewCell.xib; sourceTree = "<group>"; };
 		EA4CA33F27F9E604003873DC /* FloatingBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingBtn.swift; sourceTree = "<group>"; };
+		EA5165682852DAAB0021775E /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		EA545C8E2808A7870009C6C7 /* VaccineCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineCollectionViewController.swift; sourceTree = "<group>"; };
 		EA545C912808C3FC0009C6C7 /* VaccineCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineCollectionViewCell.swift; sourceTree = "<group>"; };
 		EA5972612821C36D0053DFD5 /* OrderVaccine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderVaccine.swift; sourceTree = "<group>"; };
@@ -262,12 +262,14 @@
 		EAC37459282417C4001F28C8 /* PurchaseOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseOrder.swift; sourceTree = "<group>"; };
 		EAC3747D282456F3001F28C8 /* Sha1Encryption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sha1Encryption.swift; sourceTree = "<group>"; };
 		EAC6436128099A1A00109D8D /* VaccineDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineDetailsViewController.swift; sourceTree = "<group>"; };
+		EAC93EB1288249FA00669715 /* VaccineMsg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineMsg.swift; sourceTree = "<group>"; };
 		EACC012B27A41E4F00FFB92B /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		EACC012E27A4275700FFB92B /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		EACC013027A42C4D00FFB92B /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		EACC013927A43A5A00FFB92B /* UserGradientBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserGradientBackground.swift; sourceTree = "<group>"; };
 		EACC013A27A43A5A00FFB92B /* UserCustomBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCustomBtn.swift; sourceTree = "<group>"; };
 		EACC013B27A43A5A00FFB92B /* UserCustomTF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCustomTF.swift; sourceTree = "<group>"; };
+		EACFC554287EDB0B00F05A72 /* InformationCenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationCenterViewController.swift; sourceTree = "<group>"; };
 		EAD3834B27D7BF3B00E87893 /* PickDateTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickDateTimeViewController.swift; sourceTree = "<group>"; };
 		EAD3834F27D806C300E87893 /* SheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetViewController.swift; sourceTree = "<group>"; };
 		EAD4B43B27F75CBC00C6924C /* AppBloodRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBloodRequestViewController.swift; sourceTree = "<group>"; };
@@ -326,7 +328,7 @@
 				EAC6436128099A1A00109D8D /* VaccineDetailsViewController.swift */,
 				EA4278A127B01F9C002D444A /* AppointmentViewController.swift */,
 				EA01A0A627C96F4E00BDCC00 /* NotFitAppointmentViewController.swift */,
-				EA01A0B227C984A600BDCC00 /* InformationCenterViewController.swift */,
+				EACFC554287EDB0B00F05A72 /* InformationCenterViewController.swift */,
 				EA01A0A827C96F6B00BDCC00 /* FitnessAppointmentViewController.swift */,
 			);
 			path = "Vaccine Requests";
@@ -349,7 +351,7 @@
 			children = (
 				EA6E702027C5C3CE00F1E76C /* Almarai-Regular.ttf */,
 				EAD669EE27C6393C006221A2 /* Almarai-Bold.ttf */,
-				EA01A0AA27C9774100BDCC00 /* Poppins-Regular.ttf */,
+				EA5165682852DAAB0021775E /* Poppins-Regular.ttf */,
 				EA17CD7B27FCFE4F00F356EE /* Almarai-ExtraBold.ttf */,
 				EA01A0AE27C9777100BDCC00 /* Poppins-Bold.ttf */,
 			);
@@ -564,13 +566,13 @@
 			children = (
 				EA91ED4A27CD0DD000F8D02A /* Supporting Files */,
 				EA45D3AF27E4E0DA0072E19C /* ApiService */,
-				EAC252DA276A2E9F0033F96F /* Model */,
 				EA92A0A127E89D5A0060C5C8 /* Locolaizable */,
 				EA09E71227A4C913009A0ED0 /* Fonts */,
 				EACC012D27A4272D00FFB92B /* Service */,
 				EAC252EA276A3A2B0033F96F /* Utilities */,
 				EAC252E3276A33320033F96F /* Extensions */,
 				EACC013F27A43A6600FFB92B /* Helper */,
+				EAC252DA276A2E9F0033F96F /* Model */,
 				EAC252DB276A2EAA0033F96F /* View */,
 				EAC252DC276A2EB40033F96F /* Controllers */,
 				EAC252E1276A2F780033F96F /* Resources */,
@@ -773,6 +775,7 @@
 				EA624302282C72B300C4B2CE /* Blood_info.swift */,
 				EA0A078C282D93F2000C3EDF /* Available_Blood.swift */,
 				EA0A078E282DAD5B000C3EDF /* Data.swift */,
+				EAC93EB1288249FA00669715 /* VaccineMsg.swift */,
 			);
 			path = ApiModels;
 			sourceTree = "<group>";
@@ -924,10 +927,10 @@
 				EA1F21C7280C73C200DE49F9 /* BloodOrderCell.xib in Resources */,
 				EA2AF7EE28102C0400ECCB55 /* VolunteersTableViewCell.xib in Resources */,
 				EA01A0AF27C9777100BDCC00 /* Poppins-Bold.ttf in Resources */,
+				EA5165692852DAAB0021775E /* Poppins-Regular.ttf in Resources */,
 				EA4CA33B27F9D3F2003873DC /* YourStoryTableViewCell.xib in Resources */,
 				EA1F21CD280C927C00DE49F9 /* LastDonateHistoryCell.xib in Resources */,
 				EA92A0A527E89D930060C5C8 /* Localizable.strings in Resources */,
-				EA01A0AB27C9774100BDCC00 /* Poppins-Regular.ttf in Resources */,
 				EA8C0F2D2831988D00723D37 /* LottieEmailSend.json in Resources */,
 				EADC3E3B282AB438009E1DCC /* AcceptHistoryVaccineCell.xib in Resources */,
 				EA6E702127C5C3CE00F1E76C /* Almarai-Regular.ttf in Resources */,
@@ -1037,6 +1040,7 @@
 				EAC252E7276A34BF0033F96F /* OnboardingSlide.swift in Sources */,
 				EA215C0027E80057005A9843 /* EducateDetailsViewController.swift in Sources */,
 				EA7403B9281C7F2D0068D677 /* privateRequestCell.swift in Sources */,
+				EAC93EB2288249FA00669715 /* VaccineMsg.swift in Sources */,
 				EAE3C90B27B12C6300F42D16 /* MapViewController.swift in Sources */,
 				EA45D3B327E4E0DA0072E19C /* RequestProtocol.swift in Sources */,
 				EA92A0AA27E89FFF0060C5C8 /* String+Localized.swift in Sources */,
@@ -1055,7 +1059,6 @@
 				EAD3835027D806C300E87893 /* SheetViewController.swift in Sources */,
 				EA8676D027A6C70A00E95283 /* HamburgerViewController.swift in Sources */,
 				EAA3C9D427DFB546007C5B47 /* SecondRequestBloodViewController.swift in Sources */,
-				EA01A0B327C984A600BDCC00 /* InformationCenterViewController.swift in Sources */,
 				EAC252DF276A2F250033F96F /* OnboardingViewController.swift in Sources */,
 				EA2A523827EA429300D92ED3 /* CoronaStatsViewController.swift in Sources */,
 				EAE16B632831554000D0772D /* AcceptOrderBloodCell.swift in Sources */,
@@ -1085,6 +1088,7 @@
 				EA01A0A927C96F6B00BDCC00 /* FitnessAppointmentViewController.swift in Sources */,
 				EA93304C2818E03B0043EE18 /* BloodType.swift in Sources */,
 				EAC252C9276A26F00033F96F /* SceneDelegate.swift in Sources */,
+				EACFC555287EDB0B00F05A72 /* InformationCenterViewController.swift in Sources */,
 				EA4CA34027F9E604003873DC /* FloatingBtn.swift in Sources */,
 				EA45BFAA27C5999200D56AEC /* EducateYourselfViewController.swift in Sources */,
 				EA6211E627EF829600301635 /* formatInt+Int.swift in Sources */,

@@ -24,11 +24,12 @@ class HistoryMainViewController: UIViewController {
     var timeOfLastDonate: String = ""
     var bloodTypeName = ""
     var bloodId = ""
-    
+    var testPlaceVaccine: [String] = []
     var arrOfTimesOfDonation: [String] = []
     var dicOfBloodTypes: [String:String] = [:]
     var dicOfPlaceNames: [String:String] = [:]
     var dicOfPlaceNamesOfVaccine: [String:String] = [:]
+    var arrOfNamesOfPlaces: [String] = []
     //quick request
     var arrOfQuickRequest: [QuickRequestData] = [QuickRequestData]()
     var arrOfPrivateQuickRequest: [QuickRequestData] = [QuickRequestData]()
@@ -65,6 +66,7 @@ class HistoryMainViewController: UIViewController {
     }
     override func viewDidLayoutSubviews() {
         self.HistorytableView.addSubview(refreshControll)
+        self.myQuickRequests()
     }
     //MARK: - private func
     private func checkingInternetConnection(){
@@ -77,6 +79,8 @@ class HistoryMainViewController: UIViewController {
                 self.getAllBloodNames()
                 self.getPlaceNamesForPurchaseBlood()
                 self.getPlaceNameOfOrderVaccine()
+                self.myVaccine()
+                self.getPlaceNameVaccine()
                 self.myQuickRequests()
                 self.getPurchase_order()
                 self.getBlood()
@@ -105,18 +109,26 @@ class HistoryMainViewController: UIViewController {
         }
     }
     @objc func refreshTapped(){
+        self.testPlaceVaccine.removeAll()
+        
         myQuickRequests()
         getAllBloodNames()
         getPlaceNamesForPurchaseBlood()
         getPlaceNameOfOrderVaccine()
+        getPlaceNameVaccine()
         getPurchase_order()
+        
+        self.myVaccine()
+        self.getVaccineInfo()
+        
+       
         self.HistorytableView.reloadData()
         self.refreshControll.endRefreshing()
 
     }
     private func setUpDesign(){
         if currentLang == "en"{
-            segmentControll.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Almarai", size: 9)!], for: .normal)
+            segmentControll.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Almarai-Bold", size: 9)!], for: .normal)
         }else{
             segmentControll.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Almarai-Bold", size: 14)!], for: .normal)
         }
@@ -220,6 +232,7 @@ class HistoryMainViewController: UIViewController {
                     }
                 }
                 self.myVaccine()
+                self.getPlaceNameVaccine()
                 self.getPlaceNameOfOrderVaccine()
                 self.getVaccineInfo()
             }
@@ -238,15 +251,17 @@ class HistoryMainViewController: UIViewController {
                     for orderVaccine in self.arrOfVaccine {
                         if  self.p_ssn == orderVaccine.p_ssn{
                             self.arrOfPrivateVaccine.append(orderVaccine)
-                            print("my vaccine arr:\(self.arrOfPrivateVaccine)")
                             self.vaccineId = orderVaccine.vaccine_id
                             self.placeId = orderVaccine.delivered_place
-                            print("\(self.vaccineId ),\( self.placeId)")
+                            print("vaccine id : \(self.vaccineId ),place id :\( self.placeId)")
+                            self.testPlaceVaccine.append(orderVaccine.delivered_place)
                         }else{
-                            //    self.showNormalAlert(title: "Sorry", message: "There are no vaccination requests :(")
+                          print("failed to get private vaccine arr")
                         }
-                        self.HistorytableView.reloadData()
                     }
+                    print("my vaccine arr:\(self.arrOfPrivateVaccine)")
+                    self.HistorytableView.reloadData()
+                    print("test arr : \(self.testPlaceVaccine)")
                 }
             }
         }
@@ -288,10 +303,29 @@ class HistoryMainViewController: UIViewController {
                         }
                     }
                     print("dicOfPlaceNamesOfVaccine: \(self.dicOfPlaceNamesOfVaccine)")
+                   
                 }
             }
         }
     }
+    private func getPlaceNameVaccine(){
+        ApiService.sharedService.getAllVaccines { error, vaccine in
+            if let error = error {
+                print(error)
+            }else if let vaccine = vaccine {
+                for vaccine in vaccine {
+                    for placeId in self.testPlaceVaccine{
+                        if placeId == vaccine.vaccine_place_id{
+                            self.arrOfNamesOfPlaces.append(vaccine.hospital_name)
+                        }
+                    }
+                    break
+                }
+                print("arr of hospitals names : \(self.arrOfNamesOfPlaces)")
+            }
+        }
+    }
+    // blood
     private func getPlaceNamesForPurchaseBlood(){
         ApiService.sharedService.getAllBloodInfo { error, blood in
             if let error = error {
@@ -319,7 +353,7 @@ class HistoryMainViewController: UIViewController {
                             
                             print(self.timeOfLastDonate)
                         }else{
-                            // self.showNormalAlert(title: "Sorry", message: "You have never donated blood before :(")
+                           
                         }
                         self.HistorytableView.reloadData()
                     }
@@ -390,11 +424,9 @@ class HistoryMainViewController: UIViewController {
             cell.privateRequestId = arrOfPrivateQuickRequest[indexPath.row].id
             return cell
         case 1:
-            let cell = HistorytableView.dequeueReusableCell(withIdentifier: "AcceptHistoryVaccineCell")as! AcceptHistoryVaccineCell
+            let cell = HistorytableView.dequeueReusableCell(withIdentifier: "HistoryVaccineCell")as! HistoryVaccineCell
+            cell.configure(vaccineName: vaccineName, vaccineAmount: "\(arrOfPrivateVaccine[indexPath.row].amount) كيس دم", timeOrderVaccine: arrOfPrivateVaccine[indexPath.row].time, placeOfOrder: self.dicOfPlaceNamesOfVaccine[self.arrOfPrivateVaccine[indexPath.row].delivered_place]  ?? self.arrOfNamesOfPlaces[indexPath.row])
             
-            cell.configure(vaccineName: vaccineName, vaccineAmount: "\(arrOfPrivateVaccine[indexPath.row].amount) كيس دم", timeOrderVaccine: arrOfPrivateVaccine[indexPath.row].time, placeOfOrder:self.dicOfPlaceNamesOfVaccine[self.arrOfPrivateVaccine[indexPath.row].delivered_place]!)
-            //            let cell = HistorytableView.dequeueReusableCell(withIdentifier: "HistoryVaccineCell")as! HistoryVaccineCell
-            //            cell.configure(vaccineName: vaccineName, vaccineAmount: "\(arrOfPrivateVaccine[indexPath.row].amount) كيس دم", timeOrderVaccine: arrOfPrivateVaccine[indexPath.row].time, placeOfOrder: self.placeName)
             return cell
         case 2:
             let cell = HistorytableView.dequeueReusableCell(withIdentifier: "AcceptOrderBloodCell")as! AcceptOrderBloodCell
@@ -453,7 +485,6 @@ extension HistoryMainViewController: UITableViewDelegate,UITableViewDataSource{
         }else{
             tableView.deselectRow(at: indexPath, animated: true)
         }
-        
         
     }
     //for animations

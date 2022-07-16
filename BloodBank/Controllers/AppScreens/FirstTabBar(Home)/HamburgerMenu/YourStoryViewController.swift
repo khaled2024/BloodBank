@@ -39,7 +39,7 @@ class YourStoryViewController: UIViewController {
         if let user = def.object(forKey: "userInfo")as? [String]{
             self.p_ssn = user[0]
         }
-               
+        
         self.getAllStory()
         self.getPrivateStory()
         setUp()
@@ -134,7 +134,7 @@ class YourStoryViewController: UIViewController {
         storySegmentControll.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Almarai-Bold", size: 15)!], for: .normal)
         storySegmentControll.setTitle("General".Localized(), forSegmentAt: 0)
         storySegmentControll.setTitle("Private".Localized(), forSegmentAt: 1)
-
+        
         customView.customView(theView: self.addStoryView)
         customView.customView(theView: self.updateStoryView)
         self.noStoryToShown.isHidden = true
@@ -200,7 +200,7 @@ class YourStoryViewController: UIViewController {
             
         case 1:
             if self.arrOfPrivateStory.count == 0{
-//                self.showNormalAlert(title: "للاسف", message: "انت لم تكتب قصه لك حتي الآن ، اضغط علي انشاء لتتمكن من انشاء قصه ")
+                //                self.showNormalAlert(title: "للاسف", message: "انت لم تكتب قصه لك حتي الآن ، اضغط علي انشاء لتتمكن من انشاء قصه ")
                 self.tableView.isHidden = true
                 self.noStoryToShown.isHidden = false
                 self.noDataImage.isHidden = false
@@ -282,12 +282,12 @@ extension YourStoryViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if  self.segmentSender == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "YourStoryTableViewCell", for: indexPath)as! YourStoryTableViewCell
-            cell.config(image: UIImage(named: "donorLogo")!, donorName: "\(storiesArr[indexPath.row].first_name) \(storiesArr[indexPath.row].last_name)", description: storiesArr[indexPath.row].content)
+            cell.config(image: UIImage(named: "blood-donation")!, donorName: "\(storiesArr[indexPath.row].first_name) \(storiesArr[indexPath.row].last_name)", description: storiesArr[indexPath.row].content)
             cell.selectionStyle = .none
             return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "YourStoryTableViewCell", for: indexPath)as! YourStoryTableViewCell
-            cell.config(image: UIImage(named: "donorLogo")!, donorName: "\(arrOfPrivateStory[indexPath.row].first_name) \(arrOfPrivateStory[indexPath.row].last_name)", description: arrOfPrivateStory[indexPath.row].content)
+            cell.config(image: UIImage(named: "blood-donation")!, donorName: "\(arrOfPrivateStory[indexPath.row].first_name) \(arrOfPrivateStory[indexPath.row].last_name)", description: arrOfPrivateStory[indexPath.row].content)
             cell.selectionStyle = .none
             return cell
         }

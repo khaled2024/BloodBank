@@ -28,7 +28,6 @@ class SettingViewController: UIViewController {
     }
     
     //MARK: - Private func
-    
     private func setUpDesign(){
         navBar.setNavBar(myView: self, title: "Setting".Localized(), viewController: view, navBarColor: UIColor.navBarColor, navBarTintColor: UIColor.navBarTintColor, forgroundTitle: UIColor.forgroundTitle, bacgroundView: UIColor.backgroundView)
         self.activateNotificationLbl.text = "Activate Notification".Localized()
@@ -78,9 +77,9 @@ class SettingViewController: UIViewController {
     }
     private func scaduleNotification(){
         let content = UNMutableNotificationContent()
-        content.title = "Blood Bank"
-        content.subtitle = "Blood Bank Subtitle"
-        content.body = "التطبيق بحاجه اليك لكي تكون بطلاً في حياه شخص ما"
+        content.title = "Blood Bank".Localized()
+        content.subtitle = ""
+        content.body = "notificationBody".Localized()
         content.sound = .default
         content.badge = 1
         
@@ -111,7 +110,7 @@ class SettingViewController: UIViewController {
             
         }
     }
-   
+    
     @IBAction func changeLangBtnTapped(_ sender: UIButton) {
         // فيه مشكله هنا عشان في اسكرينات او فيووز هتبقي فيها ايرور ف اللغه العربي ف سرش عليها (ازاي اعمل لوكاليزيشن بس فيه استثنائات ف التطبيق اسكرينات كده)
         let currentLang = Locale.current.languageCode
@@ -119,7 +118,7 @@ class SettingViewController: UIViewController {
         let newLang = currentLang == "en" ? "ar" : "en"
         UserDefaults.standard.setValue([newLang], forKey: "AppleLanguages")
         print(newLang)
-        self.showAlertWithCancleBtn(title: "Are you sure you want to change the Language of the Application to (\(newLang))", message: "", style: .default) { _
+        self.showAlertWithCancleBtn(title: "Are you sure you want to change the Language of the Application to (\(newLang.uppercased()))", message: "", style: .default) { _
             in
             exit(0)
         }

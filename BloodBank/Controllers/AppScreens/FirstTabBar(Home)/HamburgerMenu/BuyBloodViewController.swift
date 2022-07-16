@@ -99,8 +99,6 @@ class BuyBloodViewController: UIViewController{
         self.getBlood()
         self.BloodInfo()
         searchInOtherCities()
-        //        searchInOtherGov()
-        //        self.orderRequest(id: "1")
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -135,7 +133,6 @@ class BuyBloodViewController: UIViewController{
         self.bloodPriceLbl.text = "Price Of Bags".Localized()
         self.totalPriceLbl.text = "Total Price".Localized()
         self.bloodTypeTextField.placeholder = "BloodTypePlaceHolder".Localized()
-        //        orderRequestBtn.setTitle("Send Order".Localized(), for: .normal)
         orderRequestBtn.customTitleLbl(btn: orderRequestBtn, text: "Send Order", fontSize: 15)
     }
     private func setUp(){
@@ -224,6 +221,9 @@ class BuyBloodViewController: UIViewController{
             self.checkForAvailableBloodInHospital(idOfHospital: self.idOfHospital)
         }
     }
+    
+    
+    
     private func checkForAvailableBloodInHospital(idOfHospital: String){
         ApiService.sharedService.getAllBloodInfo { error, blood in
             if let error = error {
@@ -233,8 +233,6 @@ class BuyBloodViewController: UIViewController{
                     if idOfHospital == blood.hospital_id && self.rowofBlood == blood.blood_type_id && self.numOfBags < blood.amount{
                         self.finalIdOfHospial = idOfHospital
                         print("my final id of hospital : \(self.finalIdOfHospial!)")
-                        
-                        
                         if self.currentLang == "en"{
                             self.showNormalAlert(title: "", message:"A blood type (\(self.bloodTypeTextField.text!)) was found in (\(blood.hospital_name))" )
                         }else{

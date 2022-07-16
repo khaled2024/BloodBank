@@ -31,5 +31,5 @@ class HelpViewController: UIViewController {
         gradientBackground.setGradientBackground(colorTop:#colorLiteral(red: 0.9424516559, green: 0.3613950312, blue: 0.3825939894, alpha: 1) , colorBottom: #colorLiteral(red: 1, green: 0.5537948608, blue: 0.5569084883, alpha: 1), view: self.view)
     }
     
-
+    
 }

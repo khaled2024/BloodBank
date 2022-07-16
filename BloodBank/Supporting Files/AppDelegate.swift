@@ -21,12 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
         //root
         // here when we wanna to reset the onboarding screen again
-//        storageManager.resetOnboardingSeen()
+        //        storageManager.resetOnboardingSeen()
         setRoot()
-
+        
         UNUserNotificationCenter.current().delegate = self
         
-      
+        
         
         return true
     }
@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
-
+    
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
     }
     
@@ -43,21 +43,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if let isLoggedIn = def.object(forKey: "isLoggedIn")as? Bool{
             if isLoggedIn {
-//                TabBarScreen()
+                //                TabBarScreen()
                 navigationManager.show(screen: .tapBarController, inController: TabBarController())
             }else {
                 goTOHomeScreen()
             }
         }
     }
-     func TabBarScreen(){
+    func TabBarScreen(){
         let sb = UIStoryboard(name:"Main", bundle: nil)
         let tabBarScreen = sb.instantiateViewController(withIdentifier: "TabBarController")as! TabBarController
         let navController = UINavigationController(rootViewController: tabBarScreen)
         self.window?.rootViewController = navController
-         
+        
     }
-   func goTOHomeScreen(){
+    func goTOHomeScreen(){
         let sb = UIStoryboard(name:"Main", bundle: nil)
         let HomeNC = sb.instantiateViewController(withIdentifier: "HomeNC") as! HomeNCViewController
         self.window?.rootViewController = HomeNC

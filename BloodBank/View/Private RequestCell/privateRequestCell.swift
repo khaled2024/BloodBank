@@ -55,16 +55,5 @@ class privateRequestCell: UITableViewCell {
         self.donorImage.load(urlString: donorImage)
         
     }
-//    func addRequestToFavorite(){
-//        ApiService.sharedService.savedBloodRequest(p_ssn: self.p_ssn, request_id: self.privateRequestId)
-//        print("private request id : \(privateRequestId)")
-//
-//    }
   
-    //MARK: - action
-//    @IBAction func bookMarkRequest(_ sender: UIButton) {
-//        checkRequestId()
-////        self.bookMarkImage.image = UIImage(systemName: "bookmark.fill")
-//    }
-    
 }

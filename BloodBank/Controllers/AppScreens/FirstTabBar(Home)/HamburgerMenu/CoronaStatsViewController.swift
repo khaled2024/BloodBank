@@ -76,10 +76,10 @@ class CoronaStatsViewController: UIViewController{
     
     //MARK: - lifeCycles
     override  func viewDidLoad() {
-            setUpPicker()
-            self.getCoronaAnalysis()
-            self.getCountryStats()
-      
+        setUpPicker()
+        self.getCoronaAnalysis()
+        self.getCountryStats()
+        
         
     }
     override func viewWillAppear(_ animated: Bool) {

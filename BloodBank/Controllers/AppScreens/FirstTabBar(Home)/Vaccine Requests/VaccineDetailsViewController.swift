@@ -20,6 +20,7 @@ class VaccineDetailsViewController: UIViewController, UISheetPresentationControl
     @IBOutlet weak var totalPrice: UITextField!
     @IBOutlet weak var backageAmount: UITextField!
     @IBOutlet weak var backagePrice: UITextField!
+    @IBOutlet weak var availableVaccinePlacesTF: UITextField!
     //views
     @IBOutlet weak var buyVaccineView: UIView!
     @IBOutlet weak var vaccineCountryView: UIView!
@@ -35,14 +36,20 @@ class VaccineDetailsViewController: UIViewController, UISheetPresentationControl
     var amountNum: Int!
     var price: Int!
     let backageAmountPicker = UIPickerView()
+    let availableVaccinePlacePicker = UIPickerView()
     let def = UserDefaults.standard
     var cityId: String!
     var p_ssn: String!
+    var email: String!
     var vaccinePlaceId: String!
     var delivered_Vaccine_Place: String!
     var vaccineIdSelected: String!
     var arrOfPlaces: [placesData] = [placesData]()
     var arrOfavailableVaccines: [AvailableVaccineData] = [AvailableVaccineData]()
+    var arrOfVaccinePlacesData: [String] = []
+    var dicOfVaccinePlaces: [String:String] = [:]
+    var arrOfAvailableVaccineNames: [String] = []
+    var indexOfPlaceId: String?
     override var sheetPresentationController: UISheetPresentationController{
         presentationController as! UISheetPresentationController
     }
@@ -79,7 +86,7 @@ class VaccineDetailsViewController: UIViewController, UISheetPresentationControl
     }()
     //MARK: - LifeCycle
     private func dismissVC(){
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
             self.dismiss(animated: true)
         }
     }
@@ -87,10 +94,15 @@ class VaccineDetailsViewController: UIViewController, UISheetPresentationControl
         super.viewDidLoad()
         setUpSheetPresentation()
         setUpData()
-       
+        
         self.backageAmount.inputView = backageAmountPicker
+        self.availableVaccinePlacesTF.inputView = availableVaccinePlacePicker
+        backageAmountPicker.tag = 0
+        availableVaccinePlacePicker.tag = 1
         backageAmountPicker.delegate = self
         backageAmountPicker.dataSource = self
+        availableVaccinePlacePicker.delegate = self
+        availableVaccinePlacePicker.dataSource = self
         self.amountNum = Int(backageAmount.text!)
         print(amountNum!)
         
@@ -99,6 +111,8 @@ class VaccineDetailsViewController: UIViewController, UISheetPresentationControl
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setUpViews()
+        self.sendOrderVaccineBtn.isHidden = false
+        self.availableVaccinePlacesTF.isHidden = true
         backagePrice.isUserInteractionEnabled = false
         totalPrice.isUserInteractionEnabled = false
         sendOrderVaccineBtn.customTitleLbl(btn: sendOrderVaccineBtn, text: "ارسال الطلب", fontSize: 17)
@@ -106,27 +120,29 @@ class VaccineDetailsViewController: UIViewController, UISheetPresentationControl
     }
     //MARK: - Functions
     private func setUpData(){
-        let amount = myVaccine.amount
-        let amountInt = Int(amount)
+        //        let amount = myVaccine.amount
+        //        let amountInt = Int(amount)
         let price = myVaccine.price
         self.price = Int(price)
-        let priceInt = Int(price)
-        let total = amountInt! * priceInt!
+        //        let priceInt = Int(price)
+        //        let total = amountInt! * priceInt!
         self.vaccineBgImage.image = UIImage(named: "vaccineImage\(randomNum!)")
         self.vaccineNameLbl.text = myVaccine.scientific_name
         self.tradeVaccineNameLbl.text = myVaccine.trade_name
         self.vaccineOriginLbl.text = myVaccine.hospital_name // vaciinee place_id
         self.countryVaccineLbl.text = myVaccine.country_name
         self.backagePrice.text = String(myVaccine.price)
-        self.totalPrice.text = String(total)
-        self.backageAmount.text = myVaccine.amount
+        self.totalPrice.text = "0"
+        self.backageAmount.placeholder = "please select number of bakages"
+        self.backageAmount.text = "0"
         self.vaccineIdSelected = myVaccine.vaccine_id
         print(" vaccine id : \(vaccineIdSelected ?? "")")
         if let user = def.object(forKey: "userInfo")as? [String]{
             print("Order sent succesfully.")
             self.cityId = user[12]
             self.p_ssn = user[0]
-            print("cityId:\(self.cityId!) , p_ssn: \(self.p_ssn!)")
+            self.email = user[3]
+            print("cityId:\(self.cityId!) , p_ssn: \(self.p_ssn!) , email : \(self.email!)")
         }
         self.getDeliveredPlace()
         
@@ -148,6 +164,7 @@ class VaccineDetailsViewController: UIViewController, UISheetPresentationControl
             }
             
         }
+        
         ApiService.sharedService.availableVaccine { error, availablevaccine in
             if let error = error {
                 print(error.localizedDescription)
@@ -164,6 +181,8 @@ class VaccineDetailsViewController: UIViewController, UISheetPresentationControl
             }
         }
     }
+    
+    
     private func sendVaccineOrder()-> Bool{
         if let vaccinePlace = self.delivered_Vaccine_Place , !vaccinePlace.isEmpty{
             ApiService.sharedService.addOrderVaccine(vaccineID: self.myVaccine.id, delivered_place: vaccinePlace, amount: String(self.amountNum), p_ssn: self.p_ssn)
@@ -211,7 +230,7 @@ class VaccineDetailsViewController: UIViewController, UISheetPresentationControl
             }
         }
     }
-   
+    
     private func setUpViews(){
         customView.vaccineCustomView(theView: VaccineNameView)
         customView.vaccineCustomView(theView: vaccineTradeNameView)
@@ -238,39 +257,106 @@ class VaccineDetailsViewController: UIViewController, UISheetPresentationControl
     }
     private func orderVaccine(){
         if isVaccineIsAvailable(){
-            UIView.animate(withDuration: 0.4) {
-                self.buyVaccineView.layer.transform = CATransform3DMakeScale(0.9, 0.9, 1)
-            } completion: { completed in
-                if completed{
-                    UIView.animate(withDuration: 0.4){
-                        self.buyVaccineView.layer.transform = CATransform3DMakeScale(1, 1, 1)
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                            self.vaccineAvailable.showBulletin(above: self)
-                        }
-                    }
-                }
-            }
+            self.vaccineAvailableAnimation()
         }else{
-            UIView.animate(withDuration: 0.4) {
-                self.buyVaccineView.layer.transform = CATransform3DMakeScale(0.9, 0.9, 1)
-            } completion: { completed in
-                if completed{
-                    UIView.animate(withDuration: 0.4){
-                        self.buyVaccineView.layer.transform = CATransform3DMakeScale(1, 1, 1)
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                            self.vaccineNotAvailable.showBulletin(above: self)
-                        }
+            self.vaccineNotAvailableAnimation()
+        }
+    }
+    private func vaccineAvailableAnimation(){
+        UIView.animate(withDuration: 0.4) {
+            self.buyVaccineView.layer.transform = CATransform3DMakeScale(0.9, 0.9, 1)
+        } completion: { completed in
+            if completed{
+                UIView.animate(withDuration: 0.4){
+                    self.buyVaccineView.layer.transform = CATransform3DMakeScale(1, 1, 1)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                        self.vaccineAvailable.showBulletin(above: self)
                     }
                 }
             }
         }
+    }
+    private func vaccineNotAvailableAnimation(){
+        UIView.animate(withDuration: 0.4) {
+            self.buyVaccineView.layer.transform = CATransform3DMakeScale(0.9, 0.9, 1)
+        } completion: { completed in
+            if completed{
+                UIView.animate(withDuration: 0.4){
+                    self.buyVaccineView.layer.transform = CATransform3DMakeScale(1, 1, 1)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                        self.vaccineNotAvailable.showBulletin(above: self)
+                    }
+                }
+            }
+        }
+    }
+    private func getVaccinePlaceName(vaccinePlaceId: String){
+        ApiService.sharedService.getAllVaccines { error, vaccine in
+            if let error = error {
+                print(error.localizedDescription)
+            }else if let vaccine = vaccine {
+                for place in vaccine{
+                    if vaccinePlaceId == place.vaccine_place_id{
+                        print("vaccine place name : \(place.hospital_name)")
+                        self.arrOfAvailableVaccineNames.append(place.hospital_name)
+                        self.dicOfVaccinePlaces[place.hospital_name] = place.vaccine_place_id
+                        break
+                    }else{
+                        print("error to get place name")
+                    }
+                }
+                print("the arr of vaccine places name : \(self.arrOfAvailableVaccineNames)")
+                print("the dic of vaccine places name & id : \(self.dicOfVaccinePlaces)")
+            }
+        }
+    }
+    private func buyVaccine(){
+        print("\(self.vaccineIdSelected!) \(self.p_ssn!) \(self.amountNum!) \(self.cityId!)")
+        let finalAmount = String(self.amountNum)
+        ApiService.sharedService.buyVaccine(vaccine_id: self.vaccineIdSelected, city_id: self.cityId, amount: finalAmount, p_ssn: self.p_ssn, email: self.email) { error, mydata in
+            if let error = error {
+                print("Error : \(error)")
+                self.vaccineNotAvailableAnimation()
+            }
+            if !mydata.isEmpty {
+                for myPlace in mydata {
+                    print(myPlace.vaccine_place_id)
+                    self.arrOfVaccinePlacesData.append(myPlace.vaccine_place_id)
+                    self.getVaccinePlaceName(vaccinePlaceId: myPlace.vaccine_place_id)
+                }
+                print("the arr of places id : \(self.arrOfVaccinePlacesData)")
+                if self.availableVaccinePlacesTF.text == ""{
+                    self.showNormalAlert(title: "للاسف", message: "لا يتوفر هذا اللقاح بالقرب منك من فضلك حدد اقرب مكان لك لطلب اللقاح")
+                    self.availableVaccinePlacesTF.isHidden = false
+                }else{
+                    if let vaccineID = self.vaccineIdSelected , let p_ssn = self.p_ssn , let amount = self.amountNum, let idOfPlace = self.indexOfPlaceId {
+                        self.arrOfAvailableVaccineNames.removeAll()
+                        self.arrOfVaccinePlacesData.removeAll()
+                        ApiService.sharedService.addOrderVaccine(vaccineID: vaccineID, delivered_place: idOfPlace, amount: String(amount), p_ssn: p_ssn)
+                        print("succusfully to send order")
+                    }
+                    self.availableVaccinePlacesTF.isHidden = false
+                    self.vaccineAvailableAnimation()
+                }
+              
+            }else{
+                
+                print(" succusfully to send order the my data arr is Empty.!")
+                self.vaccineAvailableAnimation()
+                
+            }
+        }
+        
     }
     //MARK: - Actions
     @IBAction func ViewsTapped(_ sender: UITapGestureRecognizer) {
         self.animated()
     }
     @IBAction func orderVaccineBtnTapped(_ sender: UIButton) {
-        self.orderVaccine()
+        self.arrOfAvailableVaccineNames.removeAll()
+        self.arrOfVaccinePlacesData.removeAll()
+        self.buyVaccine()
+       
     }
 }
 //MARK: - Extensions
@@ -280,16 +366,40 @@ extension VaccineDetailsViewController:UIPickerViewDelegate, UIPickerViewDataSou
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return Arrays.arrOfNumber.count
+        switch pickerView.tag {
+        case 0:
+            return Arrays.arrOfNumber.count
+        case 1:
+            return arrOfAvailableVaccineNames.count
+        default:
+            return 0
+        }
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return Arrays.arrOfNumber[row]
-        
+        switch pickerView.tag {
+        case 0:
+            return Arrays.arrOfNumber[row]
+        case 1:
+            return arrOfAvailableVaccineNames[row]
+        default:
+            return ""
+        }
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        backageAmount.text = Arrays.arrOfNumber[row]
-        self.amountNum = Int(Arrays.arrOfNumber[row])
-        totalPrice.text = String(amountNum * self.price)
+        switch pickerView.tag {
+        case 0:
+            
+            backageAmount.text = Arrays.arrOfNumber[row]
+            self.amountNum = Int(Arrays.arrOfNumber[row])
+            totalPrice.text = String(amountNum * self.price)
+        case 1:
+            self.availableVaccinePlacesTF.text = arrOfAvailableVaccineNames[row]
+            self.indexOfPlaceId = self.dicOfVaccinePlaces[arrOfAvailableVaccineNames[row]]
+            print("the id of place name \(indexOfPlaceId!)")
+            self.sendOrderVaccineBtn.isHidden = false
+        default:
+            return
+        }
         
     }
 }

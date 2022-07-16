@@ -53,19 +53,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8hm-Qo-BdY">
-                                <rect key="frame" x="5" y="154" width="398" height="38"/>
+                                <rect key="frame" x="5" y="147" width="398" height="38"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="للاسف لقد تم رفض طلبك" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="lpY-Ac-NUy">
-                                        <rect key="frame" x="114.5" y="10.5" width="169.5" height="17"/>
-                                        <fontDescription key="fontDescription" name="Almarai-Bold" family="Almarai" pointSize="15"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تم ارسال طلب اللقاح بنجاح" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="lpY-Ac-NUy">
+                                        <rect key="frame" x="118.5" y="11" width="161" height="16"/>
+                                        <fontDescription key="fontDescription" name="Almarai-Bold" family="Almarai" pointSize="14"/>
                                         <color key="textColor" red="0.77254903320000001" green="0.1647058874" blue="0.12549020350000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exit" translatesAutoresizingMaskIntoConstraints="NO" id="Qsb-7G-3wT">
-                                        <rect key="frame" x="289" y="6.5" width="25" height="25"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="accept" translatesAutoresizingMaskIntoConstraints="NO" id="Qsb-7G-3wT">
+                                        <rect key="frame" x="284.5" y="9" width="20" height="20"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="25" id="Wiq-yv-9Re"/>
-                                            <constraint firstAttribute="height" constant="25" id="Z65-nO-5BR"/>
+                                            <constraint firstAttribute="width" constant="20" id="Wiq-yv-9Re"/>
+                                            <constraint firstAttribute="height" constant="20" id="Z65-nO-5BR"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
@@ -156,7 +156,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مكان الاستلام:مستشفي طنطا الجامعي" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qBA-Bq-mQM">
-                                <rect key="frame" x="5" y="115" width="398" height="19"/>
+                                <rect key="frame" x="5" y="110" width="398" height="19"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="19" id="pMP-dC-tQC"/>
                                 </constraints>
@@ -168,14 +168,14 @@
                         <color key="backgroundColor" name="bgIColornsideCell"/>
                         <constraints>
                             <constraint firstItem="nzS-BN-esy" firstAttribute="width" secondItem="087-yQ-vOf" secondAttribute="width" multiplier="0.35" id="43G-ol-2bw"/>
-                            <constraint firstItem="8hm-Qo-BdY" firstAttribute="top" secondItem="qBA-Bq-mQM" secondAttribute="bottom" constant="20" id="7aC-T8-YPp"/>
+                            <constraint firstItem="8hm-Qo-BdY" firstAttribute="top" secondItem="qBA-Bq-mQM" secondAttribute="bottom" constant="18" id="7aC-T8-YPp"/>
                             <constraint firstItem="b7D-NV-ukO" firstAttribute="trailing" secondItem="LQF-mh-oIR" secondAttribute="trailing" id="ANr-XW-8Nt"/>
                             <constraint firstItem="59z-mx-G7b" firstAttribute="width" secondItem="LQF-mh-oIR" secondAttribute="width" multiplier="0.7" id="C12-9e-KqW"/>
                             <constraint firstItem="8hm-Qo-BdY" firstAttribute="centerX" secondItem="b7D-NV-ukO" secondAttribute="centerX" id="DpI-Kb-oRl"/>
                             <constraint firstItem="nzS-BN-esy" firstAttribute="top" secondItem="087-yQ-vOf" secondAttribute="top" id="Mmf-do-1Pe"/>
                             <constraint firstItem="8hm-Qo-BdY" firstAttribute="leading" secondItem="LQF-mh-oIR" secondAttribute="leading" id="Pvg-Fw-w2s"/>
                             <constraint firstAttribute="trailing" secondItem="nzS-BN-esy" secondAttribute="trailing" id="QaE-sh-Twa"/>
-                            <constraint firstItem="qBA-Bq-mQM" firstAttribute="top" secondItem="b7D-NV-ukO" secondAttribute="bottom" constant="18" id="Slg-Aq-xo5"/>
+                            <constraint firstItem="qBA-Bq-mQM" firstAttribute="top" secondItem="b7D-NV-ukO" secondAttribute="bottom" constant="13" id="Slg-Aq-xo5"/>
                             <constraint firstAttribute="bottom" secondItem="nzS-BN-esy" secondAttribute="bottom" id="X24-id-ZOn"/>
                             <constraint firstItem="59z-mx-G7b" firstAttribute="centerX" secondItem="LQF-mh-oIR" secondAttribute="centerX" id="bo0-CU-vVO"/>
                             <constraint firstItem="b7D-NV-ukO" firstAttribute="leading" secondItem="LQF-mh-oIR" secondAttribute="leading" id="d7y-SW-UT5"/>
@@ -219,7 +219,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="exit" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="accept" width="50" height="50"/>
         <image name="orderVaccine" width="924" height="980"/>
         <namedColor name="MainLblColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>

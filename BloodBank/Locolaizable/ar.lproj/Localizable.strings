@@ -180,4 +180,8 @@
 خطوات.";
 // location vc
 "No Internet" = "لا يوجد اتصال بالانترنت";
- "Error Connection" = "هذه الشاشة تتطلب اتصال WiFi / إنترنت!";
+"Error Connection" = "هذه الشاشة تتطلب اتصال WiFi / إنترنت!";
+// setting notification
+"notificationBody" = "التطبيق بحاجه اليك لكي تكون بطلاً في حياه شخص ما";
+// app name
+"Blood Bank" = "حياتك تهمنا";

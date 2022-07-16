@@ -220,3 +220,7 @@ steps.";
 // location vc
 "No Internet" = "No Internet";
  "Error Connection" = "This Screen Require WiFi/Internet Connenction!";
+// setting notification
+"notificationBody" = "The app needs you to be a hero in someone's life";
+// app name
+"Blood Bank" = "Blood Bank";

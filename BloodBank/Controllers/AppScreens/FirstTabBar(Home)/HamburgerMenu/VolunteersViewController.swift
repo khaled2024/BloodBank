@@ -38,8 +38,8 @@ class VolunteersViewController: UIViewController{
         self.setUpDesign()
     }
     //MARK: - Private func
-//    someThinfWrong2
-//    errorSearch
+    //    someThinfWrong2
+    //    errorSearch
     private func getAllVolunteers(){
         ApiService.sharedService.checkSignIn { error, user in
             if let error = error {
@@ -179,12 +179,12 @@ extension VolunteersViewController:UISearchBarDelegate{
                 self.voluntersTableView.isHidden = true
                 self.noDataImageView.image = UIImage(named: "errorSearch")
                 self.noDataImageView.isHidden = false
-//                self.showNormalAlert(title: "", message: "لا يوجد متبرعين في الوقت الحالي ")
+                //                self.showNormalAlert(title: "", message: "لا يوجد متبرعين في الوقت الحالي ")
             }
         }
     }
+    // filter the tableView
     private func filterTableView(text: String){
-        
         switch filterSegmentControll.selectedSegmentIndex{
         case 0:
             arrOfVolunteers = initialVolunteerAry.filter { (data)-> Bool in
@@ -232,10 +232,10 @@ extension VolunteersViewController:UISearchBarDelegate{
     }
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         voluntersTableView.isHidden = false
-         if searchText.isEmpty{
-             self.noDataImageView.isHidden = true
-             arrOfVolunteers = initialVolunteerAry
-             self.voluntersTableView.reloadData()
+        if searchText.isEmpty{
+            self.noDataImageView.isHidden = true
+            arrOfVolunteers = initialVolunteerAry
+            self.voluntersTableView.reloadData()
         }else{
             filterTableView(text: searchText)
         }

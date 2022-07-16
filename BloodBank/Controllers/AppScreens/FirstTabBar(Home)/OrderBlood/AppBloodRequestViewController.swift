@@ -349,6 +349,10 @@ class AppBloodRequestViewController: UIViewController{
             }
             if self.finalHospital.count == 0{
                 self.showNormalAlert(title: "Sorry", message: "There are no hospitals that you can order Blood in this city.")
+                self.hospitalTextField.isEnabled = false
+                self.cityTextField.text = ""
+            }else{
+                self.hospitalTextField.isEnabled = true
             }
         }
     }

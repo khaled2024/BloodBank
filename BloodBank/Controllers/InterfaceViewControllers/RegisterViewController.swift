@@ -164,7 +164,7 @@ class RegisterViewController: UIViewController {
         ApiService.sharedService.addUserData(email: emailTextField.text!, fName: nameTextField.text!,lName: familyNameTextField.text!, id: IDTextField.text!, password: sha1Pasword,fPhone: fNumberTextField.text!,sPhone: sNumberTextField.text!,bloodType:self.rowofBlood,governrate: self.rowofGov,city: self.rowOfCity,birthDay: birthDayTextField.text!, gender: Arrays.dicOfGender[genderTextField.text!]!)
         print("password: \(sha1Pasword)")
     }
-   
+    
     //design
     private func setNavBar(){
         navigationController?.navigationBar.barTintColor = UIColor(named: "viewbgColor")
@@ -403,7 +403,7 @@ extension RegisterViewController: UIPickerViewDelegate,UIPickerViewDataSource{
         case 3:
             if self.myDicOfCity.count == 0{
                 self.showNormalAlert(title: "للاسف", message: "لا يوجد مدن لعرضها :(")
-
+                
             }else{
                 cityTextField.text = self.finalCities[row]
                 self.rowOfCity = myDicOfCity[self.cityTextField.text!]!

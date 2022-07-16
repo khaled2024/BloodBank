@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import JGProgressHUD
 class LoginViewController: UIViewController {
     //MARK: - outlets
     @IBOutlet weak var idTextField: UITextField!
@@ -22,6 +23,8 @@ class LoginViewController: UIViewController {
     let navBar = NavigationBar()
     var arrOfUser: [userData] = [userData]()
     var arrOfUserData = [String]()
+    // spinner
+    private let spinner = JGProgressHUD(style: .dark)
     //MARK: - lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +46,7 @@ class LoginViewController: UIViewController {
         navigationManager.show(screen: .tapBarController, inController: self)
     }
     private func checkTextFields()-> Bool{
-        if let email = idTextField.text , !email.isEmpty , let password = passwordTextField.text , !password.isEmpty{
+        if let id = idTextField.text , !id.isEmpty , let password = passwordTextField.text , !password.isEmpty{
             return true
         }else{
             return false
@@ -66,6 +69,7 @@ class LoginViewController: UIViewController {
         }
     }
     private func checkValidationOfSignIn(){
+        spinner.show(in: view)
         ApiService.sharedService.checkSignIn{ error, user in
             var userInfo: String = ""
             if let error = error {
@@ -87,10 +91,12 @@ class LoginViewController: UIViewController {
             if userInfo.isEmpty{
                 print("this user dosnt exist............\(self.arrOfUser.indices)")
                 self.showNormalAlert(title: "Sorry", message: "Please check your identify or Password ")
+                self.spinner.dismiss()
             }else{
-                DispatchQueue.main.asyncAfter(deadline: .now()+1.5) {
+                DispatchQueue.main.asyncAfter(deadline: .now()+1.5) { [weak self] in
                     UserDefaults.standard.set(true, forKey: "isLoggedIn")
-                    self.goToMainScreen()
+                    self?.spinner.dismiss()
+                    self?.goToMainScreen()
                     print("Login succesully")
                 }
             }
@@ -98,8 +104,8 @@ class LoginViewController: UIViewController {
         }
     }
     private func signIn() throws{
-        if let email = idTextField.text , let password = passwordTextField.text{
-            if !email.isValidID {
+        if let id = idTextField.text , let password = passwordTextField.text{
+            if !id.isValidID {
                 throw SignUpError.isValidID
             }
             if !password.isValidPassword {
@@ -108,20 +114,23 @@ class LoginViewController: UIViewController {
                 self.animateButtons()
                 self.customBtn.confirmBtnSelected(Btn: self.loginBtn)
                 self.checkValidationOfSignIn()
-                
             }
         }
     }
     //MARK: - Actions
     @IBAction func loginBtnTapped(_ sender: UIButton) {
+        spinner.show(in: view)
         do {
             try signIn()
         }catch SignUpError.isValidID{
             showNormalAlert(title: "Sorry", message: "Please Enter Valid id")
+            spinner.dismiss()
         }catch SignUpError.isValidPassword{
             showNormalAlert(title: "Sorry", message: "Please Enter Valid Password")
+            spinner.dismiss()
         }catch{
             showNormalAlert(title: "Sorry", message: "Please Fill All fields")
+            spinner.dismiss()
         }
     }
     @IBAction func newAccountBtnTapped(_ sender: UIButton) {

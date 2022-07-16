@@ -45,4 +45,3 @@ class VaccineRequestViewController: UIViewController {
         self.navigationController?.pushViewController(vaccineCollectionVC, animated: true)
     }
 }
-//MARK: - Extension

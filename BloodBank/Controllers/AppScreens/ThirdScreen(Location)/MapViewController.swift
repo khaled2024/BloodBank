@@ -44,6 +44,7 @@ class MapViewController: UIViewController {
             self.showAlertWithSettingBtn(title: "Sorry", message: "Please Enable location service")
         }
     }
+     
     private func displayMaltipleLocations(){
         ApiService.sharedService.getDonatePlace { error, places in
             if let error = error{

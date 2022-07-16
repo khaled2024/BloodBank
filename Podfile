@@ -11,6 +11,9 @@ pod 'BulletinBoard'
 pod 'CardSlider'
 pod 'Alamofire'
 pod 'lottie-ios'
+
+pod 'JGProgressHUD'
+
 #pod 'RAMAnimatedTabBarController'
 
 end

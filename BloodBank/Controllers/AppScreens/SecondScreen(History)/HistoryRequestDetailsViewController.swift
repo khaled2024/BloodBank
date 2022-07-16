@@ -77,7 +77,7 @@ class HistoryRequestDetailsViewController: UIViewController, UISheetPresentation
                     if self.p_ssn == myGoingRequest.donner_id && idOfRequest == myGoingRequest.request_id{
                         self.showNormalAlert(title: "للاسف ", message: "لقد تطوعت لهذا الطلب من قبل ")
                         self.acceptRequestBtn.setTitle("تم التطوع", for: .normal)
-//                        self.acceptRequestBtn.isEnabled = false
+                        //                        self.acceptRequestBtn.isEnabled = false
                         self.insideacceptRequestBtn.imageView?.image = UIImage(systemName: "hand.thumbsup.fill")
                         
                     }
@@ -130,8 +130,8 @@ class HistoryRequestDetailsViewController: UIViewController, UISheetPresentation
     }
     private func setUpDesign(){
         self.donorImageDetail.layer.cornerRadius = self.donorImageDetail.frame.size.width / 2
-//        self.acceptRequestBtn.customTitleLbl(btn: acceptRequestBtn, text: "تلبيه الطلب", fontSize: 13)
-//        self.bookMarkBtn.customTitleLbl(btn: bookMarkBtn, text: "حفظ", fontSize: 13)
+        //        self.acceptRequestBtn.customTitleLbl(btn: acceptRequestBtn, text: "تلبيه الطلب", fontSize: 13)
+        //        self.bookMarkBtn.customTitleLbl(btn: bookMarkBtn, text: "حفظ", fontSize: 13)
         customBtn.shadowBtn(btn: bookMarkBtn, colorShadow: UIColor.gray.cgColor)
         customBtn.shadowBtn(btn: acceptRequestBtn, colorShadow: UIColor.gray.cgColor)
     }
@@ -189,7 +189,7 @@ class HistoryRequestDetailsViewController: UIViewController, UISheetPresentation
             desireView.removeFromSuperview()
         }
     }
-  
+    
     private func checkRequestIsInfavoriteForDidLoad(){
         ApiService.sharedService.allSavedBloodRequests { error, savedRequest in
             if let error = error {
@@ -248,14 +248,14 @@ class HistoryRequestDetailsViewController: UIViewController, UISheetPresentation
     private func acceptRequest(){
         if self.volunteersNum >= 8{
             self.showNormalAlert(title: "للاسف", message: "تم اكتمال عدد المتطوعين لهذا الطلب :)")
-//            self.acceptRequestBtn.isEnabled = false
+            //            self.acceptRequestBtn.isEnabled = false
             self.insideacceptRequestBtn.imageView?.image = UIImage(systemName: "hand.thumbsup.fill")
         }else{
             print(self.requestId)
             print(self.p_ssn)
             ApiService.sharedService.acceptRequest(request_id: self.requestId, donner_id: self.p_ssn)
             self.acceptRequestBtn.setTitle("تم التطوع", for: .normal)
-//            self.acceptRequestBtn.isEnabled = false
+            //            self.acceptRequestBtn.isEnabled = false
             self.showNormalAlert(title: "احسنت", message: "لقد تم التطوع للمساعده في هذا الطلب :)")
         }
         
@@ -268,7 +268,7 @@ class HistoryRequestDetailsViewController: UIViewController, UISheetPresentation
                 for goingRequest in goingRequest {
                     if self.p_ssn == goingRequest.donner_id && self.requestId == goingRequest.request_id{
                         self.IdOfRequestForDeletion = goingRequest.id
-                       
+                        
                     }
                 }
                 print(" id of request for deletion : \(self.IdOfRequestForDeletion)")
@@ -278,7 +278,7 @@ class HistoryRequestDetailsViewController: UIViewController, UISheetPresentation
     private func refuseRequest(){
         ApiService.sharedService.deleteGoingRequest(id: self.IdOfRequestForDeletion)
     }
-  
+    
     //MARK: - Actions
     
     @IBAction func shareBtnTapped(_ sender: UIButton) {
@@ -304,7 +304,7 @@ class HistoryRequestDetailsViewController: UIViewController, UISheetPresentation
             self.showNormalAlert(title: "", message: "تم الغاء الطلب بنجاح :(")
             self.acceptRequestBtn.setTitle("تلبيه الطلب", for: .normal)
         }
-       
+        
     }
 }
 //MARK: - Extension UITableViewDelegate,UITableViewDataSource
@@ -320,6 +320,7 @@ extension HistoryRequestDetailsViewController: UITableViewDelegate,UITableViewDa
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        // here the implementation of click on phone number to call the volunteer :-
     }
 }
 

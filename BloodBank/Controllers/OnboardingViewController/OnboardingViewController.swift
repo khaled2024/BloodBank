@@ -23,10 +23,10 @@ class OnboardingViewController: UIViewController {
             PageController.currentPage = currentPage
             if currentPage == SlideArray.count - 1{
                 self.NextBtn.setTitle("Get Started".Localized().Localized(), for: .normal)
-//                self.NextBtn.customTitleLbl(btn: NextBtn, text: "ابدا", fontSize: 17)
+                //                self.NextBtn.customTitleLbl(btn: NextBtn, text: "ابدا", fontSize: 17)
             }else{
                 self.NextBtn.setTitle("Next".Localized(), for: .normal)
-//                self.NextBtn.customTitleLbl(btn: NextBtn, text: "استمرار", fontSize: 17)
+                //                self.NextBtn.customTitleLbl(btn: NextBtn, text: "استمرار", fontSize: 17)
             }
         }
     }

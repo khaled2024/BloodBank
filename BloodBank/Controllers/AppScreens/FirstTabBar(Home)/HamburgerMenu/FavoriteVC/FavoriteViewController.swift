@@ -136,7 +136,6 @@ class FavoriteViewController: UIViewController {
         self.nofavoriteLbl.isHidden = true
         self.noDataImage.isHidden = true
     }
-    //MARK: - Actions
 }
 //MARK: - UITableViewDelegate, UITableViewDataSource
 extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource{
@@ -151,7 +150,7 @@ extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource{
         let cell = favoriteTableView.dequeueReusableCell(withIdentifier: "favoriteTableViewCell", for: indexPath)as! favoriteTableViewCell
         let time = arrOfFavoriteRequest[indexPath.row].time
         let subTime = time.prefix(16)
-        cell.configure(bloodBags: self.arrOfFavoriteRequest[indexPath.row].blood_bags_number , message: self.arrOfFavoriteRequest[indexPath.row].message, time: String(subTime), address: "(\(arrOfFavoriteRequest[indexPath.row].hospital_name))- \(arrOfFavoriteRequest[indexPath.row].city_of_hospital)- \(arrOfFavoriteRequest[indexPath.row].governorate_name)", name: "\(arrOfFavoriteRequest[indexPath.row].first_name) \(arrOfFavoriteRequest[indexPath.row].last_name)", bloodType: arrOfFavoriteRequest[indexPath.row].blood_type, bloodImage: "f2")
+        cell.configure(bloodBags: self.arrOfFavoriteRequest[indexPath.row].blood_bags_number , message: self.arrOfFavoriteRequest[indexPath.row].message, time: String(subTime), address: "(\(arrOfFavoriteRequest[indexPath.row].hospital_name))- \(arrOfFavoriteRequest[indexPath.row].city_of_hospital)- \(arrOfFavoriteRequest[indexPath.row].governorate_name)", name: "\(arrOfFavoriteRequest[indexPath.row].first_name) \(arrOfFavoriteRequest[indexPath.row].last_name)", bloodType: arrOfFavoriteRequest[indexPath.row].blood_type, bloodImage: "blood-donation")
         cell.requestId = arrOfIds[indexPath.row]
         cell.p_ssn = self.p_ssn
         cell.tableView = favoriteTableView

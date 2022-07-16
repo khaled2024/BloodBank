@@ -36,7 +36,12 @@ class VolunteersTableViewCell: UITableViewCell {
         cardView.layer.cornerRadius = 20.0
     }
     func config(_ volunteer: userData){
-        self.volunteerImage.image = UIImage(named: "blood-donation")
+        let profileImageType = volunteer.gender
+        if profileImageType == "Male" {
+            self.volunteerImage.image = UIImage(named: "profileMale")
+        }else{
+            self.volunteerImage.image = UIImage(named: "profileFemale")
+        }
         self.volunteerNameLbl.text = "\(volunteer.p_first_name) \(volunteer.p_last_name)"
         self.volunteerLocationLbl.text = "\(volunteer.governorate_name) \(volunteer.city_name)"
         self.bloodTypeLbl.text = volunteer.blood_type

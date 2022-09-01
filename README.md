@@ -4,8 +4,7 @@ Blood-Bank-System
 
 
 this is a video that explain one feature of the application (donate blood).
-
-                              https://user-images.githubusercontent.com/57367756/187929353-84a8fd71-9059-4cb9-b98c-353e5001b31d.mp4
+https://user-images.githubusercontent.com/57367756/187929353-84a8fd71-9059-4cb9-b98c-353e5001b31d.mp4
 
 
 
